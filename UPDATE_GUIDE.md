@@ -1,85 +1,77 @@
-# BLUEDEAL 업데이트 가이드 (v2)
+# BLUEDEAL 업데이트 가이드 (v3)
 
-## 1) ZIP로 덮어쓰기 업데이트(가장 쉬움)
+> 이 ZIP은 **전체버전(full project)** 입니다. (일부 패치 파일이 아니라, 프로젝트 전체가 들어있습니다.)
 
-1. 기존 프로젝트 폴더에서 **.next/**, **out/** 같은 빌드 산출물이 있으면 삭제(선택).
-2. 이번 ZIP 파일을 기존 프로젝트 루트에 **덮어쓰기**로 풀기.
-3. 터미널에서 아래 실행:
+## 0) 가장 중요한 원칙
 
-```bash
-npm install
-npm run dev
-```
-
-브라우저에서 http://localhost:3000 접속해서 동작 확인.
+- **ZIP 파일 자체를 Git에 올리지 마세요.** (Vercel은 ZIP을 풀어 빌드하지 않습니다)
+- ZIP을 풀어서 **`src/`, `package.json` 같은 실제 소스파일이 변경**되어야 배포 화면이 바뀝니다.
+- 덮어쓰기 방식은 **파일/폴더 삭제를 자동으로 처리하지 못합니다.**
+  - 예: `src/app/contact/[visibility]` 같은 폴더가 예전에 생겼다면 **수동으로 삭제**해야 합니다.
 
 ---
 
-## 2) Git으로 업데이트(추천)
+## 1) GitHub Desktop로 업데이트 (권장)
 
-프로젝트가 git으로 관리되고 원격(origin)에 연결된 경우:
+### 1-1. 새 ZIP을 프로젝트에 반영
 
-```bash
-git status
-# 변경사항 있으면 커밋하거나 stash
-git stash -u
+1. GitHub Desktop에서 해당 레포 선택
+2. 메뉴에서 `Repository` → **Show in Explorer** (폴더 열기)
+3. 이번 ZIP을 **다른 폴더에 먼저 압축 해제**
+4. 압축 해제한 폴더 안의 내용(예: `src`, `package.json`, `tailwind.config.ts` …)을
+   **레포 루트(= package.json이 있는 폴더)** 에 복사 → **덮어쓰기**
 
-git pull origin main   # 브랜치가 main이 아니라면 해당 브랜치명
-npm install
-npm run dev
-```
+### 1-2. 덮어쓰기 후 “삭제가 필요한 폴더” 체크
 
----
+- 덮어쓰기는 “삭제”를 못합니다.
+- 아래 폴더가 남아 있으면 Vercel 빌드가 실패할 수 있습니다.
 
-## 3) Vercel 배포 흐름
+**꼭 확인:**
+- `src/app/contact/[visibility]` ← 있으면 **삭제**
 
-- GitHub 연결된 상태면: **commit → push** 하면 Vercel이 자동 빌드/배포
-- 환경변수 필요시(Vercel Project Settings > Environment Variables):
-  - `PRICE_API_BASE` : 가격현황 JSON API Base URL (예: https://api.example.com)
+### 1-3. Commit → Push
 
-빌드 명령 기본:
-- Build: `next build`
-- Output: (Next.js 기본)
-
----
-
-## 4) VPS(Cafe24) 배포 흐름(예시)
-
-> 권장: **VPS에서 크롤링/스케줄링**, 프론트는 Vercel/Next로 렌더링
-
-### A. 직접 실행(간단)
-```bash
-npm install
-npm run build
-npm run start
-```
-
-### B. PM2로 상시 실행(추천)
-```bash
-npm install
-npm run build
-pm2 start npm --name bluedeal -- start
-pm2 save
-```
+1. GitHub Desktop `Changes` 탭에서 **`.zip` 파일이 아니라** `src/...` 같은 코드 변경이 보이는지 확인
+2. Summary 입력
+3. **Commit to main**
+4. 오른쪽 상단 **Push origin**
 
 ---
 
-## 5) 이번 v2 변경점 요약
+## 2) Vercel 배포 확인
 
-- 상단 메뉴 순서: **IT 소식 → 커뮤니티(드롭다운) → 가격현황(드롭다운) → 핫딜(드롭다운) → 문의**
-- 커뮤니티에 **이슈공유 게시판 추가**
-- 문의는 **게시판 통합**: 글 작성 시 공개/비공개 선택 (비공개는 비밀번호로 잠금)
-- 자료실 자료 종류: **드라이버 / 시스템 / 최적화 / 모니터링**
-- 홈 화면:
-  - 메인 리스트를 **실시간 게시글**로 변경
-  - "오늘의 현황"에서 가격현황 바로가기 제공
-  - 하단 "실시간 핫딜"은 **글 링크만 노출**(제품/제휴 링크는 상세에서만)
-- 핫딜 리스트 페이지는 **/hot** 로 분리 (상세는 /deals/[id])
+- GitHub에 `Push` 되면 Vercel이 자동으로 빌드/배포합니다.
+- Vercel 프로젝트 → **Deployments**에서 최신 배포 상태 확인
+  - `Ready` = 성공
+  - `Failed` = 로그 확인 필요
 
 ---
 
-## 6) 닉네임(회원가입 전 MVP 방식)
+## 3) 자주 나는 빌드 에러와 해결
 
-- 상단 우측 **닉네임 설정** 버튼으로 닉네임 저장
-- 글쓰기 폼에서 작성자는 자동으로 이 닉네임을 사용(읽기 전용)
-- 실제 회원가입/메일 인증은 다음 단계에서 API/DB 연동으로 교체 가능
+### A) 라우트 충돌: `('id' == 'visibility')`
+
+원인:
+- 같은 위치에 동적 라우트가 2개 존재
+  - 예: `src/app/contact/[id]` 와 `src/app/contact/[visibility]` 동시 존재
+
+해결:
+- 하나만 남기고 나머지 삭제(문의 통합 구조에서는 `[visibility]` 제거)
+
+### B) `useSearchParams()` prerender 오류
+
+원인:
+- 서버 사전 렌더링 중에 `useSearchParams()` 같은 클라이언트 훅 사용
+
+해결:
+- Client 컴포넌트로 분리 + `Suspense` wrapper 사용
+
+---
+
+## 4) 카페24 VPS 관련
+
+권장 구조:
+- **VPS = 크롤링/스케줄링/DB**
+- **Vercel(Next.js) = 화면 렌더링/게시판 UI**
+
+운영 단계에서는 VPS가 수집한 JSON/DB를 API로 제공하고, Next는 그걸 읽어서 보여주면 안전합니다.
