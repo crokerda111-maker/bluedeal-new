@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "BLUEDEAL",
-  description: "핫딜·리뷰·가이드 큐레이션",
+  description: "IT 소식 · 커뮤니티 · 가격현황 · 핫딜",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

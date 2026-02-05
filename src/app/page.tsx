@@ -160,19 +160,22 @@ export default function Page() {
               </div>
               <div className="leading-tight">
                 <div className="text-sm font-semibold tracking-tight">BLUEDEAL</div>
-                <div className="text-xs text-white/55">핫딜·리뷰·가이드 큐레이션</div>
+                <div className="text-xs text-white/55">IT 소식·커뮤니티·가격현황·핫딜</div>
               </div>
             </div>
 
             <nav className="hidden items-center gap-6 text-sm text-white/75 md:flex">
-              <a className="hover:text-white" href="/">
-                핫딜
+              <a className="hover:text-white" href="/it">
+                IT 소식
+              </a>
+              <a className="hover:text-white" href="/community">
+                커뮤니티
               </a>
               <a className="hover:text-white" href="/prices">
                 가격현황
               </a>
-              <a className="hover:text-white" href="/guide">
-                가이드
+              <a className="hover:text-white" href="/">
+                핫딜
               </a>
               <a className="hover:text-white" href="/contact">
                 문의
@@ -474,14 +477,23 @@ export default function Page() {
         {/* 하단 섹션 */}
         <section className="mt-10 grid gap-4 md:grid-cols-2">
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-            <div className="text-sm font-semibold">리뷰/가이드</div>
-            <div className="mt-1 text-xs text-white/55">구매 전 “결론 먼저” 스타일로 압축</div>
+            <div className="text-sm font-semibold">커뮤니티/팁</div>
+            <div className="mt-1 text-xs text-white/55">리뷰·질문·오버클럭·자료실</div>
 
             <div className="mt-5 space-y-3">
-              {["B850 보드 고르는 기준(가격대별)", "DDR5 6000 vs 6400 체감 포인트", "쿨러 간섭 체크: 케이스/램/보드"].map((t) => (
-                <a key={t} href="#" className="block rounded-2xl border border-white/10 bg-[#050816]/60 p-4 hover:bg-white/10">
-                  <div className="text-sm font-semibold">{t}</div>
-                  <div className="mt-1 text-xs text-white/55">3분 컷 요약 + 체크리스트</div>
+              {[
+                { t: "하드웨어 질문/추천 게시판", href: "/community/hardware", d: "견적·호환·추천" },
+                { t: "오버클럭 팁/세팅 공유", href: "/community/overclock", d: "PBO·언더볼팅·램 타이밍" },
+                { t: "리뷰 게시판", href: "/community/review", d: "제품 후기·사용기" },
+                { t: "자료실", href: "/community/resources", d: "유틸·드라이버·가이드 링크" },
+              ].map((row) => (
+                <a
+                  key={row.href}
+                  href={row.href}
+                  className="block rounded-2xl border border-white/10 bg-[#050816]/60 p-4 hover:bg-white/10"
+                >
+                  <div className="text-sm font-semibold">{row.t}</div>
+                  <div className="mt-1 text-xs text-white/55">{row.d}</div>
                 </a>
               ))}
             </div>

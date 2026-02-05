@@ -27,8 +27,10 @@ export default function PricesLayout({ children }: { children: React.ReactNode }
           </Link>
 
           <nav className="flex items-center gap-5 text-sm">
+            <NavLink href="/it">IT 소식</NavLink>
+            <NavLink href="/community">커뮤니티</NavLink>
             <NavLink href="/prices">가격현황</NavLink>
-            <NavLink href="/guide">가이드</NavLink>
+            <NavLink href="/">핫딜</NavLink>
             <NavLink href="/contact">문의</NavLink>
           </nav>
         </div>
@@ -41,11 +43,11 @@ export default function PricesLayout({ children }: { children: React.ReactNode }
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div>© {new Date().getFullYear()} BLUEDEAL</div>
             <div className="flex items-center gap-4">
-              <Link className="hover:text-white" href="/guide">
-                제휴/가격 안내
-              </Link>
               <Link className="hover:text-white" href="/contact">
-                문의/제보
+                문의
+              </Link>
+              <Link className="hover:text-white" href="/about">
+                소개
               </Link>
             </div>
           </div>

@@ -120,11 +120,11 @@ export default async function PricesCategoryPage({ params }: { params: { categor
           <li>일부 링크는 제휴 링크일 수 있으며, 구매 시 일정 수수료를 받을 수 있습니다.</li>
         </ul>
         <div className="mt-3">
-          구매 팁/제휴 고지는{" "}
-          <Link className="text-cyan-200 hover:text-cyan-100" href="/guide">
-            가이드
+          구매 팁/제휴 문의는{" "}
+          <Link className="text-cyan-200 hover:text-cyan-100" href="/contact/public">
+            공개 문의 게시판
           </Link>
-          에서 확인하세요.
+          에 남겨주세요.
         </div>
       </div>
     </div>
