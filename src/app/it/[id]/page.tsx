@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { getCommunityBoard, POST_TYPE_LABEL } from "../../../../lib/boardConfig";
-import { MOCK_POSTS } from "../../../../lib/mockPosts";
-import type { Post } from "../../../../lib/postTypes";
-import { formatKoreanDate, getLocalPostById } from "../../../../lib/postStorage";
+import { IT_BOARD, POST_TYPE_LABEL } from "../../../lib/boardConfig";
+import { MOCK_POSTS } from "../../../lib/mockPosts";
+import type { Post } from "../../../lib/postTypes";
+import { formatKoreanDate, getLocalPostById } from "../../../lib/postStorage";
 
 function ExtraRow({ label, value }: { label: string; value: any }) {
   if (value === undefined || value === null || value === "") return null;
@@ -17,48 +17,32 @@ function ExtraRow({ label, value }: { label: string; value: any }) {
   );
 }
 
-export default function CommunityPostPage({ params }: { params: { board: string; id: string } }) {
-  const board = getCommunityBoard(params.board);
+export default function ITPostPage({ params }: { params: { id: string } }) {
   const [post, setPost] = useState<Post | null>(null);
 
   useEffect(() => {
     const local = getLocalPostById(params.id);
-    if (local) return setPost(local);
+    if (local && local.boardKey === "it") return setPost(local);
 
-    const seed = MOCK_POSTS.find((p) => p.id === params.id);
+    const seed = MOCK_POSTS.find((p) => p.boardKey === "it" && p.id === params.id);
     setPost(seed ?? null);
   }, [params.id]);
 
   const labelMap = useMemo(() => {
     const m = new Map<string, string>();
-    for (const f of board?.extraFields ?? []) m.set(f.key, f.label);
-    // 자주 보이는 키는 보정
-    m.set("rating", "만족도");
+    for (const f of IT_BOARD.extraFields ?? []) m.set(f.key, f.label);
     return m;
-  }, [board]);
+  }, []);
 
-  const extraEntries = useMemo(() => {
-    return Object.entries(post?.extra ?? {});
-  }, [post]);
+  const extraEntries = useMemo(() => Object.entries(post?.extra ?? {}), [post]);
 
-  if (!board) {
-    return (
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <div className="text-lg font-semibold">없는 게시판</div>
-        <Link className="mt-4 inline-block text-sm text-cyan-200 hover:underline" href="/community">
-          커뮤니티로 돌아가기
-        </Link>
-      </div>
-    );
-  }
-
-  if (!post || post.boardKey !== board.key) {
+  if (!post) {
     return (
       <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
         <div className="text-lg font-semibold">글을 찾을 수 없음</div>
         <div className="mt-2 text-sm text-white/70">삭제되었거나 존재하지 않는 글입니다.</div>
-        <Link className="mt-4 inline-block text-sm text-cyan-200 hover:underline" href={`/community/${board.slug}`}>
-          목록으로
+        <Link className="mt-4 inline-block text-sm text-cyan-200 hover:underline" href="/it">
+          IT 소식으로 돌아가기
         </Link>
       </div>
     );
@@ -67,7 +51,7 @@ export default function CommunityPostPage({ params }: { params: { board: string;
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <Link className="text-sm text-cyan-200 hover:underline" href={`/community/${board.slug}`}>
+        <Link className="text-sm text-cyan-200 hover:underline" href="/it">
           ← 목록으로
         </Link>
 

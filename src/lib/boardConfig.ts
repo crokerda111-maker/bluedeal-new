@@ -1,11 +1,4 @@
-import type {
-  BoardGroup,
-  BoardKey,
-  CommunityBoardKey,
-  InquiryBoardKey,
-  InquiryVisibility,
-  PostType,
-} from "./postTypes";
+import type { BoardGroup, BoardKey, CommunityBoardKey, PostType } from "./postTypes";
 
 export const POST_TYPE_OPTIONS: Array<{ value: PostType; label: string; hint?: string }> = [
   { value: "general", label: "일반", hint: "정보 공유/잡담" },
@@ -34,11 +27,26 @@ export type FieldDef = {
 export type BoardDef = {
   key: BoardKey;
   group: BoardGroup;
+  /** URL slug (커뮤니티의 경우 /community/{slug}) */
   slug: string;
   title: string;
   description: string;
   writeHint?: string;
   extraFields?: FieldDef[];
+};
+
+/** IT 소식(통합) */
+export const IT_BOARD: BoardDef = {
+  key: "it",
+  group: "it",
+  slug: "it",
+  title: "IT 소식",
+  description: "IT 뉴스/루머/업데이트/이슈 요약",
+  writeHint: "출처가 있으면 링크를 함께 남기세요. (루머/추측은 구분해서 작성)",
+  extraFields: [
+    { key: "source", label: "출처(선택)", type: "url", placeholder: "https://..." },
+    { key: "tag", label: "태그(선택)", type: "text", placeholder: "예: GPU, RAM, Windows" },
+  ],
 };
 
 export const COMMUNITY_BOARDS: BoardDef[] = [
@@ -119,75 +127,87 @@ export const COMMUNITY_BOARDS: BoardDef[] = [
     ],
   },
   {
+    key: "issue",
+    group: "community",
+    slug: "issue",
+    title: "이슈공유",
+    description: "업데이트/드라이버/불량/사건 이슈 공유",
+    writeHint: "환경(OS/버전/드라이버) + 증상 + 해결 여부를 같이 적어주세요.",
+    extraFields: [
+      {
+        key: "topic",
+        label: "이슈 분류",
+        type: "select",
+        options: [
+          { value: "driver", label: "드라이버" },
+          { value: "update", label: "OS/업데이트" },
+          { value: "hardware", label: "하드웨어/불량" },
+          { value: "security", label: "보안" },
+          { value: "etc", label: "기타" },
+        ],
+      },
+      { key: "env", label: "환경(선택)", type: "text", placeholder: "예: Windows 11 23H2 / RTX 4070S / 드라이버 551.xx" },
+      { key: "ref", label: "참고 링크(선택)", type: "url", placeholder: "https://..." },
+    ],
+  },
+  {
     key: "resources",
     group: "community",
     slug: "resources",
     title: "자료실",
-    description: "유틸/드라이버/가이드 링크",
-    writeHint: "출처 링크와 간단 요약을 같이 남겨주세요.",
+    description: "드라이버/시스템/최적화/모니터링 자료",
+    writeHint: "가능하면 공식 배포처/출처를 적어주세요.",
     extraFields: [
       {
         key: "kind",
         label: "자료 종류",
         type: "select",
         options: [
-          { value: "utility", label: "유틸" },
           { value: "driver", label: "드라이버" },
-          { value: "guide", label: "가이드" },
-          { value: "etc", label: "기타" },
+          { value: "system", label: "시스템" },
+          { value: "optimization", label: "최적화" },
+          { value: "monitoring", label: "모니터링" },
         ],
       },
       { key: "link", label: "링크(URL)", type: "url", required: true, placeholder: "https://..." },
-      { key: "license", label: "라이선스/주의(선택)", type: "text", placeholder: "예: 공식 배포, 개인 배포 금지" },
+      { key: "note", label: "설명(선택)", type: "textarea", placeholder: "무슨 자료인지 간단히 요약" },
     ],
   },
 ];
 
-export const INQUIRY_BOARDS: BoardDef[] = [
-  {
-    key: "inquiry_public",
-    group: "inquiry",
-    slug: "public",
-    title: "공개 문의",
-    description: "운영/제휴/오류 제보(공개)",
-    writeHint: "개인정보는 적지 마세요. 링크/스크린샷 정보가 있으면 정확도가 올라갑니다.",
-    extraFields: [
-      { key: "email", label: "연락 이메일(선택)", type: "text", placeholder: "reply@example.com" },
-    ],
-  },
-  {
-    key: "inquiry_private",
-    group: "inquiry",
-    slug: "private",
-    title: "비공개 문의",
-    description: "개인정보/견적/민감한 문의(비공개)",
-    writeHint: "비공개 글은 비밀번호로 잠깁니다.",
-    extraFields: [
-      { key: "email", label: "연락 이메일(선택)", type: "text", placeholder: "reply@example.com" },
-      { key: "phone", label: "연락처(선택)", type: "text", placeholder: "010-0000-0000" },
-    ],
-  },
-];
+/** 문의(통합) */
+export const INQUIRY_BOARD: BoardDef = {
+  key: "inquiry",
+  group: "inquiry",
+  slug: "contact",
+  title: "문의",
+  description: "운영/제휴/오류 제보",
+  writeHint: "개인정보는 적지 마세요. 링크/스크린샷 정보가 있으면 정확도가 올라갑니다.",
+  extraFields: [{ key: "email", label: "연락 이메일(선택)", type: "text", placeholder: "reply@example.com" }],
+};
 
-export const ALL_BOARDS: BoardDef[] = [...COMMUNITY_BOARDS, ...INQUIRY_BOARDS];
+export const ALL_BOARDS: BoardDef[] = [IT_BOARD, ...COMMUNITY_BOARDS, INQUIRY_BOARD];
+
+export function getBoardByKey(key: BoardKey): BoardDef | undefined {
+  return ALL_BOARDS.find((b) => b.key === key);
+}
 
 export function getCommunityBoard(slug: string): BoardDef | undefined {
   return COMMUNITY_BOARDS.find((b) => b.slug === slug);
-}
-
-export function getInquiryBoard(visibility: InquiryVisibility): BoardDef | undefined {
-  return INQUIRY_BOARDS.find((b) => b.slug === visibility);
 }
 
 export function isCommunityBoardSlug(slug: string): slug is CommunityBoardKey {
   return (COMMUNITY_BOARDS as BoardDef[]).some((b) => b.slug === slug);
 }
 
-export function inquiryVisibilityToBoardKey(v: InquiryVisibility): InquiryBoardKey {
-  return v === "public" ? "inquiry_public" : "inquiry_private";
-}
-
 export function boardKeyToSlug(key: BoardKey): string {
   const b = ALL_BOARDS.find((x) => x.key === key);
   return b?.slug ?? String(key);
+}
+
+export function boardKeyToPath(key: BoardKey): string {
+  if (key === "it") return "/it";
+  if (key === "inquiry") return "/contact";
+  // 커뮤니티: key==slug
+  return `/community/${key}`;
 }

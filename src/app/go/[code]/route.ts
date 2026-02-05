@@ -8,7 +8,7 @@ export async function GET(req: Request, ctx: { params: { code: string } }) {
   const row = OUTBOUND_LINKS[code];
   if (!row) {
     // 없는 코드면 홈으로 리다이렉트
-    return NextResponse.redirect(new URL("/", req.url), 302);
+    return NextResponse.redirect(new URL("/hot", req.url), 302);
   }
 
   const target = convertToAffiliateUrl({

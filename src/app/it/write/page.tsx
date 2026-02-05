@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { getCommunityBoard, POST_TYPE_OPTIONS, type FieldDef } from "../../../../lib/boardConfig";
-import type { PostExtra, PostType } from "../../../../lib/postTypes";
-import { createLocalPost } from "../../../../lib/postStorage";
-import { getNickname, setNickname } from "../../../../lib/profile";
+import { IT_BOARD, POST_TYPE_OPTIONS, type FieldDef } from "../../../lib/boardConfig";
+import type { PostExtra, PostType } from "../../../lib/postTypes";
+import { createLocalPost } from "../../../lib/postStorage";
+import { getNickname, setNickname } from "../../../lib/profile";
 
 function Field({ def, value, onChange }: { def: FieldDef; value: string; onChange: (v: string) => void }) {
   const base =
@@ -54,9 +54,8 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
   );
 }
 
-export default function CommunityWritePage({ params }: { params: { board: string } }) {
+export default function ITWritePage() {
   const router = useRouter();
-  const board = getCommunityBoard(params.board);
 
   const [type, setType] = useState<PostType>("general");
   const [title, setTitle] = useState("");
@@ -71,8 +70,8 @@ export default function CommunityWritePage({ params }: { params: { board: string
   }, []);
 
   const requiredExtraKeys = useMemo(() => {
-    return (board?.extraFields ?? []).filter((f) => f.required).map((f) => f.key);
-  }, [board]);
+    return (IT_BOARD.extraFields ?? []).filter((f) => f.required).map((f) => f.key);
+  }, []);
 
   const changeNick = () => {
     const next = prompt("닉네임을 입력하세요 (최대 20자)", authorName === "게스트" ? "" : authorName);
@@ -80,17 +79,6 @@ export default function CommunityWritePage({ params }: { params: { board: string
     setNickname(next);
     setAuthorName(getNickname("게스트"));
   };
-
-  if (!board) {
-    return (
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <div className="text-lg font-semibold">없는 게시판</div>
-        <Link className="mt-4 inline-block text-sm text-cyan-200 hover:underline" href="/community">
-          커뮤니티로 돌아가기
-        </Link>
-      </div>
-    );
-  }
 
   const onSubmit = async () => {
     setError(null);
@@ -110,7 +98,7 @@ export default function CommunityWritePage({ params }: { params: { board: string
       }
 
       const post = await createLocalPost({
-        boardKey: board.key,
+        boardKey: "it",
         type,
         title,
         content,
@@ -118,7 +106,7 @@ export default function CommunityWritePage({ params }: { params: { board: string
         extra: extraPayload,
       });
 
-      router.push(`/community/${board.slug}/${post.id}`);
+      router.push(`/it/${post.id}`);
     } catch {
       setError("저장 중 오류가 발생했습니다.");
     } finally {
@@ -130,16 +118,16 @@ export default function CommunityWritePage({ params }: { params: { board: string
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <div className="text-sm text-white/60">{board.title}</div>
+          <div className="text-sm text-white/60">{IT_BOARD.title}</div>
           <h1 className="text-2xl font-semibold tracking-tight">글쓰기</h1>
         </div>
-        <Link className="text-sm text-cyan-200 hover:underline" href={`/community/${board.slug}`}>
+        <Link className="text-sm text-cyan-200 hover:underline" href="/it">
           목록으로
         </Link>
       </div>
 
       <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
-        {board.writeHint ? <div className="mb-4 text-sm text-white/70">{board.writeHint}</div> : null}
+        {IT_BOARD.writeHint ? <div className="mb-4 text-sm text-white/70">{IT_BOARD.writeHint}</div> : null}
 
         <div className="grid gap-4">
           {/* 작성자 */}
@@ -183,7 +171,7 @@ export default function CommunityWritePage({ params }: { params: { board: string
             </div>
           </label>
 
-          {/* 제목 */}
+          {/* 제목/본문 */}
           <label className="block">
             <div className="text-sm text-white/80">제목</div>
             <input
@@ -194,7 +182,6 @@ export default function CommunityWritePage({ params }: { params: { board: string
             />
           </label>
 
-          {/* 본문 */}
           <label className="block">
             <div className="text-sm text-white/80">내용</div>
             <textarea
@@ -206,7 +193,7 @@ export default function CommunityWritePage({ params }: { params: { board: string
             />
           </label>
 
-          {(board.extraFields ?? []).map((f) => (
+          {(IT_BOARD.extraFields ?? []).map((f) => (
             <Field
               key={f.key}
               def={f}
@@ -227,7 +214,7 @@ export default function CommunityWritePage({ params }: { params: { board: string
             </button>
 
             <Link
-              href={`/community/${board.slug}`}
+              href="/it"
               className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10"
             >
               취소

@@ -5,6 +5,8 @@ export type Deal = {
   priceLabel: string;
   shippingLabel: string;
   store: string;
+  /** 카테고리(핫딜 분류) */
+  category: string;
   tag?: "HOT" | "쿠폰" | "역대가" | "한정" | "빠름";
   heat: number; // 0~100
   minutesAgo: number;
@@ -22,6 +24,7 @@ export const DEALS: Deal[] = [
     priceLabel: "₩129,000",
     shippingLabel: "무료배송",
     store: "쿠팡",
+    category: "PC부품",
     tag: "HOT",
     heat: 96,
     minutesAgo: 3,
@@ -37,6 +40,7 @@ export const DEALS: Deal[] = [
     priceLabel: "₩39,900",
     shippingLabel: "배송비 ₩2,500",
     store: "알리",
+    category: "주변기기",
     tag: "쿠폰",
     heat: 82,
     minutesAgo: 12,
@@ -52,6 +56,7 @@ export const DEALS: Deal[] = [
     priceLabel: "₩219,000",
     shippingLabel: "무료배송",
     store: "11번가",
+    category: "모니터",
     tag: "역대가",
     heat: 74,
     minutesAgo: 25,
@@ -67,6 +72,7 @@ export const DEALS: Deal[] = [
     priceLabel: "₩29,800",
     shippingLabel: "무료배송",
     store: "지마켓",
+    category: "PC부품",
     tag: "빠름",
     heat: 67,
     minutesAgo: 41,

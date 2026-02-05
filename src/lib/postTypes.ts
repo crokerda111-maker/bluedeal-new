@@ -1,11 +1,18 @@
 export type PostType = "general" | "question" | "tip";
 
-export type CommunityBoardKey = "review" | "hardware" | "overclock" | "resources";
-export type InquiryVisibility = "public" | "private";
-export type InquiryBoardKey = "inquiry_public" | "inquiry_private";
+/** IT 소식(통합) */
+export type ITBoardKey = "it";
 
-export type BoardKey = CommunityBoardKey | InquiryBoardKey;
-export type BoardGroup = "community" | "inquiry";
+/** 커뮤니티 게시판 */
+export type CommunityBoardKey = "review" | "hardware" | "overclock" | "issue" | "resources";
+
+/** 문의(통합: 공개/비공개는 글 단위로 선택) */
+export type InquiryBoardKey = "inquiry";
+
+export type BoardKey = ITBoardKey | CommunityBoardKey | InquiryBoardKey;
+export type BoardGroup = "it" | "community" | "inquiry";
+
+export type InquiryVisibility = "public" | "private";
 
 export type PostExtra = Record<string, string | number | boolean | null | undefined>;
 
@@ -17,16 +24,19 @@ export type PostExtra = Record<string, string | number | boolean | null | undefi
 export type Post = {
   id: string;
   boardKey: BoardKey;
+
   /** 말머리: 일반/질문/팁 */
   type: PostType;
+
   title: string;
   content: string;
   createdAt: string; // ISO
   updatedAt?: string; // ISO
 
+  /** 작성자(회원 닉네임) */
   authorName?: string;
 
-  /** 문의(비공개)용 */
+  /** 비공개(문의 등) */
   isPrivate?: boolean;
   passwordHash?: string;
 

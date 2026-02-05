@@ -5,66 +5,30 @@ export const metadata = {
   description: "BLUEDEAL 소개",
 };
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link className="text-white/80 hover:text-white" href={href}>
-      {children}
-    </Link>
-  );
-}
-
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#060B1A] text-white">
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#060B1A]/70 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-cyan-400/60 to-blue-500/40" />
-            <div className="leading-tight">
-              <div className="text-sm font-semibold tracking-wide">BLUEDEAL</div>
-              <div className="text-[11px] text-white/60">소개</div>
-            </div>
+    <div className="space-y-6">
+      <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h1 className="text-2xl font-semibold tracking-tight">소개</h1>
+        <p className="mt-2 text-sm text-white/70">
+          BLUEDEAL은 PC 부품/본체 가격현황과 IT 소식, 커뮤니티, 핫딜을 한 곳에 모으는 것을 목표로 하는 MVP입니다.
+        </p>
+      </section>
+
+      <section className="rounded-2xl border border-white/10 bg-white/5 p-6 text-sm text-white/70">
+        <div className="font-semibold text-white">현재 단계</div>
+        <ul className="mt-2 list-disc space-y-1 pl-5">
+          <li>게시판 글 작성/열람: 브라우저 localStorage 기반</li>
+          <li>가격현황: 정적 JSON 또는 VPS API 연동(환경변수 PRICE_API_BASE)</li>
+          <li>핫딜: 샘플 데이터 + /go 리다이렉트(제휴 URL 변환)</li>
+        </ul>
+
+        <div className="mt-4">
+          <Link className="text-cyan-200 hover:underline" href="/">
+            홈으로 돌아가기 →
           </Link>
-
-          <nav className="flex items-center gap-5 text-sm">
-            <NavLink href="/it">IT 소식</NavLink>
-            <NavLink href="/community">커뮤니티</NavLink>
-            <NavLink href="/prices">가격현황</NavLink>
-            <NavLink href="/">핫딜</NavLink>
-            <NavLink href="/contact">문의</NavLink>
-          </nav>
         </div>
-      </header>
-
-      <main className="mx-auto max-w-6xl space-y-6 px-4 py-8">
-        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h1 className="text-2xl font-semibold tracking-tight">BLUEDEAL은 뭐 하는 곳?</h1>
-          <p className="mt-2 text-sm text-white/70">
-            PC 부품/본체 가격을 보기 쉽게 모으고, 구매 판단을 빠르게 돕는 것을 목표로 합니다.
-          </p>
-        </section>
-
-        <section className="rounded-2xl border border-white/10 bg-white/5 p-6 text-sm text-white/70">
-          <div className="font-semibold text-white">운영 원칙</div>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>가격은 일정 주기로 수집/정리하며, 마지막 업데이트 시간을 표시합니다.</li>
-            <li>제휴 링크가 포함될 수 있으며, 고지 문구를 명확히 제공합니다.</li>
-            <li>잘못된 가격/링크는 빠르게 수정합니다(제보 환영).</li>
-          </ul>
-        </section>
-
-        <section className="rounded-2xl border border-white/10 bg-white/5 p-6 text-sm text-white/70">
-          <div className="font-semibold text-white">MVP 상태(중요)</div>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>커뮤니티/문의 글 작성은 현재 브라우저(localStorage) 기준으로 동작합니다.</li>
-            <li>실제 운영(다른 사용자와 공유/관리)을 하려면 VPS API/DB 연동이 필요합니다.</li>
-          </ul>
-        </section>
-      </main>
-
-      <footer className="border-t border-white/10 py-8">
-        <div className="mx-auto max-w-6xl px-4 text-sm text-white/60">© {new Date().getFullYear()} BLUEDEAL</div>
-      </footer>
+      </section>
     </div>
   );
 }

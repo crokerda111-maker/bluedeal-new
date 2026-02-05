@@ -1,95 +1,124 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
+import { IT_BOARD, POST_TYPE_LABEL, POST_TYPE_OPTIONS } from "../../lib/boardConfig";
+import { MOCK_POSTS } from "../../lib/mockPosts";
+import type { Post, PostType } from "../../lib/postTypes";
+import { formatKoreanDate, getLocalPostsByBoard } from "../../lib/postStorage";
 
-export const metadata = {
-  title: "IT 소식 | BLUEDEAL",
-  description: "IT 소식 모아보기",
-};
-
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link className="text-white/80 hover:text-white" href={href}>
-      {children}
-    </Link>
-  );
+function mergePosts(local: Post[], seed: Post[]): Post[] {
+  const map = new Map<string, Post>();
+  for (const p of [...seed, ...local]) map.set(p.id, p);
+  return Array.from(map.values()).sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
 }
 
-const SEED_NEWS = [
-  {
-    title: "(샘플) 그래픽카드 신제품 루머/요약 모음",
-    badge: "GPU",
-    summary: "정리형 글: 출시 일정/가격대/성능 루머는 변동될 수 있습니다.",
-  },
-  {
-    title: "(샘플) DDR5 가격 흐름 한눈에 보기",
-    badge: "RAM",
-    summary: "가격현황 페이지 기준으로 체감 변동 포인트를 정리합니다.",
-  },
-  {
-    title: "(샘플) Windows/드라이버 업데이트 주의사항",
-    badge: "TIP",
-    summary: "문제 발생 빈도가 높은 케이스를 짧게 정리합니다.",
-  },
-];
-
 export default function ITNewsPage() {
+  const [typeFilter, setTypeFilter] = useState<"all" | PostType>("all");
+  const [localPosts, setLocalPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    const refresh = () => setLocalPosts(getLocalPostsByBoard("it"));
+    refresh();
+
+    const onStorage = (e: StorageEvent) => {
+      if (e.key && e.key.includes("bluedeal_posts_v1")) refresh();
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
+
+  const merged = useMemo(() => {
+    const seed = MOCK_POSTS.filter((p) => p.boardKey === "it");
+    return mergePosts(localPosts, seed);
+  }, [localPosts]);
+
+  const filtered = useMemo(() => {
+    if (typeFilter === "all") return merged;
+    return merged.filter((p) => p.type === typeFilter);
+  }, [merged, typeFilter]);
+
   return (
-    <div className="min-h-screen bg-[#060B1A] text-white">
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#060B1A]/70 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-cyan-400/60 to-blue-500/40" />
-            <div className="leading-tight">
-              <div className="text-sm font-semibold tracking-wide">BLUEDEAL</div>
-              <div className="text-[11px] text-white/60">IT 소식</div>
-            </div>
-          </Link>
-
-          <nav className="flex items-center gap-5 text-sm">
-            <NavLink href="/it">IT 소식</NavLink>
-            <NavLink href="/community">커뮤니티</NavLink>
-            <NavLink href="/prices">가격현황</NavLink>
-            <NavLink href="/">핫딜</NavLink>
-            <NavLink href="/contact">문의</NavLink>
-          </nav>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-6xl space-y-8 px-4 py-8">
-        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h1 className="text-2xl font-semibold tracking-tight">IT 소식</h1>
-          <p className="mt-2 text-sm text-white/70">
-            초기 구색용 섹션입니다. 다음 단계에서 RSS/크롤링/에디터 방식 중 하나로 실제 콘텐츠로 교체하면 됩니다.
-          </p>
-        </section>
-
-        <section className="grid gap-4 lg:grid-cols-3">
-          {SEED_NEWS.map((n) => (
-            <div key={n.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-white/70">
-                {n.badge}
-              </div>
-              <div className="mt-3 text-lg font-semibold leading-snug">{n.title}</div>
-              <div className="mt-2 text-sm text-white/70">{n.summary}</div>
-              <div className="mt-4 text-[12px] text-white/50">※ 샘플 콘텐츠 (운영 방식 확정 시 교체)</div>
-            </div>
-          ))}
-        </section>
-
-        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <div className="text-sm text-white/70">
-            <div className="font-semibold text-white">다음 단계 옵션</div>
-            <ul className="mt-2 list-disc space-y-1 pl-5">
-              <li>RSS 기반: 빠르고 안정적(출처 명확)</li>
-              <li>요약/큐레이션: 짧은 요약 + 관련 링크 방식</li>
-              <li>직접 작성: 컨텐츠 품질은 좋지만 운영 부담 증가</li>
-            </ul>
+    <div className="space-y-6">
+      <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+          <div>
+            <h1 className="text-2xl font-semibold tracking-tight">{IT_BOARD.title}</h1>
+            <p className="mt-2 text-sm text-white/70">{IT_BOARD.description}</p>
+            {IT_BOARD.writeHint ? <p className="mt-2 text-[12px] text-white/50">{IT_BOARD.writeHint}</p> : null}
           </div>
-        </section>
-      </main>
 
-      <footer className="border-t border-white/10 py-8">
-        <div className="mx-auto max-w-6xl px-4 text-sm text-white/60">© {new Date().getFullYear()} BLUEDEAL</div>
-      </footer>
+          <Link
+            href="/it/write"
+            className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950"
+          >
+            글쓰기
+          </Link>
+        </div>
+      </section>
+
+      <section className="flex flex-wrap items-center gap-2">
+        <button
+          onClick={() => setTypeFilter("all")}
+          className={`rounded-full border px-3 py-1.5 text-sm ${
+            typeFilter === "all"
+              ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
+              : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
+          }`}
+        >
+          전체
+        </button>
+
+        {POST_TYPE_OPTIONS.map((o) => (
+          <button
+            key={o.value}
+            onClick={() => setTypeFilter(o.value)}
+            className={`rounded-full border px-3 py-1.5 text-sm ${
+              typeFilter === o.value
+                ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
+                : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
+            }`}
+            title={o.hint}
+          >
+            {o.label}
+          </button>
+        ))}
+      </section>
+
+      <section className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+        <table className="w-full text-left text-sm">
+          <thead className="border-b border-white/10 bg-white/5 text-white/70">
+            <tr>
+              <th className="px-4 py-3 text-left">말머리</th>
+              <th className="px-4 py-3 text-left">제목</th>
+              <th className="px-4 py-3 text-left">작성자</th>
+              <th className="px-4 py-3 text-left">작성일</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.length === 0 ? (
+              <tr>
+                <td colSpan={4} className="px-4 py-10 text-center text-white/60">
+                  아직 글이 없습니다.
+                </td>
+              </tr>
+            ) : (
+              filtered.map((p) => (
+                <tr key={p.id} className="border-b border-white/5 hover:bg-white/5">
+                  <td className="px-4 py-3 text-white/70">{POST_TYPE_LABEL[p.type]}</td>
+                  <td className="px-4 py-3">
+                    <Link className="text-white/85 hover:underline" href={`/it/${p.id}`}>
+                      {p.title}
+                    </Link>
+                  </td>
+                  <td className="px-4 py-3 text-white/70">{p.authorName ?? "익명"}</td>
+                  <td className="px-4 py-3 text-white/70">{formatKoreanDate(p.createdAt)}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </section>
     </div>
   );
 }
