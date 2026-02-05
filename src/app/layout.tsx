@@ -17,7 +17,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="absolute top-52 left-[-160px] h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-[95px]" />
           <div className="absolute bottom-[-220px] right-[-160px] h-[560px] w-[560px] rounded-full bg-indigo-500/14 blur-[120px]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(30,58,138,0.25),transparent_55%),radial-gradient(ellipse_at_bottom,rgba(34,211,238,0.12),transparent_60%)]" />
-          <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:84px_84px]" />
+          {/* grid (slightly more visible to match the original BLUEDEAL look) */}
+          <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:84px_84px]" />
         </div>
 
         <div className="relative flex min-h-screen flex-col">
