@@ -88,3 +88,61 @@ DNS 반영이 지연될 수 있으니, 배포 도메인과 별개로 운영 중�
 - 핫딜 “작성/수정 폼(구조화)”을 실제 페이지로 붙이기
 - outbound_links/outbound_clicks DB 테이블로 교체
 - 포인트/레벨 시스템 붙이기
+
+
+## 8) 가격현황(/prices)
+가격현황 페이지가 추가되었습니다.
+
+- 허브: `src/app/prices/page.tsx`
+- 카테고리(동적 라우트): `src/app/prices/[category]/page.tsx`
+- 카테고리 목록: `src/lib/priceCategories.ts`
+- 데이터 fetch: `src/lib/prices.ts`
+- (임시) 샘플 데이터: `src/lib/mockPrices.ts`
+
+### 데이터 연동(권장)
+Vercel(프론트)에서 VPS(가격 API)의 JSON을 읽어옵니다.
+
+`.env.local` 또는 Vercel Environment Variables에 아래를 설정하세요.
+```env
+PRICE_API_BASE=https://api.bluedeal.co.kr
+```
+
+VPS에서는 다음 파일을 제공하면 됩니다.
+- `GET /meta.json`
+- `GET /prices/ram.json`
+- `GET /prices/cpu.json`
+- `GET /prices/motherboard.json`
+- `GET /prices/gpu.json`
+- `GET /prices/cooler.json`
+- `GET /prices/halfpc.json`
+- `GET /prices/fullpc.json`
+
+예시(JSON)
+```json
+{
+  "category": "ram",
+  "updatedAt": "2026-02-06T09:00:00+09:00",
+  "items": [
+    {
+      "id": "ram-1",
+      "name": "제품명",
+      "spec": "스펙 요약",
+      "price": 129000,
+      "low7d": 125000,
+      "low30d": 119000,
+      "change24hPct": -0.8,
+      "url": "https://example.com",
+      "goCode": "d1",
+      "source": "sample"
+    }
+  ]
+}
+```
+
+### 갱신 주기
+현재 사이트 가정: **매일 09:00 / 17:00 (2회 갱신)**
+
+VPS 크론 예시:
+```bash
+0 9,17 * * * /usr/bin/python3 /srv/bluedeal-api/bin/update_prices.py >> /var/log/bluedeal-prices.log 2>&1
+```

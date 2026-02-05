@@ -165,17 +165,17 @@ export default function Page() {
             </div>
 
             <nav className="hidden items-center gap-6 text-sm text-white/75 md:flex">
-              <a className="hover:text-white" href="#">
+              <a className="hover:text-white" href="/">
                 핫딜
               </a>
-              <a className="hover:text-white" href="#">
-                카테고리
+              <a className="hover:text-white" href="/prices">
+                가격현황
               </a>
-              <a className="hover:text-white" href="#">
-                가격추적
+              <a className="hover:text-white" href="/guide">
+                가이드
               </a>
-              <a className="hover:text-white" href="#">
-                커뮤니티
+              <a className="hover:text-white" href="/contact">
+                문의
               </a>
             </nav>
 
