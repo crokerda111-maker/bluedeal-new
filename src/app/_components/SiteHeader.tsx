@@ -100,7 +100,7 @@ export default function SiteHeader() {
             </div>
             <div className="leading-tight">
               <div className="text-sm font-semibold tracking-tight">BLUEDEAL</div>
-              <div className="text-xs text-white/55">IT · 커뮤니티 · 가격 · 핫딜</div>
+              <div className="text-xs text-white/55">IT · 가격 · 커뮤니티 · 핫딜</div>
             </div>
           </Link>
 
@@ -110,17 +110,6 @@ export default function SiteHeader() {
               IT 소식
             </Link>
 
-            <Dropdown label="커뮤니티" href="/community">
-              <div className="px-4 py-2 text-xs text-white/45">바로가기</div>
-              <DropItem href="/community">커뮤니티 홈</DropItem>
-              <div className="my-2 h-px bg-white/10" />
-              {communityItems.map((b) => (
-                <DropItem key={b.key} href={`/community/${b.slug}`}>
-                  {b.title}
-                </DropItem>
-              ))}
-            </Dropdown>
-
             <Dropdown label="가격현황" href="/prices">
               <div className="px-4 py-2 text-xs text-white/45">카테고리</div>
               <DropItem href="/prices">전체 보기</DropItem>
@@ -128,6 +117,17 @@ export default function SiteHeader() {
               {priceItems.map((c) => (
                 <DropItem key={c.key} href={`/prices/${c.key}`}>
                   {c.shortTitle}
+                </DropItem>
+              ))}
+            </Dropdown>
+
+            <Dropdown label="커뮤니티" href="/community">
+              <div className="px-4 py-2 text-xs text-white/45">바로가기</div>
+              <DropItem href="/community">커뮤니티 홈</DropItem>
+              <div className="my-2 h-px bg-white/10" />
+              {communityItems.map((b) => (
+                <DropItem key={b.key} href={`/community/${b.slug}`}>
+                  {b.title}
                 </DropItem>
               ))}
             </Dropdown>
@@ -183,15 +183,15 @@ export default function SiteHeader() {
           </Link>
           <Link
             className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
-            href="/community"
-          >
-            커뮤니티
-          </Link>
-          <Link
-            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
             href="/prices"
           >
             가격현황
+          </Link>
+          <Link
+            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
+            href="/community"
+          >
+            커뮤니티
           </Link>
           <Link className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10" href="/hot">
             핫딜
