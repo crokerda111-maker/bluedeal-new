@@ -1,6 +1,7 @@
 import "./globals.css";
 import SiteHeader from "./_components/SiteHeader";
 import SiteFooter from "./_components/SiteFooter";
+import AuthProvider from "./_components/AuthProvider";
 
 export const metadata = {
   title: "BLUEDEAL",
@@ -21,11 +22,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	          <div className="absolute inset-0 opacity-[0.22] [background-image:linear-gradient(to_right,rgba(148,163,184,0.28)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.28)_1px,transparent_1px)] [background-size:80px_80px]" />
         </div>
 
-        <div className="relative flex min-h-screen flex-col">
-          <SiteHeader />
-          <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">{children}</main>
-          <SiteFooter />
-        </div>
+        <AuthProvider>
+          <div className="relative flex min-h-screen flex-col">
+            <SiteHeader />
+            <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">{children}</main>
+            <SiteFooter />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

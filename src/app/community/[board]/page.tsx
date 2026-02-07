@@ -3,47 +3,46 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getCommunityBoard, POST_TYPE_LABEL, POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
-import { MOCK_POSTS } from "../../../lib/mockPosts";
 import type { Post, PostType } from "../../../lib/postTypes";
-import { formatKoreanDate, getLocalPostsByBoard } from "../../../lib/postStorage";
-
-function mergePosts(local: Post[], seed: Post[]): Post[] {
-  const map = new Map<string, Post>();
-  for (const p of [...seed, ...local]) {
-    // local 우선
-    map.set(p.id, p);
-  }
-  return Array.from(map.values()).sort((x, y) => (x.createdAt < y.createdAt ? 1 : -1));
-}
+import { formatKoreanDate } from "../../../lib/postStorage";
+import { apiListBoardPosts, mapApiPostToPost } from "../../../lib/apiClient";
 
 export default function CommunityBoardPage({ params }: { params: { board: string } }) {
   const board = getCommunityBoard(params.board);
   const [typeFilter, setTypeFilter] = useState<"all" | PostType>("all");
-  const [localPosts, setLocalPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!board) return;
 
-    const refresh = () => setLocalPosts(getLocalPostsByBoard(board.key));
-    refresh();
+    let cancelled = false;
+    (async () => {
+      setLoading(true);
+      try {
+        const data = await apiListBoardPosts(board.slug, 1, 50);
+        if (cancelled) return;
+        setPosts(data.items.map(mapApiPostToPost));
+        setError(null);
+      } catch (e: any) {
+        if (cancelled) return;
+        setPosts([]);
+        setError(e?.message ?? "게시글을 불러오지 못했습니다.");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
 
-    const onStorage = (e: StorageEvent) => {
-      if (e.key && e.key.includes("bluedeal_posts_v1")) refresh();
+    return () => {
+      cancelled = true;
     };
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
   }, [board]);
 
-  const merged = useMemo(() => {
-    if (!board) return [];
-    const seed = MOCK_POSTS.filter((p) => p.boardKey === board.key);
-    return mergePosts(localPosts, seed);
-  }, [board, localPosts]);
-
   const filtered = useMemo(() => {
-    if (typeFilter === "all") return merged;
-    return merged.filter((p) => p.type === typeFilter);
-  }, [merged, typeFilter]);
+    if (typeFilter === "all") return posts;
+    return posts.filter((p) => p.type === typeFilter);
+  }, [posts, typeFilter]);
 
   if (!board) {
     return (
@@ -115,7 +114,19 @@ export default function CommunityBoardPage({ params }: { params: { board: string
             </tr>
           </thead>
           <tbody>
-            {filtered.length === 0 ? (
+            {loading ? (
+              <tr>
+                <td colSpan={4} className="px-4 py-10 text-center text-white/60">
+                  불러오는 중…
+                </td>
+              </tr>
+            ) : error ? (
+              <tr>
+                <td colSpan={4} className="px-4 py-10 text-center text-red-200">
+                  {error}
+                </td>
+              </tr>
+            ) : filtered.length === 0 ? (
               <tr>
                 <td colSpan={4} className="px-4 py-10 text-center text-white/60">
                   아직 글이 없습니다. 첫 글을 작성해 보세요.

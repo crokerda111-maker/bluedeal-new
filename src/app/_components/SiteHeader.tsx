@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { COMMUNITY_BOARDS } from "../../lib/boardConfig";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
 import { CATEGORIES as DEAL_CATEGORIES } from "../../lib/mockDeals";
-import { getNickname, onProfileChanged, setNickname } from "../../lib/profile";
+import { useAuth } from "./AuthProvider";
 
 function cn(...v: Array<string | false | null | undefined>) {
   return v.filter(Boolean).join(" ");
@@ -82,22 +82,10 @@ function DropItem({ href, children }: { href: string; children: React.ReactNode 
 }
 
 export default function SiteHeader() {
-  const [nickname, setNickState] = useState("게스트");
-
-  useEffect(() => {
-    setNickState(getNickname("게스트"));
-    const off = onProfileChanged(() => setNickState(getNickname("게스트")));
-    return () => off();
-  }, []);
+  const { user, loading, logout } = useAuth();
 
   const communityItems = useMemo(() => COMMUNITY_BOARDS, []);
   const priceItems = useMemo(() => PRICE_CATEGORIES, []);
-
-  const setNicknamePrompt = () => {
-    const next = prompt("닉네임을 입력하세요 (최대 20자)", nickname === "게스트" ? "" : nickname);
-    if (!next) return;
-    setNickname(next);
-  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#060B1A]/70 backdrop-blur">
@@ -161,18 +149,30 @@ export default function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={setNicknamePrompt}
+            <Link
+              href="/account"
               className={cn(
                 "inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 hover:bg-white/10",
               )}
-              type="button"
-              title="닉네임 설정"
+              title={user ? "내 계정" : "로그인"}
             >
               <span className="inline-block h-2.5 w-2.5 rounded-full bg-cyan-300/80" />
-              <span className="max-w-[120px] truncate">{nickname}</span>
-              <span className="text-white/40">설정</span>
-            </button>
+              <span className="max-w-[140px] truncate">
+                {loading ? "확인 중" : user ? user.nickname : "로그인"}
+              </span>
+            </Link>
+
+            {user ? (
+              <button
+                type="button"
+                onClick={() => {
+                  void logout();
+                }}
+                className="rounded-xl border border-white/10 bg-white/0 px-3 py-2 text-sm text-white/70 hover:bg-white/10 hover:text-white"
+              >
+                로그아웃
+              </button>
+            ) : null}
           </div>
         </div>
 

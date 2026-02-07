@@ -2,112 +2,130 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { getBoardByKey, POST_TYPE_LABEL, boardKeyToPath } from "../../lib/boardConfig";
-import { MOCK_POSTS } from "../../lib/mockPosts";
-import type { Post } from "../../lib/postTypes";
-import { loadLocalPosts, formatKoreanDate } from "../../lib/postStorage";
+import { COMMUNITY_BOARDS } from "../../lib/boardConfig";
+import { apiListBoardPosts, mapApiPostToPost } from "../../lib/apiClient";
+import { formatKoreanDate } from "../../lib/postStorage";
 
-function cn(...v: Array<string | false | null | undefined>) {
-  return v.filter(Boolean).join(" ");
-}
+type FeedPost = {
+  id: string;
+  title: string;
+  boardKey: string;
+  authorName: string;
+  createdAt: string;
+};
 
-function mergePosts(local: Post[], seed: Post[]): Post[] {
-  const map = new Map<string, Post>();
-  // local 우선
-  for (const p of [...seed, ...local]) map.set(p.id, p);
-  return Array.from(map.values()).sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
-}
+export default function RealtimePosts() {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [posts, setPosts] = useState<FeedPost[]>([]);
 
-function postHref(p: Post): string {
-  if (p.boardKey === "it") return `/it/${p.id}`;
-  if (p.boardKey === "inquiry") return `/contact/${p.id}`;
-  return `/community/${p.boardKey}/${p.id}`;
-}
-
-export default function RealtimePosts({
-  limit = 10,
-  showHeader = true,
-  className,
-}: {
-  limit?: number;
-  showHeader?: boolean;
-  className?: string;
-}) {
-  const [localPosts, setLocalPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    const refresh = () => setLocalPosts(loadLocalPosts());
-    refresh();
-
-    const onStorage = (e: StorageEvent) => {
-      if (e.key && e.key.includes("bluedeal_posts_v1")) refresh();
-    };
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
+  const slugs = useMemo(() => {
+    const communitySlugs = COMMUNITY_BOARDS.map((b) => b.slug);
+    return ["it", ...communitySlugs];
   }, []);
 
-  const merged = useMemo(() => {
-    // 홈에는 문의글은 제외(구색/노출 최소)
-    const local = localPosts.filter((p) => p.boardKey !== "inquiry");
-    const seed = MOCK_POSTS.filter((p) => p.boardKey !== "inquiry");
-    return mergePosts(local, seed).slice(0, limit);
-  }, [localPosts, limit]);
+  useEffect(() => {
+    let mounted = true;
+
+    (async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const results = await Promise.all(
+          slugs.map((slug) =>
+            apiListBoardPosts(slug, 1, 3).catch(() => ({ items: [], page: 1, page_size: 3, total: 0 }))
+          )
+        );
+
+        const all = results
+          .flatMap((r) => r.items)
+          .map(mapApiPostToPost)
+          .sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1))
+          .slice(0, 6)
+          .map((p) => ({
+            id: p.id,
+            title: p.title,
+            boardKey: p.boardKey,
+            authorName: p.authorName,
+            createdAt: p.createdAt,
+          }));
+
+        if (mounted) setPosts(all);
+      } catch (e: any) {
+        if (mounted) {
+          setError(e?.message ?? "실시간 목록을 불러오지 못했습니다.");
+          setPosts([]);
+        }
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
+  }, [slugs]);
 
   return (
-    <div className={cn("bd-surface-md p-4", className)}>
-      {showHeader ? (
-        <div className="flex items-center justify-between">
-          <div className="text-sm font-semibold">실시간 게시글</div>
-          <div className="text-xs text-white/55">작성 폼은 MVP(local)로 동작합니다</div>
+    <section className="mt-10">
+      <div className="mb-3 flex items-end justify-between">
+        <div>
+          <h2 className="text-base font-semibold text-white">실시간 게시글</h2>
+          <p className="mt-1 text-xs text-white/60">IT + 커뮤니티 최신</p>
         </div>
-      ) : null}
+        <div className="flex items-center gap-2">
+          <Link
+            href="/community"
+            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 hover:bg-white/10"
+          >
+            커뮤니티
+          </Link>
+          <Link
+            href="/it"
+            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 hover:bg-white/10"
+          >
+            IT 소식
+          </Link>
+        </div>
+      </div>
 
-      <div className={cn("divide-y divide-white/10", showHeader && "mt-3")}>
-        {merged.length === 0 ? (
-          <div className="py-10 text-center text-sm text-white/60">아직 게시글이 없습니다.</div>
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+        {loading ? (
+          <div className="text-sm text-white/70">불러오는 중...</div>
+        ) : error ? (
+          <div className="text-sm text-white/70">{error}</div>
+        ) : posts.length === 0 ? (
+          <div className="text-sm text-white/70">아직 게시글이 없습니다.</div>
         ) : (
-          merged.map((p) => {
-            const board = getBoardByKey(p.boardKey);
-            const boardTitle = board?.title ?? String(p.boardKey);
-            const href = postHref(p);
-
-            return (
-              <div key={p.id} className="flex items-center justify-between gap-4 py-3">
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] text-white/70">
-                      {boardTitle}
-                    </span>
-                    <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-2 py-0.5 text-[11px] text-cyan-100">
-                      {POST_TYPE_LABEL[p.type]}
-                    </span>
-                    {p.authorName ? (
-                      <span className="text-[11px] text-white/50">by {p.authorName}</span>
-                    ) : null}
-                  </div>
-
-                  <Link href={href} className="mt-1 block truncate text-sm text-white/85 hover:underline">
-                    {p.title}
+          <ul className="space-y-3">
+            {posts.map((p) => {
+              const href = p.boardKey === "it" ? `/it/${p.id}` : `/community/${p.boardKey}/${p.id}`;
+              return (
+                <li
+                  key={`${p.boardKey}-${p.id}`}
+                  className="rounded-xl border border-white/10 bg-white/5 p-3 hover:bg-white/10"
+                >
+                  <Link href={href} className="block">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="truncate text-sm font-semibold text-white">{p.title}</div>
+                        <div className="mt-1 flex items-center gap-2 text-[11px] text-white/60">
+                          <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5">
+                            {p.boardKey}
+                          </span>
+                          <span>{p.authorName}</span>
+                        </div>
+                      </div>
+                      <div className="shrink-0 text-[11px] text-white/50">{formatKoreanDate(p.createdAt)}</div>
+                    </div>
                   </Link>
-
-                  <div className="mt-1 text-[12px] text-white/50">{formatKoreanDate(p.createdAt)}</div>
-                </div>
-
-                <div className="shrink-0">
-                  <Link
-                    href={boardKeyToPath(p.boardKey)}
-                    className={cn(
-                      "rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/70 hover:bg-white/10",
-                    )}
-                  >
-                    게시판 →
-                  </Link>
-                </div>
-              </div>
-            );
-          })
+                </li>
+              );
+            })}
+          </ul>
         )}
       </div>
-    </div>
+    </section>
   );
 }

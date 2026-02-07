@@ -3,40 +3,43 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { IT_BOARD, POST_TYPE_LABEL, POST_TYPE_OPTIONS } from "../../lib/boardConfig";
-import { MOCK_POSTS } from "../../lib/mockPosts";
 import type { Post, PostType } from "../../lib/postTypes";
-import { formatKoreanDate, getLocalPostsByBoard } from "../../lib/postStorage";
-
-function mergePosts(local: Post[], seed: Post[]): Post[] {
-  const map = new Map<string, Post>();
-  for (const p of [...seed, ...local]) map.set(p.id, p);
-  return Array.from(map.values()).sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
-}
+import { formatKoreanDate } from "../../lib/postStorage";
+import { apiListBoardPosts, mapApiPostToPost } from "../../lib/apiClient";
 
 export default function ITNewsPage() {
   const [typeFilter, setTypeFilter] = useState<"all" | PostType>("all");
-  const [localPosts, setLocalPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const refresh = () => setLocalPosts(getLocalPostsByBoard("it"));
-    refresh();
+    let ignore = false;
 
-    const onStorage = (e: StorageEvent) => {
-      if (e.key && e.key.includes("bluedeal_posts_v1")) refresh();
+    (async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const data = await apiListBoardPosts("it", 1, 100);
+        if (ignore) return;
+        setPosts((data.items ?? []).map(mapApiPostToPost));
+      } catch (e: any) {
+        if (ignore) return;
+        setError(e?.message ?? "게시글을 불러오지 못했습니다.");
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    })();
+
+    return () => {
+      ignore = true;
     };
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
   }, []);
 
-  const merged = useMemo(() => {
-    const seed = MOCK_POSTS.filter((p) => p.boardKey === "it");
-    return mergePosts(localPosts, seed);
-  }, [localPosts]);
-
   const filtered = useMemo(() => {
-    if (typeFilter === "all") return merged;
-    return merged.filter((p) => p.type === typeFilter);
-  }, [merged, typeFilter]);
+    if (typeFilter === "all") return posts;
+    return posts.filter((p) => p.type === typeFilter);
+  }, [posts, typeFilter]);
 
   return (
     <div className="space-y-6">
@@ -96,7 +99,19 @@ export default function ITNewsPage() {
             </tr>
           </thead>
           <tbody>
-            {filtered.length === 0 ? (
+            {loading ? (
+              <tr>
+                <td colSpan={4} className="px-4 py-10 text-center text-white/60">
+                  불러오는 중...
+                </td>
+              </tr>
+            ) : error ? (
+              <tr>
+                <td colSpan={4} className="px-4 py-10 text-center text-white/60">
+                  {error}
+                </td>
+              </tr>
+            ) : filtered.length === 0 ? (
               <tr>
                 <td colSpan={4} className="px-4 py-10 text-center text-white/60">
                   아직 글이 없습니다.

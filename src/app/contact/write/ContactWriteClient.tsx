@@ -1,229 +1,155 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
-import type { InquiryVisibility, PostType } from "../../../lib/postTypes";
-import { createLocalPost } from "../../../lib/postStorage";
-import { getNickname, setNickname } from "../../../lib/profile";
+import { useRouter } from "next/navigation";
+import { useMemo, useState } from "react";
+import { INQUIRY_BOARD } from "../../../lib/boardConfig";
+import { apiCreatePost } from "../../../lib/apiClient";
+import { useAuth } from "../../_components/AuthProvider";
 
-function cn(...v: Array<string | false | null | undefined>) {
-  return v.filter(Boolean).join(" ");
-}
+type FormState = {
+  title: string;
+  content: string;
+  email: string;
+  orderId: string;
+};
 
-export default function ContactWritePage() {
+export default function ContactWriteClient() {
   const router = useRouter();
-  const sp = useSearchParams();
-  const initialVis = (sp.get("vis") as InquiryVisibility | null) ?? "public";
+  const { user, loading } = useAuth();
 
-  const [visibility, setVisibility] = useState<InquiryVisibility>(initialVis);
-  const [type, setType] = useState<PostType>("general");
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const [authorName, setAuthorName] = useState("게스트");
-  const [error, setError] = useState<string | null>(null);
+  const [form, setForm] = useState<FormState>({
+    title: "",
+    content: "",
+    email: "",
+    orderId: "",
+  });
   const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    setAuthorName(getNickname("게스트"));
-  }, []);
+  const canSubmit = useMemo(() => {
+    return !!form.title.trim() && !!form.content.trim() && !!form.email.trim();
+  }, [form.title, form.content, form.email]);
 
-  const changeNick = () => {
-    const next = prompt("닉네임을 입력하세요 (최대 20자)", authorName === "게스트" ? "" : authorName);
-    if (!next) return;
-    setNickname(next);
-    setAuthorName(getNickname("게스트"));
-  };
-
-  const onSubmit = async () => {
-    setError(null);
-
-    if (!title.trim()) return setError("제목을 입력하세요.");
-    if (!content.trim()) return setError("내용을 입력하세요.");
-
-    if (visibility === "private" && !password.trim()) {
-      return setError("비공개 문의는 비밀번호가 필요합니다.");
-    }
-
+  async function submit() {
+    if (!canSubmit || saving) return;
     setSaving(true);
+    setError(null);
     try {
-      const post = await createLocalPost({
-        boardKey: "inquiry",
-        type,
-        title,
-        content,
-        authorName: authorName || "게스트",
-        isPrivate: visibility === "private",
-        password: visibility === "private" ? password : undefined,
-        extra: { email },
-      });
+      const extra: Record<string, any> = {
+        email: form.email.trim(),
+      };
+      if (form.orderId.trim()) extra.order = form.orderId.trim();
 
-      router.push(`/contact/${post.id}`);
-    } catch {
-      setError("저장 중 오류가 발생했습니다.");
+      const res = await apiCreatePost(INQUIRY_BOARD.key, {
+        type: "general",
+        title: form.title.trim(),
+        content: form.content.trim(),
+        extra,
+        is_private: false,
+      });
+      const id = res.post?.id;
+      if (!id) throw new Error("서버가 글 ID를 반환하지 않았습니다.");
+      router.push(`/contact/${id}`);
+    } catch (e: any) {
+      setError(e?.message || "문의 등록에 실패했습니다.");
     } finally {
       setSaving(false);
     }
-  };
+  }
+
+  if (loading) {
+    return (
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-6 text-white/70">
+        로그인 상태 확인 중…
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <div className="text-white/90">문의 작성은 로그인이 필요합니다.</div>
+        <div className="mt-2 text-sm text-white/60">로그인 후 다시 작성해 주세요.</div>
+        <div className="mt-4">
+          <Link
+            href={`/account?tab=login&returnTo=${encodeURIComponent("/contact/write")}`}
+            className="inline-flex items-center rounded-xl bg-white/10 px-3 py-2 text-sm text-white hover:bg-white/15"
+          >
+            로그인 하러 가기
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <div className="text-sm text-white/60">문의</div>
-          <h1 className="text-2xl font-semibold tracking-tight">문의 작성</h1>
+    <div className="grid gap-4">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+        <div className="mb-3 text-sm text-white/70">
+          작성자: <span className="text-white/90">{user.nickname}</span>
         </div>
-        <Link className="text-sm text-cyan-200 hover:underline" href="/contact">
-          목록으로
-        </Link>
+
+        <label className="block text-sm text-white/80">제목</label>
+        <input
+          value={form.title}
+          onChange={(e) => setForm((p) => ({ ...p, title: e.target.value }))}
+          placeholder="문의 제목"
+          className="mt-1 w-full rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-white placeholder:text-white/40"
+        />
+
+        <div className="mt-4">
+          <label className="block text-sm text-white/80">이메일(답변 수신)</label>
+          <input
+            value={form.email}
+            onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+            placeholder="example@email.com"
+            className="mt-1 w-full rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-white placeholder:text-white/40"
+          />
+          <div className="mt-2 text-xs text-white/50">
+            민감한 개인정보는 입력하지 마세요.
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <label className="block text-sm text-white/80">주문번호(있으면)</label>
+          <input
+            value={form.orderId}
+            onChange={(e) => setForm((p) => ({ ...p, orderId: e.target.value }))}
+            placeholder="선택"
+            className="mt-1 w-full rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-white placeholder:text-white/40"
+          />
+        </div>
+
+        <div className="mt-4">
+          <label className="block text-sm text-white/80">내용</label>
+          <textarea
+            value={form.content}
+            onChange={(e) => setForm((p) => ({ ...p, content: e.target.value }))}
+            placeholder="문의 내용을 적어주세요."
+            rows={8}
+            className="mt-1 w-full rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-white placeholder:text-white/40"
+          />
+        </div>
+
+        {error ? <div className="mt-3 text-sm text-red-300">{error}</div> : null}
+
+        <div className="mt-6 flex items-center justify-end gap-2">
+          <Link
+            href="/contact"
+            className="rounded-xl bg-white/10 px-3 py-2 text-sm text-white hover:bg-white/15"
+          >
+            취소
+          </Link>
+          <button
+            disabled={!canSubmit || saving}
+            onClick={submit}
+            className="rounded-xl bg-brand-500 px-4 py-2 text-sm font-semibold text-black disabled:opacity-50"
+          >
+            {saving ? "등록 중…" : "등록"}
+          </button>
+        </div>
       </div>
-
-      <section className="bd-surface-md p-6">
-        <div className="grid gap-4">
-          {/* 작성자 */}
-          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-            <label className="block w-full md:max-w-sm">
-              <div className="text-sm text-white/80">작성자(닉네임)</div>
-              <input
-                value={authorName}
-                readOnly
-                className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 outline-none"
-              />
-            </label>
-            <button
-              onClick={changeNick}
-              className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-              type="button"
-            >
-              닉네임 변경
-            </button>
-          </div>
-
-          {/* 공개/비공개 */}
-          <div>
-            <div className="text-sm text-white/80">공개 설정</div>
-            <div className="mt-2 flex gap-2">
-              <button
-                type="button"
-                onClick={() => setVisibility("public")}
-                className={cn(
-                  "rounded-xl border px-3 py-2 text-sm",
-                  visibility === "public"
-                    ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
-                    : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10",
-                )}
-              >
-                🌐 공개
-              </button>
-              <button
-                type="button"
-                onClick={() => setVisibility("private")}
-                className={cn(
-                  "rounded-xl border px-3 py-2 text-sm",
-                  visibility === "private"
-                    ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
-                    : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10",
-                )}
-              >
-                🔒 비공개
-              </button>
-            </div>
-            <div className="mt-1 text-[12px] text-white/50">
-              비공개 글은 비밀번호를 입력한 사람만 열람할 수 있습니다.
-            </div>
-          </div>
-
-          {/* 말머리 */}
-          <label className="block">
-            <div className="text-sm text-white/80">말머리</div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {POST_TYPE_OPTIONS.map((o) => (
-                <button
-                  key={o.value}
-                  onClick={() => setType(o.value)}
-                  type="button"
-                  className={cn(
-                    "rounded-full border px-3 py-1.5 text-sm",
-                    type === o.value
-                      ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
-                      : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10",
-                  )}
-                  title={o.hint}
-                >
-                  {o.label}
-                </button>
-              ))}
-            </div>
-          </label>
-
-          {/* 제목/내용 */}
-          <label className="block">
-            <div className="text-sm text-white/80">제목</div>
-            <input
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
-              placeholder="제목"
-            />
-          </label>
-
-          <label className="block">
-            <div className="text-sm text-white/80">내용</div>
-            <textarea
-              rows={10}
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
-              placeholder="내용"
-            />
-          </label>
-
-          <label className="block">
-            <div className="text-sm text-white/80">연락 이메일(선택)</div>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
-              placeholder="reply@example.com"
-            />
-          </label>
-
-          {visibility === "private" ? (
-            <label className="block">
-              <div className="text-sm text-white/80">비밀번호</div>
-              <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-                className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
-                placeholder="비공개 글 열람용 비밀번호"
-              />
-            </label>
-          ) : null}
-
-          {error ? <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={onSubmit}
-              disabled={saving}
-              className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 disabled:opacity-60"
-            >
-              {saving ? "저장 중..." : "등록"}
-            </button>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10"
-            >
-              취소
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

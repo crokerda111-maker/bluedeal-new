@@ -18,7 +18,7 @@ export default function AboutPage() {
       <section className="bd-surface-md p-6 text-sm text-white/70">
         <div className="font-semibold text-white">현재 단계</div>
         <ul className="mt-2 list-disc space-y-1 pl-5">
-          <li>게시판 글 작성/열람: 브라우저 localStorage 기반</li>
+          <li>게시판 글 작성/열람: WordPress(VPS) Headless API 기반</li>
           <li>가격현황: 정적 JSON 또는 VPS API 연동(환경변수 PRICE_API_BASE)</li>
           <li>핫딜: 샘플 데이터 + /go 리다이렉트(제휴 URL 변환)</li>
         </ul>

@@ -2,239 +2,200 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
-import { getCommunityBoard, POST_TYPE_OPTIONS, type FieldDef } from "../../../../lib/boardConfig";
-import type { PostExtra, PostType } from "../../../../lib/postTypes";
-import { createLocalPost } from "../../../../lib/postStorage";
-import { getNickname, setNickname } from "../../../../lib/profile";
+import { useMemo, useState } from "react";
+import {
+  getCommunityBoard,
+  POST_TYPE_OPTIONS,
+  type ExtraField,
+} from "../../../../lib/boardConfig";
+import { apiCreatePost } from "../../../../lib/apiClient";
+import { useAuth } from "../../../_components/AuthProvider";
 
-function Field({ def, value, onChange }: { def: FieldDef; value: string; onChange: (v: string) => void }) {
-  const base =
-    "mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50";
-  const id = `f_${def.key}`;
-
+function Field({
+  label,
+  value,
+  onChange,
+  placeholder,
+  type = "text",
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  placeholder?: string;
+  type?: string;
+}) {
   return (
     <label className="block">
-      <div className="text-sm text-white/80">
-        {def.label}
-        {def.required ? <span className="text-cyan-200"> *</span> : null}
-      </div>
-
-      {def.type === "textarea" ? (
-        <textarea
-          id={id}
-          rows={4}
-          className={base}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder={def.placeholder}
-        />
-      ) : def.type === "select" ? (
-        <select id={id} className={base} value={value} onChange={(e) => onChange(e.target.value)}>
-          <option value="">선택</option>
-          {def.options?.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-      ) : (
-        <input
-          id={id}
-          type={def.type === "number" ? "number" : def.type === "url" ? "url" : "text"}
-          className={base}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder={def.placeholder}
-        />
-      )}
-
-      {def.help ? <div className="mt-1 text-[12px] text-white/50">{def.help}</div> : null}
+      <span className="text-sm text-white/70">{label}</span>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white outline-none placeholder:text-white/30 focus:border-white/20"
+      />
     </label>
   );
 }
 
-export default function CommunityWritePage({ params }: { params: { board: string } }) {
-  const router = useRouter();
+export default function CommunityWritePage({
+  params,
+}: {
+  params: { board: string };
+}) {
   const board = getCommunityBoard(params.board);
+  const router = useRouter();
+  const { user, loading } = useAuth();
 
-  const [type, setType] = useState<PostType>("general");
+  const [type, setType] = useState(board?.defaultType ?? "general");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [authorName, setAuthorName] = useState("게스트");
   const [extra, setExtra] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [saving, setSaving] = useState(false);
 
-  useEffect(() => {
-    setAuthorName(getNickname("게스트"));
-  }, []);
-
-  const requiredExtraKeys = useMemo(() => {
-    return (board?.extraFields ?? []).filter((f) => f.required).map((f) => f.key);
-  }, [board]);
-
-  const changeNick = () => {
-    const next = prompt("닉네임을 입력하세요 (최대 20자)", authorName === "게스트" ? "" : authorName);
-    if (!next) return;
-    setNickname(next);
-    setAuthorName(getNickname("게스트"));
-  };
+  const extraFields: ExtraField[] = useMemo(() => board?.extraFields ?? [], [board]);
 
   if (!board) {
     return (
-      <div className="bd-surface-md p-6">
-        <div className="text-lg font-semibold">없는 게시판</div>
-        <Link className="mt-4 inline-block text-sm text-cyan-200 hover:underline" href="/community">
-          커뮤니티로 돌아가기
-        </Link>
+      <div className="rounded-xl border border-white/10 bg-white/5 p-6 text-white">
+        존재하지 않는 게시판입니다.
       </div>
     );
   }
 
-  const onSubmit = async () => {
-    setError(null);
+  if (!loading && !user) {
+    const returnTo = `/community/${board.key}/write`;
+    return (
+      <div className="rounded-xl border border-white/10 bg-white/5 p-6 text-white">
+        <div className="text-lg font-semibold">로그인이 필요합니다</div>
+        <p className="mt-2 text-white/70">글쓰기는 로그인 후 사용할 수 있어요.</p>
+        <div className="mt-4 flex gap-2">
+          <Link
+            href={`/account?returnTo=${encodeURIComponent(returnTo)}`}
+            className="rounded-lg bg-white/10 px-4 py-2 text-sm hover:bg-white/15"
+          >
+            로그인/회원가입
+          </Link>
+          <Link
+            href={`/community/${board.key}`}
+            className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm hover:bg-white/10"
+          >
+            게시판으로
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const submit = async () => {
     if (!title.trim()) return setError("제목을 입력하세요.");
     if (!content.trim()) return setError("내용을 입력하세요.");
-
-    for (const k of requiredExtraKeys) {
-      if (!String(extra[k] ?? "").trim()) return setError(`'${k}' 항목을 입력/선택하세요.`);
-    }
-
-    setSaving(true);
+    setError(null);
+    setSubmitting(true);
     try {
-      const extraPayload: PostExtra = {};
-      for (const [k, v] of Object.entries(extra)) {
-        if (v === "") continue;
-        extraPayload[k] = v;
+      const extraPayload: Record<string, any> = {};
+      for (const f of extraFields) {
+        const raw = (extra[f.key] ?? "").trim();
+        if (!raw) continue;
+        extraPayload[f.key] = f.type === "number" ? Number(raw) : raw;
       }
 
-      const post = await createLocalPost({
-        boardKey: board.key,
+      const resp = await apiCreatePost(board.key, {
         type,
-        title,
-        content,
-        authorName: authorName || "게스트",
+        title: title.trim(),
+        content: content.trim(),
         extra: extraPayload,
+        is_private: false,
+        password: null,
       });
 
-      router.push(`/community/${board.slug}/${post.id}`);
-    } catch {
-      setError("저장 중 오류가 발생했습니다.");
+      router.push(`/community/${board.key}/${resp.post.id}`);
+    } catch (e: any) {
+      setError(e?.message ?? "저장에 실패했습니다.");
     } finally {
-      setSaving(false);
+      setSubmitting(false);
     }
   };
 
   return (
-    <div className="space-y-6">
+    <div className="rounded-xl border border-white/10 bg-white/5 p-6 text-white">
       <div className="flex items-center justify-between">
         <div>
-          <div className="text-sm text-white/60">{board.title}</div>
-          <h1 className="text-2xl font-semibold tracking-tight">글쓰기</h1>
+          <div className="text-xl font-semibold">{board.title} 글쓰기</div>
+          <div className="mt-1 text-sm text-white/60">작성자: {user?.nickname ?? ""}</div>
         </div>
-        <Link className="text-sm text-cyan-200 hover:underline" href={`/community/${board.slug}`}>
-          목록으로
+        <Link
+          href={`/community/${board.key}`}
+          className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm hover:bg-white/10"
+        >
+          목록
         </Link>
       </div>
 
-      <section className="bd-surface-md p-6">
-        {board.writeHint ? <div className="mb-4 text-sm text-white/70">{board.writeHint}</div> : null}
+      <div className="mt-6 grid gap-4">
+        <label className="block">
+          <span className="text-sm text-white/70">말머리</span>
+          <select
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            className="mt-1 w-full rounded-lg border border-white/10 bg-[#0b1320] px-3 py-2 text-white outline-none focus:border-white/20"
+          >
+            {POST_TYPE_OPTIONS.filter((t) => board.allowTypes.includes(t)).map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+        </label>
 
-        <div className="grid gap-4">
-          {/* 작성자 */}
-          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-            <label className="block w-full md:max-w-sm">
-              <div className="text-sm text-white/80">작성자(닉네임)</div>
-              <input
-                value={authorName}
-                readOnly
-                className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 outline-none"
+        <Field label="제목" value={title} onChange={setTitle} placeholder="제목" />
+
+        <label className="block">
+          <span className="text-sm text-white/70">내용</span>
+          <textarea
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="본문을 입력하세요"
+            rows={10}
+            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white outline-none placeholder:text-white/30 focus:border-white/20"
+          />
+        </label>
+
+        {extraFields.length > 0 ? (
+          <div className="grid gap-3 rounded-lg border border-white/10 bg-white/5 p-4">
+            <div className="text-sm font-semibold text-white/80">추가 정보</div>
+            {extraFields.map((f) => (
+              <Field
+                key={f.key}
+                label={f.label}
+                value={extra[f.key] ?? ""}
+                onChange={(v) => setExtra((prev) => ({ ...prev, [f.key]: v }))}
+                placeholder={f.placeholder}
+                type={f.type === "number" ? "number" : "text"}
               />
-            </label>
-            <button
-              onClick={changeNick}
-              className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-              type="button"
-            >
-              닉네임 변경
-            </button>
+            ))}
           </div>
+        ) : null}
 
-          {/* 말머리 */}
-          <label className="block">
-            <div className="text-sm text-white/80">말머리</div>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {POST_TYPE_OPTIONS.map((o) => (
-                <button
-                  key={o.value}
-                  onClick={() => setType(o.value)}
-                  type="button"
-                  className={`rounded-full border px-3 py-1.5 text-sm ${
-                    type === o.value
-                      ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
-                      : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
-                  }`}
-                  title={o.hint}
-                >
-                  {o.label}
-                </button>
-              ))}
-            </div>
-          </label>
+        {error ? <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-100">{error}</div> : null}
 
-          {/* 제목 */}
-          <label className="block">
-            <div className="text-sm text-white/80">제목</div>
-            <input
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="제목을 입력하세요"
-            />
-          </label>
-
-          {/* 본문 */}
-          <label className="block">
-            <div className="text-sm text-white/80">내용</div>
-            <textarea
-              rows={10}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              placeholder="본문을 입력하세요"
-            />
-          </label>
-
-          {(board.extraFields ?? []).map((f) => (
-            <Field
-              key={f.key}
-              def={f}
-              value={extra[f.key] ?? ""}
-              onChange={(v) => setExtra((prev) => ({ ...prev, [f.key]: v }))}
-            />
-          ))}
-
-          {error ? <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={onSubmit}
-              disabled={saving}
-              className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 disabled:opacity-60"
-            >
-              {saving ? "저장 중..." : "등록"}
-            </button>
-
-            <Link
-              href={`/community/${board.slug}`}
-              className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10"
-            >
-              취소
-            </Link>
-          </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={submit}
+            disabled={submitting}
+            className="rounded-lg bg-white/10 px-4 py-2 text-sm hover:bg-white/15 disabled:opacity-60"
+          >
+            {submitting ? "저장 중…" : "등록"}
+          </button>
+          <Link
+            href={`/community/${board.key}`}
+            className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm hover:bg-white/10"
+          >
+            취소
+          </Link>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
