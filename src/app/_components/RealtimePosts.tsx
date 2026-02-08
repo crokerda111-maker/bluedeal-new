@@ -40,12 +40,13 @@ export default function RealtimePosts() {
           )
         );
 
-        const all = results
+		// 타입을 명시해서(특히 authorName) Vercel 빌드에서 타입 추론이 흔들리지 않게 고정
+		const all: FeedPost[] = results
           .flatMap((r) => r.items)
           .map(mapApiPostToPost)
           .sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1))
           .slice(0, 6)
-          .map((p) => ({
+		  .map((p): FeedPost => ({
             id: p.id,
             title: p.title,
             boardKey: p.boardKey,
