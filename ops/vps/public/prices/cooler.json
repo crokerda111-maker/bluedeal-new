@@ -1,0 +1,22 @@
+{
+  "category": "cooler",
+  "updatedAt": "2026-02-09T22:16:53+09:00",
+  "items": [
+    {
+      "id": "cooler-sample-1",
+      "name": "공랭 타워 쿨러",
+      "spec": "공랭 / 157mm",
+      "price": 39000,
+      "source": "sample",
+      "url": "https://example.com"
+    },
+    {
+      "id": "cooler-sample-2",
+      "name": "수랭 360",
+      "spec": "수랭 / 360mm",
+      "price": 149000,
+      "source": "sample",
+      "url": "https://example.com"
+    }
+  ]
+}

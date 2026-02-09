@@ -1,0 +1,22 @@
+{
+  "category": "cpu",
+  "updatedAt": "2026-02-09T22:16:53+09:00",
+  "items": [
+    {
+      "id": "cpu-sample-1",
+      "name": "Ryzen 7 7800X3D",
+      "spec": "AM5 / 8C16T",
+      "price": 469000,
+      "source": "sample",
+      "url": "https://example.com"
+    },
+    {
+      "id": "cpu-sample-2",
+      "name": "Core i5-14600K",
+      "spec": "LGA1700 / 14C20T",
+      "price": 359000,
+      "source": "sample",
+      "url": "https://example.com"
+    }
+  ]
+}

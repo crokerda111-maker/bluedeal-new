@@ -1,0 +1,22 @@
+{
+  "category": "gpu",
+  "updatedAt": "2026-02-09T22:16:53+09:00",
+  "items": [
+    {
+      "id": "gpu-sample-1",
+      "name": "RTX 4070 SUPER",
+      "spec": "12GB",
+      "price": 849000,
+      "source": "sample",
+      "url": "https://example.com"
+    },
+    {
+      "id": "gpu-sample-2",
+      "name": "RX 7800 XT",
+      "spec": "16GB",
+      "price": 699000,
+      "source": "sample",
+      "url": "https://example.com"
+    }
+  ]
+}
