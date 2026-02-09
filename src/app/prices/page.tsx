@@ -55,7 +55,7 @@ export default async function PricesHubPage() {
         </ul>
         <div className="mt-3">
           자세한 내용/문의는{" "}
-          <Link className="text-cyan-200 hover:text-cyan-100" href="/contact/public">
+          <Link className="text-cyan-200 hover:text-cyan-100" href="/contact/write?vis=public">
             공개 문의 게시판
           </Link>
           에 남겨주세요.

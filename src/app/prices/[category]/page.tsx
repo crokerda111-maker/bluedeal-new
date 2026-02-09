@@ -121,7 +121,7 @@ export default async function PricesCategoryPage({ params }: { params: { categor
         </ul>
         <div className="mt-3">
           구매 팁/제휴 문의는{" "}
-          <Link className="text-cyan-200 hover:text-cyan-100" href="/contact/public">
+          <Link className="text-cyan-200 hover:text-cyan-100" href="/contact/write?vis=public">
             공개 문의 게시판
           </Link>
           에 남겨주세요.
