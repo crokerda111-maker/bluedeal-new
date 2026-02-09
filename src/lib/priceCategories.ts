@@ -1,6 +1,7 @@
 export type PriceCategoryKey =
   | "ram"
   | "cpu"
+  | "ssd"
   | "motherboard"
   | "gpu"
   | "cooler"
@@ -28,6 +29,13 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
     title: "CPU 가격현황",
     shortTitle: "CPU",
     description: "데스크탑 CPU 가격을 모아봅니다.",
+    unitHint: "원",
+  },
+  {
+    key: "ssd",
+    title: "SSD 가격현황",
+    shortTitle: "SSD",
+    description: "NVMe/SATA SSD 가격을 모아봅니다.",
     unitHint: "원",
   },
   {

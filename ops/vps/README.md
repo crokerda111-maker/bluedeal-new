@@ -99,6 +99,7 @@ sudo certbot --nginx -d blusedeal.co.kr -d www.blusedeal.co.kr
 - `/meta.json`
 - `/prices/ram.json`
 - `/prices/cpu.json`
+- `/prices/ssd.json`
 - `/prices/motherboard.json`
 - `/prices/gpu.json`
 - `/prices/cooler.json`

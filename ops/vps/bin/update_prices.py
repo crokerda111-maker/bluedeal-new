@@ -21,6 +21,7 @@ from zoneinfo import ZoneInfo
 CATEGORIES = [
   "ram",
   "cpu",
+  "ssd",
   "motherboard",
   "gpu",
   "cooler",
@@ -36,6 +37,10 @@ SAMPLE_ITEMS = {
   "cpu": [
     {"id": "cpu-sample-1", "name": "Ryzen 7 7800X3D", "spec": "AM5 / 8C16T", "price": 469000, "source": "sample", "url": "https://example.com"},
     {"id": "cpu-sample-2", "name": "Core i5-14600K", "spec": "LGA1700 / 14C20T", "price": 359000, "source": "sample", "url": "https://example.com"},
+  ],
+  "ssd": [
+    {"id": "ssd-sample-1", "name": "NVMe SSD 1TB", "spec": "PCIe 4.0 / 1TB", "price": 99000, "source": "sample", "url": "https://example.com"},
+    {"id": "ssd-sample-2", "name": "SATA SSD 1TB", "spec": "SATA / 1TB", "price": 69000, "source": "sample", "url": "https://example.com"},
   ],
   "motherboard": [
     {"id": "mb-sample-1", "name": "B650 ATX 보드", "spec": "B650 / ATX / Wi‑Fi", "price": 219000, "source": "sample", "url": "https://example.com"},

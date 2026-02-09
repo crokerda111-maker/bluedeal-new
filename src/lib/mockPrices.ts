@@ -58,6 +58,7 @@ const baseItems = (prefix: string): PriceItem[] => [
 const MOCK: Record<PriceCategoryKey, PricesPayload> = {
   ram: { category: "ram", updatedAt: nowIso, items: baseItems("ram") },
   cpu: { category: "cpu", updatedAt: nowIso, items: baseItems("cpu") },
+  ssd: { category: "ssd", updatedAt: nowIso, items: baseItems("ssd") },
   motherboard: { category: "motherboard", updatedAt: nowIso, items: baseItems("motherboard") },
   gpu: { category: "gpu", updatedAt: nowIso, items: baseItems("gpu") },
   cooler: { category: "cooler", updatedAt: nowIso, items: baseItems("cooler") },
