@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DEALS } from "../../../lib/mockDeals";
+import SmartLink from "../../../components/SmartLink";
 
 export default function DealDetailPage({ params }: { params: { id: string } }) {
   const deal = DEALS.find((d) => d.id === params.id);
@@ -23,21 +24,22 @@ export default function DealDetailPage({ params }: { params: { id: string } }) {
         <div className="mt-1 text-3xl font-semibold">{deal.priceLabel}</div>
 
         <div className="mt-3 text-xs text-white/55">
-          외부 링크는 제휴 링크(블루딜)로 연결될 수 있으며 구매 발생 시 소정의 수수료를 받을 수 있습니다.
+          구매 링크는 새 창으로 열리며, 일부는 제휴 링크일 수 있습니다. 구매가 발생하면 소정의 수수료를 받을 수 있습니다.
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          <Link
+          <SmartLink
             href={deal.goUrl}
             className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950"
+            title="구매 링크(새 창)"
           >
-            구매 링크(/go)
-          </Link>
+            구매 링크
+          </SmartLink>
 
           <a
             href={deal.sourceUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10"
           >
             출처

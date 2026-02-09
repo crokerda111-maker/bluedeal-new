@@ -7,13 +7,24 @@ import { MOCK_POSTS } from "../../../../lib/mockPosts";
 import type { Post } from "../../../../lib/postTypes";
 import { apiGetPost } from "../../../../lib/postsClient";
 import { formatKoreanDate } from "../../../../lib/postStorage";
+import SmartLink, { isHttpUrl } from "../../../../components/SmartLink";
 
 function ExtraRow({ label, value }: { label: string; value: any }) {
   if (value === undefined || value === null || value === "") return null;
+  const text = String(value).trim();
+  const isLink = isHttpUrl(text) || text.startsWith("/go/");
   return (
     <div className="flex gap-3 text-sm">
       <div className="w-28 shrink-0 text-white/55">{label}</div>
-      <div className="text-white/80 break-all">{String(value)}</div>
+      <div className="text-white/80 break-all">
+        {isLink ? (
+          <SmartLink href={text} className="text-cyan-200 hover:underline" title="새 창으로 열기">
+            {text}
+          </SmartLink>
+        ) : (
+          text
+        )}
+      </div>
     </div>
   );
 }

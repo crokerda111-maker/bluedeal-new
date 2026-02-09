@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getCategory } from "../../../lib/priceCategories";
 import type { PriceCategoryKey } from "../../../lib/priceCategories";
 import { getMeta, getPrices } from "../../../lib/prices";
+import SmartLink from "../../../components/SmartLink";
 
 function fmtKorean(ts: string) {
   const d = new Date(ts);
@@ -95,13 +96,12 @@ export default async function PricesCategoryPage({ params }: { params: { categor
                         {linkLabel === "-" ? (
                           <span className="text-white/40">-</span>
                         ) : (
-                          <a
+                          <SmartLink
                             className="inline-flex items-center rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-[12px] text-white/80 hover:border-white/25 hover:bg-white/10 hover:text-white"
                             href={link}
-                            rel="noreferrer"
                           >
                             {linkLabel} →
-                          </a>
+                          </SmartLink>
                         )}
                       </td>
                     </tr>
@@ -118,6 +118,7 @@ export default async function PricesCategoryPage({ params }: { params: { categor
         <ul className="mt-2 list-disc space-y-1 pl-5">
           <li>가격은 갱신 시점 기준이며, 실제 구매 시점에는 달라질 수 있습니다.</li>
           <li>일부 링크는 제휴 링크일 수 있으며, 구매 시 일정 수수료를 받을 수 있습니다.</li>
+          <li>최저가/상품 링크는 새 창으로 열립니다.</li>
         </ul>
         <div className="mt-3">
           구매 팁/제휴 문의는{" "}

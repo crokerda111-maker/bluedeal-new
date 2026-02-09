@@ -58,7 +58,7 @@ export default function RealtimePosts({
       {showHeader ? (
         <div className="flex items-center justify-between">
           <div className="text-sm font-semibold">실시간 게시글</div>
-          <div className="text-xs text-white/55">작성 폼은 MVP(local)로 동작합니다</div>
+          <div className="text-xs text-white/55">새 글 작성은 각 게시판에서 가능합니다</div>
         </div>
       ) : null}
 

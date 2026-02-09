@@ -74,6 +74,6 @@ export function getMockMeta(): MetaPayload {
   return {
     updatedAt: nowIso,
     schedule: "매일 09:00 / 17:00 갱신",
-    note: "API가 준비되기 전까지는 샘플 데이터가 표시됩니다.",
+    note: "데이터 수집/정리 중입니다. 곧 업데이트됩니다.",
   };
 }

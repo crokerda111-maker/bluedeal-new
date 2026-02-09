@@ -52,6 +52,7 @@ export default async function PricesHubPage() {
         <ul className="mt-2 list-disc space-y-1 pl-5">
           <li>가격은 갱신 시점 기준이며, 실제 구매 시점에는 달라질 수 있습니다.</li>
           <li>일부 링크는 제휴 링크일 수 있으며, 구매 시 일정 수수료를 받을 수 있습니다.</li>
+          <li>최저가/상품 링크는 새 창으로 열립니다.</li>
         </ul>
         <div className="mt-3">
           자세한 내용/문의는{" "}

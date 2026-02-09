@@ -62,7 +62,7 @@ export default function HotDealsPage() {
         <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
             <h1 className="text-2xl font-semibold tracking-tight">핫딜</h1>
-            <p className="mt-2 text-sm text-white/70">메인에서는 제휴/외부 링크를 숨기고, 글 상세에서 안내합니다.</p>
+            <p className="mt-2 text-sm text-white/70">카테고리별 핫딜을 모아봅니다. 구매/출처 링크는 새 창으로 열립니다.</p>
           </div>
 
           <div className="flex items-center gap-2">
@@ -143,7 +143,7 @@ export default function HotDealsPage() {
                   </Link>
 
                   <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-white/70">
-                    <a className="underline hover:text-white" href={d.sourceUrl} target="_blank" rel="noreferrer">
+                    <a className="underline hover:text-white" href={d.sourceUrl} target="_blank" rel="noopener noreferrer">
                       원문
                     </a>
                     <span className="text-white/35">·</span>

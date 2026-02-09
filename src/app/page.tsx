@@ -94,7 +94,7 @@ export default async function HomePage() {
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="text-sm font-semibold">실시간 핫딜</div>
-            <div className="mt-1 text-xs text-white/55">메인에서는 외부/제휴 링크를 숨기고, 글 상세에서만 안내합니다.</div>
+            <div className="mt-1 text-xs text-white/55">구매/출처 링크는 상세에서 새 창으로 열립니다.</div>
           </div>
           <Link href="/hot" className="text-xs text-cyan-200 hover:underline">
             핫딜 더보기 →

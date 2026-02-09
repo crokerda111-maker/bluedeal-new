@@ -94,10 +94,8 @@ export default function ITNewsPage() {
 
       {loadError ? (
         <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-200">
-          온라인 게시판 로딩에 실패했습니다. ({loadError})
-          <div className="mt-1 text-[12px] text-white/50">
-            KV(Upstash/Vercel KV) 설정이 안 되어 있으면 샘플 글만 보일 수 있습니다.
-          </div>
+          게시글을 불러오지 못했습니다. ({loadError})
+          <div className="mt-1 text-[12px] text-white/50">현재는 기본 글을 표시합니다. 잠시 후 다시 시도해 주세요.</div>
         </div>
       ) : null}
 

@@ -45,7 +45,7 @@ export default function ContactPage() {
           <div>
             <h1 className="text-2xl font-semibold tracking-tight">문의</h1>
             <p className="mt-2 text-sm text-white/70">
-              글 작성 시 <b>공개/비공개</b>를 선택합니다. (MVP: 브라우저 localStorage 저장)
+              제보/오탈자/제휴 문의를 남겨주세요. <b>공개/비공개</b>를 선택할 수 있으며, 비공개 글은 비밀번호로 보호됩니다.
             </p>
           </div>
 
@@ -138,11 +138,12 @@ export default function ContactPage() {
       </section>
 
       <section className="bd-surface-md p-6 text-sm text-white/70">
-        <div className="font-semibold text-white">운영 메모</div>
+        <div className="font-semibold text-white">안내</div>
         <ul className="mt-2 list-disc space-y-1 pl-5">
           <li>비공개 문의는 비밀번호로 잠깁니다.</li>
           <li>개인정보(실명/연락처 등)는 가급적 적지 마세요.</li>
-          <li>실제 운영 단계에서는 VPS/DB 연동으로 저장/관리 기능을 붙이면 됩니다.</li>
+          <li>답변이 필요한 경우 연락 이메일을 남겨주세요.</li>
+          <li>현재 작성한 문의는 이 브라우저에 저장될 수 있습니다(쿠키/저장소 삭제 시 사라질 수 있음).</li>
         </ul>
       </section>
     </div>

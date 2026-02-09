@@ -7,7 +7,7 @@ export default function CommunityHomePage() {
       <section className="bd-surface-md p-6">
         <h1 className="text-2xl font-semibold tracking-tight">커뮤니티</h1>
         <p className="mt-2 text-sm text-white/70">
-          리뷰/하드웨어/오버클럭/이슈공유/자료실 게시판입니다. (온라인 저장: KV / 미설정 시 샘플 글)
+          리뷰/하드웨어/오버클럭/이슈공유/자료실 게시판입니다. 질문/후기/팁을 자유롭게 공유해 주세요.
         </p>
       </section>
 
@@ -27,12 +27,11 @@ export default function CommunityHomePage() {
 
       <section className="bd-surface-md p-6">
         <div className="text-sm text-white/70">
-          <div className="font-semibold text-white">운영 노트</div>
+          <div className="font-semibold text-white">이용 안내</div>
           <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>지금 단계는 구색/흐름 확인이 목적입니다.</li>
-            <li>IT/커뮤니티 게시판은 KV(Upstash/Vercel KV) 기반으로 온라인 저장합니다.</li>
-            <li>규모가 커지면 별도 DB/API로 이전 가능합니다(프론트는 /api/posts만 유지).</li>
-            <li>작성자 닉네임은 상단에서 설정한 값(로컬)을 기본으로 사용합니다.</li>
+            <li>글 작성 시 말머리를 선택하면 분류/검색이 쉬워집니다.</li>
+            <li>출처/참고 링크는 새 창으로 열립니다.</li>
+            <li>개인정보(실명/연락처 등)는 가급적 공유하지 마세요.</li>
           </ul>
         </div>
       </section>
