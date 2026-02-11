@@ -284,14 +284,6 @@ export default function AdminPage() {
         </table>
       </section>
 
-      <section className="bd-surface-md p-6 text-sm text-white/70">
-        <div className="font-semibold text-white">메모</div>
-        <ul className="mt-2 list-disc space-y-1 pl-5">
-          <li>이 페이지는 사이트 내 링크를 제공하지 않습니다. (URL로 직접 접근)</li>
-          <li>비공개 문의는 관리자 세션이면 비밀번호 없이 열람됩니다.</li>
-          <li>비밀번호 변경은 Vercel 환경변수 <code className="text-white/70">ADMIN_PASSWORD</code>로 관리합니다.</li>
-        </ul>
-      </section>
     </div>
   );
 }
