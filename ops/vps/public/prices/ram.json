@@ -1,0 +1,22 @@
+{
+  "category": "ram",
+  "updatedAt": "2026-02-09T22:16:53+09:00",
+  "items": [
+    {
+      "id": "ram-sample-1",
+      "name": "DDR5 32GB (16x2) 6000",
+      "spec": "DDR5 / 32GB / 6000",
+      "price": 129000,
+      "source": "sample",
+      "url": "https://example.com"
+    },
+    {
+      "id": "ram-sample-2",
+      "name": "DDR4 32GB (16x2) 3200",
+      "spec": "DDR4 / 32GB / 3200",
+      "price": 79000,
+      "source": "sample",
+      "url": "https://example.com"
+    }
+  ]
+}

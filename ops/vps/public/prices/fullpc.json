@@ -1,0 +1,22 @@
+{
+  "category": "fullpc",
+  "updatedAt": "2026-02-09T22:16:53+09:00",
+  "items": [
+    {
+      "id": "fullpc-sample-1",
+      "name": "완본체 (4070S 포함)",
+      "spec": "CPU+GPU+OS",
+      "price": 1899000,
+      "source": "sample",
+      "url": "https://example.com"
+    },
+    {
+      "id": "fullpc-sample-2",
+      "name": "완본체 (사무용)",
+      "spec": "OS 포함",
+      "price": 599000,
+      "source": "sample",
+      "url": "https://example.com"
+    }
+  ]
+}
