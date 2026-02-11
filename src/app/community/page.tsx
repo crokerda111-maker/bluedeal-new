@@ -7,7 +7,7 @@ export default function CommunityHomePage() {
       <section className="bd-surface-md p-6">
         <h1 className="text-2xl font-semibold tracking-tight">커뮤니티</h1>
         <p className="mt-2 text-sm text-white/70">
-          리뷰/하드웨어/오버클럭/이슈공유/자료실/핫딜 제보 게시판입니다. 질문/후기/팁을 자유롭게 공유해 주세요.
+          리뷰/하드웨어/오버클럭/이슈공유/자료실/핫딜 게시판입니다. 질문/후기/팁을 자유롭게 공유해 주세요.
         </p>
       </section>
 

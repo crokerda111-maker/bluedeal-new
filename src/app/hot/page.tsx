@@ -1,12 +1,9 @@
-import { Suspense } from "react";
-import HotClient from "./HotClient";
+import { redirect } from "next/navigation";
 
+// Hot deals is now operated as a community-style board.
+// Keep /hot as a stable entry point, but use /community/hotdeal as the canonical board.
 export const dynamic = "force-dynamic";
 
-export default function Page() {
-  return (
-    <Suspense fallback={<div style={{ padding: 24 }}>로딩 중…</div>}>
-      <HotClient />
-    </Suspense>
-  );
+export default function HotPage() {
+  redirect("/community/hotdeal");
 }

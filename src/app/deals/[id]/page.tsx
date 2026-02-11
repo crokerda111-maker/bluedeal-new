@@ -10,8 +10,8 @@ export default function DealDetailPage({ params }: { params: { id: string } }) {
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <div className="text-sm">
-        <Link href="/hot" className="text-cyan-200 hover:underline">
-          ← 핫딜로
+        <Link href="/community/hotdeal" className="text-cyan-200 hover:underline">
+          ← 핫딜 게시판
         </Link>
       </div>
 

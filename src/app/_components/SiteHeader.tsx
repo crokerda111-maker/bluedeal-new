@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { COMMUNITY_BOARDS } from "../../lib/boardConfig";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
-import { CATEGORIES as DEAL_CATEGORIES } from "../../lib/mockDeals";
 import { getNickname, onProfileChanged, setNickname } from "../../lib/profile";
 
 function cn(...v: Array<string | false | null | undefined>) {
@@ -144,16 +143,9 @@ export default function SiteHeader() {
               ))}
             </Dropdown>
 
-            <Dropdown label="핫딜" href="/hot">
-              <div className="px-4 py-2 text-xs text-white/45">카테고리</div>
-              <DropItem href="/hot">전체 보기</DropItem>
-              <div className="my-2 h-px bg-white/10" />
-              {DEAL_CATEGORIES.map((c) => (
-                <DropItem key={c} href={`/hot?cat=${encodeURIComponent(c)}`}>
-                  {c}
-                </DropItem>
-              ))}
-            </Dropdown>
+            <Link className="hover:text-white" href="/community/hotdeal">
+              핫딜
+            </Link>
 
             <Link className="hover:text-white" href="/contact">
               문의
@@ -193,7 +185,10 @@ export default function SiteHeader() {
           >
             커뮤니티
           </Link>
-          <Link className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10" href="/hot">
+          <Link
+            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
+            href="/community/hotdeal"
+          >
             핫딜
           </Link>
           <Link

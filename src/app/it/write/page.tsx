@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { IT_BOARD, type FieldDef } from "../../../lib/boardConfig";
 import type { PostExtra } from "../../../lib/postTypes";
 import { apiCreatePost } from "../../../lib/postsClient";
@@ -12,6 +12,7 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
   const base =
     "mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50";
   const id = `f_${def.key}`;
+  const optionStyle: CSSProperties = { color: "#000" };
 
   return (
     <label className="block">
@@ -31,9 +32,11 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
         />
       ) : def.type === "select" ? (
         <select id={id} className={base} value={value} onChange={(e) => onChange(e.target.value)}>
-          <option value="">선택</option>
+          <option value="" style={optionStyle}>
+            선택
+          </option>
           {def.options?.map((o) => (
-            <option key={o.value} value={o.value}>
+            <option key={o.value} value={o.value} style={optionStyle}>
               {o.label}
             </option>
           ))}

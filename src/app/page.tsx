@@ -20,7 +20,7 @@ const QUICK_LINKS: Array<{ title: string; desc: string; href: string }> = [
   { title: "이슈공유", desc: "드라이버/업데이트/불량", href: "/community/issue" },
   { title: "자료실", desc: "드라이버/시스템/최적화/모니터링", href: "/community/resources" },
   { title: "가격현황", desc: "RAM/CPU/GPU/본체/쿨러", href: "/prices" },
-  { title: "핫딜", desc: "카테고리별 핫딜", href: "/hot" },
+  { title: "핫딜", desc: "유저 핫딜 글쓰기/공유", href: "/community/hotdeal" },
 ];
 
 export default async function HomePage() {
@@ -49,7 +49,7 @@ export default async function HomePage() {
             <Link href="/community" className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 hover:bg-white/10">
               커뮤니티
             </Link>
-            <Link href="/hot" className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 hover:bg-white/10">
+            <Link href="/community/hotdeal" className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/80 hover:bg-white/10">
               핫딜
             </Link>
           </div>
@@ -96,8 +96,8 @@ export default async function HomePage() {
             <div className="text-sm font-semibold">실시간 핫딜</div>
             <div className="mt-1 text-xs text-white/55">구매/출처 링크는 상세에서 새 창으로 열립니다.</div>
           </div>
-          <Link href="/hot" className="text-xs text-cyan-200 hover:underline">
-            핫딜 더보기 →
+          <Link href="/community/hotdeal" className="text-xs text-cyan-200 hover:underline">
+            핫딜 게시판 →
           </Link>
         </div>
 

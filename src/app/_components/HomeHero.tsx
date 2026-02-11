@@ -122,7 +122,7 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
                 <ButtonLink href="/community" variant="soft" className="flex-1 md:flex-none">
                   커뮤니티
                 </ButtonLink>
-                <ButtonLink href="/hot" variant="ghost" className="flex-1 md:flex-none">
+                <ButtonLink href="/community/hotdeal" variant="ghost" className="flex-1 md:flex-none">
                   핫딜
                 </ButtonLink>
               </div>

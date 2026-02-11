@@ -182,9 +182,9 @@ export const COMMUNITY_BOARDS: BoardDef[] = [
     key: "hotdeal",
     group: "community",
     slug: "hotdeal",
-    title: "핫딜 제보",
-    description: "유저 핫딜 제보/공유 게시판",
-    writeHint: "가격/구성/조건을 함께 적고, 원문 링크를 꼭 남겨주세요.",
+    title: "핫딜",
+    description: "유저 핫딜 공유 게시판",
+    writeHint: "가격/구성/조건을 함께 적고, 원문/구매 링크를 꼭 남겨주세요.",
     allowedTypes: ["general"],
     extraFields: [
       {
