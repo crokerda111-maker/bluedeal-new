@@ -20,52 +20,44 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-
-          # 값이 비었는지 길이로만 확인(내용 노출 없음)
           echo "len host=${#VPS_HOST} user=${#VPS_USER} key=${#VPS_SSH_KEY_B64}"
 
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
 
-          # base64 decode (공백/줄바꿈이 섞여도 무시하도록 -i)
           printf "%s" "$VPS_SSH_KEY_B64" | tr -d '\r' | base64 -d -i > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
 
-          # 키 파일 형태 확인(헤더/푸터만)
-          echo "KEY HEAD:"; head -n 1 ~/.ssh/id_ed25519
-          echo "KEY TAIL:"; tail -n 1 ~/.ssh/id_ed25519
-
-          # 지문 확인(내용 노출 없음)
           ssh-keygen -l -f ~/.ssh/id_ed25519
-
           ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts
 
-      - name: Test SSH (verbose, capture)
+      - name: Test SSH (shell request)
         shell: bash
         run: |
-          set +e
-
-          ssh -vvv -i ~/.ssh/id_ed25519 \
+          set -euo pipefail
+          ssh -tt -i ~/.ssh/id_ed25519 \
             -o IdentitiesOnly=yes \
             -o BatchMode=yes \
             -o StrictHostKeyChecking=no \
             -o ConnectTimeout=10 \
-            "$VPS_USER@$VPS_HOST" \
-            "echo GH_OK && whoami && hostname" \
-            2> ssh_debug.log
+            "$VPS_USER@$VPS_HOST" <<'EOF'
+echo GH_OK
+exit 0
+EOF
 
-          rc=$?
-          echo "----- ssh_debug (last 120 lines) -----"
-          tail -n 120 ssh_debug.log
-          echo "ssh_rc=$rc"
-          exit $rc
-
-      - name: Run refresh on VPS
+      - name: Run refresh on VPS (shell request)
         shell: bash
         run: |
           set -euo pipefail
-          ssh -i ~/.ssh/id_ed25519 \
+          ssh -tt -i ~/.ssh/id_ed25519 \
             -o IdentitiesOnly=yes \
             -o BatchMode=yes \
-            "$VPS_USER@$VPS_HOST" \
-            "mkdir -p /crokerda1/logs && /bin/sh /crokerda1/bin/prices_refresh.sh --out /crokerda1/www >> /crokerda1/logs/prices_refresh.log 2>&1 && tail -n 5 /crokerda1/logs/prices_refresh.log"
+            -o StrictHostKeyChecking=no \
+            -o ConnectTimeout=10 \
+            "$VPS_USER@$VPS_HOST" <<'EOF'
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+mkdir -p /crokerda1/logs
+/bin/sh /crokerda1/bin/prices_refresh.sh --out /crokerda1/www >> /crokerda1/logs/prices_refresh.log 2>&1
+tail -n 5 /crokerda1/logs/prices_refresh.log || true
+exit 0
+EOF
