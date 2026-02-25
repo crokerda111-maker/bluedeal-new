@@ -2,7 +2,7 @@ name: Prices refresh (09/17 KST)
 
 on:
   schedule:
-    # GitHub Actions cron은 UTC 기준
+    # UTC 기준
     # 09:00 KST = 00:00 UTC
     # 17:00 KST = 08:00 UTC
     - cron: "0 0,8 * * *"
@@ -12,12 +12,18 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - name: Run refresh script on VPS
+      - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          # ✅ 줄바꿈은 유지하고, CR(\r)만 제거
           printf "%s" "${{ secrets.VPS_SSH_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
+
           ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
 
-          ssh "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" \
-            "/bin/sh /crokerda1/bin/prices_refresh.sh --out /crokerda1/www >> /crokerda1/logs/prices_refresh.log 2>&1"
+      - name: Run refresh on VPS
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" \
+            "mkdir -p /crokerda1/logs && /bin/sh /crokerda1/bin/prices_refresh.sh --out /crokerda1/www >> /crokerda1/logs/prices_refresh.log 2>&1"
