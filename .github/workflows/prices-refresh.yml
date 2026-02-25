@@ -40,7 +40,7 @@ jobs:
 
           ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts
 
-            - name: Test SSH (verbose)
+                 - name: Test SSH (verbose, capture)
         shell: bash
         run: |
           set +e
@@ -48,9 +48,14 @@ jobs:
             -o IdentitiesOnly=yes \
             -o BatchMode=yes \
             -o StrictHostKeyChecking=no \
+            -o ConnectTimeout=10 \
             "$VPS_USER@$VPS_HOST" \
-            "echo GH_OK && whoami && hostname"
+            "echo GH_OK && whoami && hostname" \
+            2> ssh_debug.log
+
           rc=$?
+          echo "----- ssh_debug (last 120 lines) -----"
+          tail -n 120 ssh_debug.log
           echo "ssh_rc=$rc"
           exit $rc
 
