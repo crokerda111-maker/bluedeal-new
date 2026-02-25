@@ -1,54 +1,13 @@
-name: Prices refresh (09/17 KST)
-
-on:
-  schedule:
-    - cron: "0 0,8 * * *"   # 09:00/17:00 KST (UTC 00:00, 08:00)
-  workflow_dispatch:
-
-jobs:
-  refresh:
-    runs-on: ubuntu-latest
-    env:
-      VPS_HOST: ${{ secrets.VPS_HOST }}
-      VPS_USER: ${{ secrets.VPS_USER }}
-      VPS_SSH_KEY_B64: ${{ secrets.VPS_SSH_KEY }}
-
-    steps:
-      - name: Setup SSH (decode key)
+      - name: Test SSH (verbose)
         shell: bash
         run: |
-          set -euo pipefail
-
-          # 값이 비어있는지 길이로만 확인(값 노출 없음)
-          echo "len host=${#VPS_HOST} user=${#VPS_USER} key=${#VPS_SSH_KEY_B64}"
-
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-
-          # base64 decode (공백/줄바꿈이 섞여도 무시하도록 -i)
-          printf "%s" "$VPS_SSH_KEY_B64" | tr -d '\r' | base64 -d -i > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-
-          # 디코딩 결과가 “키 파일 형태”인지 확인 (헤더/푸터만 출력, 내용 노출 X)
-          echo "KEY HEAD:"
-          head -n 1 ~/.ssh/id_ed25519
-          echo "KEY TAIL:"
-          tail -n 1 ~/.ssh/id_ed25519
-
-          # 키 지문 출력(내용 노출 X) — 여기서 실패하면 키가 깨진 것
-          ssh-keygen -l -f ~/.ssh/id_ed25519
-
-          ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts
-
-      - name: Test SSH
-        shell: bash
-        run: |
-          set -euo pipefail
-          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o BatchMode=yes "$VPS_USER@$VPS_HOST" "echo GH_OK && whoami && hostname"
-
-      - name: Run refresh on VPS
-        shell: bash
-        run: |
-          set -euo pipefail
-          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o BatchMode=yes "$VPS_USER@$VPS_HOST" \
-            "mkdir -p /crokerda1/logs && /bin/sh /crokerda1/bin/prices_refresh.sh --out /crokerda1/www >> /crokerda1/logs/prices_refresh.log 2>&1 && tail -n 5 /crokerda1/logs/prices_refresh.log"
+          set +e
+          ssh -vvv -i ~/.ssh/id_ed25519 \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=no \
+            "$VPS_USER@$VPS_HOST" \
+            "echo GH_OK && whoami && hostname"
+          rc=$?
+          echo "ssh_rc=$rc"
+          exit $rc
