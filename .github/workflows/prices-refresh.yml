@@ -1,4 +1,4 @@
-name: Prices refresh (09/17 KST)
+name: Prices refresh (SSH)
 
 on:
   schedule:
@@ -13,60 +13,31 @@ jobs:
     env:
       VPS_HOST: ${{ secrets.VPS_HOST }}
       VPS_USER: ${{ secrets.VPS_USER }}
-      VPS_SSH_KEY_B64: ${{ secrets.VPS_SSH_KEY }}
-
+      VPS_SSH_KEY_B64: ${{ secrets.VPS_SSH_KEY }} # base64로 저장한 개인키
     steps:
       - name: Setup SSH key
         shell: bash
         run: |
           set -euo pipefail
 
-          # 값이 비었는지 길이만 출력(내용 노출 없음)
-          echo "len host=${#VPS_HOST} user=${#VPS_USER} key=${#VPS_SSH_KEY_B64}"
-
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
 
-          # base64로 저장된 개인키 복원 (CR 제거 + 공백/줄바꿈 무시)
+          # base64 -> 키 파일 복원 (CRLF 제거)
           printf "%s" "$VPS_SSH_KEY_B64" | tr -d '\r' | base64 -d -i > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
 
-          # 키 지문 확인(내용 노출 없음)
-          ssh-keygen -l -f ~/.ssh/id_ed25519
-
-          # known_hosts 등록 (StrictHostKeyChecking=no로도 되지만 남겨둠)
           ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts
 
-      - name: Test SSH (shell session via stdin)
+      - name: Run refresh script on VPS
         shell: bash
         run: |
           set -euo pipefail
 
-          # 서버에 whoami 같은 게 없을 수 있어서 echo만 테스트
-          printf '%s\n' \
-            'echo GH_OK' \
-            'exit 0' \
-          | ssh -tt -i ~/.ssh/id_ed25519 \
-              -o IdentitiesOnly=yes \
-              -o BatchMode=yes \
-              -o StrictHostKeyChecking=no \
-              -o ConnectTimeout=10 \
-              "$VPS_USER@$VPS_HOST"
-
-      - name: Run refresh on VPS (shell session via stdin)
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          printf '%s\n' \
-            'export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' \
-            'mkdir -p /crokerda1/logs' \
-            '/bin/sh /crokerda1/bin/prices_refresh.sh --out /crokerda1/www >> /crokerda1/logs/prices_refresh.log 2>&1' \
-            'tail -n 5 /crokerda1/logs/prices_refresh.log || true' \
-            'exit 0' \
-          | ssh -tt -i ~/.ssh/id_ed25519 \
-              -o IdentitiesOnly=yes \
-              -o BatchMode=yes \
-              -o StrictHostKeyChecking=no \
-              -o ConnectTimeout=10 \
-              "$VPS_USER@$VPS_HOST"
+          ssh -i ~/.ssh/id_ed25519 \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=no \
+            -o ConnectTimeout=20 \
+            "$VPS_USER@$VPS_HOST" \
+            "mkdir -p /crokerda1/logs && /bin/sh /crokerda1/bin/prices_refresh.sh --out /crokerda1/www >> /crokerda1/logs/prices_refresh.log 2>&1 || true; tail -n 50 /crokerda1/logs/prices_refresh.log || true"
