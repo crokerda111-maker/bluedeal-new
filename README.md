@@ -26,14 +26,25 @@ npm run dev
 - 딜 상세: `src/app/deals/[id]/page.tsx`
 - /go 리다이렉트: `src/app/go/[code]/route.ts`
 - 더미 딜: `src/lib/mockDeals.ts`
-- /go 매핑: `src/lib/outbound.ts`
+- /go 매핑(데모 fallback): `src/lib/outbound.ts`
+- /go 매핑(운영/KV): `src/lib/onlineOutbound.ts`
 - 제휴 변환/화이트리스트: `src/lib/affiliate.ts`
 
 ## 3) /go 리다이렉트 테스트
-현재는 `src/lib/outbound.ts`의 `originalUrl`이 샘플입니다.
+
+### A) 데모(로컬/초기) 방식
+`src/lib/outbound.ts`의 `originalUrl`이 샘플입니다.
 원하는 상품 URL로 바꾸면 `/go/d1` 같은 링크가 실제로 리다이렉트 됩니다.
 
 예) `OUTBOUND_LINKS.d1.originalUrl = "https://www.coupang.com/vp/products/..."`
+
+### B) 운영 방식(KV, 자동 코드 생성)
+게시판 글쓰기에서 URL(예: 핫딜의 구매 링크)을 입력하면,
+서버에서 allowlist에 해당하는 링크만 자동으로 `/go/{code}`로 변환해 저장합니다.
+
+- `/go/{code}`는 KV에 저장된 원본 URL로 리다이렉트
+- (선택) 제휴 파라미터(예: 쿠팡 lptag) 부착
+- 클릭 카운트는 best-effort로 KV에 누적
 
 ## 4) (선택) 쿠팡 lptag
 `.env.local`을 만들어 아래처럼 넣으면 쿠팡 URL에 파라미터가 추가됩니다.

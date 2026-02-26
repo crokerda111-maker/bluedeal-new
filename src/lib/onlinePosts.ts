@@ -5,6 +5,7 @@ import type { BoardKey, Post, PostExtra, PostType } from "./postTypes";
 import { getBoardByKey, getAllowedTypes } from "./boardConfig";
 import { getAdminPassword } from "./adminAuth";
 import { kvCommand, kvMultiExec, kvPipeline } from "./kvRest";
+import { createOrReuseOutboundCode, isHttpUrlString } from "./onlineOutbound";
 
 const POST_KEY_PREFIX = "bd:post:";
 const BOARD_ZSET_PREFIX = "bd:board:";
@@ -25,6 +26,82 @@ function randomId(): string {
 
 function sha256(text: string): string {
   return crypto.createHash("sha256").update(text).digest("hex");
+}
+
+function stripTrailingPunct(raw: string): { url: string; trailing: string } {
+  let url = raw;
+  let trailing = "";
+
+  // Always strip common punctuation
+  while (url.length && /[\.,;:!?]$/.test(url)) {
+    trailing = url.slice(-1) + trailing;
+    url = url.slice(0, -1);
+  }
+
+  // Strip closing brackets only when unbalanced
+  const pairs: Array<[string, string]> = [
+    ["(", ")"],
+    ["[", "]"],
+    ["{", "}"],
+  ];
+  for (const [open, close] of pairs) {
+    // Keep removing `close` if there are more closes than opens.
+    while (url.endsWith(close)) {
+      const opens = (url.match(new RegExp(`\\${open}`, "g")) ?? []).length;
+      const closes = (url.match(new RegExp(`\\${close}`, "g")) ?? []).length;
+      if (closes <= opens) break;
+      trailing = close + trailing;
+      url = url.slice(0, -1);
+    }
+  }
+
+  return { url, trailing };
+}
+
+async function convertOutboundInText(text: string): Promise<string> {
+  const URL_RE = /https?:\/\/[^\s<>"]+/gi;
+  const found = text.match(URL_RE);
+  if (!found || found.length === 0) return text;
+
+  // Deduplicate exact matches to reduce KV writes
+  const uniq = Array.from(new Set(found));
+
+  const map = new Map<string, string>();
+  for (const raw of uniq) {
+    const { url, trailing } = stripTrailingPunct(raw);
+    if (!isHttpUrlString(url)) continue;
+
+    const code = await createOrReuseOutboundCode(url);
+    if (code) {
+      map.set(raw, `/go/${code}${trailing}`);
+    }
+  }
+
+  if (map.size === 0) return text;
+
+  // Replace using original raw matches (including punctuation)
+  return text.replace(URL_RE, (m) => map.get(m) ?? m);
+}
+
+async function convertOutboundInExtra(extra?: PostExtra): Promise<PostExtra | undefined> {
+  if (!extra) return extra;
+
+  const next: PostExtra = { ...extra };
+
+  for (const [k, v] of Object.entries(next)) {
+    if (typeof v !== "string") continue;
+    const t = v.trim();
+    if (!t) continue;
+    if (t.startsWith("/go/")) continue;
+    if (!isHttpUrlString(t)) continue;
+
+    const code = await createOrReuseOutboundCode(t);
+    if (code) {
+      next[k] = `/go/${code}`;
+    }
+  }
+
+  return next;
 }
 
 export type CreateOnlinePostInput = {
@@ -68,6 +145,15 @@ export async function createOnlinePost(input: CreateOnlinePostInput): Promise<Po
     isPrivate: input.isPrivate,
     extra: input.extra,
   };
+
+  // Convert outbound links to /go/{code} (best-effort).
+  // - Only allowlisted hosts are converted (others remain original).
+  try {
+    post.content = await convertOutboundInText(post.content);
+    post.extra = await convertOutboundInExtra(post.extra);
+  } catch {
+    // ignore conversion errors (posting should still work)
+  }
 
   if (input.isPrivate) {
     if (input.lockToAdminPassword) {
@@ -161,6 +247,14 @@ export async function updateOnlinePost(id: string, patch: UpdateOnlinePostInput)
     isPrivate: patch.isPrivate === undefined ? current.isPrivate : Boolean(patch.isPrivate),
     updatedAt: new Date().toISOString(),
   };
+
+  // Convert outbound links in updated content/extra (best-effort)
+  try {
+    next.content = await convertOutboundInText(next.content);
+    next.extra = await convertOutboundInExtra(next.extra);
+  } catch {
+    // ignore
+  }
 
   // Validate board/type constraint
   assertBoardAndType(next.boardKey, next.type);

@@ -6,7 +6,11 @@ import type { Merchant } from "./outbound";
  */
 const ALLOWED_HOSTS: RegExp[] = [
   /(^|\.)coupang\.com$/i,
+  /(^|\.)link\.coupang\.com$/i,
   /(^|\.)aliexpress\.com$/i,
+  /(^|\.)a\.aliexpress\.com$/i,
+  /(^|\.)s\.click\.aliexpress\.com$/i,
+  /(^|\.)aliexpress\.us$/i,
   /(^|\.)11st\.co\.kr$/i,
   /(^|\.)gmarket\.co\.kr$/i,
   /(^|\.)naver\.com$/i,

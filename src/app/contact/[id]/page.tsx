@@ -8,6 +8,7 @@ import type { Post } from "../../../lib/postTypes";
 import { ApiError, apiGetPost } from "../../../lib/postsClient";
 import { formatKoreanDate } from "../../../lib/postStorage";
 import SmartLink, { isHttpUrl } from "../../../components/SmartLink";
+import LinkifiedText from "../../../components/LinkifiedText";
 
 function ExtraRow({ label, value }: { label: string; value: any }) {
   if (value === undefined || value === null || value === "") return null;
@@ -185,7 +186,7 @@ export default function ContactPostPage({ params }: { params: { id: string } }) 
         <>
           <section className="bd-surface-md p-6">
             <h1 className="text-2xl font-semibold tracking-tight">{post.title}</h1>
-            <div className="mt-4 whitespace-pre-wrap text-sm text-white/85">{post.content}</div>
+            <LinkifiedText text={post.content} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
           </section>
 
           {extraEntries.length ? (
