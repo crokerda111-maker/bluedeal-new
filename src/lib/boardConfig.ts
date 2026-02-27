@@ -22,6 +22,14 @@ export const POST_TYPE_LABEL: Record<PostType, string> = {
   kbdmouse: "키보드/마우스",
 };
 
+/**
+ * PostType -> 라벨 문자열
+ * (리스트/필터 UI에서 공통으로 사용)
+ */
+export function labelByType(type: PostType): string {
+  return POST_TYPE_LABEL[type] ?? String(type);
+}
+
 export type FieldType = "text" | "textarea" | "number" | "select" | "url";
 
 export type FieldDef = {
