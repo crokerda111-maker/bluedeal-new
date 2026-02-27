@@ -35,11 +35,24 @@ export default function CommunityPostPage({ params }: { params: { board: string;
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
     setLoadError(null);
+
+    // 관리자 로그인 상태 확인 (서버가 쿠키로 판별)
+    fetch("/api/admin/status", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (cancelled) return;
+        setIsAdmin(Boolean(d?.isAdmin));
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setIsAdmin(false);
+      });
 
     apiGetPost(params.id)
       .then((p) => {
@@ -118,8 +131,18 @@ export default function CommunityPostPage({ params }: { params: { board: string;
           ← 목록으로
         </Link>
 
-        <div className="text-[12px] text-white/55">
-          {POST_TYPE_LABEL[post.type]} · {post.authorName ?? "익명"} · {formatKoreanDate(post.createdAt)}
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="text-[12px] text-white/55">
+            {POST_TYPE_LABEL[post.type]} · {post.authorName ?? "익명"} · {formatKoreanDate(post.createdAt)}
+          </div>
+          {isAdmin ? (
+            <Link
+              href={`/admin/edit/${post.id}`}
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 hover:bg-white/10"
+            >
+              수정
+            </Link>
+          ) : null}
         </div>
       </div>
 

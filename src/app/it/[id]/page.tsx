@@ -34,11 +34,24 @@ export default function ITPostPage({ params }: { params: { id: string } }) {
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<{ message: string; code?: string } | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
     setLoadError(null);
+
+    // 관리자 로그인 상태(쿠키)를 서버에서 판별해 내려주는 엔드포인트
+    fetch("/api/admin/status", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (cancelled) return;
+        setIsAdmin(Boolean(d?.isAdmin));
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setIsAdmin(false);
+      });
 
     apiGetPost(params.id)
       .then((p) => {
@@ -106,8 +119,18 @@ export default function ITPostPage({ params }: { params: { id: string } }) {
           ← 목록으로
         </Link>
 
-        <div className="text-[12px] text-white/55">
-          {post.authorName ?? "익명"} · {formatKoreanDate(post.createdAt)}
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="text-[12px] text-white/55">
+            {post.authorName ?? "익명"} · {formatKoreanDate(post.createdAt)}
+          </div>
+          {isAdmin ? (
+            <Link
+              href={`/admin/edit/${post.id}`}
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 hover:bg-white/10"
+            >
+              수정
+            </Link>
+          ) : null}
         </div>
       </div>
 

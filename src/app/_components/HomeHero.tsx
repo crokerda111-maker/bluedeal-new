@@ -89,16 +89,16 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
         <div className="bd-surface p-6 shadow-[0_34px_90px_-56px_rgba(59,130,246,0.7)] md:p-8">
           <div className="flex flex-wrap gap-2">
             <Pill tone="cyan">가격현황</Pill>
-            <Pill tone="muted">09:00 / 17:00 업데이트</Pill>
-            <Pill tone="muted">IT·커뮤니티·핫딜</Pill>
+            <Pill tone="muted">매일 09:00·17:00 업데이트</Pill>
+            <Pill tone="muted">IT 소식·커뮤니티·핫딜</Pill>
           </div>
 
           <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
             파란 테마로, <span className="text-cyan-200">딜 판단</span>을 더 빠르게.
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70 md:text-base">
-            IT 소식·커뮤니티·가격현황·핫딜을 한 화면에서 정리합니다. 외부 구매/출처 링크는 <b>새 창</b>에서 열려 흐름이
-            끊기지 않도록 했습니다.
+            IT 소식, 커뮤니티, 가격현황, 핫딜을 한곳에 모았습니다. 구매/출처 링크는 <b>새 창</b>으로 열려 탐색 흐름을
+            유지합니다.
           </p>
 
           {/* search row (visual + quick links) */}
@@ -143,9 +143,9 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <Stat k="게시글" v="최신" d="IT + 커뮤니티" />
+            <Stat k="게시글" v="최신" d="IT 소식 + 커뮤니티" />
             <Stat k="가격현황" v="09/17시" d="하루 2회 업데이트" />
-            <Stat k="핫딜" v="새 창" d="구매/출처 링크" />
+            <Stat k="핫딜" v="모아보기" d="구매/출처 링크 새 창" />
           </div>
         </div>
 
@@ -196,7 +196,7 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
             </div>
 
             <div className="mt-3 text-[11px] text-white/45">
-              * 가격 데이터는 매일 09:00 / 17:00 갱신됩니다. 오탈자/누락 제보는 문의 게시판에 남겨주세요.
+              ※ 가격 데이터는 매일 09:00 / 17:00(KST) 기준으로 갱신됩니다. 오탈자/누락 제보는 문의 게시판에 남겨주세요.
             </div>
           </div>
         </aside>
