@@ -97,8 +97,8 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
             파란 테마로, <span className="text-cyan-200">딜 판단</span>을 더 빠르게.
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70 md:text-base">
-            IT 소식, 커뮤니티, 가격현황, 핫딜을 한곳에 모았습니다. 구매/출처 링크는 <b>새 창</b>으로 열려 탐색 흐름을
-            유지합니다.
+            IT 소식, 커뮤니티, 가격현황, 핫딜을 한곳에 모았습니다. 필요한 정보만 빠르게 찾아 딜 판단에 집중할 수 있게
+            구성했습니다.
           </p>
 
           {/* search row (visual + quick links) */}
@@ -145,7 +145,7 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
             <Stat k="게시글" v="최신" d="IT 소식 + 커뮤니티" />
             <Stat k="가격현황" v="09/17시" d="하루 2회 업데이트" />
-            <Stat k="핫딜" v="모아보기" d="구매/출처 링크 새 창" />
+            <Stat k="핫딜" v="모아보기" d="구매/출처 링크 정리" />
           </div>
         </div>
 
@@ -183,7 +183,6 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
             <div className="mt-3 space-y-1 text-xs text-white/65">
               <div>• 램, CPU, SSD, 그래픽카드, 메인보드, 쿨러</div>
               <div>• 반본체 / 완본체까지 한 번에</div>
-              <div>• 외부 링크는 새 창으로 열림</div>
             </div>
 
             <div className="mt-4 flex gap-2">

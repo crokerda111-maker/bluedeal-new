@@ -154,13 +154,13 @@ export default function ContactPage() {
       ) : null}
 
       <section className="bd-surface-md">
-        <table className="w-full text-left text-sm">
+        <table className="w-full table-fixed border-collapse text-left text-sm">
           <thead className="border-b border-white/10 bg-white/5 text-white/70">
             <tr>
-              <th className="px-4 py-3 text-left">구분</th>
-              <th className="px-4 py-3 text-left">제목</th>
-              <th className="px-4 py-3 text-left">작성자</th>
-              <th className="px-4 py-3 text-left">작성일</th>
+              <th className="w-[5ch] px-4 py-3 text-left font-semibold text-white/80">분류</th>
+              <th className="w-[20ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">제목</th>
+              <th className="w-[8ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성자</th>
+              <th className="w-[16ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성일</th>
             </tr>
           </thead>
           <tbody>
@@ -180,24 +180,22 @@ export default function ContactPage() {
               filtered.map((p) => (
                 <tr key={p.id} className="border-b border-white/5 hover:bg-white/5">
                   <td className="px-4 py-3 text-white/70">
-                    {p.isPrivate ? (
-                      <span className="inline-flex items-center gap-1">
-                        <span aria-hidden>🔒</span> 비공개
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1">
-                        <span aria-hidden>🌐</span> 공개
-                      </span>
-                    )}{" "}
-                    · {POST_TYPE_LABEL[p.type]}
+                    <div className="flex flex-col gap-0.5 leading-tight">
+                      <span className="block truncate">{POST_TYPE_LABEL[p.type]}</span>
+                      <span className="text-[11px] text-white/50">{p.isPrivate ? "비공개" : "공개"}</span>
+                    </div>
                   </td>
-                  <td className="px-4 py-3">
-                    <Link className="text-white/85 hover:underline" href={`/contact/${p.id}`}>
+                  <td className="border-l border-white/10 px-4 py-3">
+                    <Link className="block truncate text-white/85 hover:underline" href={`/contact/${p.id}`} title={p.title}>
                       {p.title}
                     </Link>
                   </td>
-                  <td className="px-4 py-3 text-white/70">{p.authorName ?? "익명"}</td>
-                  <td className="px-4 py-3 text-white/70">{formatKoreanDate(p.createdAt)}</td>
+                  <td className="border-l border-white/10 px-4 py-3 text-white/70">
+                    <span className="block truncate">{p.authorName ?? "익명"}</span>
+                  </td>
+                  <td className="border-l border-white/10 px-4 py-3 text-white/70">
+                    <span className="block whitespace-nowrap">{formatKoreanDate(p.createdAt)}</span>
+                  </td>
                 </tr>
               ))
             )}

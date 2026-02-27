@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { IT_BOARD } from "../../lib/boardConfig";
+import { IT_BOARD, labelByType } from "../../lib/boardConfig";
 import { MOCK_POSTS } from "../../lib/mockPosts";
 import type { Post } from "../../lib/postTypes";
 import { ApiError, apiListPosts } from "../../lib/postsClient";
@@ -116,37 +116,45 @@ export default function ITNewsPage() {
       ) : null}
 
       <section className="bd-surface-md">
-        <table className="w-full text-left text-sm">
+        <table className="w-full table-fixed border-collapse text-left text-sm">
           <thead className="border-b border-white/10 bg-white/5 text-white/70">
             <tr>
-              <th className="px-4 py-3 text-left">제목</th>
-              <th className="px-4 py-3 text-left">작성자</th>
-              <th className="px-4 py-3 text-left">작성일</th>
+              <th className="w-[5ch] px-4 py-3 text-left font-semibold text-white/80">분류</th>
+              <th className="w-[20ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">제목</th>
+              <th className="w-[8ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성자</th>
+              <th className="w-[16ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성일</th>
             </tr>
           </thead>
           <tbody>
             {loading ? (
               <tr>
-                <td colSpan={3} className="px-4 py-10 text-center text-white/60">
+                <td colSpan={4} className="px-4 py-10 text-center text-white/60">
                   불러오는 중...
                 </td>
               </tr>
             ) : filtered.length === 0 ? (
               <tr>
-                <td colSpan={3} className="px-4 py-10 text-center text-white/60">
+                <td colSpan={4} className="px-4 py-10 text-center text-white/60">
                   조건에 맞는 글이 없습니다.
                 </td>
               </tr>
             ) : (
               filtered.map((p) => (
                 <tr key={p.id} className="border-b border-white/5 hover:bg-white/5">
-                  <td className="px-4 py-3">
-                    <Link className="text-white/85 hover:underline" href={`/it/${p.id}`}>
+                  <td className="px-4 py-3 text-white/70">
+                    <span className="block truncate">{labelByType(p.type)}</span>
+                  </td>
+                  <td className="border-l border-white/10 px-4 py-3">
+                    <Link className="block truncate text-white/85 hover:underline" href={`/it/${p.id}`} title={p.title}>
                       {p.title}
                     </Link>
                   </td>
-                  <td className="px-4 py-3 text-white/70">{p.authorName ?? "익명"}</td>
-                  <td className="px-4 py-3 text-white/70">{formatKoreanDate(p.createdAt)}</td>
+                  <td className="border-l border-white/10 px-4 py-3 text-white/70">
+                    <span className="block truncate">{p.authorName ?? "익명"}</span>
+                  </td>
+                  <td className="border-l border-white/10 px-4 py-3 text-white/70">
+                    <span className="block whitespace-nowrap">{formatKoreanDate(p.createdAt)}</span>
+                  </td>
                 </tr>
               ))
             )}

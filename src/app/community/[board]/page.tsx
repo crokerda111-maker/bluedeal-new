@@ -175,13 +175,13 @@ export default function CommunityBoardPage({ params }: { params: { board: string
       ) : null}
 
       <section className="bd-surface-md">
-        <table className="w-full text-left text-sm">
+        <table className="w-full table-fixed border-collapse text-left text-sm">
           <thead className="border-b border-white/10 bg-white/5 text-white/70">
             <tr>
-              <th className="px-4 py-3 text-left">말머리</th>
-              <th className="px-4 py-3 text-left">제목</th>
-              <th className="px-4 py-3 text-left">작성자</th>
-              <th className="px-4 py-3 text-left">작성일</th>
+              <th className="w-[5ch] px-4 py-3 text-left font-semibold text-white/80">분류</th>
+              <th className="w-[20ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">제목</th>
+              <th className="w-[8ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성자</th>
+              <th className="w-[16ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성일</th>
             </tr>
           </thead>
           <tbody>
@@ -200,14 +200,24 @@ export default function CommunityBoardPage({ params }: { params: { board: string
             ) : (
               filtered.map((p) => (
                 <tr key={p.id} className="border-b border-white/5 hover:bg-white/5">
-                  <td className="px-4 py-3 text-white/70">{POST_TYPE_LABEL[p.type]}</td>
-                  <td className="px-4 py-3">
-                    <Link className="text-white/85 hover:underline" href={`/community/${board.slug}/${p.id}`}>
+                  <td className="px-4 py-3 text-white/70">
+                    <span className="block truncate">{POST_TYPE_LABEL[p.type]}</span>
+                  </td>
+                  <td className="border-l border-white/10 px-4 py-3">
+                    <Link
+                      className="block truncate text-white/85 hover:underline"
+                      href={`/community/${board.slug}/${p.id}`}
+                      title={p.title}
+                    >
                       {p.title}
                     </Link>
                   </td>
-                  <td className="px-4 py-3 text-white/70">{p.authorName ?? "익명"}</td>
-                  <td className="px-4 py-3 text-white/70">{formatKoreanDate(p.createdAt)}</td>
+                  <td className="border-l border-white/10 px-4 py-3 text-white/70">
+                    <span className="block truncate">{p.authorName ?? "익명"}</span>
+                  </td>
+                  <td className="border-l border-white/10 px-4 py-3 text-white/70">
+                    <span className="block whitespace-nowrap">{formatKoreanDate(p.createdAt)}</span>
+                  </td>
                 </tr>
               ))
             )}
