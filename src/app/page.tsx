@@ -3,7 +3,6 @@ import HomeHero from "./_components/HomeHero";
 import RealtimePosts from "./_components/RealtimePosts";
 import { getMeta, getPrices } from "../lib/prices";
 import { PRICE_CATEGORIES } from "../lib/priceCategories";
-import { listHybridBlogPosts } from "../lib/blogStorage";
 import { listOnlinePostsByBoard } from "../lib/onlinePosts";
 import type { Post } from "../lib/postTypes";
 
@@ -15,18 +14,18 @@ function formatDate(value: string) {
 
 const PRIMARY_ROUTES = [
   {
-    eyebrow: "PRICE",
-    title: "가격현황",
-    desc: "부품과 완본체의 현재가, 변동 폭, 최근 최저가를 비교합니다.",
-    href: "/prices",
-    action: "가격 비교하기",
+    eyebrow: "NEWS",
+    title: "IT 소식",
+    desc: "새로운 하드웨어 뉴스와 업데이트, 곰선생 추천픽을 확인합니다.",
+    href: "/it",
+    action: "새 소식 보기",
   },
   {
-    eyebrow: "GUIDE",
-    title: "구매가이드",
-    desc: "상품 설명, 장단점, 추천 대상을 실제 구매 관점에서 정리합니다.",
-    href: "/blog",
-    action: "가이드 보기",
+    eyebrow: "COMMUNITY",
+    title: "커뮤니티",
+    desc: "질문과 사용기, 하드웨어 정보와 문제 해결 경험을 함께 나눕니다.",
+    href: "/community",
+    action: "게시판 둘러보기",
   },
   {
     eyebrow: "DEAL",
@@ -76,13 +75,11 @@ function SectionTitle({
 }
 
 export default async function HomePage() {
-  const [meta, guideResult, priceResults, hotDeals] = await Promise.all([
+  const [meta, priceResults, hotDeals] = await Promise.all([
     getMeta(),
-    listHybridBlogPosts({ limit: 3 }),
     Promise.all(PRICE_CATEGORIES.map((category) => getPrices(category.key))),
     listOnlinePostsByBoard("hotdeal", 4).catch(() => [] as Post[]),
   ]);
-  const guides = guideResult.posts.slice(0, 3);
   const itemCount = priceResults.reduce((sum, result) => sum + result.items.length, 0);
   const deals = hotDeals.filter((post) => !post.isPrivate).slice(0, 4);
 
@@ -103,30 +100,6 @@ export default async function HomePage() {
             <div className="mt-5 text-sm font-medium text-white/85">{item.action} →</div>
           </Link>
         ))}
-      </section>
-
-      <section>
-        <SectionTitle
-          eyebrow="BUYING GUIDE"
-          title="구매 전에 읽어볼 가이드"
-          desc="가격표만으로 판단하기 어려운 제품 차이를 쉽게 정리합니다."
-          href="/blog"
-          action="전체 가이드"
-        />
-        <div className="mt-5 grid gap-4 md:grid-cols-3">
-          {guides.length === 0 ? (
-            <div className="bd-surface-md p-5 text-sm text-white/45 md:col-span-3">아직 발행된 구매가이드가 없습니다.</div>
-          ) : guides.map((guide) => (
-            <Link key={guide.slug} href={`/blog/${guide.slug}`} className="group bd-surface-md p-5 hover:border-white/20 hover:bg-white/10">
-              <div className="flex items-center justify-between gap-3">
-                <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-white/60">{guide.category}</span>
-                <span className="text-[11px] text-white/35">{formatDate(guide.publishedAt)}</span>
-              </div>
-              <h3 className="mt-4 font-semibold leading-6 group-hover:text-cyan-100">{guide.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-white/55">{guide.summary}</p>
-            </Link>
-          ))}
-        </div>
       </section>
 
       <section>

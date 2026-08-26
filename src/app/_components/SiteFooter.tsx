@@ -16,9 +16,6 @@ export default function SiteFooter() {
           <Link className="hover:text-white" href="/prices">
             가격현황
           </Link>
-          <Link className="hover:text-white" href="/blog">
-            구매가이드
-          </Link>
           <Link className="hover:text-white" href="/community/hotdeal">
             핫딜
           </Link>

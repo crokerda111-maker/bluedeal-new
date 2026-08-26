@@ -200,18 +200,6 @@ export default function AdminPage() {
           >
             곰선생 추천픽 작성
           </Link>
-          <Link
-            href="/admin/blog"
-            className="rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-cyan-200"
-          >
-            블로그 작성·관리
-          </Link>
-          <Link
-            href="/blog"
-            className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-          >
-            공개 블로그 보기
-          </Link>
         </div>
 
         <div className="mt-3 flex items-center justify-between">

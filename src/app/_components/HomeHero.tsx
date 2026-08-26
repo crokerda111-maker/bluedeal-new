@@ -81,27 +81,27 @@ export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt
         {/* Left: hero */}
         <div className="bd-surface p-6 shadow-[0_34px_90px_-56px_rgba(59,130,246,0.7)] md:p-8">
           <div className="flex flex-wrap gap-2">
-            <Pill tone="cyan">가격현황</Pill>
-            <Pill tone="muted">구매가이드</Pill>
-            <Pill tone="muted">핫딜·제휴링크</Pill>
+            <Pill tone="cyan">IT 소식</Pill>
+            <Pill tone="muted">하드웨어 커뮤니티</Pill>
+            <Pill tone="muted">핫딜 공유</Pill>
           </div>
 
           <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-            가격부터 구매 이유까지,
+            PC와 IT 이야기를,
             <br />
-            <span className="text-cyan-200">사기 전에 한 번에 확인하세요.</span>
+            <span className="text-cyan-200">함께 나누고 빠르게 확인하세요.</span>
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70 md:text-base">
-            PC 부품과 완본체 가격 흐름, 실제 선택에 필요한 설명, 할인 상품 링크를 한곳에 정리합니다.
-            광고·제휴 여부도 링크와 함께 투명하게 안내합니다.
+            최신 IT 뉴스부터 하드웨어 질문, 사용기, 오버클럭 정보와 핫딜까지 한곳에서 나눕니다.
+            상품 링크에는 광고·제휴 여부를 투명하게 안내합니다.
           </p>
 
           <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-            <ButtonLink href="/prices" variant="primary">
-              가격현황 보기
+            <ButtonLink href="/community" variant="primary">
+              커뮤니티 둘러보기
             </ButtonLink>
-            <ButtonLink href="/blog" variant="soft">
-              구매가이드 보기
+            <ButtonLink href="/it" variant="soft">
+              IT 소식 보기
             </ButtonLink>
             <ButtonLink href="/community/hotdeal" variant="ghost">
               핫딜 확인하기
@@ -109,9 +109,9 @@ export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <Stat k="가격현황" v="비교" d="부품·완본체 가격 흐름" />
-            <Stat k="구매가이드" v="설명" d="스펙·장단점·추천 대상" />
-            <Stat k="핫딜" v="연결" d="검증된 상품·제휴 링크" />
+            <Stat k="IT 소식" v="뉴스" d="업데이트·이슈·추천픽" />
+            <Stat k="커뮤니티" v="참여" d="질문·후기·정보 공유" />
+            <Stat k="핫딜" v="공유" d="상품 정보·제휴 링크" />
           </div>
         </div>
 
@@ -157,8 +157,8 @@ export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt
               <ButtonLink href="/prices" className="flex-1" variant="primary">
                 가격현황 보기
               </ButtonLink>
-              <ButtonLink href="/blog" className="flex-1" variant="ghost">
-                구매가이드
+              <ButtonLink href="/community" className="flex-1" variant="ghost">
+                커뮤니티
               </ButtonLink>
             </div>
 

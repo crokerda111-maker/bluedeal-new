@@ -134,10 +134,6 @@ export default function SiteHeader() {
               ))}
             </Dropdown>
 
-            <Link className="hover:text-white" href="/blog">
-              구매가이드
-            </Link>
-
             <Link className="hover:text-white" href="/community/hotdeal">
               핫딜
             </Link>
@@ -184,12 +180,6 @@ export default function SiteHeader() {
             href="/prices"
           >
             가격현황
-          </Link>
-          <Link
-            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
-            href="/blog"
-          >
-            구매가이드
           </Link>
           <Link
             className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
