@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { IT_BOARD, type FieldDef } from "../../../lib/boardConfig";
-import type { PostExtra } from "../../../lib/postTypes";
-import { apiCreatePost } from "../../../lib/postsClient";
+import type { PostExtra, PostType } from "../../../lib/postTypes";
+import { apiAdminStatus, apiCreatePost } from "../../../lib/postsClient";
 import { getNickname, setNickname } from "../../../lib/profile";
 
 function Field({ def, value, onChange }: { def: FieldDef; value: string; onChange: (v: string) => void }) {
@@ -57,12 +57,12 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
   );
 }
 
-export default function ITWritePage() {
+export default function ITWritePage({ searchParams }: { searchParams?: { type?: string } }) {
   const router = useRouter();
+  const requestedType = searchParams?.type;
 
-  // IT 소식은 말머리(타입) 없음: 항상 general
-  const type = "general" as const;
-
+  const [type, setType] = useState<PostType>("news");
+  const [isAdmin, setIsAdmin] = useState(false);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [authorName, setAuthorName] = useState("게스트");
@@ -72,7 +72,17 @@ export default function ITWritePage() {
 
   useEffect(() => {
     setAuthorName(getNickname("게스트"));
-  }, []);
+    apiAdminStatus()
+      .then((admin) => {
+        setIsAdmin(admin);
+        if (admin && requestedType === "pick") setType("pick");
+      })
+      .catch(() => setIsAdmin(false));
+  }, [requestedType]);
+
+  useEffect(() => {
+    if (!isAdmin && type === "pick") setType("news");
+  }, [isAdmin, type]);
 
   const requiredExtraKeys = useMemo(() => {
     return (IT_BOARD.extraFields ?? []).filter((f) => f.required).map((f) => f.key);
@@ -114,8 +124,8 @@ export default function ITWritePage() {
       });
 
       router.push(`/it/${post.id}`);
-    } catch {
-      setError("저장 중 오류가 발생했습니다.");
+    } catch (e: any) {
+      setError(typeof e?.message === "string" ? e.message : "저장 중 오류가 발생했습니다.");
     } finally {
       setSaving(false);
     }
@@ -156,7 +166,38 @@ export default function ITWritePage() {
             </button>
           </div>
 
-          {/* 제목/본문 */}
+          <div>
+            <div className="text-sm text-white/80">분류</div>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => setType("news")}
+                className={`rounded-full border px-3 py-1.5 text-sm ${
+                  type === "news"
+                    ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
+                    : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
+                }`}
+              >
+                뉴스
+              </button>
+              {isAdmin ? (
+                <button
+                  type="button"
+                  onClick={() => setType("pick")}
+                  className={`rounded-full border px-3 py-1.5 text-sm ${
+                    type === "pick"
+                      ? "border-amber-300/50 bg-amber-300/15 text-amber-100"
+                      : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
+                  }`}
+                >
+                  곰선생 추천픽
+                </button>
+              ) : null}
+            </div>
+            {!isAdmin ? <div className="mt-1 text-[12px] text-white/45">곰선생 추천픽은 관리자 로그인 후 작성할 수 있습니다.</div> : null}
+          </div>
+
+          {/* 제목 */}
           <label className="block">
             <div className="text-sm text-white/80">제목</div>
             <input
@@ -164,17 +205,6 @@ export default function ITWritePage() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="제목을 입력하세요"
-            />
-          </label>
-
-          <label className="block">
-            <div className="text-sm text-white/80">내용</div>
-            <textarea
-              rows={10}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              placeholder="본문을 입력하세요"
             />
           </label>
 
@@ -186,6 +216,17 @@ export default function ITWritePage() {
               onChange={(v) => setExtra((prev) => ({ ...prev, [f.key]: v }))}
             />
           ))}
+
+          <label className="block">
+            <div className="text-sm text-white/80">내용</div>
+            <textarea
+              rows={10}
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              placeholder="본문을 입력하세요"
+            />
+          </label>
 
           {error ? <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
 

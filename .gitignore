@@ -19,6 +19,11 @@
 # ops (do not commit real credentials / addresses)
 ops/*.private.*
 ops/private/
+ops/collector/input/products.csv
+ops/collector/input/danawa-candidates.csv
+ops/collector/state/
+__pycache__/
+*.py[cod]
 
 # logs
 npm-debug.log*

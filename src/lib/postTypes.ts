@@ -2,6 +2,8 @@ export type PostType =
   | "general"
   | "question"
   | "tip"
+  | "news"
+  | "pick"
   // 리뷰 전용 말머리
   | "monitor"
   | "sound"

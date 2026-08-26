@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAdminPassword, setAdminCookie } from "../../../../lib/adminAuth";
+import { getAdminPassword, isAdminPasswordConfigured, setAdminCookie } from "../../../../lib/adminAuth";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,6 +18,13 @@ export async function POST(req: NextRequest) {
 
   const pw = typeof body?.password === "string" ? body.password : "";
   if (!pw) return json({ error: "Missing password" }, { status: 400 });
+
+  if (!isAdminPasswordConfigured()) {
+    return json(
+      { errorCode: "ADMIN_PASSWORD_NOT_CONFIGURED", error: "관리자 비밀번호가 아직 설정되지 않았습니다." },
+      { status: 503 },
+    );
+  }
 
   if (pw !== getAdminPassword()) {
     return json({ error: "비밀번호가 맞지 않습니다." }, { status: 401 });

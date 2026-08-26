@@ -117,10 +117,6 @@ export default function SiteHeader() {
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-6 text-sm text-white/75 md:flex">
-            <Link className="hover:text-white" href="/it">
-              IT 소식
-            </Link>
-
             <Dropdown label="가격현황" href="/prices">
               <div className="px-4 py-2 text-xs text-white/45">카테고리</div>
               <DropItem href="/prices">전체 보기</DropItem>
@@ -131,6 +127,14 @@ export default function SiteHeader() {
                 </DropItem>
               ))}
             </Dropdown>
+
+            <Link className="hover:text-white" href="/blog">
+              구매가이드
+            </Link>
+
+            <Link className="hover:text-white" href="/community/hotdeal">
+              핫딜
+            </Link>
 
             <Dropdown label="커뮤니티" href="/community">
               <div className="px-4 py-2 text-xs text-white/45">바로가기</div>
@@ -143,8 +147,8 @@ export default function SiteHeader() {
               ))}
             </Dropdown>
 
-            <Link className="hover:text-white" href="/community/hotdeal">
-              핫딜
+            <Link className="hover:text-white" href="/it">
+              IT 소식
             </Link>
 
             <Link className="hover:text-white" href="/contact">
@@ -181,15 +185,27 @@ export default function SiteHeader() {
           </Link>
           <Link
             className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
-            href="/community"
+            href="/blog"
           >
-            커뮤니티
+            구매가이드
           </Link>
           <Link
             className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
             href="/community/hotdeal"
           >
             핫딜
+          </Link>
+          <Link
+            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
+            href="/community"
+          >
+            커뮤니티
+          </Link>
+          <Link
+            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
+            href="/it"
+          >
+            IT 소식
           </Link>
           <Link
             className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"

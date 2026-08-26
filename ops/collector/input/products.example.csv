@@ -1,0 +1,4 @@
+category,id,name,spec,price,url,source
+ram,ram-example-1,예시 DDR5 메모리,DDR5 / 32GB,129000,https://www.coupang.com/,쿠팡
+ssd,ssd-example-1,예시 NVMe SSD,PCIe 4.0 / 1TB,99000,https://www.11st.co.kr/,11번가
+

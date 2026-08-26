@@ -24,6 +24,7 @@ function includesQuery(p: Post, query: string): boolean {
 
 export default function ITNewsPage() {
   const [posts, setPosts] = useState<Post[]>([]);
+  const [section, setSection] = useState<"news" | "pick">("news");
   const [q, setQ] = useState("");
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<{ message: string; code?: string } | null>(null);
@@ -59,9 +60,11 @@ export default function ITNewsPage() {
 
   const filtered = useMemo(() => {
     const query = q.trim();
-    if (!query) return posts;
-    return posts.filter((p) => includesQuery(p, query));
-  }, [posts, q]);
+    return posts.filter((p) => {
+      const sectionMatch = section === "pick" ? p.type === "pick" : p.type !== "pick";
+      return sectionMatch && includesQuery(p, query);
+    });
+  }, [posts, q, section]);
 
   const isKvMissing = loadError?.code === "KV_NOT_CONFIGURED";
 
@@ -81,6 +84,31 @@ export default function ITNewsPage() {
           >
             글쓰기
           </Link>
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setSection("news")}
+            className={`rounded-xl border px-4 py-2 text-sm ${
+              section === "news"
+                ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
+                : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
+            }`}
+          >
+            뉴스
+          </button>
+          <button
+            type="button"
+            onClick={() => setSection("pick")}
+            className={`rounded-xl border px-4 py-2 text-sm ${
+              section === "pick"
+                ? "border-amber-300/50 bg-amber-300/15 text-amber-100"
+                : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
+            }`}
+          >
+            곰선생 추천픽
+          </button>
         </div>
 
         <div className="mt-4">
@@ -142,7 +170,9 @@ export default function ITNewsPage() {
               filtered.map((p) => (
                 <tr key={p.id} className="border-b border-white/5 hover:bg-white/5">
                   <td className="px-4 py-3 text-white/70">
-                    <span className="block truncate">{labelByType(p.type)}</span>
+                    <span className={`block truncate ${p.type === "pick" ? "text-amber-200" : ""}`}>
+                      {p.type === "general" ? "뉴스" : labelByType(p.type)}
+                    </span>
                   </td>
                   <td className="border-l border-white/10 px-4 py-3">
                     <Link className="block truncate text-white/85 hover:underline" href={`/it/${p.id}`} title={p.title}>

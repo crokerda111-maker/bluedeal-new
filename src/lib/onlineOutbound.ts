@@ -2,7 +2,7 @@ import "server-only";
 
 import crypto from "crypto";
 import type { Merchant } from "./outbound";
-import { isAllowedHost } from "./affiliate";
+import { detectMerchant, normalizeOutboundUrl } from "./affiliate";
 import { kvCommand } from "./kvRest";
 
 /**
@@ -39,24 +39,6 @@ function sha256B64Url(text: string): string {
   return crypto.createHash("sha256").update(text).digest("base64url");
 }
 
-function merchantFromHost(host: string): Merchant | null {
-  const h = host.toLowerCase();
-
-  if (/(^|\.)coupang\.com$/.test(h) || /(^|\.)link\.coupang\.com$/.test(h)) return "coupang";
-  if (
-    /(^|\.)aliexpress\.com$/.test(h) ||
-    /(^|\.)a\.aliexpress\.com$/.test(h) ||
-    /(^|\.)s\.click\.aliexpress\.com$/.test(h) ||
-    /(^|\.)aliexpress\.us$/.test(h)
-  )
-    return "aliexpress";
-  if (/(^|\.)11st\.co\.kr$/.test(h)) return "11st";
-  if (/(^|\.)gmarket\.co\.kr$/.test(h)) return "gmarket";
-  if (/(^|\.)naver\.com$/.test(h) || /(^|\.)smartstore\.naver\.com$/.test(h)) return "naver";
-
-  return null;
-}
-
 export function isHttpUrlString(v: string): boolean {
   try {
     const u = new URL(v);
@@ -64,18 +46,6 @@ export function isHttpUrlString(v: string): boolean {
   } catch {
     return false;
   }
-}
-
-function normalizeUrl(raw: string): string {
-  const t = String(raw).trim();
-  let u: URL;
-  try {
-    u = new URL(t);
-  } catch {
-    return t;
-  }
-  u.hash = "";
-  return u.toString();
 }
 
 function codeKey(code: string): string {
@@ -97,18 +67,11 @@ function clickKey(code: string): string {
 export async function createOrReuseOutboundCode(originalUrl: string): Promise<string | null> {
   if (!isHttpUrlString(originalUrl)) return null;
 
-  const normalized = normalizeUrl(originalUrl);
+  const normalized = normalizeOutboundUrl(originalUrl);
+  if (!normalized) return null;
 
-  let u: URL;
-  try {
-    u = new URL(normalized);
-  } catch {
-    return null;
-  }
-
-  if (!isAllowedHost(u.hostname)) return null;
-
-  const merchant = merchantFromHost(u.hostname);
+  const u = new URL(normalized);
+  const merchant = detectMerchant(u.hostname);
   if (!merchant) return null;
 
   const hHex = sha256Hex(normalized);

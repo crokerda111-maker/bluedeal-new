@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { ALL_BOARDS, boardKeyToPath } from "../../lib/boardConfig";
-import { MOCK_POSTS } from "../../lib/mockPosts";
 import type { Post } from "../../lib/postTypes";
 import { ApiError, apiListPosts } from "../../lib/postsClient";
 import { formatKoreanDate } from "../../lib/postStorage";
@@ -37,10 +36,7 @@ export default function RealtimePosts({ limit = 5, showHeader = true }: { limit?
         const code = e instanceof ApiError ? e.code : e?.code;
         setError({ message: msg, code });
 
-        // fallback: seed
-        const seed = [...MOCK_POSTS].filter((p) => p.boardKey !== "inquiry");
-        seed.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
-        setPosts(seed.slice(0, limit));
+        setPosts([]);
       });
 
     return () => {
@@ -65,11 +61,12 @@ export default function RealtimePosts({ limit = 5, showHeader = true }: { limit?
 
       {error ? (
         <div className={`mb-4 rounded-xl border p-3 text-sm ${isKvMissing ? "border-amber-500/30 bg-amber-500/10 text-amber-200" : "border-red-500/30 bg-red-500/10 text-red-200"}`}>
-          {isKvMissing ? "온라인 게시판 연결이 아직 설정되지 않아 샘플 글을 표시합니다." : `게시글을 불러오지 못했습니다. (${error.message})`}
+          {isKvMissing ? "온라인 게시판 연결이 아직 설정되지 않았습니다." : `게시글을 불러오지 못했습니다. (${error.message})`}
         </div>
       ) : null}
 
       <div className="space-y-3">
+        {posts.length === 0 && !error ? <div className="text-sm text-white/45">아직 등록된 게시글이 없습니다.</div> : null}
         {posts.map((p) => (
           <div key={p.id} className="flex items-start justify-between gap-4">
             <div className="min-w-0">

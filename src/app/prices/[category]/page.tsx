@@ -50,7 +50,7 @@ export default async function PricesCategoryPage({ params }: { params: { categor
 
         <div className="text-sm text-white/70">
           마지막 업데이트: <span className="text-white">{fmtKorean(data.updatedAt || meta.updatedAt)}</span>
-          <div className="text-[12px] text-white/50">갱신: 매일 09:00 / 17:00</div>
+          <div className="text-[12px] text-white/50">갱신: {meta.schedule}</div>
         </div>
       </div>
 
@@ -80,8 +80,7 @@ export default async function PricesCategoryPage({ params }: { params: { categor
                 </tr>
               ) : (
                 data.items.map((it) => {
-                  const link = it.goCode ? `/go/${it.goCode}` : it.url || "#";
-                  const linkLabel = it.goCode ? "최저가 보기" : it.url ? "보기" : "-";
+                  const link = it.goCode ? `/go/${it.goCode}` : null;
 
                   return (
                     <tr key={it.id} className="border-t border-white/10">
@@ -95,14 +94,16 @@ export default async function PricesCategoryPage({ params }: { params: { categor
                       <td className="px-4 py-3 text-right text-white/70">{typeof it.low7d === "number" ? fmtWon(it.low7d) : "-"}</td>
                       <td className="px-4 py-3 text-right text-white/70">{typeof it.low30d === "number" ? fmtWon(it.low30d) : "-"}</td>
                       <td className="px-4 py-3 text-right">
-                        {linkLabel === "-" ? (
-                          <span className="text-white/40">-</span>
+                        {!link ? (
+                          <span className="text-white/40" title="제휴링크 등록 전">
+                            준비 중
+                          </span>
                         ) : (
                           <SmartLink
                             className="inline-flex items-center rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-[12px] text-white/80 hover:border-white/25 hover:bg-white/10 hover:text-white"
                             href={link}
                           >
-                            {linkLabel} →
+                            최저가 보기 →
                           </SmartLink>
                         )}
                       </td>

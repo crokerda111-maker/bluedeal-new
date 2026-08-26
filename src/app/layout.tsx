@@ -4,7 +4,7 @@ import SiteFooter from "./_components/SiteFooter";
 
 export const metadata = {
   title: "BLUEDEAL",
-  description: "IT 소식 · 커뮤니티 · 가격현황 · 핫딜",
+  description: "PC 부품 가격현황 · 구매가이드 · 핫딜 · IT 커뮤니티",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -6,8 +6,11 @@ import type { NextRequest, NextResponse } from "next/server";
 const COOKIE_NAME = "bd_admin";
 
 export function getAdminPassword(): string {
-  // Default password (can be overridden by Vercel env: ADMIN_PASSWORD)
-  return process.env.ADMIN_PASSWORD || "dkrdjek2";
+  return process.env.ADMIN_PASSWORD?.trim() ?? "";
+}
+
+export function isAdminPasswordConfigured(): boolean {
+  return getAdminPassword().length > 0;
 }
 
 export function getAdminCookieName(): string {
@@ -15,6 +18,7 @@ export function getAdminCookieName(): string {
 }
 
 export function computeAdminCookieValue(password = getAdminPassword()): string {
+  if (!password) return "";
   // Keep this deterministic but not equal to the raw password.
   // If a cookie leaks, it still grants admin access, so keep it httpOnly.
   return crypto.createHash("sha256").update(`bluedeal_admin::${password}`).digest("hex");
@@ -23,13 +27,16 @@ export function computeAdminCookieValue(password = getAdminPassword()): string {
 export function isAdminRequest(req: NextRequest): boolean {
   const v = req.cookies.get(COOKIE_NAME)?.value;
   if (!v) return false;
-  return v === computeAdminCookieValue();
+  const expected = computeAdminCookieValue();
+  return Boolean(expected && v === expected);
 }
 
 export function setAdminCookie(res: NextResponse): void {
+  const value = computeAdminCookieValue();
+  if (!value) throw new Error("ADMIN_PASSWORD is not configured");
   res.cookies.set({
     name: COOKIE_NAME,
-    value: computeAdminCookieValue(),
+    value,
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",

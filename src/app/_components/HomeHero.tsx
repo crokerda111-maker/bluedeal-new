@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
 
 function cn(...v: Array<string | false | null | undefined>) {
@@ -72,14 +72,7 @@ function Stat({ k, v, d }: { k: string; v: string; d: string }) {
   );
 }
 
-export default function HomeHero({ updatedAt }: { updatedAt: string }) {
-  const [q, setQ] = useState("");
-
-  const tags = useMemo(
-    () => ["DDR5", "B850", "NVMe 2TB", "CPU", "GPU", "쿨러", "반본체", "완본체"],
-    [],
-  );
-
+export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt: string; schedule: string; itemCount: number }) {
   const chips = useMemo(() => PRICE_CATEGORIES.slice(0, 8), []);
 
   return (
@@ -89,63 +82,36 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
         <div className="bd-surface p-6 shadow-[0_34px_90px_-56px_rgba(59,130,246,0.7)] md:p-8">
           <div className="flex flex-wrap gap-2">
             <Pill tone="cyan">가격현황</Pill>
-            <Pill tone="muted">매일 09:00·17:00 업데이트</Pill>
-            <Pill tone="muted">IT 소식·커뮤니티·핫딜</Pill>
+            <Pill tone="muted">구매가이드</Pill>
+            <Pill tone="muted">핫딜·제휴링크</Pill>
           </div>
 
           <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-            파란 테마로, <span className="text-cyan-200">딜 판단</span>을 더 빠르게.
+            가격부터 구매 이유까지,
+            <br />
+            <span className="text-cyan-200">사기 전에 한 번에 확인하세요.</span>
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70 md:text-base">
-            IT 소식, 커뮤니티, 가격현황, 핫딜을 한곳에 모았습니다. 필요한 정보만 빠르게 찾아 딜 판단에 집중할 수 있게
-            구성했습니다.
+            PC 부품과 완본체 가격 흐름, 실제 선택에 필요한 설명, 할인 상품 링크를 한곳에 정리합니다.
+            광고·제휴 여부도 링크와 함께 투명하게 안내합니다.
           </p>
 
-          {/* search row (visual + quick links) */}
-          <div className="mt-6 rounded-2xl border border-white/10 bg-[#050816]/60 p-3">
-            <div className="flex flex-col gap-2 md:flex-row md:items-center">
-              <div className="flex flex-1 items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-                <span className="text-white/45">🔎</span>
-                <input
-                  value={q}
-                  onChange={(e) => setQ(e.target.value)}
-                  className="w-full bg-transparent text-sm outline-none placeholder:text-white/35"
-                  placeholder="예: DDR5 6000, B850, 4070S, 7800X3D..."
-                  aria-label="검색"
-                />
-              </div>
-
-              <div className="flex gap-2">
-                <ButtonLink href="/prices" variant="primary" className="flex-1 md:flex-none">
-                  가격현황
-                </ButtonLink>
-                <ButtonLink href="/community" variant="soft" className="flex-1 md:flex-none">
-                  커뮤니티
-                </ButtonLink>
-                <ButtonLink href="/community/hotdeal" variant="ghost" className="flex-1 md:flex-none">
-                  핫딜
-                </ButtonLink>
-              </div>
-            </div>
-
-            <div className="mt-3 flex flex-wrap gap-2">
-              {tags.map((t) => (
-                <button
-                  key={t}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60"
-                  onClick={() => setQ(t)}
-                  type="button"
-                >
-                  {t}
-                </button>
-              ))}
-            </div>
+          <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+            <ButtonLink href="/prices" variant="primary">
+              가격현황 보기
+            </ButtonLink>
+            <ButtonLink href="/blog" variant="soft">
+              구매가이드 보기
+            </ButtonLink>
+            <ButtonLink href="/community/hotdeal" variant="ghost">
+              핫딜 확인하기
+            </ButtonLink>
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <Stat k="게시글" v="최신" d="IT 소식 + 커뮤니티" />
-            <Stat k="가격현황" v="09/17시" d="하루 2회 업데이트" />
-            <Stat k="핫딜" v="모아보기" d="구매/출처 링크 정리" />
+            <Stat k="가격현황" v="비교" d="부품·완본체 가격 흐름" />
+            <Stat k="구매가이드" v="설명" d="스펙·장단점·추천 대상" />
+            <Stat k="핫딜" v="연결" d="검증된 상품·제휴 링크" />
           </div>
         </div>
 
@@ -173,10 +139,12 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
           <div className="mt-6 rounded-2xl border border-white/10 bg-[#050816]/60 p-4">
             <div className="flex items-center justify-between">
               <div className="text-xs text-white/55">업데이트</div>
-              <Pill tone="cyan">09:00 / 17:00</Pill>
+              <Pill tone="cyan">PC 갱신</Pill>
             </div>
 
-            <div className="mt-2 text-sm font-semibold leading-6">RAM/CPU/GPU/본체 가격현황 요약</div>
+            <div className="mt-2 text-sm font-semibold leading-6">
+              {itemCount > 0 ? `현재 등록 상품 ${itemCount}개` : "첫 가격 데이터 등록 준비 중"}
+            </div>
 
             <div className="mt-3 text-xs text-white/65">마지막 업데이트: {fmtKorean(updatedAt)}</div>
 
@@ -189,13 +157,13 @@ export default function HomeHero({ updatedAt }: { updatedAt: string }) {
               <ButtonLink href="/prices" className="flex-1" variant="primary">
                 가격현황 보기
               </ButtonLink>
-              <ButtonLink href="/it" className="flex-1" variant="ghost">
-                IT 소식
+              <ButtonLink href="/blog" className="flex-1" variant="ghost">
+                구매가이드
               </ButtonLink>
             </div>
 
             <div className="mt-3 text-[11px] text-white/45">
-              ※ 가격 데이터는 매일 09:00 / 17:00(KST) 기준으로 갱신됩니다. 오탈자/누락 제보는 문의 게시판에 남겨주세요.
+              ※ 갱신 방식: {schedule}. 오탈자/누락 제보는 문의 게시판에 남겨주세요.
             </div>
           </div>
         </aside>

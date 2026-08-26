@@ -12,7 +12,7 @@ export const MOCK_POSTS: Post[] = [
   {
     id: "seed-it-1",
     boardKey: "it",
-    type: "general",
+    type: "news",
     title: "(샘플) GPU 신제품 루머/요약 모음",
     content:
       "정리형 글(샘플)입니다. 출시 일정/가격/성능 루머는 변동될 수 있습니다.\n\n- 제품군: 중상급\n- 출시: 미정\n- 참고: 출처 링크 확인\n",
@@ -22,7 +22,7 @@ export const MOCK_POSTS: Post[] = [
   {
     id: "seed-it-2",
     boardKey: "it",
-    type: "general",
+    type: "pick",
     title: "(샘플) Windows 업데이트 전 확인 체크리스트",
     content:
       "업데이트 전/후에 문제가 자주 생기는 포인트를 짧게 정리합니다.\n\n1) 드라이버 백업\n2) 복원 지점 생성\n3) 문제 발생 시 롤백 방법\n",

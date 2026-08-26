@@ -4,6 +4,8 @@ export const POST_TYPE_OPTIONS: Array<{ value: PostType; label: string; hint?: s
   { value: "general", label: "일반", hint: "정보 공유/잡담" },
   { value: "question", label: "질문", hint: "문제 해결/추천 요청" },
   { value: "tip", label: "팁", hint: "세팅/노하우" },
+  { value: "news", label: "뉴스", hint: "IT 뉴스/루머/업데이트" },
+  { value: "pick", label: "곰선생 추천픽", hint: "관리자 추천 제품/콘텐츠" },
 
   // 리뷰 전용 말머리
   { value: "monitor", label: "모니터", hint: "리뷰: 모니터" },
@@ -16,6 +18,8 @@ export const POST_TYPE_LABEL: Record<PostType, string> = {
   general: "일반",
   question: "질문",
   tip: "팁",
+  news: "뉴스",
+  pick: "곰선생 추천픽",
   monitor: "모니터",
   sound: "사운드",
   parts: "컴퓨터 부품",
@@ -73,12 +77,26 @@ export const IT_BOARD: BoardDef = {
   title: "IT 소식",
   description: "IT 뉴스/루머/업데이트/이슈 요약",
   writeHint: "출처가 있으면 링크를 함께 남기세요. (루머/추측은 구분해서 작성)",
-  allowedTypes: ["general"],
+  allowedTypes: ["news", "pick"],
   extraFields: [
     { key: "source", label: "출처(선택)", type: "url", placeholder: "https://..." },
     { key: "tag", label: "태그(선택)", type: "text", placeholder: "예: GPU, RAM, Windows" },
   ],
 };
+
+export const STORE_OPTIONS = [
+  { value: "쿠팡", label: "쿠팡" },
+  { value: "11번가", label: "11번가" },
+  { value: "G마켓", label: "G마켓" },
+  { value: "알리익스프레스", label: "알리익스프레스" },
+  { value: "아마존", label: "아마존" },
+  { value: "네이버쇼핑", label: "네이버쇼핑" },
+  { value: "옥션", label: "옥션" },
+  { value: "SSG", label: "SSG" },
+  { value: "롯데온", label: "롯데온" },
+  { value: "컴퓨존", label: "컴퓨존" },
+  { value: "기타", label: "기타" },
+] as const;
 
 export const COMMUNITY_BOARDS: BoardDef[] = [
   {
@@ -209,7 +227,7 @@ export const COMMUNITY_BOARDS: BoardDef[] = [
           { value: "etc", label: "기타" },
         ],
       },
-      { key: "store", label: "스토어(선택)", type: "text", placeholder: "예: 쿠팡, 11번가" },
+      { key: "store", label: "스토어(선택)", type: "select", options: [...STORE_OPTIONS] },
       { key: "price", label: "가격(선택)", type: "text", placeholder: "예: 199,000원" },
       { key: "dealLink", label: "원문/구매 링크(URL)", type: "url", required: true, placeholder: "https://..." },
     ],

@@ -211,7 +211,16 @@ export default function CommunityWritePage({ params }: { params: { board: string
             />
           </label>
 
-          {/* 본문 */}
+          {(board.extraFields ?? []).map((f) => (
+            <Field
+              key={f.key}
+              def={f}
+              value={extra[f.key] ?? ""}
+              onChange={(v) => setExtra((prev) => ({ ...prev, [f.key]: v }))}
+            />
+          ))}
+
+          {/* 본문은 게시판별 추가정보를 입력한 뒤 마지막에 작성 */}
           <label className="block">
             <div className="text-sm text-white/80">내용</div>
             <textarea
@@ -222,15 +231,6 @@ export default function CommunityWritePage({ params }: { params: { board: string
               placeholder="본문을 입력하세요"
             />
           </label>
-
-          {(board.extraFields ?? []).map((f) => (
-            <Field
-              key={f.key}
-              def={f}
-              value={extra[f.key] ?? ""}
-              onChange={(v) => setExtra((prev) => ({ ...prev, [f.key]: v }))}
-            />
-          ))}
 
           {error ? <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
 

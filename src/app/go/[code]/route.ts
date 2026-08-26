@@ -9,6 +9,9 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: Request, ctx: { params: { code: string } }) {
   const code = ctx.params.code;
+  if (!/^[a-zA-Z0-9_-]{2,64}$/.test(code)) {
+    return NextResponse.json({ error: "Invalid outbound code" }, { status: 400 });
+  }
 
   let row: any = null;
   try {

@@ -139,7 +139,7 @@ export default function AdminPage() {
           {loginError ? <div className="mt-3 text-sm text-red-200">{loginError}</div> : null}
 
           <div className="mt-6 text-[12px] text-white/50">
-            ※ 비밀번호는 서버 환경변수 <code className="text-white/70">ADMIN_PASSWORD</code>로 변경할 수 있습니다. (기본값: dkrdjek2)
+            ※ 관리자 비밀번호는 배포 환경변수 <code className="text-white/70">ADMIN_PASSWORD</code>에만 저장됩니다.
           </div>
         </section>
       </div>
@@ -191,6 +191,27 @@ export default function AdminPage() {
               placeholder="제목/내용/작성자/추가정보"
             />
           </label>
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Link
+            href="/it/write?type=pick"
+            className="rounded-xl border border-amber-300/30 bg-amber-300/10 px-4 py-2 text-sm font-semibold text-amber-100 hover:bg-amber-300/15"
+          >
+            곰선생 추천픽 작성
+          </Link>
+          <Link
+            href="/admin/blog"
+            className="rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-cyan-200"
+          >
+            블로그 작성·관리
+          </Link>
+          <Link
+            href="/blog"
+            className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+          >
+            공개 블로그 보기
+          </Link>
         </div>
 
         <div className="mt-3 flex items-center justify-between">

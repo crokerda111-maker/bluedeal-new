@@ -18,7 +18,7 @@ export default async function PricesHubPage() {
           <div>
             <h1 className="text-2xl font-semibold tracking-tight">가격현황</h1>
             <p className="mt-2 text-sm text-white/70">
-              주요 PC 부품/본체 가격을 한눈에 봅니다. (갱신: <b>매일 09:00 / 17:00</b>)
+              주요 PC 부품/본체 가격을 한눈에 봅니다. (갱신: <b>{meta.schedule}</b>)
             </p>
           </div>
           <div className="text-sm text-white/70">

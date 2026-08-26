@@ -1,0 +1,32 @@
+{
+  "cpu": [
+    "9600X",
+    "9800X3D",
+    "7800X3D",
+    "7700X3D"
+  ],
+  "ram": [
+    {
+      "label": "DDR5 48GB (24GBx2)",
+      "match": "48GB(24Gx2)",
+      "limit": 10,
+      "domesticOnly": true
+    },
+    {
+      "label": "DDR5 32GB (16GBx2)",
+      "match": "32GB(16Gx2)",
+      "limit": 10,
+      "domesticOnly": true
+    }
+  ],
+  "gpu": [
+    "RTX 5090",
+    "RTX 5080",
+    "RTX 5070 Ti",
+    "RTX 5070",
+    "RTX 5060 Ti 16GB",
+    "RTX 5060 Ti 8GB",
+    "RTX 5060",
+    "RTX 5050"
+  ]
+}

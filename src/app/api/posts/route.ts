@@ -102,6 +102,10 @@ export async function POST(req: NextRequest) {
     return json({ error: "This board does not allow the selected type." }, { status: 400 });
   }
 
+  if (boardKey === "it" && type === "pick" && !isAdminRequest(req)) {
+    return json({ error: "곰선생 추천픽은 관리자만 작성할 수 있습니다." }, { status: 403 });
+  }
+
   if (!title.trim()) return json({ error: "Missing title" }, { status: 400 });
   if (!content.trim()) return json({ error: "Missing content" }, { status: 400 });
 

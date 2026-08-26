@@ -8,7 +8,9 @@ export type PriceItem = {
   low7d?: number;
   low30d?: number;
   change24hPct?: number; // e.g. -1.2
+  /** 수집 원주소. 화면의 구매 버튼에는 직접 사용하지 않고 /go 등록 입력으로만 사용합니다. */
   url?: string;
+  /** 공개 구매 버튼에 사용하는 블루딜 내부 리다이렉트 코드 */
   goCode?: string;
   source?: string;
   updatedAt?: string;

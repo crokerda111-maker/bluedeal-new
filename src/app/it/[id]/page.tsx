@@ -46,7 +46,7 @@ export default function ITPostPage({ params }: { params: { id: string } }) {
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (cancelled) return;
-        setIsAdmin(Boolean(d?.isAdmin));
+        setIsAdmin(Boolean(d?.admin));
       })
       .catch(() => {
         if (cancelled) return;

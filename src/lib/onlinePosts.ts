@@ -28,6 +28,12 @@ function sha256(text: string): string {
   return crypto.createHash("sha256").update(text).digest("hex");
 }
 
+function adminPasswordHash(): string {
+  const password = getAdminPassword();
+  if (!password) throw new Error("ADMIN_PASSWORD가 설정되지 않았습니다.");
+  return sha256(password);
+}
+
 function stripTrailingPunct(raw: string): { url: string; trailing: string } {
   let url = raw;
   let trailing = "";
@@ -157,7 +163,7 @@ export async function createOnlinePost(input: CreateOnlinePostInput): Promise<Po
 
   if (input.isPrivate) {
     if (input.lockToAdminPassword) {
-      post.passwordHash = sha256(getAdminPassword());
+      post.passwordHash = adminPasswordHash();
     } else {
       const pw = (input.password ?? "").trim();
       post.passwordHash = pw ? sha256(pw) : "";
@@ -264,7 +270,7 @@ export async function updateOnlinePost(id: string, patch: UpdateOnlinePostInput)
     delete next.passwordHash;
   } else {
     if (patch.lockToAdminPassword) {
-      next.passwordHash = sha256(getAdminPassword());
+      next.passwordHash = adminPasswordHash();
     } else if (patch.password !== undefined) {
       const pw = (patch.password ?? "").trim();
       next.passwordHash = pw ? sha256(pw) : "";

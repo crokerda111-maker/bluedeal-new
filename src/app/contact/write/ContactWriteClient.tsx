@@ -197,7 +197,7 @@ export default function ContactWritePage() {
             </div>
           </label>
 
-          {/* 제목/내용 */}
+          {/* 제목 */}
           <label className="block">
             <div className="text-sm text-white/80">제목</div>
             <input
@@ -205,17 +205,6 @@ export default function ContactWritePage() {
               onChange={(e) => setTitle(e.target.value)}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               placeholder="제목"
-            />
-          </label>
-
-          <label className="block">
-            <div className="text-sm text-white/80">내용</div>
-            <textarea
-              rows={10}
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
-              placeholder="내용"
             />
           </label>
 
@@ -241,6 +230,18 @@ export default function ContactWritePage() {
               />
             </label>
           ) : null}
+
+          {/* 내용은 추가 설정을 마친 뒤 마지막에 작성 */}
+          <label className="block">
+            <div className="text-sm text-white/80">내용</div>
+            <textarea
+              rows={10}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              placeholder="내용"
+            />
+          </label>
 
           {error ? <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
 

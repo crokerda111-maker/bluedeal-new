@@ -102,69 +102,23 @@ DNS 반영이 지연될 수 있으니, 배포 도메인과 별개로 운영 중�
 
 
 ## 8) 가격현황(/prices)
-가격현황 페이지가 추가되었습니다.
+가격현황은 VPS 없이 GitHub에 포함된 JSON을 읽습니다.
 
 - 허브: `src/app/prices/page.tsx`
 - 카테고리(동적 라우트): `src/app/prices/[category]/page.tsx`
 - 카테고리 목록: `src/lib/priceCategories.ts`
-- 데이터 fetch: `src/lib/prices.ts`
-- (임시) 샘플 데이터: `src/lib/mockPrices.ts`
+- 데이터 로더: `src/lib/prices.ts`, `src/lib/localPrices.ts`
+- 실제 데이터: `src/content/prices/*.json`
+- 이동주소 표: `src/content/outbound.generated.json`
+- PC 수집기: `ops/collector/`
 
-### 데이터 연동(권장)
-Vercel(프론트)에서 VPS(가격 API)의 JSON을 읽어옵니다.
+### PC에서 갱신
 
-`.env.local` 또는 Vercel Environment Variables에 아래를 설정하세요.
-```env
-PRICE_API_BASE=https://blusedeal.co.kr
+```powershell
+powershell -ExecutionPolicy Bypass -File .\ops\collector\publish_prices.ps1 -Publish
 ```
 
-도메인 역할(현재 운영 기준):
-- `bluedeal.co.kr` = 홈페이지(프론트, 게시판 UI)
-- `blusedeal.co.kr` = 카페24 VPS 가격 JSON 원본(정적 JSON)
-
-> 참고: `api.blusedeal.co.kr` 같은 전용 서브도메인은 "가능하면" 분리하면 좋지만,
-> 카페24 관리형/워드프레스 VPS 환경에서는 vhost 제약으로 403이 나는 경우가 있어
-> **현재는 `blusedeal.co.kr` 하나로 `/meta.json`, `/prices/*.json`을 서빙하는 구성이 가장 안정적**입니다.
-
-VPS에서는 다음 파일을 제공하면 됩니다.
-- `GET /meta.json`
-- `GET /prices/ram.json`
-- `GET /prices/cpu.json`
-- `GET /prices/motherboard.json`
-- `GET /prices/gpu.json`
-- `GET /prices/cooler.json`
-- `GET /prices/halfpc.json`
-- `GET /prices/fullpc.json`
-
-예시(JSON)
-```json
-{
-  "category": "ram",
-  "updatedAt": "2026-02-06T09:00:00+09:00",
-  "items": [
-    {
-      "id": "ram-1",
-      "name": "제품명",
-      "spec": "스펙 요약",
-      "price": 129000,
-      "low7d": 125000,
-      "low30d": 119000,
-      "change24hPct": -0.8,
-      "url": "https://example.com",
-      "goCode": "d1",
-      "source": "sample"
-    }
-  ]
-}
-```
-
-### 갱신 주기
-현재 사이트 가정: **매일 09:00 / 17:00 (2회 갱신)**
-
-VPS 크론 예시:
-```bash
-0 9,17 * * * /usr/bin/python3 /srv/bluedeal-api/bin/update_prices.py >> /var/log/bluedeal-prices.log 2>&1
-```
+수집기는 CSV/JSON의 상품 URL을 허용 목록으로 검사하고 `/go/{code}`로 변환합니다. 가격 파일에는 원본 URL이 들어가지 않습니다. GitHub에 push되면 연결된 Vercel 배포가 자동으로 시작됩니다. 입력 형식과 Windows 작업 스케줄러 설정은 `ops/collector/README.md`를 참고하세요.
 
 ---
 
@@ -202,8 +156,7 @@ KV 설정이 없으면 게시판은 샘플 글(MOCK_POSTS)만 보이도록 fallb
 ## 10) 관리자 페이지 (/admin)
 
 - 사이트 내 링크는 제공하지 않습니다. URL로 직접 접근합니다.
-- 환경변수 `ADMIN_PASSWORD`로 비밀번호를 변경할 수 있습니다.
-  - 기본값: `dkrdjek2`
+- 환경변수 `ADMIN_PASSWORD` 설정이 필수입니다. 코드에 기본 비밀번호는 포함하지 않습니다.
   - Vercel 배포 시 **Production / Preview** 모두 설정 권장
 
 관리자 로그인 시:
@@ -212,4 +165,3 @@ KV 설정이 없으면 게시판은 샘플 글(MOCK_POSTS)만 보이도록 fallb
 
 가격현황 페이지의 "추가요청/제보/문의"는 `/contact/write?from=prices&cat=<카테고리명>`로 연결되며,
 운영자 확인용 **비공개 문의**로 자동 등록됩니다.
-

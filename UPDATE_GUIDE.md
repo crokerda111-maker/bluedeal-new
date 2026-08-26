@@ -68,13 +68,12 @@
 
 ---
 
-## 4) 카페24 VPS 관련
+## 4) 가격 갱신 관련
 
-권장 구조:
-- **VPS = 크롤링/스케줄링/DB**
-- **Vercel(Next.js) = 화면 렌더링/게시판 UI**
-
-운영 단계에서는 VPS가 수집한 JSON/DB를 API로 제공하고, Next는 그걸 읽어서 보여주면 안전합니다.
+- 카페24 VPS는 사용하지 않습니다.
+- Windows PC의 `ops/collector/publish_prices.ps1`가 가격 파일과 `/go` 이동주소를 생성합니다.
+- `-Publish`로 GitHub에 올리면 Vercel이 자동으로 다시 배포합니다.
+- 입력 CSV와 가격 기록은 Git에 올라가지 않습니다.
 
 ---
 
