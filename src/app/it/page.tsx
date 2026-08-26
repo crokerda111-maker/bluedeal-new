@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { IT_BOARD, labelByType } from "../../lib/boardConfig";
 import { MOCK_POSTS } from "../../lib/mockPosts";
 import type { Post } from "../../lib/postTypes";
@@ -22,12 +23,18 @@ function includesQuery(p: Post, query: string): boolean {
   return hay.includes(q);
 }
 
-export default function ITNewsPage() {
+function ITNewsContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [posts, setPosts] = useState<Post[]>([]);
   const [section, setSection] = useState<"news" | "pick">("news");
   const [q, setQ] = useState("");
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<{ message: string; code?: string } | null>(null);
+
+  useEffect(() => {
+    setSection(searchParams.get("section") === "pick" ? "pick" : "news");
+  }, [searchParams]);
 
   useEffect(() => {
     let cancelled = false;
@@ -68,6 +75,11 @@ export default function ITNewsPage() {
 
   const isKvMissing = loadError?.code === "KV_NOT_CONFIGURED";
 
+  const selectSection = (next: "news" | "pick") => {
+    setSection(next);
+    router.replace(next === "pick" ? "/it?section=pick" : "/it?section=news", { scroll: false });
+  };
+
   return (
     <div className="space-y-6">
       <section className="bd-surface-md p-6">
@@ -89,7 +101,7 @@ export default function ITNewsPage() {
         <div className="mt-5 flex flex-wrap gap-2">
           <button
             type="button"
-            onClick={() => setSection("news")}
+            onClick={() => selectSection("news")}
             className={`rounded-xl border px-4 py-2 text-sm ${
               section === "news"
                 ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
@@ -100,7 +112,7 @@ export default function ITNewsPage() {
           </button>
           <button
             type="button"
-            onClick={() => setSection("pick")}
+            onClick={() => selectSection("pick")}
             className={`rounded-xl border px-4 py-2 text-sm ${
               section === "pick"
                 ? "border-amber-300/50 bg-amber-300/15 text-amber-100"
@@ -192,5 +204,13 @@ export default function ITNewsPage() {
         </table>
       </section>
     </div>
+  );
+}
+
+export default function ITNewsPage() {
+  return (
+    <Suspense fallback={<div className="bd-surface-md p-6 text-sm text-white/60">IT 소식을 불러오는 중...</div>}>
+      <ITNewsContent />
+    </Suspense>
   );
 }

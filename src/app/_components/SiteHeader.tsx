@@ -117,6 +117,12 @@ export default function SiteHeader() {
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-6 text-sm text-white/75 md:flex">
+            <Dropdown label="IT 소식" href="/it">
+              <div className="px-4 py-2 text-xs text-white/45">바로가기</div>
+              <DropItem href="/it?section=news">뉴스</DropItem>
+              <DropItem href="/it?section=pick">곰선생 추천픽</DropItem>
+            </Dropdown>
+
             <Dropdown label="가격현황" href="/prices">
               <div className="px-4 py-2 text-xs text-white/45">카테고리</div>
               <DropItem href="/prices">전체 보기</DropItem>
@@ -146,10 +152,6 @@ export default function SiteHeader() {
                 </DropItem>
               ))}
             </Dropdown>
-
-            <Link className="hover:text-white" href="/it">
-              IT 소식
-            </Link>
 
             <Link className="hover:text-white" href="/contact">
               문의
@@ -200,12 +202,6 @@ export default function SiteHeader() {
             href="/community"
           >
             커뮤니티
-          </Link>
-          <Link
-            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
-            href="/it"
-          >
-            IT 소식
           </Link>
           <Link
             className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
