@@ -51,7 +51,7 @@ for (const route of ['/', '/about', '/prices', '/prices/ram', '/prices/ssd', '/i
     if (route.startsWith('/contact') || route === '/admin') assert.match(text, /name="robots" content="noindex, nofollow"/);
   });
 }
-for (const route of ['/no-such-verification-page', '/prices/no-such-category', '/community/not-a-board', '/deals/d1']) {
+for (const route of ['/no-such-verification-page', '/prices/no-such-category', '/community/not-a-board', '/deals/d1', '/it/missing-verification-post', '/community/hardware/missing-verification-post', '/contact/missing-verification-post']) {
   await check(`honest 404 ${route}`, async () => {
     const { response, text } = await read(route);
     assert.equal(response.status, 404);

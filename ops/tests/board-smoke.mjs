@@ -275,6 +275,21 @@ try {
     assert.equal(sampleDeal.status, 404);
     assert.doesNotMatch(await sampleDeal.text(), /₩129,000|역대가 근처/);
   });
+  await check('missing and cross-board post pages return HTTP 404 instead of a soft error page',async()=>{
+    for(const route of ['/it/missing-verification-post','/contact/missing-verification-post','/community/hardware/missing-verification-post',`/community/hardware/${publicPosts[0].id}`,`/it/${publicPosts[1].id}`]){
+      const response=await fetch(app.base+route);
+      assert.equal(response.status,404,route);
+      assert.match(await response.text(),/페이지를 찾을 수 없습니다/);
+    }
+    for(const post of publicPosts){
+      const route=post.boardKey==='it'?`/it/${post.id}`:`/community/${post.boardKey}/${post.id}`;
+      const response=await fetch(app.base+route);
+      assert.equal(response.status,200,route);
+      const html=await response.text();
+      assert.ok(html.includes(`<title>${post.title} | BLUEDEAL</title>`));
+      assert.ok(html.includes(`rel="canonical" href="https://bluedeal.co.kr${route}"`));
+    }
+  });
   await check('outbound routes redirect to allowed merchants without following the link', async () => {
     const response = await fetch(app.base + publicPosts[0].extra.dealLink, { redirect: 'manual' });
     assert.equal(response.status, 302);
@@ -302,6 +317,16 @@ try {
     assert.equal(post.content, '');
     assert.equal('extra' in post, false);
     assert.equal('passwordHash' in post, false);
+  });
+  await check('private inquiry HTML keeps the record reachable without serializing body, email or password hash',async()=>{
+    const response=await fetch(`${app.base}/contact/${privateId}`);
+    assert.equal(response.status,200);
+    const html=await response.text();
+    assert.match(html,/name="robots" content="noindex, nofollow"/);
+    assert.doesNotMatch(html,/private fixture body|fixture@example\.invalid|fixture-password|passwordHash/);
+    const wrongBoard=await fetch(`${app.base}/community/hardware/${privateId}`);
+    assert.equal(wrongBoard.status,404);
+    await wrongBoard.text();
   });
   await check('private detail is locked; only the correct password unlocks', async () => {
     assert.equal((await api('GET', `/api/posts/${privateId}`)).status, 401);
