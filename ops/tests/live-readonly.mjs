@@ -1,6 +1,7 @@
 // Public deployment checks only: no credentials, writes, or outbound clicks.
 import assert from 'node:assert/strict';
 import { writeFile } from 'node:fs/promises';
+import { assertBrowserHeaders } from './browser-headers.mjs';
 
 const args = process.argv.slice(2);
 function option(name) {
@@ -31,6 +32,12 @@ async function check(name, run) {
   }
 }
 
+await check('browser security headers on pages, administrator, API, static content and errors', async () => {
+  for (const route of ['/', '/admin', '/api/admin/status', '/icon.svg', '/no-such-verification-page']) {
+    const { response } = await read(route);
+    assertBrowserHeaders(response);
+  }
+});
 await check('release commit and version', async () => {
   const { response, text } = await read('/api/version');
   assert.equal(response.status, 200);

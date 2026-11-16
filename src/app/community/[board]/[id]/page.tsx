@@ -14,9 +14,9 @@ function ExtraRow({ label, value }: { label: string; value: any }) {
   const text = String(value).trim();
   const isLink = isHttpUrl(text) || text.startsWith("/go/");
   return (
-    <div className="flex gap-3 text-sm">
-      <div className="w-28 shrink-0 text-white/55">{label}</div>
-      <div className="text-white/80 break-all">
+    <div className="flex flex-col gap-1 text-sm sm:flex-row sm:gap-3">
+      <div className="[overflow-wrap:anywhere] sm:w-28 sm:shrink-0 text-white/70">{label}</div>
+      <div className="min-w-0 flex-1 [overflow-wrap:anywhere] text-white/80">
         {isLink ? (
           <SmartLink href={text} className="text-cyan-200 hover:underline" title="새 창으로 열기">
             {text}
@@ -133,7 +133,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
         </Link>
 
         <div className="flex flex-wrap items-center gap-2">
-          <div className="text-[12px] text-white/55">
+          <div className="min-w-0 [overflow-wrap:anywhere] text-[12px] text-white/70">
             {POST_TYPE_LABEL[post.type]} · {post.authorName ?? "익명"} · {formatKoreanDate(post.createdAt)}
           </div>
           {isAdmin ? (
@@ -148,7 +148,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
       </div>
 
       <section className="bd-surface-md p-6">
-        <h1 className="text-2xl font-semibold tracking-tight">{post.title}</h1>
+        <h1 className="[overflow-wrap:anywhere] text-2xl font-semibold tracking-tight">{post.title}</h1>
         <LinkifiedText text={post.content} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
       </section>
 

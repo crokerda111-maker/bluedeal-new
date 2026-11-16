@@ -47,7 +47,7 @@ export default function LinkifiedText({ text, className, linkClassName }: Props)
   const parts = text.split(LINK_RE);
 
   return (
-    <div className={className}>
+    <div className={`min-w-0 [overflow-wrap:anywhere] ${className ?? ""}`}>
       {parts.map((p, idx) => {
         if (!p) return null;
         if (p.startsWith("/go/") || /^https?:\/\//i.test(p)) {

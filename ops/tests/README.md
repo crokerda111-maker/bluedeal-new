@@ -8,6 +8,8 @@ node ops/tests/live-readonly.mjs --commit 실제_40자리_배포_커밋 --report
 
 기본 대상은 `https://bluedeal.co.kr`입니다. 공개 페이지·정확한 404 응답·배포 커밋·검색 노출 규칙·익명 게시판 응답의 마스킹과 캐시 정책을 확인합니다. 로그인, 글 작성·수정·삭제, 판매처 이동 링크 클릭을 수행하지 않으며 원격 본문이나 문의 내용을 출력하지 않습니다. 운영 DB 쓰기 검증과 실제 제휴 귀속 검증을 대체하지 않습니다.
 
+페이지·관리자·API·정적 이미지·404 응답에서 기본 브라우저 보호 헤더도 확인합니다. [CSP `frame-ancestors`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/frame-ancestors)와 X-Frame-Options는 외부 프레임 삽입을 차단합니다. [nosniff](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options)는 선언된 응답 형식을 사용하게 하며, [Referrer-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy)는 다른 출처로 전체 경로·검색어를 보내지 않도록 설정합니다. CSP는 프레임·기준 주소·플러그인·폼 대상에 한정한 기본 보호이며 전체 XSS 방어나 접근 권한 검증을 대체하지 않습니다.
+
 ## 로컬 회귀 검사
 
 실제 운영 DB나 Vercel 환경변수 없이 검증합니다. 게시판 검사는 프로덕션 빌드의 HTTP API를 임시 로컬 KV 서버에 연결합니다. 테스트용 비밀번호는 실행할 때 생성하며 외부 서비스로 보내지 않습니다. 가격 생성기 검사는 `.test-tmp/` 아래의 임시 폴더만 사용하고, 검사 후 그 폴더를 정리합니다. 테스트 상품과 가격은 모두 가상 데이터입니다.

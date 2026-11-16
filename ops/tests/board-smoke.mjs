@@ -9,6 +9,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
+import { assertBrowserHeaders } from './browser-headers.mjs';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const generatedLinks = JSON.parse(await readFile(new URL('../../src/content/outbound.generated.json', import.meta.url), 'utf8'));
@@ -216,6 +217,13 @@ try {
   const password = process.env.BLUEDEAL_TEST_ADMIN_PASSWORD || randomBytes(24).toString('hex');
   const fixtureCommit = 'a'.repeat(40);
   const app = await startApp({ ADMIN_PASSWORD: password, KV_REST_API_URL: kv.url, KV_REST_API_TOKEN: kv.token, VERCEL_GIT_COMMIT_SHA: fixtureCommit });
+  await check('browser security headers cover pages, administrator, API, static content and errors', async () => {
+    for (const route of ['/', '/admin', '/api/admin/status', '/icon.svg', '/no-such-verification-page']) {
+      const response = await fetch(app.base + route, { redirect: 'manual', signal: AbortSignal.timeout(10000) });
+      assertBrowserHeaders(response);
+      await response.arrayBuffer();
+    }
+  });
   const api = (method, route, body, cookie) => request(app.base, method, route, body, cookie);
   let cookie;
   let privateId;
