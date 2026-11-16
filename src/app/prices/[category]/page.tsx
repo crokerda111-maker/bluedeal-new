@@ -9,6 +9,8 @@ import PriceFilterForm from "../../../components/PriceFilterForm";
 import CpuReferenceGuide from "../../../components/CpuReferenceGuide";
 import { filterPrices, priceFreshness, readPriceFilters } from "../../../lib/priceFilters";
 import { pageMetadata } from "../../../lib/site";
+import { OUTBOUND_LINKS } from "../../../lib/outbound";
+import { resolveAffiliateUrl } from "../../../lib/affiliate";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -73,17 +75,17 @@ function ProductInfo({ item }: { item: PriceItem }) {
   );
 }
 
-function PurchaseLink({ item }: { item: PriceItem }) {
+function PurchaseLink({ item, affiliate }: { item: PriceItem; affiliate: boolean }) {
   if (!item.goCode) return <span className="text-xs text-white/60">판매처 링크 준비 중</span>;
   return (
-    <SmartLink
+    <div className="space-y-1"><SmartLink
       className="inline-flex min-h-11 items-center whitespace-nowrap rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100 hover:bg-cyan-300/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
       href={`/go/${item.goCode}`}
-      rel="sponsored noopener noreferrer"
+      rel={affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer"}
       title={`${item.name} 판매처 보기 (새 창)`}
     >
       판매처 보기 ↗
-    </SmartLink>
+    </SmartLink><div className="text-xs text-white/65">{affiliate ? "제휴 링크" : "일반 링크"}</div></div>
   );
 }
 
@@ -94,6 +96,14 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
   const { meta, data, now } = await getPriceView(category.key as PriceCategoryKey);
   const filters = readPriceFilters(await searchParams);
   const items = filterPrices(data.items, category.key, filters);
+  const affiliateCodes = new Set<string>();
+  for (const item of items) {
+    if (!item.goCode) continue;
+    const outbound = OUTBOUND_LINKS[item.goCode];
+    const resolution = outbound ? resolveAffiliateUrl(outbound) : null;
+    if (resolution && resolution.mode !== "passthrough") affiliateCodes.add(item.goCode);
+  }
+  const hasPurchaseLinks = items.some(item => Boolean(item.goCode));
   const reportHref = `/contact/write?from=prices&cat=${encodeURIComponent(category.shortTitle)}`;
 
   return (
@@ -116,7 +126,10 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
         <p>표시된 금액은 <b className="text-white">확인 시점의 판매처 가격</b>입니다. 선택한 판매 상품을 안내하며, 전체 판매처의 최저가를 보장하지 않습니다.</p>
         <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요.</p>
-        <p className="mt-2 text-white" role="note">이 포스팅은 제휴마케팅이 포함된 광고로 커미션을 지급 받습니다.</p>
+        <p className="mt-2 text-white" role="note">{affiliateCodes.size > 0
+          ? "이 포스팅은 제휴마케팅이 포함된 광고로 커미션을 지급 받습니다."
+          : hasPurchaseLinks ? "이 페이지의 판매처 링크는 일반 링크입니다."
+            : "상품별 판매 조건과 링크는 확인된 정보가 있을 때 표시합니다."}</p>
       </div>
 
       <PriceFilterForm category={category.key} items={data.items} filters={filters} />
@@ -138,7 +151,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
                   <div><dt className="text-white/60">7일 관측 최저</dt><dd className="mt-1 text-white/80">{typeof item.low7d === "number" ? fmtWon(item.low7d) : "기록 대기"}</dd></div>
                   <div><dt className="text-white/60">30일 관측 최저</dt><dd className="mt-1 text-white/80">{typeof item.low30d === "number" ? fmtWon(item.low30d) : "기록 대기"}</dd></div>
                 </dl>
-                <PurchaseLink item={item} />
+                <PurchaseLink item={item} affiliate={affiliateCodes.has(item.goCode ?? "")} />
               </article>
             ))}
           </div>
@@ -165,7 +178,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
                       <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{pct(item.change24hPct)}</td>
                       <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{typeof item.low7d === "number" ? fmtWon(item.low7d) : "기록 대기"}</td>
                       <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{typeof item.low30d === "number" ? fmtWon(item.low30d) : "기록 대기"}</td>
-                      <td className="px-4 py-5 text-right"><PurchaseLink item={item} /></td>
+                      <td className="px-4 py-5 text-right"><PurchaseLink item={item} affiliate={affiliateCodes.has(item.goCode ?? "")} /></td>
                     </tr>
                   ))}
                 </tbody>

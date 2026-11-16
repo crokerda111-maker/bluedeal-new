@@ -51,6 +51,7 @@ async function startApp(env = {}) {
       ADMIN_PASSWORD: '', KV_REST_API_URL: '', KV_REST_API_TOKEN: '',
       UPSTASH_REDIS_REST_URL: '', UPSTASH_REDIS_REST_TOKEN: '',
       VERCEL_GIT_COMMIT_SHA: '',
+      AFFILIATE_LINKS_JSON: '',
       ...env,
     },
     stdio: ['ignore', 'pipe', 'pipe'],
@@ -223,6 +224,31 @@ try {
   const password = process.env.BLUEDEAL_TEST_ADMIN_PASSWORD || randomBytes(24).toString('hex');
   const fixtureCommit = 'a'.repeat(40);
   const app = await startApp({ ADMIN_PASSWORD: password, KV_REST_API_URL: kv.url, KV_REST_API_TOKEN: kv.token, VERCEL_GIT_COMMIT_SHA: fixtureCommit });
+  await check('price pages disclose configured affiliate links and label ordinary links without exposing private targets', async () => {
+    const ordinary = await (await fetch(app.base + '/prices/ram')).text();
+    const disclosure = '이 포스팅은 제휴마케팅이 포함된 광고로 커미션을 지급 받습니다.';
+    assert.ok(ordinary.includes('이 페이지의 판매처 링크는 일반 링크입니다.'));
+    assert.equal(ordinary.includes(disclosure), false);
+    assert.equal(ordinary.includes('rel="sponsored noopener noreferrer"'), false);
+    const price = JSON.parse(await readFile(path.join(root, 'src/content/prices/ram.json'), 'utf8')).items[0];
+    const outbound = generatedLinks[price.goCode];
+    assert.equal(outbound.merchant, 'gmarket');
+    const affiliateUrl = 'https://app.ac/testAffiliate000';
+    const testApp = await startApp({ AFFILIATE_LINKS_JSON: JSON.stringify([{ merchant: 'gmarket', provider: 'linkprice', originalUrl: outbound.originalUrl, affiliateUrl }]) });
+    try {
+      const html = await (await fetch(testApp.base + '/prices/ram')).text();
+      assert.ok(html.indexOf(disclosure) >= 0 && html.indexOf(disclosure) < html.indexOf('판매처 보기 ↗'));
+      assert.ok(html.includes('rel="sponsored noopener noreferrer"'));
+      assert.ok(html.includes('제휴 링크') && html.includes('일반 링크'));
+      assert.equal(html.includes('testAffiliate000'), false);
+      const redirect = await fetch(testApp.base + '/go/' + price.goCode, { redirect: 'manual' });
+      assert.equal(redirect.status, 302);
+      assert.equal(redirect.headers.get('location'), affiliateUrl);
+      const cpu = await (await fetch(testApp.base + '/prices/cpu')).text();
+      assert.ok(cpu.includes('이 페이지의 판매처 링크는 일반 링크입니다.'));
+      assert.equal(cpu.includes(disclosure), false);
+    } finally { await stopChild(testApp.child); }
+  });
   await check('browser security headers cover pages, administrator, API, static content and errors', async () => {
     for (const route of ['/', '/admin', '/api/admin/status', '/icon.svg', '/no-such-verification-page']) {
       const response = await fetch(app.base + route, { redirect: 'manual', signal: AbortSignal.timeout(10000) });

@@ -46,6 +46,30 @@
       "capacityGB": 1000,
       "ssdDram": "unknown",
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4192562983"
+    },
+    {
+      "category": "cpu",
+      "id": "amd-ryzen-7-9800x3d-multipack",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4568774118"
+    },
+    {
+      "category": "cpu",
+      "id": "amd-ryzen-5-9600x-multipack",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4618466078"
+    },
+    {
+      "category": "cpu",
+      "id": "amd-ryzen-7-7800x3d-multipack",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4568778642"
+    },
+    {
+      "category": "cpu",
+      "id": "amd-ryzen-7-7700x3d-multipack",
+      "seller": "(주)모든씨앤씨",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4808789181"
     }
   ]
 }
