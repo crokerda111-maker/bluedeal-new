@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
 import type { InquiryVisibility, PostType } from "../../../lib/postTypes";
 import { apiCreatePost } from "../../../lib/postsClient";
@@ -36,6 +36,11 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
   const authorName = useNickname();
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const receiptHeading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (submitted) receiptHeading.current?.focus();
+  }, [submitted]);
 
   const changeNick = () => {
     const next = prompt("닉네임을 입력하세요 (최대 20자)", authorName === "게스트" ? "" : authorName);
@@ -51,13 +56,14 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
       <div className="rounded-xl border border-cyan-300/30 bg-cyan-300/10 p-3 text-sm text-cyan-100">
         <div className="font-semibold">가격현황 제보/추가요청</div>
         <div className="mt-1 text-[13px] text-white/80">
-          이 글은 <b>운영자 확인용 비공개 문의</b>로 등록됩니다. (비밀번호는 운영자 비밀번호로 자동 설정)
+          이 글은 <b>운영자 확인용 비공개 문의</b>로 등록됩니다. 작성자용 열람 비밀번호는 제공되지 않습니다.
         </div>
       </div>
     );
   }, [fromPrices]);
 
   const onSubmit = async () => {
+    if (saving) return;
     setError(null);
 
     if (!title.trim()) return setError("제목을 입력하세요.");
@@ -81,13 +87,30 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
         extra: { email },
       });
 
-      router.push(`/contact/${post.id}`);
+      if (fromPrices) {
+        setSubmitted(true);
+      } else {
+        router.push(`/contact/${post.id}`);
+      }
     } catch {
       setError("저장 중 오류가 발생했습니다.");
     } finally {
       setSaving(false);
     }
   };
+
+  if (submitted) {
+    return (
+      <section className="bd-surface-md mx-auto max-w-2xl p-6" aria-labelledby="inquiry-received-title">
+        <h1 ref={receiptHeading} tabIndex={-1} id="inquiry-received-title" className="text-2xl font-semibold focus:outline-none">제보가 접수되었습니다</h1>
+        <p className="mt-4 text-sm leading-7 text-white/75">운영자 확인용 비공개 문의로 등록했습니다. 보내주신 가격 오류·상품 추가 요청을 검토하겠습니다.</p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/prices" className="rounded-xl bg-cyan-200 px-4 py-3 text-sm font-semibold text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">가격현황으로</Link>
+          <Link href="/contact" className="rounded-xl border border-white/20 px-4 py-3 text-sm hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">문의 목록</Link>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <div className="space-y-6">
