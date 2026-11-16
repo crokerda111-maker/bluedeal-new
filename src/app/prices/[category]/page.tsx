@@ -2,37 +2,75 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCategory } from "../../../lib/priceCategories";
 import type { PriceCategoryKey } from "../../../lib/priceCategories";
+import type { PriceItem } from "../../../lib/mockPrices";
 import { getMeta, getPrices } from "../../../lib/prices";
 import SmartLink from "../../../components/SmartLink";
 
-function fmtKorean(ts: string) {
-  const d = new Date(ts);
-  if (Number.isNaN(d.getTime())) return ts;
-  return d.toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
+function fmtKorean(ts?: string) {
+  if (!ts) return "확인 전";
+  const date = new Date(ts);
+  if (Number.isNaN(date.getTime())) return "확인 전";
+  return date.toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST";
 }
 
-function fmtWon(v: number) {
-  try {
-    return new Intl.NumberFormat("ko-KR").format(v) + "원";
-  } catch {
-    return `${v}원`;
-  }
+function fmtWon(value: number) {
+  return new Intl.NumberFormat("ko-KR").format(value) + "원";
 }
 
-function pct(v?: number) {
-  if (typeof v !== "number") return "-";
-  const sign = v > 0 ? "+" : "";
-  return `${sign}${v.toFixed(1)}%`;
+function pct(value?: number | null) {
+  if (typeof value !== "number") return "기록 대기";
+  return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
+}
+
+function PriceAmount({ item }: { item: PriceItem }) {
+  const shippingFee = item.shippingFee;
+  return (
+    <div>
+      <div className="text-lg font-semibold text-white">{fmtWon(item.price)}</div>
+      <div className="mt-1 text-xs text-white/70">
+        {typeof shippingFee === "number" ? (shippingFee === 0 ? "기본 배송비 무료" : `기본 배송비 ${fmtWon(shippingFee)}`) : "배송비 판매처 확인"}
+      </div>
+      {typeof shippingFee === "number" ? <div className="mt-1 text-xs text-cyan-200">배송비 포함 {fmtWon(item.price + shippingFee)}</div> : null}
+      {item.shippingNote ? <div className="mt-1 text-xs text-white/60">{item.shippingNote}</div> : null}
+      {item.priceNote ? <div className="mt-2 max-w-xs text-xs leading-relaxed text-white/70">{item.priceNote}</div> : null}
+      <div className="mt-2 text-xs text-white/60">확인 {fmtKorean(item.checkedAt || item.updatedAt)}</div>
+    </div>
+  );
+}
+
+function ProductInfo({ item }: { item: PriceItem }) {
+  return (
+    <div>
+      <div className="font-semibold text-white">{item.name}</div>
+      {item.spec ? <div className="mt-2 text-sm leading-relaxed text-white/75">{item.spec}</div> : null}
+      <div className="mt-2 text-xs text-white/60">{[item.source, item.seller].filter(Boolean).join(" · ")}</div>
+      {item.officialUrl ? (
+        <SmartLink className="mt-2 inline-block text-xs text-cyan-200 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" href={item.officialUrl} title={`${item.name} 공식 사양 (새 창)`}>
+          공식 사양 ↗
+        </SmartLink>
+      ) : null}
+    </div>
+  );
+}
+
+function PurchaseLink({ item }: { item: PriceItem }) {
+  if (!item.goCode) return <span className="text-xs text-white/60">판매처 링크 준비 중</span>;
+  return (
+    <SmartLink
+      className="inline-flex whitespace-nowrap rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100 hover:bg-cyan-300/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
+      href={`/go/${item.goCode}`}
+      title={`${item.name} 판매처 보기 (새 창)`}
+    >
+      판매처 보기 ↗
+    </SmartLink>
+  );
 }
 
 export default async function PricesCategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const { category: categoryKey } = await params;
   const category = getCategory(categoryKey);
   if (!category) return notFound();
-
-  const meta = await getMeta();
-  const data = await getPrices(category.key as PriceCategoryKey);
-
+  const [meta, data] = await Promise.all([getMeta(), getPrices(category.key as PriceCategoryKey)]);
   const reportHref = `/contact/write?from=prices&cat=${encodeURIComponent(category.shortTitle)}`;
 
   return (
@@ -40,107 +78,86 @@ export default async function PricesCategoryPage({ params }: { params: Promise<{
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
           <div className="text-sm text-white/60">
-            <Link className="hover:text-white" href="/prices">
-              가격현황
-            </Link>{" "}
-            <span className="text-white/40">/</span> <span className="text-white">{category.shortTitle}</span>
+            <Link className="hover:text-white" href="/prices">가격현황</Link>{" "}
+            <span aria-hidden="true">/</span> <span className="text-white">{category.shortTitle}</span>
           </div>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight">{category.title}</h1>
           <p className="mt-2 text-sm text-white/70">{category.description}</p>
         </div>
-
         <div className="text-sm text-white/70">
-          마지막 업데이트: <span className="text-white">{fmtKorean(data.updatedAt || meta.updatedAt)}</span>
-          <div className="text-[12px] text-white/50">갱신: {meta.schedule}</div>
+          최근 가격 확인: <span className="text-white">{data.items.length ? fmtKorean(data.updatedAt) : "아직 없음"}</span>
+          <div className="mt-1 text-xs text-white/60">{meta.schedule}</div>
         </div>
       </div>
 
-      <div className="bd-surface-md">
-        <div className="overflow-x-auto">
-          <table className="min-w-full text-sm">
-            <thead className="bg-white/5 text-white/70">
-              <tr>
-                <th className="px-4 py-3 text-left font-medium">제품</th>
-                <th className="px-4 py-3 text-left font-medium">스펙</th>
-                <th className="px-4 py-3 text-right font-medium">현재가</th>
-                <th className="px-4 py-3 text-right font-medium">24h</th>
-                <th className="px-4 py-3 text-right font-medium">7일 최저</th>
-                <th className="px-4 py-3 text-right font-medium">30일 최저</th>
-                <th className="px-4 py-3 text-right font-medium">링크</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.items.length === 0 ? (
-                <tr>
-                  <td className="px-4 py-8 text-center text-white/60" colSpan={7}>
-                    데이터가 아직 없습니다.{" "}
-                    <Link className="text-cyan-200 hover:text-cyan-100" href={reportHref}>
-                      제보하기
-                    </Link>
-                  </td>
-                </tr>
-              ) : (
-                data.items.map((it) => {
-                  const link = it.goCode ? `/go/${it.goCode}` : null;
+      <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
+        <p>표시된 금액은 <b className="text-white">확인 시점의 판매처 가격</b>입니다. 선택한 판매 상품을 안내하며, 전체 판매처의 최저가를 보장하지 않습니다.</p>
+        <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요. 일부 링크를 통해 구매가 이루어지면 블루딜이 일정 수수료를 받을 수 있습니다.</p>
+      </div>
 
-                  return (
-                    <tr key={it.id} className="border-t border-white/10">
-                      <td className="px-4 py-3">
-                        <div className="font-medium text-white">{it.name}</div>
-                        {it.source ? <div className="text-[12px] text-white/50">{it.source}</div> : null}
-                      </td>
-                      <td className="px-4 py-3 text-white/70">{it.spec || "-"}</td>
-                      <td className="px-4 py-3 text-right font-semibold">{fmtWon(it.price)}</td>
-                      <td className="px-4 py-3 text-right text-white/70">{pct(it.change24hPct)}</td>
-                      <td className="px-4 py-3 text-right text-white/70">{typeof it.low7d === "number" ? fmtWon(it.low7d) : "-"}</td>
-                      <td className="px-4 py-3 text-right text-white/70">{typeof it.low30d === "number" ? fmtWon(it.low30d) : "-"}</td>
-                      <td className="px-4 py-3 text-right">
-                        {!link ? (
-                          <span className="text-white/40" title="제휴링크 등록 전">
-                            준비 중
-                          </span>
-                        ) : (
-                          <SmartLink
-                            className="inline-flex items-center rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-[12px] text-white/80 hover:border-white/25 hover:bg-white/10 hover:text-white"
-                            href={link}
-                          >
-                            최저가 보기 →
-                          </SmartLink>
-                        )}
-                      </td>
+      {data.items.length === 0 ? (
+        <div className="bd-surface-md px-4 py-10 text-center text-white/70">
+          확인한 가격 데이터가 아직 없습니다.{" "}
+          <Link className="text-cyan-200 hover:underline" href={reportHref}>제보하기</Link>
+        </div>
+      ) : (
+        <>
+          <div className="space-y-4 md:hidden">
+            {data.items.map((item) => (
+              <article key={item.id} aria-label={item.name} className="bd-surface-md space-y-4 p-5">
+                <ProductInfo item={item} />
+                <PriceAmount item={item} />
+                <dl className="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-xs">
+                  <div><dt className="text-white/60">24시간 변동</dt><dd className="mt-1 text-white/80">{pct(item.change24hPct)}</dd></div>
+                  <div><dt className="text-white/60">7일 관측 최저</dt><dd className="mt-1 text-white/80">{typeof item.low7d === "number" ? fmtWon(item.low7d) : "기록 대기"}</dd></div>
+                  <div><dt className="text-white/60">30일 관측 최저</dt><dd className="mt-1 text-white/80">{typeof item.low30d === "number" ? fmtWon(item.low30d) : "기록 대기"}</dd></div>
+                </dl>
+                <PurchaseLink item={item} />
+              </article>
+            ))}
+          </div>
+
+          <div className="bd-surface-md hidden md:block">
+            <div className="overflow-x-auto rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" tabIndex={0} role="region" aria-label={`${category.shortTitle} 가격 비교표, 가로 스크롤 가능`}>
+              <table className="w-full min-w-[1060px] text-sm">
+                <caption className="sr-only">확인한 {category.shortTitle} 판매 상품 {data.items.length}개. 가격과 배송비는 원화 기준입니다.</caption>
+                <thead className="bg-white/5 text-white/70">
+                  <tr>
+                    <th scope="col" className="w-72 px-4 py-3 text-left font-medium">제품 · 판매자</th>
+                    <th scope="col" className="w-64 px-4 py-3 text-left font-medium">확인 시점 가격</th>
+                    <th scope="col" className="px-3 py-3 text-right font-medium">24시간 변동</th>
+                    <th scope="col" className="px-3 py-3 text-right font-medium">7일 관측 최저</th>
+                    <th scope="col" className="px-3 py-3 text-right font-medium">30일 관측 최저</th>
+                    <th scope="col" className="px-4 py-3 text-right font-medium">판매처</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.items.map((item) => (
+                    <tr key={item.id} className="border-t border-white/10 align-top">
+                      <th scope="row" className="px-4 py-5 text-left font-normal"><ProductInfo item={item} /></th>
+                      <td className="px-4 py-5"><PriceAmount item={item} /></td>
+                      <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{pct(item.change24hPct)}</td>
+                      <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{typeof item.low7d === "number" ? fmtWon(item.low7d) : "기록 대기"}</td>
+                      <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{typeof item.low30d === "number" ? fmtWon(item.low30d) : "기록 대기"}</td>
+                      <td className="px-4 py-5 text-right"><PurchaseLink item={item} /></td>
                     </tr>
-                  );
-                })
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p className="text-xs leading-relaxed text-white/60">상품가 관측 기록 기준입니다. 24시간 전후의 비교 기록이 없거나 7일·30일의 기록 기간을 채우지 못하면 ‘기록 대기’로 표시합니다. 기록 사이의 가격 변동은 반영되지 않을 수 있습니다.</p>
+        </>
+      )}
 
-      <div className="bd-surface-md p-5 text-sm text-white/70">
-        <div className="font-semibold text-white">알림</div>
-        <ul className="mt-2 list-disc space-y-1 pl-5">
-          <li>가격은 갱신 시점 기준이며, 실제 구매 시점에는 달라질 수 있습니다.</li>
-          <li>일부 링크는 제휴 링크일 수 있으며, 구매 시 일정 수수료를 받을 수 있습니다.</li>
-          <li>최저가/상품 링크는 새 창으로 열립니다.</li>
+      <div className="bd-surface-md p-5 text-sm leading-relaxed text-white/70">
+        <div className="font-semibold text-white">구매 전 확인</div>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>구매 시점의 가격·재고·배송 조건은 판매처에서 다시 확인해 주세요. 상품·공식 사양 링크는 새 창으로 열립니다.</li>
+          {category.key === "ram" ? <li>6000MT/s 등 표기 속도는 오버클럭 프로필 기준입니다. CPU·메인보드의 지원 사양과 QVL을 확인하고 BIOS에서 XMP/EXPO 설정이 필요한지 확인해 주세요.</li> : null}
         </ul>
-
-        <div className="mt-3">
-          가격현황 <b>추가요청/제보/문의</b>는{" "}
-          <Link className="text-cyan-200 hover:text-cyan-100" href={reportHref}>
-            비공개 문의로 남기기
-          </Link>
-          에 남겨주세요.
-          <div className="mt-1 text-[12px] text-white/50">운영자 확인용으로 자동 비공개 처리되며, 비밀번호는 운영자 비밀번호로 설정됩니다.</div>
-        </div>
-
-        <div className="mt-3">
-          구매 팁/제휴 문의는{" "}
-          <Link className="text-cyan-200 hover:text-cyan-100" href="/contact/write?vis=public">
-            공개 문의 게시판
-          </Link>
-          에 남겨주세요.
-        </div>
+        <p className="mt-4">가격 오류·상품 추가 요청은 <Link className="text-cyan-200 hover:underline" href={reportHref}>비공개 문의</Link>로 남겨주세요.</p>
+        <p className="mt-2">구매 팁·제휴 문의는 <Link className="text-cyan-200 hover:underline" href="/contact/write?vis=public">공개 문의 게시판</Link>을 이용해 주세요.</p>
       </div>
     </div>
   );

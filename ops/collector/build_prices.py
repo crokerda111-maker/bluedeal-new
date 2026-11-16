@@ -13,6 +13,7 @@ import base64
 import csv
 import hashlib
 import json
+import math
 import re
 import sys
 from datetime import datetime, timedelta, timezone
@@ -86,18 +87,43 @@ def make_code(url: str, existing: dict[str, Any]) -> str:
     raise ValueError("이동주소 코드 충돌을 해결하지 못했습니다.")
 
 
-def parse_price(raw: Any) -> int:
+def parse_price(raw: Any, *, allow_zero: bool = False) -> int:
     if isinstance(raw, bool):
         raise ValueError("가격이 숫자가 아닙니다.")
     if isinstance(raw, (int, float)):
+        if not math.isfinite(raw) or raw != int(raw):
+            raise ValueError("원화 금액은 정수여야 합니다.")
         value = int(raw)
     else:
-        digits = re.sub(r"[^0-9.-]", "", str(raw or ""))
-        if not digits:
-            raise ValueError("가격이 비어 있습니다.")
-        value = int(float(digits))
-    if value <= 0 or value > 1_000_000_000:
+        text = str(raw if raw is not None else "").strip()
+        if not re.fullmatch(r"(?:₩\s*)?(?:[0-9]+|[0-9]{1,3}(?:,[0-9]{3})+)\s*원?", text):
+            raise ValueError("원화 금액 형식을 확인하세요.")
+        value = int(re.sub(r"[^0-9]", "", text))
+    if value < (0 if allow_zero else 1) or value > 1_000_000_000:
         raise ValueError(f"가격 범위를 확인하세요: {raw}")
+    return value
+
+
+def parse_checked_at(raw: Any, now: datetime) -> datetime:
+    value = str(raw or "").strip()
+    if not value:
+        raise ValueError("실제 가격을 확인한 checkedAt이 필요합니다.")
+    checked = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    if checked.tzinfo is None:
+        raise ValueError("checkedAt에는 시간대(Z 또는 +09:00)가 필요합니다.")
+    checked = checked.astimezone(timezone.utc)
+    if checked > now:
+        raise ValueError("checkedAt은 미래 시각일 수 없습니다.")
+    return checked
+
+
+def reference_url(raw: Any) -> str | None:
+    value = str(raw or "").strip()
+    if not value:
+        return None
+    parsed = urlsplit(value)
+    if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+        raise ValueError("공식 사양 출처는 올바른 https 주소여야 합니다.")
     return value
 
 
@@ -140,15 +166,18 @@ def history_values(points: list[dict[str, Any]], now: datetime) -> tuple[int | N
             price = int(point["price"])
         except (KeyError, TypeError, ValueError):
             continue
-        parsed.append((timestamp, price))
+        if timestamp <= now and price > 0:
+            parsed.append((timestamp, price))
     if not parsed:
         return None, None, None
 
-    low_7d = min((price for at, price in parsed if at >= now - timedelta(days=7)), default=None)
-    low_30d = min((price for at, price in parsed if at >= now - timedelta(days=30)), default=None)
-    previous = min(parsed, key=lambda item: abs((item[0] - (now - timedelta(hours=24))).total_seconds()))
+    parsed.sort()
+    # 이력이 하루도 없는데 0% 또는 7/30일 최저가로 표시하지 않습니다.
+    low_7d = min((price for at, price in parsed if at >= now - timedelta(days=7)), default=None) if parsed[0][0] <= now - timedelta(days=7) else None
+    low_30d = min((price for at, price in parsed if at >= now - timedelta(days=30)), default=None) if parsed[0][0] <= now - timedelta(days=30) else None
+    previous = max((point for point in parsed if now - timedelta(hours=26) <= point[0] <= now - timedelta(hours=24)), default=None)
     latest_price = parsed[-1][1]
-    change = ((latest_price - previous[1]) / previous[1] * 100) if previous[1] else None
+    change = ((latest_price - previous[1]) / previous[1] * 100) if previous else None
     return low_7d, low_30d, round(change, 1) if change is not None else None
 
 
@@ -186,17 +215,24 @@ def build(input_path: Path, root: Path, now: datetime, dry_run: bool) -> int:
             if not name:
                 raise ValueError("name이 비어 있습니다.")
             price = parse_price(raw.get("price"))
+            checked = parse_checked_at(raw.get("checkedAt"), now)
+            checked_iso = checked.isoformat().replace("+00:00", "Z")
+            shipping_raw = raw.get("shippingFee")
+            shipping_fee = parse_price(shipping_raw, allow_zero=True) if shipping_raw is not None and str(shipping_raw).strip() else None
+            official_url = reference_url(raw.get("officialUrl"))
             normalized_url, merchant = normalize_url(raw.get("url"))
             code = make_code(normalized_url, outbound)
             outbound[code] = {"code": code, "merchant": merchant, "originalUrl": normalized_url}
 
             points = list(new_history.get(key, [])) if isinstance(new_history.get(key), list) else []
-            points.append({"at": now_iso, "price": price})
+            # 같은 확인 CSV의 재생성에서는 관측 횟수·확인 시각을 늘리지 않습니다.
+            points = [point for point in points if point.get("at") != checked_iso]
+            points.append({"at": checked_iso, "price": price})
             cutoff = now - timedelta(days=31)
             points = [point for point in points if parse_now(str(point.get("at"))) >= cutoff]
             points.sort(key=lambda point: str(point.get("at")))
             new_history[key] = points
-            low_7d, low_30d, change_24h = history_values(points, now)
+            low_7d, low_30d, change_24h = history_values(points, checked)
 
             item: dict[str, Any] = {
                 "id": item_id,
@@ -208,27 +244,35 @@ def build(input_path: Path, root: Path, now: datetime, dry_run: bool) -> int:
                 "change24hPct": change_24h,
                 "goCode": code,
                 "source": str(raw.get("source") or merchant).strip()[:80],
-                "updatedAt": now_iso,
+                "seller": str(raw.get("seller") or "").strip()[:100],
+                "shippingFee": shipping_fee,
+                "shippingNote": str(raw.get("shippingNote") or "").strip()[:200],
+                "priceNote": str(raw.get("priceNote") or "").strip()[:300],
+                "officialUrl": official_url,
+                "checkedAt": checked_iso,
+                "updatedAt": checked_iso,
             }
             grouped[category].append(item)
         except (TypeError, ValueError) as error:
             raise ValueError(f"입력 {line_number}행 오류: {error}") from error
 
     for items in grouped.values():
-        items.sort(key=lambda item: (item["price"], item["name"]))
+        items.sort(key=lambda item: (item["price"] + (item["shippingFee"] or 0), item["name"]))
 
     if dry_run:
         print(f"[OK] 검증 완료: {len(rows)}개 상품, {len(outbound)}개 이동주소")
         return 0
 
+    latest_checked = max((item["checkedAt"] for items in grouped.values() for item in items), default="")
     meta = {
-        "updatedAt": now_iso,
-        "schedule": "PC 수집기 실행 시 갱신",
-        "note": f"등록 상품 {len(rows)}개 · 판매처 이동주소는 /go 코드로 보호됩니다.",
+        "updatedAt": latest_checked,
+        "generatedAt": now_iso,
+        "schedule": "수동 확인 후 갱신 · 자동 수집 준비 중",
+        "note": f"확인한 상품 {len(rows)}개 · 가격은 상품별 확인 시각 기준입니다.",
     }
     atomic_write_json(output_dir / "meta.json", meta)
     for category in CATEGORIES:
-        atomic_write_json(output_dir / f"{category}.json", {"category": category, "updatedAt": now_iso, "items": grouped[category]})
+        atomic_write_json(output_dir / f"{category}.json", {"category": category, "updatedAt": max((item["checkedAt"] for item in grouped[category]), default=""), "generatedAt": now_iso, "items": grouped[category]})
     atomic_write_json(outbound_path, dict(sorted(outbound.items())))
     atomic_write_json(state_path, new_history)
     print(f"[OK] 생성 완료: {len(rows)}개 상품, {len(outbound)}개 이동주소")

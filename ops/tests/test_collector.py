@@ -26,7 +26,8 @@ class CollectorSmokeTests(unittest.TestCase):
         self.now = collector.parse_now("2026-11-16T00:00:00Z")
         self.rows = [
             {"category": "ram", "id": f"fixture-{i}", "name": f"TEST ONLY DDR5 {i}",
-             "price": 10000 + i, "url": f"https://www.coupang.com/vp/products/{i}?fixture=1&subid=test"}
+             "price": 10000 + i, "checkedAt": "2026-11-15T23:55:00Z", "shippingFee": 0,
+             "seller": "TEST SELLER", "url": f"https://www.coupang.com/vp/products/{i}?fixture=1&subid=test"}
             for i in range(1, 4)
         ]
 
@@ -78,6 +79,51 @@ class CollectorSmokeTests(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             self.build()
         self.assertEqual(previous, self.snapshot())
+
+    def test_first_observation_has_no_invented_history(self):
+        self.write_input(self.rows)
+        self.build()
+        ram = json.loads((self.root / "src/content/prices/ram.json").read_text(encoding="utf-8"))
+        for item in ram["items"]:
+            self.assertIsNone(item["change24hPct"])
+            self.assertIsNone(item["low7d"])
+            self.assertIsNone(item["low30d"])
+
+    def test_regeneration_does_not_refresh_checked_time_or_duplicate_history(self):
+        self.write_input(self.rows)
+        self.build()
+        self.now = collector.parse_now("2026-11-16T10:00:00Z")
+        self.build()
+        ram = json.loads((self.root / "src/content/prices/ram.json").read_text(encoding="utf-8"))
+        state = json.loads((self.root / "ops/collector/state/history.json").read_text(encoding="utf-8"))
+        self.assertEqual(ram["updatedAt"], "2026-11-15T23:55:00Z")
+        self.assertEqual(ram["generatedAt"], "2026-11-16T10:00:00Z")
+        self.assertEqual(ram["items"][0]["shippingFee"], 0)
+        self.assertTrue(all(len(points) == 1 for points in state.values()))
+
+    def test_invalid_observations_preserve_output(self):
+        self.write_input(self.rows)
+        self.build()
+        previous = self.snapshot()
+        for field, value in [("checkedAt", ""), ("checkedAt", "2026-11-16T01:00:00Z"),
+                             ("checkedAt", "2026-11-15T23:55:00"), ("shippingFee", -1),
+                             ("price", "12만원"), ("price", 10000.9), ("price", "1e5"),
+                             ("officialUrl", "javascript:alert(1)")]:
+            with self.subTest(field=field, value=value):
+                self.write_input([{**self.rows[0], field: value}])
+                with self.assertRaises(ValueError):
+                    self.build()
+                self.assertEqual(previous, self.snapshot())
+
+    def test_history_requires_period_coverage_and_recent_24h_reference(self):
+        points = [{"at": "2026-11-15T00:00:00Z", "price": 100000},
+                  {"at": "2026-11-16T00:00:00Z", "price": 90000}]
+        self.assertEqual(collector.history_values(points, self.now), (None, None, -10.0))
+        points[0]["at"] = "2026-11-14T00:00:00Z"
+        self.assertIsNone(collector.history_values(points, self.now)[2])
+        points += [{"at": "2026-10-17T00:00:00Z", "price": 110000},
+                   {"at": "2026-11-09T00:00:00Z", "price": 95000}]
+        self.assertEqual(collector.history_values(points, self.now), (90000, 90000, None))
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ VPS 없이 Windows PC에서 가격 데이터를 만들고 GitHub/Vercel로 배�
 ## 흐름
 
 1. 다나와 수집기가 공개하지 않는 후보 목록을 만듭니다.
-2. 후보 상품의 실제 판매처 가격과 공식 제휴링크를 `products.csv`에 입력합니다.
+2. 후보 상품의 실제 판매처 가격·조건·확인 시각과 판매처 주소를 `products.csv`에 입력합니다. 제휴 주소는 공식 발급된 주소만 사용합니다.
 3. `build_prices.py`가 URL 허용 목록을 검사하고 안정적인 `/go/{code}`를 생성합니다.
 4. 공개 가격 파일에는 원본 URL 대신 `goCode`만 저장합니다.
 5. `publish_prices.ps1 -Publish`가 변경 파일만 GitHub에 올립니다.
@@ -31,7 +31,9 @@ python -m pip install -r .\ops\collector\requirements.txt
 ops/collector/input/products.csv
 ```
 
-필수 열은 `category,id,name,price,url`입니다. 선택 열은 `spec,source`입니다.
+필수 열은 `category,id,name,price,url,checkedAt`입니다. `checkedAt`은 실제 가격 확인 시각이며 `2026-11-16T17:38:27+09:00`처럼 시간대를 포함해야 합니다. 실행 시각보다 미래인 값은 거부합니다.
+
+선택 열은 `spec,source,seller,shippingFee,shippingNote,priceNote,officialUrl`입니다. 상품 등록 시에는 판매자, 옵션, 배송비와 주요 할인 조건도 확인해 입력하세요. `shippingFee`는 기본 배송비(0은 무료, 빈칸은 미확인)이며 지역별 추가비는 `shippingNote`에 씁니다. `price`는 상품가이고 화면에서 기본 배송비 포함 금액을 별도로 계산합니다. 쿠폰·회원·카드 가격을 일반 판매가와 혼동하지 마세요. `officialUrl`은 공식 사양의 HTTPS 출처입니다.
 
 지원 category:
 
@@ -51,7 +53,9 @@ python .\ops\collector\build_prices.py --dry-run
 
 `products.csv`에는 실제로 확인한 상품만 입력하세요. 예제 파일의 가격과 주소는 테스트용이며 게시용 데이터가 아닙니다. 현재 생성기는 CSV 전체를 스냅샷으로 취급하므로, 입력에서 빠진 상품은 생성 결과에서도 빠집니다. 기존 상품을 유지하려면 전체 목록을 포함해야 합니다.
 
-현재 `updatedAt`은 실행 시각입니다. 실제 가격 확인 시각과 생성 시각을 별도로 저장하는 기능은 아직 없습니다. 가격을 재확인하지 않은 CSV를 반복 실행해 최신 확인 정보처럼 게시하지 마세요.
+상품의 `checkedAt`과 `updatedAt`은 실제 확인 시각이며, 카테고리·메타의 `updatedAt`은 가장 최근 상품 확인 시각입니다. `generatedAt`은 파일 생성 시각입니다. 같은 CSV를 다시 생성해도 확인 시각과 관측 횟수는 늘어나지 않습니다. 실제 Vercel 게시 시각은 배포 기록으로 확인합니다.
+
+처음 등록한 가격을 과거 최저가로 취급하지 않습니다. 24시간 변동은 24~26시간 전 비교 기록이 있을 때, 7일·30일 관측 최저는 해당 기간을 채운 기록이 있을 때만 제공합니다. 기록 사이의 가격은 알 수 없으므로 전체 시장 최저가를 의미하지 않습니다. 현재는 수동 확인 단계이며 자동 가격 수집·정시 배포는 아직 준비 중입니다.
 
 파일 생성만:
 

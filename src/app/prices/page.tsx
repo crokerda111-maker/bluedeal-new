@@ -3,6 +3,7 @@ import { PRICE_CATEGORIES } from "../../lib/priceCategories";
 import { getMeta } from "../../lib/prices";
 
 function fmtKorean(ts: string) {
+  if (!ts) return "확인 전";
   const d = new Date(ts);
   if (Number.isNaN(d.getTime())) return ts;
   return d.toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
@@ -22,7 +23,7 @@ export default async function PricesHubPage() {
             </p>
           </div>
           <div className="text-sm text-white/70">
-            마지막 업데이트: <span className="text-white">{fmtKorean(meta.updatedAt)}</span>
+            최근 가격 확인: <span className="text-white">{fmtKorean(meta.updatedAt)} KST</span>
           </div>
         </div>
 
@@ -50,9 +51,9 @@ export default async function PricesHubPage() {
       <section className="bd-surface-md p-6 text-sm text-white/70">
         <div className="font-semibold text-white">제휴/가격 안내</div>
         <ul className="mt-2 list-disc space-y-1 pl-5">
-          <li>가격은 갱신 시점 기준이며, 실제 구매 시점에는 달라질 수 있습니다.</li>
+          <li>가격은 상품별 확인 시각 기준이며, 실제 구매 시점에는 달라질 수 있습니다.</li>
           <li>일부 링크는 제휴 링크일 수 있으며, 구매 시 일정 수수료를 받을 수 있습니다.</li>
-          <li>최저가/상품 링크는 새 창으로 열립니다.</li>
+          <li>선택한 판매 상품을 안내하며, 전체 판매처의 최저가를 보장하지 않습니다. 상품 링크는 새 창으로 열립니다.</li>
         </ul>
         <div className="mt-3">
           자세한 내용/문의는{" "}

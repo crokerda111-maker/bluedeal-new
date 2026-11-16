@@ -5,25 +5,33 @@ export type PriceItem = {
   name: string;
   spec?: string;
   price: number; // KRW
-  low7d?: number;
-  low30d?: number;
-  change24hPct?: number; // e.g. -1.2
+  low7d?: number | null;
+  low30d?: number | null;
+  change24hPct?: number | null; // e.g. -1.2
   /** 수집 원주소. 화면의 구매 버튼에는 직접 사용하지 않고 /go 등록 입력으로만 사용합니다. */
   url?: string;
   /** 공개 구매 버튼에 사용하는 블루딜 내부 리다이렉트 코드 */
   goCode?: string;
   source?: string;
+  seller?: string;
+  shippingFee?: number | null;
+  shippingNote?: string;
+  priceNote?: string;
+  officialUrl?: string | null;
+  checkedAt?: string;
   updatedAt?: string;
 };
 
 export type PricesPayload = {
   category: PriceCategoryKey;
   updatedAt: string; // ISO
+  generatedAt?: string; // 파일 생성 시각. 실제 가격 확인 시각과 구분합니다.
   items: PriceItem[];
 };
 
 export type MetaPayload = {
   updatedAt: string; // ISO
+  generatedAt?: string;
   schedule: string; // human-readable
   note?: string;
 };
