@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...PRICE_CATEGORIES.flatMap(category => {
       const data = getLocalPrices(category.key);
       if (!data.items.length) return [];
-      return [{ url: `${SITE_URL}/prices/${category.key}`, ...(data.generatedAt ? { lastModified: data.generatedAt } : {}) }];
+      return [{ url: `${SITE_URL}/prices/${category.key}`, ...(data.updatedAt ? { lastModified: data.updatedAt } : {}) }];
     }),
   ];
 }

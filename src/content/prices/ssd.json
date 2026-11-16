@@ -1,6 +1,49 @@
 {
   "category": "ssd",
-  "updatedAt": "",
-  "generatedAt": "2026-11-16T09:53:42.431302Z",
-  "items": []
+  "updatedAt": "2026-11-16T10:04:52Z",
+  "generatedAt": "2026-11-16T10:05:34.589709Z",
+  "items": [
+    {
+      "id": "samsung-990-evo-plus-1tb",
+      "name": "삼성전자 990 EVO Plus 1TB (MZ-V9S1T0BW)",
+      "spec": "1TB · M.2 2280 · PCIe 4.0×4 / 5.0×2 · NVMe 2.0 · TLC · HMB(공식 표기) · 국내 정품(판매처 표기)",
+      "price": 419000,
+      "low7d": null,
+      "low30d": null,
+      "change24hPct": null,
+      "goCode": "_vKQuq99HqrjtFio",
+      "source": "G마켓",
+      "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
+      "shippingFee": 0,
+      "shippingNote": "기본 배송 기준 · 지역별 추가비/배송 가능 여부는 판매처 확인",
+      "priceNote": "쿠폰·카드·회원 혜택 미적용 판매가. 판매처의 쿠폰가·결제할인가와 다를 수 있습니다.",
+      "officialUrl": "https://download.semiconductor.samsung.com/resources/data-sheet/samsung_nvme_ssd_990_evo_plus_datasheet_rev.1.0.pdf",
+      "checkedAt": "2026-11-16T10:04:52Z",
+      "updatedAt": "2026-11-16T10:04:52Z",
+      "capacityGB": 1000,
+      "ssdDram": "unknown",
+      "availability": "unknown"
+    },
+    {
+      "id": "samsung-990-pro-2tb",
+      "name": "삼성전자 990 PRO 2TB (MZ-V9P2T0BW)",
+      "spec": "2TB · M.2 2280 · PCIe 4.0×4 / NVMe 2.0 · TLC · LPDDR4 2GB · 국내 정품(판매처 표기)",
+      "price": 961400,
+      "low7d": null,
+      "low30d": null,
+      "change24hPct": null,
+      "goCode": "DxYg3fvxuBEf2SHV",
+      "source": "G마켓",
+      "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
+      "shippingFee": 0,
+      "shippingNote": "기본 배송 기준 · 지역별 추가비/배송 가능 여부는 판매처 확인",
+      "priceNote": "쿠폰·카드·회원 혜택 미적용 판매가. 판매처의 쿠폰가·결제할인가와 다를 수 있습니다.",
+      "officialUrl": "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_990_PRO_Datasheet_Rev.1.0_10129514049640.pdf",
+      "checkedAt": "2026-11-16T10:04:52Z",
+      "updatedAt": "2026-11-16T10:04:52Z",
+      "capacityGB": 2000,
+      "ssdDram": "present",
+      "availability": "unknown"
+    }
+  ]
 }

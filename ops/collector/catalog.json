@@ -30,6 +30,22 @@
       "moduleCapacityGB": 24,
       "moduleCount": 2,
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3582945309"
+    },
+    {
+      "category": "ssd",
+      "id": "samsung-990-pro-2tb",
+      "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
+      "capacityGB": 2000,
+      "ssdDram": "present",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=2663867799"
+    },
+    {
+      "category": "ssd",
+      "id": "samsung-990-evo-plus-1tb",
+      "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
+      "capacityGB": 1000,
+      "ssdDram": "unknown",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4192562983"
     }
   ]
 }

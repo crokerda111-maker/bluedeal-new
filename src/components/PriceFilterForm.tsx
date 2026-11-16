@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { PriceItem } from "../lib/mockPrices";
 import type { PriceCategoryKey } from "../lib/priceCategories";
 import { PRICE_SORTS, type PriceFilters } from "../lib/priceFilters";
@@ -10,7 +9,7 @@ export default function PriceFilterForm({ category, items, filters }: { category
   if (filters.capacity && !capacities.includes(Number(filters.capacity))) capacities.push(Number(filters.capacity));
   capacities.sort((a, b) => a - b);
   return (
-    <form action={`/prices/${category}`} method="get" className="bd-surface-md grid gap-3 p-4 sm:grid-cols-2 lg:flex lg:flex-wrap lg:items-end" aria-label="상품 검색과 필터">
+    <form key={JSON.stringify(filters)} action={`/prices/${category}`} method="get" className="bd-surface-md grid gap-3 p-4 sm:grid-cols-2 lg:flex lg:flex-wrap lg:items-end" aria-label="상품 검색과 필터">
       <label className="min-w-0 flex-1 text-xs text-white/75">
         상품 검색
         <input className={controlClass} type="search" name="q" defaultValue={filters.query} maxLength={100} placeholder="제품명·모델·판매자" />
@@ -44,7 +43,7 @@ export default function PriceFilterForm({ category, items, filters }: { category
       </label>
       <div className="flex items-center gap-3 sm:col-span-2 lg:pb-0">
         <button type="submit" className="min-h-11 rounded-lg border border-cyan-300/30 bg-cyan-300/15 px-5 text-sm font-semibold text-cyan-100 hover:bg-cyan-300/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300">적용</button>
-        <Link className="px-2 py-3 text-sm text-white/75 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" href={`/prices/${category}`}>초기화</Link>
+        <a className="px-2 py-3 text-sm text-white/75 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" href={`/prices/${category}`}>초기화</a>
       </div>
     </form>
   );
