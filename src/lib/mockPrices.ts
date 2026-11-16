@@ -18,6 +18,7 @@ export type PriceItem = {
   shippingNote?: string;
   priceNote?: string;
   officialUrl?: string | null;
+  /** RAM 키트 총용량, SSD 판매 용량 또는 GPU의 그래픽 메모리 용량(GB). */
   capacityGB?: number;
   memoryType?: "DDR4" | "DDR5";
   moduleCapacityGB?: number;

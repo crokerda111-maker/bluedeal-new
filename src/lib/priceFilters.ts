@@ -38,7 +38,7 @@ export function filterPrices(items: PriceItem[], category: PriceCategoryKey, fil
   const query = filters.query.toLocaleLowerCase("ko-KR");
   return items.filter(item => {
     if (query && ![item.name, item.spec, item.source, item.seller].filter(Boolean).join(" ").toLocaleLowerCase("ko-KR").includes(query)) return false;
-    if (["ram", "ssd"].includes(category) && filters.capacity && item.capacityGB !== Number(filters.capacity)) return false;
+    if (["ram", "ssd", "gpu"].includes(category) && filters.capacity && item.capacityGB !== Number(filters.capacity)) return false;
     if (category === "ram" && filters.memory && item.memoryType !== filters.memory) return false;
     if (category === "ssd" && filters.dram && (item.ssdDram ?? "unknown") !== filters.dram) return false;
     return true;

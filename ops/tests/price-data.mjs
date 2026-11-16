@@ -31,6 +31,19 @@ test('SSD DRAM information stays unknown until explicitly verified', () => {
   assert.deepEqual(filterPrices(ssd,'ssd',filters({dram:'absent'})).map(i=>i.id),['s3']);
 });
 
+test('GPU capacity filters combine with model search and never infer VRAM from a product name', () => {
+  const gpu=[
+    {id:'ti8',name:'Fixture RTX 5060 Ti 8GB',price:100,capacityGB:8},
+    {id:'ti16',name:'Fixture RTX 5060 Ti 16GB',price:200,capacityGB:16},
+    {id:'other16',name:'Fixture RTX 5070 Ti 16GB',price:300,capacityGB:16},
+    {id:'unverified',name:'Fixture RTX 5060 Ti 16GB unverified',price:1},
+  ];
+  assert.deepEqual(filterPrices(gpu,'gpu',filters({capacity:'16'})).map(i=>i.id),['ti16','other16']);
+  assert.deepEqual(filterPrices(gpu,'gpu',filters({q:'5060 Ti',capacity:'16'})).map(i=>i.id),['ti16']);
+  assert.deepEqual(filterPrices(gpu,'gpu',filters({q:'5060 Ti',capacity:'8'})).map(i=>i.id),['ti8']);
+  assert.equal(filterPrices(gpu,'gpu',filters({capacity:'32'})).length,0);
+});
+
 test('malformed filters are safely ignored and searches are bounded', () => {
   assert.deepEqual(filters({capacity:'-32',memory:'DDR99',dram:'guess',sort:'__proto__'}), {query:'',capacity:'',memory:'',dram:'',sort:'total-asc'});
   assert.equal(filters({q:['  FIXTURE  ','unused']}).query,'FIXTURE');

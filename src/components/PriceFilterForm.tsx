@@ -21,8 +21,8 @@ export default function PriceFilterForm({ category, items, filters }: { category
           </select>
         </label>
       ) : null}
-      {["ram", "ssd"].includes(category) ? (
-        <label className="text-xs text-white/75">{category === "ram" ? "키트 총용량" : "SSD 용량"}
+      {["ram", "ssd", "gpu"].includes(category) ? (
+        <label className="text-xs text-white/75">{category === "ram" ? "키트 총용량" : category === "gpu" ? "그래픽 메모리" : "SSD 용량"}
           <select className={controlClass} name="capacity" defaultValue={filters.capacity}>
             <option value="">전체 용량</option>
             {capacities.map(capacity => <option key={capacity} value={capacity}>{category === "ssd" && capacity % 1000 === 0 ? `${capacity / 1000}TB` : `${capacity}GB`}</option>)}

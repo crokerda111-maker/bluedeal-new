@@ -1,7 +1,7 @@
 {
   "category": "gpu",
   "updatedAt": "2026-11-16T21:03:01.430000Z",
-  "generatedAt": "2026-11-16T21:07:55.796813Z",
+  "generatedAt": "2026-11-16T21:21:43.014260Z",
   "items": [
     {
       "id": "pny-rtx-5050-dual-fan-8gb",
@@ -20,6 +20,7 @@
       "officialUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
       "checkedAt": "2026-11-16T20:59:16.612000Z",
       "updatedAt": "2026-11-16T20:59:16.612000Z",
+      "capacityGB": 8,
       "availability": "unknown"
     },
     {
@@ -39,6 +40,7 @@
       "officialUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
       "checkedAt": "2026-11-16T20:57:40.581000Z",
       "updatedAt": "2026-11-16T20:57:40.581000Z",
+      "capacityGB": 8,
       "availability": "unknown"
     },
     {
@@ -58,6 +60,7 @@
       "officialUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
       "checkedAt": "2026-11-16T20:56:53.983000Z",
       "updatedAt": "2026-11-16T20:56:53.983000Z",
+      "capacityGB": 8,
       "availability": "unknown"
     },
     {
@@ -77,6 +80,7 @@
       "officialUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
       "checkedAt": "2026-11-16T20:55:52.297000Z",
       "updatedAt": "2026-11-16T20:55:52.297000Z",
+      "capacityGB": 16,
       "availability": "unknown"
     },
     {
@@ -96,6 +100,7 @@
       "officialUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
       "checkedAt": "2026-11-16T21:00:06.338000Z",
       "updatedAt": "2026-11-16T21:00:06.338000Z",
+      "capacityGB": 12,
       "availability": "unknown"
     },
     {
@@ -115,6 +120,7 @@
       "officialUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
       "checkedAt": "2026-11-16T21:01:00.520000Z",
       "updatedAt": "2026-11-16T21:01:00.520000Z",
+      "capacityGB": 16,
       "availability": "unknown"
     },
     {
@@ -134,6 +140,7 @@
       "officialUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
       "checkedAt": "2026-11-16T21:01:47.276000Z",
       "updatedAt": "2026-11-16T21:01:47.276000Z",
+      "capacityGB": 16,
       "availability": "unknown"
     },
     {
@@ -153,6 +160,7 @@
       "officialUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
       "checkedAt": "2026-11-16T21:03:01.430000Z",
       "updatedAt": "2026-11-16T21:03:01.430000Z",
+      "capacityGB": 32,
       "availability": "unknown"
     }
   ]
