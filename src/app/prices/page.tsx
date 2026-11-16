@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
 import { getMeta } from "../../lib/prices";
+import { pageMetadata } from "../../lib/site";
+
+export const metadata = pageMetadata("PC 부품 가격현황 | BLUEDEAL", "확인한 PC 부품의 상품가, 배송 조건과 가격 확인 시각을 비교하세요.", "/prices");
 
 function fmtKorean(ts: string) {
   if (!ts) return "확인 전";

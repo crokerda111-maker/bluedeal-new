@@ -5,6 +5,9 @@ import { getMeta, getPrices } from "../lib/prices";
 import { PRICE_CATEGORIES } from "../lib/priceCategories";
 import { listOnlinePostsByBoard } from "../lib/onlinePosts";
 import type { Post } from "../lib/postTypes";
+import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from "../lib/site";
+
+export const metadata = pageMetadata("블루딜 | PC 부품 가격·핫딜·IT 커뮤니티", SITE_DESCRIPTION, "/");
 
 function formatDate(value: string) {
   const date = new Date(value);
@@ -85,6 +88,7 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-16 pb-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "블루딜", alternateName: "BLUEDEAL", url: SITE_URL, inLanguage: "ko-KR" }).replace(/</g, "\\u003c") }} />
       <HomeHero updatedAt={meta.updatedAt} schedule={meta.schedule} itemCount={itemCount} />
 
       <section className="grid gap-4 md:grid-cols-3">

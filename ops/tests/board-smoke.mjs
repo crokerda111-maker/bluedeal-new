@@ -200,6 +200,35 @@ try {
     assert.match(response.headers.get('cache-control'), /no-store/);
   });
 
+  await check('search discovery excludes administrator, inquiry and redirect endpoints', async () => {
+    const robots = await (await fetch(`${app.base}/robots.txt`)).text();
+    assert.match(robots, /Disallow: \/admin/);
+    assert.match(robots, /Disallow: \/contact/);
+    assert.match(robots, /Sitemap: https:\/\/bluedeal\.co\.kr\/sitemap.xml/);
+    const sitemap = await (await fetch(`${app.base}/sitemap.xml`)).text();
+    assert.ok(sitemap.includes('https://bluedeal.co.kr/prices/ram'));
+    for (const excluded of ['/admin', '/contact', '/go/', '/api/']) assert.equal(sitemap.includes(excluded), false);
+    for (const route of ['/admin', '/contact', '/prices/ram?capacity=48']) {
+      const html = await (await fetch(app.base + route)).text();
+      assert.match(html, /name="robots" content="noindex, nofollow"/);
+    }
+    const prices = await (await fetch(`${app.base}/prices/ram`)).text();
+    assert.match(prices, /<title>RAM 가격현황 \| BLUEDEAL<\/title>/);
+    assert.match(prices, /rel="canonical" href="https:\/\/bluedeal\.co\.kr\/prices\/ram"/);
+    assert.match(prices, /property="og:image" content="https:\/\/bluedeal\.co\.kr\/opengraph-image"/);
+    assert.equal((await fetch(`${app.base}/community/not-a-board`)).status, 404);
+  });
+
+  await check('shared link image is a valid 1200 by 630 PNG', async () => {
+    const response = await fetch(`${app.base}/opengraph-image`);
+    assert.equal(response.status, 200);
+    assert.match(response.headers.get('content-type'), /image\/png/);
+    const png = Buffer.from(await response.arrayBuffer());
+    assert.equal(png.subarray(0,8).toString('hex'), '89504e470d0a1a0a');
+    assert.equal(png.readUInt32BE(16), 1200);
+    assert.equal(png.readUInt32BE(20), 630);
+  });
+
   await check('anonymous users cannot create administrator picks', async () => {
     assert.equal((await api('POST', '/api/posts', { boardKey: 'it', type: 'pick', title: 'test', content: 'test' })).status, 403);
   });

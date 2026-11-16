@@ -1,0 +1,17 @@
+import type { MetadataRoute } from "next";
+import { SITE_URL } from "../lib/site";
+import { COMMUNITY_BOARDS } from "../lib/boardConfig";
+import { PRICE_CATEGORIES } from "../lib/priceCategories";
+import { getLocalPrices } from "../lib/localPrices";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const paths = ["/", "/about", "/it", "/community", "/prices", ...COMMUNITY_BOARDS.map(board => `/community/${board.slug}`)];
+  return [
+    ...paths.map(path => ({ url: `${SITE_URL}${path}` })),
+    ...PRICE_CATEGORIES.flatMap(category => {
+      const data = getLocalPrices(category.key);
+      if (!data.items.length) return [];
+      return [{ url: `${SITE_URL}/prices/${category.key}`, ...(data.generatedAt ? { lastModified: data.generatedAt } : {}) }];
+    }),
+  ];
+}

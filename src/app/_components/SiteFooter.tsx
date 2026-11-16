@@ -7,6 +7,7 @@ export default function SiteFooter() {
         <div>© {new Date().getFullYear()} BLUEDEAL</div>
 
         <div className="flex flex-wrap items-center gap-4">
+          <Link className="hover:text-white" href="/about">소개·가격 안내</Link>
           <Link className="hover:text-white" href="/it">
             IT 소식
           </Link>

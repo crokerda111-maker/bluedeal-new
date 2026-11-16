@@ -7,6 +7,18 @@ import { getPriceView } from "../../../lib/prices";
 import SmartLink from "../../../components/SmartLink";
 import PriceFilterForm from "../../../components/PriceFilterForm";
 import { filterPrices, priceFreshness, readPriceFilters } from "../../../lib/priceFilters";
+import { pageMetadata } from "../../../lib/site";
+
+type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
+
+export async function generateMetadata({ params, searchParams }: PricePageProps) {
+  const category = getCategory((await params).category);
+  if (!category) return pageMetadata("가격현황 | BLUEDEAL", "가격 카테고리를 찾을 수 없습니다.", undefined, true);
+  const { data } = await getPriceView(category.key);
+  const query = await searchParams;
+  const filtered = Object.values(query).some(value => Array.isArray(value) ? value.some(Boolean) : Boolean(value));
+  return pageMetadata(`${category.title} | BLUEDEAL`, `${category.description} 상품가·배송비·판매자·확인 시각을 함께 비교하세요.`, `/prices/${category.key}`, filtered || !data.items.length);
+}
 
 function fmtKorean(ts?: string) {
   if (!ts) return "확인 전";
@@ -74,10 +86,7 @@ function PurchaseLink({ item }: { item: PriceItem }) {
   );
 }
 
-export default async function PricesCategoryPage({ params, searchParams }: {
-  params: Promise<{ category: string }>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
+export default async function PricesCategoryPage({ params, searchParams }: PricePageProps) {
   const { category: categoryKey } = await params;
   const category = getCategory(categoryKey);
   if (!category) return notFound();
