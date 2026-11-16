@@ -52,6 +52,12 @@ try {
   if ($LASTEXITCODE -ne 0) { throw "빌드 실패. 기존 운영 배포를 유지합니다." }
 } finally { Pop-Location }
 
+# A scheduled build can overlap with an editor saving a source file.
+# Recheck before staging so the published source is the source we verified.
+$OtherChanges = @(git -C $RepoRoot diff --name-only) | Where-Object { $_ -notin $OutputPaths }
+$Untracked = @(git -C $RepoRoot ls-files --others --exclude-standard)
+if ($OtherChanges.Count -or $Untracked.Count) { throw "빌드 중 가격 파일 외 변경이 생겼습니다. 사용자 작업을 보존하고 배포를 중단합니다." }
+
 git -C $RepoRoot diff --cached --quiet
 if ($LASTEXITCODE -ne 0) { throw "검증 중 새로 스테이징한 변경이 있습니다. 배포를 중단합니다." }
 git -C $RepoRoot add -- @OutputPaths

@@ -50,3 +50,22 @@ class PublishGuardTests(unittest.TestCase):
         self.git("switch", "-c", "test-branch")
         self.publish()
         self.assertEqual(self.git("branch", "--show-current").decode().strip(), "test-branch")
+
+    def test_source_saved_during_build_stops_before_staging_or_commit(self):
+        price = self.root / "src/content/prices/ram.json"
+        price.parent.mkdir(parents=True)
+        price.write_text('{"items": []}', encoding="utf-8")
+        builder = self.root / "ops/collector/ingest_snapshot.py"
+        builder.write_text("from pathlib import Path\nPath('src/content/prices/ram.json').write_text('{\"items\": [\"TEST ONLY\"]}')\n", encoding="utf-8")
+        self.git("add", ".")
+        self.git("-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid", "commit", "-m", "TEST publisher race")
+        self.git("remote", "add", "origin", ".")
+        before = self.git("rev-parse", "HEAD")
+        quote = lambda value: "'" + str(value).replace("'", "''") + "'"
+        script = f"function npm {{ Set-Content -LiteralPath {quote(self.root / 'notes.txt')} -Value 'user edit during build'; $global:LASTEXITCODE=0 }}; & {quote(self.root / 'ops/collector/publish_prices.ps1')} -Publish"
+        result = subprocess.run(["pwsh", "-NoProfile", "-Command", script], cwd=self.root, capture_output=True, timeout=15)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("TEST ONLY", price.read_text(encoding="utf-8"), (result.stdout + result.stderr).decode("utf-8", errors="replace"))
+        self.assertEqual((self.root / "notes.txt").read_text(encoding="utf-8").strip(), "user edit during build")
+        self.assertEqual(self.git("diff", "--cached"), b"")
+        self.assertEqual(self.git("rev-parse", "HEAD"), before)
