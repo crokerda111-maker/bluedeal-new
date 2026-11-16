@@ -14,8 +14,10 @@ import csv
 import hashlib
 import json
 import math
+import os
 import re
 import sys
+import uuid
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -172,7 +174,9 @@ def read_rows(path: Path) -> list[dict[str, Any]]:
         rows = data.get("items") if isinstance(data, dict) else data
         if not isinstance(rows, list):
             raise ValueError("JSON은 배열 또는 {\"items\": [...]} 구조여야 합니다.")
-        return [dict(row) for row in rows if isinstance(row, dict)]
+        if not all(isinstance(row, dict) for row in rows):
+            raise ValueError("JSON의 모든 상품은 객체여야 합니다.")
+        return [dict(row) for row in rows]
     raise ValueError("입력 파일은 .csv 또는 .json이어야 합니다.")
 
 
@@ -190,6 +194,37 @@ def atomic_write_json(path: Path, data: Any) -> None:
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temp.replace(path)
+
+
+def atomic_write_batch(outputs: dict[Path, Any]) -> None:
+    """Stage every file first and restore replaced files after a write failure."""
+    suffix = uuid.uuid4().hex
+    staged: dict[Path, Path] = {}
+    previous: dict[Path, bytes | None] = {}
+    replaced: list[Path] = []
+    try:
+        for path, data in outputs.items():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            previous[path] = path.read_bytes() if path.exists() else None
+            temp = path.with_name(f".{path.name}.{suffix}.tmp")
+            staged[path] = temp
+            temp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        for path, temp in staged.items():
+            temp.replace(path)
+            replaced.append(path)
+    except BaseException:
+        for path in reversed(replaced):
+            old = previous[path]
+            if old is None:
+                path.unlink(missing_ok=True)
+            else:
+                temp = staged[path]
+                temp.write_bytes(old)
+                temp.replace(path)
+        raise
+    finally:
+        for temp in staged.values():
+            temp.unlink(missing_ok=True)
 
 
 def history_values(points: list[dict[str, Any]], now: datetime) -> tuple[int | None, int | None, float | None]:
@@ -215,8 +250,10 @@ def history_values(points: list[dict[str, Any]], now: datetime) -> tuple[int | N
     return low_7d, low_30d, round(change, 1) if change is not None else None
 
 
-def build(input_path: Path, root: Path, now: datetime, dry_run: bool) -> int:
+def _build(input_path: Path, root: Path, now: datetime, dry_run: bool, schedule: str | None = None) -> int:
     rows = read_rows(input_path)
+    if not rows:
+        raise ValueError("빈 입력으로 기존 가격표를 비울 수 없습니다.")
     output_dir = root / "src" / "content" / "prices"
     outbound_path = root / "src" / "content" / "outbound.generated.json"
     state_path = root / "ops" / "collector" / "state" / "history.json"
@@ -249,6 +286,8 @@ def build(input_path: Path, root: Path, now: datetime, dry_run: bool) -> int:
             if not name:
                 raise ValueError("name이 비어 있습니다.")
             price = parse_price(raw.get("price"))
+            if str(raw.get("currency") or "KRW").strip().upper() != "KRW":
+                raise ValueError("현재 가격표는 원화(KRW)만 지원합니다.")
             checked = parse_checked_at(raw.get("checkedAt"), now)
             checked_iso = checked.isoformat().replace("+00:00", "Z")
             shipping_raw = raw.get("shippingFee")
@@ -259,10 +298,12 @@ def build(input_path: Path, root: Path, now: datetime, dry_run: bool) -> int:
             code = make_code(normalized_url, outbound)
             outbound[code] = {"code": code, "merchant": merchant, "originalUrl": normalized_url}
 
+            offer = hashlib.sha256(json.dumps([normalized_url, raw.get("seller"), raw.get("priceNote"), attributes.get("capacityGB"), attributes.get("memoryType")], ensure_ascii=False).encode()).hexdigest()[:20]
             points = list(new_history.get(key, [])) if isinstance(new_history.get(key), list) else []
+            points = [point for point in points if isinstance(point, dict) and point.get("offer") == offer]
             # 같은 확인 CSV의 재생성에서는 관측 횟수·확인 시각을 늘리지 않습니다.
             points = [point for point in points if point.get("at") != checked_iso]
-            points.append({"at": checked_iso, "price": price})
+            points.append({"at": checked_iso, "price": price, "offer": offer})
             cutoff = now - timedelta(days=31)
             points = [point for point in points if parse_now(str(point.get("at"))) >= cutoff]
             points.sort(key=lambda point: str(point.get("at")))
@@ -293,7 +334,7 @@ def build(input_path: Path, root: Path, now: datetime, dry_run: bool) -> int:
             raise ValueError(f"입력 {line_number}행 오류: {error}") from error
 
     for items in grouped.values():
-        items.sort(key=lambda item: (item["price"] + (item["shippingFee"] or 0), item["name"]))
+        items.sort(key=lambda item: (item["shippingFee"] is None, item["price"] + (item["shippingFee"] or 0), item["name"]))
 
     if dry_run:
         print(f"[OK] 검증 완료: {len(rows)}개 상품, {len(outbound)}개 이동주소")
@@ -303,17 +344,42 @@ def build(input_path: Path, root: Path, now: datetime, dry_run: bool) -> int:
     meta = {
         "updatedAt": latest_checked,
         "generatedAt": now_iso,
-        "schedule": "수동 확인 후 갱신 · 자동 수집 준비 중",
+        "schedule": schedule or "수동 확인 후 갱신 · 자동 수집 준비 중",
         "note": f"확인한 상품 {len(rows)}개 · 가격은 상품별 확인 시각 기준입니다.",
     }
-    atomic_write_json(output_dir / "meta.json", meta)
+    outputs: dict[Path, Any] = {output_dir / "meta.json": meta}
     for category in CATEGORIES:
-        atomic_write_json(output_dir / f"{category}.json", {"category": category, "updatedAt": max((item["checkedAt"] for item in grouped[category]), default=""), "generatedAt": now_iso, "items": grouped[category]})
-    atomic_write_json(outbound_path, dict(sorted(outbound.items())))
-    atomic_write_json(state_path, new_history)
+        outputs[output_dir / f"{category}.json"] = {"category": category, "updatedAt": max((item["checkedAt"] for item in grouped[category]), default=""), "generatedAt": now_iso, "items": grouped[category]}
+    outputs[outbound_path] = dict(sorted(outbound.items()))
+    outputs[state_path] = new_history
+    def comparable(path: Path, value: Any) -> Any:
+        if path.parent == output_dir and isinstance(value, dict):
+            return {key: item for key, item in value.items() if key != "generatedAt"}
+        return value
+    if all(path.exists() and comparable(path, load_json(path, None)) == comparable(path, value) for path, value in outputs.items()):
+        print("[OK] 확인 데이터 변경 없음: 파일과 생성 시각을 유지합니다.")
+        return 0
+    atomic_write_batch(outputs)
     print(f"[OK] 생성 완료: {len(rows)}개 상품, {len(outbound)}개 이동주소")
     print(f"[OK] 출력 위치: {output_dir}")
     return 0
+
+
+def build(input_path: Path, root: Path, now: datetime, dry_run: bool, schedule: str | None = None) -> int:
+    if dry_run:
+        return _build(input_path, root, now, True, schedule)
+    lock_path = root / "ops" / "collector" / "state" / "build.lock"
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        lock = lock_path.open("x", encoding="utf-8")
+    except FileExistsError as error:
+        raise ValueError("다른 가격 생성 작업이 실행 중입니다. 종료 여부를 확인하세요.") from error
+    try:
+        with lock:
+            lock.write(str(os.getpid()))
+        return _build(input_path, root, now, False, schedule)
+    finally:
+        lock_path.unlink(missing_ok=True)
 
 
 def main() -> int:

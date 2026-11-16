@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "collector" / "build_prices.py"
 SPEC = importlib.util.spec_from_file_location("build_prices", MODULE_PATH)
@@ -97,7 +98,7 @@ class CollectorSmokeTests(unittest.TestCase):
         ram = json.loads((self.root / "src/content/prices/ram.json").read_text(encoding="utf-8"))
         state = json.loads((self.root / "ops/collector/state/history.json").read_text(encoding="utf-8"))
         self.assertEqual(ram["updatedAt"], "2026-11-15T23:55:00Z")
-        self.assertEqual(ram["generatedAt"], "2026-11-16T10:00:00Z")
+        self.assertEqual(ram["generatedAt"], "2026-11-16T00:00:00Z")
         self.assertEqual(ram["items"][0]["shippingFee"], 0)
         self.assertTrue(all(len(points) == 1 for points in state.values()))
 
@@ -138,6 +139,45 @@ class CollectorSmokeTests(unittest.TestCase):
         self.assertEqual(data["items"][0]["ssdDram"], "unknown")
         previous = self.snapshot()
         self.write_input([{**ram, "capacityGB": "32"}])
+        with self.assertRaises(ValueError):
+            self.build()
+        self.assertEqual(previous, self.snapshot())
+
+    def test_empty_or_malformed_snapshot_cannot_remove_existing_prices(self):
+        self.write_input(self.rows)
+        self.build()
+        previous = self.snapshot()
+        for rows in ([], [None, self.rows[0]]):
+            self.write_input(rows)
+            with self.assertRaises(ValueError):
+                self.build()
+            self.assertEqual(previous, self.snapshot())
+
+    def test_write_failure_rolls_back_already_replaced_files(self):
+        self.write_input(self.rows)
+        self.build()
+        previous = self.snapshot()
+        self.write_input([{**row, "price": row["price"] + 100} for row in self.rows])
+        original = Path.replace
+        calls = 0
+        def failing_replace(source, target):
+            nonlocal calls
+            calls += 1
+            if calls == 3:
+                raise OSError("TEST ONLY simulated disk failure")
+            return original(source, target)
+        with patch.object(Path, "replace", failing_replace):
+            with self.assertRaises(OSError):
+                self.build()
+        self.assertEqual(previous, self.snapshot())
+        self.assertFalse(list(self.root.rglob("*.tmp")))
+
+    def test_running_job_lock_prevents_concurrent_output_changes(self):
+        self.write_input(self.rows)
+        self.build()
+        lock = self.root / "ops/collector/state/build.lock"
+        lock.write_text("TEST ONLY busy", encoding="utf-8")
+        previous = self.snapshot()
         with self.assertRaises(ValueError):
             self.build()
         self.assertEqual(previous, self.snapshot())

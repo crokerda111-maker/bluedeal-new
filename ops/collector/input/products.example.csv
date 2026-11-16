@@ -1,4 +1,4 @@
-category,id,name,spec,price,url,source,seller,shippingFee,shippingNote,priceNote,officialUrl,checkedAt
-ram,ram-example-1,게시 금지 예시 DDR5 메모리,DDR5 / 32GB,129000,https://www.coupang.com/,테스트,예시 판매자,,배송비 확인 필요,테스트용 가짜 가격,,2026-01-01T00:00:00Z
-ssd,ssd-example-1,게시 금지 예시 NVMe SSD,PCIe 4.0 / 1TB,99000,https://www.11st.co.kr/,테스트,예시 판매자,,배송비 확인 필요,테스트용 가짜 가격,,2026-01-01T00:00:00Z
+category,id,name,spec,price,url,source,seller,shippingFee,shippingNote,priceNote,officialUrl,checkedAt,capacityGB,memoryType,moduleCapacityGB,moduleCount,ssdDram,availability,currency
+ram,ram-example-1,게시 금지 예시 DDR5 메모리,DDR5 / 32GB,129000,https://www.coupang.com/,테스트,예시 판매자,,배송비 확인 필요,테스트용 가짜 가격,,2026-01-01T00:00:00Z,32,DDR5,16,2,,unknown,KRW
+ssd,ssd-example-1,게시 금지 예시 NVMe SSD,PCIe 4.0 / 1TB,99000,https://www.11st.co.kr/,테스트,예시 판매자,,배송비 확인 필요,테스트용 가짜 가격,,2026-01-01T00:00:00Z,1000,,,,unknown,unknown,KRW
 

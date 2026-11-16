@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "products": [
+    {
+      "category": "ram",
+      "id": "klevv-fit-v-white-6000-cl30-32gb",
+      "seller": "(주)서린씨앤아이",
+      "memoryType": "DDR5",
+      "capacityGB": 32,
+      "moduleCapacityGB": 16,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4426484979"
+    },
+    {
+      "category": "ram",
+      "id": "gskill-flare-x5-6000-cl36-32gb",
+      "seller": "(주)서린씨앤아이",
+      "memoryType": "DDR5",
+      "capacityGB": 32,
+      "moduleCapacityGB": 16,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3517264707"
+    },
+    {
+      "category": "ram",
+      "id": "klevv-cras-v-rgb-white-6000-cl30-48gb",
+      "seller": "(주)서린씨앤아이",
+      "memoryType": "DDR5",
+      "capacityGB": 48,
+      "moduleCapacityGB": 24,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3582945309"
+    }
+  ]
+}
