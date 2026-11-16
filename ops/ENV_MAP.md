@@ -8,10 +8,17 @@
 | `KV_REST_API_URL` + `KV_REST_API_TOKEN` | 동적 글 사용 시 | 게시판, 관리자 블로그, 동적 `/go` 저장 |
 | `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` | 위 변수의 대안 | Upstash REST 직접 연결 |
 | `OUTBOUND_INGEST_SECRET` | 내부 등록 API 사용 시 | `/api/internal/outbound/register` 인증 |
+| `AFFILIATE_LINKS_JSON` | 발급 링크 연결 시 | 원본 상품 주소와 공식 발급 주소의 서버 전용 매핑. Production·Preview에 등록하며 공개 접두사를 붙이지 않음 |
 
 ## 저장 위치
 
 쿠팡 등 제휴 링크는 공식 계정에서 발급한 완성된 주소를 등록합니다. 일반 상품 주소에 임의 태그를 붙여 수익 귀속이 보장된 것으로 처리하지 않습니다. `COUPANG_LPTAG`는 사용하지 않습니다.
+
+공식 링크 발급·목적지 확인 후 `AFFILIATE_LINKS_JSON`에 `[{"merchant":"gmarket","provider":"linkprice","originalUrl":"https://item.gmarket.co.kr/Item?goodsCode=EXAMPLE","affiliateUrl":"https://app.ac/EXAMPLE01"}]` 형식으로 등록합니다(예시 주소는 작동하지 않음). 쿠팡·알리는 `provider`도 각각 `coupang`·`aliexpress`로 쓰고 각 서비스의 공식 제휴 호스트만 허용합니다. 링크프라이스는 G마켓·11번가의 검증한 `app.ac` 단축 주소만 지원합니다. 공유 단축 호스트를 사용자 입력 허용 목록에 추가하지 않습니다.
+
+원본 CSV·가격·확인 시각·가격 이력·기존 `/go` 코드는 변경하지 않습니다. 설정이 없거나 잘못됐거나 같은 원본이 중복되면 기존 판매처 주소로 이동합니다. 제휴 고지는 구매 버튼보다 먼저 표시합니다. 리디렉션 검증은 상품 도착 확인이며 실제 매출 귀속은 각 제휴처 리포트에서 별도로 확인해야 합니다. 새 API 키 발급은 단순 링크 발급과 별개의 작업입니다.
+
+선택 필드 `code`를 지정하면 수동 발급 링크도 `/go/{code}`로 등록합니다(영문·숫자·밑줄·하이픈 2~64자, 설정 안에서 고유해야 함). 이 등록은 상품명·가격·재고·리뷰의 검증이나 상품 카드의 게시를 의미하지 않습니다. 사용자가 전달한 공식 알리 단축 링크는 원본과 발급 주소에 같은 값을 쓸 수 있습니다. 링크 전달용 주소를 글에 사용할 때도 해당 플랫폼의 제휴 고지를 먼저 표시해야 합니다.
 
 - Production: Vercel Project → Settings → Environment Variables
 - 로컬 개발: 저장소 루트의 `.env.local`

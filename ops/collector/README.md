@@ -5,7 +5,7 @@ VPS 없이 Windows PC에서 가격 데이터를 만들고 GitHub/Vercel로 배�
 ## 흐름
 
 1. 다나와 수집기가 공개하지 않는 후보 목록을 만듭니다.
-2. 후보 상품의 실제 판매처 가격·조건·확인 시각과 판매처 주소를 `products.csv`에 입력합니다. 제휴 주소는 공식 발급된 주소만 사용합니다.
+2. 후보 상품의 실제 판매처 가격·조건·확인 시각과 원본 판매처 주소를 `products.csv`에 입력합니다. 공식 발급 제휴 주소는 원본을 바꾸지 않고 서버의 `AFFILIATE_LINKS_JSON`에 따로 연결합니다(`ops/ENV_MAP.md` 참고).
 3. `build_prices.py`가 URL 허용 목록을 검사하고 안정적인 `/go/{code}`를 생성합니다.
 4. 공개 가격 파일에는 원본 URL 대신 `goCode`만 저장합니다.
 5. `publish_prices.ps1 -Publish`가 변경 파일만 GitHub에 올립니다.
@@ -75,7 +75,7 @@ powershell -ExecutionPolicy Bypass -File .\ops\collector\publish_prices.ps1 -Pub
 powershell -ExecutionPolicy Bypass -File .\ops\collector\publish_prices.ps1 -CollectDanawa
 ```
 
-결과는 비공개 파일 `ops/collector/input/danawa-candidates.csv`에 저장됩니다. 이 파일의 상품을 보고 실제 판매처 가격과 공식 제휴링크를 `products.csv`에 입력해야 합니다. `-CollectDanawa -Publish` 동시 실행은 다나와 주소가 실수로 구매 버튼에 들어가지 않도록 차단됩니다.
+결과는 비공개 파일 `ops/collector/input/danawa-candidates.csv`에 저장됩니다. 이 파일의 상품을 보고 실제 판매처 가격과 원본 상품 주소를 `products.csv`에 입력해야 합니다. 공식 발급 제휴 주소는 별도로 연결합니다. `-CollectDanawa -Publish` 동시 실행은 다나와 주소가 실수로 구매 버튼에 들어가지 않도록 차단됩니다.
 
 수집 대상은 `ops/collector/watchlist.json`에 고정되어 있습니다. 현재 CPU 4종, DDR5 24GB×2·16GB×2 국내 유통 인기상품 각 10개, 데스크톱 GeForce RTX 50 시리즈를 수집합니다. RAM은 해외·병행수입·노트북용·CUDIMM을 제외합니다.
 

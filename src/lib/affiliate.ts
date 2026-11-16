@@ -1,4 +1,4 @@
-import type { Merchant } from "./outbound";
+import type { Merchant, OutboundLink } from "./outbound";
 
 type MerchantRule = {
   merchant: Merchant;
@@ -40,7 +40,7 @@ const MERCHANT_RULES: MerchantRule[] = [
   },
 ];
 
-export type AffiliateResolutionMode = "already-affiliate" | "passthrough";
+export type AffiliateResolutionMode = "registered-affiliate" | "already-affiliate" | "passthrough";
 
 export type AffiliateResolution = {
   merchant: Merchant;
@@ -92,6 +92,53 @@ export function normalizeOutboundUrl(raw: string): string | null {
   return url.toString();
 }
 
+function registeredEntries(): Record<string, unknown>[] {
+  const raw = process.env.AFFILIATE_LINKS_JSON;
+  if (!raw || raw.length > 60000) return [];
+  let entries: unknown;
+  try { entries = JSON.parse(raw); } catch { return []; }
+  if (!Array.isArray(entries) || entries.length > 100) return [];
+  return entries.filter((entry: unknown): entry is Record<string, unknown> => Boolean(entry) && typeof entry === "object" && !Array.isArray(entry));
+}
+
+/** 공식 발급 주소를 원본 상품/판매처와 별도로 연결합니다. */
+function registeredAffiliateUrl(merchant: Merchant, originalUrl: string): string | null {
+  const matches = registeredEntries().filter((row) => {
+    return row.merchant === merchant && typeof row.originalUrl === "string"
+      && normalizeOutboundUrl(row.originalUrl) === originalUrl;
+  });
+  // 중복·충돌한 설정은 선택하지 않고 원래 판매처 주소를 사용합니다.
+  if (matches.length !== 1) return null;
+  const row = matches[0];
+  if (typeof row.affiliateUrl !== "string" || /[\u0000-\u0020\u007f]/.test(row.affiliateUrl)) return null;
+  let target: URL;
+  try { target = new URL(row.affiliateUrl); } catch { return null; }
+  if (target.protocol !== "https:" || target.username || target.password || target.port || target.hash) return null;
+
+  if (row.provider === "linkprice" && (merchant === "gmarket" || merchant === "11st")) {
+    // 공유 단축 호스트를 일반 입력 허용 목록에 넣으면 판매처를 판별할 수 없습니다.
+    // 정확한 원본 상품과 매칭한 서버 설정에서만 이 호스트를 허용합니다.
+    if (target.hostname !== "app.ac" || target.search || !/^\/[a-zA-Z0-9_-]{6,64}$/.test(target.pathname)) return null;
+  } else if (row.provider !== merchant || !isAffiliateHost(merchant, target.hostname)) {
+    return null;
+  }
+  return target.toString();
+}
+
+/** 수동 발급 링크도 가격·상품 정보를 새로 만들지 않고 /go 주소로 등록합니다. */
+export function getRegisteredOutboundLink(code: string): OutboundLink | null {
+  if (!/^[a-zA-Z0-9_-]{2,64}$/.test(code)) return null;
+  const matches = registeredEntries().filter(row => row.code === code);
+  if (matches.length !== 1) return null;
+  const row = matches[0];
+  if (typeof row.originalUrl !== "string") return null;
+  const originalUrl = normalizeOutboundUrl(row.originalUrl);
+  if (!originalUrl) return null;
+  const merchant = detectMerchant(new URL(originalUrl).hostname);
+  if (!merchant || row.merchant !== merchant || !registeredAffiliateUrl(merchant, originalUrl)) return null;
+  return { code, merchant, originalUrl };
+}
+
 /**
  * 클릭 시점에 최종 목적지를 결정합니다.
  *
@@ -111,6 +158,9 @@ export function resolveAffiliateUrl(opts: {
   const url = new URL(normalized);
   const detected = detectMerchant(url.hostname);
   if (detected !== merchant) return null;
+
+  const registered = registeredAffiliateUrl(merchant, normalized);
+  if (registered) return { merchant, url: registered, mode: "registered-affiliate" };
 
   if (isAffiliateHost(merchant, url.hostname)) {
     return { merchant, url: url.toString(), mode: "already-affiliate" };

@@ -1,5 +1,5 @@
 import { after, NextResponse } from "next/server";
-import { convertToAffiliateUrl } from "../../../lib/affiliate";
+import { convertToAffiliateUrl, getRegisteredOutboundLink } from "../../../lib/affiliate";
 import { getOutboundRow, incrementOutboundClick } from "../../../lib/onlineOutbound";
 import { KvNotConfiguredError } from "../../../lib/kvRest";
 import { OUTBOUND_LINKS } from "../../../lib/outbound";
@@ -15,7 +15,7 @@ export async function GET(req: Request, ctx: { params: Promise<{ code: string }>
   }
 
   // 배포에 포함된 검증 주소는 온라인 저장소 장애와 무관하게 제공합니다.
-  let row: OutboundLink | null = OUTBOUND_LINKS[code] ?? null;
+  let row: OutboundLink | null = OUTBOUND_LINKS[code] ?? getRegisteredOutboundLink(code);
   if (!row) {
     try {
       row = await getOutboundRow(code);

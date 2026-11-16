@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeOutboundUrl, resolveAffiliateUrl } from '../../src/lib/affiliate.ts';
+import { getRegisteredOutboundLink, normalizeOutboundUrl, resolveAffiliateUrl } from '../../src/lib/affiliate.ts';
 
 test('allowed merchant domains never accept deceptive boundaries, credentials or ports', () => {
   for (const url of ['https://www.coupang.com.evil.invalid/p', 'https://evilcoupang.com/p',
@@ -28,5 +28,63 @@ test('ordinary product URLs are not claimed as commission-enabled by adding a ta
   } finally {
     if(previous===undefined) delete process.env.COUPANG_LPTAG;
     else process.env.COUPANG_LPTAG=previous;
+  }
+});
+
+function withMappings(entries, run) {
+  const previous=process.env.AFFILIATE_LINKS_JSON;
+  process.env.AFFILIATE_LINKS_JSON=typeof entries==='string'?entries:JSON.stringify(entries);
+  try { run(); } finally {
+    if(previous===undefined)delete process.env.AFFILIATE_LINKS_JSON;
+    else process.env.AFFILIATE_LINKS_JSON=previous;
+  }
+}
+const source='https://item.gmarket.co.kr/Item?goodsCode=FIXTURE001';
+const issued={merchant:'gmarket',provider:'linkprice',originalUrl:source,affiliateUrl:'https://app.ac/FIXTURE01'};
+const resolve=(originalUrl=source,merchant='gmarket')=>resolveAffiliateUrl({merchant,originalUrl,code:'stable-code'});
+
+test('verified mappings change only the destination, preserving canonical product codes and source identity',()=>{
+  withMappings([issued],()=>{
+    assert.deepEqual(resolve(),{merchant:'gmarket',url:issued.affiliateUrl,mode:'registered-affiliate'});
+    assert.equal(resolve(source.replace('FIXTURE001','FIXTURE002')).mode,'passthrough');
+    assert.equal(resolve(source+'&option=2').mode,'passthrough');
+    assert.equal(resolve(source,'11st'),null);
+    // Shared network hosts cannot be submitted as ordinary merchant URLs.
+    assert.equal(normalizeOutboundUrl(issued.affiliateUrl),null);
+  });
+});
+
+test('invalid, duplicate and unrelated issued targets fall back safely to the original merchant',()=>{
+  const badTargets=['https://app.ac.evil.invalid/FIXTURE01','https://evilapp.ac/FIXTURE01',
+    'http://app.ac/FIXTURE01','https://u:p@app.ac/FIXTURE01','https://app.ac:8443/FIXTURE01',
+    'https://app.ac/FIXTURE01?redirect=https://evil.invalid','https://app.ac/FIXTURE01#x',
+    'https://app.ac/FIXTURE\n01','javascript:alert(1)','https://www.gmarket.co.kr/'];
+  for(const affiliateUrl of badTargets)withMappings([{...issued,affiliateUrl}],()=>assert.equal(resolve().mode,'passthrough',affiliateUrl));
+  for(const entries of ['{broken','null','{}',[issued,issued],[{...issued,provider:'coupang'}],Array(101).fill(issued)]){
+    withMappings(entries,()=>assert.equal(resolve().mode,'passthrough'));
+  }
+});
+
+test('native provider mappings preserve official tracking but cannot cross merchant boundaries',()=>{
+  for(const [merchant,originalUrl,affiliateUrl] of [
+    ['coupang','https://www.coupang.com/vp/products/123','https://link.coupang.com/a/FIXTURE?subid=TEST%2BVALUE&z=2&a=1'],
+    ['aliexpress','https://www.aliexpress.com/item/123.html','https://s.click.aliexpress.com/e/_FIXTURE01'],
+  ]){
+    withMappings([{merchant,provider:merchant,originalUrl,affiliateUrl}],()=>{
+      assert.deepEqual(resolve(originalUrl,merchant),{merchant,url:affiliateUrl,mode:'registered-affiliate'});
+    });
+    withMappings([{merchant,provider:merchant,originalUrl,affiliateUrl:issued.affiliateUrl}],()=>assert.equal(resolve(originalUrl,merchant).mode,'passthrough'));
+  }
+});
+
+test('manual issued links resolve by a unique server-side code without publishing invented product facts',()=>{
+  const row={code:'ali-fixture',merchant:'aliexpress',provider:'aliexpress',originalUrl:'https://s.click.aliexpress.com/e/_FIXTURE01',affiliateUrl:'https://s.click.aliexpress.com/e/_FIXTURE01'};
+  withMappings([row],()=>{
+    assert.deepEqual(getRegisteredOutboundLink(row.code),{code:row.code,merchant:row.merchant,originalUrl:row.originalUrl});
+    assert.equal(getRegisteredOutboundLink('unknown'),null);
+    assert.equal(getRegisteredOutboundLink('../ali-fixture'),null);
+  });
+  for(const entries of [[row,row],[{...row,affiliateUrl:'https://evil.invalid/'}],[{...row,merchant:'coupang'}],[{...row,originalUrl:'https://evil.invalid/'}]]){
+    withMappings(entries,()=>assert.equal(getRegisteredOutboundLink(row.code),null));
   }
 });

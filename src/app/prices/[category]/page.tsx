@@ -114,7 +114,8 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
 
       <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
         <p>표시된 금액은 <b className="text-white">확인 시점의 판매처 가격</b>입니다. 선택한 판매 상품을 안내하며, 전체 판매처의 최저가를 보장하지 않습니다.</p>
-        <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요. 일부 링크를 통해 구매가 이루어지면 블루딜이 일정 수수료를 받을 수 있습니다.</p>
+        <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요.</p>
+        <p className="mt-2 text-white" role="note">이 포스팅은 제휴마케팅이 포함된 광고로 커미션을 지급 받습니다.</p>
       </div>
 
       <PriceFilterForm category={category.key} items={data.items} filters={filters} />
