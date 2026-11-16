@@ -4,10 +4,11 @@ import Link from "next/link";
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { IT_BOARD, labelByType } from "../../lib/boardConfig";
-import { MOCK_POSTS } from "../../lib/mockPosts";
 import type { Post } from "../../lib/postTypes";
-import { ApiError, apiListPosts } from "../../lib/postsClient";
+import { apiListPosts } from "../../lib/postsClient";
 import { formatKoreanDate } from "../../lib/postStorage";
+import MobilePostList from "../../components/MobilePostList";
+import PostLoadError from "../../components/PostLoadError";
 
 function includesQuery(p: Post, query: string): boolean {
   if (!query) return true;
@@ -30,7 +31,8 @@ function ITNewsContent() {
   const section = searchParams.get("section") === "pick" ? "pick" : "news";
   const [q, setQ] = useState("");
   const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<{ message: string; code?: string } | null>(null);
+  const [loadError, setLoadError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -40,14 +42,10 @@ function ITNewsContent() {
         if (cancelled) return;
         setPosts(data);
       })
-      .catch((e: any) => {
+      .catch(() => {
         if (cancelled) return;
-        const seed = MOCK_POSTS.filter((p) => p.boardKey === "it");
-        setPosts(seed);
-
-        const msg = typeof e?.message === "string" ? e.message : "게시글을 불러오지 못했습니다.";
-        const code = e instanceof ApiError ? e.code : e?.code;
-        setLoadError({ message: msg, code });
+        setPosts([]);
+        setLoadError(true);
       })
       .finally(() => {
         if (cancelled) return;
@@ -57,7 +55,7 @@ function ITNewsContent() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [attempt]);
 
   const filtered = useMemo(() => {
     const query = q.trim();
@@ -66,8 +64,6 @@ function ITNewsContent() {
       return sectionMatch && includesQuery(p, query);
     });
   }, [posts, q, section]);
-
-  const isKvMissing = loadError?.code === "KV_NOT_CONFIGURED";
 
   const selectSection = (next: "news" | "pick") => {
     router.replace(next === "pick" ? "/it?section=pick" : "/it?section=news", { scroll: false });
@@ -94,6 +90,7 @@ function ITNewsContent() {
         <div className="mt-5 flex flex-wrap gap-2">
           <button
             type="button"
+            aria-pressed={section === "news"}
             onClick={() => selectSection("news")}
             className={`rounded-xl border px-4 py-2 text-sm ${
               section === "news"
@@ -105,6 +102,7 @@ function ITNewsContent() {
           </button>
           <button
             type="button"
+            aria-pressed={section === "pick"}
             onClick={() => selectSection("pick")}
             className={`rounded-xl border px-4 py-2 text-sm ${
               section === "pick"
@@ -118,6 +116,8 @@ function ITNewsContent() {
 
         <div className="mt-4">
           <input
+            type="search"
+            aria-label="IT 소식 검색"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50 md:max-w-md"
@@ -126,36 +126,18 @@ function ITNewsContent() {
         </div>
       </section>
 
-      {loadError ? (
-        <div
-          className={`rounded-xl border p-3 text-sm ${
-            isKvMissing
-              ? "border-amber-500/30 bg-amber-500/10 text-amber-200"
-              : "border-red-500/30 bg-red-500/10 text-red-200"
-          }`}
-        >
-          {isKvMissing ? (
-            <>
-              온라인 게시판이 아직 연결되지 않아 <b>샘플 글</b>을 표시합니다.
-              <div className="mt-1 text-[12px] text-white/50">Vercel KV/Upstash 환경변수 설정 후 재배포하면 정상 동작합니다.</div>
-            </>
-          ) : (
-            <>
-              게시글을 불러오지 못했습니다. ({loadError.message})
-              <div className="mt-1 text-[12px] text-white/50">현재는 기본 글을 표시합니다. 잠시 후 다시 시도해 주세요.</div>
-            </>
-          )}
-        </div>
-      ) : null}
+      {loadError ? <PostLoadError onRetry={() => { setLoadError(false); setLoading(true); setAttempt(value => value + 1); }} /> : null}
 
-      <section className="bd-surface-md overflow-x-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" aria-label="IT 소식 게시글 목록" tabIndex={0}>
+      <MobilePostList posts={filtered} hrefPrefix="/it" loading={loading} emptyText={loadError ? "게시글을 다시 불러와 주세요." : "조건에 맞는 글이 없습니다."} />
+
+      <section className="bd-surface-md hidden overflow-x-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300 md:block" aria-label="IT 소식 게시글 목록" tabIndex={0}>
         <table className="w-full min-w-[40rem] table-fixed border-collapse text-left text-sm">
           <thead className="border-b border-white/10 bg-white/5 text-white/70">
             <tr>
               <th className="w-[5ch] px-4 py-3 text-left font-semibold text-white/80">분류</th>
               <th className="w-[20ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">제목</th>
               <th className="w-[8ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성자</th>
-              <th className="w-[16ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성일</th>
+              <th className="w-[16ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성일 (KST)</th>
             </tr>
           </thead>
           <tbody>

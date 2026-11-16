@@ -18,7 +18,7 @@ export default function ContactWritePage() {
   const from = (sp.get("from") ?? "").toLowerCase();
   const fromPrices = from === "prices";
   const category = sp.get("cat") ?? "";
-  const initialVis = (sp.get("vis") as InquiryVisibility | null) ?? "public";
+  const initialVis: InquiryVisibility = sp.get("vis") === "private" ? "private" : "public";
 
   return <ContactForm key={`${fromPrices}:${category}:${initialVis}`} fromPrices={fromPrices} category={category} initialVis={initialVis} />;
 }
@@ -126,7 +126,8 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
 
       {notice}
 
-      <section className="bd-surface-md p-6">
+      <form className="bd-surface-md p-4 sm:p-6" aria-label="문의 작성" aria-busy={saving}
+        onSubmit={(event) => { event.preventDefault(); void onSubmit(); }}>
         <div className="grid gap-4">
           {/* 작성자 */}
           <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
@@ -155,6 +156,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
                 type="button"
                 onClick={() => !fromPrices && setVisibility("public")}
                 disabled={fromPrices}
+                aria-pressed={effectiveVis === "public"}
                 className={cn(
                   "rounded-xl border px-3 py-2 text-sm disabled:opacity-60",
                   effectiveVis === "public"
@@ -168,6 +170,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
                 type="button"
                 onClick={() => !fromPrices && setVisibility("private")}
                 disabled={fromPrices}
+                aria-pressed={effectiveVis === "private"}
                 className={cn(
                   "rounded-xl border px-3 py-2 text-sm disabled:opacity-60",
                   effectiveVis === "private"
@@ -184,14 +187,15 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
           </div>
 
           {/* 말머리 */}
-          <label className="block">
-            <div className="text-sm text-white/80">말머리</div>
+          <fieldset>
+            <legend className="text-sm text-white/80">말머리</legend>
             <div className="mt-2 flex flex-wrap gap-2">
               {POST_TYPE_OPTIONS.filter((o) => ["general", "question", "tip"].includes(o.value)).map((o) => (
                 <button
                   key={o.value}
                   onClick={() => setType(o.value as PostType)}
                   type="button"
+                  aria-pressed={type === o.value}
                   className={cn(
                     "rounded-full border px-3 py-1.5 text-sm",
                     type === o.value
@@ -204,7 +208,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
                 </button>
               ))}
             </div>
-          </label>
+          </fieldset>
 
           {/* 제목 */}
           <label className="block">
@@ -214,6 +218,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
               onChange={(e) => setTitle(e.target.value)}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               placeholder="제목"
+              required
             />
           </label>
 
@@ -224,6 +229,8 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               placeholder="reply@example.com"
+              type="email"
+              autoComplete="email"
             />
             {effectiveVis === "public" ? <p className="mt-2 text-xs leading-5 text-amber-200">공개 문의에 적은 이메일은 다른 방문자도 볼 수 있습니다. 공개를 원하지 않으면 비공개 문의를 선택해 주세요.</p> : null}
           </label>
@@ -237,6 +244,8 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
                 type="password"
                 className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
                 placeholder="비공개 글 열람용 비밀번호"
+                autoComplete="new-password"
+                required
               />
             </label>
           ) : null}
@@ -250,14 +259,15 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
               onChange={(e) => setContent(e.target.value)}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               placeholder="내용"
+              required
             />
           </label>
 
-          {error ? <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
+          {error ? <div role="alert" className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
 
           <div className="flex items-center gap-2">
             <button
-              onClick={onSubmit}
+              type="submit"
               disabled={saving}
               className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 disabled:opacity-60"
             >
@@ -271,7 +281,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
             </Link>
           </div>
         </div>
-      </section>
+      </form>
     </div>
   );
 }

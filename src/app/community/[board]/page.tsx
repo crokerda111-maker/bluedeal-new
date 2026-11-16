@@ -7,10 +7,11 @@ import {
   getTypeOptionsForBoard,
   POST_TYPE_LABEL,
 } from "../../../lib/boardConfig";
-import { MOCK_POSTS } from "../../../lib/mockPosts";
 import type { Post, PostType } from "../../../lib/postTypes";
-import { ApiError, apiListPosts } from "../../../lib/postsClient";
+import { apiListPosts } from "../../../lib/postsClient";
 import { formatKoreanDate } from "../../../lib/postStorage";
+import MobilePostList from "../../../components/MobilePostList";
+import PostLoadError from "../../../components/PostLoadError";
 
 function includesQuery(p: Post, query: string): boolean {
   if (!query) return true;
@@ -40,7 +41,8 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
 
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<{ message: string; code?: string } | null>(null);
+  const [loadError, setLoadError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     if (!board) return;
@@ -51,14 +53,10 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
         if (cancelled) return;
         setPosts(data);
       })
-      .catch((e: any) => {
+      .catch(() => {
         if (cancelled) return;
-        const seed = MOCK_POSTS.filter((p) => p.boardKey === board.key);
-        setPosts(seed);
-
-        const msg = typeof e?.message === "string" ? e.message : "게시글을 불러오지 못했습니다.";
-        const code = e instanceof ApiError ? e.code : e?.code;
-        setLoadError({ message: msg, code });
+        setPosts([]);
+        setLoadError(true);
       })
       .finally(() => {
         if (cancelled) return;
@@ -68,7 +66,7 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
     return () => {
       cancelled = true;
     };
-  }, [board]);
+  }, [board, attempt]);
 
   const filtered = useMemo(() => {
     let list = posts;
@@ -90,8 +88,6 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
     );
   }
 
-  const isKvMissing = loadError?.code === "KV_NOT_CONFIGURED";
-
   return (
     <div className="space-y-6">
       <section className="bd-surface-md p-6">
@@ -112,6 +108,8 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
 
         <div className="mt-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <input
+            type="search"
+            aria-label="게시판 검색"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50 md:max-w-md"
@@ -121,6 +119,8 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
           {typeOptions.length > 1 ? (
             <div className="flex flex-wrap items-center gap-2">
               <button
+                type="button"
+                aria-pressed={typeFilter === "all"}
                 onClick={() => setTypeFilter("all")}
                 className={`rounded-full border px-3 py-1.5 text-sm ${
                   typeFilter === "all"
@@ -133,6 +133,8 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
 
               {typeOptions.map((o) => (
                 <button
+                  type="button"
+                  aria-pressed={typeFilter === o.value}
                   key={o.value}
                   onClick={() => setTypeFilter(o.value)}
                   className={`rounded-full border px-3 py-1.5 text-sm ${
@@ -150,36 +152,18 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
         </div>
       </section>
 
-      {loadError ? (
-        <div
-          className={`rounded-xl border p-3 text-sm ${
-            isKvMissing
-              ? "border-amber-500/30 bg-amber-500/10 text-amber-200"
-              : "border-red-500/30 bg-red-500/10 text-red-200"
-          }`}
-        >
-          {isKvMissing ? (
-            <>
-              온라인 게시판이 아직 연결되지 않아 <b>샘플 글</b>을 표시합니다.
-              <div className="mt-1 text-[12px] text-white/50">Vercel KV/Upstash 환경변수 설정 후 재배포하면 정상 동작합니다.</div>
-            </>
-          ) : (
-            <>
-              게시글을 불러오지 못했습니다. ({loadError.message})
-              <div className="mt-1 text-[12px] text-white/50">현재는 기본 글을 표시합니다. 잠시 후 다시 시도해 주세요.</div>
-            </>
-          )}
-        </div>
-      ) : null}
+      {loadError ? <PostLoadError onRetry={() => { setLoadError(false); setLoading(true); setAttempt(value => value + 1); }} /> : null}
 
-      <section className="bd-surface-md overflow-x-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" aria-label={`${board.title} 게시글 목록`} tabIndex={0}>
+      <MobilePostList posts={filtered} hrefPrefix={`/community/${board.slug}`} loading={loading} emptyText={loadError ? "게시글을 다시 불러와 주세요." : "조건에 맞는 글이 없습니다."} />
+
+      <section className="bd-surface-md hidden overflow-x-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300 md:block" aria-label={`${board.title} 게시글 목록`} tabIndex={0}>
         <table className="w-full min-w-[40rem] table-fixed border-collapse text-left text-sm">
           <thead className="border-b border-white/10 bg-white/5 text-white/70">
             <tr>
               <th className="w-[5ch] px-4 py-3 text-left font-semibold text-white/80">분류</th>
               <th className="w-[20ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">제목</th>
               <th className="w-[8ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성자</th>
-              <th className="w-[16ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성일</th>
+              <th className="w-[16ch] border-l border-white/10 px-4 py-3 text-left font-semibold text-white/80">작성일 (KST)</th>
             </tr>
           </thead>
           <tbody>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useId, useMemo, useRef, useState } from "react";
 import { COMMUNITY_BOARDS } from "../../lib/boardConfig";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
@@ -9,6 +10,19 @@ import { useNickname } from "../../lib/useNickname";
 
 function cn(...v: Array<string | false | null | undefined>) {
   return v.filter(Boolean).join(" ");
+}
+
+const mobileLinks = [
+  { href: "/it", label: "IT 소식" },
+  { href: "/prices", label: "가격현황" },
+  { href: "/community/hotdeal", label: "핫딜" },
+  { href: "/community", label: "커뮤니티" },
+  { href: "/contact", label: "문의" },
+];
+
+function sectionActive(pathname: string, href: string) {
+  if (href === "/community" && pathname.startsWith("/community/hotdeal")) return false;
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 function Dropdown({
@@ -94,6 +108,7 @@ function DropItem({ href, children }: { href: string; children: React.ReactNode 
 
 export default function SiteHeader() {
   const nickname = useNickname();
+  const pathname = usePathname();
 
   const communityItems = useMemo(() => COMMUNITY_BOARDS, []);
   const priceItems = useMemo(() => PRICE_CATEGORIES, []);
@@ -107,16 +122,16 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#060B1A]/70 backdrop-blur">
       <div className="mx-auto max-w-6xl px-4 py-4">
-        <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative h-9 w-9 overflow-hidden rounded-xl bg-gradient-to-br from-cyan-200/90 to-blue-500/90 shadow-[0_12px_30px_-14px_rgba(59,130,246,0.7)]">
+        <div className="flex items-center justify-between gap-3">
+          <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="블루딜 홈">
+            <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-cyan-200/90 to-blue-500/90 shadow-[0_12px_30px_-14px_rgba(59,130,246,0.7)]">
               <div
                 className="absolute inset-0 bg-white/20 motion-safe:animate-[sheen_2.8s_ease-in-out_infinite]"
               />
             </div>
-            <div className="leading-tight">
+            <div className="min-w-0 leading-tight">
               <div className="text-sm font-semibold tracking-tight">BLUEDEAL</div>
-              <div className="text-xs text-white/55">IT · 커뮤니티 · 가격 · 핫딜</div>
+              <div className="truncate text-[10px] text-white/60 sm:text-xs">IT · 커뮤니티 · 가격 · 핫딜</div>
             </div>
           </Link>
 
@@ -167,43 +182,23 @@ export default function SiteHeader() {
               )}
               type="button"
               title="닉네임 설정"
+              aria-label={`닉네임 설정, 현재 ${nickname}`}
             >
               <span className="inline-block h-2.5 w-2.5 rounded-full bg-cyan-300/80" />
-              <span className="max-w-[120px] truncate">{nickname}</span>
-              <span className="text-white/40">설정</span>
+              <span className="max-w-[72px] truncate sm:max-w-[120px]">{nickname}</span>
+              <span className="hidden text-white/50 sm:inline">설정</span>
             </button>
           </div>
         </div>
 
-        {/* Mobile nav (no dropdown; 섹션 내부 subnav로 보완) */}
-        <nav aria-label="주요 메뉴" className="mt-3 flex gap-3 overflow-x-auto text-sm text-white/75 md:hidden">
-          <Link className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10" href="/it">
-            IT 소식
-          </Link>
-          <Link
-            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
-            href="/prices"
-          >
-            가격현황
-          </Link>
-          <Link
-            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
-            href="/community/hotdeal"
-          >
-            핫딜
-          </Link>
-          <Link
-            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
-            href="/community"
-          >
-            커뮤니티
-          </Link>
-          <Link
-            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 hover:bg-white/10"
-            href="/contact"
-          >
-            문의
-          </Link>
+        <nav aria-label="모바일 주요 메뉴" className="mt-3 grid grid-cols-5 gap-1.5 md:hidden">
+          {mobileLinks.map(({ href, label }) => (
+            <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}
+              className={cn("inline-flex min-h-11 min-w-0 items-center justify-center whitespace-nowrap rounded-xl border px-1 text-[11px] min-[360px]:text-xs",
+                sectionActive(pathname, href) ? "border-cyan-300/40 bg-cyan-300/15 font-semibold text-cyan-100" : "border-white/10 bg-white/5 text-white/80 hover:bg-white/10")}>
+              {label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>

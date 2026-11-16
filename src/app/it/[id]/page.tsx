@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { use, useEffect, useMemo, useState } from "react";
 import { IT_BOARD } from "../../../lib/boardConfig";
-import { MOCK_POSTS } from "../../../lib/mockPosts";
 import type { Post } from "../../../lib/postTypes";
 import { ApiError, apiGetPost } from "../../../lib/postsClient";
 import { formatKoreanDate } from "../../../lib/postStorage";
@@ -63,8 +62,7 @@ function ITPost({ postId }: { postId: string }) {
       })
       .catch((e: any) => {
         if (cancelled) return;
-        const seed = MOCK_POSTS.find((p) => p.boardKey === "it" && p.id === postId);
-        setPost(seed ?? null);
+        setPost(null);
 
         const msg = typeof e?.message === "string" ? e.message : "글을 불러오지 못했습니다.";
         const code = e instanceof ApiError ? e.code : e?.code;

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { use, useEffect, useMemo, useState } from "react";
 import { POST_TYPE_LABEL } from "../../../lib/boardConfig";
-import { MOCK_POSTS } from "../../../lib/mockPosts";
 import type { Post } from "../../../lib/postTypes";
 import { ApiError, apiGetPost } from "../../../lib/postsClient";
 import { formatKoreanDate } from "../../../lib/postStorage";
@@ -62,14 +61,6 @@ function ContactPost({ postId }: { postId: string }) {
         if (code === "POST_LOCKED") {
           setLocked(true);
           setPost(null);
-          return;
-        }
-
-        // Fallback: seed
-        const seed = MOCK_POSTS.find((p) => p.boardKey === "inquiry" && p.id === postId);
-        if (seed) {
-          setPost(seed);
-          setLocked(Boolean(seed.isPrivate));
           return;
         }
 

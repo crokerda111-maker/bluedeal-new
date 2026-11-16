@@ -14,6 +14,15 @@ html, body {
   Force options to render as black text on white background.
 */
 @layer base {
+  :is(a, button, input, select, textarea, summary):focus-visible {
+    outline: 2px solid #67e8f9;
+    outline-offset: 3px;
+  }
+
+  button, input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]), select {
+    min-height: 2.75rem;
+  }
+
   header :is(a, button):focus-visible {
     outline: 2px solid #67e8f9;
     outline-offset: 4px;
@@ -24,6 +33,12 @@ html, body {
     color: #000;
     background-color: #fff;
   }
+
+  @media (max-width: 767px) {
+    :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+      font-size: 1rem;
+    }
+  }
 }
 
 /*
@@ -32,6 +47,15 @@ html, body {
   - Server/Client 컴포넌트 어디서든 className으로 재사용
 */
 @layer components {
+  .bd-scroll-row {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(103, 232, 249, 0.35) transparent;
+    overscroll-behavior-x: contain;
+  }
+  .bd-scroll-row::-webkit-scrollbar { height: 4px; }
+  .bd-scroll-row::-webkit-scrollbar-thumb { background: rgba(103, 232, 249, 0.35); border-radius: 999px; }
+  .bd-scroll-row::-webkit-scrollbar-track { background: transparent; }
+
   /* Large surface (hero / major panels) */
   .bd-surface {
     /*

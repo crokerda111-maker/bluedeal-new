@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { use, useEffect, useMemo, useState } from "react";
 import { getCommunityBoard, POST_TYPE_LABEL } from "../../../../lib/boardConfig";
-import { MOCK_POSTS } from "../../../../lib/mockPosts";
 import type { Post } from "../../../../lib/postTypes";
 import { apiGetPost } from "../../../../lib/postsClient";
 import { formatKoreanDate } from "../../../../lib/postStorage";
@@ -64,8 +63,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
       })
       .catch((e: any) => {
         if (cancelled) return;
-        const seed = MOCK_POSTS.find((p) => p.id === postId);
-        setPost(seed ?? null);
+        setPost(null);
         setLoadError(typeof e?.message === "string" ? e.message : "글을 불러오지 못했습니다.");
       })
       .finally(() => {

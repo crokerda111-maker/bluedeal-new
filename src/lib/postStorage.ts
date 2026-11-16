@@ -1,6 +1,10 @@
 import type { BoardKey, Post, PostExtra } from "./postTypes";
 
 const STORAGE_KEY = "bluedeal_posts_v1";
+const koreanPostDateFormatter = new Intl.DateTimeFormat("ko-KR", {
+  timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit",
+  hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+});
 
 function isBrowser(): boolean {
   return typeof window !== "undefined" && typeof window.localStorage !== "undefined";
@@ -118,11 +122,10 @@ export async function verifyLocalPostPassword(post: Post, password: string): Pro
 }
 
 export function formatKoreanDate(iso: string): string {
+  if (!/(?:Z|[+-]\d{2}:\d{2})$/i.test(iso)) return "작성일 미확인";
   const d = new Date(iso);
-  const yyyy = d.getFullYear();
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
-  const dd = String(d.getDate()).padStart(2, "0");
-  const hh = String(d.getHours()).padStart(2, "0");
-  const mi = String(d.getMinutes()).padStart(2, "0");
-  return `${yyyy}-${mm}-${dd} ${hh}:${mi}`;
+  if (Number.isNaN(d.getTime())) return "작성일 미확인";
+  const parts = koreanPostDateFormatter.formatToParts(d);
+  const part = (type: Intl.DateTimeFormatPartTypes) => parts.find(value => value.type === type)?.value ?? "";
+  return `${part("year")}-${part("month")}-${part("day")} ${part("hour")}:${part("minute")}`;
 }

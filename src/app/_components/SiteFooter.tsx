@@ -4,10 +4,11 @@ export default function SiteFooter() {
   return (
     <footer className="border-t border-white/10 py-8">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
-        <div>© {new Date().getFullYear()} BLUEDEAL</div>
+        <div>© {new Date().getFullYear()} BLUEDEAL <span aria-hidden="true">·</span> <Link href="/" className="inline-flex min-h-11 items-center hover:text-white">bluedeal.co.kr</Link></div>
 
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 [&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center">
           <Link className="hover:text-white" href="/about">소개·가격 안내</Link>
+          <Link className="hover:text-white" href="/about#affiliate">제휴 안내</Link>
           <Link className="hover:text-white" href="/it">
             IT 소식
           </Link>

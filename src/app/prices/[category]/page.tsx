@@ -76,7 +76,7 @@ function PurchaseLink({ item }: { item: PriceItem }) {
   if (!item.goCode) return <span className="text-xs text-white/60">판매처 링크 준비 중</span>;
   return (
     <SmartLink
-      className="inline-flex whitespace-nowrap rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100 hover:bg-cyan-300/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
+      className="inline-flex min-h-11 items-center whitespace-nowrap rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100 hover:bg-cyan-300/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
       href={`/go/${item.goCode}`}
       rel="sponsored noopener noreferrer"
       title={`${item.name} 판매처 보기 (새 창)`}
