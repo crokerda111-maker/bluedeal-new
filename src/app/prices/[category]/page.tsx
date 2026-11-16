@@ -7,6 +7,7 @@ import { getPriceView } from "../../../lib/prices";
 import SmartLink from "../../../components/SmartLink";
 import PriceFilterForm from "../../../components/PriceFilterForm";
 import CpuReferenceGuide from "../../../components/CpuReferenceGuide";
+import GpuReferenceGuide from "../../../components/GpuReferenceGuide";
 import { filterPrices, priceFreshness, readPriceFilters } from "../../../lib/priceFilters";
 import { pageMetadata } from "../../../lib/site";
 import { OUTBOUND_LINKS } from "../../../lib/outbound";
@@ -59,7 +60,7 @@ function PriceAmount({ item, now }: { item: PriceItem; now: number }) {
   );
 }
 
-function ProductInfo({ item }: { item: PriceItem }) {
+function ProductInfo({ item, officialLabel = "공식 사양" }: { item: PriceItem; officialLabel?: string }) {
   return (
     <div>
       <div className="font-semibold text-white">{item.name}</div>
@@ -67,8 +68,8 @@ function ProductInfo({ item }: { item: PriceItem }) {
       {item.ssdDram ? <div className="mt-1 text-xs text-white/70">DRAM 캐시: {item.ssdDram === "present" ? "있음" : item.ssdDram === "absent" ? "없음" : "미확인"}</div> : null}
       <div className="mt-2 text-xs text-white/60">{[item.source, item.seller].filter(Boolean).join(" · ")}</div>
       {item.officialUrl ? (
-        <SmartLink className="mt-2 inline-block text-xs text-cyan-200 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" href={item.officialUrl} title={`${item.name} 공식 사양 (새 창)`}>
-          공식 사양 ↗
+        <SmartLink className="mt-2 inline-block text-xs text-cyan-200 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" href={item.officialUrl} title={`${item.name} ${officialLabel} (새 창)`}>
+          {officialLabel} ↗
         </SmartLink>
       ) : null}
     </div>
@@ -144,7 +145,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
           <div className="space-y-4 md:hidden">
             {items.map((item) => (
               <article key={item.id} aria-label={item.name} className="bd-surface-md space-y-4 p-5">
-                <ProductInfo item={item} />
+                <ProductInfo item={item} officialLabel={category.key === "gpu" ? "GPU 공식 사양" : "공식 사양"} />
                 <PriceAmount item={item} now={now} />
                 <dl className="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-xs">
                   <div><dt className="text-white/60">24시간 변동</dt><dd className="mt-1 text-white/80">{pct(item.change24hPct)}</dd></div>
@@ -173,7 +174,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
                 <tbody>
                   {items.map((item) => (
                     <tr key={item.id} className="border-t border-white/10 align-top">
-                      <th scope="row" className="px-4 py-5 text-left font-normal"><ProductInfo item={item} /></th>
+                      <th scope="row" className="px-4 py-5 text-left font-normal"><ProductInfo item={item} officialLabel={category.key === "gpu" ? "GPU 공식 사양" : "공식 사양"} /></th>
                       <td className="px-4 py-5"><PriceAmount item={item} now={now} /></td>
                       <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{pct(item.change24hPct)}</td>
                       <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{typeof item.low7d === "number" ? fmtWon(item.low7d) : "기록 대기"}</td>
@@ -190,6 +191,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       )}
 
       {category.key === "cpu" ? <CpuReferenceGuide /> : null}
+      {category.key === "gpu" ? <GpuReferenceGuide /> : null}
 
       <div className="bd-surface-md p-5 text-sm leading-relaxed text-white/70">
         <div className="font-semibold text-white">구매 전 확인</div>
@@ -198,6 +200,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
           {category.key === "ram" ? <li>6000MT/s 등 표기 속도는 오버클럭 프로필 기준입니다. CPU·메인보드의 지원 사양과 QVL을 확인하고 BIOS에서 XMP/EXPO 설정이 필요한지 확인해 주세요.</li> : null}
           {category.key === "ssd" ? <li>SSD의 슬롯 규격과 지원 인터페이스를 확인해 주세요. DRAM ‘미확인’은 자료에서 탑재 여부를 확정하지 못한 상태이며, HMB 지원을 DRAM 탑재로 취급하지 않습니다.</li> : null}
           {category.key === "cpu" ? <li>메인보드의 CPU 지원 목록과 필요한 BIOS 버전, 쿨러 포함 여부를 확인해 주세요. 같은 CPU라도 박스형·멀티팩·판매처 번들의 구성과 보증 조건은 다를 수 있습니다.</li> : null}
+          {category.key === "gpu" ? <li>GPU 공식 사양은 NVIDIA 기준입니다. 실제 판매 카드의 길이·두께, 케이스 공간, 파워 용량·전원 커넥터, 모니터 출력 단자와 유통사 보증을 제품별로 확인해 주세요.</li> : null}
         </ul>
         <p className="mt-4">가격 오류·상품 추가 요청은 <Link className="text-cyan-200 hover:underline" href={reportHref}>비공개 문의</Link>로 남겨주세요.</p>
         <p className="mt-2">구매 팁·제휴 문의는 <Link className="text-cyan-200 hover:underline" href="/contact/write?vis=public">공개 문의 게시판</Link>을 이용해 주세요.</p>

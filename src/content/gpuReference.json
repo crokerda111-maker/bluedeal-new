@@ -1,0 +1,14 @@
+{
+  "checkedOn": "2026-11-17",
+  "officialUrl": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+  "architecture": "Blackwell",
+  "models": [
+    { "model": "GeForce RTX 5090", "cudaCores": 21760, "memoryGB": [32], "memoryType": "GDDR7", "memoryBusBits": 512 },
+    { "model": "GeForce RTX 5080", "cudaCores": 10752, "memoryGB": [16], "memoryType": "GDDR7", "memoryBusBits": 256 },
+    { "model": "GeForce RTX 5070 Ti", "cudaCores": 8960, "memoryGB": [16], "memoryType": "GDDR7", "memoryBusBits": 256 },
+    { "model": "GeForce RTX 5070", "cudaCores": 6144, "memoryGB": [12], "memoryType": "GDDR7", "memoryBusBits": 192 },
+    { "model": "GeForce RTX 5060 Ti", "cudaCores": 4608, "memoryGB": [16, 8], "memoryType": "GDDR7", "memoryBusBits": 128 },
+    { "model": "GeForce RTX 5060", "cudaCores": 3840, "memoryGB": [8], "memoryType": "GDDR7", "memoryBusBits": 128 },
+    { "model": "GeForce RTX 5050", "cudaCores": 2560, "memoryGB": [8], "memoryType": "GDDR6", "memoryBusBits": 128 }
+  ]
+}

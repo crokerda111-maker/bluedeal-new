@@ -70,6 +70,54 @@
       "id": "amd-ryzen-7-7700x3d-multipack",
       "seller": "(주)모든씨앤씨",
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4808789181"
+    },
+    {
+      "category": "gpu",
+      "id": "colorful-rtx-5060-ti-gaming-duo-16gb",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4763588180"
+    },
+    {
+      "category": "gpu",
+      "id": "galax-rtx-5060-ti-black-oc-v2-8gb",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4882723637"
+    },
+    {
+      "category": "gpu",
+      "id": "msi-rtx-5060-shadow-2x-oc-8gb",
+      "seller": "다다컴",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4867006481"
+    },
+    {
+      "category": "gpu",
+      "id": "pny-rtx-5050-dual-fan-8gb",
+      "seller": "게이밍컴퓨터",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4756691484"
+    },
+    {
+      "category": "gpu",
+      "id": "zotac-rtx-5070-solid-oc-12gb",
+      "seller": "(주)히트정보",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4341591553"
+    },
+    {
+      "category": "gpu",
+      "id": "gigabyte-rtx-5070-ti-eagle-oc-sff-16gb",
+      "seller": "온라인컴마켓",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4344459119"
+    },
+    {
+      "category": "gpu",
+      "id": "galax-rtx-5080-black-oc-16gb-korea-edition",
+      "seller": "스토어휘현",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4896800018"
+    },
+    {
+      "category": "gpu",
+      "id": "gigabyte-rtx-5090-windforce-oc-32gb",
+      "seller": "게이밍컴퓨터",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4901239851"
     }
   ]
 }

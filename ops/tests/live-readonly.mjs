@@ -63,7 +63,7 @@ await check('price snapshot release, privacy and cache policy', async () => {
   assert.match(response.headers.get('cache-control'), /no-store/);
   assert.match(response.headers.get('x-robots-tag'), /noindex/);
 });
-for (const route of ['/', '/about', '/prices', '/prices/ram', '/prices/ssd', '/prices/cpu', '/it', '/community', '/community/hotdeal', '/contact', '/contact/write', '/admin']) {
+for (const route of ['/', '/about', '/prices', '/prices/ram', '/prices/ssd', '/prices/cpu', '/prices/gpu', '/it', '/community', '/community/hotdeal', '/contact', '/contact/write', '/admin']) {
   await check(`public page ${route}`, async () => {
     const { response, text } = await read(route);
     assert.equal(response.status, 200);
@@ -87,7 +87,7 @@ await check('robots and sitemap', async () => {
   for (const path of ['/admin', '/api/', '/go/', '/contact']) assert.ok(robots.text.includes(`Disallow: ${path}`));
   const sitemap = await read('/sitemap.xml');
   assert.equal(sitemap.response.status, 200);
-  for (const path of ['/prices/ram', '/prices/ssd', '/prices/cpu']) assert.ok(sitemap.text.includes(`https://bluedeal.co.kr${path}`));
+  for (const path of ['/prices/ram', '/prices/ssd', '/prices/cpu', '/prices/gpu']) assert.ok(sitemap.text.includes(`https://bluedeal.co.kr${path}`));
   for (const path of ['/admin', '/contact', '/api/', '/go/']) assert.equal(sitemap.text.includes(path), false);
 });
 await check('anonymous administrator status', async () => {
