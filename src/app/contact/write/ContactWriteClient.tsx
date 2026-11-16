@@ -225,6 +225,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               placeholder="reply@example.com"
             />
+            {effectiveVis === "public" ? <p className="mt-2 text-xs leading-5 text-amber-200">공개 문의에 적은 이메일은 다른 방문자도 볼 수 있습니다. 공개를 원하지 않으면 비공개 문의를 선택해 주세요.</p> : null}
           </label>
 
           {effectiveVis === "private" && !fromPrices ? (
