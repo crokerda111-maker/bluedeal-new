@@ -188,9 +188,17 @@ async function authenticationFixture(platform = true) {
 }
 
 async function previewProxy(upstream) {
-  const faults = { logout: false, malformedApi: false };
+  const faults = { logout: false, malformedApi: false, slowNavigation: false };
   const target = new URL(upstream);
-  const server = http.createServer((req, res) => {
+  const server = http.createServer(async (req, res) => {
+    const pathname = req.url.split('?')[0];
+    const postDetail = /^(?:\/(?:it|contact)\/[^/]+|\/community\/[^/]+\/[^/]+)$/.test(pathname) && !pathname.endsWith('/write');
+    if (faults.slowNavigation && req.method === 'GET' && postDetail) {
+      console.log('LOCAL_POST_NAVIGATION_DELAY_STARTED');
+      const started = Date.now();
+      while (faults.slowNavigation && Date.now() - started < 15000 && !res.destroyed) await delay(100);
+      if (res.destroyed) return;
+    }
     if (faults.malformedApi && req.method === 'GET' && /^\/api\/posts(?:\/|\?|$)/.test(req.url)) {
       req.resume();
       res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
@@ -801,7 +809,7 @@ try {
   if (preview && !failures) {
     const proxy = await previewProxy(app.base);
     console.log(`LOCAL_PREVIEW=${proxy.base}`);
-    console.log('Disposable fixtures only. Commands: offline / partial / online / logout-fail / logout-ok / slow-hardware / normal-speed / malformed-api / normal-api / stop (+ Enter). Ctrl+C also stops.');
+    console.log('Disposable fixtures only. Commands: offline / partial / online / logout-fail / logout-ok / slow-hardware / normal-speed / malformed-api / normal-api / slow-navigation / normal-navigation / stop (+ Enter). Ctrl+C also stops.');
     await new Promise(resolve => {
       process.stdin.setEncoding('utf8');
       process.stdin.on('data', input => {
@@ -815,6 +823,7 @@ try {
         if (['logout-fail', 'logout-ok'].includes(command)) { proxy.faults.logout = command === 'logout-fail'; console.log(`LOCAL_LOGOUT_FAILURE=${proxy.faults.logout}`); }
         if (['slow-hardware', 'normal-speed'].includes(command)) { kv.controls.slowHardware = command === 'slow-hardware'; console.log(`LOCAL_SLOW_HARDWARE=${kv.controls.slowHardware}`); }
         if (['malformed-api', 'normal-api'].includes(command)) { proxy.faults.malformedApi = command === 'malformed-api'; console.log(`LOCAL_MALFORMED_API=${proxy.faults.malformedApi}`); }
+        if (['slow-navigation', 'normal-navigation'].includes(command)) { proxy.faults.slowNavigation = command === 'slow-navigation'; console.log(`LOCAL_SLOW_NAVIGATION=${proxy.faults.slowNavigation}`); }
       });
       process.stdin.resume();
     });

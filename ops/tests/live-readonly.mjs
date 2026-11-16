@@ -63,14 +63,14 @@ await check('price snapshot release, privacy and cache policy', async () => {
   assert.match(response.headers.get('cache-control'), /no-store/);
   assert.match(response.headers.get('x-robots-tag'), /noindex/);
 });
-for (const route of ['/', '/about', '/prices', '/prices/ram', '/prices/ssd', '/prices/cpu', '/prices/gpu', '/it', '/community', '/community/hotdeal', '/contact', '/contact/write', '/admin']) {
+for (const route of ['/', '/about', '/prices', '/prices/ram', '/prices/ssd', '/prices/cpu', '/prices/gpu', '/it', '/it/write', '/community', '/community/hotdeal', '/community/hardware/write', '/contact', '/contact/write', '/contact/write?vis=private', '/contact/write?from=prices&cat=RAM', '/admin']) {
   await check(`public page ${route}`, async () => {
     const { response, text } = await read(route);
     assert.equal(response.status, 200);
     assert.match(response.headers.get('content-type'), /text\/html/);
     assert.match(text, /lang="ko"/);
     assert.match(text, /id="main-content"/);
-    if (route.startsWith('/contact') || route === '/admin') assert.match(text, /name="robots" content="noindex, nofollow"/);
+    if (route.startsWith('/contact') || route.split('?')[0].endsWith('/write') || route === '/admin') assert.match(text, /name="robots" content="noindex, nofollow"/);
   });
 }
 for (const route of ['/no-such-verification-page', '/prices/no-such-category', '/community/not-a-board', '/deals/d1', '/it/missing-verification-post', '/community/hardware/missing-verification-post', '/contact/missing-verification-post']) {

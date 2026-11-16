@@ -8,6 +8,7 @@ import type { InquiryVisibility, PostType } from "../../../lib/postTypes";
 import { apiCreatePost, postErrorMessage } from "../../../lib/postsClient";
 import { POST_LIMITS } from "../../../lib/postInput";
 import NicknameEditor from "../../../components/NicknameEditor";
+import PostCreatedNotice from "../../../components/PostCreatedNotice";
 import { useNickname } from "../../../lib/useNickname";
 
 function cn(...v: Array<string | false | null | undefined>) {
@@ -37,6 +38,8 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
   const authorName = useNickname();
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [createdHref, setCreatedHref] = useState<string | null>(null);
+  const submissionState = useRef<"idle" | "saving" | "submitted">("idle");
   const [submitted, setSubmitted] = useState(false);
   const receiptHeading = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
@@ -58,7 +61,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
   }, [fromPrices]);
 
   const onSubmit = async () => {
-    if (saving) return;
+    if (submissionState.current !== "idle") return;
     setError(null);
 
     if (!title.trim()) return setError("제목을 입력하세요.");
@@ -68,6 +71,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
       return setError("비공개 문의는 비밀번호가 필요합니다.");
     }
 
+    submissionState.current = "saving";
     setSaving(true);
     try {
       const post = await apiCreatePost({
@@ -82,13 +86,19 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
         extra: { email },
       });
 
+      submissionState.current = "submitted";
       if (fromPrices) {
         setSubmitted(true);
       } else {
-        router.push(`/contact/${post.id}`);
+        const href = `/contact/${post.id}`;
+        setCreatedHref(href);
+        router.push(href);
       }
     } catch (error) {
-      setError(postErrorMessage(error));
+      if (submissionState.current !== "submitted") {
+        submissionState.current = "idle";
+        setError(postErrorMessage(error));
+      }
     } finally {
       setSaving(false);
     }
@@ -256,20 +266,21 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
           </label>
 
           {error ? <div role="alert" className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
+          <PostCreatedNotice href={createdHref} writeHref={`/contact/write?vis=${effectiveVis}`} />
 
           <div className="flex items-center gap-2">
             <button
               type="submit"
-              disabled={saving}
+              disabled={saving || createdHref !== null}
               className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 disabled:opacity-60"
             >
-              {saving ? "저장 중..." : "등록"}
+              {createdHref ? "등록 완료" : saving ? "저장 중..." : "등록"}
             </button>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10"
             >
-              취소
+              {createdHref ? "목록으로" : "취소"}
             </Link>
           </div>
         </div>

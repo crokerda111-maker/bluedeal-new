@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { use, useEffect, useMemo, useState, type CSSProperties } from "react";
+import { use, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { IT_BOARD, type FieldDef } from "../../../lib/boardConfig";
 import type { PostExtra, PostType } from "../../../lib/postTypes";
 import { apiAdminStatus, apiCreatePost, postErrorMessage } from "../../../lib/postsClient";
 import { POST_LIMITS } from "../../../lib/postInput";
 import NicknameEditor from "../../../components/NicknameEditor";
+import PostCreatedNotice from "../../../components/PostCreatedNotice";
 import { useNickname } from "../../../lib/useNickname";
 
 function Field({ def, value, onChange }: { def: FieldDef; value: string; onChange: (v: string) => void }) {
@@ -77,6 +78,8 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
   const [extra, setExtra] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [createdHref, setCreatedHref] = useState<string | null>(null);
+  const submissionState = useRef<"idle" | "saving" | "submitted">("idle");
 
   useEffect(() => {
     apiAdminStatus()
@@ -95,7 +98,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
   }, []);
 
   const onSubmit = async () => {
-    if (saving) return;
+    if (submissionState.current !== "idle") return;
     setError(null);
     if (!title.trim()) return setError("제목을 입력하세요.");
     if (!content.trim()) return setError("내용을 입력하세요.");
@@ -104,6 +107,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
       if (!String(extra[k] ?? "").trim()) return setError(`${IT_BOARD.extraFields?.find((field) => field.key === k)?.label ?? "필수 항목"}을 입력하거나 선택하세요.`);
     }
 
+    submissionState.current = "saving";
     setSaving(true);
     try {
       const extraPayload: PostExtra = {};
@@ -123,9 +127,15 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
         password: null,
       });
 
-      router.push(`/it/${post.id}`);
+      const href = `/it/${post.id}`;
+      submissionState.current = "submitted";
+      setCreatedHref(href);
+      router.push(href);
     } catch (error) {
-      setError(postErrorMessage(error));
+      if (submissionState.current !== "submitted") {
+        submissionState.current = "idle";
+        setError(postErrorMessage(error));
+      }
     } finally {
       setSaving(false);
     }
@@ -229,21 +239,22 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
           </label>
 
           {error ? <div role="alert" className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
+          <PostCreatedNotice href={createdHref} writeHref="/it/write" />
 
           <div className="flex items-center gap-2">
             <button
               type="submit"
-              disabled={saving}
+              disabled={saving || createdHref !== null}
               className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 disabled:opacity-60"
             >
-              {saving ? "저장 중..." : "등록"}
+              {createdHref ? "등록 완료" : saving ? "저장 중..." : "등록"}
             </button>
 
             <Link
               href="/it"
               className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10"
             >
-              취소
+              {createdHref ? "목록으로" : "취소"}
             </Link>
           </div>
         </div>
