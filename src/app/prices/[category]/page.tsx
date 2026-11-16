@@ -6,6 +6,7 @@ import type { PriceItem } from "../../../lib/mockPrices";
 import { getPriceView } from "../../../lib/prices";
 import SmartLink from "../../../components/SmartLink";
 import PriceFilterForm from "../../../components/PriceFilterForm";
+import CpuReferenceGuide from "../../../components/CpuReferenceGuide";
 import { filterPrices, priceFreshness, readPriceFilters } from "../../../lib/priceFilters";
 import { pageMetadata } from "../../../lib/site";
 
@@ -175,12 +176,15 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
         </>
       )}
 
+      {category.key === "cpu" ? <CpuReferenceGuide /> : null}
+
       <div className="bd-surface-md p-5 text-sm leading-relaxed text-white/70">
         <div className="font-semibold text-white">구매 전 확인</div>
         <ul className="mt-2 list-disc space-y-2 pl-5">
           <li>구매 시점의 가격·재고·배송 조건은 판매처에서 다시 확인해 주세요. 상품·공식 사양 링크는 새 창으로 열립니다.</li>
           {category.key === "ram" ? <li>6000MT/s 등 표기 속도는 오버클럭 프로필 기준입니다. CPU·메인보드의 지원 사양과 QVL을 확인하고 BIOS에서 XMP/EXPO 설정이 필요한지 확인해 주세요.</li> : null}
           {category.key === "ssd" ? <li>SSD의 슬롯 규격과 지원 인터페이스를 확인해 주세요. DRAM ‘미확인’은 자료에서 탑재 여부를 확정하지 못한 상태이며, HMB 지원을 DRAM 탑재로 취급하지 않습니다.</li> : null}
+          {category.key === "cpu" ? <li>메인보드의 CPU 지원 목록과 필요한 BIOS 버전, 쿨러 포함 여부를 확인해 주세요. 같은 CPU라도 박스형·멀티팩·판매처 번들의 구성과 보증 조건은 다를 수 있습니다.</li> : null}
         </ul>
         <p className="mt-4">가격 오류·상품 추가 요청은 <Link className="text-cyan-200 hover:underline" href={reportHref}>비공개 문의</Link>로 남겨주세요.</p>
         <p className="mt-2">구매 팁·제휴 문의는 <Link className="text-cyan-200 hover:underline" href="/contact/write?vis=public">공개 문의 게시판</Link>을 이용해 주세요.</p>

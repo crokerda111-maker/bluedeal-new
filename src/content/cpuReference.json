@@ -1,0 +1,53 @@
+{
+  "checkedOn": "2026-11-17",
+  "models": [
+    {
+      "model": "AMD Ryzen 5 9600X",
+      "cores": 6,
+      "threads": 12,
+      "architecture": "Zen 5",
+      "socket": "AM5",
+      "baseClockGHz": 3.9,
+      "maxBoostGHz": 5.4,
+      "l3CacheMB": 32,
+      "defaultTdpW": 65,
+      "officialUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9600x.html"
+    },
+    {
+      "model": "AMD Ryzen 7 9800X3D",
+      "cores": 8,
+      "threads": 16,
+      "architecture": "Zen 5",
+      "socket": "AM5",
+      "baseClockGHz": 4.7,
+      "maxBoostGHz": 5.2,
+      "l3CacheMB": 96,
+      "defaultTdpW": 120,
+      "officialUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800X3d.html"
+    },
+    {
+      "model": "AMD Ryzen 7 7800X3D",
+      "cores": 8,
+      "threads": 16,
+      "architecture": "Zen 4",
+      "socket": "AM5",
+      "baseClockGHz": 4.2,
+      "maxBoostGHz": 5.0,
+      "l3CacheMB": 96,
+      "defaultTdpW": 120,
+      "officialUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800X3d.html"
+    },
+    {
+      "model": "AMD Ryzen 7 7700X3D",
+      "cores": 8,
+      "threads": 16,
+      "architecture": "Zen 4",
+      "socket": "AM5",
+      "baseClockGHz": 4.0,
+      "maxBoostGHz": 4.5,
+      "l3CacheMB": 96,
+      "defaultTdpW": 120,
+      "officialUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7700x3d.html"
+    }
+  ]
+}
