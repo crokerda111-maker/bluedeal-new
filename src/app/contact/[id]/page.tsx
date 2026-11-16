@@ -8,6 +8,7 @@ import { ApiError, apiGetPost } from "../../../lib/postsClient";
 import { formatKoreanDate } from "../../../lib/postStorage";
 import SmartLink, { isHttpUrl } from "../../../components/SmartLink";
 import LinkifiedText from "../../../components/LinkifiedText";
+import PostDetailError from "../../../components/PostDetailError";
 
 function ExtraRow({ label, value }: { label: string; value: any }) {
   if (value === undefined || value === null || value === "") return null;
@@ -41,7 +42,8 @@ function ContactPost({ postId }: { postId: string }) {
   const [pw, setPw] = useState("");
   const [pwError, setPwError] = useState<string | null>(null);
   const [unlocking, setUnlocking] = useState(false);
-  const [loadError, setLoadError] = useState<{ message: string; code?: string } | null>(null);
+  const [loadError, setLoadError] = useState<{ status?: number } | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -56,7 +58,6 @@ function ContactPost({ postId }: { postId: string }) {
         if (cancelled) return;
 
         const code = e instanceof ApiError ? e.code : e?.code;
-        const msg = typeof e?.message === "string" ? e.message : "글을 불러오지 못했습니다.";
 
         if (code === "POST_LOCKED") {
           setLocked(true);
@@ -65,7 +66,7 @@ function ContactPost({ postId }: { postId: string }) {
         }
 
         setPost(null);
-        setLoadError({ message: msg, code });
+        setLoadError({ status: e instanceof ApiError ? e.status : undefined });
       })
       .finally(() => {
         if (cancelled) return;
@@ -75,7 +76,7 @@ function ContactPost({ postId }: { postId: string }) {
     return () => {
       cancelled = true;
     };
-  }, [postId]);
+  }, [postId, attempt]);
 
   const extraEntries = useMemo(() => Object.entries(post?.extra ?? {}), [post]);
 
@@ -155,17 +156,7 @@ function ContactPost({ postId }: { postId: string }) {
   }
 
   if (!post) {
-    return (
-      <div className="bd-surface-md p-6">
-        <div className="text-lg font-semibold">글을 찾을 수 없음</div>
-        <div className="mt-2 text-sm text-white/70">
-          {loadError?.code === "KV_NOT_CONFIGURED" ? "온라인 게시판이 아직 연결되지 않았습니다." : "삭제되었거나 존재하지 않는 글입니다."}
-        </div>
-        <Link className="mt-4 inline-block text-sm text-cyan-200 hover:underline" href="/contact">
-          문의로 돌아가기
-        </Link>
-      </div>
-    );
+    return <PostDetailError missing={!loadError || loadError.status === 404} onRetry={() => { setLoadError(null); setLocked(false); setLoading(true); setAttempt(value => value + 1); }} backHref="/contact" backLabel="문의로 돌아가기" />;
   }
 
   const unlocked = !post.isPrivate || !locked;

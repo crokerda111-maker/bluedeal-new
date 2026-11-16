@@ -4,10 +4,11 @@ import Link from "next/link";
 import { use, useEffect, useMemo, useState } from "react";
 import { getCommunityBoard, POST_TYPE_LABEL } from "../../../../lib/boardConfig";
 import type { Post } from "../../../../lib/postTypes";
-import { apiGetPost } from "../../../../lib/postsClient";
+import { ApiError, apiAdminStatus, apiGetPost } from "../../../../lib/postsClient";
 import { formatKoreanDate } from "../../../../lib/postStorage";
 import SmartLink, { isHttpUrl } from "../../../../components/SmartLink";
 import LinkifiedText from "../../../../components/LinkifiedText";
+import PostDetailError from "../../../../components/PostDetailError";
 
 function ExtraRow({ label, value }: { label: string; value: any }) {
   if (value === undefined || value === null || value === "") return null;
@@ -38,18 +39,18 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
   const board = getCommunityBoard(boardSlug);
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState<{ status?: number } | null>(null);
+  const [attempt, setAttempt] = useState(0);
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
 
     // 관리자 로그인 상태 확인 (서버가 쿠키로 판별)
-    fetch("/api/admin/status", { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
+    apiAdminStatus()
+      .then((admin) => {
         if (cancelled) return;
-        setIsAdmin(Boolean(d?.admin));
+        setIsAdmin(admin);
       })
       .catch(() => {
         if (cancelled) return;
@@ -64,7 +65,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
       .catch((e: any) => {
         if (cancelled) return;
         setPost(null);
-        setLoadError(typeof e?.message === "string" ? e.message : "글을 불러오지 못했습니다.");
+        setLoadError({ status: e instanceof ApiError ? e.status : undefined });
       })
       .finally(() => {
         if (cancelled) return;
@@ -74,7 +75,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
     return () => {
       cancelled = true;
     };
-  }, [postId]);
+  }, [postId, attempt]);
 
   const labelMap = useMemo(() => {
     const m = new Map<string, string>();
@@ -112,17 +113,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
   }
 
   if (!post || post.boardKey !== board.key) {
-    return (
-      <div className="bd-surface-md p-6">
-        <div className="text-lg font-semibold">글을 찾을 수 없음</div>
-        <div className="mt-2 text-sm text-white/70">
-          {loadError ? `온라인 게시판 로딩 실패: ${loadError}` : "삭제되었거나 존재하지 않는 글입니다."}
-        </div>
-        <Link className="mt-4 inline-block text-sm text-cyan-200 hover:underline" href={`/community/${board.slug}`}>
-          목록으로
-        </Link>
-      </div>
-    );
+    return <PostDetailError missing={!loadError || loadError.status === 404} onRetry={() => { setLoadError(null); setLoading(true); setAttempt(value => value + 1); }} backHref={`/community/${board.slug}`} backLabel="목록으로" />;
   }
 
   return (

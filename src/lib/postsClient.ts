@@ -50,8 +50,36 @@ async function parseJsonSafe(res: Response): Promise<any> {
 }
 
 function throwApiError(res: Response, data: any) {
-  const msg = data?.error || `Request failed (${res.status})`;
-  throw new ApiError(msg, { code: data?.errorCode, status: res.status });
+  const code = typeof data?.errorCode === "string" && /^[A-Z0-9_]{1,64}$/.test(data.errorCode) ? data.errorCode : undefined;
+  const configuredMessage = code === "KV_NOT_CONFIGURED" ? "온라인 저장소(KV) 연결이 아직 설정되지 않았습니다."
+    : code === "ADMIN_PASSWORD_NOT_CONFIGURED" ? "관리자 비밀번호가 아직 설정되지 않았습니다." : undefined;
+  const suppliedMessage = res.status < 500 && typeof data?.error === "string" && data.error.trim().length <= 300 ? data.error.trim() : "";
+  throw new ApiError(configuredMessage ?? (suppliedMessage || "요청을 완료하지 못했습니다. 잠시 후 다시 시도해 주세요."), { code, status: res.status });
+}
+
+function invalidResponse(res: Response): never {
+  throw new ApiError("서버 응답을 확인하지 못했습니다. 잠시 후 다시 시도해 주세요.", { code: "INVALID_API_RESPONSE", status: res.status });
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function isPost(value: unknown): value is Post {
+  if (!isRecord(value) || "passwordHash" in value) return false;
+  if (!["id", "boardKey", "type", "title", "content", "createdAt"].every(key => typeof value[key] === "string")) return false;
+  if (!value.id || (value.isPrivate !== undefined && typeof value.isPrivate !== "boolean")) return false;
+  if (value.authorName != null && typeof value.authorName !== "string") return false;
+  return value.extra == null || isRecord(value.extra);
+}
+
+function readPost(res: Response, data: unknown, expectedId?: string): Post {
+  if (!isRecord(data) || !isPost(data.post) || (expectedId !== undefined && data.post.id !== expectedId)) return invalidResponse(res);
+  return data.post;
+}
+
+function requireSuccess(res: Response, data: unknown): void {
+  if (!isRecord(data) || data.ok !== true) invalidResponse(res);
 }
 
 export async function apiListPosts(boardKey: BoardKey, limit = 50): Promise<Post[]> {
@@ -61,7 +89,8 @@ export async function apiListPosts(boardKey: BoardKey, limit = 50): Promise<Post
   );
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
-  return Array.isArray(data?.posts) ? (data.posts as Post[]) : [];
+  if (!isRecord(data) || !Array.isArray(data.posts) || !data.posts.every(post => isPost(post) && post.boardKey === boardKey)) return invalidResponse(res);
+  return data.posts as Post[];
 }
 
 export async function apiGetPost(id: string, opts?: { password?: string }): Promise<Post> {
@@ -71,8 +100,7 @@ export async function apiGetPost(id: string, opts?: { password?: string }): Prom
   });
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
-  if (!data?.post) throw new ApiError("Post payload missing", { status: res.status });
-  return data.post as Post;
+  return readPost(res, data, id);
 }
 
 export async function apiCreatePost(payload: CreatePostPayload): Promise<Post> {
@@ -83,8 +111,9 @@ export async function apiCreatePost(payload: CreatePostPayload): Promise<Post> {
   });
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
-  if (!data?.post) throw new ApiError("Post payload missing", { status: res.status });
-  return data.post as Post;
+  const post = readPost(res, data);
+  if (post.boardKey !== payload.boardKey) return invalidResponse(res);
+  return post;
 }
 
 export async function apiUpdatePost(id: string, patch: UpdatePostPayload): Promise<Post> {
@@ -95,21 +124,22 @@ export async function apiUpdatePost(id: string, patch: UpdatePostPayload): Promi
   });
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
-  if (!data?.post) throw new ApiError("Post payload missing", { status: res.status });
-  return data.post as Post;
+  return readPost(res, data, id);
 }
 
 export async function apiDeletePost(id: string): Promise<void> {
   const res = await fetch(`/api/posts/${encodeURIComponent(id)}`, { method: "DELETE" });
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
+  requireSuccess(res, data);
 }
 
 export async function apiAdminStatus(): Promise<boolean> {
-  const res = await fetch(`/api/admin/status`, { method: "GET" });
+  const res = await fetch(`/api/admin/status`, { method: "GET", cache: "no-store" });
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
-  return Boolean(data?.admin);
+  if (!isRecord(data) || typeof data.admin !== "boolean") return invalidResponse(res);
+  return data.admin;
 }
 
 export async function apiAdminLogin(password: string): Promise<void> {
@@ -120,10 +150,12 @@ export async function apiAdminLogin(password: string): Promise<void> {
   });
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
+  requireSuccess(res, data);
 }
 
 export async function apiAdminLogout(): Promise<void> {
   const res = await fetch(`/api/admin/logout`, { method: "POST" });
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
+  requireSuccess(res, data);
 }

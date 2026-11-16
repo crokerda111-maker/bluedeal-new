@@ -145,9 +145,15 @@ async function mockKv() {
 }
 
 async function previewProxy(upstream) {
-  const faults = { logout: false };
+  const faults = { logout: false, malformedApi: false };
   const target = new URL(upstream);
   const server = http.createServer((req, res) => {
+    if (faults.malformedApi && req.method === 'GET' && /^\/api\/posts(?:\/|\?|$)/.test(req.url)) {
+      req.resume();
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+      res.end(JSON.stringify(req.url.split('?')[0] === '/api/posts' ? { posts: null } : { post: null }));
+      return;
+    }
     if (faults.logout && req.url.split('?')[0] === '/api/admin/logout') {
       req.resume();
       res.writeHead(503, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
@@ -396,6 +402,17 @@ try {
       assert.equal((await api('GET', `/api/posts/${post.id}`)).data.post.title, post.title);
     }
   });
+  await check('storage failure in a detail layout is a server error, never a false missing-post response', async () => {
+    kv.controls.unavailable = true;
+    try {
+      for (const post of publicPosts) {
+        const route = post.boardKey === 'it' ? `/it/${post.id}` : `/community/${post.boardKey}/${post.id}`;
+        const response = await fetch(app.base + route, { signal: AbortSignal.timeout(10000) });
+        assert.equal(response.status, 500);
+        assert.doesNotMatch(await response.text(), /PRIVATE_BACKEND_DIAGNOSTIC_DO_NOT_EXPOSE/);
+      }
+    } finally { kv.controls.unavailable = false; }
+  });
   await check('fractional and invalid list limits always produce bounded integer storage ranges', async () => {
     for (const [limit, expectedEnd] of [['1.5', 0], ['0.5', 0], ['0', 0], ['-5', 0], ['NaN', 49], ['Infinity', 49], ['1e100', 199]]) {
       const before = kv.requests.length;
@@ -608,7 +625,7 @@ try {
   if (preview && !failures) {
     const proxy = await previewProxy(app.base);
     console.log(`LOCAL_PREVIEW=${proxy.base}`);
-    console.log('Disposable fixtures only. Commands: offline / partial / online / logout-fail / logout-ok / slow-hardware / normal-speed / stop (+ Enter). Ctrl+C also stops.');
+    console.log('Disposable fixtures only. Commands: offline / partial / online / logout-fail / logout-ok / slow-hardware / normal-speed / malformed-api / normal-api / stop (+ Enter). Ctrl+C also stops.');
     await new Promise(resolve => {
       process.stdin.setEncoding('utf8');
       process.stdin.on('data', input => {
@@ -621,6 +638,7 @@ try {
         }
         if (['logout-fail', 'logout-ok'].includes(command)) { proxy.faults.logout = command === 'logout-fail'; console.log(`LOCAL_LOGOUT_FAILURE=${proxy.faults.logout}`); }
         if (['slow-hardware', 'normal-speed'].includes(command)) { kv.controls.slowHardware = command === 'slow-hardware'; console.log(`LOCAL_SLOW_HARDWARE=${kv.controls.slowHardware}`); }
+        if (['malformed-api', 'normal-api'].includes(command)) { proxy.faults.malformedApi = command === 'malformed-api'; console.log(`LOCAL_MALFORMED_API=${proxy.faults.malformedApi}`); }
       });
       process.stdin.resume();
     });
