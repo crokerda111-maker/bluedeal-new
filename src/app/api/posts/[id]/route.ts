@@ -2,6 +2,8 @@ import { NextRequest } from "next/server";
 import { isAdminRequest } from "../../../../lib/adminAuth";
 import { postJson, readAuthorizedPost } from "../../../../lib/postAccess";
 import { KvNotConfiguredError } from "../../../../lib/kvRest";
+import { POST_LIMITS } from "../../../../lib/postInput";
+import { assertSameOrigin, readJsonObject, RequestInputError } from "../../../../lib/requestGuard";
 import {
   deleteOnlinePost,
   PostValidationError,
@@ -36,9 +38,10 @@ export async function PUT(req: NextRequest, ctx: { params: Promise<{ id: string 
 
   let body: any = null;
   try {
-    body = await req.json();
-  } catch {
-    return json({ error: "Invalid JSON" }, { status: 400 });
+    body = await readJsonObject(req, POST_LIMITS.bodyBytes);
+  } catch (error) {
+    if (error instanceof RequestInputError) return json({ errorCode: error.code, error: error.message }, { status: error.status });
+    return json({ error: "입력한 내용을 확인해 주세요." }, { status: 400 });
   }
 
   try {
@@ -58,8 +61,7 @@ export async function PUT(req: NextRequest, ctx: { params: Promise<{ id: string 
         { status: 503 },
       );
     }
-    const msg = typeof e?.message === "string" ? e.message : "Failed to update post";
-    return json({ error: msg }, { status: 500 });
+    return json({ error: "게시글을 수정하지 못했습니다. 잠시 후 다시 시도해 주세요." }, { status: 500 });
   }
 }
 
@@ -72,10 +74,12 @@ export async function DELETE(req: NextRequest, ctx: { params: Promise<{ id: stri
   }
 
   try {
+    assertSameOrigin(req);
     const ok = await deleteOnlinePost(id);
     if (!ok) return json({ error: "Not found" }, { status: 404 });
     return json({ ok: true });
   } catch (e: any) {
+    if (e instanceof RequestInputError) return json({ errorCode: e.code, error: e.message }, { status: e.status });
     if (e instanceof KvNotConfiguredError) {
       return json(
         {
@@ -85,7 +89,6 @@ export async function DELETE(req: NextRequest, ctx: { params: Promise<{ id: stri
         { status: 503 },
       );
     }
-    const msg = typeof e?.message === "string" ? e.message : "Failed to delete post";
-    return json({ error: msg }, { status: 500 });
+    return json({ error: "게시글을 삭제하지 못했습니다. 잠시 후 다시 시도해 주세요." }, { status: 500 });
   }
 }

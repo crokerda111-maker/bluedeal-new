@@ -3,6 +3,7 @@ import { detectMerchant, normalizeOutboundUrl, resolveAffiliateUrl } from "../..
 import { verifyInternalBearer } from "../../../../../lib/internalAuth";
 import { KvNotConfiguredError } from "../../../../../lib/kvRest";
 import { createOrReuseOutboundCode } from "../../../../../lib/onlineOutbound";
+import { readJsonObject, RequestInputError } from "../../../../../lib/requestGuard";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -22,20 +23,12 @@ export async function POST(req: NextRequest) {
     return json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const contentLength = Number(req.headers.get("content-length") || 0);
-  if (Number.isFinite(contentLength) && contentLength > 8192) {
-    return json({ error: "Request body is too large." }, { status: 413 });
-  }
-
   let body: unknown;
   try {
-    const rawBody = await req.text();
-    if (rawBody.length > 8192) {
-      return json({ error: "Request body is too large." }, { status: 413 });
-    }
-    body = JSON.parse(rawBody);
-  } catch {
-    return json({ error: "Invalid JSON" }, { status: 400 });
+    body = await readJsonObject(req, 8192);
+  } catch (error) {
+    if (error instanceof RequestInputError) return json({ errorCode: error.code, error: error.message }, { status: error.status });
+    return json({ error: "입력한 내용을 확인해 주세요." }, { status: 400 });
   }
 
   const rawUrl =

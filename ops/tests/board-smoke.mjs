@@ -1,7 +1,7 @@
 // Exercises the real Next.js HTTP routes against disposable, local-only KV data.
 // Run after `npm run build`. No production credentials or services are used.
 import assert from 'node:assert/strict';
-import { randomBytes } from 'node:crypto';
+import { createHash, randomBytes } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import http from 'node:http';
@@ -72,7 +72,8 @@ async function startApp(env = {}) {
 }
 
 async function mockKv() {
-  const controls = { unavailable: false, partial: false };
+  const controls = { unavailable: false, partial: false, malformed: false, truncated: false };
+  const requests = [];
   const values = new Map();
   const sorted = new Map();
   const token = randomBytes(24).toString('hex');
@@ -97,20 +98,30 @@ async function mockKv() {
   }
   const server = http.createServer(async (req, res) => {
     try {
-      if (controls.unavailable || (controls.partial && decodeURIComponent(req.url).includes('bd:board:review:posts'))) {
+      assert.equal(req.headers.authorization, `Bearer ${token}`);
+      assert.equal(req.method, 'POST');
+      assert.ok(['/', '/pipeline', '/multi-exec'].includes(req.url), 'KV data must stay in the body, never in the URL');
+      const chunks = [];
+      for await (const chunk of req) chunks.push(chunk);
+      const parsed = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+      const commands = req.url === '/' ? [parsed] : parsed;
+      requests.push({ method: req.method, url: req.url, commands });
+      if (controls.unavailable || (controls.partial && JSON.stringify(commands).includes('bd:board:review:posts'))) {
         res.writeHead(503, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'TEST ONLY unavailable KV' }));
+        res.end(JSON.stringify({ error: 'PRIVATE_BACKEND_DIAGNOSTIC_DO_NOT_EXPOSE' }));
         return;
       }
-      assert.equal(req.headers.authorization, `Bearer ${token}`);
-      let result;
-      if (req.url === '/multi-exec' || req.url === '/pipeline') {
-        let body = '';
-        for await (const chunk of req) body += chunk;
-        result = JSON.parse(body).map(item => ({ result: command(item) }));
-      } else {
-        result = { result: command(req.url.slice(1).split('/').map(decodeURIComponent)) };
+      if (controls.malformed) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ unexpected: 'PRIVATE_BACKEND_DIAGNOSTIC_DO_NOT_EXPOSE' }));
+        return;
       }
+      if (controls.truncated && req.url === '/pipeline') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end('[]');
+        return;
+      }
+      const result = req.url === '/' ? { result: command(parsed) } : commands.map(item => ({ result: command(item) }));
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(result));
     } catch (error) {
@@ -122,7 +133,7 @@ async function mockKv() {
   servers.add(server);
   // A historical malformed private record must stay closed to anonymous users.
   values.set('bd:post:legacy-private', JSON.stringify({ id: 'legacy-private', boardKey: 'inquiry', type: 'general', title: 'Legacy private fixture', content: 'legacy secret', isPrivate: true, passwordHash: '', createdAt: new Date().toISOString() }));
-  return { url: `http://127.0.0.1:${port}`, token, values, controls };
+  return { url: `http://127.0.0.1:${port}`, token, values, controls, requests };
 }
 
 async function request(base, method, route, body, cookie) {
@@ -177,6 +188,72 @@ try {
   let cookie;
   let privateId;
   const publicPosts = [];
+  let largePostId;
+
+  await check('post writes reject cross-site, non-JSON, malformed and oversized streamed input before storage', async () => {
+    const before = kv.requests.length;
+    const cases = [
+      { status: 403, headers: { 'Content-Type': 'application/json', Origin: 'https://example.invalid' }, body: '{}' },
+      { status: 403, headers: { 'Content-Type': 'application/json', 'Sec-Fetch-Site': 'cross-site' }, body: '{}' },
+      { status: 415, headers: { 'Content-Type': 'text/plain' }, body: '{}' },
+      { status: 400, headers: { 'Content-Type': 'application/json' }, body: '[]' },
+      { status: 400, headers: { 'Content-Type': 'application/json' }, body: 'null' },
+      { status: 400, headers: { 'Content-Type': 'application/json' }, body: Buffer.from([0xc3, 0x28]) },
+      { status: 413, headers: { 'Content-Type': 'application/json' }, body: 'x'.repeat(128 * 1024 + 1) },
+    ];
+    for (const item of cases) {
+      const response = await fetch(app.base + '/api/posts', { method: 'POST', headers: item.headers, body: item.body });
+      assert.equal(response.status, item.status); await response.text();
+    }
+    const payload = new TextEncoder().encode(JSON.stringify({ content: '가'.repeat(50_000) }));
+    const stream = new ReadableStream({ start(controller) { for (let at = 0; at < payload.length; at += 4096) controller.enqueue(payload.slice(at, at + 4096)); controller.close(); } });
+    const streamed = await fetch(app.base + '/api/posts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: stream, duplex: 'half' });
+    assert.equal(streamed.status, 413); await streamed.text();
+    assert.equal(kv.requests.length, before);
+  });
+
+  await check('post field validation never coerces arrays, nested objects or string privacy flags into stored data', async () => {
+    const valid = { boardKey: 'hardware', type: 'general', title: 'LOCAL valid title', content: 'LOCAL valid content' };
+    const before = kv.values.size;
+    for (const patch of [{ title: ['bad'] }, { content: 42 }, { title: 'x'.repeat(201) }, { content: 'x'.repeat(30_001) },
+      { authorName: 'x'.repeat(21) }, { extra: [] }, { extra: { nested: { value: 'bad' } } }, { extra: { note: 'x'.repeat(4001) } },
+      { extra: Object.fromEntries(Array.from({ length: 33 }, (_, n) => ['field' + n, 'value'])) }, { isPrivate: 'false' }, { lockToAdminPassword: 'true' }]) {
+      assert.equal((await api('POST', '/api/posts', { ...valid, ...patch })).status, 400);
+    }
+    assert.equal(kv.values.size, before);
+  });
+
+  await check('valid large Korean content is stored through a JSON body without a data-bearing storage URL', async () => {
+    const response = await api('POST', '/api/posts', { boardKey: 'hardware', type: 'general', title: 'LOCAL large content fixture', content: '가'.repeat(25_000) });
+    assert.equal(response.status, 201);
+    largePostId = response.data.post.id;
+    assert.equal((await api('GET', `/api/posts/${largePostId}`)).data.post.content.length, 25_000);
+    assert.ok(kv.requests.every(item => item.method === 'POST' && ['/', '/pipeline', '/multi-exec'].includes(item.url)));
+  });
+
+  await check('a link-heavy post bounds conversion work and retains every remaining original URL', async () => {
+    const urls = Array.from({ length: 24 }, (_, i) => `https://item.gmarket.co.kr/Item?goodsCode=${9000000000 + i}`);
+    const response = await api('POST', '/api/posts', { boardKey: 'hardware', type: 'general', title: 'LOCAL link budget fixture', content: urls.join('\n'), extra: { source: urls[0], another: 'https://item.gmarket.co.kr/Item?goodsCode=9999999999' } });
+    assert.equal(response.status, 201);
+    const lines = response.data.post.content.split('\n');
+    assert.equal(lines.length, 24);
+    assert.equal(lines.filter(item => item.startsWith('/go/')).length, 20);
+    assert.deepEqual(lines.slice(20), urls.slice(20));
+    assert.equal(response.data.post.extra.source, lines[0]);
+    assert.equal(response.data.post.extra.another, 'https://item.gmarket.co.kr/Item?goodsCode=9999999999');
+  });
+
+  await check('storage failures and malformed success responses never become private diagnostics or empty data', async () => {
+    for (const mode of ['unavailable', 'malformed', 'truncated']) {
+      kv.controls[mode] = true;
+      try {
+        const response = await api('GET', '/api/posts?boardKey=hardware');
+        assert.equal(response.status, 500);
+        assert.equal('posts' in response.data, false);
+        assert.doesNotMatch(JSON.stringify(response.data), /PRIVATE_BACKEND_DIAGNOSTIC/);
+      } finally { kv.controls[mode] = false; }
+    }
+  });
 
   await check('generated price links survive an unavailable KV service', async () => {
     kv.controls.unavailable = true;
@@ -397,6 +474,32 @@ try {
     assert.equal(response.data.post.extra.email, 'fixture@example.invalid');
     assert.equal('passwordHash' in response.data.post, false);
   });
+  await check('authenticated mutations still reject foreign origins and credential requests have byte limits', async () => {
+    const headers = { 'Content-Type': 'application/json', Cookie: cookie, Origin: 'https://example.invalid' };
+    for (const [method, route, body] of [['PUT', `/api/posts/${privateId}`, '{}'], ['DELETE', `/api/posts/${privateId}`], ['POST', '/api/admin/logout'], ['POST', '/api/admin/login', JSON.stringify({ password })]]) {
+      const response = await fetch(app.base + route, { method, headers, ...(body ? { body } : {}) });
+      assert.equal(response.status, 403);
+      assert.equal(response.headers.has('set-cookie'), false); await response.text();
+    }
+    const response = await fetch(app.base + '/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: 'x'.repeat(9000) }) });
+    assert.equal(response.status, 413); await response.text();
+  });
+  await check('invalid administrator edits preserve the complete stored record and its private lock', async () => {
+    const before = kv.values.get('bd:post:' + privateId);
+    for (const patch of [{ title: '' }, { content: '   ' }, { title: {} }, { extra: [] }, { type: 'not-a-type' }, { isPrivate: 'false' }, { password: '', content: 'https://item.gmarket.co.kr/Item?goodsCode=8888888888' }]) {
+      assert.equal((await api('PUT', `/api/posts/${privateId}`, patch, cookie)).status, 400);
+      assert.equal(kv.values.get('bd:post:' + privateId), before);
+    }
+  });
+  await check('large administrator updates use body transport and keep content intact', async () => {
+    const response = await api('PUT', `/api/posts/${largePostId}`, { content: '한'.repeat(30_000) }, cookie);
+    assert.equal(response.status, 200);
+    const stored = (await api('GET', `/api/posts/${largePostId}`)).data.post.content;
+    assert.equal(stored.length, 30_000);
+    const hash = value => createHash('sha256').update(value, 'utf8').digest('hex');
+    assert.equal(hash(stored), hash('한'.repeat(30_000)), 'Large Korean content must round-trip without UTF-8 corruption');
+    assert.ok(kv.requests.every(item => item.method === 'POST' && item.url.length < 20));
+  });
   await check('blog slug routes preserve draft visibility and administrator update/delete', async () => {
     const route = '/api/blog/local-upgrade-fixture';
     const draft = { slug: 'local-upgrade-fixture', title: 'LOCAL QA blog draft', summary: 'Synthetic test only', category: 'test', body: 'Synthetic draft body', published: false };
@@ -407,6 +510,13 @@ try {
     assert.equal(visible.status, 200);
     assert.equal(visible.data.post.slug, draft.slug);
     assert.equal(visible.data.post.body, draft.body);
+    assert.match(visible.headers.get('cache-control'), /private, no-store/);
+    assert.match(visible.headers.get('vary'), /Cookie/i);
+    assert.equal((await api('PUT', route, { ...draft, published: 'false' }, cookie)).status, 400);
+    assert.equal((await api('GET', route)).status, 404);
+    const foreign = await fetch(app.base + route, { method: 'PUT', headers: { 'Content-Type': 'application/json', Cookie: cookie, Origin: 'https://example.invalid' }, body: JSON.stringify({ ...draft, published: true }) });
+    assert.equal(foreign.status, 403); await foreign.text();
+    assert.equal((await api('GET', route)).status, 404);
     assert.equal((await api('DELETE', route)).status, 403);
     assert.equal((await api('DELETE', route, undefined, cookie)).status, 200);
     assert.equal((await api('GET', route, undefined, cookie)).status, 404);

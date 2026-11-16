@@ -9,6 +9,10 @@ const BLOG_POST_PREFIX = "bd:blog:post:";
 const BLOG_POSTS_INDEX = "bd:blog:posts";
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
+export class BlogValidationError extends Error {
+  constructor(message: string) { super(message); this.name = "BlogValidationError"; }
+}
+
 function blogPostKey(slug: string): string {
   return `${BLOG_POST_PREFIX}${slug}`;
 }
@@ -18,9 +22,9 @@ function normalizeSlug(value: unknown): string {
 }
 
 function requireText(value: unknown, label: string, maxLength: number): string {
-  const text = String(value ?? "").trim();
-  if (!text) throw new Error(`${label}을(를) 입력하세요.`);
-  if (text.length > maxLength) throw new Error(`${label}은(는) ${maxLength}자 이하여야 합니다.`);
+  const text = typeof value === "string" ? value.trim() : "";
+  if (!text) throw new BlogValidationError(`${label}을(를) 입력하세요.`);
+  if (text.length > maxLength) throw new BlogValidationError(`${label}은(는) ${maxLength}자 이하여야 합니다.`);
   return text;
 }
 
@@ -60,13 +64,13 @@ async function convertAffiliateLinkLines(raw: unknown): Promise<BlogAffiliateLin
 
   for (const line of raw.split(/\r?\n/).map((item) => item.trim()).filter(Boolean).slice(0, 30)) {
     const separator = line.indexOf("|");
-    if (separator < 1) throw new Error("상품 링크는 ‘상품명 | https://주소’ 형식으로 입력하세요.");
+    if (separator < 1) throw new BlogValidationError("상품 링크는 ‘상품명 | https://주소’ 형식으로 입력하세요.");
     const label = line.slice(0, separator).trim();
     const url = line.slice(separator + 1).trim();
-    if (!label || !url) throw new Error("상품명과 주소를 모두 입력하세요.");
+    if (!label || !url) throw new BlogValidationError("상품명과 주소를 모두 입력하세요.");
 
     const code = await createOrReuseOutboundCode(url);
-    if (!code) throw new Error(`지원하지 않는 판매처 주소입니다: ${url}`);
+    if (!code) throw new BlogValidationError("지원하는 판매처의 상품 주소인지 확인해 주세요.");
     links.push({ label: label.slice(0, 120), goCode: code });
   }
 
@@ -138,8 +142,13 @@ export async function getHybridBlogPost(slug: string, includeDrafts = false): Pr
 }
 
 export async function saveAdminBlogPost(input: BlogPostInput, previousSlug?: string): Promise<BlogPost> {
+  if (input.published !== undefined && typeof input.published !== "boolean") throw new BlogValidationError("공개 여부를 다시 선택해 주세요.");
   const slug = normalizeSlug(input.slug);
-  if (!SLUG_RE.test(slug)) throw new Error("주소는 영문 소문자, 숫자, 하이픈만 사용할 수 있습니다.");
+  if (!SLUG_RE.test(slug)) throw new BlogValidationError("주소는 영문 소문자, 숫자, 하이픈만 사용할 수 있습니다.");
+  const title = requireText(input.title, "제목", 160);
+  const summary = requireText(input.summary, "요약", 360);
+  const category = requireText(input.category, "카테고리", 60);
+  const body = requireText(input.body, "본문", 100_000);
 
   const publishedAtValue = String(input.publishedAt ?? "").trim();
   const publishedAt = Number.isNaN(Date.parse(publishedAtValue)) ? new Date().toISOString() : new Date(publishedAtValue).toISOString();
@@ -149,11 +158,11 @@ export async function saveAdminBlogPost(input: BlogPostInput, previousSlug?: str
 
   const post: BlogPost = {
     slug,
-    title: requireText(input.title, "제목", 160),
-    summary: requireText(input.summary, "요약", 360),
-    category: requireText(input.category, "카테고리", 60),
+    title,
+    summary,
+    category,
     tags: normalizeTags(input.tags),
-    body: requireText(input.body, "본문", 100_000),
+    body,
     affiliateLinks,
     publishedAt,
     updatedAt: now,

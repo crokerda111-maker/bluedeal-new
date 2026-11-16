@@ -5,6 +5,8 @@ import { getBoardByKey, getAllowedTypes, POST_TYPE_OPTIONS } from "../../../lib/
 import { isAdminRequest } from "../../../lib/adminAuth";
 import { KvNotConfiguredError } from "../../../lib/kvRest";
 import { createOnlinePost, listOnlinePostsByBoard, PostValidationError } from "../../../lib/onlinePosts";
+import { POST_LIMITS, validatePostFields } from "../../../lib/postInput";
+import { readJsonObject, RequestInputError } from "../../../lib/requestGuard";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -64,22 +66,23 @@ export async function GET(req: NextRequest) {
         {
           errorCode: e.code,
           error: "온라인 저장소(KV) 연결이 아직 설정되지 않았습니다.",
-          hint: "Vercel 환경변수(KV_REST_API_URL/KV_REST_API_TOKEN 또는 UPSTASH_REDIS_REST_URL/UPSTASH_REDIS_REST_TOKEN) 설정 후 재배포하세요.",
         },
         { status: 503 },
       );
     }
-    const msg = typeof e?.message === "string" ? e.message : "Failed to load posts";
-    return json({ error: msg }, { status: 500 });
+    return json({ error: "게시글 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요." }, { status: 500 });
   }
 }
 
 export async function POST(req: NextRequest) {
   let body: any = null;
   try {
-    body = await req.json();
-  } catch {
-    return json({ error: "Invalid JSON" }, { status: 400 });
+    body = await readJsonObject(req, POST_LIMITS.bodyBytes);
+    validatePostFields(body);
+  } catch (error) {
+    if (error instanceof RequestInputError) return json({ errorCode: error.code, error: error.message }, { status: error.status });
+    if (error instanceof PostValidationError) return json({ error: error.message }, { status: 400 });
+    return json({ error: "입력한 내용을 확인해 주세요." }, { status: 400 });
   }
 
   const boardKey = body?.boardKey as BoardKey | undefined;
@@ -153,7 +156,6 @@ export async function POST(req: NextRequest) {
         { status: 503 },
       );
     }
-    const msg = typeof e?.message === "string" ? e.message : "Failed to create post";
-    return json({ error: msg }, { status: 500 });
+    return json({ error: "게시글을 저장하지 못했습니다. 잠시 후 다시 시도해 주세요." }, { status: 500 });
   }
 }

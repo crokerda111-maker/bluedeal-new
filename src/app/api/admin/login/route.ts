@@ -1,19 +1,22 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { getAdminPassword, isAdminPasswordConfigured, setAdminCookie } from "../../../../lib/adminAuth";
+import { postJson } from "../../../../lib/postAccess";
+import { readJsonObject, RequestInputError } from "../../../../lib/requestGuard";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 function json(data: any, init?: ResponseInit) {
-  return NextResponse.json(data, init);
+  return postJson(data, init);
 }
 
 export async function POST(req: NextRequest) {
   let body: any = null;
   try {
-    body = await req.json();
-  } catch {
-    return json({ error: "Invalid JSON" }, { status: 400 });
+    body = await readJsonObject(req, 8192);
+  } catch (error) {
+    if (error instanceof RequestInputError) return json({ errorCode: error.code, error: error.message }, { status: error.status });
+    return json({ error: "입력한 내용을 확인해 주세요." }, { status: 400 });
   }
 
   const pw = typeof body?.password === "string" ? body.password : "";

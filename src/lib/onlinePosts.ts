@@ -6,6 +6,8 @@ import { getBoardByKey, getAllowedTypes } from "./boardConfig";
 import { getAdminPassword } from "./adminAuth";
 import { kvCommand, kvMultiExec, kvPipeline } from "./kvRest";
 import { createOrReuseOutboundCode, isHttpUrlString } from "./onlineOutbound";
+import { PostValidationError, validatePostFields } from "./postInput";
+export { PostValidationError } from "./postInput";
 
 const POST_KEY_PREFIX = "bd:post:";
 const BOARD_ZSET_PREFIX = "bd:board:";
@@ -26,13 +28,6 @@ function randomId(): string {
 
 function sha256(text: string): string {
   return crypto.createHash("sha256").update(text).digest("hex");
-}
-
-export class PostValidationError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = "PostValidationError";
-  }
 }
 
 function privatePasswordHash(password: unknown): string {
@@ -77,7 +72,18 @@ function stripTrailingPunct(raw: string): { url: string; trailing: string } {
   return { url, trailing };
 }
 
-async function convertOutboundInText(text: string): Promise<string> {
+type ConversionBudget = { remaining: number; codes: Map<string, string | null> };
+
+async function boundedOutboundCode(url: string, budget: ConversionBudget): Promise<string | null> {
+  if (budget.codes.has(url)) return budget.codes.get(url) ?? null;
+  if (budget.remaining <= 0) return null;
+  budget.remaining -= 1;
+  const code = await createOrReuseOutboundCode(url);
+  budget.codes.set(url, code);
+  return code;
+}
+
+async function convertOutboundInText(text: string, budget: ConversionBudget): Promise<string> {
   const URL_RE = /https?:\/\/[^\s<>"]+/gi;
   const found = text.match(URL_RE);
   if (!found || found.length === 0) return text;
@@ -90,7 +96,7 @@ async function convertOutboundInText(text: string): Promise<string> {
     const { url, trailing } = stripTrailingPunct(raw);
     if (!isHttpUrlString(url)) continue;
 
-    const code = await createOrReuseOutboundCode(url);
+    const code = await boundedOutboundCode(url, budget);
     if (code) {
       map.set(raw, `/go/${code}${trailing}`);
     }
@@ -102,7 +108,7 @@ async function convertOutboundInText(text: string): Promise<string> {
   return text.replace(URL_RE, (m) => map.get(m) ?? m);
 }
 
-async function convertOutboundInExtra(extra?: PostExtra): Promise<PostExtra | undefined> {
+async function convertOutboundInExtra(extra: PostExtra | undefined, budget: ConversionBudget): Promise<PostExtra | undefined> {
   if (!extra) return extra;
 
   const next: PostExtra = { ...extra };
@@ -114,7 +120,7 @@ async function convertOutboundInExtra(extra?: PostExtra): Promise<PostExtra | un
     if (t.startsWith("/go/")) continue;
     if (!isHttpUrlString(t)) continue;
 
-    const code = await createOrReuseOutboundCode(t);
+    const code = await boundedOutboundCode(t, budget);
     if (code) {
       next[k] = `/go/${code}`;
     }
@@ -141,13 +147,14 @@ export type CreateOnlinePostInput = {
 
 function assertBoardAndType(boardKey: BoardKey, type: PostType) {
   const b = getBoardByKey(boardKey);
-  if (!b) throw new Error("Invalid boardKey");
+  if (!b) throw new PostValidationError("게시판을 다시 선택해 주세요.");
   const allowed = getAllowedTypes(b);
-  if (!allowed.includes(type)) throw new Error("Invalid type for board");
+  if (!allowed.includes(type)) throw new PostValidationError("이 게시판에서 사용할 수 없는 말머리입니다.");
 }
 
 export async function createOnlinePost(input: CreateOnlinePostInput): Promise<Post> {
   assertBoardAndType(input.boardKey, input.type);
+  validatePostFields(input);
 
   const nowIso = new Date().toISOString();
   const id = randomId();
@@ -165,21 +172,19 @@ export async function createOnlinePost(input: CreateOnlinePostInput): Promise<Po
     extra: input.extra,
   };
 
+  if (input.isPrivate) {
+    post.passwordHash = input.lockToAdminPassword ? adminPasswordHash() : privatePasswordHash(input.password);
+  }
+
+  // Bound the combined content/extra conversion work. Remaining URLs stay intact.
+  const conversion: ConversionBudget = { remaining: 20, codes: new Map() };
   // Convert outbound links to /go/{code} (best-effort).
   // - Only allowlisted hosts are converted (others remain original).
   try {
-    post.content = await convertOutboundInText(post.content);
-    post.extra = await convertOutboundInExtra(post.extra);
+    post.content = await convertOutboundInText(post.content, conversion);
+    post.extra = await convertOutboundInExtra(post.extra, conversion);
   } catch {
     // ignore conversion errors (posting should still work)
-  }
-
-  if (input.isPrivate) {
-    if (input.lockToAdminPassword) {
-      post.passwordHash = adminPasswordHash();
-    } else {
-      post.passwordHash = privatePasswordHash(input.password);
-    }
   }
 
   // Atomic: store post JSON + add to board index.
@@ -250,6 +255,7 @@ export type UpdateOnlinePostInput = {
 export async function updateOnlinePost(id: string, patch: UpdateOnlinePostInput): Promise<Post | null> {
   const current = await getOnlinePostById(id);
   if (!current) return null;
+  validatePostFields(patch, { partial: true, current });
 
   const next: Post = {
     ...current,
@@ -266,14 +272,6 @@ export async function updateOnlinePost(id: string, patch: UpdateOnlinePostInput)
     isPrivate: patch.isPrivate === undefined ? current.isPrivate : Boolean(patch.isPrivate),
     updatedAt: new Date().toISOString(),
   };
-
-  // Convert outbound links in updated content/extra (best-effort)
-  try {
-    next.content = await convertOutboundInText(next.content);
-    next.extra = await convertOutboundInExtra(next.extra);
-  } catch {
-    // ignore
-  }
 
   // Validate board/type constraint
   assertBoardAndType(next.boardKey, next.type);
@@ -294,6 +292,12 @@ export async function updateOnlinePost(id: string, patch: UpdateOnlinePostInput)
       next.passwordHash = current.passwordHash;
     }
   }
+
+  const conversion: ConversionBudget = { remaining: 20, codes: new Map() };
+  try {
+    next.content = await convertOutboundInText(next.content, conversion);
+    next.extra = await convertOutboundInExtra(next.extra, conversion);
+  } catch { /* Link conversion is best effort; preserve the original text on failure. */ }
 
   await kvCommand("SET", postKey(id), JSON.stringify(next));
   return next;

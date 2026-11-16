@@ -2,6 +2,13 @@ import "server-only";
 
 type UpstashResult<T> = { result?: T; error?: string };
 
+export class KvRequestError extends Error {
+  constructor(status?: number) {
+    super(status ? `온라인 저장소 요청을 완료하지 못했습니다. (HTTP ${status})` : "온라인 저장소 응답을 확인하지 못했습니다.");
+    this.name = "KvRequestError";
+  }
+}
+
 export class KvNotConfiguredError extends Error {
   public readonly code = "KV_NOT_CONFIGURED" as const;
 
@@ -21,10 +28,6 @@ function getKvConfig(): { url: string; token: string } {
   }
 
   return { url: url.replace(/\/$/, ""), token };
-}
-
-function encodeSegment(v: string | number): string {
-  return encodeURIComponent(String(v));
 }
 
 async function kvFetchJson<T>(path: string, init?: RequestInit): Promise<T> {
@@ -52,18 +55,22 @@ async function kvFetchJson<T>(path: string, init?: RequestInit): Promise<T> {
 
   // Upstash REST returns {result} or {error}
   if (!res.ok) {
-    const msg = typeof data?.error === "string" ? data.error : `KV request failed (${res.status})`;
-    throw new Error(msg);
+    throw new KvRequestError(res.status);
   }
+  if (data === null || typeof data !== "object") throw new KvRequestError();
 
   return data as T;
 }
 
 export async function kvCommand<T = unknown>(command: string, ...args: Array<string | number>): Promise<T> {
-  const path = `/${encodeSegment(command)}${args.length ? "/" + args.map(encodeSegment).join("/") : ""}`;
-  const data = await kvFetchJson<UpstashResult<T>>(path);
+  // Keep post bodies, private contact details and password hashes out of URLs.
+  // Upstash REST accepts a complete Redis command as a JSON array at its root.
+  const data = await kvFetchJson<UpstashResult<T>>("/", {
+    method: "POST",
+    body: JSON.stringify([command, ...args]),
+  });
 
-  if (data?.error) throw new Error(data.error);
+  if (data?.error || Array.isArray(data) || !Object.hasOwn(data, "result")) throw new KvRequestError();
   return data.result as T;
 }
 
@@ -74,8 +81,9 @@ export async function kvPipeline(commands: any[][]): Promise<any[]> {
   });
 
   // Each item can have {result} or {error}
+  if (!Array.isArray(data) || data.length !== commands.length) throw new KvRequestError();
   for (const item of data) {
-    if (item?.error) throw new Error(item.error);
+    if (!item || typeof item !== "object" || item.error || !Object.hasOwn(item, "result")) throw new KvRequestError();
   }
   return data.map((x) => x.result);
 }
@@ -86,13 +94,10 @@ export async function kvMultiExec(commands: any[][]): Promise<any[]> {
     body: JSON.stringify(commands),
   });
 
-  if ((data as any)?.error) {
-    throw new Error((data as any).error);
-  }
-
-  const arr = data as Array<{ result?: any; error?: string }>;
+  if (!Array.isArray(data) || data.length !== commands.length) throw new KvRequestError();
+  const arr = data;
   for (const item of arr) {
-    if (item?.error) throw new Error(item.error);
+    if (!item || typeof item !== "object" || item.error || !Object.hasOwn(item, "result")) throw new KvRequestError();
   }
   return arr.map((x) => x.result);
 }

@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 import { use, useEffect, useMemo, useState, type CSSProperties } from "react";
 import { IT_BOARD, type FieldDef } from "../../../lib/boardConfig";
 import type { PostExtra, PostType } from "../../../lib/postTypes";
-import { apiAdminStatus, apiCreatePost } from "../../../lib/postsClient";
+import { apiAdminStatus, apiCreatePost, postErrorMessage } from "../../../lib/postsClient";
+import { POST_LIMITS } from "../../../lib/postInput";
 import { setNickname } from "../../../lib/profile";
 import { useNickname } from "../../../lib/useNickname";
 
@@ -26,6 +27,7 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
         <textarea
           id={id}
           required={def.required}
+          maxLength={POST_LIMITS.extraValue}
           aria-describedby={def.help ? `${id}_help` : undefined}
           rows={4}
           className={base}
@@ -48,6 +50,7 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
         <input
           id={id}
           required={def.required}
+          maxLength={def.type === "number" ? undefined : POST_LIMITS.extraValue}
           aria-describedby={def.help ? `${id}_help` : undefined}
           type={def.type === "number" ? "number" : def.type === "url" ? "url" : "text"}
           className={base}
@@ -127,8 +130,8 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
       });
 
       router.push(`/it/${post.id}`);
-    } catch {
-      setError("저장하지 못했습니다. 입력한 내용은 유지됩니다. 잠시 후 다시 시도해 주세요.");
+    } catch (error) {
+      setError(postErrorMessage(error));
     } finally {
       setSaving(false);
     }
@@ -207,6 +210,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
             <div className="text-sm text-white/80">제목</div>
             <input
               required
+              maxLength={POST_LIMITS.title}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -227,6 +231,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
             <div className="text-sm text-white/80">내용</div>
             <textarea
               required
+              maxLength={POST_LIMITS.content}
               rows={10}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               value={content}

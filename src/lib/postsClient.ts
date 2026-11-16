@@ -12,6 +12,11 @@ export class ApiError extends Error {
   }
 }
 
+export function postErrorMessage(error: unknown, fallback = "저장하지 못했습니다. 입력한 내용은 유지됩니다. 잠시 후 다시 시도해 주세요."): string {
+  if (error instanceof ApiError && error.status !== undefined && [400, 401, 403, 413, 415, 429].includes(error.status)) return error.message;
+  return fallback;
+}
+
 export type CreatePostPayload = {
   boardKey: BoardKey;
   type: PostType;

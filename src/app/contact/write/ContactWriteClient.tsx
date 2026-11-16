@@ -5,7 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
 import type { InquiryVisibility, PostType } from "../../../lib/postTypes";
-import { apiCreatePost } from "../../../lib/postsClient";
+import { apiCreatePost, postErrorMessage } from "../../../lib/postsClient";
+import { POST_LIMITS } from "../../../lib/postInput";
 import { setNickname } from "../../../lib/profile";
 import { useNickname } from "../../../lib/useNickname";
 
@@ -92,8 +93,8 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
       } else {
         router.push(`/contact/${post.id}`);
       }
-    } catch {
-      setError("저장 중 오류가 발생했습니다.");
+    } catch (error) {
+      setError(postErrorMessage(error));
     } finally {
       setSaving(false);
     }
@@ -215,6 +216,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
             <div className="text-sm text-white/80">제목</div>
             <input
               value={title}
+              maxLength={POST_LIMITS.title}
               onChange={(e) => setTitle(e.target.value)}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               placeholder="제목"
@@ -240,6 +242,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
               <div className="text-sm text-white/80">비밀번호</div>
               <input
                 value={password}
+                maxLength={POST_LIMITS.password}
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
@@ -256,6 +259,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
             <textarea
               rows={10}
               value={content}
+              maxLength={POST_LIMITS.content}
               onChange={(e) => setContent(e.target.value)}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               placeholder="내용"
