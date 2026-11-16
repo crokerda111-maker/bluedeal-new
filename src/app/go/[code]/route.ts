@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { convertToAffiliateUrl } from "../../../lib/affiliate";
 import { getOutboundRow, incrementOutboundClick } from "../../../lib/onlineOutbound";
 import { KvNotConfiguredError } from "../../../lib/kvRest";
 import { OUTBOUND_LINKS } from "../../../lib/outbound";
+import type { OutboundLink } from "../../../lib/outbound";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -13,32 +14,17 @@ export async function GET(req: Request, ctx: { params: Promise<{ code: string }>
     return NextResponse.json({ error: "Invalid outbound code" }, { status: 400 });
   }
 
-  let row: any = null;
-  try {
-    row = await getOutboundRow(code);
-  } catch (e: any) {
-    if (e instanceof KvNotConfiguredError) {
-      // local fallback (dev/demo)
-      const local = OUTBOUND_LINKS[code];
-      if (local) {
-        row = local;
-      } else {
-        return NextResponse.json(
-          {
-            errorCode: e.code,
-            error: "온라인 저장소(KV) 설정이 필요합니다.",
-          },
-          { status: 503 },
-        );
-      }
-    } else {
-      return NextResponse.json({ error: "Failed to resolve outbound link" }, { status: 500 });
-    }
-  }
-
+  // 배포에 포함된 검증 주소는 온라인 저장소 장애와 무관하게 제공합니다.
+  let row: OutboundLink | null = OUTBOUND_LINKS[code] ?? null;
   if (!row) {
-    // local fallback (dev/demo)
-    row = OUTBOUND_LINKS[code] ?? null;
+    try {
+      row = await getOutboundRow(code);
+    } catch (error: unknown) {
+      if (error instanceof KvNotConfiguredError) {
+        return NextResponse.json({ errorCode: error.code, error: "온라인 저장소(KV) 설정이 필요합니다." }, { status: 503 });
+      }
+      return NextResponse.json({ error: "Failed to resolve outbound link" }, { status: 503 });
+    }
   }
 
   if (!row) {
@@ -57,12 +43,12 @@ export async function GET(req: Request, ctx: { params: Promise<{ code: string }>
     return NextResponse.json({ error: "Blocked outbound host" }, { status: 400 });
   }
 
-  // best-effort click count (ignore failures)
-  try {
-    await incrementOutboundClick(code);
-  } catch {
-    // ignore
-  }
-
-  return NextResponse.redirect(target, 302);
+  // 통계 저장은 응답 후 실행하여 판매처 이동을 지연시키지 않습니다.
+  after(async () => {
+    try { await incrementOutboundClick(code); } catch { /* best effort */ }
+  });
+  const response = NextResponse.redirect(target, 302);
+  response.headers.set("Cache-Control", "no-store");
+  response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  return response;
 }

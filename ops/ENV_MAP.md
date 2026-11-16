@@ -8,9 +8,10 @@
 | `KV_REST_API_URL` + `KV_REST_API_TOKEN` | 동적 글 사용 시 | 게시판, 관리자 블로그, 동적 `/go` 저장 |
 | `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` | 위 변수의 대안 | Upstash REST 직접 연결 |
 | `OUTBOUND_INGEST_SECRET` | 내부 등록 API 사용 시 | `/api/internal/outbound/register` 인증 |
-| `COUPANG_LPTAG` | 쿠팡 제휴 사용 시 | 클릭 시 검증된 쿠팡 제휴 파라미터 적용 |
 
 ## 저장 위치
+
+쿠팡 등 제휴 링크는 공식 계정에서 발급한 완성된 주소를 등록합니다. 일반 상품 주소에 임의 태그를 붙여 수익 귀속이 보장된 것으로 처리하지 않습니다. `COUPANG_LPTAG`는 사용하지 않습니다.
 
 - Production: Vercel Project → Settings → Environment Variables
 - 로컬 개발: 저장소 루트의 `.env.local`

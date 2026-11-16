@@ -7,9 +7,11 @@ import { once } from 'node:events';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { readFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
+const generatedLinks = JSON.parse(await readFile(new URL('../../src/content/outbound.generated.json', import.meta.url), 'utf8'));
 const preview = process.argv.includes('--preview');
 const servers = new Set();
 const children = new Set();
@@ -70,6 +72,7 @@ async function startApp(env = {}) {
 }
 
 async function mockKv() {
+  const controls = { unavailable: false };
   const values = new Map();
   const sorted = new Map();
   const token = randomBytes(24).toString('hex');
@@ -94,6 +97,11 @@ async function mockKv() {
   }
   const server = http.createServer(async (req, res) => {
     try {
+      if (controls.unavailable) {
+        res.writeHead(503, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'TEST ONLY unavailable KV' }));
+        return;
+      }
       assert.equal(req.headers.authorization, `Bearer ${token}`);
       let result;
       if (req.url === '/multi-exec' || req.url === '/pipeline') {
@@ -114,7 +122,7 @@ async function mockKv() {
   servers.add(server);
   // A historical malformed private record must stay closed to anonymous users.
   values.set('bd:post:legacy-private', JSON.stringify({ id: 'legacy-private', boardKey: 'inquiry', type: 'general', title: 'Legacy private fixture', content: 'legacy secret', isPrivate: true, passwordHash: '', createdAt: new Date().toISOString() }));
-  return { url: `http://127.0.0.1:${port}`, token, values };
+  return { url: `http://127.0.0.1:${port}`, token, values, controls };
 }
 
 async function request(base, method, route, body, cookie) {
@@ -149,6 +157,16 @@ try {
   await check('forged cookie never grants access without configuration', async () => {
     assert.equal((await request(unconfigured.base, 'GET', '/api/admin/status', undefined, 'bd_admin=fake')).data.admin, false);
   });
+  await check('generated price links work without online storage', async () => {
+    for (const [code, row] of Object.entries(generatedLinks)) {
+      const response = await fetch(`${unconfigured.base}/go/${code}`, { redirect: 'manual' });
+      assert.equal(response.status, 302);
+      assert.equal(response.headers.get('location'), row.originalUrl);
+      assert.match(response.headers.get('cache-control'), /no-store/);
+      assert.match(response.headers.get('x-robots-tag'), /noindex/);
+      await response.text();
+    }
+  });
   await stopChild(unconfigured.child);
 
   const kv = await mockKv();
@@ -159,6 +177,18 @@ try {
   let cookie;
   let privateId;
   const publicPosts = [];
+
+  await check('generated price links survive an unavailable KV service', async () => {
+    kv.controls.unavailable = true;
+    try {
+      for (const [code, row] of Object.entries(generatedLinks)) {
+        const response = await fetch(`${app.base}/go/${code}`, { redirect: 'manual' });
+        assert.equal(response.status, 302);
+        assert.equal(response.headers.get('location'), row.originalUrl);
+        await response.text();
+      }
+    } finally { kv.controls.unavailable = false; }
+  });
 
   await check('deployment version exposes only public release metadata without caching', async () => {
     const response = await api('GET', '/api/version');

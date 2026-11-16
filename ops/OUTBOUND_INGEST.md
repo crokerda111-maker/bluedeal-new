@@ -14,15 +14,16 @@ PC 가격 수집기와 신뢰된 내부 작업은 상품 원주소를 아래 API
   "goUrl": "https://bluedeal.co.kr/go/example-code",
   "merchant": "coupang",
   "normalizedUrl": "https://www.coupang.com/vp/products/123",
-  "affiliateMode": "converted"
+  "affiliateMode": "passthrough"
 }
 ```
 
 ## 변환 상태
 
-- `converted`: 블루딜의 검증된 제휴 설정이 적용됨
-- `already-affiliate`: 판매처의 공식 제휴/단축 주소라서 그대로 보존
+- `already-affiliate`: 판매처의 제휴/단축 호스트 형식을 인식해 그대로 보존. 링크 소유 계정이나 수익 귀속을 보증하는 값은 아닙니다.
 - `passthrough`: 판매처는 지원하지만 제휴 설정이 없어 원주소 사용
+
+실제 귀속은 공식 계정에서 발급한 링크로 이동하는지와 제휴처 클릭·실적 리포트를 확인해야 합니다. 일반 상품 URL에 태그를 임의로 추가하는 변환은 제공하지 않습니다. 링크프라이스 중간 도메인은 실제 발급 링크의 목적지·형식을 확인한 뒤 지원합니다.
 
 ## 보안 원칙
 

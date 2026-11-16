@@ -39,6 +39,7 @@ async function kvFetchJson<T>(path: string, init?: RequestInit): Promise<T> {
     },
     // Avoid caching; this is a DB call.
     cache: "no-store",
+    signal: init?.signal ?? AbortSignal.timeout(8000),
   });
 
   let data: any = null;

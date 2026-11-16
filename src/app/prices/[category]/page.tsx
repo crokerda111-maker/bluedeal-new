@@ -66,6 +66,7 @@ function PurchaseLink({ item }: { item: PriceItem }) {
     <SmartLink
       className="inline-flex whitespace-nowrap rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100 hover:bg-cyan-300/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
       href={`/go/${item.goCode}`}
+      rel="sponsored noopener noreferrer"
       title={`${item.name} 판매처 보기 (새 창)`}
     >
       판매처 보기 ↗

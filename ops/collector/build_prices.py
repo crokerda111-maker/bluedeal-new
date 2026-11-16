@@ -59,6 +59,8 @@ def detect_merchant(host: str) -> str | None:
 
 def normalize_url(raw: Any) -> tuple[str, str]:
     value = str(raw or "").strip()
+    if re.search(r"[\x00-\x1f\x7f]", value):
+        raise ValueError("제어 문자가 포함된 주소는 허용하지 않습니다.")
     parsed = urlsplit(value)
     if parsed.scheme.lower() not in {"http", "https"} or not parsed.hostname:
         raise ValueError(f"올바른 http(s) 상품 주소가 아닙니다: {value}")
@@ -70,9 +72,11 @@ def normalize_url(raw: Any) -> tuple[str, str]:
     if not merchant:
         raise ValueError(f"지원하지 않는 판매처 주소입니다: {value}")
 
-    port = f":{parsed.port}" if parsed.port and parsed.port != 443 else ""
+    default_port = 443 if parsed.scheme.lower() == "https" else 80
+    if parsed.port is not None and parsed.port != default_port:
+        raise ValueError("판매처 주소에 비표준 포트를 사용할 수 없습니다.")
     # 제휴 실적에 필요한 쿼리값과 순서를 훼손하지 않습니다.
-    normalized = urlunsplit(("https", host + port, parsed.path or "/", parsed.query, ""))
+    normalized = urlunsplit(("https", host, parsed.path or "/", parsed.query, ""))
     return normalized, merchant
 
 

@@ -108,7 +108,9 @@ class CollectorSmokeTests(unittest.TestCase):
         for field, value in [("checkedAt", ""), ("checkedAt", "2026-11-16T01:00:00Z"),
                              ("checkedAt", "2026-11-15T23:55:00"), ("shippingFee", -1),
                              ("price", "12만원"), ("price", 10000.9), ("price", "1e5"),
-                             ("officialUrl", "javascript:alert(1)")]:
+                             ("officialUrl", "javascript:alert(1)"),
+                             ("url", "https://www.coupang.com:8443/product"),
+                             ("url", "https://www.coupang.com/pro\nduct")]:
             with self.subTest(field=field, value=value):
                 self.write_input([{**self.rows[0], field: value}])
                 with self.assertRaises(ValueError):

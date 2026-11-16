@@ -40,7 +40,7 @@ const MERCHANT_RULES: MerchantRule[] = [
   },
 ];
 
-export type AffiliateResolutionMode = "converted" | "already-affiliate" | "passthrough";
+export type AffiliateResolutionMode = "already-affiliate" | "passthrough";
 
 export type AffiliateResolution = {
   merchant: Merchant;
@@ -72,14 +72,17 @@ export function isAffiliateHost(merchant: Merchant, hostname: string): boolean {
  * 제휴 시스템에 따라 쿼리 순서나 일반 추적값도 실적 귀속에 쓰일 수 있기 때문입니다.
  */
 export function normalizeOutboundUrl(raw: string): string | null {
+  const value = String(raw).trim();
+  if (/[\u0000-\u001f\u007f]/.test(value)) return null;
   let url: URL;
   try {
-    url = new URL(String(raw).trim());
+    url = new URL(value);
   } catch {
     return null;
   }
 
   if (url.protocol !== "http:" && url.protocol !== "https:") return null;
+  if (url.username || url.password || url.port) return null;
   if (!detectMerchant(url.hostname)) return null;
 
   url.protocol = "https:";
@@ -93,15 +96,15 @@ export function normalizeOutboundUrl(raw: string): string | null {
  * 클릭 시점에 최종 목적지를 결정합니다.
  *
  * - 이미 판매처의 공식 제휴/단축 호스트라면 링크를 훼손하지 않습니다.
- * - 검증된 변환 설정이 있는 판매처만 실제 제휴 파라미터를 적용합니다.
- * - 설정이 없는 판매처는 임의 파라미터를 붙이지 않고 원주소를 유지합니다.
+ * - 일반 상품 주소에 제휴 파라미터를 추측해서 붙이지 않습니다.
+ * - 공식 발급 주소를 등록해 사용하고 실제 귀속은 제휴처 리포트에서 확인합니다.
  */
 export function resolveAffiliateUrl(opts: {
   merchant: Merchant;
   originalUrl: string;
   code: string;
 }): AffiliateResolution | null {
-  const { merchant, originalUrl, code } = opts;
+  const { merchant, originalUrl } = opts;
   const normalized = normalizeOutboundUrl(originalUrl);
   if (!normalized) return null;
 
@@ -111,15 +114,6 @@ export function resolveAffiliateUrl(opts: {
 
   if (isAffiliateHost(merchant, url.hostname)) {
     return { merchant, url: url.toString(), mode: "already-affiliate" };
-  }
-
-  if (merchant === "coupang") {
-    const tag = process.env.COUPANG_LPTAG?.trim();
-    if (tag) {
-      url.searchParams.set("lptag", tag);
-      url.searchParams.set("subid", code);
-      return { merchant, url: url.toString(), mode: "converted" };
-    }
   }
 
   return { merchant, url: url.toString(), mode: "passthrough" };
