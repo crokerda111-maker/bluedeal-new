@@ -2,9 +2,11 @@ import Link from "next/link";
 import { labelByType } from "../lib/boardConfig";
 import { formatKoreanDate } from "../lib/postStorage";
 import type { Post } from "../lib/postTypes";
+import type { ReactNode } from "react";
 
-export default function MobilePostList({ posts, hrefPrefix, loading, emptyText, showVisibility = false }: {
+export default function MobilePostList({ posts, hrefPrefix, loading, emptyText, showVisibility = false, renderActions }: {
   posts: Post[]; hrefPrefix: string; loading: boolean; emptyText: string; showVisibility?: boolean;
+  renderActions?: (post: Post) => ReactNode;
 }) {
   return (
     <section className="bd-surface-md md:hidden" aria-label="게시글 목록" aria-busy={loading}>
@@ -24,6 +26,7 @@ export default function MobilePostList({ posts, hrefPrefix, loading, emptyText, 
                   <time dateTime={post.createdAt}>{formatKoreanDate(post.createdAt)} KST</time>
                 </div>
               </Link>
+              {renderActions ? <div className="px-4 pb-4">{renderActions(post)}</div> : null}
             </li>
           ))}
         </ul>}

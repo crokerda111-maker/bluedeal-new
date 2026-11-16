@@ -72,7 +72,7 @@ async function startApp(env = {}) {
 }
 
 async function mockKv() {
-  const controls = { unavailable: false, partial: false, malformed: false, truncated: false };
+  const controls = { unavailable: false, partial: false, malformed: false, truncated: false, slowHardware: false };
   const requests = [];
   const values = new Map();
   const sorted = new Map();
@@ -106,6 +106,10 @@ async function mockKv() {
       const parsed = JSON.parse(Buffer.concat(chunks).toString('utf8'));
       const commands = req.url === '/' ? [parsed] : parsed;
       requests.push({ method: req.method, url: req.url, commands });
+      if (controls.slowHardware && commands.some(item => item[0] === 'ZREVRANGE' && item[1] === 'bd:board:hardware:posts')) {
+        await delay(2000);
+        console.log('LOCAL_DELAYED_HARDWARE_COMPLETED');
+      }
       if (controls.unavailable || (controls.partial && JSON.stringify(commands).includes('bd:board:review:posts'))) {
         res.writeHead(503, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: 'PRIVATE_BACKEND_DIAGNOSTIC_DO_NOT_EXPOSE' }));
@@ -134,6 +138,31 @@ async function mockKv() {
   // A historical malformed private record must stay closed to anonymous users.
   values.set('bd:post:legacy-private', JSON.stringify({ id: 'legacy-private', boardKey: 'inquiry', type: 'general', title: 'Legacy private fixture', content: 'legacy secret', isPrivate: true, passwordHash: '', createdAt: new Date().toISOString() }));
   return { url: `http://127.0.0.1:${port}`, token, values, controls, requests };
+}
+
+async function previewProxy(upstream) {
+  const faults = { logout: false };
+  const target = new URL(upstream);
+  const server = http.createServer((req, res) => {
+    if (faults.logout && req.url.split('?')[0] === '/api/admin/logout') {
+      req.resume();
+      res.writeHead(503, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+      res.end(JSON.stringify({ error: 'LOCAL TEST logout service unavailable' }));
+      return;
+    }
+    // Preserve the browser's Host so the real same-origin guard is still exercised.
+    // The destination is fixed to this disposable app, independent of the request path.
+    const forwarded = http.request({ hostname: target.hostname, port: target.port, path: req.url, method: req.method, headers: req.headers }, response => {
+      res.writeHead(response.statusCode, response.headers);
+      response.pipe(res);
+    });
+    forwarded.on('error', () => { if (!res.headersSent) res.writeHead(502, { 'Content-Type': 'application/json' }); res.end('{"error":"LOCAL TEST upstream unavailable"}'); });
+    req.on('aborted', () => forwarded.destroy());
+    req.pipe(forwarded);
+  });
+  const port = await listen(server);
+  servers.add(server);
+  return { base: `http://127.0.0.1:${port}`, faults };
 }
 
 async function request(base, method, route, body, cookie) {
@@ -555,8 +584,9 @@ try {
   console.log(`\n${results.length - failures}/${results.length} checks passed.`);
   process.exitCode = failures ? 1 : 0;
   if (preview && !failures) {
-    console.log(`LOCAL_PREVIEW=${app.base}`);
-    console.log('Disposable fixtures only. Commands: offline / partial / online / stop (+ Enter). Ctrl+C also stops.');
+    const proxy = await previewProxy(app.base);
+    console.log(`LOCAL_PREVIEW=${proxy.base}`);
+    console.log('Disposable fixtures only. Commands: offline / partial / online / logout-fail / logout-ok / slow-hardware / normal-speed / stop (+ Enter). Ctrl+C also stops.');
     await new Promise(resolve => {
       process.stdin.setEncoding('utf8');
       process.stdin.on('data', input => {
@@ -567,6 +597,8 @@ try {
           kv.controls.partial = command === 'partial';
           console.log(`LOCAL_KV_MODE=${command}`);
         }
+        if (['logout-fail', 'logout-ok'].includes(command)) { proxy.faults.logout = command === 'logout-fail'; console.log(`LOCAL_LOGOUT_FAILURE=${proxy.faults.logout}`); }
+        if (['slow-hardware', 'normal-speed'].includes(command)) { kv.controls.slowHardware = command === 'slow-hardware'; console.log(`LOCAL_SLOW_HARDWARE=${kv.controls.slowHardware}`); }
       });
       process.stdin.resume();
     });
