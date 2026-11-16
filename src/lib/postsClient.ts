@@ -52,7 +52,7 @@ function throwApiError(res: Response, data: any) {
 export async function apiListPosts(boardKey: BoardKey, limit = 50): Promise<Post[]> {
   const res = await fetch(
     `/api/posts?boardKey=${encodeURIComponent(boardKey)}&limit=${encodeURIComponent(String(limit))}`,
-    { method: "GET" },
+    { method: "GET", cache: "no-store" },
   );
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);

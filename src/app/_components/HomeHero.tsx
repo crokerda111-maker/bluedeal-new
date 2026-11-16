@@ -139,14 +139,14 @@ export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt
           <div className="mt-6 rounded-2xl border border-white/10 bg-[#050816]/60 p-4">
             <div className="flex items-center justify-between">
               <div className="text-xs text-white/55">업데이트</div>
-              <Pill tone="cyan">PC 갱신</Pill>
+              <Pill tone="cyan">가격 확인</Pill>
             </div>
 
             <div className="mt-2 text-sm font-semibold leading-6">
               {itemCount > 0 ? `현재 등록 상품 ${itemCount}개` : "첫 가격 데이터 등록 준비 중"}
             </div>
 
-            <div className="mt-3 text-xs text-white/65">마지막 업데이트: {fmtKorean(updatedAt)}</div>
+            <div className="mt-3 text-xs text-white/65">최근 가격 확인: {fmtKorean(updatedAt)} KST</div>
 
             <div className="mt-3 space-y-1 text-xs text-white/65">
               <div>• 램, CPU, SSD, 그래픽카드, 메인보드, 쿨러</div>

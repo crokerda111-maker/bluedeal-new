@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
+import { postJson } from "../../../lib/postAccess";
 import type { BoardKey, Post, PostType } from "../../../lib/postTypes";
 import { getBoardByKey, getAllowedTypes, POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
 import { isAdminRequest } from "../../../lib/adminAuth";
@@ -9,7 +10,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 function json(data: any, init?: ResponseInit) {
-  return NextResponse.json(data, init);
+  return postJson(data, init);
 }
 
 function isValidPostType(t: any): t is PostType {

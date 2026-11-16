@@ -72,7 +72,7 @@ async function startApp(env = {}) {
 }
 
 async function mockKv() {
-  const controls = { unavailable: false };
+  const controls = { unavailable: false, partial: false };
   const values = new Map();
   const sorted = new Map();
   const token = randomBytes(24).toString('hex');
@@ -97,7 +97,7 @@ async function mockKv() {
   }
   const server = http.createServer(async (req, res) => {
     try {
-      if (controls.unavailable) {
+      if (controls.unavailable || (controls.partial && decodeURIComponent(req.url).includes('bd:board:review:posts'))) {
         res.writeHead(503, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: 'TEST ONLY unavailable KV' }));
         return;
@@ -190,6 +190,20 @@ try {
     } finally { kv.controls.unavailable = false; }
   });
 
+  await check('home distinguishes a storage outage from an empty hotdeal board', async () => {
+    kv.controls.unavailable = true;
+    try {
+      const response = await fetch(app.base);
+      assert.equal(response.status, 200);
+      const html = await response.text();
+      assert.match(html, /핫딜을 불러오지 못했습니다/);
+      assert.doesNotMatch(html, /아직 등록된 핫딜이 없습니다/);
+      assert.match(html, /최근 가격 확인/);
+    } finally { kv.controls.unavailable = false; }
+    const response = await fetch(app.base);
+    assert.match(await response.text(), /아직 등록된 핫딜이 없습니다/);
+  });
+
   await check('deployment version exposes only public release metadata without caching', async () => {
     const response = await api('GET', '/api/version');
     assert.equal(response.status, 200);
@@ -245,7 +259,7 @@ try {
     }
   });
   await check('dynamic page parameters resolve and invalid categories return 404', async () => {
-    for (const route of ['/prices/ram', '/deals/d1', '/community/hardware', '/community/hardware/write', '/it/write?type=pick', '/contact/write?from=prices&cat=ram']) {
+    for (const route of ['/prices/ram', '/community/hardware', '/community/hardware/write', '/it/write?type=pick', '/contact/write?from=prices&cat=ram']) {
       const response = await fetch(app.base + route, { signal: AbortSignal.timeout(10000) });
       assert.equal(response.status, 200, route);
       assert.match(response.headers.get('content-type'), /text\/html/);
@@ -257,6 +271,9 @@ try {
     const unknownRoute = await fetch(`${app.base}/no-such-page`);
     assert.equal(unknownRoute.status, 404);
     assert.match(await unknownRoute.text(), /다른 페이지 찾기/);
+    const sampleDeal = await fetch(`${app.base}/deals/d1`);
+    assert.equal(sampleDeal.status, 404);
+    assert.doesNotMatch(await sampleDeal.text(), /₩129,000|역대가 근처/);
   });
   await check('outbound routes redirect to allowed merchants without following the link', async () => {
     const response = await fetch(app.base + publicPosts[0].extra.dealLink, { redirect: 'manual' });
@@ -278,7 +295,10 @@ try {
     const response = await api('POST', '/api/posts', { boardKey: 'inquiry', type: 'general', title: 'LOCAL QA private inquiry', content: 'private fixture body', extra: { email: 'fixture@example.invalid' }, isPrivate: true, password: 'fixture-password' });
     assert.equal(response.status, 201);
     privateId = response.data.post.id;
-    const post = (await api('GET', '/api/posts?boardKey=inquiry')).data.posts.find(item => item.id === privateId);
+    const list = await api('GET', '/api/posts?boardKey=inquiry');
+    assert.match(list.headers.get('cache-control'), /private, no-store/);
+    assert.match(list.headers.get('vary'), /Cookie/);
+    const post = list.data.posts.find(item => item.id === privateId);
     assert.equal(post.content, '');
     assert.equal('extra' in post, false);
     assert.equal('passwordHash' in post, false);
@@ -380,10 +400,18 @@ try {
   process.exitCode = failures ? 1 : 0;
   if (preview && !failures) {
     console.log(`LOCAL_PREVIEW=${app.base}`);
-    console.log('Only disposable fixture data is shown. Type stop + Enter or Ctrl+C to stop both local servers.');
+    console.log('Disposable fixtures only. Commands: offline / partial / online / stop (+ Enter). Ctrl+C also stops.');
     await new Promise(resolve => {
       process.stdin.setEncoding('utf8');
-      process.stdin.on('data', input => { if (input.trim() === 'stop') resolve(); });
+      process.stdin.on('data', input => {
+        const command = input.trim();
+        if (command === 'stop') return resolve();
+        if (['offline', 'partial', 'online'].includes(command)) {
+          kv.controls.unavailable = command === 'offline';
+          kv.controls.partial = command === 'partial';
+          console.log(`LOCAL_KV_MODE=${command}`);
+        }
+      });
       process.stdin.resume();
     });
     process.stdin.pause();

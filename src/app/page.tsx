@@ -8,6 +8,7 @@ import type { Post } from "../lib/postTypes";
 import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from "../lib/site";
 
 export const metadata = pageMetadata("블루딜 | PC 부품 가격·핫딜·IT 커뮤니티", SITE_DESCRIPTION, "/");
+export const dynamic = "force-dynamic";
 
 function formatDate(value: string) {
   const date = new Date(value);
@@ -81,10 +82,10 @@ export default async function HomePage() {
   const [meta, priceResults, hotDeals] = await Promise.all([
     getMeta(),
     Promise.all(PRICE_CATEGORIES.map((category) => getPrices(category.key))),
-    listOnlinePostsByBoard("hotdeal", 4).catch(() => [] as Post[]),
+    listOnlinePostsByBoard("hotdeal", 4).catch(() => null as Post[] | null),
   ]);
   const itemCount = priceResults.reduce((sum, result) => sum + result.items.length, 0);
-  const deals = hotDeals.filter((post) => !post.isPrivate).slice(0, 4);
+  const deals = (hotDeals ?? []).filter((post) => !post.isPrivate).slice(0, 4);
 
   return (
     <div className="space-y-16 pb-6">
@@ -115,7 +116,8 @@ export default async function HomePage() {
           action="핫딜 게시판"
         />
         <div className="mt-5 grid gap-3">
-          {deals.length === 0 ? (
+          {hotDeals === null ? <p role="status" className="bd-surface-md p-5 text-sm text-amber-200">핫딜을 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.</p> : null}
+          {hotDeals !== null && deals.length === 0 ? (
             <div className="bd-surface-md p-5 text-sm text-white/45">아직 등록된 핫딜이 없습니다.</div>
           ) : null}
           {deals.map((deal) => (
