@@ -41,6 +41,21 @@ await check('release commit and version', async () => {
   assert.deepEqual(Object.keys(data).sort(), ['commit', 'service', 'version']);
   assert.match(response.headers.get('cache-control'), /no-store/);
 });
+await check('price snapshot release, privacy and cache policy', async () => {
+  const { response, text } = await read('/api/prices/status');
+  assert.equal(response.status, 200);
+  const data = JSON.parse(text);
+  assert.equal(data.service, 'BLUEDEAL');
+  assert.equal(data.schemaVersion, 1);
+  assert.match(data.snapshotHash, /^[a-f0-9]{64}$/);
+  if (expectedCommit) assert.equal(data.commit, expectedCommit);
+  assert.deepEqual(Object.keys(data).sort(), ['categories', 'commit', 'generatedAt', 'itemCount', 'schedule', 'schemaVersion', 'service', 'snapshotHash', 'updatedAt', 'version']);
+  assert.equal(data.categories.length, 8);
+  assert.equal(data.itemCount, data.categories.reduce((total, item) => total + item.itemCount, 0));
+  assert.doesNotMatch(text, /https?:|originalUrl|seller|token|password|secret/i);
+  assert.match(response.headers.get('cache-control'), /no-store/);
+  assert.match(response.headers.get('x-robots-tag'), /noindex/);
+});
 for (const route of ['/', '/about', '/prices', '/prices/ram', '/prices/ssd', '/it', '/community', '/community/hotdeal', '/contact', '/contact/write', '/admin']) {
   await check(`public page ${route}`, async () => {
     const { response, text } = await read(route);

@@ -214,6 +214,27 @@ try {
     assert.match(response.headers.get('cache-control'), /no-store/);
   });
 
+  await check('price snapshot status identifies its own release without URLs or private configuration', async () => {
+    const response = await api('GET', '/api/prices/status');
+    assert.equal(response.status, 200);
+    assert.equal(response.data.service, 'BLUEDEAL');
+    assert.equal(response.data.commit, fixtureCommit);
+    assert.equal(response.data.schemaVersion, 1);
+    assert.match(response.data.snapshotHash, /^[a-f0-9]{64}$/);
+    assert.match(response.headers.get('cache-control'), /no-store/);
+    assert.match(response.headers.get('x-robots-tag'), /noindex/);
+    assert.deepEqual(Object.keys(response.data).sort(), ['categories', 'commit', 'generatedAt', 'itemCount', 'schedule', 'schemaVersion', 'service', 'snapshotHash', 'updatedAt', 'version']);
+    const contract = JSON.parse(await readFile(path.join(root, 'src/content/priceSnapshot.schema.json'), 'utf8'));
+    let count = 0;
+    for (const [index, category] of contract.categories.entries()) {
+      const expected = JSON.parse(await readFile(path.join(root, `src/content/prices/${category}.json`), 'utf8'));
+      assert.deepEqual(response.data.categories[index], { category, itemCount: expected.items.length, updatedAt: expected.updatedAt });
+      count += expected.items.length;
+    }
+    assert.equal(response.data.itemCount, count);
+    assert.doesNotMatch(JSON.stringify(response.data), /https?:|originalUrl|seller|token|password|secret/i);
+  });
+
   await check('search discovery excludes administrator, inquiry and redirect endpoints', async () => {
     const robots = await (await fetch(`${app.base}/robots.txt`)).text();
     assert.match(robots, /Disallow: \/admin/);

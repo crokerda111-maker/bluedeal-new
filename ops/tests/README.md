@@ -22,6 +22,8 @@ npm run lint
 npm run test:boards
 npm run test:collector
 npm run test:post-client
+npm run test:snapshot
+npm run test:ops
 ```
 
 `test:boards`는 관리자 비밀번호/KV 미설정, 일반 글 작성·목록·상세, 비공개 문의 마스킹과 잠금, 관리자 수정·삭제·로그인·로그아웃을 검사합니다. 빈 비밀번호 해시, 비밀번호 없는 비공개 전환, 빈 비밀번호로 잠금 제거는 회귀 검사에 포함됩니다. 운영 Upstash의 실제 연결 상태를 증명하는 테스트는 아닙니다.
@@ -31,6 +33,10 @@ npm run test:post-client
 Next.js 16 업데이트 회귀 검사에는 동적 페이지·없는 가격 카테고리의 404, `/go`의 허용 판매처 리다이렉트와 허용되지 않은 호스트 차단, 블로그 API의 초안 비공개·관리자 수정·삭제도 포함합니다. 외부 구매 링크는 실제로 따라가지 않습니다.
 
 `test:collector`는 RAM 3개 생성, 안정적인 이동 코드와 추적값 보존, 잘못된 입력·누락 파일의 기존 결과 보존, dry-run의 무변경 동작을 검사합니다. 실제 상품 가격 확인과 판매처 제휴 귀속 검증은 별도입니다.
+
+`test:snapshot`은 Python/Node 가격 지문의 일치와 상품 옵션·가격·링크 변경 감지를 확인합니다. `test:ops`는 수집기와 원본 검증에 더해, 가상 응답을 이용한 배포 전환·가격 불일치·인증 보호 검사, 임시 로컬 Git 저장소에서 사용자 편집·브랜치·커밋 보존, 가격 전용 업로드와 업로드 후 검증 실패 기록을 확인합니다. 예약 실행 검사는 임시 폴더 안의 가상 게시 도구만 실행하며 실제 작업 스케줄러를 등록하거나 활성화하지 않습니다.
+
+예약 실행용 Windows 기본 PowerShell 5.1을 별도로 검사하려면 해당 테스트 프로세스에서 `BLUEDEAL_TEST_POWERSHELL`을 `%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe`의 실제 경로로 지정해 `test_publish.py`와 `test_price_task.py`를 실행합니다. 기본 검사는 설치된 `pwsh`를 사용합니다.
 
 화면을 확인하려면 대화형 PowerShell에서 다음 명령을 실행하고 출력된 `LOCAL_PREVIEW` 주소를 여세요.
 

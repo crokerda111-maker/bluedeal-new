@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "encoding": "typed-ieee754-v1",
+  "categories": ["cooler", "cpu", "fullpc", "gpu", "halfpc", "motherboard", "ram", "ssd"],
+  "itemFields": ["id", "name", "spec", "price", "low7d", "low30d", "change24hPct", "goCode", "source", "seller", "shippingFee", "shippingNote", "priceNote", "officialUrl", "capacityGB", "memoryType", "moduleCapacityGB", "moduleCount", "ssdDram", "availability", "checkedAt", "updatedAt"]
+}

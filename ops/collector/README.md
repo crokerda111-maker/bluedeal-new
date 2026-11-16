@@ -8,8 +8,8 @@ VPS 없이 Windows PC에서 가격 데이터를 만들고 GitHub/Vercel로 배�
 2. 후보 상품의 실제 판매처 가격·조건·확인 시각과 원본 판매처 주소를 `products.csv`에 입력합니다. 공식 발급 제휴 주소는 원본을 바꾸지 않고 서버의 `AFFILIATE_LINKS_JSON`에 따로 연결합니다(`ops/ENV_MAP.md` 참고).
 3. `build_prices.py`가 URL 허용 목록을 검사하고 안정적인 `/go/{code}`를 생성합니다.
 4. 공개 가격 파일에는 원본 URL 대신 `goCode`만 저장합니다.
-5. `publish_prices.ps1 -Publish`가 변경 파일만 GitHub에 올립니다.
-6. GitHub와 연결된 Vercel이 홈페이지를 다시 배포합니다.
+5. `publish_prices.ps1 -Publish`가 가격 파일만 빌드·커밋해 GitHub에 올립니다.
+6. GitHub와 연결된 Vercel이 홈페이지를 다시 배포합니다. 게시 도구는 운영 커밋과 가격 스냅샷이 일치할 때까지 확인한 뒤 성공으로 기록합니다.
 
 ## 준비
 
@@ -60,19 +60,19 @@ python .\ops\collector\build_prices.py --dry-run
 파일 생성만:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\ops\collector\publish_prices.ps1
+powershell -NoProfile -File .\ops\collector\publish_prices.ps1
 ```
 
 GitHub 업로드와 Vercel 배포까지:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\ops\collector\publish_prices.ps1 -Publish
+powershell -NoProfile -File .\ops\collector\publish_prices.ps1 -Publish
 ```
 
 다나와에서 후보 목록만 수집하려면:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\ops\collector\publish_prices.ps1 -CollectDanawa
+powershell -NoProfile -File .\ops\collector\publish_prices.ps1 -CollectDanawa
 ```
 
 결과는 비공개 파일 `ops/collector/input/danawa-candidates.csv`에 저장됩니다. 이 파일의 상품을 보고 실제 판매처 가격과 원본 상품 주소를 `products.csv`에 입력해야 합니다. 공식 발급 제휴 주소는 별도로 연결합니다. `-CollectDanawa -Publish` 동시 실행은 다나와 주소가 실수로 구매 버튼에 들어가지 않도록 차단됩니다.
@@ -122,13 +122,26 @@ python ops/collector/ingest_snapshot.py
 
 빌드 중 편집기에서 가격 외 소스를 저장하거나 새 파일을 만들었으면 스테이징 전에 다시 감지해 배포를 중단합니다. 생성된 가격과 사용자 변경은 로컬에 남겨 검토할 수 있습니다.
 
+원본 확인·빌드 중 커밋이나 브랜치가 바뀌어도 중단합니다. 전체 게시 과정은 프로세스 단독 잠금을 사용합니다. Git 인증은 비대화형으로 사전 확인하고, 실행 뒤 기존 환경변수를 복원합니다. 변경 없는 입력도 현재 운영 배포를 확인합니다.
+
+`/api/prices/status`는 배포 커밋·버전·상품 수·확인 시각·공개 데이터의 SHA-256 지문만 반환합니다. 상품 옵션·가격·판매자·배송 조건과 원본 이동 주소를 지문에 포함하되, 원본 URL·제휴 설정·계정·피드 값은 응답에 싣지 않습니다. `verify_deployment.py`는 작업 폴더의 최신 편집 내용 대신 지정한 커밋의 Git 원본과 비교합니다. 서로 다른 요청이 배포 전환 중 다른 커밋에 도착하는 경우에도 같은 커밋으로 확인되기 전에는 성공하지 않습니다.
+
+```powershell
+python ops/collector/verify_deployment.py --commit 실제_40자리_커밋
+powershell -NoProfile -File ops/collector/publish_prices.ps1 -FromFeed -ValidateOnly
+```
+
+운영 확인은 최대 10분입니다. 인증 보호 응답은 우회하지 않습니다. 업로드가 끝났으나 운영 확인이 실패하면 `uploaded-unverified`로 남기며, 자동 재게시·되돌리기는 하지 않습니다. `state/last-publish.json`, `state/last-successful-publish.json`, `state/last-deployment-check.json`에서 원본 검증·업로드·운영 검증을 구분해 확인합니다. 이 기록은 Git에서 제외하며 원본 피드 URL·토큰·응답 본문을 포함하지 않습니다.
+
 ## 09:00 / 17:00 예약 실행 준비
 
 실제 승인된 가격 원본과 Git 인증을 확인하기 전에는 예약 작업을 활성화하지 않습니다. 현재 예약 작업은 등록하지 않았습니다.
 
 1. 승인된 원본이 위 CSV/JSON 구조를 제공하도록 실제 공급자 연동을 완료합니다. 확인 시각을 생성 시각으로 바꾸면 안 됩니다.
 2. `price-feed.example.json`을 참고해 `ops/private/price-feed.local.json`에 실제 HTTPS URL과 선택적인 bearer token을 보관합니다. 파일 권한을 사용자 전용으로 제한하고 비밀값을 Git·채팅에 올리지 마세요.
-3. `run_scheduled_prices.ps1 -ValidateOnly`로 실제 원본을 검증합니다. 리다이렉트·로그인 HTML·누락·통화·모델·오래된 데이터 오류는 거부합니다. URL·토큰·응답 본문은 오류 로그에 출력하지 않습니다.
-4. `register_price_task.ps1`은 계획만 표시합니다. `-Install`은 비활성 상태로 등록하고, `-Install -Enable`은 실제 원본 검증을 통과한 경우에만 활성 등록합니다. 기존 동일 작업을 덮어쓰지 않습니다.
-5. 한국 표준시 PC에서 현재 사용자로 09:00/17:00 실행합니다. 로그인·네트워크·Python·Node·Git 인증이 필요합니다. PC가 꺼져 있거나 절전 상태면 실행되지 않으며 정확한 시각의 배포 완료를 보장하지 않습니다.
-6. 활성화 후 첫 실제 실행에서 입력→생성→GitHub→Vercel READY→운영 커밋·가격 확인까지 검증해야 완료입니다. 현재는 원본 연결 전 준비 단계입니다.
+3. `run_scheduled_prices.ps1 -ValidateOnly`로 Git 인증과 실제 원본을 검증합니다. 리다이렉트·로그인 HTML·누락·통화·모델·오래된 데이터 오류는 거부합니다. URL·토큰·응답 본문은 오류 로그에 출력하지 않습니다.
+4. 같은 실제 피드로 `run_scheduled_prices.ps1`을 직접 한 번 실행해 GitHub 업로드와 운영 커밋·가격 일치까지 완료해야 합니다. 수동 CSV 게시 성공이나 dry-run만으로는 활성화할 수 없습니다. 성공한 피드 실행이 현재 HEAD와 일치하고 26시간 이내여야 합니다.
+5. `register_price_task.ps1`은 계획만 표시합니다. `-Install`은 비활성 등록, `-Install -Enable`은 위 실배포 이력과 최신 사전 검증을 모두 통과했을 때 활성 등록합니다. 기존 동일 작업을 덮어쓰지 않습니다.
+6. 등록 시 설치된 Node·npm.cmd·Python·Git과 Windows 기본 PowerShell의 절대 경로를 비공개 `ops/private/task-runtime.local.json`에 기록합니다. Codex 버전에 종속된 WindowsApps 실행 파일이나 Windows 앱 별칭을 예약 작업 경로로 사용하지 않습니다. 기존 경로 설정은 자동 덮어쓰지 않으며 실행 파일이 없어지면 중단합니다. PC의 실행 정책도 변경하지 않습니다.
+7. 한국 표준시 PC에서 현재 사용자로 09:00/17:00 실행합니다. 로그인·네트워크·Python·Node·Git 인증이 필요합니다. PC가 꺼져 있거나 절전 상태면 실행되지 않으며 정확한 시각의 배포 완료를 보장하지 않습니다. 숨김 창·일반 사용자 권한으로 실행하며 중복 실행을 건너뜁니다.
+8. 활성화 후 첫 실제 예약 실행에서 입력→생성→GitHub→Vercel READY→운영 커밋·가격 확인까지 검증해야 완료입니다. 예약 실행 기록은 `state/last-scheduled-run.json`입니다. 현재는 원본 연결 전 준비 단계입니다.
