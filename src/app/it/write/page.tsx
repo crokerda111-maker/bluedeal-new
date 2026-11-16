@@ -25,6 +25,8 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
       {def.type === "textarea" ? (
         <textarea
           id={id}
+          required={def.required}
+          aria-describedby={def.help ? `${id}_help` : undefined}
           rows={4}
           className={base}
           value={value}
@@ -32,7 +34,7 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
           placeholder={def.placeholder}
         />
       ) : def.type === "select" ? (
-        <select id={id} className={base} value={value} onChange={(e) => onChange(e.target.value)}>
+        <select id={id} required={def.required} aria-describedby={def.help ? `${id}_help` : undefined} className={base} value={value} onChange={(e) => onChange(e.target.value)}>
           <option value="" style={optionStyle}>
             선택
           </option>
@@ -45,6 +47,8 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
       ) : (
         <input
           id={id}
+          required={def.required}
+          aria-describedby={def.help ? `${id}_help` : undefined}
           type={def.type === "number" ? "number" : def.type === "url" ? "url" : "text"}
           className={base}
           value={value}
@@ -53,7 +57,7 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
         />
       )}
 
-      {def.help ? <div className="mt-1 text-[12px] text-white/50">{def.help}</div> : null}
+      {def.help ? <div id={`${id}_help`} className="mt-1 text-[12px] text-white/50">{def.help}</div> : null}
     </label>
   );
 }
@@ -94,12 +98,13 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
   };
 
   const onSubmit = async () => {
+    if (saving) return;
     setError(null);
     if (!title.trim()) return setError("제목을 입력하세요.");
     if (!content.trim()) return setError("내용을 입력하세요.");
 
     for (const k of requiredExtraKeys) {
-      if (!String(extra[k] ?? "").trim()) return setError(`'${k}' 항목을 입력/선택하세요.`);
+      if (!String(extra[k] ?? "").trim()) return setError(`${IT_BOARD.extraFields?.find((field) => field.key === k)?.label ?? "필수 항목"}을 입력하거나 선택하세요.`);
     }
 
     setSaving(true);
@@ -122,8 +127,8 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
       });
 
       router.push(`/it/${post.id}`);
-    } catch (e: any) {
-      setError(typeof e?.message === "string" ? e.message : "저장 중 오류가 발생했습니다.");
+    } catch {
+      setError("저장하지 못했습니다. 입력한 내용은 유지됩니다. 잠시 후 다시 시도해 주세요.");
     } finally {
       setSaving(false);
     }
@@ -141,7 +146,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
         </Link>
       </div>
 
-      <section className="bd-surface-md p-6">
+      <form className="bd-surface-md p-4 sm:p-6" aria-busy={saving} onSubmit={(event) => { event.preventDefault(); void onSubmit(); }}>
         {IT_BOARD.writeHint ? <div className="mb-4 text-sm text-white/70">{IT_BOARD.writeHint}</div> : null}
 
         <div className="grid gap-4">
@@ -164,12 +169,13 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
             </button>
           </div>
 
-          <div>
-            <div className="text-sm text-white/80">분류</div>
+          <fieldset>
+            <legend className="text-sm text-white/80">분류</legend>
             <div className="mt-2 flex flex-wrap gap-2">
               <button
                 type="button"
                 onClick={() => setType("news")}
+                aria-pressed={type === "news"}
                 className={`rounded-full border px-3 py-1.5 text-sm ${
                   type === "news"
                     ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100"
@@ -182,6 +188,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
                 <button
                   type="button"
                   onClick={() => setType("pick")}
+                  aria-pressed={type === "pick"}
                   className={`rounded-full border px-3 py-1.5 text-sm ${
                     type === "pick"
                       ? "border-amber-300/50 bg-amber-300/15 text-amber-100"
@@ -193,12 +200,13 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
               ) : null}
             </div>
             {!isAdmin ? <div className="mt-1 text-[12px] text-white/45">곰선생 추천픽은 관리자 로그인 후 작성할 수 있습니다.</div> : null}
-          </div>
+          </fieldset>
 
           {/* 제목 */}
           <label className="block">
             <div className="text-sm text-white/80">제목</div>
             <input
+              required
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -218,6 +226,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
           <label className="block">
             <div className="text-sm text-white/80">내용</div>
             <textarea
+              required
               rows={10}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
               value={content}
@@ -226,11 +235,11 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
             />
           </label>
 
-          {error ? <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
+          {error ? <div role="alert" className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">{error}</div> : null}
 
           <div className="flex items-center gap-2">
             <button
-              onClick={onSubmit}
+              type="submit"
               disabled={saving}
               className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 disabled:opacity-60"
             >
@@ -245,7 +254,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
             </Link>
           </div>
         </div>
-      </section>
+      </form>
     </div>
   );
 }
