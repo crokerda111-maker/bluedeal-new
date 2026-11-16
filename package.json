@@ -1,6 +1,6 @@
 {
   "name": "bluedeal-mvp",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,6 +12,7 @@
     "test:prices": "node --experimental-strip-types --test ops/tests/price-data.mjs",
     "test:affiliate": "node --experimental-strip-types --test ops/tests/affiliate.mjs",
     "test:post-client": "node --experimental-strip-types --test ops/tests/post-client.mjs",
+    "test:profile": "node --experimental-strip-types --test ops/tests/profile.mjs",
     "test:dates": "node --experimental-strip-types --test ops/tests/date-format.mjs",
     "test:snapshot": "node --experimental-strip-types --test ops/tests/price-snapshot.mjs",
     "test:collector": "python -m unittest discover -s ops/tests -p test_collector.py",

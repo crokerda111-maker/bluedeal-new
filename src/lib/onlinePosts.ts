@@ -210,7 +210,7 @@ export async function listOnlinePostsByBoard(boardKey: BoardKey, limit = 50): Pr
   const b = getBoardByKey(boardKey);
   if (!b) throw new Error("Invalid boardKey");
 
-  const safeLimit = Math.max(1, Math.min(200, Number.isFinite(limit) ? limit : 50));
+  const safeLimit = Math.max(1, Math.min(200, Number.isFinite(limit) ? Math.floor(limit) : 50));
 
   const ids = await kvCommand<string[]>("ZREVRANGE", boardZsetKey(boardKey), 0, safeLimit - 1);
   if (!Array.isArray(ids) || ids.length === 0) return [];

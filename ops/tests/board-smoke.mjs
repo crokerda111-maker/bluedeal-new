@@ -92,7 +92,10 @@ async function mockKv() {
         entries.set(args[2], Number(value)); sorted.set(key, entries); return Number(!exists);
       }
       case 'ZREM': return Number(sorted.get(key)?.delete(value) ?? false);
-      case 'ZREVRANGE': return [...(sorted.get(key) ?? new Map())].sort((a, b) => b[1] - a[1]).slice(Number(value), Number(args[2]) + 1).map(([id]) => id);
+      case 'ZREVRANGE': {
+        if (!Number.isInteger(Number(value)) || !Number.isInteger(Number(args[2]))) throw new Error('Redis range indexes must be integers');
+        return [...(sorted.get(key) ?? new Map())].sort((a, b) => b[1] - a[1]).slice(Number(value), Number(args[2]) + 1).map(([id]) => id);
+      }
       default: throw new Error(`Unexpected test KV command: ${name}`);
     }
   }
@@ -383,6 +386,17 @@ try {
       assert.match(post.content, /\/go\/[A-Za-z0-9_-]+/);
       assert.ok((await api('GET', `/api/posts?boardKey=${boardKey}`)).data.posts.some(item => item.id === post.id));
       assert.equal((await api('GET', `/api/posts/${post.id}`)).data.post.title, post.title);
+    }
+  });
+  await check('fractional and invalid list limits always produce bounded integer storage ranges', async () => {
+    for (const [limit, expectedEnd] of [['1.5', 0], ['0.5', 0], ['0', 0], ['-5', 0], ['NaN', 49], ['Infinity', 49], ['1e100', 199]]) {
+      const before = kv.requests.length;
+      const response = await api('GET', `/api/posts?boardKey=hardware&limit=${limit}`);
+      assert.equal(response.status, 200);
+      assert.ok(response.data.posts.length > 0);
+      const range = kv.requests.slice(before).flatMap(item => item.commands).find(command => command[0] === 'ZREVRANGE');
+      assert.equal(range[2], 0);
+      assert.equal(range[3], expectedEnd);
     }
   });
   await check('dynamic page parameters resolve and invalid categories return 404', async () => {
