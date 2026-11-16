@@ -126,6 +126,86 @@
       "seller": "게이밍컴퓨터",
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4901239851",
       "capacityGB": 32
+    },
+    {
+      "category": "ram",
+      "id": "agi-turbojet-ud858-rgb-black-6000-cl30-48gb",
+      "seller": "(주)서린씨앤아이",
+      "memoryType": "DDR5",
+      "capacityGB": 48,
+      "moduleCapacityGB": 24,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4671770491"
+    },
+    {
+      "category": "ram",
+      "id": "klevv-urbane-v-rgb-6000-cl30-48gb",
+      "seller": "공식판매점o",
+      "memoryType": "DDR5",
+      "capacityGB": 48,
+      "moduleCapacityGB": 24,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4866710039"
+    },
+    {
+      "category": "ram",
+      "id": "klevv-cras-v-rgb-white-6400-cl32-48gb",
+      "seller": "(주)서린씨앤아이",
+      "memoryType": "DDR5",
+      "capacityGB": 48,
+      "moduleCapacityGB": 24,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4491405905"
+    },
+    {
+      "category": "ram",
+      "id": "biwin-dw100-rgb-black-6000-cl28-48gb",
+      "seller": "여운스토어G",
+      "memoryType": "DDR5",
+      "capacityGB": 48,
+      "moduleCapacityGB": 24,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4764113762"
+    },
+    {
+      "category": "ram",
+      "id": "klevv-cras-v-rgb-white-6000-cl30-32gb",
+      "seller": "(주)서린씨앤아이",
+      "memoryType": "DDR5",
+      "capacityGB": 32,
+      "moduleCapacityGB": 16,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=3517254963"
+    },
+    {
+      "category": "ram",
+      "id": "klevv-cras-v-rgb-black-6000-cl30-32gb",
+      "seller": "(주)서린씨앤아이",
+      "memoryType": "DDR5",
+      "capacityGB": 32,
+      "moduleCapacityGB": 16,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=3517255256"
+    },
+    {
+      "category": "ram",
+      "id": "agi-turbojet-ud858-rgb-white-6000-cl30-32gb",
+      "seller": "(주)서린씨앤아이",
+      "memoryType": "DDR5",
+      "capacityGB": 32,
+      "moduleCapacityGB": 16,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4747743007"
+    },
+    {
+      "category": "ram",
+      "id": "klevv-urbane-v-rgb-6000-cl30-32gb",
+      "seller": "(주)서린씨앤아이",
+      "memoryType": "DDR5",
+      "capacityGB": 32,
+      "moduleCapacityGB": 16,
+      "moduleCount": 2,
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4245880636"
     }
   ]
 }
