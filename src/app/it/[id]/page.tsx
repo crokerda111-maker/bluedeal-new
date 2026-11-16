@@ -91,7 +91,7 @@ function ITPost({ postId }: { postId: string }) {
 
   if (loading && !post) {
     return (
-      <div className="bd-surface-md p-6">
+      <div className="bd-surface-md p-6" role="status" aria-live="polite">
         <div className="text-lg font-semibold">불러오는 중...</div>
         <div className="mt-2 text-sm text-white/70">게시글을 불러오고 있습니다.</div>
         <Link className="mt-4 inline-block text-sm text-cyan-200 hover:underline" href="/it">

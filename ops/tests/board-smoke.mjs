@@ -253,7 +253,10 @@ try {
     }
     const missing = await fetch(`${app.base}/prices/no-such-category`);
     assert.equal(missing.status, 404);
-    await missing.text();
+    assert.match(await missing.text(), /페이지를 찾을 수 없습니다/);
+    const unknownRoute = await fetch(`${app.base}/no-such-page`);
+    assert.equal(unknownRoute.status, 404);
+    assert.match(await unknownRoute.text(), /다른 페이지 찾기/);
   });
   await check('outbound routes redirect to allowed merchants without following the link', async () => {
     const response = await fetch(app.base + publicPosts[0].extra.dealLink, { redirect: 'manual' });

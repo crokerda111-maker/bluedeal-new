@@ -22,6 +22,7 @@ npm run lint
 npm run typecheck
 npm run test:prices
 npm run test:affiliate
+npm run test:post-client
 npm run test:collector
 npm run build
 npm run test:boards
