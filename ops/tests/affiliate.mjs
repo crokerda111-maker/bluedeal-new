@@ -54,6 +54,33 @@ test('verified mappings change only the destination, preserving canonical produc
   });
 });
 
+const directIssued=(originalUrl=source,merchant='gmarket')=>'https://click.linkprice.com/click.php?m='+merchant+'&a=A000000000&l=9999&l_cd1=TEST_ONLY&l_cd2=0&tu='+encodeURIComponent(originalUrl);
+
+test('official LinkPrice long links preserve issued tracking and require the exact registered product and merchant',()=>{
+  for(const [merchant,originalUrl] of [['gmarket',source],['11st','https://www.11st.co.kr/products/FIXTURE001']]){
+    const affiliateUrl=directIssued(originalUrl,merchant);
+    withMappings([{merchant,provider:'linkprice',originalUrl,affiliateUrl}],()=>{
+      assert.deepEqual(resolve(originalUrl,merchant),{merchant,url:affiliateUrl,mode:'registered-affiliate'});
+      assert.equal(normalizeOutboundUrl(affiliateUrl),null);
+    });
+  }
+});
+
+test('long LinkPrice links reject substituted products, ambiguous parameters and unapproved endpoints',()=>{
+  const valid=directIssued();
+  const badTargets=[
+    directIssued(source.replace('FIXTURE001','FIXTURE002')),
+    directIssued('https://www.11st.co.kr/products/FIXTURE001'),
+    directIssued(source,'11st'),
+    valid+'&tu='+encodeURIComponent(source),valid+'&m=gmarket',valid+'&a=TEST_OTHER',
+    valid+'&redirect=https://evil.invalid',valid.replace('click.linkprice.com','click.linkprice.com.evil.invalid'),
+    valid.replace('/click.php','/other.php'),valid.replace('https:','http:'),
+    valid.replace('https://','https://u:p@'),valid.replace('.com/','.com:8443/'),valid+'#fragment',
+    valid.replace('a=A000000000','a='),valid.replace(encodeURIComponent(source),encodeURIComponent(encodeURIComponent(source))),
+  ];
+  for(const affiliateUrl of badTargets)withMappings([{...issued,affiliateUrl}],()=>assert.equal(resolve().mode,'passthrough'));
+});
+
 test('invalid, duplicate and unrelated issued targets fall back safely to the original merchant',()=>{
   const badTargets=['https://app.ac.evil.invalid/FIXTURE01','https://evilapp.ac/FIXTURE01',
     'http://app.ac/FIXTURE01','https://u:p@app.ac/FIXTURE01','https://app.ac:8443/FIXTURE01',

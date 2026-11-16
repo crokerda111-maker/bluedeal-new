@@ -233,21 +233,23 @@ try {
     const price = JSON.parse(await readFile(path.join(root, 'src/content/prices/ram.json'), 'utf8')).items[0];
     const outbound = generatedLinks[price.goCode];
     assert.equal(outbound.merchant, 'gmarket');
-    const affiliateUrl = 'https://app.ac/testAffiliate000';
-    const testApp = await startApp({ AFFILIATE_LINKS_JSON: JSON.stringify([{ merchant: 'gmarket', provider: 'linkprice', originalUrl: outbound.originalUrl, affiliateUrl }]) });
-    try {
+    for (const affiliateUrl of ['https://app.ac/testAffiliate000', 'https://click.linkprice.com/click.php?m=gmarket&a=A000000000&l=9999&l_cd1=TEST_ONLY&l_cd2=0&tu=' + encodeURIComponent(outbound.originalUrl)]) {
+      const testApp = await startApp({ AFFILIATE_LINKS_JSON: JSON.stringify([{ merchant: 'gmarket', provider: 'linkprice', originalUrl: outbound.originalUrl, affiliateUrl }]) });
+      try {
       const html = await (await fetch(testApp.base + '/prices/ram')).text();
       assert.ok(html.indexOf(disclosure) >= 0 && html.indexOf(disclosure) < html.indexOf('판매처 보기 ↗'));
       assert.ok(html.includes('rel="sponsored noopener noreferrer"'));
       assert.ok(html.includes('제휴 링크') && html.includes('일반 링크'));
       assert.equal(html.includes('testAffiliate000'), false);
+      assert.equal(html.includes('A000000000'), false);
       const redirect = await fetch(testApp.base + '/go/' + price.goCode, { redirect: 'manual' });
       assert.equal(redirect.status, 302);
       assert.equal(redirect.headers.get('location'), affiliateUrl);
       const cpu = await (await fetch(testApp.base + '/prices/cpu')).text();
       assert.ok(cpu.includes('이 페이지의 판매처 링크는 일반 링크입니다.'));
       assert.equal(cpu.includes(disclosure), false);
-    } finally { await stopChild(testApp.child); }
+      } finally { await stopChild(testApp.child); }
+    }
   });
   await check('browser security headers cover pages, administrator, API, static content and errors', async () => {
     for (const route of ['/', '/admin', '/api/admin/status', '/icon.svg', '/no-such-verification-page']) {

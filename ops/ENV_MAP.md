@@ -14,7 +14,7 @@
 
 쿠팡 등 제휴 링크는 공식 계정에서 발급한 완성된 주소를 등록합니다. 일반 상품 주소에 임의 태그를 붙여 수익 귀속이 보장된 것으로 처리하지 않습니다. `COUPANG_LPTAG`는 사용하지 않습니다.
 
-공식 링크 발급·목적지 확인 후 `AFFILIATE_LINKS_JSON`에 `[{"merchant":"gmarket","provider":"linkprice","originalUrl":"https://item.gmarket.co.kr/Item?goodsCode=EXAMPLE","affiliateUrl":"https://app.ac/EXAMPLE01"}]` 형식으로 등록합니다(예시 주소는 작동하지 않음). 쿠팡·알리는 `provider`도 각각 `coupang`·`aliexpress`로 쓰고 각 서비스의 공식 제휴 호스트만 허용합니다. 링크프라이스는 G마켓·11번가의 검증한 `app.ac` 단축 주소만 지원합니다. 공유 단축 호스트를 사용자 입력 허용 목록에 추가하지 않습니다.
+공식 링크 발급·목적지 확인 후 `AFFILIATE_LINKS_JSON`에 `[{"merchant":"gmarket","provider":"linkprice","originalUrl":"https://item.gmarket.co.kr/Item?goodsCode=EXAMPLE","affiliateUrl":"https://app.ac/EXAMPLE01"}]` 형식으로 등록합니다(예시 주소는 작동하지 않음). 쿠팡·알리는 `provider`도 각각 `coupang`·`aliexpress`로 쓰고 각 서비스의 공식 제휴 호스트만 허용합니다. 링크프라이스는 G마켓·11번가의 검증한 `app.ac` 단축 주소와 `click.linkprice.com/click.php` 발급 주소를 지원합니다. 긴 주소는 `m` 광고주와 `tu` 원본 상품이 매핑과 일치하고 매개변수가 중복되지 않아야 합니다. 현재 확인한 `m,a,l,l_cd1,l_cd2,tu` 외의 매개변수·다른 경로는 거부하며 발급 추적값과 순서를 보존합니다. 공유 제휴 호스트는 사용자 입력 허용 목록에 추가하지 않습니다. 주소 형식 지원과 광고주의 상품별 실적 인정은 별개이므로 제외 카테고리·등록 사이트 조건을 발급 전에 확인하세요.
 
 원본 CSV·가격·확인 시각·가격 이력·기존 `/go` 코드는 변경하지 않습니다. 설정이 없거나 잘못됐거나 같은 원본이 중복되면 기존 판매처 주소로 이동합니다. 제휴 고지는 구매 버튼보다 먼저 표시합니다. 리디렉션 검증은 상품 도착 확인이며 실제 매출 귀속은 각 제휴처 리포트에서 별도로 확인해야 합니다. 새 API 키 발급은 단순 링크 발급과 별개의 작업입니다.
 
