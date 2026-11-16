@@ -5,8 +5,7 @@ import { usePathname } from "next/navigation";
 import { useId, useMemo, useRef, useState } from "react";
 import { COMMUNITY_BOARDS } from "../../lib/boardConfig";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
-import { setNickname } from "../../lib/profile";
-import { useNickname } from "../../lib/useNickname";
+import NicknameEditor from "../../components/NicknameEditor";
 
 function cn(...v: Array<string | false | null | undefined>) {
   return v.filter(Boolean).join(" ");
@@ -107,17 +106,10 @@ function DropItem({ href, children }: { href: string; children: React.ReactNode 
 }
 
 export default function SiteHeader() {
-  const nickname = useNickname();
   const pathname = usePathname();
 
   const communityItems = useMemo(() => COMMUNITY_BOARDS, []);
   const priceItems = useMemo(() => PRICE_CATEGORIES, []);
-
-  const setNicknamePrompt = () => {
-    const next = prompt("닉네임을 입력하세요 (최대 20자)", nickname === "게스트" ? "" : nickname);
-    if (!next) return;
-    setNickname(next);
-  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#060B1A]/70 backdrop-blur">
@@ -175,19 +167,7 @@ export default function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={setNicknamePrompt}
-              className={cn(
-                "inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 hover:bg-white/10",
-              )}
-              type="button"
-              title="닉네임 설정"
-              aria-label={`닉네임 설정, 현재 ${nickname}`}
-            >
-              <span className="inline-block h-2.5 w-2.5 rounded-full bg-cyan-300/80" />
-              <span className="max-w-[72px] truncate sm:max-w-[120px]">{nickname}</span>
-              <span className="hidden text-white/70 sm:inline">설정</span>
-            </button>
+            <NicknameEditor header />
           </div>
         </div>
 

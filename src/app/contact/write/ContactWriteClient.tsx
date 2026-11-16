@@ -7,7 +7,7 @@ import { POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
 import type { InquiryVisibility, PostType } from "../../../lib/postTypes";
 import { apiCreatePost, postErrorMessage } from "../../../lib/postsClient";
 import { POST_LIMITS } from "../../../lib/postInput";
-import { setNickname } from "../../../lib/profile";
+import NicknameEditor from "../../../components/NicknameEditor";
 import { useNickname } from "../../../lib/useNickname";
 
 function cn(...v: Array<string | false | null | undefined>) {
@@ -42,12 +42,6 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
   useEffect(() => {
     if (submitted) receiptHeading.current?.focus();
   }, [submitted]);
-
-  const changeNick = () => {
-    const next = prompt("닉네임을 입력하세요 (최대 20자)", authorName === "게스트" ? "" : authorName);
-    if (!next) return;
-    setNickname(next);
-  };
 
   const effectiveVis: InquiryVisibility = fromPrices ? "private" : visibility;
 
@@ -140,13 +134,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
                 className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 outline-none"
               />
             </label>
-            <button
-              onClick={changeNick}
-              className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-              type="button"
-            >
-              닉네임 변경
-            </button>
+            <NicknameEditor />
           </div>
 
           {/* 공개/비공개 */}

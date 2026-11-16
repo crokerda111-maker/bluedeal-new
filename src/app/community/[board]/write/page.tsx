@@ -11,7 +11,7 @@ import {
 import type { PostExtra, PostType } from "../../../../lib/postTypes";
 import { apiCreatePost, postErrorMessage } from "../../../../lib/postsClient";
 import { POST_LIMITS } from "../../../../lib/postInput";
-import { setNickname } from "../../../../lib/profile";
+import NicknameEditor from "../../../../components/NicknameEditor";
 import { useNickname } from "../../../../lib/useNickname";
 
 function Field({ def, value, onChange }: { def: FieldDef; value: string; onChange: (v: string) => void }) {
@@ -91,12 +91,6 @@ function CommunityWrite({ boardSlug }: { boardSlug: string }) {
     return (board?.extraFields ?? []).filter((f) => f.required).map((f) => f.key);
   }, [board]);
 
-  const changeNick = () => {
-    const next = prompt("닉네임을 입력하세요 (최대 20자)", authorName === "게스트" ? "" : authorName);
-    if (!next) return;
-    setNickname(next);
-  };
-
   if (!board) {
     return (
       <div className="bd-surface-md p-6">
@@ -171,13 +165,7 @@ function CommunityWrite({ boardSlug }: { boardSlug: string }) {
                 className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 outline-none"
               />
             </label>
-            <button
-              onClick={changeNick}
-              className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-              type="button"
-            >
-              닉네임 변경
-            </button>
+            <NicknameEditor />
           </div>
 
           {/* 말머리 */}
