@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
-import { getMeta } from "../../lib/prices";
+import { getMeta, getPrices } from "../../lib/prices";
 import { pageMetadata } from "../../lib/site";
 
 export const metadata = pageMetadata("PC 부품 가격현황 | BLUEDEAL", "확인한 PC 부품의 상품가, 배송 조건과 가격 확인 시각을 비교하세요.", "/prices");
@@ -8,12 +8,17 @@ export const metadata = pageMetadata("PC 부품 가격현황 | BLUEDEAL", "확�
 function fmtKorean(ts: string) {
   if (!ts) return "확인 전";
   const d = new Date(ts);
-  if (Number.isNaN(d.getTime())) return ts;
-  return d.toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
+  if (Number.isNaN(d.getTime())) return "확인 전";
+  return d.toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST";
 }
 
 export default async function PricesHubPage() {
-  const meta = await getMeta();
+  const [meta, prices] = await Promise.all([
+    getMeta(),
+    Promise.all(PRICE_CATEGORIES.map(category => getPrices(category.key))),
+  ]);
+  const itemCount = prices.reduce((total, category) => total + category.items.length, 0);
+  const populatedCount = prices.filter(category => category.items.length > 0).length;
 
   return (
     <div className="space-y-8">
@@ -26,19 +31,19 @@ export default async function PricesHubPage() {
             </p>
           </div>
           <div className="text-sm text-white/70">
-            최근 가격 확인: <span className="text-white">{fmtKorean(meta.updatedAt)} KST</span>
+            최근 가격 확인: <span className="text-white">{fmtKorean(meta.updatedAt)}</span>
           </div>
         </div>
 
-        {meta.note ? <div className="mt-3 text-[12px] text-white/50">{meta.note}</div> : null}
+        <p className="mt-4 text-sm text-white/75">현재 {populatedCount}개 분류에서 확인한 상품 <b className="text-cyan-200">{itemCount}개</b>를 안내합니다. 가격 확인 시각은 상품마다 다릅니다.</p>
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {PRICE_CATEGORIES.map((c) => (
+        {PRICE_CATEGORIES.map((c, index) => (
           <Link
             key={c.key}
             href={`/prices/${c.key}`}
-            className="group bd-surface-md p-5 transition hover:border-white/20 hover:bg-white/10"
+            className="group bd-surface-md p-5 transition hover:border-white/20 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
           >
             <div className="flex items-start justify-between">
               <div>
@@ -46,6 +51,14 @@ export default async function PricesHubPage() {
                 <div className="mt-1 text-sm text-white/65">{c.description}</div>
               </div>
               <div className="text-white/60 transition group-hover:text-white">→</div>
+            </div>
+            <div className="mt-4 border-t border-white/10 pt-3">
+              {prices[index].items.length > 0 ? (
+                <>
+                  <div className="text-sm font-medium text-cyan-200">확인한 상품 {prices[index].items.length}개</div>
+                  <div className="mt-1 text-xs leading-relaxed text-white/65">최근 확인 {fmtKorean(prices[index].updatedAt)}</div>
+                </>
+              ) : <div className="text-sm text-white/65">등록된 가격이 아직 없습니다.</div>}
             </div>
           </Link>
         ))}
