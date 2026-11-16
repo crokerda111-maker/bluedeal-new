@@ -135,6 +135,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
 
       <PriceFilterForm category={category.key} items={data.items} filters={filters} />
       <p className="text-sm text-white/70">전체 {data.items.length}개 중 <b className="text-white">{items.length}개</b> 표시 · 배송비 미확인 상품은 포함 금액 정렬에서 마지막에 표시합니다.</p>
+      <p className="text-xs leading-relaxed text-white/65">같은 모델도 판매처별로 별도 집계합니다. 색상·구성·유통사·보증 조건을 함께 확인해 비교하세요.</p>
 
       {items.length === 0 ? (
         <div className="bd-surface-md px-4 py-10 text-center text-white/70">

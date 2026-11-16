@@ -36,6 +36,7 @@ export default async function PricesHubPage() {
         </div>
 
         <p className="mt-4 text-sm text-white/75">현재 {populatedCount}개 분류에서 확인한 상품 <b className="text-cyan-200">{itemCount}개</b>를 안내합니다. 가격 확인 시각은 상품마다 다릅니다.</p>
+        <p className="mt-2 text-xs text-white/65">같은 모델의 판매처별 상품도 각각 집계합니다.</p>
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
