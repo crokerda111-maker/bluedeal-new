@@ -127,6 +127,36 @@ def reference_url(raw: Any) -> str | None:
     return value
 
 
+def product_attributes(raw: dict[str, Any], category: str) -> dict[str, Any]:
+    attributes: dict[str, Any] = {}
+    for key in ("capacityGB", "moduleCapacityGB", "moduleCount"):
+        value = raw.get(key)
+        if value is not None and str(value).strip():
+            attributes[key] = parse_price(value)
+    memory = str(raw.get("memoryType") or "").strip().upper()
+    if memory:
+        if category != "ram" or memory not in {"DDR4", "DDR5"}:
+            raise ValueError("memoryType은 RAM의 DDR4/DDR5만 지원합니다.")
+        attributes["memoryType"] = memory
+    if category == "ram" and any(key in attributes for key in ("moduleCount", "moduleCapacityGB")):
+        if not all(key in attributes for key in ("capacityGB", "moduleCount", "moduleCapacityGB")):
+            raise ValueError("RAM은 총용량·모듈 용량·개수를 함께 입력하세요.")
+        if attributes["capacityGB"] != attributes["moduleCount"] * attributes["moduleCapacityGB"]:
+            raise ValueError("RAM 총용량이 모듈 용량 × 개수와 다릅니다.")
+    dram = str(raw.get("ssdDram") or "").strip()
+    if dram:
+        if category != "ssd" or dram not in {"present", "absent", "unknown"}:
+            raise ValueError("ssdDram은 SSD의 present/absent/unknown만 지원합니다.")
+        attributes["ssdDram"] = dram
+    elif category == "ssd":
+        attributes["ssdDram"] = "unknown"
+    availability = str(raw.get("availability") or "unknown").strip()
+    if availability not in {"in-stock", "out-of-stock", "unknown"}:
+        raise ValueError("availability는 in-stock/out-of-stock/unknown 중 하나여야 합니다.")
+    attributes["availability"] = availability
+    return attributes
+
+
 def read_rows(path: Path) -> list[dict[str, Any]]:
     if not path.exists():
         raise FileNotFoundError(f"입력 파일이 없습니다: {path}")
@@ -220,6 +250,7 @@ def build(input_path: Path, root: Path, now: datetime, dry_run: bool) -> int:
             shipping_raw = raw.get("shippingFee")
             shipping_fee = parse_price(shipping_raw, allow_zero=True) if shipping_raw is not None and str(shipping_raw).strip() else None
             official_url = reference_url(raw.get("officialUrl"))
+            attributes = product_attributes(raw, category)
             normalized_url, merchant = normalize_url(raw.get("url"))
             code = make_code(normalized_url, outbound)
             outbound[code] = {"code": code, "merchant": merchant, "originalUrl": normalized_url}
@@ -251,6 +282,7 @@ def build(input_path: Path, root: Path, now: datetime, dry_run: bool) -> int:
                 "officialUrl": official_url,
                 "checkedAt": checked_iso,
                 "updatedAt": checked_iso,
+                **attributes,
             }
             grouped[category].append(item)
         except (TypeError, ValueError) as error:

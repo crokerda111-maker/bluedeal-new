@@ -13,3 +13,8 @@ export async function getMeta(): Promise<MetaPayload> {
 export async function getPrices(category: PriceCategoryKey): Promise<PricesPayload> {
   return getLocalPrices(category);
 }
+
+/** 서버가 데이터를 읽은 시각으로만 가격 경과 시간을 판정합니다. */
+export async function getPriceView(category: PriceCategoryKey) {
+  return { data: getLocalPrices(category), meta: getLocalMeta(), now: Date.now() };
+}

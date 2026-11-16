@@ -18,6 +18,12 @@ export type PriceItem = {
   shippingNote?: string;
   priceNote?: string;
   officialUrl?: string | null;
+  capacityGB?: number;
+  memoryType?: "DDR4" | "DDR5";
+  moduleCapacityGB?: number;
+  moduleCount?: number;
+  ssdDram?: "present" | "absent" | "unknown";
+  availability?: "in-stock" | "out-of-stock" | "unknown";
   checkedAt?: string;
   updatedAt?: string;
 };

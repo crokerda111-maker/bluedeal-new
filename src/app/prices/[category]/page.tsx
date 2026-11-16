@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 import { getCategory } from "../../../lib/priceCategories";
 import type { PriceCategoryKey } from "../../../lib/priceCategories";
 import type { PriceItem } from "../../../lib/mockPrices";
-import { getMeta, getPrices } from "../../../lib/prices";
+import { getPriceView } from "../../../lib/prices";
 import SmartLink from "../../../components/SmartLink";
+import PriceFilterForm from "../../../components/PriceFilterForm";
+import { filterPrices, priceFreshness, readPriceFilters } from "../../../lib/priceFilters";
 
 function fmtKorean(ts?: string) {
   if (!ts) return "확인 전";
@@ -22,8 +24,9 @@ function pct(value?: number | null) {
   return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
 }
 
-function PriceAmount({ item }: { item: PriceItem }) {
+function PriceAmount({ item, now }: { item: PriceItem; now: number }) {
   const shippingFee = item.shippingFee;
+  const freshness = priceFreshness(item, now);
   return (
     <div>
       <div className="text-lg font-semibold text-white">{fmtWon(item.price)}</div>
@@ -34,6 +37,9 @@ function PriceAmount({ item }: { item: PriceItem }) {
       {item.shippingNote ? <div className="mt-1 text-xs text-white/60">{item.shippingNote}</div> : null}
       {item.priceNote ? <div className="mt-2 max-w-xs text-xs leading-relaxed text-white/70">{item.priceNote}</div> : null}
       <div className="mt-2 text-xs text-white/60">확인 {fmtKorean(item.checkedAt || item.updatedAt)}</div>
+      {freshness === "stale" ? <div className="mt-2 text-xs text-amber-200">확인 후 24시간 경과 · 판매처 가격 재확인</div> : null}
+      {freshness === "unknown" ? <div className="mt-2 text-xs text-amber-200">가격 확인 시각 미확인</div> : null}
+      <div className="mt-1 text-xs text-white/60">{item.availability === "out-of-stock" ? "확인 시점 품절 · 재입고 여부 판매처 확인" : item.availability === "in-stock" ? "확인 시점 판매 중 · 현재 재고는 판매처 확인" : "재고는 판매처에서 확인해 주세요"}</div>
     </div>
   );
 }
@@ -43,6 +49,7 @@ function ProductInfo({ item }: { item: PriceItem }) {
     <div>
       <div className="font-semibold text-white">{item.name}</div>
       {item.spec ? <div className="mt-2 text-sm leading-relaxed text-white/75">{item.spec}</div> : null}
+      {item.ssdDram ? <div className="mt-1 text-xs text-white/70">DRAM 캐시: {item.ssdDram === "present" ? "있음" : item.ssdDram === "absent" ? "없음" : "미확인"}</div> : null}
       <div className="mt-2 text-xs text-white/60">{[item.source, item.seller].filter(Boolean).join(" · ")}</div>
       {item.officialUrl ? (
         <SmartLink className="mt-2 inline-block text-xs text-cyan-200 underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" href={item.officialUrl} title={`${item.name} 공식 사양 (새 창)`}>
@@ -66,11 +73,16 @@ function PurchaseLink({ item }: { item: PriceItem }) {
   );
 }
 
-export default async function PricesCategoryPage({ params }: { params: Promise<{ category: string }> }) {
+export default async function PricesCategoryPage({ params, searchParams }: {
+  params: Promise<{ category: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   const { category: categoryKey } = await params;
   const category = getCategory(categoryKey);
   if (!category) return notFound();
-  const [meta, data] = await Promise.all([getMeta(), getPrices(category.key as PriceCategoryKey)]);
+  const { meta, data, now } = await getPriceView(category.key as PriceCategoryKey);
+  const filters = readPriceFilters(await searchParams);
+  const items = filterPrices(data.items, category.key, filters);
   const reportHref = `/contact/write?from=prices&cat=${encodeURIComponent(category.shortTitle)}`;
 
   return (
@@ -95,18 +107,20 @@ export default async function PricesCategoryPage({ params }: { params: Promise<{
         <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요. 일부 링크를 통해 구매가 이루어지면 블루딜이 일정 수수료를 받을 수 있습니다.</p>
       </div>
 
-      {data.items.length === 0 ? (
+      <PriceFilterForm category={category.key} items={data.items} filters={filters} />
+      <p className="text-sm text-white/70">전체 {data.items.length}개 중 <b className="text-white">{items.length}개</b> 표시 · 배송비 미확인 상품은 포함 금액 정렬에서 마지막에 표시합니다.</p>
+
+      {items.length === 0 ? (
         <div className="bd-surface-md px-4 py-10 text-center text-white/70">
-          확인한 가격 데이터가 아직 없습니다.{" "}
-          <Link className="text-cyan-200 hover:underline" href={reportHref}>제보하기</Link>
+          {data.items.length ? <>조건에 맞는 상품이 없습니다. <Link className="text-cyan-200 hover:underline" href={`/prices/${category.key}`}>필터 초기화</Link></> : <>확인한 가격 데이터가 아직 없습니다. <Link className="text-cyan-200 hover:underline" href={reportHref}>제보하기</Link></>}
         </div>
       ) : (
         <>
           <div className="space-y-4 md:hidden">
-            {data.items.map((item) => (
+            {items.map((item) => (
               <article key={item.id} aria-label={item.name} className="bd-surface-md space-y-4 p-5">
                 <ProductInfo item={item} />
-                <PriceAmount item={item} />
+                <PriceAmount item={item} now={now} />
                 <dl className="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-xs">
                   <div><dt className="text-white/60">24시간 변동</dt><dd className="mt-1 text-white/80">{pct(item.change24hPct)}</dd></div>
                   <div><dt className="text-white/60">7일 관측 최저</dt><dd className="mt-1 text-white/80">{typeof item.low7d === "number" ? fmtWon(item.low7d) : "기록 대기"}</dd></div>
@@ -120,7 +134,7 @@ export default async function PricesCategoryPage({ params }: { params: Promise<{
           <div className="bd-surface-md hidden md:block">
             <div className="overflow-x-auto rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" tabIndex={0} role="region" aria-label={`${category.shortTitle} 가격 비교표, 가로 스크롤 가능`}>
               <table className="w-full min-w-[1060px] text-sm">
-                <caption className="sr-only">확인한 {category.shortTitle} 판매 상품 {data.items.length}개. 가격과 배송비는 원화 기준입니다.</caption>
+                <caption className="sr-only">확인한 {category.shortTitle} 판매 상품 {items.length}개. 가격과 배송비는 원화 기준입니다.</caption>
                 <thead className="bg-white/5 text-white/70">
                   <tr>
                     <th scope="col" className="w-72 px-4 py-3 text-left font-medium">제품 · 판매자</th>
@@ -132,10 +146,10 @@ export default async function PricesCategoryPage({ params }: { params: Promise<{
                   </tr>
                 </thead>
                 <tbody>
-                  {data.items.map((item) => (
+                  {items.map((item) => (
                     <tr key={item.id} className="border-t border-white/10 align-top">
                       <th scope="row" className="px-4 py-5 text-left font-normal"><ProductInfo item={item} /></th>
-                      <td className="px-4 py-5"><PriceAmount item={item} /></td>
+                      <td className="px-4 py-5"><PriceAmount item={item} now={now} /></td>
                       <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{pct(item.change24hPct)}</td>
                       <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{typeof item.low7d === "number" ? fmtWon(item.low7d) : "기록 대기"}</td>
                       <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{typeof item.low30d === "number" ? fmtWon(item.low30d) : "기록 대기"}</td>

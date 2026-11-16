@@ -125,6 +125,21 @@ class CollectorSmokeTests(unittest.TestCase):
                    {"at": "2026-11-09T00:00:00Z", "price": 95000}]
         self.assertEqual(collector.history_values(points, self.now), (90000, 90000, None))
 
+    def test_verified_ram_attributes_and_unknown_ssd_dram(self):
+        ram = {**self.rows[0], "capacityGB": "48", "moduleCapacityGB": "24", "moduleCount": "2", "memoryType": "DDR5"}
+        ssd = {**self.rows[1], "category": "ssd", "capacityGB": "2000"}
+        self.write_input([ram, ssd])
+        self.build()
+        data = json.loads((self.root / "src/content/prices/ram.json").read_text(encoding="utf-8"))
+        self.assertEqual(data["items"][0]["capacityGB"], 48)
+        data = json.loads((self.root / "src/content/prices/ssd.json").read_text(encoding="utf-8"))
+        self.assertEqual(data["items"][0]["ssdDram"], "unknown")
+        previous = self.snapshot()
+        self.write_input([{**ram, "capacityGB": "32"}])
+        with self.assertRaises(ValueError):
+            self.build()
+        self.assertEqual(previous, self.snapshot())
+
 
 if __name__ == "__main__":
     unittest.main()

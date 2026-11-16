@@ -9,6 +9,7 @@
     "lint": "eslint src",
     "typecheck": "next typegen && tsc --noEmit",
     "test:boards": "node ops/tests/board-smoke.mjs",
+    "test:prices": "node --experimental-strip-types --test ops/tests/price-data.mjs",
     "test:collector": "python -m unittest discover -s ops/tests -p test_collector.py"
   },
   "dependencies": {

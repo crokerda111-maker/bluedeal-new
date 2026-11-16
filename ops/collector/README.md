@@ -92,3 +92,11 @@ powershell -ExecutionPolicy Bypass -File .\ops\collector\publish_prices.ps1 -Col
 ## Windows 작업 스케줄러
 
 수집 원본 CSV를 자동으로 갱신하는 프로그램이 준비된 뒤 위 PowerShell 명령을 작업 스케줄러에 등록하면 됩니다. PC가 꺼져 있거나 절전 상태면 실행되지 않으므로, 처음에는 수동 실행으로 데이터와 링크를 확인하는 것을 권장합니다.
+
+## 상품 속성과 필터
+
+- RAM: `memoryType`(DDR4/DDR5), `capacityGB`(키트 총용량), `moduleCapacityGB`, `moduleCount`를 확인해 입력합니다. 모듈 용량과 개수를 입력하면 총용량과 일치해야 합니다. 상품명에서 추정하지 않습니다.
+- SSD: `capacityGB`는 판매자가 표기한 용량(1TB=1000GB)이며 `ssdDram`은 `present`/`absent`/`unknown`입니다. DRAM 정보 미입력은 `unknown`으로 보존합니다. HMB 지원을 DRAM 탑재로 바꾸지 마세요.
+- `availability`는 `in-stock`/`out-of-stock`/`unknown`입니다. 재고를 직접 확인하지 않았으면 `unknown`을 사용합니다.
+- 화면은 실제 확인 시각으로 24시간 경과 여부를 판단합니다. 과거 CSV 재생성은 이 표시를 새 가격으로 바꾸지 않습니다.
+- 검색·용량·메모리 규격·SSD DRAM·정렬은 주소의 GET 매개변수로 보존됩니다. 배송비 미확인 상품은 배송비 포함 정렬에서 뒤에 표시합니다.

@@ -1,7 +1,7 @@
 {
   "category": "ram",
   "updatedAt": "2026-11-16T08:38:27Z",
-  "generatedAt": "2026-11-16T08:44:06.035249Z",
+  "generatedAt": "2026-11-16T09:26:59.549160Z",
   "items": [
     {
       "id": "klevv-fit-v-white-6000-cl30-32gb",
@@ -19,7 +19,12 @@
       "priceNote": "G마켓 추가할인 적용 표시가 · 개별 쿠폰·카드·회원 혜택 제외",
       "officialUrl": "https://www.klevv.com/ken/products_details/memory/Klevv_FITV",
       "checkedAt": "2026-11-16T08:38:27Z",
-      "updatedAt": "2026-11-16T08:38:27Z"
+      "updatedAt": "2026-11-16T08:38:27Z",
+      "capacityGB": 32,
+      "moduleCapacityGB": 16,
+      "moduleCount": 2,
+      "memoryType": "DDR5",
+      "availability": "unknown"
     },
     {
       "id": "gskill-flare-x5-6000-cl36-32gb",
@@ -37,7 +42,12 @@
       "priceNote": "G마켓 추가할인 적용 표시가 · 개별 쿠폰·카드·회원 혜택 제외",
       "officialUrl": "https://www.gskill.com/specification/165/396/1662622664/F5-6000J3636F16GX2-FX5-Specification",
       "checkedAt": "2026-11-16T08:38:27Z",
-      "updatedAt": "2026-11-16T08:38:27Z"
+      "updatedAt": "2026-11-16T08:38:27Z",
+      "capacityGB": 32,
+      "moduleCapacityGB": 16,
+      "moduleCount": 2,
+      "memoryType": "DDR5",
+      "availability": "unknown"
     },
     {
       "id": "klevv-cras-v-rgb-white-6000-cl30-48gb",
@@ -55,7 +65,12 @@
       "priceNote": "G마켓 추가할인 적용 표시가 · 개별 쿠폰·카드·회원 혜택 제외",
       "officialUrl": "https://www.klevv.com/ken/products_details/memory/Klevv_CrasVRGB",
       "checkedAt": "2026-11-16T08:38:27Z",
-      "updatedAt": "2026-11-16T08:38:27Z"
+      "updatedAt": "2026-11-16T08:38:27Z",
+      "capacityGB": 48,
+      "moduleCapacityGB": 24,
+      "moduleCount": 2,
+      "memoryType": "DDR5",
+      "availability": "unknown"
     }
   ]
 }
