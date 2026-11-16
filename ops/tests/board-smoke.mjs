@@ -1,7 +1,7 @@
 // Exercises the real Next.js HTTP routes against disposable, local-only KV data.
 // Run after `npm run build`. No production credentials or services are used.
 import assert from 'node:assert/strict';
-import { createHash, randomBytes } from 'node:crypto';
+import { createHash, createHmac, randomBytes } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import http from 'node:http';
@@ -604,6 +604,28 @@ try {
     assert.match(header, /HttpOnly/i); assert.match(header, /SameSite=lax/i); assert.match(header, /Secure/i);
     assert.equal(header.includes(password), false);
     cookie = header.split(';')[0];
+    assert.equal((await api('GET', '/api/admin/status', undefined, cookie)).data.admin, true);
+  });
+  await check('administrator cookies have unique signed sessions with enforced server expiry and no legacy bypass', async () => {
+    const now = Math.floor(Date.now() / 1000);
+    const signed = (issuedAt, expiresAt, signingPassword = password) => {
+      const payload = `v1.${issuedAt}.${expiresAt}.${'b'.repeat(32)}`;
+      return payload + '.' + createHmac('sha256', signingPassword).update('bluedeal-admin-session:' + payload).digest('hex');
+    };
+    const valid = signed(now - 1, now + 60);
+    assert.equal((await api('GET', '/api/admin/status', undefined, 'bd_admin=' + valid)).data.admin, true);
+    const original = cookie.slice('bd_admin='.length);
+    const tampered = original.slice(0, -1) + (original.endsWith('a') ? 'b' : 'a');
+    for (const value of [signed(now - 60, now - 1), signed(now, now), signed(now + 300, now + 600),
+      signed(now, now + 31 * 86400), signed(now - 1, now + 60, 'wrong-signing-password'),
+      tampered, original.replace('v1.', 'v2.'), 'v1.malformed', createHash('sha256').update('bluedeal_admin::' + password).digest('hex')]) {
+      assert.equal((await api('GET', '/api/admin/status', undefined, 'bd_admin=' + value)).data.admin, false);
+      assert.equal((await api('GET', `/api/posts/${privateId}`, undefined, 'bd_admin=' + value)).status, 401);
+    }
+    const secondLogin = await api('POST', '/api/admin/login', { password });
+    assert.equal(secondLogin.status, 200);
+    assert.notEqual(secondLogin.headers.get('set-cookie').split(';')[0], cookie);
+    assert.match(secondLogin.headers.get('set-cookie'), /Max-Age=2592000/i);
     assert.equal((await api('GET', '/api/admin/status', undefined, cookie)).data.admin, true);
   });
   await check('administrator can read a private inquiry without its password', async () => {

@@ -10,6 +10,12 @@ node ops/tests/live-readonly.mjs --commit 실제_40자리_배포_커밋 --report
 
 페이지·관리자·API·정적 이미지·404 응답에서 기본 브라우저 보호 헤더도 확인합니다. [CSP `frame-ancestors`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/frame-ancestors)와 X-Frame-Options는 외부 프레임 삽입을 차단합니다. [nosniff](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options)는 선언된 응답 형식을 사용하게 하며, [Referrer-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy)는 다른 출처로 전체 경로·검색어를 보내지 않도록 설정합니다. CSP는 프레임·기준 주소·플러그인·폼 대상에 한정한 기본 보호이며 전체 XSS 방어나 접근 권한 검증을 대체하지 않습니다.
 
+## 관리자 세션 만료
+
+관리자 쿠키에는 발급·만료 시각과 로그인마다 새 난수가 포함되며 서버가 HMAC 서명과 최대 30일의 수명을 검증합니다. 브라우저가 만료된 쿠키를 다시 보내도 관리자 권한을 부여하지 않습니다. 이전 고정 해시 쿠키는 허용하지 않아 이 변경의 첫 배포 후 기존 관리자는 한 번 다시 로그인해야 합니다. 비밀번호와 공개 게시글은 변경하지 않습니다.
+
+`HttpOnly`·`Secure`·`SameSite=Lax`를 유지하고 서명은 고정 길이 바이트로 비교합니다. 로그아웃은 현재 브라우저의 쿠키를 삭제합니다. 개별 세션의 서버 회수 목록은 없으며 `ADMIN_PASSWORD`가 바뀌면 기존 서명은 모두 무효화됩니다.
+
 ## 인증 반복 시도 보호
 
 관리자 로그인은 같은 접속 IP 기준 5분에 10회, 비공개 글의 암호 확인은 5분에 20회까지 처리합니다. 성공한 요청도 포함하며 비공개 글의 일반 조회나 인증된 관리자 조회에는 암호 시도 횟수를 더하지 않습니다. 초과하면 `429`와 `Retry-After`를 반환하고, 공유 카운터를 확인할 수 없으면 인증을 허용하지 않고 `503`으로 닫힙니다. 저장소 장애 중 새 로그인도 영향을 받습니다.
