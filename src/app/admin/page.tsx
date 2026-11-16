@@ -176,7 +176,7 @@ export default function AdminPage() {
               autoComplete="current-password"
               required
               disabled={authBusy !== null}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50 sm:max-w-sm"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50 sm:max-w-sm"
               placeholder="관리자 비밀번호"
             />
             <button
@@ -244,7 +244,7 @@ export default function AdminPage() {
               value={q}
               maxLength={100}
               onChange={(e) => setQ(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
               placeholder="제목/내용/작성자/추가정보"
             />
           </label>

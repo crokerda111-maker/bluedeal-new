@@ -80,7 +80,7 @@ function HotDeals({ initialCat }: { initialCat: string }) {
           <input
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50 md:max-w-md"
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50 md:max-w-md"
             placeholder="검색: 제품명/스토어/카테고리"
           />
 

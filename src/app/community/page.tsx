@@ -20,7 +20,7 @@ export default function CommunityHomePage() {
           >
             <div className="text-lg font-semibold">{b.title}</div>
             <div className="mt-2 text-sm text-white/70">{b.description}</div>
-            <div className="mt-4 text-[12px] text-white/50">글 보기 →</div>
+            <div className="mt-4 text-[12px] text-white/70">글 보기 →</div>
           </Link>
         ))}
       </section>

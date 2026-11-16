@@ -76,7 +76,7 @@ function ITNewsContent() {
           <div>
             <h1 className="text-2xl font-semibold tracking-tight">{IT_BOARD.title}</h1>
             <p className="mt-2 text-sm text-white/70">{IT_BOARD.description}</p>
-            {IT_BOARD.writeHint ? <p className="mt-2 text-[12px] text-white/50">{IT_BOARD.writeHint}</p> : null}
+            {IT_BOARD.writeHint ? <p className="mt-2 text-[12px] text-white/70">{IT_BOARD.writeHint}</p> : null}
           </div>
 
           <Link
@@ -118,9 +118,10 @@ function ITNewsContent() {
           <input
             type="search"
             aria-label="IT 소식 검색"
+            maxLength={100}
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50 md:max-w-md"
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50 md:max-w-md"
             placeholder="검색: 제목/내용/작성자/태그"
           />
         </div>

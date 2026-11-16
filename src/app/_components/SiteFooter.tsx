@@ -27,7 +27,7 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto mt-4 max-w-6xl px-4 text-[12px] text-white/45">
+      <div className="mx-auto mt-4 max-w-6xl px-4 text-[12px] text-white/70">
         일부 링크는 제휴 링크일 수 있으며, 구매가 발생하면 일정 수수료를 받을 수 있습니다. 
       </div>
     </footer>

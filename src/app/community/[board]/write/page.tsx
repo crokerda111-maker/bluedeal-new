@@ -16,7 +16,7 @@ import { useNickname } from "../../../../lib/useNickname";
 
 function Field({ def, value, onChange }: { def: FieldDef; value: string; onChange: (v: string) => void }) {
   const base =
-    "mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50";
+    "mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50";
   const id = `f_${def.key}`;
   const optionStyle: CSSProperties = { color: "#000" };
 
@@ -64,7 +64,7 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
         />
       )}
 
-      {def.help ? <div id={`${id}_help`} className="mt-1 text-[12px] text-white/50">{def.help}</div> : null}
+      {def.help ? <div id={`${id}_help`} className="mt-1 text-[12px] text-white/70">{def.help}</div> : null}
     </label>
   );
 }
@@ -211,7 +211,7 @@ function CommunityWrite({ boardSlug }: { boardSlug: string }) {
             <input
               required
               maxLength={POST_LIMITS.title}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="제목을 입력하세요"
@@ -234,7 +234,7 @@ function CommunityWrite({ boardSlug }: { boardSlug: string }) {
               required
               maxLength={POST_LIMITS.content}
               rows={10}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="본문을 입력하세요"

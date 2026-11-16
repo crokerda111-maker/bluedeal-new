@@ -118,24 +118,24 @@ export default async function HomePage() {
         <div className="mt-5 grid gap-3">
           {hotDeals === null ? <p role="status" className="bd-surface-md p-5 text-sm text-amber-200">핫딜을 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.</p> : null}
           {hotDeals !== null && deals.length === 0 ? (
-            <div className="bd-surface-md p-5 text-sm text-white/45">아직 등록된 핫딜이 없습니다.</div>
+            <div className="bd-surface-md p-5 text-sm text-white/70">아직 등록된 핫딜이 없습니다.</div>
           ) : null}
           {deals.map((deal) => (
             <Link key={deal.id} href={`/community/hotdeal/${deal.id}`} className="group bd-surface-md p-4 hover:bg-white/10">
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-2 text-xs text-white/50">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-white/70">
                     {deal.extra?.category ? <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-white/70">{String(deal.extra.category).toUpperCase()}</span> : null}
                     <span>{String(deal.extra?.store ?? "판매처 미표시")}</span>
                     <span>·</span>
                     <span>{formatDate(deal.createdAt)}</span>
                   </div>
                   <div className="mt-2 truncate font-semibold tracking-tight group-hover:text-cyan-100">{deal.title}</div>
-                  <div className="mt-1 line-clamp-1 text-xs text-white/50">{deal.content}</div>
+                  <div className="mt-1 line-clamp-1 text-xs text-white/70">{deal.content}</div>
                 </div>
                 <div className="shrink-0 md:text-right">
                   <div className="text-lg font-semibold">{String(deal.extra?.price ?? "가격 확인")}</div>
-                  <div className="mt-1 text-[11px] text-white/40">상세 보기 →</div>
+                  <div className="mt-1 text-xs text-white/70">상세 보기 →</div>
                 </div>
               </div>
             </Link>

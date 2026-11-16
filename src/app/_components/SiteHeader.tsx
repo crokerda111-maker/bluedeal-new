@@ -131,20 +131,20 @@ export default function SiteHeader() {
             </div>
             <div className="min-w-0 leading-tight">
               <div className="text-sm font-semibold tracking-tight">BLUEDEAL</div>
-              <div className="truncate text-[10px] text-white/60 sm:text-xs">IT · 커뮤니티 · 가격 · 핫딜</div>
+              <div className="truncate text-[11px] text-white/60 sm:text-xs">IT · 커뮤니티 · 가격 · 핫딜</div>
             </div>
           </Link>
 
           {/* Desktop nav */}
           <nav aria-label="주요 메뉴" className="hidden items-center gap-6 text-sm text-white/75 md:flex">
             <Dropdown label="IT 소식" href="/it">
-              <div className="px-4 py-2 text-xs text-white/45">바로가기</div>
+              <div className="px-4 py-2 text-xs text-white/70">바로가기</div>
               <DropItem href="/it?section=news">뉴스</DropItem>
               <DropItem href="/it?section=pick">곰선생 추천픽</DropItem>
             </Dropdown>
 
             <Dropdown label="가격현황" href="/prices">
-              <div className="px-4 py-2 text-xs text-white/45">카테고리</div>
+              <div className="px-4 py-2 text-xs text-white/70">카테고리</div>
               <DropItem href="/prices">전체 보기</DropItem>
               <div className="my-2 h-px bg-white/10" />
               {priceItems.map((c) => (
@@ -159,7 +159,7 @@ export default function SiteHeader() {
             </Link>
 
             <Dropdown label="커뮤니티" href="/community">
-              <div className="px-4 py-2 text-xs text-white/45">바로가기</div>
+              <div className="px-4 py-2 text-xs text-white/70">바로가기</div>
               <DropItem href="/community">커뮤니티 홈</DropItem>
               <div className="my-2 h-px bg-white/10" />
               {communityItems.map((b) => (
@@ -186,7 +186,7 @@ export default function SiteHeader() {
             >
               <span className="inline-block h-2.5 w-2.5 rounded-full bg-cyan-300/80" />
               <span className="max-w-[72px] truncate sm:max-w-[120px]">{nickname}</span>
-              <span className="hidden text-white/50 sm:inline">설정</span>
+              <span className="hidden text-white/70 sm:inline">설정</span>
             </button>
           </div>
         </div>

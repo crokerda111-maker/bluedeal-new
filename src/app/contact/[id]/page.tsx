@@ -136,7 +136,7 @@ function ContactPost({ postId }: { postId: string }) {
               autoComplete="off"
               aria-invalid={Boolean(pwError)}
               aria-describedby={pwError ? "private-post-error" : undefined}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50 sm:max-w-sm"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50 sm:max-w-sm"
               placeholder="비밀번호"
             />
             <button

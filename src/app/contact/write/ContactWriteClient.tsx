@@ -182,7 +182,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
                 🔒 비공개
               </button>
             </div>
-            <div className="mt-1 text-[12px] text-white/50">
+            <div className="mt-1 text-[12px] text-white/70">
               {fromPrices ? "가격현황 제보는 자동으로 비공개 처리됩니다." : "비공개 글은 비밀번호를 입력한 사람만 열람할 수 있습니다."}
             </div>
           </div>
@@ -218,7 +218,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
               value={title}
               maxLength={POST_LIMITS.title}
               onChange={(e) => setTitle(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
               placeholder="제목"
               required
             />
@@ -229,7 +229,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
               placeholder="reply@example.com"
               type="email"
               autoComplete="email"
@@ -245,7 +245,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
                 maxLength={POST_LIMITS.password}
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
-                className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+                className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
                 placeholder="비공개 글 열람용 비밀번호"
                 autoComplete="new-password"
                 required
@@ -261,7 +261,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
               value={content}
               maxLength={POST_LIMITS.content}
               onChange={(e) => setContent(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
               placeholder="내용"
               required
             />

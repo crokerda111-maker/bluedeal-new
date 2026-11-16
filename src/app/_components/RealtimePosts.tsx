@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ALL_BOARDS, boardKeyToPath } from "../../lib/boardConfig";
+import { ALL_BOARDS, boardKeyToPath, getBoardByKey } from "../../lib/boardConfig";
 import type { Post } from "../../lib/postTypes";
 import { apiListPosts } from "../../lib/postsClient";
 import { formatKoreanDate } from "../../lib/postStorage";
@@ -63,19 +63,19 @@ export default function RealtimePosts({ limit = 5, showHeader = true }: { limit?
 
       <div className="space-y-3">
         {loading ? <p role="status" className="text-sm text-white/65">최신 게시글을 불러오는 중입니다.</p> : null}
-        {posts.length === 0 && !loading && failedCount === 0 ? <div className="text-sm text-white/45">아직 등록된 게시글이 없습니다.</div> : null}
+        {posts.length === 0 && !loading && failedCount === 0 ? <div className="text-sm text-white/70">아직 등록된 게시글이 없습니다.</div> : null}
         {posts.map((p) => (
           <div key={p.id} className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               <Link className="block truncate text-sm font-medium text-white/90 hover:underline" href={`${boardKeyToPath(p.boardKey)}/${p.id}`}>
                 {p.title}
               </Link>
-              <div className="mt-0.5 text-[12px] text-white/55">
-                {p.authorName ?? "익명"} · {formatKoreanDate(p.createdAt)}
+              <div className="mt-0.5 text-[12px] text-white/70">
+                {p.authorName ?? "익명"} · {formatKoreanDate(p.createdAt)} KST
               </div>
             </div>
 
-            <div className="shrink-0 text-[12px] text-white/40">{p.boardKey}</div>
+            <div className="shrink-0 text-[12px] text-white/70">{getBoardByKey(p.boardKey)?.title ?? "게시글"}</div>
           </div>
         ))}
       </div>

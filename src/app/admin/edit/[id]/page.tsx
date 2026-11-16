@@ -285,7 +285,7 @@ function AdminEdit({ id }: { id: string }) {
               required
               maxLength={Math.max(POST_LIMITS.title, post.title.length)}
               onChange={(e) => setTitle(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
             />
           </label>
 
@@ -297,7 +297,7 @@ function AdminEdit({ id }: { id: string }) {
               maxLength={Math.max(POST_LIMITS.content, post.content.length)}
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
             />
           </label>
 
@@ -307,7 +307,7 @@ function AdminEdit({ id }: { id: string }) {
               value={authorName}
               maxLength={Math.max(POST_LIMITS.authorName, (post.authorName ?? "").length)}
               onChange={(e) => setAuthorName(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
               placeholder="빈 값이면 익명 처리"
             />
           </label>
@@ -358,7 +358,7 @@ function AdminEdit({ id }: { id: string }) {
                         type="password"
                         autoComplete="new-password"
                         maxLength={POST_LIMITS.password}
-                        className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+                        className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
                         placeholder="입력하면 비밀번호가 변경됩니다. 비워두면 기존 비밀번호 유지"
                       />
                     </label>
@@ -376,7 +376,7 @@ function AdminEdit({ id }: { id: string }) {
               rows={6}
               value={extraJson}
               onChange={(e) => setExtraJson(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 font-mono text-[12px] text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50"
+              className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 font-mono text-[12px] text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50"
             />
             <div className="mt-1 text-[12px] text-white/50">예) {"{\n  \"email\": \"...\"\n}"}</div>
           </label>

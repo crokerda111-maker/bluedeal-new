@@ -88,9 +88,10 @@ export default function ContactPage() {
           <input
             type="search"
             aria-label="문의 검색"
+            maxLength={100}
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50 md:max-w-md"
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50 md:max-w-md"
             placeholder="검색: 제목/내용/작성자/이메일"
           />
 
@@ -168,7 +169,7 @@ export default function ContactPage() {
                   <td className="px-4 py-3 text-white/70">
                     <div className="flex flex-col gap-0.5 leading-tight">
                       <span className="block truncate">{POST_TYPE_LABEL[p.type]}</span>
-                      <span className="text-[11px] text-white/50">{p.isPrivate ? "비공개" : "공개"}</span>
+                      <span className="text-xs text-white/70">{p.isPrivate ? "비공개" : "공개"}</span>
                     </div>
                   </td>
                   <td className="border-l border-white/10 px-4 py-3">

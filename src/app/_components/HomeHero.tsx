@@ -162,7 +162,7 @@ export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt
               </ButtonLink>
             </div>
 
-            <div className="mt-3 text-[11px] text-white/45">
+            <div className="mt-3 text-xs leading-relaxed text-white/70">
               ※ 갱신 방식: {schedule}. 오탈자/누락 제보는 문의 게시판에 남겨주세요.
             </div>
           </div>

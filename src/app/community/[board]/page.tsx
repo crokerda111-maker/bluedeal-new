@@ -95,7 +95,7 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
           <div>
             <h1 className="text-2xl font-semibold tracking-tight">{board.title}</h1>
             <p className="mt-2 text-sm text-white/70">{board.description}</p>
-            {board.writeHint ? <p className="mt-2 text-[12px] text-white/50">{board.writeHint}</p> : null}
+            {board.writeHint ? <p className="mt-2 text-[12px] text-white/70">{board.writeHint}</p> : null}
           </div>
 
           <Link
@@ -110,9 +110,10 @@ function CommunityBoard({ boardSlug }: { boardSlug: string }) {
           <input
             type="search"
             aria-label="게시판 검색"
+            maxLength={100}
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50 md:max-w-md"
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/65 focus:border-cyan-300/50 md:max-w-md"
             placeholder="검색: 제목/내용/작성자/추가정보"
           />
 
