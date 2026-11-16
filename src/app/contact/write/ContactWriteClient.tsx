@@ -2,59 +2,45 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
 import type { InquiryVisibility, PostType } from "../../../lib/postTypes";
 import { apiCreatePost } from "../../../lib/postsClient";
-import { getNickname, setNickname } from "../../../lib/profile";
+import { setNickname } from "../../../lib/profile";
+import { useNickname } from "../../../lib/useNickname";
 
 function cn(...v: Array<string | false | null | undefined>) {
   return v.filter(Boolean).join(" ");
 }
 
 export default function ContactWritePage() {
-  const router = useRouter();
   const sp = useSearchParams();
-
   const from = (sp.get("from") ?? "").toLowerCase();
   const fromPrices = from === "prices";
   const category = sp.get("cat") ?? "";
-
   const initialVis = (sp.get("vis") as InquiryVisibility | null) ?? "public";
+
+  return <ContactForm key={`${fromPrices}:${category}:${initialVis}`} fromPrices={fromPrices} category={category} initialVis={initialVis} />;
+}
+
+function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean; category: string; initialVis: InquiryVisibility }) {
+  const router = useRouter();
   const [visibility, setVisibility] = useState<InquiryVisibility>(fromPrices ? "private" : initialVis);
 
   const [type, setType] = useState<PostType>("general");
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState(fromPrices ? category ? `[가격현황 제보] ${category}` : "[가격현황 제보]" : "");
+  const [content, setContent] = useState(fromPrices ? "제보/추가요청 내용을 적어주세요.\n\n- 제품/모델명\n- 링크(가능하면)\n- 현재가/조건\n- 수정 요청 내용" : "");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [authorName, setAuthorName] = useState("게스트");
+  const authorName = useNickname();
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
-
-  useEffect(() => {
-    setAuthorName(getNickname("게스트"));
-  }, []);
-
-  useEffect(() => {
-    if (!fromPrices) return;
-    setVisibility("private");
-    if (!title.trim()) {
-      setTitle(category ? `[가격현황 제보] ${category}` : "[가격현황 제보]");
-    }
-    if (!content.trim()) {
-      setContent(
-        "제보/추가요청 내용을 적어주세요.\n\n- 제품/모델명\n- 링크(가능하면)\n- 현재가/조건\n- 수정 요청 내용",
-      );
-    }
-  }, [fromPrices, category]);
 
   const changeNick = () => {
     const next = prompt("닉네임을 입력하세요 (최대 20자)", authorName === "게스트" ? "" : authorName);
     if (!next) return;
     setNickname(next);
-    setAuthorName(getNickname("게스트"));
   };
 
   const effectiveVis: InquiryVisibility = fromPrices ? "private" : visibility;

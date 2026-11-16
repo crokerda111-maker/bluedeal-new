@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { use, useEffect, useMemo, useState, type CSSProperties } from "react";
 import { IT_BOARD, type FieldDef } from "../../../lib/boardConfig";
 import type { PostExtra, PostType } from "../../../lib/postTypes";
 import { apiAdminStatus, apiCreatePost } from "../../../lib/postsClient";
-import { getNickname, setNickname } from "../../../lib/profile";
+import { setNickname } from "../../../lib/profile";
+import { useNickname } from "../../../lib/useNickname";
 
 function Field({ def, value, onChange }: { def: FieldDef; value: string; onChange: (v: string) => void }) {
   const base =
@@ -57,32 +58,30 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
   );
 }
 
-export default function ITWritePage({ searchParams }: { searchParams?: { type?: string } }) {
+export default function ITWritePage({ searchParams }: { searchParams: Promise<{ type?: string }> }) {
   const router = useRouter();
-  const requestedType = searchParams?.type;
+  const requestedType = use(searchParams).type;
 
   const [type, setType] = useState<PostType>("news");
   const [isAdmin, setIsAdmin] = useState(false);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [authorName, setAuthorName] = useState("게스트");
+  const authorName = useNickname();
   const [extra, setExtra] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    setAuthorName(getNickname("게스트"));
     apiAdminStatus()
       .then((admin) => {
         setIsAdmin(admin);
-        if (admin && requestedType === "pick") setType("pick");
+        setType((current) => !admin ? "news" : requestedType === "pick" ? "pick" : current);
       })
-      .catch(() => setIsAdmin(false));
+      .catch(() => {
+        setIsAdmin(false);
+        setType("news");
+      });
   }, [requestedType]);
-
-  useEffect(() => {
-    if (!isAdmin && type === "pick") setType("news");
-  }, [isAdmin, type]);
 
   const requiredExtraKeys = useMemo(() => {
     return (IT_BOARD.extraFields ?? []).filter((f) => f.required).map((f) => f.key);
@@ -92,7 +91,6 @@ export default function ITWritePage({ searchParams }: { searchParams?: { type?: 
     const next = prompt("닉네임을 입력하세요 (최대 20자)", authorName === "게스트" ? "" : authorName);
     if (!next) return;
     setNickname(next);
-    setAuthorName(getNickname("게스트"));
   };
 
   const onSubmit = async () => {

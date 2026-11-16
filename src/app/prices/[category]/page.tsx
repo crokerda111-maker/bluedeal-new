@@ -25,8 +25,9 @@ function pct(v?: number) {
   return `${sign}${v.toFixed(1)}%`;
 }
 
-export default async function PricesCategoryPage({ params }: { params: { category: string } }) {
-  const category = getCategory(params.category);
+export default async function PricesCategoryPage({ params }: { params: Promise<{ category: string }> }) {
+  const { category: categoryKey } = await params;
+  const category = getCategory(categoryKey);
   if (!category) return notFound();
 
   const meta = await getMeta();

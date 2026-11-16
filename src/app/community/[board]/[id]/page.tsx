@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { use, useEffect, useMemo, useState } from "react";
 import { getCommunityBoard, POST_TYPE_LABEL } from "../../../../lib/boardConfig";
 import { MOCK_POSTS } from "../../../../lib/mockPosts";
 import type { Post } from "../../../../lib/postTypes";
@@ -30,8 +30,13 @@ function ExtraRow({ label, value }: { label: string; value: any }) {
   );
 }
 
-export default function CommunityPostPage({ params }: { params: { board: string; id: string } }) {
-  const board = getCommunityBoard(params.board);
+export default function CommunityPostPage({ params }: { params: Promise<{ board: string; id: string }> }) {
+  const { board: boardSlug, id: postId } = use(params);
+  return <CommunityPost key={`${boardSlug}:${postId}`} boardSlug={boardSlug} postId={postId} />;
+}
+
+function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: string }) {
+  const board = getCommunityBoard(boardSlug);
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -39,29 +44,27 @@ export default function CommunityPostPage({ params }: { params: { board: string;
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setLoadError(null);
 
     // 관리자 로그인 상태 확인 (서버가 쿠키로 판별)
     fetch("/api/admin/status", { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (cancelled) return;
-        setIsAdmin(Boolean(d?.isAdmin));
+        setIsAdmin(Boolean(d?.admin));
       })
       .catch(() => {
         if (cancelled) return;
         setIsAdmin(false);
       });
 
-    apiGetPost(params.id)
+    apiGetPost(postId)
       .then((p) => {
         if (cancelled) return;
         setPost(p);
       })
       .catch((e: any) => {
         if (cancelled) return;
-        const seed = MOCK_POSTS.find((p) => p.id === params.id);
+        const seed = MOCK_POSTS.find((p) => p.id === postId);
         setPost(seed ?? null);
         setLoadError(typeof e?.message === "string" ? e.message : "글을 불러오지 못했습니다.");
       })
@@ -73,7 +76,7 @@ export default function CommunityPostPage({ params }: { params: { board: string;
     return () => {
       cancelled = true;
     };
-  }, [params.id]);
+  }, [postId]);
 
   const labelMap = useMemo(() => {
     const m = new Map<string, string>();

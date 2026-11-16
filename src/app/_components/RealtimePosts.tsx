@@ -13,7 +13,6 @@ export default function RealtimePosts({ limit = 5, showHeader = true }: { limit?
 
   useEffect(() => {
     let cancelled = false;
-    setError(null);
 
     // Home: 노출은 IT + 커뮤니티만 (문의 제외)
     const boards = ALL_BOARDS.filter((b) => b.key !== "inquiry");
@@ -26,6 +25,7 @@ export default function RealtimePosts({ limit = 5, showHeader = true }: { limit?
     )
       .then((lists) => {
         if (cancelled) return;
+        setError(null);
         const all = lists.flat();
         all.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
         setPosts(all.slice(0, limit));

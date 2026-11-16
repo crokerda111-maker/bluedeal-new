@@ -7,8 +7,8 @@ import { OUTBOUND_LINKS } from "../../../lib/outbound";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function GET(req: Request, ctx: { params: { code: string } }) {
-  const code = ctx.params.code;
+export async function GET(req: Request, ctx: { params: Promise<{ code: string }> }) {
+  const { code } = await ctx.params;
   if (!/^[a-zA-Z0-9_-]{2,64}$/.test(code)) {
     return NextResponse.json({ error: "Invalid outbound code" }, { status: 400 });
   }

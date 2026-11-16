@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { use, useEffect, useMemo, useState } from "react";
 import { IT_BOARD } from "../../../lib/boardConfig";
 import { MOCK_POSTS } from "../../../lib/mockPosts";
 import type { Post } from "../../../lib/postTypes";
@@ -30,7 +30,12 @@ function ExtraRow({ label, value }: { label: string; value: any }) {
   );
 }
 
-export default function ITPostPage({ params }: { params: { id: string } }) {
+export default function ITPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id: postId } = use(params);
+  return <ITPost key={postId} postId={postId} />;
+}
+
+function ITPost({ postId }: { postId: string }) {
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<{ message: string; code?: string } | null>(null);
@@ -38,8 +43,6 @@ export default function ITPostPage({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setLoadError(null);
 
     // 관리자 로그인 상태(쿠키)를 서버에서 판별해 내려주는 엔드포인트
     fetch("/api/admin/status", { cache: "no-store" })
@@ -53,14 +56,14 @@ export default function ITPostPage({ params }: { params: { id: string } }) {
         setIsAdmin(false);
       });
 
-    apiGetPost(params.id)
+    apiGetPost(postId)
       .then((p) => {
         if (cancelled) return;
         setPost(p.boardKey === "it" ? p : null);
       })
       .catch((e: any) => {
         if (cancelled) return;
-        const seed = MOCK_POSTS.find((p) => p.boardKey === "it" && p.id === params.id);
+        const seed = MOCK_POSTS.find((p) => p.boardKey === "it" && p.id === postId);
         setPost(seed ?? null);
 
         const msg = typeof e?.message === "string" ? e.message : "글을 불러오지 못했습니다.";
@@ -75,7 +78,7 @@ export default function ITPostPage({ params }: { params: { id: string } }) {
     return () => {
       cancelled = true;
     };
-  }, [params.id]);
+  }, [postId]);
 
   const labelMap = useMemo(() => {
     const m = new Map<string, string>();

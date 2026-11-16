@@ -28,6 +28,19 @@ function sha256(text: string): string {
   return crypto.createHash("sha256").update(text).digest("hex");
 }
 
+export class PostValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "PostValidationError";
+  }
+}
+
+function privatePasswordHash(password: unknown): string {
+  const value = typeof password === "string" ? password.trim() : "";
+  if (!value) throw new PostValidationError("비공개 글에는 비밀번호가 필요합니다.");
+  return sha256(value);
+}
+
 function adminPasswordHash(): string {
   const password = getAdminPassword();
   if (!password) throw new Error("ADMIN_PASSWORD가 설정되지 않았습니다.");
@@ -165,8 +178,7 @@ export async function createOnlinePost(input: CreateOnlinePostInput): Promise<Po
     if (input.lockToAdminPassword) {
       post.passwordHash = adminPasswordHash();
     } else {
-      const pw = (input.password ?? "").trim();
-      post.passwordHash = pw ? sha256(pw) : "";
+      post.passwordHash = privatePasswordHash(input.password);
     }
   }
 
@@ -219,7 +231,8 @@ export async function listOnlinePostsByBoard(boardKey: BoardKey, limit = 50): Pr
 export async function verifyOnlinePostPassword(post: Post, password: string): Promise<boolean> {
   if (!post.isPrivate) return true;
   const hash = post.passwordHash ?? "";
-  if (!hash) return true;
+  // Historical/malformed records must not become readable with any password.
+  if (!hash) return false;
   return sha256(password) === hash;
 }
 
@@ -272,11 +285,13 @@ export async function updateOnlinePost(id: string, patch: UpdateOnlinePostInput)
     if (patch.lockToAdminPassword) {
       next.passwordHash = adminPasswordHash();
     } else if (patch.password !== undefined) {
-      const pw = (patch.password ?? "").trim();
-      next.passwordHash = pw ? sha256(pw) : "";
+      next.passwordHash = privatePasswordHash(patch.password);
     } else {
-      // keep existing hash
-      next.passwordHash = current.passwordHash ?? "";
+      // Public -> private must supply a password. Never store an empty lock.
+      if (!current.passwordHash) {
+        throw new PostValidationError("비공개로 변경할 때는 비밀번호 또는 운영자 잠금을 설정하세요.");
+      }
+      next.passwordHash = current.passwordHash;
     }
   }
 

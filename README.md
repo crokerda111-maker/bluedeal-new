@@ -3,8 +3,9 @@
 핫딜 큐레이션 UI + `/go/{code}` 리다이렉트(블루딜) 뼈대가 포함된 MVP입니다.
 
 ## 0) 요구 사항
-- Node.js 18.17+ (권장: Node 20)
+- Node.js 24.x. 로컬 검증 기준은 Node 24.13.0이며, Vercel도 같은 주요 버전을 사용하도록 지정했습니다.
 - npm (또는 pnpm/yarn)
+- Next.js 16.4.6 / React 19.3.1. `package-lock.json`을 함께 유지하세요.
 
 ## 1) 로컬 실행 (압축 풀고 바로)
 ```bash
@@ -12,7 +13,7 @@
 cd bluedeal-mvp
 
 # 2) 의존성 설치
-npm install
+npm ci
 
 # 3) 개발 서버 실행
 npm run dev
@@ -20,6 +21,22 @@ npm run dev
 
 브라우저에서:
 - http://localhost:3000
+
+### 업데이트 후 검사
+
+```powershell
+npm run build
+npm run typecheck
+npm run lint
+npm run test:boards
+npm run test:collector
+```
+
+Next.js 16에서는 `next lint` 대신 ESLint CLI를 사용합니다. 빌드와 린트는 각각 실행해야 합니다. API 검사는 임시 로컬 KV만 사용하며 운영 DB를 변경하지 않습니다. 검사 범위와 가상 데이터 미리보기는 `ops/tests/README.md`를 참고하세요.
+
+배포 적용 버전은 `/api/version`에서 확인할 수 있습니다. 서비스 버전과 공개 Git 커밋만 반환하며, Vercel 시스템 환경변수에서 커밋을 확인할 수 없으면 `commit`은 `null`입니다. 환경변수 값이나 저장소 인증 정보는 반환하지 않습니다.
+
+개발용 `@typescript-eslint/typescript-estree`의 `minimatch`는 보안 권고 GHSA-g3hv-75wg-m249 대응을 위해 11.0.8로 제한했습니다. 상위 패키지가 패치 의존성을 기본으로 포함하면 이 제한의 필요성을 다시 확인하세요. ESLint 10의 일부 하위 플러그인은 지원 범위 표기가 늦어 설치 시 peer dependency 경고가 발생할 수 있습니다. Next.js 공식 설정은 ESLint 10을 지원하며, 이 프로젝트의 실제 린트 실행으로 호환성을 검증합니다.
 
 ## 2) 중요한 파일 위치
 - 홈(UI): `src/app/page.tsx`

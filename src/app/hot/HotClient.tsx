@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { CATEGORIES, DEALS } from "../../lib/mockDeals";
 
 function cn(...v: Array<string | false | null | undefined>) {
@@ -20,16 +20,13 @@ function formatAgo(min: number) {
 export default function HotDealsPage() {
   const sp = useSearchParams();
   const initialCat = sp.get("cat") ?? "전체";
+  return <HotDeals key={initialCat} initialCat={initialCat} />;
+}
 
+function HotDeals({ initialCat }: { initialCat: string }) {
   const [cat, setCat] = useState<string>(initialCat);
   const [q, setQ] = useState("");
   const [sort, setSort] = useState<"latest" | "hot" | "priceAsc" | "priceDesc">("latest");
-
-  useEffect(() => {
-    // URL param 변경 반영
-    const next = sp.get("cat") ?? "전체";
-    setCat(next);
-  }, [sp]);
 
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();

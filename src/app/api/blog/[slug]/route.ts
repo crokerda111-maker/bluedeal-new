@@ -6,9 +6,10 @@ import { KvNotConfiguredError } from "../../../../lib/kvRest";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function GET(req: NextRequest, context: { params: { slug: string } }) {
+export async function GET(req: NextRequest, context: { params: Promise<{ slug: string }> }) {
   try {
-    const post = await getHybridBlogPost(context.params.slug, isAdminRequest(req));
+    const { slug } = await context.params;
+    const post = await getHybridBlogPost(slug, isAdminRequest(req));
     if (!post) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json({ post });
   } catch (error: any) {
@@ -16,11 +17,12 @@ export async function GET(req: NextRequest, context: { params: { slug: string } 
   }
 }
 
-export async function PUT(req: NextRequest, context: { params: { slug: string } }) {
+export async function PUT(req: NextRequest, context: { params: Promise<{ slug: string }> }) {
   if (!isAdminRequest(req)) return NextResponse.json({ error: "Admin only" }, { status: 403 });
   try {
     const body = await req.json();
-    const post = await saveAdminBlogPost(body, context.params.slug);
+    const { slug } = await context.params;
+    const post = await saveAdminBlogPost(body, slug);
     return NextResponse.json({ post });
   } catch (error: any) {
     if (error instanceof KvNotConfiguredError) {
@@ -30,10 +32,11 @@ export async function PUT(req: NextRequest, context: { params: { slug: string } 
   }
 }
 
-export async function DELETE(req: NextRequest, context: { params: { slug: string } }) {
+export async function DELETE(req: NextRequest, context: { params: Promise<{ slug: string }> }) {
   if (!isAdminRequest(req)) return NextResponse.json({ error: "Admin only" }, { status: 403 });
   try {
-    const deleted = await deleteAdminBlogPost(context.params.slug);
+    const { slug } = await context.params;
+    const deleted = await deleteAdminBlogPost(slug);
     if (!deleted) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json({ ok: true });
   } catch (error: any) {

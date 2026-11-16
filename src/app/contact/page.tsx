@@ -32,8 +32,6 @@ export default function ContactPage() {
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setLoadError(null);
 
     apiListPosts("inquiry")
       .then((data) => {
@@ -153,8 +151,8 @@ export default function ContactPage() {
         </div>
       ) : null}
 
-      <section className="bd-surface-md">
-        <table className="w-full table-fixed border-collapse text-left text-sm">
+      <section className="bd-surface-md overflow-x-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" aria-label="문의 게시글 목록" tabIndex={0}>
+        <table className="w-full min-w-[40rem] table-fixed border-collapse text-left text-sm">
           <thead className="border-b border-white/10 bg-white/5 text-white/70">
             <tr>
               <th className="w-[5ch] px-4 py-3 text-left font-semibold text-white/80">분류</th>

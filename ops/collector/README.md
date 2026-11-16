@@ -43,6 +43,16 @@ ram, cpu, ssd, motherboard, gpu, cooler, halfpc, fullpc
 
 ## 실행
 
+입력 검증만 (가격 파일·이력·확인 시각을 변경하지 않음):
+
+```powershell
+python .\ops\collector\build_prices.py --dry-run
+```
+
+`products.csv`에는 실제로 확인한 상품만 입력하세요. 예제 파일의 가격과 주소는 테스트용이며 게시용 데이터가 아닙니다. 현재 생성기는 CSV 전체를 스냅샷으로 취급하므로, 입력에서 빠진 상품은 생성 결과에서도 빠집니다. 기존 상품을 유지하려면 전체 목록을 포함해야 합니다.
+
+현재 `updatedAt`은 실행 시각입니다. 실제 가격 확인 시각과 생성 시각을 별도로 저장하는 기능은 아직 없습니다. 가격을 재확인하지 않은 CSV를 반복 실행해 최신 확인 정보처럼 게시하지 마세요.
+
 파일 생성만:
 
 ```powershell

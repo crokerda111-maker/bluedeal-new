@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { use, useMemo, useState, type CSSProperties } from "react";
 import {
   getCommunityBoard,
   getTypeOptionsForBoard,
@@ -10,7 +10,8 @@ import {
 } from "../../../../lib/boardConfig";
 import type { PostExtra, PostType } from "../../../../lib/postTypes";
 import { apiCreatePost } from "../../../../lib/postsClient";
-import { getNickname, setNickname } from "../../../../lib/profile";
+import { setNickname } from "../../../../lib/profile";
+import { useNickname } from "../../../../lib/useNickname";
 
 function Field({ def, value, onChange }: { def: FieldDef; value: string; onChange: (v: string) => void }) {
   const base =
@@ -61,27 +62,23 @@ function Field({ def, value, onChange }: { def: FieldDef; value: string; onChang
   );
 }
 
-export default function CommunityWritePage({ params }: { params: { board: string } }) {
+export default function CommunityWritePage({ params }: { params: Promise<{ board: string }> }) {
+  const { board: boardSlug } = use(params);
+  return <CommunityWrite key={boardSlug} boardSlug={boardSlug} />;
+}
+
+function CommunityWrite({ boardSlug }: { boardSlug: string }) {
   const router = useRouter();
-  const board = getCommunityBoard(params.board);
+  const board = getCommunityBoard(boardSlug);
   const typeOptions = useMemo(() => getTypeOptionsForBoard(board), [board]);
 
   const [type, setType] = useState<PostType>(typeOptions[0]?.value ?? "general");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [authorName, setAuthorName] = useState("게스트");
+  const authorName = useNickname();
   const [extra, setExtra] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
-
-  useEffect(() => {
-    setAuthorName(getNickname("게스트"));
-  }, []);
-
-  // board 변경 시 type 기본값 재설정
-  useEffect(() => {
-    if (typeOptions.length) setType(typeOptions[0].value);
-  }, [typeOptions]);
 
   const requiredExtraKeys = useMemo(() => {
     return (board?.extraFields ?? []).filter((f) => f.required).map((f) => f.key);
@@ -91,7 +88,6 @@ export default function CommunityWritePage({ params }: { params: { board: string
     const next = prompt("닉네임을 입력하세요 (최대 20자)", authorName === "게스트" ? "" : authorName);
     if (!next) return;
     setNickname(next);
-    setAuthorName(getNickname("게스트"));
   };
 
   if (!board) {

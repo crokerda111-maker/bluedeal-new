@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { use, useEffect, useMemo, useState } from "react";
 import {
   getCommunityBoard,
   getTypeOptionsForBoard,
@@ -26,8 +26,13 @@ function includesQuery(p: Post, query: string): boolean {
   return hay.includes(q);
 }
 
-export default function CommunityBoardPage({ params }: { params: { board: string } }) {
-  const board = getCommunityBoard(params.board);
+export default function CommunityBoardPage({ params }: { params: Promise<{ board: string }> }) {
+  const { board: boardSlug } = use(params);
+  return <CommunityBoard key={boardSlug} boardSlug={boardSlug} />;
+}
+
+function CommunityBoard({ boardSlug }: { boardSlug: string }) {
+  const board = getCommunityBoard(boardSlug);
 
   const typeOptions = useMemo(() => getTypeOptionsForBoard(board), [board]);
   const [typeFilter, setTypeFilter] = useState<"all" | PostType>("all");
@@ -40,8 +45,6 @@ export default function CommunityBoardPage({ params }: { params: { board: string
   useEffect(() => {
     if (!board) return;
     let cancelled = false;
-    setLoading(true);
-    setLoadError(null);
 
     apiListPosts(board.key)
       .then((data) => {
@@ -74,11 +77,6 @@ export default function CommunityBoardPage({ params }: { params: { board: string
     if (query) list = list.filter((p) => includesQuery(p, query));
     return list;
   }, [posts, typeFilter, q]);
-
-  // If this board only allows one type, force filter to "all".
-  useEffect(() => {
-    if (typeOptions.length <= 1) setTypeFilter("all");
-  }, [typeOptions.length]);
 
   if (!board) {
     return (
@@ -174,8 +172,8 @@ export default function CommunityBoardPage({ params }: { params: { board: string
         </div>
       ) : null}
 
-      <section className="bd-surface-md">
-        <table className="w-full table-fixed border-collapse text-left text-sm">
+      <section className="bd-surface-md overflow-x-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" aria-label={`${board.title} 게시글 목록`} tabIndex={0}>
+        <table className="w-full min-w-[40rem] table-fixed border-collapse text-left text-sm">
           <thead className="border-b border-white/10 bg-white/5 text-white/70">
             <tr>
               <th className="w-[5ch] px-4 py-3 text-left font-semibold text-white/80">분류</th>

@@ -3,7 +3,7 @@ import type { BoardKey, Post, PostType } from "../../../lib/postTypes";
 import { getBoardByKey, getAllowedTypes, POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
 import { isAdminRequest } from "../../../lib/adminAuth";
 import { KvNotConfiguredError } from "../../../lib/kvRest";
-import { createOnlinePost, listOnlinePostsByBoard } from "../../../lib/onlinePosts";
+import { createOnlinePost, listOnlinePostsByBoard, PostValidationError } from "../../../lib/onlinePosts";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -140,6 +140,9 @@ export async function POST(req: NextRequest) {
     const { passwordHash, ...safe } = post as any;
     return json({ post: safe }, { status: 201 });
   } catch (e: any) {
+    if (e instanceof PostValidationError) {
+      return json({ error: e.message }, { status: 400 });
+    }
     if (e instanceof KvNotConfiguredError) {
       return json(
         {

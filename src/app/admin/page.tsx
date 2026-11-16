@@ -16,6 +16,24 @@ function includesQuery(p: Post, query: string): boolean {
   return hay.includes(q);
 }
 
+type BoardResult = {
+  boardKey: BoardKey;
+  posts: Post[];
+  error: { message: string; code?: string } | null;
+};
+
+const EMPTY_POSTS: Post[] = [];
+
+async function readBoard(boardKey: BoardKey): Promise<BoardResult> {
+  try {
+    return { boardKey, posts: await apiListPosts(boardKey, 200), error: null };
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : "게시글을 불러오지 못했습니다.";
+    const code = e instanceof ApiError ? e.code : undefined;
+    return { boardKey, posts: [], error: { message, code } };
+  }
+}
+
 export default function AdminPage() {
   const [checking, setChecking] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -26,15 +44,17 @@ export default function AdminPage() {
   const [boardKey, setBoardKey] = useState<BoardKey>("inquiry");
   const [q, setQ] = useState("");
 
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<{ message: string; code?: string } | null>(null);
+  const [result, setResult] = useState<BoardResult | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
+  const activeResult = isAdmin && result?.boardKey === boardKey ? result : null;
+  const posts = activeResult?.posts ?? EMPTY_POSTS;
+  const loading = isAdmin && (!activeResult || refreshing);
+  const error = activeResult?.error ?? null;
 
   const boards = useMemo(() => ALL_BOARDS, []);
 
   useEffect(() => {
     let cancelled = false;
-    setChecking(true);
     apiAdminStatus()
       .then((ok) => {
         if (cancelled) return;
@@ -55,24 +75,21 @@ export default function AdminPage() {
   }, []);
 
   const refresh = async () => {
-    setLoading(true);
-    setError(null);
+    setRefreshing(true);
     try {
-      const list = await apiListPosts(boardKey, 200);
-      setPosts(list);
-    } catch (e: any) {
-      const msg = typeof e?.message === "string" ? e.message : "게시글을 불러오지 못했습니다.";
-      const code = e instanceof ApiError ? e.code : e?.code;
-      setError({ message: msg, code });
-      setPosts([]);
+      setResult(await readBoard(boardKey));
     } finally {
-      setLoading(false);
+      setRefreshing(false);
     }
   };
 
   useEffect(() => {
     if (!isAdmin) return;
-    void refresh();
+    let cancelled = false;
+    readBoard(boardKey).then((next) => {
+      if (!cancelled) setResult(next);
+    });
+    return () => { cancelled = true; };
   }, [isAdmin, boardKey]);
 
   const onLogin = async () => {
@@ -93,7 +110,7 @@ export default function AdminPage() {
       await apiAdminLogout();
     } finally {
       setIsAdmin(false);
-      setPosts([]);
+      setResult(null);
     }
   };
 

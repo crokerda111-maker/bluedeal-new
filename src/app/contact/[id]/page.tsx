@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { use, useEffect, useMemo, useState } from "react";
 import { POST_TYPE_LABEL } from "../../../lib/boardConfig";
 import { MOCK_POSTS } from "../../../lib/mockPosts";
 import type { Post } from "../../../lib/postTypes";
@@ -30,7 +30,12 @@ function ExtraRow({ label, value }: { label: string; value: any }) {
   );
 }
 
-export default function ContactPostPage({ params }: { params: { id: string } }) {
+export default function ContactPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id: postId } = use(params);
+  return <ContactPost key={postId} postId={postId} />;
+}
+
+function ContactPost({ postId }: { postId: string }) {
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(true);
   const [locked, setLocked] = useState(false);
@@ -40,12 +45,8 @@ export default function ContactPostPage({ params }: { params: { id: string } }) 
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setLocked(false);
-    setPwError(null);
-    setLoadError(null);
 
-    apiGetPost(params.id)
+    apiGetPost(postId)
       .then((p) => {
         if (cancelled) return;
         if (p.boardKey !== "inquiry") return setPost(null);
@@ -64,7 +65,7 @@ export default function ContactPostPage({ params }: { params: { id: string } }) 
         }
 
         // Fallback: seed
-        const seed = MOCK_POSTS.find((p) => p.boardKey === "inquiry" && p.id === params.id);
+        const seed = MOCK_POSTS.find((p) => p.boardKey === "inquiry" && p.id === postId);
         if (seed) {
           setPost(seed);
           setLocked(Boolean(seed.isPrivate));
@@ -82,7 +83,7 @@ export default function ContactPostPage({ params }: { params: { id: string } }) 
     return () => {
       cancelled = true;
     };
-  }, [params.id]);
+  }, [postId]);
 
   const extraEntries = useMemo(() => Object.entries(post?.extra ?? {}), [post]);
 
@@ -92,7 +93,7 @@ export default function ContactPostPage({ params }: { params: { id: string } }) 
     if (!p) return setPwError("비밀번호를 입력하세요.");
 
     try {
-      const unlocked = await apiGetPost(params.id, { password: p });
+      const unlocked = await apiGetPost(postId, { password: p });
       if (unlocked.boardKey !== "inquiry") throw new Error("Invalid board");
       setPost(unlocked);
       setLocked(false);

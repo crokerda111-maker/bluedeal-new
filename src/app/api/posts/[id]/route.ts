@@ -4,6 +4,7 @@ import { KvNotConfiguredError } from "../../../../lib/kvRest";
 import {
   deleteOnlinePost,
   getOnlinePostById,
+  PostValidationError,
   updateOnlinePost,
   verifyOnlinePostPassword,
 } from "../../../../lib/onlinePosts";
@@ -21,8 +22,8 @@ function stripPasswordHash(post: any) {
   return rest;
 }
 
-export async function GET(req: NextRequest, ctx: { params: { id: string } }) {
-  const id = ctx.params.id;
+export async function GET(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const { id } = await ctx.params;
   if (!id) return json({ error: "Missing id" }, { status: 400 });
 
   const admin = isAdminRequest(req);
@@ -71,8 +72,8 @@ export async function GET(req: NextRequest, ctx: { params: { id: string } }) {
   }
 }
 
-export async function PUT(req: NextRequest, ctx: { params: { id: string } }) {
-  const id = ctx.params.id;
+export async function PUT(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const { id } = await ctx.params;
   if (!id) return json({ error: "Missing id" }, { status: 400 });
 
   if (!isAdminRequest(req)) {
@@ -91,6 +92,9 @@ export async function PUT(req: NextRequest, ctx: { params: { id: string } }) {
     if (!updated) return json({ error: "Not found" }, { status: 404 });
     return json({ post: stripPasswordHash(updated) });
   } catch (e: any) {
+    if (e instanceof PostValidationError) {
+      return json({ error: e.message }, { status: 400 });
+    }
     if (e instanceof KvNotConfiguredError) {
       return json(
         {
@@ -105,8 +109,8 @@ export async function PUT(req: NextRequest, ctx: { params: { id: string } }) {
   }
 }
 
-export async function DELETE(req: NextRequest, ctx: { params: { id: string } }) {
-  const id = ctx.params.id;
+export async function DELETE(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const { id } = await ctx.params;
   if (!id) return json({ error: "Missing id" }, { status: 400 });
 
   if (!isAdminRequest(req)) {

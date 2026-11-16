@@ -27,19 +27,13 @@ function ITNewsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [posts, setPosts] = useState<Post[]>([]);
-  const [section, setSection] = useState<"news" | "pick">("news");
+  const section = searchParams.get("section") === "pick" ? "pick" : "news";
   const [q, setQ] = useState("");
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<{ message: string; code?: string } | null>(null);
 
   useEffect(() => {
-    setSection(searchParams.get("section") === "pick" ? "pick" : "news");
-  }, [searchParams]);
-
-  useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setLoadError(null);
 
     apiListPosts("it")
       .then((data) => {
@@ -76,7 +70,6 @@ function ITNewsContent() {
   const isKvMissing = loadError?.code === "KV_NOT_CONFIGURED";
 
   const selectSection = (next: "news" | "pick") => {
-    setSection(next);
     router.replace(next === "pick" ? "/it?section=pick" : "/it?section=news", { scroll: false });
   };
 
@@ -155,8 +148,8 @@ function ITNewsContent() {
         </div>
       ) : null}
 
-      <section className="bd-surface-md">
-        <table className="w-full table-fixed border-collapse text-left text-sm">
+      <section className="bd-surface-md overflow-x-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" aria-label="IT 소식 게시글 목록" tabIndex={0}>
+        <table className="w-full min-w-[40rem] table-fixed border-collapse text-left text-sm">
           <thead className="border-b border-white/10 bg-white/5 text-white/70">
             <tr>
               <th className="w-[5ch] px-4 py-3 text-left font-semibold text-white/80">분류</th>

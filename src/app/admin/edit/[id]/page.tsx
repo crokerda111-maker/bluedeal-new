@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { use, useEffect, useMemo, useState } from "react";
 import { getBoardByKey, getTypeOptionsForBoard, POST_TYPE_LABEL, boardKeyToPath } from "../../../../lib/boardConfig";
 import type { Post, PostExtra, PostType } from "../../../../lib/postTypes";
 import {
@@ -21,9 +21,13 @@ function safeJsonStringify(v: any) {
   }
 }
 
-export default function AdminEditPage({ params }: { params: { id: string } }) {
+export default function AdminEditPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
+  return <AdminEdit key={id} id={id} />;
+}
+
+function AdminEdit({ id }: { id: string }) {
   const router = useRouter();
-  const id = params.id;
 
   const [checking, setChecking] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -47,7 +51,6 @@ export default function AdminEditPage({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     let cancelled = false;
-    setChecking(true);
     apiAdminStatus()
       .then((ok) => {
         if (cancelled) return;
@@ -70,8 +73,6 @@ export default function AdminEditPage({ params }: { params: { id: string } }) {
   useEffect(() => {
     if (!isAdmin) return;
     let cancelled = false;
-    setLoading(true);
-    setError(null);
 
     apiGetPost(id)
       .then((p) => {

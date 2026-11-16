@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import { DEALS } from "../../../lib/mockDeals";
 import SmartLink from "../../../components/SmartLink";
 
-export default function DealDetailPage({ params }: { params: { id: string } }) {
-  const deal = DEALS.find((d) => d.id === params.id);
+export default async function DealDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const deal = DEALS.find((d) => d.id === id);
   if (!deal) return notFound();
 
   return (

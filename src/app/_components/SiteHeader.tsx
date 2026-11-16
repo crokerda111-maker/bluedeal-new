@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { COMMUNITY_BOARDS } from "../../lib/boardConfig";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
-import { getNickname, onProfileChanged, setNickname } from "../../lib/profile";
+import { setNickname } from "../../lib/profile";
+import { useNickname } from "../../lib/useNickname";
 
 function cn(...v: Array<string | false | null | undefined>) {
   return v.filter(Boolean).join(" ");
@@ -81,13 +82,7 @@ function DropItem({ href, children }: { href: string; children: React.ReactNode 
 }
 
 export default function SiteHeader() {
-  const [nickname, setNickState] = useState("게스트");
-
-  useEffect(() => {
-    setNickState(getNickname("게스트"));
-    const off = onProfileChanged(() => setNickState(getNickname("게스트")));
-    return () => off();
-  }, []);
+  const nickname = useNickname();
 
   const communityItems = useMemo(() => COMMUNITY_BOARDS, []);
   const priceItems = useMemo(() => PRICE_CATEGORIES, []);

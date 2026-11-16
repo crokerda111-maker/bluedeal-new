@@ -30,3 +30,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# local verification reports and TypeScript cache
+npm-audit.local.json
+*.tsbuildinfo
+.test-tmp/
+
+# local work and deployment records
+/BLUEDEAL_CHECKPOINT_*.txt
+/BLUEDEAL_SECURITY_UPDATE_*.txt
+/BLUEDEAL_DEPLOYMENT_*.txt
