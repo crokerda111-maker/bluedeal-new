@@ -13,6 +13,14 @@ export function isAdminPasswordConfigured(): boolean {
   return getAdminPassword().length > 0;
 }
 
+export function matchesAdminPassword(candidate: string): boolean {
+  const password = getAdminPassword();
+  if (!password) return false;
+  const expected = crypto.createHash("sha256").update(password).digest();
+  const supplied = crypto.createHash("sha256").update(candidate).digest();
+  return crypto.timingSafeEqual(expected, supplied);
+}
+
 export function getAdminCookieName(): string {
   return COOKIE_NAME;
 }
@@ -28,7 +36,8 @@ export function isAdminRequest(req: NextRequest): boolean {
   const v = req.cookies.get(COOKIE_NAME)?.value;
   if (!v) return false;
   const expected = computeAdminCookieValue();
-  return Boolean(expected && v === expected);
+  return Boolean(expected && /^[a-f0-9]{64}$/.test(v)
+    && crypto.timingSafeEqual(Buffer.from(v, "hex"), Buffer.from(expected, "hex")));
 }
 
 export function setAdminCookie(res: NextResponse): void {

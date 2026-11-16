@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
-import { getAdminPassword, isAdminPasswordConfigured, setAdminCookie } from "../../../../lib/adminAuth";
+import { matchesAdminPassword, isAdminPasswordConfigured, setAdminCookie } from "../../../../lib/adminAuth";
+import { limitAuthenticationAttempt } from "../../../../lib/authAttempts";
 import { postJson } from "../../../../lib/postAccess";
 import { readJsonObject, RequestInputError } from "../../../../lib/requestGuard";
 
@@ -29,7 +30,12 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  if (pw !== getAdminPassword()) {
+  const limited = await limitAuthenticationAttempt(req, "admin-login");
+  if (limited) return json({ errorCode: limited.errorCode, error: limited.error }, {
+    status: limited.status, headers: limited.retryAfter ? { "Retry-After": String(limited.retryAfter) } : undefined,
+  });
+
+  if (!matchesAdminPassword(pw)) {
     return json({ error: "비밀번호가 맞지 않습니다." }, { status: 401 });
   }
 

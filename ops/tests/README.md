@@ -10,6 +10,14 @@ node ops/tests/live-readonly.mjs --commit 실제_40자리_배포_커밋 --report
 
 페이지·관리자·API·정적 이미지·404 응답에서 기본 브라우저 보호 헤더도 확인합니다. [CSP `frame-ancestors`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/frame-ancestors)와 X-Frame-Options는 외부 프레임 삽입을 차단합니다. [nosniff](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options)는 선언된 응답 형식을 사용하게 하며, [Referrer-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy)는 다른 출처로 전체 경로·검색어를 보내지 않도록 설정합니다. CSP는 프레임·기준 주소·플러그인·폼 대상에 한정한 기본 보호이며 전체 XSS 방어나 접근 권한 검증을 대체하지 않습니다.
 
+## 인증 반복 시도 보호
+
+관리자 로그인은 같은 접속 IP 기준 5분에 10회, 비공개 글의 암호 확인은 5분에 20회까지 처리합니다. 성공한 요청도 포함하며 비공개 글의 일반 조회나 인증된 관리자 조회에는 암호 시도 횟수를 더하지 않습니다. 초과하면 `429`와 `Retry-After`를 반환하고, 공유 카운터를 확인할 수 없으면 인증을 허용하지 않고 `503`으로 닫힙니다. 저장소 장애 중 새 로그인도 영향을 받습니다.
+
+기존 Upstash의 [REST 트랜잭션](https://upstash.com/docs/redis/features/restapi#transactions)으로 증가·최초 만료 설정·남은 시간을 함께 처리합니다. 거절 요청이 제한 시간을 연장하지 않습니다. IP 원문이나 비밀번호 대신 서버 전용 HMAC 키를 저장하며 5분 뒤 만료됩니다. [Vercel이 제공하는 접속 IP 헤더](https://vercel.com/docs/headers/request-headers)를 사용하고, 로컬·별도 호스팅에서는 임의 전달 헤더로 카운터를 바꾸지 못하게 공통 카운터를 사용합니다. Vercel 외의 공개 운영에는 해당 호스팅의 신뢰할 수 있는 프록시 설정을 먼저 검토해야 합니다. 이 제한은 서비스 전체 DDoS 방어를 의미하지 않습니다.
+
+검사는 임시 로컬 저장소에서 동시 요청·서버 재시작·시간 경과·전달 헤더 변경·잘못된 저장소 응답·비공개 내용 보호를 확인합니다. 운영 사이트에 반복 로그인 실패나 임시 게시글을 생성하지 않습니다.
+
 ## 로컬 회귀 검사
 
 실제 운영 DB나 Vercel 환경변수 없이 검증합니다. 게시판 검사는 프로덕션 빌드의 HTTP API를 임시 로컬 KV 서버에 연결합니다. 테스트용 비밀번호는 실행할 때 생성하며 외부 서비스로 보내지 않습니다. 가격 생성기 검사는 `.test-tmp/` 아래의 임시 폴더만 사용하고, 검사 후 그 폴더를 정리합니다. 테스트 상품과 가격은 모두 가상 데이터입니다.

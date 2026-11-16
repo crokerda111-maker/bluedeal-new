@@ -5,7 +5,7 @@
 | 변수 | 필수 | 용도 |
 |---|---:|---|
 | `ADMIN_PASSWORD` | 운영 필수 | `/admin` 로그인 |
-| `KV_REST_API_URL` + `KV_REST_API_TOKEN` | 동적 글 사용 시 | 게시판, 관리자 블로그, 동적 `/go` 저장 |
+| `KV_REST_API_URL` + `KV_REST_API_TOKEN` | 인증·동적 글 사용 시 | 관리자 로그인·비공개 암호 확인의 시도 제한, 게시판, 관리자 블로그, 동적 `/go` 저장. 쓰기 가능한 서버 전용 토큰 필요 |
 | `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` | 위 변수의 대안 | Upstash REST 직접 연결 |
 | `OUTBOUND_INGEST_SECRET` | 내부 등록 API 사용 시 | `/api/internal/outbound/register` 인증 |
 | `AFFILIATE_LINKS_JSON` | 발급 링크 연결 시 | 원본 상품 주소와 공식 발급 주소의 서버 전용 매핑. Production·Preview에 등록하며 공개 접두사를 붙이지 않음 |

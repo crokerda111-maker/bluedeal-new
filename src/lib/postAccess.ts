@@ -1,6 +1,7 @@
 import "server-only";
 import { NextRequest, NextResponse } from "next/server";
 import { isAdminRequest } from "./adminAuth";
+import { limitAuthenticationAttempt } from "./authAttempts";
 import { KvNotConfiguredError } from "./kvRest";
 import { getOnlinePostById, verifyOnlinePostPassword } from "./onlinePosts";
 
@@ -19,6 +20,10 @@ export async function readAuthorizedPost(req: NextRequest, id: string, password?
     if (!post) return postJson({ error: "Not found" }, { status: 404 });
     if (post.isPrivate && !isAdminRequest(req)) {
       if (password === undefined) return postJson({ errorCode: "POST_LOCKED", error: "비공개 글입니다. 비밀번호를 입력하세요." }, { status: 401 });
+      const limited = await limitAuthenticationAttempt(req, "private-unlock");
+      if (limited) return postJson({ errorCode: limited.errorCode, error: limited.error }, {
+        status: limited.status, headers: limited.retryAfter ? { "Retry-After": String(limited.retryAfter) } : undefined,
+      });
       if (!await verifyOnlinePostPassword(post, password)) return postJson({ errorCode: "PASSWORD_INVALID", error: "비밀번호가 맞지 않습니다." }, { status: 403 });
     }
     const { passwordHash, ...visible } = post;

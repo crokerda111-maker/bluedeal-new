@@ -52,6 +52,7 @@ async function startApp(env = {}) {
       UPSTASH_REDIS_REST_URL: '', UPSTASH_REDIS_REST_TOKEN: '',
       VERCEL_GIT_COMMIT_SHA: '',
       AFFILIATE_LINKS_JSON: '',
+      VERCEL: '',
       ...env,
     },
     stdio: ['ignore', 'pipe', 'pipe'],
@@ -74,20 +75,30 @@ async function startApp(env = {}) {
 }
 
 async function mockKv() {
-  const controls = { unavailable: false, partial: false, malformed: false, truncated: false, slowHardware: false };
+  const controls = { unavailable: false, partial: false, malformed: false, truncated: false, slowHardware: false, invalidAuthCounter: false, nowMs: Date.now() };
   const requests = [];
   const values = new Map();
   const sorted = new Map();
+  const expires = new Map();
   const token = randomBytes(24).toString('hex');
   function command([name, ...args]) {
     const [key, value] = args;
+    if (expires.has(key) && expires.get(key) <= controls.nowMs) {
+      values.delete(key); sorted.delete(key); expires.delete(key);
+    }
     switch (String(name).toUpperCase()) {
       case 'GET': return values.get(key) ?? null;
-      case 'SET': values.set(key, value); return 'OK';
+      case 'SET': values.set(key, value); expires.delete(key); return 'OK';
       case 'SETNX': if (values.has(key)) return 0; values.set(key, value); return 1;
-      case 'DEL': return Number(values.delete(key));
+      case 'DEL': expires.delete(key); return Number(values.delete(key));
       case 'EXISTS': return Number(values.has(key));
       case 'INCR': { const n = Number(values.get(key) ?? 0) + 1; values.set(key, n); return n; }
+      case 'EXPIRE': {
+        if (!values.has(key) && !sorted.has(key)) return 0;
+        if (args[2] === 'NX' && expires.has(key)) return 0;
+        expires.set(key, controls.nowMs + Number(value) * 1000); return 1;
+      }
+      case 'TTL': return !values.has(key) && !sorted.has(key) ? -2 : expires.has(key) ? Math.max(0, Math.ceil((expires.get(key) - controls.nowMs) / 1000)) : -1;
       case 'ZADD': {
         const entries = sorted.get(key) ?? new Map();
         const exists = entries.has(args[2]);
@@ -130,6 +141,11 @@ async function mockKv() {
         res.end('[]');
         return;
       }
+      if (controls.invalidAuthCounter && req.url === '/multi-exec' && commands[0]?.[0] === 'INCR') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify([{ result: 1 }, { result: 0 }, { result: -1 }]));
+        return;
+      }
       const result = req.url === '/' ? { result: command(parsed) } : commands.map(item => ({ result: command(item) }));
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(result));
@@ -142,7 +158,33 @@ async function mockKv() {
   servers.add(server);
   // A historical malformed private record must stay closed to anonymous users.
   values.set('bd:post:legacy-private', JSON.stringify({ id: 'legacy-private', boardKey: 'inquiry', type: 'general', title: 'Legacy private fixture', content: 'legacy secret', isPrivate: true, passwordHash: '', createdAt: new Date().toISOString() }));
-  return { url: `http://127.0.0.1:${port}`, token, values, controls, requests };
+  return { url: `http://127.0.0.1:${port}`, token, values, controls, requests, expires };
+}
+
+async function authenticationFixture(platform = true) {
+  const kv = await mockKv();
+  const password = randomBytes(24).toString('hex');
+  const env = { ADMIN_PASSWORD: password, KV_REST_API_URL: kv.url, KV_REST_API_TOKEN: kv.token, VERCEL: platform ? '1' : '' };
+  let app = await startApp(env);
+  return {
+    kv, password,
+    async restart() { await stopChild(app.child); app = await startApp(env); },
+    async stop() { await stopChild(app.child); },
+    async call(route, body, options = {}) {
+      const response = await fetch(app.base + route, {
+        method: options.method ?? 'POST', signal: AbortSignal.timeout(15000),
+        headers: {
+          Origin: options.origin ?? app.base,
+          'x-vercel-forwarded-for': options.ip ?? '198.51.100.10',
+          'x-forwarded-for': options.forwardedFor ?? '203.0.113.250',
+          ...(body === undefined ? {} : { 'Content-Type': 'application/json' }),
+          ...(options.cookie ? { Cookie: options.cookie } : {}),
+        },
+        ...(body === undefined ? {} : { body: JSON.stringify(body) }),
+      });
+      return { status: response.status, headers: response.headers, data: await response.json() };
+    },
+  };
 }
 
 async function previewProxy(upstream) {
@@ -646,6 +688,90 @@ try {
     assert.match(response.headers.get('set-cookie'), /Max-Age=0/i);
     assert.equal((await api('GET', '/api/admin/status')).data.admin, false);
     assert.equal((await api('GET', `/api/posts/${privateId}`)).status, 401);
+  });
+  await check('administrator attempt limits survive server restarts, expire, resist forwarded-header changes and fail closed', async () => {
+    const fixture = await authenticationFixture();
+    try {
+      assert.equal((await fixture.call('/api/admin/login', { password: 'wrong' }, { origin: 'https://example.invalid' })).status, 403);
+      assert.equal(fixture.kv.requests.length, 0);
+      for (let n = 0; n < 10; n++) assert.equal((await fixture.call('/api/admin/login', { password: 'wrong' })).status, 401);
+      const expiration = [...fixture.kv.expires.values()][0];
+      const blocked = await fixture.call('/api/admin/login', { password: fixture.password });
+      assert.equal(blocked.status, 429);
+      assert.equal(blocked.data.errorCode, 'AUTH_RATE_LIMIT');
+      assert.equal(blocked.headers.has('set-cookie'), false);
+      assert.ok(Number(blocked.headers.get('retry-after')) > 0 && Number(blocked.headers.get('retry-after')) <= 300);
+      assert.match(blocked.headers.get('cache-control'), /private, no-store/);
+      assert.equal((await fixture.call('/api/admin/login', { password: fixture.password }, { forwardedFor: '203.0.113.251' })).status, 429);
+      assert.equal([...fixture.kv.expires.values()][0], expiration, 'Rejected attempts must not prolong the fixed window');
+      assert.equal((await fixture.call('/api/admin/login', { password: fixture.password }, { ip: '198.51.100.11' })).status, 200);
+      await fixture.restart();
+      assert.equal((await fixture.call('/api/admin/login', { password: fixture.password })).status, 429);
+      fixture.kv.controls.nowMs += 301_000;
+      assert.equal((await fixture.call('/api/admin/login', { password: fixture.password })).status, 200);
+      const concurrent = await Promise.all(Array.from({ length: 12 }, () => fixture.call('/api/admin/login', { password: 'wrong' }, { ip: '198.51.100.12' })));
+      assert.equal(concurrent.filter(r => r.status === 401).length, 10);
+      assert.equal(concurrent.filter(r => r.status === 429).length, 2);
+      for (const fault of ['unavailable', 'malformed', 'invalidAuthCounter']) {
+        fixture.kv.controls[fault] = true;
+        const response = await fixture.call('/api/admin/login', { password: fixture.password }, { ip: '198.51.100.13' });
+        assert.equal(response.status, 503);
+        assert.equal(response.data.errorCode, 'AUTH_PROTECTION_UNAVAILABLE');
+        assert.equal(response.headers.has('set-cookie'), false);
+        assert.equal(JSON.stringify(response.data).includes('PRIVATE_BACKEND_DIAGNOSTIC'), false);
+        fixture.kv.controls[fault] = false;
+      }
+      const stored = JSON.stringify(fixture.kv.requests);
+      assert.equal(stored.includes('198.51.100.'), false);
+      assert.equal(stored.includes(fixture.password), false);
+      assert.ok(fixture.kv.requests.every(row => row.url === '/multi-exec' && row.commands.length === 3));
+    } finally { await fixture.stop(); }
+  });
+  await check('private password attempts are limited before password verification while administrator reads and expiry still work', async () => {
+    const fixture = await authenticationFixture();
+    try {
+      const secret = 'LOCAL_ONLY_RATE_FIXTURE_BODY';
+      const unlockPassword = 'LOCAL_ONLY_UNLOCK_PASSWORD';
+      const created = await fixture.call('/api/posts', { boardKey: 'inquiry', type: 'general', title: 'LOCAL rate-limit fixture', content: secret, isPrivate: true, password: unlockPassword });
+      assert.equal(created.status, 201);
+      const route = `/api/posts/${created.data.post.id}/unlock`;
+      assert.equal((await fixture.call(`/api/posts/${created.data.post.id}`, undefined, { method: 'GET' })).status, 401);
+      assert.equal([...fixture.kv.values.keys()].filter(key => key.startsWith('bd:auth-attempt:')).length, 0);
+      for (let n = 0; n < 20; n++) assert.equal((await fixture.call(route, { password: 'wrong' }, { ip: '198.51.100.20' })).status, 403);
+      const blocked = await fixture.call(route, { password: unlockPassword }, { ip: '198.51.100.20' });
+      assert.equal(blocked.status, 429);
+      assert.equal(blocked.data.errorCode, 'AUTH_RATE_LIMIT');
+      assert.equal(JSON.stringify(blocked.data).includes(secret), false);
+      assert.equal((await fixture.call(route, { password: unlockPassword }, { ip: '198.51.100.21' })).status, 200);
+      const login = await fixture.call('/api/admin/login', { password: fixture.password }, { ip: '198.51.100.22' });
+      assert.equal(login.status, 200);
+      const administrator = await fixture.call(route, { password: 'wrong' }, { ip: '198.51.100.20', cookie: login.headers.get('set-cookie').split(';')[0] });
+      assert.equal(administrator.status, 200);
+      assert.equal(administrator.data.post.content, secret);
+      assert.equal('passwordHash' in administrator.data.post, false);
+      fixture.kv.controls.nowMs += 301_000;
+      assert.equal((await fixture.call(route, { password: unlockPassword }, { ip: '198.51.100.20' })).status, 200);
+      const stored = JSON.stringify(fixture.kv.requests);
+      assert.equal(stored.includes('198.51.100.'), false);
+      assert.equal(stored.includes(unlockPassword), false);
+    } finally { await fixture.stop(); }
+  });
+  await check('configured administrator login cannot bypass missing shared attempt storage', async () => {
+    const missing = await startApp({ ADMIN_PASSWORD: 'LOCAL_ONLY_WITHOUT_KV' });
+    try {
+      const response = await request(missing.base, 'POST', '/api/admin/login', { password: 'LOCAL_ONLY_WITHOUT_KV' });
+      assert.equal(response.status, 503);
+      assert.equal(response.data.errorCode, 'AUTH_PROTECTION_UNAVAILABLE');
+      assert.equal(response.headers.has('set-cookie'), false);
+    } finally { await stopChild(missing.child); }
+  });
+  await check('local and separately hosted authentication never trusts caller-supplied forwarding headers', async () => {
+    const fixture = await authenticationFixture(false);
+    try {
+      for (let n = 1; n <= 10; n++) assert.equal((await fixture.call('/api/admin/login', { password: 'wrong' }, { ip: `198.51.100.${n}`, forwardedFor: `203.0.113.${n}` })).status, 401);
+      const response = await fixture.call('/api/admin/login', { password: fixture.password }, { ip: '198.51.100.200', forwardedFor: '203.0.113.200' });
+      assert.equal(response.status, 429);
+    } finally { await fixture.stop(); }
   });
   const failures = results.filter(result => !result.passed).length;
   console.log(`\n${results.length - failures}/${results.length} checks passed.`);
