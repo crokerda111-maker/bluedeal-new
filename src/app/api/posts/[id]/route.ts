@@ -1,19 +1,18 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { isAdminRequest } from "../../../../lib/adminAuth";
+import { postJson, readAuthorizedPost } from "../../../../lib/postAccess";
 import { KvNotConfiguredError } from "../../../../lib/kvRest";
 import {
   deleteOnlinePost,
-  getOnlinePostById,
   PostValidationError,
   updateOnlinePost,
-  verifyOnlinePostPassword,
 } from "../../../../lib/onlinePosts";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 function json(data: any, init?: ResponseInit) {
-  return NextResponse.json(data, init);
+  return postJson(data, init);
 }
 
 function stripPasswordHash(post: any) {
@@ -23,53 +22,8 @@ function stripPasswordHash(post: any) {
 }
 
 export async function GET(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
-  const { id } = await ctx.params;
-  if (!id) return json({ error: "Missing id" }, { status: 400 });
-
-  const admin = isAdminRequest(req);
-  const pw = req.nextUrl.searchParams.get("pw") ?? "";
-
-  try {
-    const post = await getOnlinePostById(id);
-    if (!post) return json({ error: "Not found" }, { status: 404 });
-
-    if (post.isPrivate && !admin) {
-      if (!pw.trim()) {
-        return json(
-          {
-            errorCode: "POST_LOCKED",
-            error: "비공개 글입니다. 비밀번호를 입력하세요.",
-          },
-          { status: 401 },
-        );
-      }
-
-      const ok = await verifyOnlinePostPassword(post, pw);
-      if (!ok) {
-        return json(
-          {
-            errorCode: "PASSWORD_INVALID",
-            error: "비밀번호가 맞지 않습니다.",
-          },
-          { status: 403 },
-        );
-      }
-    }
-
-    return json({ post: stripPasswordHash(post) });
-  } catch (e: any) {
-    if (e instanceof KvNotConfiguredError) {
-      return json(
-        {
-          errorCode: e.code,
-          error: "온라인 저장소(KV) 연결이 아직 설정되지 않았습니다.",
-        },
-        { status: 503 },
-      );
-    }
-    const msg = typeof e?.message === "string" ? e.message : "Failed to load post";
-    return json({ error: msg }, { status: 500 });
-  }
+  // URL 쿼리로 비밀번호를 받지 않습니다. 열람 인증은 POST /unlock을 사용합니다.
+  return readAuthorizedPost(req, (await ctx.params).id);
 }
 
 export async function PUT(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {

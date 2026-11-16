@@ -282,14 +282,31 @@ try {
   });
   await check('private detail is locked; only the correct password unlocks', async () => {
     assert.equal((await api('GET', `/api/posts/${privateId}`)).status, 401);
-    assert.equal((await api('GET', `/api/posts/${privateId}?pw=wrong`)).status, 403);
-    const response = await api('GET', `/api/posts/${privateId}?pw=fixture-password`);
+    assert.equal((await api('POST', `/api/posts/${privateId}/unlock`, {password:'wrong'})).status, 403);
+    const response = await api('POST', `/api/posts/${privateId}/unlock`, {password:'fixture-password'});
     assert.equal(response.status, 200);
     assert.equal(response.data.post.content, 'private fixture body');
     assert.equal('passwordHash' in response.data.post, false);
+    assert.match(response.headers.get('cache-control'), /private, no-store/);
+    assert.match(response.headers.get('vary'), /Cookie/);
+  });
+  await check('query-string passwords never unlock private content', async () => {
+    const response = await api('GET', `/api/posts/${privateId}?pw=fixture-password`);
+    assert.equal(response.status, 401);
+    assert.equal('post' in response.data, false);
+  });
+  await check('unlock validates origin, JSON and bounded request size before lookup', async () => {
+    assert.equal((await api('POST', `/api/posts/${privateId}/unlock`, {})).status, 400);
+    const sameOrigin = await fetch(`${app.base}/api/posts/${privateId}/unlock`, {method:'POST',headers:{'Content-Type':'application/json',Origin:app.base},body:JSON.stringify({password:'fixture-password'})});
+    assert.equal(sameOrigin.status, 200);
+    assert.equal((await sameOrigin.json()).post.content, 'private fixture body');
+    const foreign = await fetch(`${app.base}/api/posts/${privateId}/unlock`, {method:'POST',headers:{'Content-Type':'application/json',Origin:'https://example.invalid'},body:JSON.stringify({password:'fixture-password'})});
+    assert.equal(foreign.status, 403); await foreign.text();
+    const oversized = await fetch(`${app.base}/api/posts/${privateId}/unlock`, {method:'POST',headers:{'Content-Type':'application/json'},body:'x'.repeat(9000)});
+    assert.equal(oversized.status, 413); await oversized.text();
   });
   await check('private records with an empty hash fail closed', async () => {
-    assert.equal((await api('GET', '/api/posts/legacy-private?pw=anything')).status, 403);
+    assert.equal((await api('POST', '/api/posts/legacy-private/unlock', {password:'anything'})).status, 403);
   });
   await check('anonymous users cannot update or delete posts', async () => {
     assert.equal((await api('PUT', `/api/posts/${privateId}`, { title: 'tampered' })).status, 403);
@@ -339,8 +356,8 @@ try {
   });
   await check('empty password changes cannot remove private protection', async () => {
     assert.equal((await api('PUT', `/api/posts/${privateId}`, { password: '' }, cookie)).status, 400);
-    assert.equal((await api('GET', `/api/posts/${privateId}?pw=wrong`)).status, 403);
-    assert.equal((await api('GET', `/api/posts/${privateId}?pw=fixture-password`)).status, 200);
+    assert.equal((await api('POST', `/api/posts/${privateId}/unlock`, {password:'wrong'})).status, 403);
+    assert.equal((await api('POST', `/api/posts/${privateId}/unlock`, {password:'fixture-password'})).status, 200);
   });
   await check('administrator delete removes detail and list entry', async () => {
     const response = await api('POST', '/api/posts', { boardKey: 'hardware', type: 'general', title: 'delete fixture', content: 'delete fixture' });

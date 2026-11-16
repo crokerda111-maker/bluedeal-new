@@ -60,8 +60,10 @@ export async function apiListPosts(boardKey: BoardKey, limit = 50): Promise<Post
 }
 
 export async function apiGetPost(id: string, opts?: { password?: string }): Promise<Post> {
-  const qs = opts?.password ? `?pw=${encodeURIComponent(opts.password)}` : "";
-  const res = await fetch(`/api/posts/${encodeURIComponent(id)}${qs}`, { method: "GET" });
+  const password = opts?.password;
+  const res = await fetch(`/api/posts/${encodeURIComponent(id)}${password === undefined ? "" : "/unlock"}`, password === undefined ? { method: "GET", cache: "no-store" } : {
+    method: "POST", cache: "no-store", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ password }),
+  });
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
   if (!data?.post) throw new ApiError("Post payload missing", { status: res.status });

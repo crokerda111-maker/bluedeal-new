@@ -232,8 +232,8 @@ export async function verifyOnlinePostPassword(post: Post, password: string): Pr
   if (!post.isPrivate) return true;
   const hash = post.passwordHash ?? "";
   // Historical/malformed records must not become readable with any password.
-  if (!hash) return false;
-  return sha256(password) === hash;
+  if (!/^[0-9a-f]{64}$/.test(hash)) return false;
+  return crypto.timingSafeEqual(Buffer.from(sha256(password), "hex"), Buffer.from(hash, "hex"));
 }
 
 export type UpdateOnlinePostInput = {

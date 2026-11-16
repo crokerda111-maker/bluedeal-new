@@ -41,6 +41,7 @@ function ContactPost({ postId }: { postId: string }) {
   const [locked, setLocked] = useState(false);
   const [pw, setPw] = useState("");
   const [pwError, setPwError] = useState<string | null>(null);
+  const [unlocking, setUnlocking] = useState(false);
   const [loadError, setLoadError] = useState<{ message: string; code?: string } | null>(null);
 
   useEffect(() => {
@@ -88,15 +89,17 @@ function ContactPost({ postId }: { postId: string }) {
   const extraEntries = useMemo(() => Object.entries(post?.extra ?? {}), [post]);
 
   const onUnlock = async () => {
+    if (unlocking) return;
     setPwError(null);
     const p = pw.trim();
     if (!p) return setPwError("비밀번호를 입력하세요.");
-
+    setUnlocking(true);
     try {
       const unlocked = await apiGetPost(postId, { password: p });
       if (unlocked.boardKey !== "inquiry") throw new Error("Invalid board");
       setPost(unlocked);
       setLocked(false);
+      setPw("");
     } catch (e: any) {
       const code = e instanceof ApiError ? e.code : e?.code;
       if (code === "PASSWORD_INVALID") {
@@ -104,7 +107,7 @@ function ContactPost({ postId }: { postId: string }) {
       } else {
         setPwError("열람 중 오류가 발생했습니다.");
       }
-    }
+    } finally { setUnlocking(false); }
   };
 
   if (loading && !post && !locked) {
@@ -132,24 +135,29 @@ function ContactPost({ postId }: { postId: string }) {
           <div className="text-lg font-semibold">비공개 문의</div>
           <div className="mt-2 text-sm text-white/70">열람하려면 비밀번호를 입력하세요.</div>
 
-          <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <form method="post" onSubmit={(event) => { event.preventDefault(); void onUnlock(); }} className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
+            <label className="sr-only" htmlFor="private-post-password">비공개 글 비밀번호</label>
             <input
+              id="private-post-password"
               value={pw}
               onChange={(e) => setPw(e.target.value)}
               type="password"
+              autoComplete="off"
+              aria-invalid={Boolean(pwError)}
+              aria-describedby={pwError ? "private-post-error" : undefined}
               className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-white/35 focus:border-cyan-300/50 sm:max-w-sm"
               placeholder="비밀번호"
             />
             <button
-              onClick={onUnlock}
-              className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950"
-              type="button"
+              className="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 disabled:opacity-60"
+              type="submit"
+              disabled={unlocking}
             >
-              열람
+              {unlocking ? "확인 중..." : "열람"}
             </button>
-          </div>
+          </form>
 
-          {pwError ? <div className="mt-3 text-sm text-red-200">{pwError}</div> : null}
+          {pwError ? <div id="private-post-error" role="alert" className="mt-3 text-sm text-red-200">{pwError}</div> : null}
         </section>
       </div>
     );

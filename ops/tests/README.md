@@ -11,9 +11,12 @@ npm run typecheck
 npm run lint
 npm run test:boards
 npm run test:collector
+npm run test:post-client
 ```
 
 `test:boards`는 관리자 비밀번호/KV 미설정, 일반 글 작성·목록·상세, 비공개 문의 마스킹과 잠금, 관리자 수정·삭제·로그인·로그아웃을 검사합니다. 빈 비밀번호 해시, 비밀번호 없는 비공개 전환, 빈 비밀번호로 잠금 제거는 회귀 검사에 포함됩니다. 운영 Upstash의 실제 연결 상태를 증명하는 테스트는 아닙니다.
+
+비공개 열람은 `POST /api/posts/{id}/unlock`의 JSON 본문으로 암호를 받습니다. 기존 GET 쿼리의 `pw`는 무시합니다. 응답은 `private, no-store`이며 암호 해시는 반환하지 않습니다. 브라우저와 같은 출처의 요청 허용, 다른 출처 거부, 8 KiB 초과 본문 거부를 함께 검사합니다. `test:post-client`는 클라이언트가 암호를 URL에 넣지 않는지 확인합니다.
 
 Next.js 16 업데이트 회귀 검사에는 동적 페이지·없는 가격 카테고리의 404, `/go`의 허용 판매처 리다이렉트와 허용되지 않은 호스트 차단, 블로그 API의 초안 비공개·관리자 수정·삭제도 포함합니다. 외부 구매 링크는 실제로 따라가지 않습니다.
 
