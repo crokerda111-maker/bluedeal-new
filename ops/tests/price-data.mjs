@@ -22,6 +22,21 @@ test('unknown delivery is never treated as free in either total-price order', ()
   assert.deepEqual(ram.map(i=>i.id), ['a','b','c']);
 });
 
+test('separate search words match across product, spec and seller fields without becoming OR or regex searches', () => {
+  const items = [
+    {id:'k32',name:'KLEVV FIT V WHITE DDR5-6000 CL30 32GB',spec:'16GB×2',source:'G마켓',seller:'Fixture Seller',price:100},
+    {id:'k48',name:'KLEVV CRAS V RGB WHITE DDR5-6000 CL30 48GB',spec:'24GB×2',source:'11번가',seller:'Other Seller',price:200},
+    {id:'other',name:'Other DDR5 32GB',source:'G마켓',seller:'Fixture Seller',price:300},
+  ];
+  assert.deepEqual(filterPrices(items,'ram',filters({q:'KLEVV 32GB'})).map(i=>i.id),['k32']);
+  assert.deepEqual(filterPrices(items,'ram',filters({q:'  32gb\tKLEVV   seller  '})).map(i=>i.id),['k32']);
+  assert.deepEqual(filterPrices(items,'ram',filters({q:'11번가 CRAS 24GB×2'})).map(i=>i.id),['k48']);
+  assert.deepEqual(filterPrices(items,'ram',filters({q:'DDR5 6000 CL30'})).map(i=>i.id),['k32','k48']);
+  assert.equal(filterPrices(items,'ram',filters({q:'KLEVV 64GB'})).length,0);
+  assert.equal(filterPrices(items,'ram',filters({q:'.*'})).length,0);
+  assert.deepEqual(filterPrices(items,'ram',filters({q:' \t '})).map(i=>i.id),['k32','k48','other']);
+});
+
 test('SSD DRAM information stays unknown until explicitly verified', () => {
   const ssd = [{id:'s1',name:'DRAM model name only',price:1,capacityGB:1000},
     {id:'s2',name:'Fixture',price:2,capacityGB:2000,ssdDram:'present'},

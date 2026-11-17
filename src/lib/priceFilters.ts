@@ -35,9 +35,12 @@ export function readPriceFilters(search: Search): PriceFilters {
 }
 
 export function filterPrices(items: PriceItem[], category: PriceCategoryKey, filters: PriceFilters): PriceItem[] {
-  const query = filters.query.toLocaleLowerCase("ko-KR");
+  const terms = filters.query.toLocaleLowerCase("ko-KR").split(/\s+/).filter(Boolean);
   return items.filter(item => {
-    if (query && ![item.name, item.spec, item.source, item.seller].filter(Boolean).join(" ").toLocaleLowerCase("ko-KR").includes(query)) return false;
+    if (terms.length) {
+      const text = [item.name, item.spec, item.source, item.seller].filter(Boolean).join(" ").toLocaleLowerCase("ko-KR");
+      if (!terms.every(term => text.includes(term))) return false;
+    }
     if (["ram", "ssd", "gpu"].includes(category) && filters.capacity && item.capacityGB !== Number(filters.capacity)) return false;
     if (category === "ram" && filters.memory && item.memoryType !== filters.memory) return false;
     if (category === "ssd" && filters.dram && (item.ssdDram ?? "unknown") !== filters.dram) return false;
