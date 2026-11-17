@@ -58,6 +58,8 @@ def records(payload, kind):
         if not lists:
             raise ReviewError("일반 핫딜 응답에 문서의 상품 목록이 없습니다.")
         for group in lists:
+            if payload[group] == []:  # Actual responses use [] for an empty category.
+                continue
             if not isinstance(payload[group], dict):
                 raise ReviewError("일반 핫딜의 판매처별 배열을 확인하세요.")
             for merchant, rows in payload[group].items():
@@ -109,6 +111,8 @@ def review(payload, kind, catalog):
         real = kind == "realhotdeal"
         code = row.get("product_code" if real else "p_code")
         name = row.get("product_name" if real else "p_name")
+        if real and type(code) is int and 0 <= code <= 2**53 - 1:
+            code = str(code)
         if not isinstance(code, str) or not code or len(code) > 200 or not isinstance(name, str) or not name.strip() or len(name) > 2000:
             raise ReviewError("API의 상품 코드와 이름 형식을 확인하세요.")
         raw_price = row.get("discount_price") if real else row.get("p_price")
@@ -118,9 +122,9 @@ def review(payload, kind, catalog):
             price = parse_price(raw_price)
         except ValueError:
             price = None
-        currency = row.get("curreny") if real else None  # Spelling in the official documentation.
-        if not isinstance(currency, str) or len(currency) > 20:
-            currency = None
+        # The docs spell this curreny; actual responses also use currency.
+        currencies = [row[key] for key in ("currency", "curreny") if key in row] if real else []
+        currency = currencies[0] if currencies and all(isinstance(value, str) and len(value) <= 20 and value == currencies[0] for value in currencies) else None
         missing = list(REQUIRED_REVIEW)
         if currency != "KRW":
             missing.append("verifiedKrwCurrency")

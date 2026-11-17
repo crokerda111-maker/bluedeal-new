@@ -74,7 +74,7 @@ class LinkPriceReviewTests(unittest.TestCase):
 
     def test_error_responses_and_changed_shapes_cannot_be_mistaken_for_empty_success(self):
         for payload in ({"success": False}, {"success": "true", "list_recommend": {}}, {"success": True},
-                        {"success": True, "list_recommend": []}, {"success": True, "list_recommend": {"gmarket": {}}}):
+                        {"success": True, "list_recommend": [self.normal_row]}, {"success": True, "list_recommend": {"gmarket": {}}}):
             with self.assertRaises(reviewer.ReviewError):
                 reviewer.review(payload, "hotdeal", self.catalog)
         with self.assertRaises(reviewer.ReviewError):
@@ -82,6 +82,41 @@ class LinkPriceReviewTests(unittest.TestCase):
         empty = reviewer.review({"success": True, "list_recommend": {}}, "hotdeal", self.catalog)
         self.assertEqual(empty["recordCount"], 0)
         self.assertEqual(empty["unmatchedCatalogIds"], ["fixture-kit"])
+
+    def test_actual_empty_category_arrays_do_not_hide_populated_merchant_groups(self):
+        payload = {"success": True, "list_recommend": {"gmarket": [self.normal_row]}, "list_fashion": [], "list_food": []}
+        report = reviewer.review(payload, "hotdeal", self.catalog)
+        self.assertEqual(report["recordCount"], 1)
+        self.assertEqual(report["matchedCatalogCount"], 1)
+        self.assertFalse(report["readyForPublish"])
+        empty = reviewer.review({"success": True, "list_recommend": []}, "hotdeal", self.catalog)
+        self.assertEqual(empty["recordCount"], 0)
+        self.assertEqual(empty["unmatchedCatalogIds"], ["fixture-kit"])
+        self.assertFalse(empty["readyForPublish"])
+
+    def test_actual_numeric_product_codes_accept_only_exact_safe_nonnegative_integers(self):
+        for value in (0, 100, 2**53 - 1):
+            row = dict(self.real_row, product_code=value)
+            report = reviewer.review([row], "realhotdeal", self.catalog)
+            self.assertEqual(report["candidates"][0]["productCode"], str(value))
+            self.assertFalse(report["readyForPublish"])
+        for value in (True, False, 1.0, -1, 2**53, {}, None):
+            with self.assertRaises(reviewer.ReviewError):
+                reviewer.review([dict(self.real_row, product_code=value)], "realhotdeal", self.catalog)
+
+    def test_currency_spelling_variants_require_agreement_and_never_guess_conflicting_units(self):
+        for fields in ({"currency": "KRW"}, {"curreny": "KRW"}, {"currency": "KRW", "curreny": "KRW"}):
+            row = {key: value for key, value in self.real_row.items() if key != "curreny"}
+            row.update(fields)
+            candidate = reviewer.review([row], "realhotdeal", self.catalog)["candidates"][0]
+            self.assertEqual(candidate["currencyAsProvided"], "KRW")
+            self.assertNotIn("verifiedKrwCurrency", candidate["requiresVerification"])
+        for fields in ({"currency": "KRW", "curreny": "USD"}, {"currency": None, "curreny": "KRW"}, {"currency": "krw"}, {}):
+            row = {key: value for key, value in self.real_row.items() if key != "curreny"}
+            row.update(fields)
+            candidate = reviewer.review([row], "realhotdeal", self.catalog)["candidates"][0]
+            self.assertIn("verifiedKrwCurrency", candidate["requiresVerification"])
+            self.assertFalse(candidate["readyForPublish"])
 
     def test_json_duplicate_keys_nan_and_html_are_rejected(self):
         path = self.root / "response.json"
