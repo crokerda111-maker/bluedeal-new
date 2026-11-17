@@ -316,6 +316,7 @@ try {
     {merchant:'gmarket',provider:'linkprice',originalUrl:gm.originalUrl,affiliateUrl:'https://app.ac/testOnlyPostNotice'},
     {merchant:'coupang',provider:'coupang',originalUrl:'https://www.coupang.com/vp/products/1',affiliateUrl:'https://link.coupang.com/a/testOnlyPostNotice'},
     {merchant:'aliexpress',provider:'aliexpress',code:'local-ali',originalUrl:'https://www.aliexpress.com/',affiliateUrl:'https://s.click.aliexpress.com/e/_FAKE_POST_NOTICE'},
+    {merchant:'aliexpress',provider:'aliexpress',code:'aliexpress-offer',originalUrl:'https://ko.aliexpress.com/item/1005013473947755.html',affiliateUrl:'https://s.click.aliexpress.com/e/_FAKE_PRODUCT_OFFER'},
   ];
   for (const [code,merchant,originalUrl] of [
     ['dyn-cp','coupang','https://www.coupang.com/vp/products/1'],
@@ -331,6 +332,23 @@ try {
   kv.values.set('bd:post:'+mixedPost.id,JSON.stringify(mixedPost));
   const disclosureApp = await startApp({ADMIN_PASSWORD:password,KV_REST_API_URL:kv.url,KV_REST_API_TOKEN:kv.token,AFFILIATE_LINKS_JSON:JSON.stringify(fakeMappings)});
   try {
+    await check('manual product cards require the matching registered source and keep prices and issued targets private', async () => {
+      const name='MCHOSE V9 Pro2 게이밍 헤드셋';
+      const html=await(await fetch(disclosureApp.base+'/about')).text();
+      assert.ok(html.includes(name)&&html.includes('V9 Pro2 White (화이트)'));
+      assert.ok(html.includes('상품 정보 확인:')&&html.includes('2026-11-17'));
+      assert.ok(html.indexOf('이 글에는 제휴 링크가 포함되어 있습니다.')<html.indexOf(name));
+      assert.ok(html.includes('href="/go/aliexpress-offer"')&&html.includes('rel="sponsored noopener noreferrer"'));
+      for(const text of ['44,600','15ms','THX','_FAKE_PRODUCT_OFFER']) assert.equal(html.includes(text),false);
+      assert.equal((await(await fetch(app.base+'/about')).text()).includes(name),false);
+      const other=await startApp({AFFILIATE_LINKS_JSON:JSON.stringify([{...fakeMappings.at(-1),originalUrl:'https://www.aliexpress.com/item/123.html'}])});
+      try {
+        const changed=await(await fetch(other.base+'/about')).text();
+        assert.equal(changed.includes(name),false);
+        assert.equal(changed.includes('V9 Pro2 White'),false);
+        assert.ok(changed.includes('알리 제휴 페이지로 이동'));
+      } finally {await stopChild(other.child);}
+    });
     await check('post detail classifies actual static, stored and manual affiliate links without serializing private targets or counting clicks', async () => {
       const before=kv.requests.length;
       const response=await request(disclosureApp.base,'GET','/api/posts/'+mixedPost.id);

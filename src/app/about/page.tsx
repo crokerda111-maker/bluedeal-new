@@ -2,6 +2,7 @@ import Link from "next/link";
 import { pageMetadata } from "../../lib/site";
 import { getMeta } from "../../lib/prices";
 import { getRegisteredOutboundLink } from "../../lib/affiliate";
+import affiliateProducts from "../../content/affiliate-products.json";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +12,7 @@ export default async function AboutPage() {
   const meta = await getMeta();
   const coupang = getRegisteredOutboundLink("coupang-shop");
   const aliexpress = getRegisteredOutboundLink("aliexpress-offer");
+  const aliProduct = aliexpress && affiliateProducts.find(product => product.originalUrl === aliexpress.originalUrl);
   return (
     <div className="space-y-6">
       <section className="bd-surface-md p-6">
@@ -50,9 +52,14 @@ export default async function AboutPage() {
             </div> : null}
             {aliexpress ? <div className="rounded-xl border border-white/15 bg-[#060B1A]/40 p-4">
               <h3 className="font-semibold">알리익스프레스</h3>
-              <p className="mt-2 text-sm leading-6 text-white/75">블루딜에 등록된 알리익스프레스 제휴 페이지로 이동합니다. 상품·옵션·배송 조건은 이동한 화면에서 확인해 주세요.</p>
+              {aliProduct ? <div className="mt-3 space-y-2">
+                <h4 className="font-semibold leading-6">{aliProduct.name}</h4>
+                <p className="text-sm leading-6 text-white/85">선택 옵션: {aliProduct.option}</p>
+                <p className="text-xs leading-5 text-white/65">상품 정보 확인: {aliProduct.checkedAt}</p>
+              </div> : <p className="mt-2 text-sm leading-6 text-white/75">블루딜에 등록된 알리익스프레스 제휴 페이지로 이동합니다.</p>}
+              <p className="mt-2 text-sm leading-6 text-white/75">상품·옵션·배송 조건과 최종 결제 금액은 이동한 화면에서 확인해 주세요.</p>
               <p role="note" className="mt-3 text-sm leading-6 text-white/75">제휴 링크를 통한 구매로 블루딜이 수수료를 받을 수 있습니다.</p>
-              <a href="/go/aliexpress-offer" target="_blank" rel="sponsored noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-4 text-sm font-semibold text-cyan-100 hover:bg-cyan-300/20">알리 제휴 페이지로 이동 ↗<span className="sr-only"> (새 창)</span></a>
+              <a href="/go/aliexpress-offer" target="_blank" rel="sponsored noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-4 text-sm font-semibold text-cyan-100 hover:bg-cyan-300/20">{aliProduct ? "알리 상품 보러가기" : "알리 제휴 페이지로 이동"} ↗<span className="sr-only"> (새 창)</span></a>
             </div> : null}
           </div>
           <p className="mt-4 text-xs leading-5 text-white/65">판매 가격과 재고는 변동될 수 있습니다. 구매 전에 판매자·상품 옵션·배송비·최종 결제 금액을 확인해 주세요.</p>
