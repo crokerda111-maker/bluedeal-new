@@ -155,6 +155,20 @@ powershell -NoProfile -File ops/collector/publish_prices.ps1 -FromFeed -Validate
 
 운영 확인은 최대 10분입니다. 인증 보호 응답은 우회하지 않습니다. 업로드가 끝났으나 운영 확인이 실패하면 `uploaded-unverified`로 남기며, 자동 재게시·되돌리기는 하지 않습니다. `state/last-publish.json`, `state/last-successful-publish.json`, `state/last-deployment-check.json`에서 원본 검증·업로드·운영 검증을 구분해 확인합니다. 이 기록은 Git에서 제외하며 원본 피드 URL·토큰·응답 본문을 포함하지 않습니다.
 
+## 링크프라이스 API 후보 수신·검토
+
+```powershell
+python ops/collector/fetch_linkprice_review.py --kind both
+```
+
+이 명령은 공식 일반 핫딜·리얼핫딜 API를 각 한 번 조회하고 현재 카탈로그와 비교하는 검토 도구입니다. 계정 식별자는 `LINKPRICE_AFFILIATE_ID` 또는 기존 `ops/private/affiliate-config.local.json`의 검증 가능한 공식 긴 링크에서 하나로 확인합니다. 명령 인자에 실제 식별자를 적거나 새 키를 생성할 필요가 없습니다. 등록된 긴 링크가 없어 식별할 수 없으면 설정 확인 후 중단합니다.
+
+요청은 `https://api.linkprice.com`의 두 고정 경로만 사용하며 쿠키·비밀번호를 보내거나 리다이렉트를 따라가지 않습니다. 20초·5MiB 제한을 적용합니다. 리얼 API가 JSON을 `text/html`로 보낼 수 있어 본문을 엄격한 JSON으로 검증하며, 로그인 HTML·실패·모호한 구조는 검토 성공으로 처리하지 않습니다. 진단에는 계정값·원문·목적지 URL을 출력하지 않습니다.
+
+원문과 검토 결과는 `ops/private/linkprice-review/`에 고유 시각 이름으로 저장합니다. 결과의 `retrievedAt`은 수신 시각이며 상품 가격 확인 시각이 아닙니다. `readyForPublish`는 항상 `false`입니다. 실제 옵션·판매자·배송비·통화·가격 조건·관측 시각과 전체 카탈로그를 별도로 검증해야 합니다. 원문에는 제휴 주소가 포함될 수 있으므로 Git 제외된 비공개 파일로 유지합니다.
+
+공식 안내의 30분 갱신 권장에 맞춰 반복 조회 간격을 잡아야 합니다. 이 명령은 예약 작업을 등록하지 않으며 CSV 입력·공개 가격·제휴 환경·게시 성공 기록을 변경하지 않습니다. 오류 시에도 기존 검토 보고서는 보존합니다.
+
 ## 09:00 / 17:00 예약 실행 준비
 
 실제 승인된 가격 원본과 Git 인증을 확인하기 전에는 예약 작업을 활성화하지 않습니다. 현재 예약 작업은 등록하지 않았습니다.
