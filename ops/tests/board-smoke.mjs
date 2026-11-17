@@ -9,7 +9,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
+import reservedPorts from 'next/dist/lib/helpers/get-reserved-port.js';
 import { assertBrowserHeaders } from './browser-headers.mjs';
+import { assertPublicMetadata, assertExcludedMetadata } from './page-metadata.mjs';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const generatedLinks = JSON.parse(await readFile(new URL('../../src/content/outbound.generated.json', import.meta.url), 'utf8'));
@@ -19,9 +21,15 @@ const children = new Set();
 const results = [];
 
 async function listen(server) {
-  server.listen(0, '127.0.0.1');
-  await once(server, 'listening');
-  return server.address().port;
+  // Windows can allocate a port (for example 6000) rejected by Next.js and Fetch.
+  for (let attempt = 0; attempt < 10; attempt++) {
+    server.listen(0, '127.0.0.1');
+    await once(server, 'listening');
+    const port = server.address().port;
+    if (!reservedPorts.isPortIsReserved(port)) return port;
+    await new Promise(resolve => server.close(resolve));
+  }
+  throw new Error('Could not allocate a non-reserved local test port');
 }
 
 async function stopChild(child) {
@@ -455,6 +463,19 @@ try {
     assert.equal((await fetch(`${app.base}/community/not-a-board`)).status, 404);
   });
 
+  await check('board sharing metadata matches each public page without leaking list canonicals into write or private pages', async () => {
+    for (const route of ['/it', '/community', '/community/hardware', '/community/hotdeal']) {
+      const response = await fetch(app.base + route);
+      assert.equal(response.status, 200);
+      assertPublicMetadata(await response.text(), route);
+    }
+    for (const route of ['/it/write', '/community/hardware/write', '/community/hotdeal/write', '/contact/write?vis=private', '/admin']) {
+      const response = await fetch(app.base + route);
+      assert.equal(response.status, 200);
+      assertExcludedMetadata(await response.text());
+    }
+  });
+
   await check('shared link image is a valid 1200 by 630 PNG', async () => {
     const response = await fetch(`${app.base}/opengraph-image`);
     assert.equal(response.status, 200);
@@ -566,7 +587,7 @@ try {
     const response=await fetch(`${app.base}/contact/${privateId}`);
     assert.equal(response.status,200);
     const html=await response.text();
-    assert.match(html,/name="robots" content="noindex, nofollow"/);
+    assertExcludedMetadata(html);
     assert.doesNotMatch(html,/private fixture body|fixture@example\.invalid|fixture-password|passwordHash/);
     const wrongBoard=await fetch(`${app.base}/community/hardware/${privateId}`);
     assert.equal(wrongBoard.status,404);

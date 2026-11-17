@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { COMMUNITY_BOARDS } from "../../lib/boardConfig";
+import { pageMetadata } from "../../lib/site";
 
-export const metadata = {
-  title: "커뮤니티 | BLUEDEAL",
-  description: "BLUEDEAL 커뮤니티",
-};
+export const metadata = pageMetadata("커뮤니티 | BLUEDEAL", "하드웨어 질문, 제품 사용기와 팁, 핫딜 정보를 블루딜 커뮤니티에서 나눠보세요.", "/community");
 
 function BoardLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (

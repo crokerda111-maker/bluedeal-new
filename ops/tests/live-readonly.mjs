@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import { writeFile } from 'node:fs/promises';
 import { assertBrowserHeaders } from './browser-headers.mjs';
+import { assertPublicMetadata, assertExcludedMetadata } from './page-metadata.mjs';
 
 const args = process.argv.slice(2);
 function option(name) {
@@ -81,6 +82,19 @@ for (const route of ['/no-such-verification-page', '/prices/no-such-category', '
     assert.doesNotMatch(text, /₩129,000|역대가 근처/);
   });
 }
+await check('public board share titles and canonicals, with write/private inheritance excluded', async () => {
+  for (const route of ['/it', '/community', '/community/hardware', '/community/hotdeal']) {
+    const { response, text } = await read(route);
+    assert.equal(response.status, 200);
+    assertPublicMetadata(text, route);
+  }
+  for (const route of ['/it/write', '/community/hardware/write', '/community/hotdeal/write', '/contact/write?vis=private', '/admin']) {
+    const { response, text } = await read(route);
+    assert.equal(response.status, 200);
+    assertExcludedMetadata(text);
+  }
+});
+
 await check('robots and sitemap', async () => {
   const robots = await read('/robots.txt');
   assert.equal(robots.response.status, 200);

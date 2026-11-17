@@ -8,6 +8,8 @@ node ops/tests/live-readonly.mjs --commit 실제_40자리_배포_커밋 --report
 
 기본 대상은 `https://bluedeal.co.kr`입니다. 공개 페이지·정확한 404 응답·배포 커밋·검색 노출 규칙·익명 게시판 응답의 마스킹과 캐시 정책을 확인합니다. 로그인, 글 작성·수정·삭제, 판매처 이동 링크 클릭을 수행하지 않으며 원격 본문이나 문의 내용을 출력하지 않습니다. 운영 DB 쓰기 검증과 실제 제휴 귀속 검증을 대체하지 않습니다.
 
+IT·커뮤니티·하드웨어·핫딜 목록은 실제 HTML의 페이지 제목과 공유 제목, 대표 주소를 함께 대조합니다. 글쓰기·비공개 문의·관리자 화면은 검색 제외를 유지하고 상위 목록의 대표 주소나 공유 URL을 물려받지 않아야 합니다. 로컬 통합 점검은 공개 글 상세의 대표 주소와 비공개 문의 상세의 제외 설정도 검사합니다.
+
 페이지·관리자·API·정적 이미지·404 응답에서 기본 브라우저 보호 헤더도 확인합니다. [CSP `frame-ancestors`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/frame-ancestors)와 X-Frame-Options는 외부 프레임 삽입을 차단합니다. [nosniff](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options)는 선언된 응답 형식을 사용하게 하며, [Referrer-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy)는 다른 출처로 전체 경로·검색어를 보내지 않도록 설정합니다. CSP는 프레임·기준 주소·플러그인·폼 대상에 한정한 기본 보호이며 전체 XSS 방어나 접근 권한 검증을 대체하지 않습니다.
 
 ## 관리자 세션 만료
@@ -74,6 +76,8 @@ node .\ops\tests\board-smoke.mjs --preview
 ```
 
 미리보기는 가상 글만 포함하며, `stop` 입력 후 Enter 또는 Ctrl+C로 종료합니다. 임시 KV는 메모리에서만 유지합니다. 자동 실행 도구에서 미리보기를 쓰는 경우 표준 입력이 열린 대화형 세션을 사용하세요.
+
+임시 서버 포트는 운영체제가 배정하며, 설치된 Next.js가 예약한 포트는 피합니다. 실제 서비스 포트나 네트워크 설정을 변경하지 않습니다.
 
 미리보기 터미널에 `offline`, `partial`, `online`을 입력하면 가상 KV 전체 장애·리뷰 게시판 장애·정상 상태로 전환합니다. 브라우저에서 홈을 새로고침하거나 최신 게시글의 `다시 불러오기`를 눌러 장애 안내와 복구를 확인할 수 있습니다. 운영 KV에 영향을 주지 않습니다.
 
