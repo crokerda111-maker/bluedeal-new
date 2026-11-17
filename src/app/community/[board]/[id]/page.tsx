@@ -6,11 +6,13 @@ import { getCommunityBoard, POST_TYPE_LABEL } from "../../../../lib/boardConfig"
 import type { Post } from "../../../../lib/postTypes";
 import { ApiError, apiAdminStatus, apiGetPost } from "../../../../lib/postsClient";
 import { formatKoreanDate } from "../../../../lib/postStorage";
-import SmartLink, { isHttpUrl } from "../../../../components/SmartLink";
+import { isHttpUrl } from "../../../../components/SmartLink";
+import PostContentLink from "../../../../components/PostContentLink";
+import PostAffiliateNotice from "../../../../components/PostAffiliateNotice";
 import LinkifiedText from "../../../../components/LinkifiedText";
 import PostDetailError from "../../../../components/PostDetailError";
 
-function ExtraRow({ label, value }: { label: string; value: any }) {
+function ExtraRow({ label, value, linkInfo }: { label: string; value: any; linkInfo: Post["linkInfo"] }) {
   if (value === undefined || value === null || value === "") return null;
   const text = String(value).trim();
   const isLink = isHttpUrl(text) || text.startsWith("/go/");
@@ -19,9 +21,9 @@ function ExtraRow({ label, value }: { label: string; value: any }) {
       <div className="[overflow-wrap:anywhere] sm:w-28 sm:shrink-0 text-white/70">{label}</div>
       <div className="min-w-0 flex-1 [overflow-wrap:anywhere] text-white/80">
         {isLink ? (
-          <SmartLink href={text} className="text-cyan-200 hover:underline" title="새 창으로 열기">
+          <PostContentLink href={text} info={linkInfo}>
             {text}
-          </SmartLink>
+          </PostContentLink>
         ) : (
           text
         )}
@@ -140,7 +142,8 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
 
       <section className="bd-surface-md p-6">
         <h1 className="[overflow-wrap:anywhere] text-2xl font-semibold tracking-tight">{post.title}</h1>
-        <LinkifiedText text={post.content} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
+        <PostAffiliateNotice info={post.linkInfo} />
+        <LinkifiedText text={post.content} linkInfo={post.linkInfo} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
       </section>
 
       {extraEntries.length ? (
@@ -148,7 +151,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
           <div className="text-sm font-semibold">추가 정보</div>
           <div className="mt-4 space-y-2">
             {extraEntries.map(([k, v]) => (
-              <ExtraRow key={k} label={labelMap.get(k) ?? k} value={v} />
+              <ExtraRow key={k} label={labelMap.get(k) ?? k} value={v} linkInfo={post.linkInfo} />
             ))}
           </div>
         </section>

@@ -3,7 +3,7 @@ import "server-only";
 import crypto from "crypto";
 import type { Merchant } from "./outbound";
 import { detectMerchant, normalizeOutboundUrl } from "./affiliate";
-import { kvCommand } from "./kvRest";
+import { kvCommand, kvPipeline } from "./kvRest";
 
 /**
  * Online outbound link storage (Upstash Redis REST / Vercel KV REST)
@@ -133,10 +133,23 @@ export async function getOutboundRow(code: string): Promise<OutboundRow | null> 
   }
 }
 
-/**
- * Best-effort click increment.
- * - Stored separately to avoid JSON race conditions.
- */
+/** One bounded read for detail-page disclosure, without counting a click. */
+export async function getOutboundRows(codes: string[]): Promise<Map<string, OutboundRow>> {
+  if (codes.length > 100 || codes.some(code => !/^[a-zA-Z0-9_-]{2,64}$/.test(code))) throw new Error("Invalid outbound lookup");
+  const rows = new Map<string, OutboundRow>();
+  if (!codes.length) return rows;
+  const values = await kvPipeline(codes.map(code => ["GET", codeKey(code)]));
+  values.forEach((raw, index) => {
+    if (typeof raw !== "string") return;
+    try {
+      const row = JSON.parse(raw);
+      if (row && !Array.isArray(row) && typeof row.merchant === "string" && typeof row.originalUrl === "string") rows.set(codes[index], row);
+    } catch { /* An invalid record cannot enable a link. */ }
+  });
+  return rows;
+}
+
+/** Best-effort click increment, stored separately to avoid JSON race conditions. */
 export async function incrementOutboundClick(code: string): Promise<number> {
   const n = await kvCommand<number>("INCR", clickKey(code));
   return typeof n === "number" ? n : Number(n);

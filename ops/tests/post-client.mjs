@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { ApiError, apiListPosts, apiGetPost, apiCreatePost, apiUpdatePost, apiDeletePost, apiAdminStatus, apiAdminLogin, apiAdminLogout } from '../../src/lib/postsClient.ts';
 
-const fixture = { id: 'fixture', boardKey: 'hardware', type: 'general', title: 'Local fixture', content: 'TEST ONLY', createdAt: '2026-11-17T03:00:00+09:00' };
+const fixture = { id: 'fixture', boardKey: 'hardware', type: 'general', title: 'Local fixture', content: 'TEST ONLY', createdAt: '2026-11-17T03:00:00+09:00', linkInfo: { affiliateHrefs: [], unavailableHrefs: [], disclosures: [] } };
 const malformed = error => error instanceof ApiError && error.code === 'INVALID_API_RESPONSE';
 
 test('private unlock sends the password only in a no-store JSON POST body', async t => {
@@ -45,6 +45,16 @@ test('post reads reject wrong IDs, missing fields, unsafe types and password has
   }
   payload = { post: { ...fixture, isPrivate: true, content: '', extra: undefined } };
   assert.equal((await apiGetPost('fixture')).isPrivate, true);
+});
+
+test('detail reads cannot render links with missing, malformed or private-target disclosure metadata', async t => {
+  let info;
+  t.mock.method(globalThis, 'fetch', async () => Response.json({post:{...fixture,linkInfo:info}}));
+  for (info of [undefined,null,{},[],{affiliateHrefs:'bad',unavailableHrefs:[],disclosures:[]},
+    {affiliateHrefs:[],unavailableHrefs:[],disclosures:['unknown']},
+    {...fixture.linkInfo,resolvedUrl:'PRIVATE_TRACKING_TARGET'}]) await assert.rejects(apiGetPost('fixture'),malformed);
+  info={affiliateHrefs:['/go/fixture'],unavailableHrefs:['/go/unavailable'],disclosures:['linkprice']};
+  assert.deepEqual((await apiGetPost('fixture')).linkInfo,info);
 });
 
 test('administrator status requires a boolean and an uncached request', async t => {

@@ -16,6 +16,8 @@ import { assertPublicMetadata, assertExcludedMetadata } from './page-metadata.mj
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const generatedLinks = JSON.parse(await readFile(new URL('../../src/content/outbound.generated.json', import.meta.url), 'utf8'));
 const preview = process.argv.includes('--preview');
+const affiliatePreview = preview && process.argv.includes('--affiliate-preview');
+let affiliatePreviewBase;
 const servers = new Set();
 const children = new Set();
 const results = [];
@@ -134,7 +136,7 @@ async function mockKv() {
         await delay(2000);
         console.log('LOCAL_DELAYED_HARDWARE_COMPLETED');
       }
-      if (controls.unavailable || (controls.partial && JSON.stringify(commands).includes('bd:board:review:posts'))) {
+      if (controls.unavailable || (controls.outboundUnavailable && commands.some(item => item[0] === 'GET' && String(item[1]).startsWith('bd:out:code:'))) || (controls.partial && JSON.stringify(commands).includes('bd:board:review:posts'))) {
         res.writeHead(503, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: 'PRIVATE_BACKEND_DIAGNOSTIC_DO_NOT_EXPOSE' }));
         return;
@@ -166,7 +168,7 @@ async function mockKv() {
   servers.add(server);
   // A historical malformed private record must stay closed to anonymous users.
   values.set('bd:post:legacy-private', JSON.stringify({ id: 'legacy-private', boardKey: 'inquiry', type: 'general', title: 'Legacy private fixture', content: 'legacy secret', isPrivate: true, passwordHash: '', createdAt: new Date().toISOString() }));
-  return { url: `http://127.0.0.1:${port}`, token, values, controls, requests, expires };
+  return { url: `http://127.0.0.1:${port}`, token, values, sorted, controls, requests, expires };
 }
 
 async function authenticationFixture(platform = true) {
@@ -309,6 +311,85 @@ try {
       } finally { await stopChild(testApp.child); }
     }
   });
+  const gm = Object.values(generatedLinks).find(row => row.merchant === 'gmarket');
+  const fakeMappings = [
+    {merchant:'gmarket',provider:'linkprice',originalUrl:gm.originalUrl,affiliateUrl:'https://app.ac/testOnlyPostNotice'},
+    {merchant:'coupang',provider:'coupang',originalUrl:'https://www.coupang.com/vp/products/1',affiliateUrl:'https://link.coupang.com/a/testOnlyPostNotice'},
+    {merchant:'aliexpress',provider:'aliexpress',code:'local-ali',originalUrl:'https://www.aliexpress.com/',affiliateUrl:'https://s.click.aliexpress.com/e/_FAKE_POST_NOTICE'},
+  ];
+  for (const [code,merchant,originalUrl] of [
+    ['dyn-cp','coupang','https://www.coupang.com/vp/products/1'],
+    ['dyn-external','coupang','https://link.coupang.com/a/EXTERNAL_TEST'],
+    ['dyn-ordinary','gmarket','https://item.gmarket.co.kr/Item?goodscode=1234567890'],
+    ['dyn-blocked','coupang','https://example.invalid/blocked'],
+  ]) kv.values.set('bd:out:code:'+code,JSON.stringify({code,merchant,originalUrl}));
+  const mixedPost = {id:'local-affiliate-disclosure',boardKey:'hardware',type:'general',title:'LOCAL 제휴 고지 검증',createdAt:new Date().toISOString(),content:[
+    '일반 문서 https://example.invalid/manual.',`사이트 G마켓 /go/${gm.code}`,'쿠팡 /go/dyn-cp','외부 제휴 /go/dyn-external',
+    '일반 판매처 /go/dyn-ordinary','미확인 /go/dyn-blocked','알리 /go/local-ali',`직접 일반 ${gm.originalUrl}`,
+    '직접 외부 https://link.coupang.com/a/EXTERNAL_RAW_TEST',
+  ].join('\n'),extra:{source:'/go/'+gm.code}};
+  kv.values.set('bd:post:'+mixedPost.id,JSON.stringify(mixedPost));
+  const disclosureApp = await startApp({ADMIN_PASSWORD:password,KV_REST_API_URL:kv.url,KV_REST_API_TOKEN:kv.token,AFFILIATE_LINKS_JSON:JSON.stringify(fakeMappings)});
+  try {
+    await check('post detail classifies actual static, stored and manual affiliate links without serializing private targets or counting clicks', async () => {
+      const before=kv.requests.length;
+      const response=await request(disclosureApp.base,'GET','/api/posts/'+mixedPost.id);
+      assert.equal(response.status,200);
+      const info=response.data.post.linkInfo;
+      assert.deepEqual([...info.disclosures].sort(),['bluedeal','coupang','external','linkprice']);
+      assert.deepEqual([...info.affiliateHrefs].sort(),['/go/'+gm.code,'/go/dyn-cp','/go/dyn-external','/go/local-ali','https://link.coupang.com/a/EXTERNAL_RAW_TEST'].sort());
+      assert.deepEqual(info.unavailableHrefs,['/go/dyn-blocked']);
+      for(const row of fakeMappings) assert.equal(JSON.stringify(response.data).includes(row.affiliateUrl),false);
+      const commands=kv.requests.slice(before).flatMap(item=>item.commands);
+      assert.equal(commands.some(item=>item[0]==='INCR'),false);
+      assert.equal(commands.filter(item=>item[0]==='GET'&&String(item[1]).startsWith('bd:out:code:')).length,4);
+      assert.equal(kv.requests.slice(before).filter(item=>item.url==='/pipeline').length,1);
+      assert.equal('linkInfo' in JSON.parse(kv.values.get('bd:post:'+mixedPost.id)),false);
+    });
+    await check('ordinary links and direct merchant URLs never acquire a commission claim from an unrelated redirect mapping', async () => {
+      const ordinary={...mixedPost,id:'local-ordinary-disclosure',content:`일반 /go/${gm.code} /go/dyn-cp /go/dyn-ordinary ${gm.originalUrl}`};
+      kv.values.set('bd:post:'+ordinary.id,JSON.stringify(ordinary));
+      const response=await request(app.base,'GET','/api/posts/'+ordinary.id);
+      assert.equal(response.status,200);
+      assert.deepEqual(response.data.post.linkInfo,{affiliateHrefs:[],unavailableHrefs:[],disclosures:[]});
+      const configured=await request(disclosureApp.base,'GET','/api/posts/'+ordinary.id);
+      assert.equal(configured.data.post.linkInfo.affiliateHrefs.includes(gm.originalUrl),false);
+    });
+    await check('private affiliate details are classified only after authorized access and never appear in an anonymous list', async () => {
+      const privatePost={...mixedPost,id:'local-private-links',boardKey:'inquiry',isPrivate:true,passwordHash:createHash('sha256').update('LOCAL_LINK_PASSWORD').digest('hex')};
+      kv.values.set('bd:post:'+privatePost.id,JSON.stringify(privatePost));
+      const entries=kv.sorted.get('bd:board:inquiry:posts')??new Map();entries.set(privatePost.id,Date.now());kv.sorted.set('bd:board:inquiry:posts',entries);
+      const before=kv.requests.length;
+      const locked=await request(disclosureApp.base,'GET','/api/posts/'+privatePost.id);
+      assert.equal(locked.status,401);assert.equal('post' in locked.data,false);
+      assert.equal(kv.requests.slice(before).some(item=>item.commands.some(command=>String(command[1]).startsWith('bd:out:code:'))),false);
+      const list=await request(disclosureApp.base,'GET','/api/posts?boardKey=inquiry');
+      const masked=list.data.posts.find(post=>post.id===privatePost.id);
+      assert.equal(masked.content,'');assert.equal('extra' in masked,false);assert.equal('linkInfo' in masked,false);
+      const unlocked=await request(disclosureApp.base,'POST','/api/posts/'+privatePost.id+'/unlock',{password:'LOCAL_LINK_PASSWORD'});
+      assert.equal(unlocked.status,200);assert.ok(unlocked.data.post.linkInfo.disclosures.includes('linkprice'));
+      assert.equal('passwordHash' in unlocked.data.post,false);
+    });
+    await check('unavailable or excessive stored-link lookups preserve text while bounding storage work and withholding unverified links', async () => {
+      kv.controls.outboundUnavailable=true;
+      try {
+        const response=await request(disclosureApp.base,'GET','/api/posts/'+mixedPost.id);
+        assert.equal(response.status,200);assert.equal(response.data.post.content,mixedPost.content);
+        assert.deepEqual([...response.data.post.linkInfo.unavailableHrefs].sort(),['/go/dyn-cp','/go/dyn-external','/go/dyn-ordinary','/go/dyn-blocked'].sort());
+        assert.doesNotMatch(JSON.stringify(response.data),/PRIVATE_BACKEND_DIAGNOSTIC/);
+      } finally {kv.controls.outboundUnavailable=false;}
+      const hrefs=Array.from({length:101},(_,n)=>'/go/bulk-'+String(n).padStart(3,'0'));
+      for(const href of hrefs)kv.values.set('bd:out:code:'+href.slice(4),JSON.stringify({merchant:'coupang',originalUrl:'https://www.coupang.com/vp/products/2'}));
+      const bulk={...mixedPost,id:'local-many-link-disclosure',content:hrefs.join(' '),extra:{}};
+      kv.values.set('bd:post:'+bulk.id,JSON.stringify(bulk));
+      const before=kv.requests.length;const response=await request(app.base,'GET','/api/posts/'+bulk.id);
+      assert.equal(response.status,200);assert.equal(response.data.post.content,bulk.content);
+      assert.deepEqual(response.data.post.linkInfo.unavailableHrefs,[hrefs[100]]);
+      const reads=kv.requests.slice(before).filter(item=>item.commands.some(command=>String(command[1]).startsWith('bd:out:code:')));
+      assert.equal(reads.length,1);assert.equal(reads[0].commands.length,100);
+    });
+  } finally {if(affiliatePreview)affiliatePreviewBase=disclosureApp.base;else await stopChild(disclosureApp.child);}
+
   await check('browser security headers cover pages, administrator, API, static content and errors', async () => {
     for (const route of ['/', '/admin', '/api/admin/status', '/icon.svg', '/no-such-verification-page']) {
       const response = await fetch(app.base + route, { redirect: 'manual', signal: AbortSignal.timeout(10000) });
@@ -830,6 +911,7 @@ try {
   if (preview && !failures) {
     const proxy = await previewProxy(app.base);
     console.log(`LOCAL_PREVIEW=${proxy.base}`);
+    if(affiliatePreviewBase)console.log(`LOCAL_AFFILIATE_PREVIEW=${affiliatePreviewBase}/community/hardware/local-affiliate-disclosure`);
     console.log('Disposable fixtures only. Commands: offline / partial / online / logout-fail / logout-ok / slow-hardware / normal-speed / malformed-api / normal-api / slow-navigation / normal-navigation / stop (+ Enter). Ctrl+C also stops.');
     await new Promise(resolve => {
       process.stdin.setEncoding('utf8');

@@ -18,6 +18,7 @@ assert.equal(base.username + base.password + base.search + base.hash, '');
 const expectedCommit = option('--commit');
 if (expectedCommit) assert.match(expectedCommit, /^[a-f0-9]{40}$/);
 const results = [];
+let publicDetailSamples = 0;
 async function read(route) {
   const response = await fetch(new URL(route, base), {
     method: 'GET', redirect: 'manual', cache: 'no-store', signal: AbortSignal.timeout(15000),
@@ -122,7 +123,25 @@ for (const board of ['it', 'hardware', 'hotdeal', 'inquiry']) {
       if (post.isPrivate) {
         assert.equal(post.content, '');
         assert.equal('extra' in post, false);
+        assert.equal('linkInfo' in post, false);
       }
+    }
+    const sample = data.posts.find(post => !post.isPrivate);
+    if (sample) {
+      const detail = await read(`/api/posts/${encodeURIComponent(sample.id)}`);
+      assert.equal(detail.response.status, 200);
+      const post = JSON.parse(detail.text).post;
+      assert.equal(post.id, sample.id);
+      assert.equal('passwordHash' in post, false);
+      assert.deepEqual(Object.keys(post.linkInfo).sort(), ['affiliateHrefs', 'disclosures', 'unavailableHrefs']);
+      assert.ok(Array.isArray(post.linkInfo.disclosures));
+      assert.ok(post.linkInfo.disclosures.every(kind => ['linkprice', 'coupang', 'bluedeal', 'external'].includes(kind)));
+      const originalText = [post.content, ...Object.values(post.extra ?? {})].join('\n');
+      for (const field of ['affiliateHrefs', 'unavailableHrefs']) {
+        assert.ok(Array.isArray(post.linkInfo[field]));
+        assert.ok(post.linkInfo[field].every(href => typeof href === 'string' && originalText.includes(href)));
+      }
+      publicDetailSamples += 1;
     }
   });
 }
@@ -132,7 +151,8 @@ await check('legacy hotdeal entry redirects to the current board', async () => {
   assert.equal(new URL(response.headers.get('location'), base).pathname, '/community/hotdeal');
 });
 
-const report = { checkedAt: new Date().toISOString(), origin: base.origin, expectedCommit, passed: results.filter(item => item.passed).length, total: results.length, results };
+const report = { checkedAt: new Date().toISOString(), origin: base.origin, expectedCommit, publicDetailSamples, passed: results.filter(item => item.passed).length, total: results.length, results };
 if (option('--report')) await writeFile(option('--report'), JSON.stringify(report, null, 2) + '\n', 'utf8');
 console.log(`${report.passed}/${report.total} read-only deployment checks passed.`);
+console.log(`${publicDetailSamples} existing public post details checked without writes.`);
 process.exitCode = report.passed === report.total ? 0 : 1;

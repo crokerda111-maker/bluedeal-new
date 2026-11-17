@@ -32,6 +32,13 @@ export type InquiryVisibility = "public" | "private";
 
 export type PostExtra = Record<string, string | number | boolean | null | undefined>;
 
+/** Derived for an authorized detail response; never stored or included in lists. */
+export type PostLinkInfo = {
+  affiliateHrefs: string[];
+  unavailableHrefs: string[];
+  disclosures: Array<"linkprice" | "coupang" | "bluedeal" | "external">;
+};
+
 /**
  * 게시물 모델
  * - 목록에서는 비공개 글의 content/extra가 비어있을 수 있습니다.
@@ -57,4 +64,5 @@ export type Post = {
 
   /** 게시판별 추가 필드 */
   extra?: PostExtra;
+  linkInfo?: PostLinkInfo;
 };

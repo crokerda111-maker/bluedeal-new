@@ -100,7 +100,13 @@ export async function apiGetPost(id: string, opts?: { password?: string }): Prom
   });
   const data = await parseJsonSafe(res);
   if (!res.ok) throwApiError(res, data);
-  return readPost(res, data, id);
+  const post = readPost(res, data, id);
+  const info = post.linkInfo;
+  if (!isRecord(info) || Object.keys(info).sort().join(",") !== "affiliateHrefs,disclosures,unavailableHrefs" ||
+      !Array.isArray(info.affiliateHrefs) || !info.affiliateHrefs.every(value => typeof value === "string") ||
+      !Array.isArray(info.unavailableHrefs) || !info.unavailableHrefs.every(value => typeof value === "string") ||
+      !Array.isArray(info.disclosures) || !info.disclosures.every(value => ["linkprice", "coupang", "bluedeal", "external"].includes(value))) return invalidResponse(res);
+  return post;
 }
 
 export async function apiCreatePost(payload: CreatePostPayload): Promise<Post> {
