@@ -1,7 +1,7 @@
 {
   "category": "ssd",
-  "updatedAt": "2026-11-16T15:42:19.324000Z",
-  "generatedAt": "2026-11-16T23:17:47.841046Z",
+  "updatedAt": "2026-11-18T11:11:29.364000Z",
+  "generatedAt": "2026-11-18T11:28:26.631579Z",
   "items": [
     {
       "id": "samsung-990-evo-plus-1tb",
@@ -18,8 +18,8 @@
       "shippingNote": "기본 배송 기준 · 지역별 추가비/배송 가능 여부는 판매처 확인",
       "priceNote": "쿠폰·카드·회원 혜택 미적용 판매가. 판매처의 쿠폰가·결제할인가와 다를 수 있습니다.",
       "officialUrl": "https://download.semiconductor.samsung.com/resources/data-sheet/samsung_nvme_ssd_990_evo_plus_datasheet_rev.1.0.pdf",
-      "checkedAt": "2026-11-16T15:42:19.324000Z",
-      "updatedAt": "2026-11-16T15:42:19.324000Z",
+      "checkedAt": "2026-11-18T11:11:25.174000Z",
+      "updatedAt": "2026-11-18T11:11:25.174000Z",
       "capacityGB": 1000,
       "ssdDram": "unknown",
       "availability": "unknown"
@@ -39,8 +39,8 @@
       "shippingNote": "기본 배송 기준 · 지역별 추가비/배송 가능 여부는 판매처 확인",
       "priceNote": "쿠폰·카드·회원 혜택 미적용 판매가. 판매처의 쿠폰가·결제할인가와 다를 수 있습니다.",
       "officialUrl": "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_990_PRO_Datasheet_Rev.1.0_10129514049640.pdf",
-      "checkedAt": "2026-11-16T15:41:20.257000Z",
-      "updatedAt": "2026-11-16T15:41:20.257000Z",
+      "checkedAt": "2026-11-18T11:11:29.364000Z",
+      "updatedAt": "2026-11-18T11:11:29.364000Z",
       "capacityGB": 2000,
       "ssdDram": "present",
       "availability": "unknown"
