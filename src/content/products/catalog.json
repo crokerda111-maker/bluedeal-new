@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "757c15013a8b3c74913b664117484429a4bf4cdd6880d0ee93ea027e9d9b5cc2",
-  "entries": 475,
+  "catalogHash": "2e87331f8563beca87a7107a81e2c3d8363ebe88d2861fbb2389103d4a2c93c2",
+  "entries": 485,
   "products": [
     {
       "id": "maker-fractal-case-b32459749f216e6e",
@@ -21905,24 +21905,35 @@
       "id": "curated-samsung-990-evo-plus-1tb",
       "name": "삼성전자 990 EVO Plus 1TB (MZ-V9S1T0BW)",
       "category": "ssd",
-      "subtype": "ssd",
+      "subtype": "internal-ssd",
       "brand": "Samsung",
-      "kind": "curated-model",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "1TB · M.2 2280 · PCIe 4.0×4 / 5.0×2 · NVMe 2.0 · TLC · HMB(공식 표기) · 국내 정품(판매처 표기)"
+        "990 EVO PLUS 1TB · MZ-V9S1T0BW · 필수 옵션 990 EVO PLUS 1TB 선택"
       ],
       "specifications": [
         {
           "label": "등록 용량(GB)",
           "value": "1000"
+        },
+        {
+          "label": "판매 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매 구성 표기",
+          "value": "990 EVO PLUS 1TB · MZ-V9S1T0BW · 필수 옵션 990 EVO PLUS 1TB 선택"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -21930,6 +21941,12 @@
           "url": "https://download.semiconductor.samsung.com/resources/data-sheet/samsung_nvme_ssd_990_evo_plus_datasheet_rev.1.0.pdf",
           "observedAt": null,
           "kind": "curated-reference"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4192562983",
+          "observedAt": "2026-11-21T06:35:26.030Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -21941,8 +21958,8 @@
         {
           "id": "samsung-990-evo-plus-1tb",
           "merchant": "G마켓",
-          "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
-          "pricePage": "/prices/ssd"
+          "seller": "삼성전자SSD공식총판",
+          "pricePage": "/prices/ssd#samsung-990-evo-plus-1tb"
         }
       ],
       "referenceCode": "BD-0949FCDBD2"
@@ -21951,24 +21968,35 @@
       "id": "curated-samsung-990-pro-2tb",
       "name": "삼성전자 990 PRO 2TB (MZ-V9P2T0BW)",
       "category": "ssd",
-      "subtype": "ssd",
+      "subtype": "internal-ssd",
       "brand": "Samsung",
-      "kind": "curated-model",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "2TB · M.2 2280 · PCIe 4.0×4 / NVMe 2.0 · TLC · LPDDR4 2GB · 국내 정품(판매처 표기)"
+        "990 PRO 2TB · MZ-V9P2T0BW · 수량1"
       ],
       "specifications": [
         {
           "label": "등록 용량(GB)",
           "value": "2000"
+        },
+        {
+          "label": "판매 용량(GB)",
+          "value": "2000"
+        },
+        {
+          "label": "판매 구성 표기",
+          "value": "990 PRO 2TB · MZ-V9P2T0BW · 수량1"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -21976,6 +22004,12 @@
           "url": "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_990_PRO_Datasheet_Rev.1.0_10129514049640.pdf",
           "observedAt": null,
           "kind": "curated-reference"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=2663867799",
+          "observedAt": "2026-11-21T06:35:54.246Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -21987,11 +22021,554 @@
         {
           "id": "samsung-990-pro-2tb",
           "merchant": "G마켓",
-          "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
-          "pricePage": "/prices/ssd"
+          "seller": "삼성전자SSD공식총판",
+          "pricePage": "/prices/ssd#samsung-990-pro-2tb"
         }
       ],
       "referenceCode": "BD-532998C2D0"
+    },
+    {
+      "id": "reviewed-acer-predator-gm9000-2tb-retailer",
+      "name": "Acer Predator GM9000 M.2 NVMe 2TB (판매 표기)",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Acer",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "에이서 프레데터 GM9000 M.2 NVMe 2TB SSD (DRAM 탑재) · 정확한 품번·국내 보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 용량(GB)",
+          "value": "2000"
+        },
+        {
+          "label": "판매 구성 표기",
+          "value": "에이서 프레데터 GM9000 M.2 NVMe 2TB SSD (DRAM 탑재) · 정확한 품번·국내 보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "판매명에 DRAM 탑재가 있으나 공식 품번·메모리 상세를 재대조하기 전까지 DRAM 필드는 미확인으로 유지합니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4691332268",
+          "observedAt": "2026-11-21T06:36:02.312Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-acer-predator-gm9000-2tb-retailer-gmarket-4691332268",
+          "merchant": "G마켓",
+          "seller": "(주)한성",
+          "pricePage": "/prices/ssd#reviewed-acer-predator-gm9000-2tb-retailer-gmarket-4691332268"
+        }
+      ],
+      "referenceCode": "BD-76068B5A57"
+    },
+    {
+      "id": "reviewed-crucial-t500-2tb-daewon-retailer",
+      "name": "Crucial T500 M.2 NVMe 2TB 대원씨티에스 (판매 표기)",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Crucial",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "판매 구성·상태 확인 · 현재가 미등록"
+      ],
+      "specifications": [
+        {
+          "label": "판매 용량(GB)",
+          "value": "2000"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다.",
+        "현재 구매 총액·판매 상태가 확인되지 않아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4783946551",
+          "observedAt": "2026-11-21T06:37:50.406Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-1FC77DDA9B"
+    },
+    {
+      "id": "reviewed-kioxia-exceria-plus-g3-2tb-retailer",
+      "name": "KIOXIA EXCERIA PLUS G3 M.2 NVMe 2TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "KIOXIA",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "키오시아 EXCERIA PLUS G3 M.2 NVMe (2TB) · 정확한 품번·국내 보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "공식 제품군 인터페이스",
+          "value": "PCIe 4.0×4 · NVMe 1.4 · M.2 2280"
+        },
+        {
+          "label": "판매 용량(GB)",
+          "value": "2000"
+        },
+        {
+          "label": "판매 구성 표기",
+          "value": "키오시아 EXCERIA PLUS G3 M.2 NVMe (2TB) · 정확한 품번·국내 보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "PLUS G3는 PCIe 4.0 제품군이며 이름이 비슷한 EXCERIA G3 PCIe 5.0 및 PLUS G4와 구분했습니다. 정확한 제조사 품번과 메모리 구성은 추가 대조 필요.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "제조사 공식 사양 · 지역·용량 조건 참조",
+          "url": "https://apac.kioxia.com/en-apac/personal/ssd.html",
+          "observedAt": "2026-11-21",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4723153273",
+          "observedAt": "2026-11-21T06:37:22.099Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4764168146",
+          "observedAt": "2026-11-21T06:42:20.015Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-kioxia-exceria-plus-g3-2tb-retailer-gmarket-4764168146",
+          "merchant": "G마켓",
+          "seller": "여운스토어G",
+          "pricePage": "/prices/ssd#reviewed-kioxia-exceria-plus-g3-2tb-retailer-gmarket-4764168146"
+        }
+      ],
+      "referenceCode": "BD-8DCEAFB4A8"
+    },
+    {
+      "id": "reviewed-kioxia-exceria-plus-g4-2tb-retailer",
+      "name": "KIOXIA EXCERIA PLUS G4 M.2 NVMe 2TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "KIOXIA",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "EXCERIA PLUS G4 2TB · 수량1 · M.2 2280/PCIe5×4/HMB는 판매 상세 표기"
+      ],
+      "specifications": [
+        {
+          "label": "공식 인터페이스·NAND",
+          "value": "PCIe 5.0×4 · NVMe 2.0c · BiCS FLASH TLC"
+        },
+        {
+          "label": "공식 폼팩터·기능",
+          "value": "M.2 2280-S3-M · Host Memory Buffer"
+        },
+        {
+          "label": "판매 용량(GB)",
+          "value": "2000"
+        },
+        {
+          "label": "판매 구성 표기",
+          "value": "EXCERIA PLUS G4 2TB · 수량1 · M.2 2280/PCIe5×4/HMB는 판매 상세 표기"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "HMB 지원만으로 DRAM 유무를 확정하지 않았습니다. 유럽 자료의 2TB 품번 LVD10Z002TG8을 국내 판매 상품과 동일 품번으로 확정하지 않았으며 국내 보증은 판매처 확인 필요.",
+        "일반가·합계445,000원, 배송2,500원 확인. 포인트·후기보상 제외. 국내 유통사·정확한 품번·재고·보증은 판매처 확인.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "제조사 공식 사양 · 지역·용량 조건 참조",
+          "url": "https://europe.kioxia.com/en-europe/personal/ssd/exceria-plus-g4-nvme-ssd.html",
+          "observedAt": "2026-11-21",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "icoda 실제 판매 구성·상태",
+          "url": "https://usr.icoda.co.kr/item/view/1601142",
+          "observedAt": "2026-11-21T06:38:29.187Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-kioxia-exceria-plus-g4-2tb-retailer-icoda-1601142",
+          "merchant": "아이코다",
+          "seller": "아이코다",
+          "pricePage": "/prices/ssd#reviewed-kioxia-exceria-plus-g4-2tb-retailer-icoda-1601142"
+        }
+      ],
+      "referenceCode": "BD-5D2958B3B0"
+    },
+    {
+      "id": "reviewed-kioxia-exceria-pro-g2-2tb-retailer",
+      "name": "KIOXIA EXCERIA PRO G2 2TB (판매 표기)",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "KIOXIA",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "키오시아 EXCERIA PRO G2 NVMe SSD 2TB with DRAM 공식수입사/DRAM 탑재/M2고정나사증정 · 정확한 품번·국내 보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "공식 제품군 인터페이스",
+          "value": "PCIe 5.0×4 · NVMe 2.0d · M.2 2280"
+        },
+        {
+          "label": "공식 용량 등급",
+          "value": "1,024GB · 2,048GB · 4,096GB"
+        },
+        {
+          "label": "판매 구성 표기",
+          "value": "키오시아 EXCERIA PRO G2 NVMe SSD 2TB with DRAM 공식수입사/DRAM 탑재/M2고정나사증정 · 정확한 품번·국내 보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "판매명은 2TB지만 제조사는 해당 용량 등급을 2,048GB로 표기합니다. 판매 상품의 정확한 품번을 대조하기 전까지 용량 숫자 필드를 확정하지 않았습니다. 공식 2,048GB 품번은 LVE10Z2T04G8이며 판매품과 일치 여부 확인 필요. DRAM 탑재는 판매명 표기이고 공식 페이지에는 DRAM 정보가 없어 미확인입니다.",
+        "공식 용량·사양은 해당 등급 기준이며 실제 판매품의 품번·국내 보증 대조는 별개입니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "제조사 공식 사양 · 지역·용량 조건 참조",
+          "url": "https://apac.kioxia.com/en-apac/personal/ssd/exceria-pro-g2.html",
+          "observedAt": "2026-11-21",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4653850525",
+          "observedAt": "2026-11-21T06:37:40.821Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-kioxia-exceria-pro-g2-2tb-retailer-gmarket-4653850525",
+          "merchant": "G마켓",
+          "seller": "도우정보",
+          "pricePage": "/prices/ssd#reviewed-kioxia-exceria-pro-g2-2tb-retailer-gmarket-4653850525"
+        }
+      ],
+      "referenceCode": "BD-C3C761FE9C"
+    },
+    {
+      "id": "reviewed-lexar-nm710-500gb-import-retailer",
+      "name": "Lexar NM710 500GB 해외직구 (판매 표기)",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Lexar",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "판매 구성·상태 확인 · 현재가 미등록"
+      ],
+      "specifications": [
+        {
+          "label": "판매 용량(GB)",
+          "value": "500"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "원문은 512GB, 실제 현재 판매 제목은 500GB입니다. 제목과 상세의 품번 접미사가 달라 대조 필요. 관세·부가세와 국내 보증을 확인하지 못해 현재 구매 총액을 가격표에 등록하지 않았습니다.",
+        "원 글은512GB, 현재 판매명은500GB. 제목 품번LNM710X500GRN과 상세LNM710X500GRNNU 표기도 대조 필요. 해외직구/관세·부가세 확인 필요 안내로 총액·국내 보증 미확인. 표시80,600원은 일반 배송 포함 현재가 순위에 넣지 않음.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다.",
+        "현재 구매 총액·판매 상태가 확인되지 않아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4668385030",
+          "observedAt": "2026-11-21T06:37:51.153Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-C9507EB073"
+    },
+    {
+      "id": "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw",
+      "name": "Samsung 9100 PRO 1TB MZ-VAP1T0BW",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Samsung",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "9100 PRO 1TB MZ-VAP1T0BW · 수량1"
+      ],
+      "specifications": [
+        {
+          "label": "공식 폼팩터·인터페이스",
+          "value": "M.2 2280 · PCIe 5.0×4 · NVMe 2.0"
+        },
+        {
+          "label": "공식 1TB 캐시·NAND",
+          "value": "1GB LPDDR4X · V-NAND TLC"
+        },
+        {
+          "label": "판매 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매 구성 표기",
+          "value": "9100 PRO 1TB MZ-VAP1T0BW · 수량1"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "공식 문서의 최대 성능을 모든 용량·사용 조건의 실성능으로 옮기지 않았습니다. 국내 유통·보증·방열판과 시스템 냉각 조건은 구매 전 확인하세요.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": "MZ-VAP1T0BW",
+      "sources": [
+        {
+          "label": "제조사 공식 사양 · 지역·용량 조건 참조",
+          "url": "https://image-us.samsung.com/SamsungUS/home/pdf/2025_9100PRO_Memory_SpecSheet_022025_FINAL.pdf",
+          "observedAt": "2026-11-21",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4392204970",
+          "observedAt": "2026-11-21T06:41:54.256Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-gmarket-4392204970",
+          "merchant": "G마켓",
+          "seller": "삼성온라인공식파트너",
+          "pricePage": "/prices/ssd#reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-gmarket-4392204970"
+        }
+      ],
+      "referenceCode": "BD-F8638D52B7"
+    },
+    {
+      "id": "reviewed-sandisk-ssd-plus-nvme-2tb-daewon-retailer",
+      "name": "SanDisk SSD PLUS M.2 NVMe 2TB 대원씨티에스 (판매 표기)",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "SanDisk",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "판매 구성·상태 확인 · 현재가 미등록"
+      ],
+      "specifications": [
+        {
+          "label": "판매 용량(GB)",
+          "value": "2000"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "SSD PLUS SATA 2.5형과 구분한 M.2 NVMe 판매 상품입니다.",
+        "남은수량0개·판매종료·입금신청 포함 모든 판매절차 종료 안내. 표시349,900원은 종료 기록이며 현재가에 등록하지 않음.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다.",
+        "현재 구매 총액·판매 상태가 확인되지 않아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "kbench 실제 판매 구성·상태",
+          "url": "https://shop.kbench.com/09shop/productDetail.html?seq=8546",
+          "observedAt": "2026-11-21T06:40:01.631Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-1F618AEE5B"
+    },
+    {
+      "id": "reviewed-seagate-game-drive-external-ps5-2tb-retailer",
+      "name": "Seagate Game Drive 외장 SSD for PS5 2TB (판매 표기)",
+      "category": "ssd",
+      "subtype": "external-ssd",
+      "brand": "Seagate",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "판매 구성·상태 확인 · 현재가 미등록"
+      ],
+      "specifications": [
+        {
+          "label": "판매 용량(GB)",
+          "value": "2000"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "외장 SSD이며 PS5 내부 확장 M.2 SSD와 다른 상품입니다. PS5 게임의 외장 저장·직접 실행 가능 범위는 별도 공식 지원 자료 확인이 필요합니다.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다.",
+        "현재 구매 총액·판매 상태가 확인되지 않아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4183126984",
+          "observedAt": "2026-11-21T06:38:03.475Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-6C1C0322E2"
+    },
+    {
+      "id": "reviewed-ymtc-zhitai-tipro9000-2tb-retailer",
+      "name": "YMTC ZHITAI TiPro9000 M.2 NVMe 2TB (판매 표기)",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "YMTC",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "판매 구성·상태 확인 · 현재가 미등록"
+      ],
+      "specifications": [
+        {
+          "label": "판매 용량(GB)",
+          "value": "2000"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
+      "notes": [
+        "원문 2TB/4TB 모음 중 현재 확인한 상품은 2TB입니다. 4TB를 같은 가격으로 복제하지 않았습니다. 방열판·나사킷 포함과 공식수입사 표기는 판매명 기준이며 국내 보증은 확인 필요.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다.",
+        "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
+        "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
+        "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다.",
+        "현재 구매 총액·판매 상태가 확인되지 않아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4775805855",
+          "observedAt": "2026-11-21T06:37:39.538Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-42BB7BDC9B"
     }
   ]
 }

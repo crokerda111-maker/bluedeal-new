@@ -9,6 +9,7 @@ type MerchantRule = {
 const MERCHANT_RULES: MerchantRule[] = [
   { merchant: "darkflash", hosts: [/(^|\.)darkflash\.co\.kr$/i] },
   { merchant: "lotteon", hosts: [/(^|\.)lotteon\.com$/i] },
+  { merchant: "icoda", hosts: [/(^|\.)icoda\.co\.kr$/i] },
   { merchant: "ssg", hosts: [/(^|\.)ssg\.com$/i] },
   { merchant: "compuzone", hosts: [/(^|\.)compuzone\.co\.kr$/i] },
   { merchant: "seorinexpress", hosts: [/(^|\.)seorinexpress\.com$/i] },

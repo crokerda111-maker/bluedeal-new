@@ -1,0 +1,1157 @@
+{
+  "reviewedOn": "2026-11-21",
+  "scope": "SSD 분류 원문65건의 저장장치 본품·주변기기·HDD/NAS 분리와 검토 상태. 전체 현재가·모든 제조사 SKU 검증 완료를 뜻하지 않습니다.",
+  "legacyListingIds": [
+    "samsung-990-evo-plus-1tb",
+    "samsung-990-pro-2tb"
+  ],
+  "models": [
+    {
+      "id": "curated-samsung-990-evo-plus-1tb",
+      "name": "삼성전자 990 EVO Plus 1TB (MZ-V9S1T0BW)",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Samsung",
+      "kind": "curated-model",
+      "features": [
+        "1TB · M.2 2280 · PCIe 4.0×4 / 5.0×2 · NVMe 2.0 · TLC · HMB(공식 표기) · 국내 정품(판매처 표기)"
+      ],
+      "specifications": [
+        {
+          "label": "등록 용량(GB)",
+          "value": "1000"
+        }
+      ],
+      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://download.semiconductor.samsung.com/resources/data-sheet/samsung_nvme_ssd_990_evo_plus_datasheet_rev.1.0.pdf",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4192562983",
+          "observedAt": "2026-11-21T06:35:26.030Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "samsung-990-evo-plus-1tb",
+          "merchant": "G마켓",
+          "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
+          "pricePage": "/prices/ssd"
+        }
+      ],
+      "referenceCode": "BD-0949FCDBD2",
+      "capacityGB": 1000
+    },
+    {
+      "id": "curated-samsung-990-pro-2tb",
+      "name": "삼성전자 990 PRO 2TB (MZ-V9P2T0BW)",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Samsung",
+      "kind": "curated-model",
+      "features": [
+        "2TB · M.2 2280 · PCIe 4.0×4 / NVMe 2.0 · TLC · LPDDR4 2GB · 국내 정품(판매처 표기)"
+      ],
+      "specifications": [
+        {
+          "label": "등록 용량(GB)",
+          "value": "2000"
+        }
+      ],
+      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_990_PRO_Datasheet_Rev.1.0_10129514049640.pdf",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=2663867799",
+          "observedAt": "2026-11-21T06:35:54.246Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "samsung-990-pro-2tb",
+          "merchant": "G마켓",
+          "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
+          "pricePage": "/prices/ssd"
+        }
+      ],
+      "referenceCode": "BD-532998C2D0",
+      "capacityGB": 2000
+    },
+    {
+      "id": "reviewed-acer-predator-gm9000-2tb-retailer",
+      "name": "Acer Predator GM9000 M.2 NVMe 2TB (판매 표기)",
+      "brand": "Acer",
+      "subtype": "internal-ssd",
+      "notes": [
+        "판매명에 DRAM 탑재가 있으나 공식 품번·메모리 상세를 재대조하기 전까지 DRAM 필드는 미확인으로 유지합니다."
+      ],
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4691332268",
+          "observedAt": "2026-11-21T06:36:02.312Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "specifications": [],
+      "manufacturerPartNumber": null,
+      "capacityGB": 2000
+    },
+    {
+      "id": "reviewed-kioxia-exceria-plus-g3-2tb-retailer",
+      "name": "KIOXIA EXCERIA PLUS G3 M.2 NVMe 2TB",
+      "brand": "KIOXIA",
+      "subtype": "internal-ssd",
+      "notes": [
+        "PLUS G3는 PCIe 4.0 제품군이며 이름이 비슷한 EXCERIA G3 PCIe 5.0 및 PLUS G4와 구분했습니다. 정확한 제조사 품번과 메모리 구성은 추가 대조 필요.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다."
+      ],
+      "sources": [
+        {
+          "label": "제조사 공식 사양 · 지역·용량 조건 참조",
+          "url": "https://apac.kioxia.com/en-apac/personal/ssd.html",
+          "observedAt": "2026-11-21",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4723153273",
+          "observedAt": "2026-11-21T06:37:22.099Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4764168146",
+          "observedAt": "2026-11-21T06:42:20.015Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "specifications": [
+        {
+          "label": "공식 제품군 인터페이스",
+          "value": "PCIe 4.0×4 · NVMe 1.4 · M.2 2280"
+        }
+      ],
+      "manufacturerPartNumber": null,
+      "capacityGB": 2000
+    },
+    {
+      "id": "reviewed-ymtc-zhitai-tipro9000-2tb-retailer",
+      "name": "YMTC ZHITAI TiPro9000 M.2 NVMe 2TB (판매 표기)",
+      "brand": "YMTC",
+      "subtype": "internal-ssd",
+      "notes": [
+        "원문 2TB/4TB 모음 중 현재 확인한 상품은 2TB입니다. 4TB를 같은 가격으로 복제하지 않았습니다. 방열판·나사킷 포함과 공식수입사 표기는 판매명 기준이며 국내 보증은 확인 필요.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다."
+      ],
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4775805855",
+          "observedAt": "2026-11-21T06:37:39.538Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "specifications": [],
+      "manufacturerPartNumber": null,
+      "capacityGB": 2000
+    },
+    {
+      "id": "reviewed-kioxia-exceria-pro-g2-2tb-retailer",
+      "name": "KIOXIA EXCERIA PRO G2 2TB (판매 표기)",
+      "brand": "KIOXIA",
+      "subtype": "internal-ssd",
+      "notes": [
+        "판매명은 2TB지만 제조사는 해당 용량 등급을 2,048GB로 표기합니다. 판매 상품의 정확한 품번을 대조하기 전까지 용량 숫자 필드를 확정하지 않았습니다. 공식 2,048GB 품번은 LVE10Z2T04G8이며 판매품과 일치 여부 확인 필요. DRAM 탑재는 판매명 표기이고 공식 페이지에는 DRAM 정보가 없어 미확인입니다.",
+        "공식 용량·사양은 해당 등급 기준이며 실제 판매품의 품번·국내 보증 대조는 별개입니다."
+      ],
+      "sources": [
+        {
+          "label": "제조사 공식 사양 · 지역·용량 조건 참조",
+          "url": "https://apac.kioxia.com/en-apac/personal/ssd/exceria-pro-g2.html",
+          "observedAt": "2026-11-21",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4653850525",
+          "observedAt": "2026-11-21T06:37:40.821Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "specifications": [
+        {
+          "label": "공식 제품군 인터페이스",
+          "value": "PCIe 5.0×4 · NVMe 2.0d · M.2 2280"
+        },
+        {
+          "label": "공식 용량 등급",
+          "value": "1,024GB · 2,048GB · 4,096GB"
+        }
+      ],
+      "manufacturerPartNumber": null
+    },
+    {
+      "id": "reviewed-crucial-t500-2tb-daewon-retailer",
+      "name": "Crucial T500 M.2 NVMe 2TB 대원씨티에스 (판매 표기)",
+      "brand": "Crucial",
+      "subtype": "internal-ssd",
+      "notes": [
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다."
+      ],
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4783946551",
+          "observedAt": "2026-11-21T06:37:50.406Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "specifications": [],
+      "manufacturerPartNumber": null,
+      "capacityGB": 2000
+    },
+    {
+      "id": "reviewed-lexar-nm710-500gb-import-retailer",
+      "name": "Lexar NM710 500GB 해외직구 (판매 표기)",
+      "brand": "Lexar",
+      "subtype": "internal-ssd",
+      "notes": [
+        "원문은 512GB, 실제 현재 판매 제목은 500GB입니다. 제목과 상세의 품번 접미사가 달라 대조 필요. 관세·부가세와 국내 보증을 확인하지 못해 현재 구매 총액을 가격표에 등록하지 않았습니다.",
+        "원 글은512GB, 현재 판매명은500GB. 제목 품번LNM710X500GRN과 상세LNM710X500GRNNU 표기도 대조 필요. 해외직구/관세·부가세 확인 필요 안내로 총액·국내 보증 미확인. 표시80,600원은 일반 배송 포함 현재가 순위에 넣지 않음.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다."
+      ],
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4668385030",
+          "observedAt": "2026-11-21T06:37:51.153Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "specifications": [],
+      "manufacturerPartNumber": null,
+      "capacityGB": 500
+    },
+    {
+      "id": "reviewed-seagate-game-drive-external-ps5-2tb-retailer",
+      "name": "Seagate Game Drive 외장 SSD for PS5 2TB (판매 표기)",
+      "brand": "Seagate",
+      "subtype": "external-ssd",
+      "notes": [
+        "외장 SSD이며 PS5 내부 확장 M.2 SSD와 다른 상품입니다. PS5 게임의 외장 저장·직접 실행 가능 범위는 별도 공식 지원 자료 확인이 필요합니다.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다."
+      ],
+      "sources": [
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4183126984",
+          "observedAt": "2026-11-21T06:38:03.475Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "specifications": [],
+      "manufacturerPartNumber": null,
+      "capacityGB": 2000
+    },
+    {
+      "id": "reviewed-kioxia-exceria-plus-g4-2tb-retailer",
+      "name": "KIOXIA EXCERIA PLUS G4 M.2 NVMe 2TB",
+      "brand": "KIOXIA",
+      "subtype": "internal-ssd",
+      "notes": [
+        "HMB 지원만으로 DRAM 유무를 확정하지 않았습니다. 유럽 자료의 2TB 품번 LVD10Z002TG8을 국내 판매 상품과 동일 품번으로 확정하지 않았으며 국내 보증은 판매처 확인 필요.",
+        "일반가·합계445,000원, 배송2,500원 확인. 포인트·후기보상 제외. 국내 유통사·정확한 품번·재고·보증은 판매처 확인."
+      ],
+      "sources": [
+        {
+          "label": "제조사 공식 사양 · 지역·용량 조건 참조",
+          "url": "https://europe.kioxia.com/en-europe/personal/ssd/exceria-plus-g4-nvme-ssd.html",
+          "observedAt": "2026-11-21",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "icoda 실제 판매 구성·상태",
+          "url": "https://usr.icoda.co.kr/item/view/1601142",
+          "observedAt": "2026-11-21T06:38:29.187Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "specifications": [
+        {
+          "label": "공식 인터페이스·NAND",
+          "value": "PCIe 5.0×4 · NVMe 2.0c · BiCS FLASH TLC"
+        },
+        {
+          "label": "공식 폼팩터·기능",
+          "value": "M.2 2280-S3-M · Host Memory Buffer"
+        }
+      ],
+      "manufacturerPartNumber": null,
+      "capacityGB": 2000
+    },
+    {
+      "id": "reviewed-sandisk-ssd-plus-nvme-2tb-daewon-retailer",
+      "name": "SanDisk SSD PLUS M.2 NVMe 2TB 대원씨티에스 (판매 표기)",
+      "brand": "SanDisk",
+      "subtype": "internal-ssd",
+      "notes": [
+        "SSD PLUS SATA 2.5형과 구분한 M.2 NVMe 판매 상품입니다.",
+        "남은수량0개·판매종료·입금신청 포함 모든 판매절차 종료 안내. 표시349,900원은 종료 기록이며 현재가에 등록하지 않음.",
+        "확인한 판매 페이지 상태이며 다른 판매처나 모델 전체의 품절·단종을 뜻하지 않습니다."
+      ],
+      "sources": [
+        {
+          "label": "kbench 실제 판매 구성·상태",
+          "url": "https://shop.kbench.com/09shop/productDetail.html?seq=8546",
+          "observedAt": "2026-11-21T06:40:01.631Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "specifications": [],
+      "manufacturerPartNumber": null,
+      "capacityGB": 2000
+    },
+    {
+      "id": "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw",
+      "name": "Samsung 9100 PRO 1TB MZ-VAP1T0BW",
+      "brand": "Samsung",
+      "subtype": "internal-ssd",
+      "notes": [
+        "공식 문서의 최대 성능을 모든 용량·사용 조건의 실성능으로 옮기지 않았습니다. 국내 유통·보증·방열판과 시스템 냉각 조건은 구매 전 확인하세요."
+      ],
+      "sources": [
+        {
+          "label": "제조사 공식 사양 · 지역·용량 조건 참조",
+          "url": "https://image-us.samsung.com/SamsungUS/home/pdf/2025_9100PRO_Memory_SpecSheet_022025_FINAL.pdf",
+          "observedAt": "2026-11-21",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "gmarket 실제 판매 구성·상태",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4392204970",
+          "observedAt": "2026-11-21T06:41:54.256Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "specifications": [
+        {
+          "label": "공식 폼팩터·인터페이스",
+          "value": "M.2 2280 · PCIe 5.0×4 · NVMe 2.0"
+        },
+        {
+          "label": "공식 1TB 캐시·NAND",
+          "value": "1GB LPDDR4X · V-NAND TLC"
+        }
+      ],
+      "manufacturerPartNumber": "MZ-VAP1T0BW",
+      "capacityGB": 1000
+    }
+  ],
+  "posts": [
+    {
+      "post": "2002542",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002542",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002724",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002724",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002733",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002733",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002031",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002031",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002054",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002054",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002185",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002185",
+      "disposition": "HDD·NAS 별도 분류",
+      "modelIds": [],
+      "outcome": "HDD·NAS 별도 분류",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2000304",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2000304",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2000363",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2000363",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1998370",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1998370",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-ymtc-zhitai-tipro9000-2tb-retailer"
+      ],
+      "outcome": "원 판매처 품절·판매종료",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1997685",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1997685",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1997693",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1997693",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-kioxia-exceria-pro-g2-2tb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 구성·가격 확인",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-kioxia-exceria-pro-g2-2tb-retailer-gmarket-4653850525"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1997116",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1997116",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1996052",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1996052",
+      "disposition": "HDD·NAS 별도 분류",
+      "modelIds": [],
+      "outcome": "HDD·NAS 별도 분류",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1996162",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1996162",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1995266",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1995266",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1995360",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1995360",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1994675",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1994675",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-kioxia-exceria-plus-g3-2tb-retailer"
+      ],
+      "outcome": "원 판매주소 현재가 미확인 · 별도 판매처 확인",
+      "reason": "종료되거나 상품을 확인할 수 없는 원 판매주소의 과거 가격을 현재가로 승계하지 않았습니다. 대안은 해당 판매처 조건으로 표시합니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [
+        "reviewed-kioxia-exceria-plus-g3-2tb-retailer-gmarket-4764168146"
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1994825",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1994825",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-ymtc-zhitai-tipro9000-2tb-retailer"
+      ],
+      "outcome": "원 판매처 품절·판매종료",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1994401",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1994401",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1994271",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1994271",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1993087",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1993087",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw"
+      ],
+      "outcome": "원 판매주소 현재가 미확인 · 별도 판매처 확인",
+      "reason": "종료되거나 상품을 확인할 수 없는 원 판매주소의 과거 가격을 현재가로 승계하지 않았습니다. 대안은 해당 판매처 조건으로 표시합니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [
+        "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-gmarket-4392204970"
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1993088",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1993088",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1992421",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1992421",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-acer-predator-gm9000-2tb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 구성·가격 확인",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-acer-predator-gm9000-2tb-retailer-gmarket-4691332268"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1992549",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1992549",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1991961",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1991961",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1991676",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1991676",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-kioxia-exceria-plus-g4-2tb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 구성·가격 확인",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-kioxia-exceria-plus-g4-2tb-retailer-icoda-1601142"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1991050",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1991050",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-kioxia-exceria-plus-g4-2tb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 구성·가격 확인",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-kioxia-exceria-plus-g4-2tb-retailer-icoda-1601142"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1990457",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1990457",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1990329",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1990329",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1989591",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1989591",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1989887",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1989887",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1988935",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1988935",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1989013",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1989013",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1988369",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1988369",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1987581",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1987581",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1986650",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1986650",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-lexar-nm710-500gb-import-retailer"
+      ],
+      "outcome": "용량·품번·관부가세 확인 필요",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1985975",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1985975",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1983615",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983615",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-seagate-game-drive-external-ps5-2tb-retailer"
+      ],
+      "outcome": "원 판매처 품절·판매종료",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1982737",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1982737",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1981104",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1981104",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1981108",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1981108",
+      "disposition": "HDD·NAS 별도 분류",
+      "modelIds": [],
+      "outcome": "HDD·NAS 별도 분류",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1980506",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1980506",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1979907",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1979907",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1977083",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1977083",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1977085",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1977085",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1977326",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1977326",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1975897",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1975897",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1976229",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1976229",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1973414",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1973414",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-kioxia-exceria-plus-g3-2tb-retailer"
+      ],
+      "outcome": "원 판매처 품절·판매종료",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [
+        "reviewed-kioxia-exceria-plus-g3-2tb-retailer-gmarket-4764168146"
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1972733",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1972733",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-crucial-t500-2tb-daewon-retailer"
+      ],
+      "outcome": "원 판매처 품절·판매종료",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1972342",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1972342",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [
+        "reviewed-sandisk-ssd-plus-nvme-2tb-daewon-retailer"
+      ],
+      "outcome": "원 판매처 품절·판매종료",
+      "reason": "특정 판매 상품의 확인 시점 상태입니다. 용량·수입 형태·유통·보증·증정 구성은 다른 판매처와 동일시하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1971060",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1971060",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1970017",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1970017",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1969382",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1969382",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1969439",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1969439",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1969676",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1969676",
+      "disposition": "HDD·NAS 별도 분류",
+      "modelIds": [],
+      "outcome": "HDD·NAS 별도 분류",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1969718",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1969718",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1968628",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1968628",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1968270",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1968270",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1965478",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1965478",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1959751",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1959751",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1959137",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1959137",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1956572",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1956572",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1955533",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1955533",
+      "disposition": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "modelIds": [],
+      "outcome": "외장 케이스·도킹·허브 (SSD 본품 아님)",
+      "reason": "스토리지 본품과 외장 케이스·도킹·허브, HDD·NAS를 분리했습니다. SSD 용량이나 SSD 가격으로 집계하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1953730",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1953730",
+      "disposition": "내장·외장 SSD 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "접근 제한 이력이 있는 판매처를 우회하지 않았으며 원문 가격·적립·경유·카드 조건을 현재가로 사용하지 않았습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    }
+  ],
+  "counts": {
+    "내장·외장 SSD 후보": 44,
+    "HDD·NAS 별도 분류": 4,
+    "외장 케이스·도킹·허브 (SSD 본품 아님)": 17
+  },
+  "outcomes": {
+    "현재 판매 구성·조건 추가 확인 필요": 31,
+    "HDD·NAS 별도 분류": 4,
+    "외장 케이스·도킹·허브 (SSD 본품 아님)": 17,
+    "원 판매처 품절·판매종료": 6,
+    "원 판매주소 현재 구성·가격 확인": 4,
+    "원 판매주소 현재가 미확인 · 별도 판매처 확인": 2,
+    "용량·품번·관부가세 확인 필요": 1
+  }
+}

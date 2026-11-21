@@ -2,22 +2,6 @@
   "version": 1,
   "products": [
     {
-      "category": "ssd",
-      "id": "samsung-990-pro-2tb",
-      "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
-      "capacityGB": 2000,
-      "ssdDram": "present",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=2663867799"
-    },
-    {
-      "category": "ssd",
-      "id": "samsung-990-evo-plus-1tb",
-      "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
-      "capacityGB": 1000,
-      "ssdDram": "unknown",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4192562983"
-    },
-    {
       "category": "gpu",
       "id": "colorful-rtx-5060-ti-gaming-duo-16gb",
       "seller": "여운스토어G",
@@ -654,6 +638,48 @@
       "category": "ram",
       "seller": "(주)서린씨앤아이",
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3517254698"
+    },
+    {
+      "id": "samsung-990-evo-plus-1tb",
+      "category": "ssd",
+      "seller": "삼성전자SSD공식총판",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4192562983"
+    },
+    {
+      "id": "samsung-990-pro-2tb",
+      "category": "ssd",
+      "seller": "삼성전자SSD공식총판",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=2663867799"
+    },
+    {
+      "id": "reviewed-acer-predator-gm9000-2tb-retailer-gmarket-4691332268",
+      "category": "ssd",
+      "seller": "(주)한성",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4691332268"
+    },
+    {
+      "id": "reviewed-kioxia-exceria-pro-g2-2tb-retailer-gmarket-4653850525",
+      "category": "ssd",
+      "seller": "도우정보",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4653850525"
+    },
+    {
+      "id": "reviewed-kioxia-exceria-plus-g4-2tb-retailer-icoda-1601142",
+      "category": "ssd",
+      "seller": "아이코다",
+      "sourceUrl": "https://usr.icoda.co.kr/item/view/1601142"
+    },
+    {
+      "id": "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-gmarket-4392204970",
+      "category": "ssd",
+      "seller": "삼성온라인공식파트너",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4392204970"
+    },
+    {
+      "id": "reviewed-kioxia-exceria-plus-g3-2tb-retailer-gmarket-4764168146",
+      "category": "ssd",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4764168146"
     }
   ]
 }

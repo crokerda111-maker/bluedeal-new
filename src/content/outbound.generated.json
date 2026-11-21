@@ -4,6 +4,11 @@
     "merchant": "gmarket",
     "originalUrl": "https://item.gmarket.co.kr/Item?goodsCode=4680689043"
   },
+  "-Fyk33AZjr2ytLjT": {
+    "code": "-Fyk33AZjr2ytLjT",
+    "merchant": "gmarket",
+    "originalUrl": "https://item.gmarket.co.kr/Item?goodsCode=4653850525"
+  },
   "-Hfwtw6HB1sP5D9A": {
     "code": "-Hfwtw6HB1sP5D9A",
     "merchant": "gmarket",
@@ -259,6 +264,11 @@
     "merchant": "11st",
     "originalUrl": "https://www.11st.co.kr/products/9541402660"
   },
+  "TpX5kNgQuRCex0uN": {
+    "code": "TpX5kNgQuRCex0uN",
+    "merchant": "gmarket",
+    "originalUrl": "https://item.gmarket.co.kr/Item?goodsCode=4392204970"
+  },
   "UHWrXynFas4PLGrH": {
     "code": "UHWrXynFas4PLGrH",
     "merchant": "11st",
@@ -329,6 +339,11 @@
     "merchant": "gmarket",
     "originalUrl": "https://item.gmarket.co.kr/Item?goodsCode=3517254393"
   },
+  "aYY3pvhNP38fULJr": {
+    "code": "aYY3pvhNP38fULJr",
+    "merchant": "gmarket",
+    "originalUrl": "https://item.gmarket.co.kr/Item?goodsCode=4764168146"
+  },
   "bsHUPGvbTFIoRPp-": {
     "code": "bsHUPGvbTFIoRPp-",
     "merchant": "ssg",
@@ -393,6 +408,11 @@
     "code": "mNoAXmLzCT-M1sta",
     "merchant": "gmarket",
     "originalUrl": "https://item.gmarket.co.kr/Item?goodsCode=4065627876"
+  },
+  "nBV-zvxbMIF7_0D5": {
+    "code": "nBV-zvxbMIF7_0D5",
+    "merchant": "gmarket",
+    "originalUrl": "https://item.gmarket.co.kr/Item?goodsCode=4691332268"
   },
   "nIf1uqhD44KGstex": {
     "code": "nIf1uqhD44KGstex",
@@ -533,5 +553,10 @@
     "code": "zShV7hzAAlmRlLYf",
     "merchant": "gmarket",
     "originalUrl": "https://item.gmarket.co.kr/Item?goodscode=4568774118"
+  },
+  "zUaJw2OUdguzhWSN": {
+    "code": "zUaJw2OUdguzhWSN",
+    "merchant": "icoda",
+    "originalUrl": "https://usr.icoda.co.kr/item/view/1601142"
   }
 }
