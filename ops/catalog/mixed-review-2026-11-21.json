@@ -103,7 +103,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "OS 포함·정확한 부품 품번 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
@@ -113,13 +113,25 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · RAM",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 메인보드",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "변경없음"
         }
       ],
-      "description": "실제 판매 페이지에서 제목·구성·상태를 확인한 상품입니다. 판매처 표기와 독립 사양 검증을 구분하며 확인되지 않은 할인·보증·품질 점수를 채우지 않습니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
-        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
         "판매 페이지의 제목·상태와 관측한 구성만 반영했습니다. 과거 핫딜의 모델·옵션·가격·행사를 현재 조건으로 승계하지 않았습니다. 판매처 품절·종료는 모델 전체 단종을 뜻하지 않습니다.",
-        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다."
+        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다.",
+        "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -130,6 +142,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4463680822",
           "observedAt": "2026-11-21T09:39:08.347Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4463680822",
+          "observedAt": "2026-11-21T10:09:33.484Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -137,7 +155,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-mixed-fullpc-gmarket-4463680822-offer",
+          "merchant": "G마켓",
+          "seller": "전체판매1위_아싸컴",
+          "pricePage": "/prices/fullpc#reviewed-mixed-fullpc-gmarket-4463680822-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-mixed-fullpc-gmarket-4840266488",
@@ -290,7 +315,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "OS 포함·정확한 부품 품번 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
@@ -300,13 +325,33 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · 메모리",
+          "value": "(ESSENCORE DDR5-5600 CL46 32GB)(16GBx2)"
+        },
+        {
+          "label": "확인한 기본 선택 · NVMe SSD",
+          "value": "(COLORFUL CN700 NVMe 1TB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 케이스",
+          "value": "(다크플래쉬 DRX70 MESH 블랙)"
+        },
+        {
+          "label": "확인한 기본 선택 · 쿨러",
+          "value": "(PCCOOLER CPS RT620 PRO ARGB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "(쿨러마스터 MWE 골드 850 V3)"
         }
       ],
-      "description": "실제 판매 페이지에서 제목·구성·상태를 확인한 상품입니다. 판매처 표기와 독립 사양 검증을 구분하며 확인되지 않은 할인·보증·품질 점수를 채우지 않습니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
-        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
         "판매 페이지의 제목·상태와 관측한 구성만 반영했습니다. 과거 핫딜의 모델·옵션·가격·행사를 현재 조건으로 승계하지 않았습니다. 판매처 품절·종료는 모델 전체 단종을 뜻하지 않습니다.",
-        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다."
+        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다.",
+        "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -317,6 +362,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4432429738",
           "observedAt": "2026-11-21T09:39:17.740Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4432429738",
+          "observedAt": "2026-11-21T10:14:25.114Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -324,7 +375,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-mixed-fullpc-gmarket-4432429738-offer",
+          "merchant": "G마켓",
+          "seller": "퍼플랩",
+          "pricePage": "/prices/fullpc#reviewed-mixed-fullpc-gmarket-4432429738-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-mixed-fullpc-gmarket-4395477736",
@@ -380,7 +438,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "OS 포함·정확한 부품 품번 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
@@ -390,13 +448,33 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · 메모리",
+          "value": "(마이크론 DDR5-5600 히트싱크 32GB(16x2))"
+        },
+        {
+          "label": "확인한 기본 선택 · NVMe SSD",
+          "value": "(컬러풀 CN700 Pro NVMe 1TB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 케이스",
+          "value": "(앱코 G20 에픽 강화유리 블랙)"
+        },
+        {
+          "label": "확인한 기본 선택 · 쿨러",
+          "value": "(쿨러마스터 Hyper 620S ARGB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "(NZXT C650 80PLUS GOLD)"
         }
       ],
-      "description": "실제 판매 페이지에서 제목·구성·상태를 확인한 상품입니다. 판매처 표기와 독립 사양 검증을 구분하며 확인되지 않은 할인·보증·품질 점수를 채우지 않습니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
-        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
         "판매 페이지의 제목·상태와 관측한 구성만 반영했습니다. 과거 핫딜의 모델·옵션·가격·행사를 현재 조건으로 승계하지 않았습니다. 판매처 품절·종료는 모델 전체 단종을 뜻하지 않습니다.",
-        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다."
+        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다.",
+        "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -407,6 +485,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4685925482",
           "observedAt": "2026-11-21T09:39:19.207Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4685925482",
+          "observedAt": "2026-11-21T10:14:54.680Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -414,7 +498,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-mixed-fullpc-gmarket-4685925482-offer",
+          "merchant": "G마켓",
+          "seller": "퍼플랩",
+          "pricePage": "/prices/fullpc#reviewed-mixed-fullpc-gmarket-4685925482-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-mixed-fullpc-11st-8564658171",
@@ -1060,18 +1151,26 @@
       "category": "fullpc",
       "originalCategory": "bundle",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 구매가 미등록 · 상태/옵션 추가 확인",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-mixed-fullpc-gmarket-4463680822"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-mixed-fullpc-gmarket-4463680822-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4463680822",
           "observedAt": "2026-11-21T09:39:08.347Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4463680822",
+          "observedAt": "2026-11-21T10:09:33.484Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -1131,18 +1230,26 @@
       "category": "fullpc",
       "originalCategory": "bundle",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 구매가 미등록 · 상태/옵션 추가 확인",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택하고 선택 조합·수량1·총 금액3723290원을 확인했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·보증·카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-3951478263"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-3951478263-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodsCode=3951478263",
           "observedAt": "2026-11-21T09:39:09.179Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=3951478263",
+          "observedAt": "2026-11-21T10:05:18.237Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -1154,18 +1261,26 @@
       "category": "fullpc",
       "originalCategory": "bundle",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 구매가 미등록 · 상태/옵션 추가 확인",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4577261087"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4577261087-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
           "observedAt": "2026-11-21T09:39:10.000Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
+          "observedAt": "2026-11-21T10:09:27.220Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -1177,8 +1292,8 @@
       "category": "fullpc",
       "originalCategory": "bundle",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 구매가 미등록 · 상태/옵션 추가 확인",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "기본 선택 옵션 품절 · 현재 구매가 미등록",
+      "reason": "RAM 변경 메뉴의 변경없음이 품절로 표시되어 현재 기본 구성 수량1 합계를 확정하지 않았습니다. 전체 모델 단종이나 모든 변경 구성 품절을 뜻하지 않습니다. 화면 머리의 가격을 현재 기본 구성 구매가로 사용하지 않음.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4577268566"
       ],
@@ -1189,6 +1304,12 @@
           "source": "https://item.gmarket.co.kr/Item?goodscode=4577268566",
           "observedAt": "2026-11-21T09:39:10.732Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4577268566",
+          "observedAt": "2026-11-21T10:09:07.699Z",
+          "status": "default-option-out-of-stock",
           "identityVerified": true
         }
       ],
@@ -1359,18 +1480,26 @@
       "category": "fullpc",
       "originalCategory": "bundle",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 구매가 미등록 · 상태/옵션 추가 확인",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 기존 동일 판매번호 관측을 재사용했고 확인 시각을 갱신하지 않았습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4355054602"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4355054602-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
           "observedAt": "2026-11-21T09:01:25.080Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
+          "observedAt": "2026-11-21T10:13:42.058Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -1472,18 +1601,26 @@
       "category": "fullpc",
       "originalCategory": "bundle",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 구매가 미등록 · 상태/옵션 추가 확인",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요.",
       "modelIds": [
         "reviewed-mixed-fullpc-gmarket-4432429738"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-mixed-fullpc-gmarket-4432429738-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4432429738",
           "observedAt": "2026-11-21T09:39:17.740Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4432429738",
+          "observedAt": "2026-11-21T10:14:25.114Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -1637,18 +1774,26 @@
       "category": "fullpc",
       "originalCategory": "bundle",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 구매가 미등록 · 상태/옵션 추가 확인",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요.",
       "modelIds": [
         "reviewed-mixed-fullpc-gmarket-4685925482"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-mixed-fullpc-gmarket-4685925482-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4685925482",
           "observedAt": "2026-11-21T09:39:19.207Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4685925482",
+          "observedAt": "2026-11-21T10:14:54.680Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -1681,10 +1826,13 @@
     }
   ],
   "counts": {
-    "fullpc": 26,
-    "motherboard": 1,
-    "ram": 2,
-    "bundle": 2
+    "기존 접근 제한 · 재시도 없음": 1,
+    "현재 수량1 금액·배송 확인": 6,
+    "현재 구매가 미등록 · 상태/옵션 추가 확인": 13,
+    "개별 판매 상품 식별자 누락": 1,
+    "후속 기본 선택·수량1 가격 확인": 6,
+    "기본 선택 옵션 품절 · 현재 구매가 미등록": 1,
+    "상품 식별 불충분 · 현재 구매가 미등록": 3
   },
-  "newPriceOffers": 5
+  "newPriceOffers": 8
 }

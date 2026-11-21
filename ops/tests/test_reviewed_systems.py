@@ -28,7 +28,8 @@ class ReviewedSystems(unittest.TestCase):
     def test_price_types_and_shipping_are_not_inferred_from_benefit_labels(self):
         items=[p for p in read('src/content/prices/fullpc.json')['items'] if p['id'].startswith('reviewed-fullpc-')]
         actual={p['id']:(p['price'],p['shippingFee']) for p in items if p['source']=='G마켓'}
-        self.assertEqual(actual,{'reviewed-fullpc-gmarket-4805310267-offer':(3765850,0),'reviewed-fullpc-gmarket-4864796475-offer':(1614340,0),'reviewed-fullpc-gmarket-4653902503-offer':(5956750,0),'reviewed-fullpc-gmarket-4653892370-offer':(2392600,0)})
+        preserved={'reviewed-fullpc-gmarket-4805310267-offer':(3765850,0),'reviewed-fullpc-gmarket-4864796475-offer':(1614340,0),'reviewed-fullpc-gmarket-4653902503-offer':(5956750,0),'reviewed-fullpc-gmarket-4653892370-offer':(2392600,0)}
+        self.assertEqual({key:actual.get(key) for key in preserved},preserved)
         lotte=[r for r in items if r['source']=='롯데온']
         self.assertEqual({(r['price'],r['cardPrice']) for r in lotte},{(2040000,1717530),(2269000,2105520)})
         self.assertTrue(all('couponPrice' not in r and 'instantPrice' not in r for r in lotte))

@@ -27,7 +27,8 @@ class ReviewedMixed(unittest.TestCase):
 
     def test_current_composition_and_typed_coupon_totals_are_kept(self):
         models={m['id']:m for m in read('src/content/products/reviewed-mixed.json')}
-        offers=[p for cat in ('fullpc','ram') for p in read('src/content/prices/'+cat+'.json')['items'] if p['id'].startswith('reviewed-mixed-')]
+        followup={id for c in read('ops/catalog/pc-option-review-2026-11-21.json')['checks'] for id in c['verifiedListingIds']}
+        offers=[p for cat in ('fullpc','ram') for p in read('src/content/prices/'+cat+'.json')['items'] if p['id'].startswith('reviewed-mixed-') and p['id'] not in followup]
         self.assertEqual(len(offers),5)
         byid={p['id']:p for p in offers}
         r=byid['reviewed-mixed-fullpc-gmarket-4840266488-offer']

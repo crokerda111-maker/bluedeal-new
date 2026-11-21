@@ -1,0 +1,400 @@
+{
+  "reviewedOn": "2026-11-21",
+  "reviewedMerchantPages": 16,
+  "verifiedQuotes": 13,
+  "defaultOptionUnavailable": 3,
+  "selectionFields": 51,
+  "scope": "기존 PC의 기본 선택·수량1 가격 후속 검토. 부품 등급·개별 구매가·품질 점수 전수 검증 완료 아님.",
+  "checks": [
+    {
+      "productId": "reviewed-fullpc-gmarket-3951478263",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=3951478263",
+      "observedAt": "2026-11-21T10:05:18.237Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "RAM",
+          "value": "변경없음"
+        },
+        {
+          "field": "메인보드",
+          "value": "변경없음"
+        },
+        {
+          "field": "파워",
+          "value": "변경없음"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-3951478263-offer"
+      ],
+      "seller": "전체판매1위_아싸컴"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4577268566",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4577268566",
+      "observedAt": "2026-11-21T10:09:07.699Z",
+      "status": "default-option-out-of-stock",
+      "blockedField": "RAM 변경",
+      "blockedChoice": "변경없음 품절",
+      "verifiedListingIds": [],
+      "seller": "전체판매1위_아싸컴"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4428358112",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4428358112",
+      "observedAt": "2026-11-21T10:09:13.394Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "RAM",
+          "value": "변경없음"
+        },
+        {
+          "field": "메인보드",
+          "value": "변경없음"
+        },
+        {
+          "field": "파워",
+          "value": "변경없음"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4428358112-offer"
+      ],
+      "seller": "전체판매1위_아싸컴"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4577261087",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
+      "observedAt": "2026-11-21T10:09:27.220Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "RAM",
+          "value": "변경없음"
+        },
+        {
+          "field": "메인보드",
+          "value": "변경없음"
+        },
+        {
+          "field": "파워",
+          "value": "변경없음"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4577261087-offer"
+      ],
+      "seller": "전체판매1위_아싸컴"
+    },
+    {
+      "productId": "reviewed-mixed-fullpc-gmarket-4463680822",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4463680822",
+      "observedAt": "2026-11-21T10:09:33.484Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "RAM",
+          "value": "변경없음"
+        },
+        {
+          "field": "메인보드",
+          "value": "변경없음"
+        },
+        {
+          "field": "파워",
+          "value": "변경없음"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-mixed-fullpc-gmarket-4463680822-offer"
+      ],
+      "seller": "전체판매1위_아싸컴"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4427752068",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4427752068",
+      "observedAt": "2026-11-21T10:12:39.945Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "메모리",
+          "value": "(ESSENCORE DDR5-5600 CL46 32GB)(16GBx2)"
+        },
+        {
+          "field": "NVMe SSD",
+          "value": "(ADATA LEGEND 960 NVMe 1TB)"
+        },
+        {
+          "field": "케이스",
+          "value": "(다크플래쉬 DRX70 MESH 블랙)"
+        },
+        {
+          "field": "쿨러",
+          "value": "(PCCOOLER CPS RT620 PRO ARGB)"
+        },
+        {
+          "field": "파워",
+          "value": "(CORSAIR RM850e ATX3.1)"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4427752068-offer"
+      ],
+      "seller": "퍼플랩"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4355054602",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
+      "observedAt": "2026-11-21T10:13:42.058Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "메모리",
+          "value": "(ESSENCORE DDR5-5600 CL46 32GB)(16x2)"
+        },
+        {
+          "field": "NVMe SSD",
+          "value": "(COLORFUL CN700 Pro NVMe 1TB)"
+        },
+        {
+          "field": "케이스",
+          "value": "(다크플래쉬 DRX70 MESH 블랙)"
+        },
+        {
+          "field": "쿨러",
+          "value": "(PCCOOLER CPS RT620 PRO ARGB)"
+        },
+        {
+          "field": "파워",
+          "value": "(쿨러마스터 MWE GOLD 850 V3 ATX3.1)"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4355054602-offer"
+      ],
+      "seller": "퍼플랩"
+    },
+    {
+      "productId": "reviewed-mixed-fullpc-gmarket-4432429738",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4432429738",
+      "observedAt": "2026-11-21T10:14:25.114Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "메모리",
+          "value": "(ESSENCORE DDR5-5600 CL46 32GB)(16GBx2)"
+        },
+        {
+          "field": "NVMe SSD",
+          "value": "(COLORFUL CN700 NVMe 1TB)"
+        },
+        {
+          "field": "케이스",
+          "value": "(다크플래쉬 DRX70 MESH 블랙)"
+        },
+        {
+          "field": "쿨러",
+          "value": "(PCCOOLER CPS RT620 PRO ARGB)"
+        },
+        {
+          "field": "파워",
+          "value": "(쿨러마스터 MWE 골드 850 V3)"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-mixed-fullpc-gmarket-4432429738-offer"
+      ],
+      "seller": "퍼플랩"
+    },
+    {
+      "productId": "reviewed-mixed-fullpc-gmarket-4685925482",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4685925482",
+      "observedAt": "2026-11-21T10:14:54.680Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "메모리",
+          "value": "(마이크론 DDR5-5600 히트싱크 32GB(16x2))"
+        },
+        {
+          "field": "NVMe SSD",
+          "value": "(컬러풀 CN700 Pro NVMe 1TB)"
+        },
+        {
+          "field": "케이스",
+          "value": "(앱코 G20 에픽 강화유리 블랙)"
+        },
+        {
+          "field": "쿨러",
+          "value": "(쿨러마스터 Hyper 620S ARGB)"
+        },
+        {
+          "field": "파워",
+          "value": "(NZXT C650 80PLUS GOLD)"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-mixed-fullpc-gmarket-4685925482-offer"
+      ],
+      "seller": "퍼플랩"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4427748101",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4427748101",
+      "observedAt": "2026-11-21T10:15:59.104Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "메모리",
+          "value": "(ESSENCORE DDR5-5600 CL46 16GB)(16x1)"
+        },
+        {
+          "field": "NVMe SSD",
+          "value": "(COLORFUL CN700 Pro NVMe 1TB)"
+        },
+        {
+          "field": "케이스",
+          "value": "(앱코 G20 에픽 강화유리 블랙)"
+        },
+        {
+          "field": "쿨러",
+          "value": "(잘만 CNPS9X OPTIMA2 ARGB)"
+        },
+        {
+          "field": "파워",
+          "value": "(잘만 DecaMax 700W 80+STD )"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4427748101-offer"
+      ],
+      "seller": "퍼플랩"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4638008638",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4638008638",
+      "observedAt": "2026-11-21T10:16:18.261Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "RAM",
+          "value": "변경없음"
+        },
+        {
+          "field": "메인보드",
+          "value": "변경없음"
+        },
+        {
+          "field": "파워",
+          "value": "변경없음"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4638008638-offer"
+      ],
+      "seller": "전체판매1위_아싸컴"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4532495414",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4532495414",
+      "observedAt": "2026-11-21T10:16:48.547Z",
+      "status": "default-option-out-of-stock",
+      "blockedField": "SSD 교체",
+      "blockedChoice": "M.2 NVMe 1TB 품절",
+      "verifiedListingIds": [],
+      "seller": "주연테크본사"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4366263439",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4366263439",
+      "observedAt": "2026-11-21T10:17:36.875Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "운영체제",
+          "value": "조립 + 프리도스(운영체제 미탑재)"
+        },
+        {
+          "field": "메모리",
+          "value": "PNY DDR5-5600 CL46 AMD 32GB (16GBx2)"
+        },
+        {
+          "field": "CPU쿨러",
+          "value": "쿨러마스터 HYPER 620S ARGB"
+        },
+        {
+          "field": "케이스",
+          "value": "DAVEN D7 MESH 세븐팬 블랙"
+        },
+        {
+          "field": "파워",
+          "value": "쿨러마스터 MWE GOLD 850 V3 ATX3.1 블랙"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4366263439-offer"
+      ],
+      "seller": "(주)한성컴퓨터"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4366262287",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4366262287",
+      "observedAt": "2026-11-21T10:18:51.488Z",
+      "status": "default-option-out-of-stock",
+      "blockedField": "2.메모리 변경",
+      "blockedChoice": "삼성 DDR5 5600 32GB (16GBx2) 품절",
+      "verifiedListingIds": [],
+      "seller": "(주)한성컴퓨터"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4890427920",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4890427920",
+      "observedAt": "2026-11-21T10:19:40.673Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "운영체제",
+          "value": "조립 + 프리도스(운영체제 미탑재)"
+        },
+        {
+          "field": "케이스",
+          "value": "DAVEN D7 MESH 세븐팬 블랙"
+        },
+        {
+          "field": "메모리",
+          "value": "CORSAIR DDR5-5600 CL40 VENGEANCE 32GB(16x2)"
+        },
+        {
+          "field": "CPU쿨러",
+          "value": "DEEPCOOL AG620 G2"
+        },
+        {
+          "field": "파워",
+          "value": "쿨러마스터 ELITE GOLD 850 풀모듈러 블랙"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4890427920-offer"
+      ],
+      "seller": "(주)한성컴퓨터"
+    },
+    {
+      "productId": "reviewed-fullpc-gmarket-4895851667",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4895851667",
+      "observedAt": "2026-11-21T10:20:03.429Z",
+      "status": "unit-quote-observed",
+      "selectedOptions": [
+        {
+          "field": "옵션변경",
+          "value": "옵션 1번 7800X3D + RTX 5060 Ti"
+        }
+      ],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4895851667-offer"
+      ],
+      "seller": "여운스토어G"
+    }
+  ]
+}

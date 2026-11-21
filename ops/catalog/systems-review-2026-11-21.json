@@ -719,31 +719,43 @@
     },
     {
       "id": "reviewed-fullpc-gmarket-3951478263",
-      "name": "AMD 9800X3D RX9070XT 16GB +32GB +1TB 조립PC",
+      "name": "AMD 9800X3D RX9070XT 16GB +32GB +1TB 조립PC 게이밍컴퓨터 조립컴퓨터 본체 게임용",
       "category": "fullpc",
       "subtype": "assembled-pc",
       "brand": "아싸컴",
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
           "label": "판매 제목 기준 구성",
-          "value": "AMD 9800X3D RX9070XT 16GB +32GB +1TB 조립PC"
+          "value": "AMD 9800X3D RX9070XT 16GB +32GB +1TB 조립PC 게이밍컴퓨터 조립컴퓨터 본체 게임용"
         },
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · RAM",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 메인보드",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "변경없음"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
         "RAM/메인보드/파워 필수선택 전, 수량1 합계 미확인. 삼성카드 최대1만원 표시의 상세조건 미확인. GPU/SSD/PSU 정확모델·OS/보증·정확BOM 추가 확인.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "RAM·메인보드·파워를 각각 변경없음으로 선택하고 선택 조합·수량1·총 금액3723290원을 확인했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·보증·카드 대상/한도/기간/중복조건은 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -754,6 +766,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodsCode=3951478263",
           "observedAt": "2026-11-21T08:50:08.766Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=3951478263",
+          "observedAt": "2026-11-21T10:05:18.237Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -761,7 +779,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-3951478263-offer",
+          "merchant": "G마켓",
+          "seller": "전체판매1위_아싸컴",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-3951478263-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4601813739",
@@ -811,31 +836,51 @@
     },
     {
       "id": "reviewed-fullpc-gmarket-4427748101",
-      "name": "퍼플랩 라이젠5 7500X3D RX9070 16GB +16GB +1TB 어드레날린 AX75-R97",
+      "name": "라이젠5 7500X3D RX9070 16GB + 16GB + 1TB 어드레날린 AX75-R97 라데온 그래픽카드 AMD 조립 PC 본체",
       "category": "fullpc",
       "subtype": "assembled-pc",
       "brand": "퍼플랩",
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
           "label": "판매 제목 기준 구성",
-          "value": "퍼플랩 라이젠5 7500X3D RX9070 16GB +16GB +1TB 어드레날린 AX75-R97"
+          "value": "라이젠5 7500X3D RX9070 16GB + 16GB + 1TB 어드레날린 AX75-R97 라데온 그래픽카드 AMD 조립 PC 본체"
         },
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · 메모리",
+          "value": "(ESSENCORE DDR5-5600 CL46 16GB)(16x1)"
+        },
+        {
+          "label": "확인한 기본 선택 · NVMe SSD",
+          "value": "(COLORFUL CN700 Pro NVMe 1TB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 케이스",
+          "value": "(앱코 G20 에픽 강화유리 블랙)"
+        },
+        {
+          "label": "확인한 기본 선택 · 쿨러",
+          "value": "(잘만 CNPS9X OPTIMA2 ARGB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "(잘만 DecaMax 700W 80+STD )"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
         "메모리/SSD/케이스/쿨러/파워 필수선택 전, 기본구성 수량1 합계 미확인. 제목의GPU16GB·시스템메모리16GB를32GB램으로 합치지 않음. 정확한BOM·카드조건 미확인.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -846,6 +891,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4427748101",
           "observedAt": "2026-11-21T08:53:28.495Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4427748101",
+          "observedAt": "2026-11-21T10:15:59.104Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -853,7 +904,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4427748101-offer",
+          "merchant": "G마켓",
+          "seller": "퍼플랩",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4427748101-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4296584278",
@@ -920,6 +978,10 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "현재 기본 선택 상태",
+          "value": "SSD 교체 · M.2 NVMe 1TB 품절"
         }
       ],
       "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
@@ -927,7 +989,7 @@
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
         "SSD/색상/Windows/파워 필수옵션선택 전. PALIT세부모델·과거체감가422만원·1%기준가 미확정. 포인트/리뷰보상 제외, 수량1 합계/BOM·보증 미확인.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "SSD 교체 메뉴의 M.2 NVMe 1TB 기본 선택이 품절로 표시되어 현재 기본 구성 수량1 합계를 확정하지 않았습니다. 머리의5000000원 할인가를 현재 구매가로 사용하지 않습니다. 다른 변경 구성·전체 모델의 단종을 뜻하지 않습니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -937,6 +999,12 @@
           "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
           "url": "https://item.gmarket.co.kr/Item?goodscode=4532495414",
           "observedAt": "2026-11-21T08:53:55.322Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택 옵션 품절 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4532495414",
+          "observedAt": "2026-11-21T10:16:48.547Z",
           "kind": "retailer-availability"
         }
       ],
@@ -949,31 +1017,43 @@
     },
     {
       "id": "reviewed-fullpc-gmarket-4638008638",
-      "name": "AMD 9800X3D RX9070 GRE 12GB +32GB +1TB 화이트 조립PC",
+      "name": "AMD 9800X3D RX9070 GRE 12GB +32GB +1TB 화이트 조립PC 게이밍컴퓨터 조립 본체 배그 데스크탑",
       "category": "fullpc",
       "subtype": "assembled-pc",
       "brand": "아싸컴",
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
           "label": "판매 제목 기준 구성",
-          "value": "AMD 9800X3D RX9070 GRE 12GB +32GB +1TB 화이트 조립PC"
+          "value": "AMD 9800X3D RX9070 GRE 12GB +32GB +1TB 화이트 조립PC 게이밍컴퓨터 조립 본체 배그 데스크탑"
         },
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · RAM",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 메인보드",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "변경없음"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
         "과거글 RX9070XT16GB와 현재판매제목 RX9070GRE12GB가 다름. 과거GPU사양/가격 승계 안 함. RAM/보드/파워 필수옵션선택 전 수량1합계·BOM·혜택조건 미확인.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -984,6 +1064,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodsCode=4638008638",
           "observedAt": "2026-11-21T08:53:55.322Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4638008638",
+          "observedAt": "2026-11-21T10:16:18.261Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -991,35 +1077,62 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4638008638-offer",
+          "merchant": "G마켓",
+          "seller": "전체판매1위_아싸컴",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4638008638-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4366263439",
-      "name": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC",
+      "name": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB조립PC 게이밍 데스크탑 조립컴퓨터",
       "category": "fullpc",
       "subtype": "assembled-pc",
       "brand": "한성컴퓨터",
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
           "label": "판매 제목 기준 구성",
-          "value": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC"
+          "value": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB조립PC 게이밍 데스크탑 조립컴퓨터"
         },
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · 운영체제",
+          "value": "조립 + 프리도스(운영체제 미탑재)"
+        },
+        {
+          "label": "확인한 기본 선택 · 메모리",
+          "value": "PNY DDR5-5600 CL46 AMD 32GB (16GBx2)"
+        },
+        {
+          "label": "확인한 기본 선택 · CPU쿨러",
+          "value": "쿨러마스터 HYPER 620S ARGB"
+        },
+        {
+          "label": "확인한 기본 선택 · 케이스",
+          "value": "DAVEN D7 MESH 세븐팬 블랙"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "쿨러마스터 MWE GOLD 850 V3 ATX3.1 블랙"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
         "OS/메모리/CPU쿨러/케이스/파워 필수옵션 미선택. 과거990PRO1TB·체감가420만원을 현재SSD정확모델/가격으로 승계 안 함. 수량1 합계/BOM/카드조건 확인 필요.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "운영체제 미탑재 프리도스·PNY32GB(16GB×2)·기본CPU쿨러·블랙케이스·기본파워를 선택한 수량1 상품가·합계를 확인했습니다. 정확한 GPU·메인보드·SSD품번·시스템 보증·부품별 현재 구매가 및 품질 점수는 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -1030,6 +1143,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4366263439",
           "observedAt": "2026-11-21T08:54:17.946Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4366263439",
+          "observedAt": "2026-11-21T10:17:36.875Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -1037,7 +1156,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4366263439-offer",
+          "merchant": "G마켓",
+          "seller": "(주)한성컴퓨터",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4366263439-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4366262287",
@@ -1058,6 +1184,10 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "현재 기본 선택 상태",
+          "value": "2.메모리 변경 · 삼성 DDR5 5600 32GB (16GBx2) 품절"
         }
       ],
       "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
@@ -1065,7 +1195,7 @@
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
         "OS/메모리/쿨러/케이스/파워 필수선택 전. 과거990PRO표기를 현재SSD모델로 확정 안 함. 수량1합계/BOM/카드조건 추가 확인.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "메모리 변경의 기본 삼성DDR5-5600 32GB(16GB×2) 선택이 품절입니다. 머리의 가격을 해당 기본 구성의 현재 구매가로 사용하지 않았으며 전체 모델 단종을 뜻하지 않습니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -1075,6 +1205,12 @@
           "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
           "url": "https://item.gmarket.co.kr/Item?goodscode=4366262287",
           "observedAt": "2026-11-21T08:55:11.314Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택 옵션 품절 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4366262287",
+          "observedAt": "2026-11-21T10:18:51.488Z",
           "kind": "retailer-availability"
         }
       ],
@@ -1087,31 +1223,51 @@
     },
     {
       "id": "reviewed-fullpc-gmarket-4890427920",
-      "name": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC",
+      "name": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC 게이밍 데스크탑 조립컴퓨터",
       "category": "fullpc",
       "subtype": "assembled-pc",
       "brand": "한성컴퓨터",
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
           "label": "판매 제목 기준 구성",
-          "value": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC"
+          "value": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC 게이밍 데스크탑 조립컴퓨터"
         },
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · 운영체제",
+          "value": "조립 + 프리도스(운영체제 미탑재)"
+        },
+        {
+          "label": "확인한 기본 선택 · 케이스",
+          "value": "DAVEN D7 MESH 세븐팬 블랙"
+        },
+        {
+          "label": "확인한 기본 선택 · 메모리",
+          "value": "CORSAIR DDR5-5600 CL40 VENGEANCE 32GB(16x2)"
+        },
+        {
+          "label": "확인한 기본 선택 · CPU쿨러",
+          "value": "DEEPCOOL AG620 G2"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "쿨러마스터 ELITE GOLD 850 풀모듈러 블랙"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
         "OS/케이스/메모리/쿨러/파워 필수선택 전. 비슷한제목의4366263439와 판매번호가 달라 별도구성으로 보존. 수량1합계/기본BOM/카드조건 미확인.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "현재 메뉴 순서에 따라 프리도스·기본케이스·CORSAIR32GB(16GB×2)·기본CPU쿨러·기본파워를 선택한 수량1 합계를 확인했습니다. 정확한 GPU·메인보드·SSD품번·국내 보증·개별 구매가와 품질 점수는 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -1122,6 +1278,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4890427920",
           "observedAt": "2026-11-21T08:55:11.314Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4890427920",
+          "observedAt": "2026-11-21T10:19:40.673Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -1129,7 +1291,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4890427920-offer",
+          "merchant": "G마켓",
+          "seller": "(주)한성컴퓨터",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4890427920-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4895851667",
@@ -1140,7 +1309,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
@@ -1150,14 +1319,17 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · 옵션변경",
+          "value": "옵션 1번 7800X3D + RTX 5060 Ti"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
-        "실제 판매 제목과 표시금액·필수 옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 과거 글의9800X3D·5070Ti·화이트와 현재7800X3D·5060Ti 제목이 달라 같은 구성으로 합치지 않습니다.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "현재 화면과 같은 옵션1번7800X3D+RTX5060Ti를 선택한 수량1 상품가·합계를 확인했습니다. RAM용량·GPU VRAM·SSD·보드·파워·OS·국내 보증은 미확인입니다. 과거9800X3D/5070Ti/화이트 구성과 합치지 않으며 정확한 전체BOM·개별 구매가·품질점수는 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -1168,6 +1340,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4895851667",
           "observedAt": "2026-11-21T08:55:55.933Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4895851667",
+          "observedAt": "2026-11-21T10:20:03.429Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -1175,7 +1353,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4895851667-offer",
+          "merchant": "G마켓",
+          "seller": "여운스토어G",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4895851667-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4805310267",
@@ -1284,7 +1469,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
@@ -1294,14 +1479,33 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · 메모리",
+          "value": "(ESSENCORE DDR5-5600 CL46 32GB)(16GBx2)"
+        },
+        {
+          "label": "확인한 기본 선택 · NVMe SSD",
+          "value": "(ADATA LEGEND 960 NVMe 1TB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 케이스",
+          "value": "(다크플래쉬 DRX70 MESH 블랙)"
+        },
+        {
+          "label": "확인한 기본 선택 · 쿨러",
+          "value": "(PCCOOLER CPS RT620 PRO ARGB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "(CORSAIR RM850e ATX3.1)"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
-        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴에 표시된 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·보증·부품별 실제 구매가·성능/품질점수는 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -1312,6 +1516,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4427752068",
           "observedAt": "2026-11-21T08:57:46.160Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4427752068",
+          "observedAt": "2026-11-21T10:12:39.945Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -1319,7 +1529,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4427752068-offer",
+          "merchant": "G마켓",
+          "seller": "퍼플랩",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4427752068-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4653905821",
@@ -1386,14 +1603,17 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "현재 기본 선택 상태",
+          "value": "RAM 변경 · 변경없음 품절"
         }
       ],
       "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
-        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "RAM 변경 메뉴의 변경없음이 품절로 표시되어 현재 기본 구성 수량1 합계를 확정하지 않았습니다. 전체 모델 단종이나 모든 변경 구성 품절을 뜻하지 않습니다. 화면 머리의 가격을 현재 기본 구성 구매가로 사용하지 않음."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -1403,6 +1623,12 @@
           "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
           "url": "https://item.gmarket.co.kr/Item?goodscode=4577268566",
           "observedAt": "2026-11-21T08:58:02.805Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택 옵션 품절 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4577268566",
+          "observedAt": "2026-11-21T10:09:07.699Z",
           "kind": "retailer-availability"
         }
       ],
@@ -1422,7 +1648,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
@@ -1432,14 +1658,25 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · RAM",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 메인보드",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "변경없음"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
-        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -1450,6 +1687,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4428358112",
           "observedAt": "2026-11-21T08:58:19.246Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4428358112",
+          "observedAt": "2026-11-21T10:09:13.394Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -1457,7 +1700,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4428358112-offer",
+          "merchant": "G마켓",
+          "seller": "전체판매1위_아싸컴",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4428358112-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4308596942",
@@ -1756,7 +2006,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
@@ -1766,14 +2016,33 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · 메모리",
+          "value": "(ESSENCORE DDR5-5600 CL46 32GB)(16x2)"
+        },
+        {
+          "label": "확인한 기본 선택 · NVMe SSD",
+          "value": "(COLORFUL CN700 Pro NVMe 1TB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 케이스",
+          "value": "(다크플래쉬 DRX70 MESH 블랙)"
+        },
+        {
+          "label": "확인한 기본 선택 · 쿨러",
+          "value": "(PCCOOLER CPS RT620 PRO ARGB)"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "(쿨러마스터 MWE GOLD 850 V3 ATX3.1)"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
-        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -1784,6 +2053,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
           "observedAt": "2026-11-21T09:01:25.080Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
+          "observedAt": "2026-11-21T10:13:42.058Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -1791,7 +2066,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4355054602-offer",
+          "merchant": "G마켓",
+          "seller": "퍼플랩",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4355054602-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4529465563",
@@ -1848,7 +2130,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "기본 선택·수량1 합계 확인"
       ],
       "specifications": [
         {
@@ -1858,14 +2140,25 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 기본 선택 · RAM",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 메인보드",
+          "value": "변경없음"
+        },
+        {
+          "label": "확인한 기본 선택 · 파워",
+          "value": "변경없음"
         }
       ],
-      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
-        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 과거2TB/B650EM표기와현재1TB/B850표기가달라같은저장장치·메인보드구성으로합치지않습니다.",
-        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+        "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -1876,6 +2169,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
           "observedAt": "2026-11-21T09:02:18.655Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "기본 선택·수량1 합계 후속 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
+          "observedAt": "2026-11-21T10:09:27.220Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -1883,7 +2182,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": []
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4577261087-offer",
+          "merchant": "G마켓",
+          "seller": "전체판매1위_아싸컴",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4577261087-offer"
+        }
+      ]
     },
     {
       "id": "reviewed-fullpc-gmarket-4454228249",
@@ -3469,18 +3775,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002825",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "RAM/메인보드/파워 필수선택 전, 수량1 합계 미확인. 삼성카드 최대1만원 표시의 상세조건 미확인. GPU/SSD/PSU 정확모델·OS/보증·정확BOM 추가 확인.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택하고 선택 조합·수량1·총 금액3723290원을 확인했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·보증·카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-3951478263"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-3951478263-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodsCode=3951478263",
           "observedAt": "2026-11-21T08:50:08.766Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=3951478263",
+          "observedAt": "2026-11-21T10:05:18.237Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -3491,18 +3805,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002430",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "RAM/메인보드/파워 필수선택 전, 수량1 합계 미확인. 삼성카드 최대1만원 표시의 상세조건 미확인. GPU/SSD/PSU 정확모델·OS/보증·정확BOM 추가 확인.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택하고 선택 조합·수량1·총 금액3723290원을 확인했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·보증·카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-3951478263"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-3951478263-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodsCode=3951478263",
           "observedAt": "2026-11-21T08:50:08.766Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=3951478263",
+          "observedAt": "2026-11-21T10:05:18.237Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -3557,18 +3879,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1999986",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "메모리/SSD/케이스/쿨러/파워 필수선택 전, 기본구성 수량1 합계 미확인. 제목의GPU16GB·시스템메모리16GB를32GB램으로 합치지 않음. 정확한BOM·카드조건 미확인.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4427748101"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4427748101-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4427748101",
           "observedAt": "2026-11-21T08:53:28.495Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4427748101",
+          "observedAt": "2026-11-21T10:15:59.104Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -3601,8 +3931,8 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1999803",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "SSD/색상/Windows/파워 필수옵션선택 전. PALIT세부모델·과거체감가422만원·1%기준가 미확정. 포인트/리뷰보상 제외, 수량1 합계/BOM·보증 미확인.",
+      "outcome": "기본 선택 옵션 품절 · 현재 구매가 미등록",
+      "reason": "SSD 교체 메뉴의 M.2 NVMe 1TB 기본 선택이 품절로 표시되어 현재 기본 구성 수량1 합계를 확정하지 않았습니다. 머리의5000000원 할인가를 현재 구매가로 사용하지 않습니다. 다른 변경 구성·전체 모델의 단종을 뜻하지 않습니다.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4532495414"
       ],
@@ -3614,6 +3944,12 @@
           "observedAt": "2026-11-21T08:53:55.322Z",
           "status": "required-options-unconfirmed",
           "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4532495414",
+          "observedAt": "2026-11-21T10:16:48.547Z",
+          "status": "default-option-out-of-stock",
+          "identityVerified": true
         }
       ],
       "originalPromotionVerified": false
@@ -3623,18 +3959,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1999237",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "과거글 RX9070XT16GB와 현재판매제목 RX9070GRE12GB가 다름. 과거GPU사양/가격 승계 안 함. RAM/보드/파워 필수옵션선택 전 수량1합계·BOM·혜택조건 미확인.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4638008638"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4638008638-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodsCode=4638008638",
           "observedAt": "2026-11-21T08:53:55.322Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4638008638",
+          "observedAt": "2026-11-21T10:16:18.261Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -3667,18 +4011,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1999388",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "OS/메모리/CPU쿨러/케이스/파워 필수옵션 미선택. 과거990PRO1TB·체감가420만원을 현재SSD정확모델/가격으로 승계 안 함. 수량1 합계/BOM/카드조건 확인 필요.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "운영체제 미탑재 프리도스·PNY32GB(16GB×2)·기본CPU쿨러·블랙케이스·기본파워를 선택한 수량1 상품가·합계를 확인했습니다. 정확한 GPU·메인보드·SSD품번·시스템 보증·부품별 현재 구매가 및 품질 점수는 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4366263439"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4366263439-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4366263439",
           "observedAt": "2026-11-21T08:54:17.946Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4366263439",
+          "observedAt": "2026-11-21T10:17:36.875Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -3689,8 +4041,8 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1999444",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "OS/메모리/쿨러/케이스/파워 필수선택 전. 과거990PRO표기를 현재SSD모델로 확정 안 함. 수량1합계/BOM/카드조건 추가 확인.",
+      "outcome": "기본 선택 옵션 품절 · 현재 구매가 미등록",
+      "reason": "메모리 변경의 기본 삼성DDR5-5600 32GB(16GB×2) 선택이 품절입니다. 머리의 가격을 해당 기본 구성의 현재 구매가로 사용하지 않았으며 전체 모델 단종을 뜻하지 않습니다.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4366262287"
       ],
@@ -3702,6 +4054,12 @@
           "observedAt": "2026-11-21T08:55:11.314Z",
           "status": "required-options-unconfirmed",
           "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4366262287",
+          "observedAt": "2026-11-21T10:18:51.488Z",
+          "status": "default-option-out-of-stock",
+          "identityVerified": true
         }
       ],
       "originalPromotionVerified": false
@@ -3711,18 +4069,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1999065",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "OS/케이스/메모리/쿨러/파워 필수선택 전. 비슷한제목의4366263439와 판매번호가 달라 별도구성으로 보존. 수량1합계/기본BOM/카드조건 미확인.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "현재 메뉴 순서에 따라 프리도스·기본케이스·CORSAIR32GB(16GB×2)·기본CPU쿨러·기본파워를 선택한 수량1 합계를 확인했습니다. 정확한 GPU·메인보드·SSD품번·국내 보증·개별 구매가와 품질 점수는 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4890427920"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4890427920-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4890427920",
           "observedAt": "2026-11-21T08:55:11.314Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4890427920",
+          "observedAt": "2026-11-21T10:19:40.673Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -3733,18 +4099,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1998607",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "실제 판매 제목과 표시금액·필수 옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 과거 글의9800X3D·5070Ti·화이트와 현재7800X3D·5060Ti 제목이 달라 같은 구성으로 합치지 않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "현재 화면과 같은 옵션1번7800X3D+RTX5060Ti를 선택한 수량1 상품가·합계를 확인했습니다. RAM용량·GPU VRAM·SSD·보드·파워·OS·국내 보증은 미확인입니다. 과거9800X3D/5070Ti/화이트 구성과 합치지 않으며 정확한 전체BOM·개별 구매가·품질점수는 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4895851667"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4895851667-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4895851667",
           "observedAt": "2026-11-21T08:55:55.933Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4895851667",
+          "observedAt": "2026-11-21T10:20:03.429Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -3801,18 +4175,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1998235",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴에 표시된 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·보증·부품별 실제 구매가·성능/품질점수는 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4427752068"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4427752068-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4427752068",
           "observedAt": "2026-11-21T08:57:46.160Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4427752068",
+          "observedAt": "2026-11-21T10:12:39.945Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -3845,8 +4227,8 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1997498",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "기본 선택 옵션 품절 · 현재 구매가 미등록",
+      "reason": "RAM 변경 메뉴의 변경없음이 품절로 표시되어 현재 기본 구성 수량1 합계를 확정하지 않았습니다. 전체 모델 단종이나 모든 변경 구성 품절을 뜻하지 않습니다. 화면 머리의 가격을 현재 기본 구성 구매가로 사용하지 않음.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4577268566"
       ],
@@ -3858,6 +4240,12 @@
           "observedAt": "2026-11-21T08:58:02.805Z",
           "status": "required-options-unconfirmed",
           "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4577268566",
+          "observedAt": "2026-11-21T10:09:07.699Z",
+          "status": "default-option-out-of-stock",
+          "identityVerified": true
         }
       ],
       "originalPromotionVerified": false
@@ -3867,18 +4255,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1997527",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4428358112"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4428358112-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4428358112",
           "observedAt": "2026-11-21T08:58:19.246Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4428358112",
+          "observedAt": "2026-11-21T10:09:13.394Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -3911,18 +4307,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1997592",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "과거글 RX9070XT16GB와 현재판매제목 RX9070GRE12GB가 다름. 과거GPU사양/가격 승계 안 함. RAM/보드/파워 필수옵션선택 전 수량1합계·BOM·혜택조건 미확인.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4638008638"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4638008638-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodsCode=4638008638",
           "observedAt": "2026-11-21T08:53:55.322Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4638008638",
+          "observedAt": "2026-11-21T10:16:18.261Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -4153,18 +4557,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983042",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4355054602"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4355054602-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
           "observedAt": "2026-11-21T09:01:25.080Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
+          "observedAt": "2026-11-21T10:13:42.058Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -4219,18 +4631,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1970143",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 과거2TB/B650EM표기와현재1TB/B850표기가달라같은저장장치·메인보드구성으로합치지않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4577261087"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4577261087-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
           "observedAt": "2026-11-21T09:02:18.655Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
+          "observedAt": "2026-11-21T10:09:27.220Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -4331,18 +4751,26 @@
       "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1966356",
       "category": "fullpc",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토",
-      "reason": "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 과거2TB/B650EM표기와현재1TB/B850표기가달라같은저장장치·메인보드구성으로합치지않습니다.",
+      "outcome": "후속 기본 선택·수량1 가격 확인",
+      "reason": "RAM·메인보드·파워를 각각 변경없음으로 선택한 조합과 수량1 상품가·총 금액을 대조했습니다. 변경없음은 정확한 부품 품번을 뜻하지 않습니다. 전체BOM·OS·국내 보증과 카드 대상/한도/기간/중복조건은 추가 확인 필요.",
       "modelIds": [
         "reviewed-fullpc-gmarket-4577261087"
       ],
-      "verifiedListingIds": [],
+      "verifiedListingIds": [
+        "reviewed-fullpc-gmarket-4577261087-offer"
+      ],
       "alternativeListingIds": [],
       "merchantChecks": [
         {
           "source": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
           "observedAt": "2026-11-21T09:02:18.655Z",
           "status": "required-options-unconfirmed",
+          "identityVerified": true
+        },
+        {
+          "source": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
+          "observedAt": "2026-11-21T10:09:27.220Z",
+          "status": "unit-quote-observed",
           "identityVerified": true
         }
       ],
@@ -5315,7 +5743,7 @@
     "halfpc": 5,
     "fullpc": 67
   },
-  "freshPriceOffers": 13,
+  "freshPriceOffers": 23,
   "counts": {
     "현재 제목 확인 · 필수 옵션/할인/BOM 추가 검토": 5,
     "기존 접근 제한 · 재시도 없음": 3,
@@ -5324,8 +5752,9 @@
     "제목·모델 코드 사양 충돌": 1,
     "기획전 종료/미존재": 1,
     "판매 종료 · 현재 구성 미확인": 1,
-    "현재 제목 확인 · 필수 옵션/합계/BOM 추가 검토": 16,
+    "후속 기본 선택·수량1 가격 확인": 13,
     "원 판매처 품절 · 현재 구매가 미등록": 22,
+    "기본 선택 옵션 품절 · 현재 구매가 미등록": 3,
     "기본 구성 수량1 상품가·총액·배송 확인": 4,
     "현재 제목만으로 정확한 PC 구성 식별 불가": 7,
     "원 판매주소 판매 종료 · 현재 구매가 미등록": 5,

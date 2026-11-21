@@ -17,6 +17,9 @@ def prepare(root=ROOT):
     if len(models)!=len(review['models']):raise ValueError('MIXED_MODEL_CONFLICT')
     previous=read(root/'src/content/products/catalog.json')['products']
     previous_ids={m['id'] for m in previous}
+    systems_file=root/'src/content/products/reviewed-systems.json'
+    systems=json.loads(systems_file.read_text(encoding='utf-8')) if systems_file.exists() else []
+    external_ids={r['id'] for m in [*previous,*systems] for r in m['listings']}
     offers=read(root/'ops/private/catalog-review/mixed-reviewed-offers.local.json')
     ids=validate_offers(offers,models,parse_now(None),categories=('fullpc','ram'))
     for r in offers:
@@ -24,7 +27,7 @@ def prepare(root=ROOT):
     claimed=[r['id'] for m in models.values() for r in m['listings']]
     if len(set(claimed))!=len(claimed) or set(claimed)!=ids:raise ValueError('MIXED_LISTING_COVERAGE_MISMATCH')
     for p in review['posts']:
-        if not set(p['modelIds'])<=models.keys()|previous_ids or not set(p['verifiedListingIds'])<=ids|{r['id'] for m in previous for r in m['listings']}:raise ValueError('MIXED_REFERENCE_MISMATCH')
+        if not set(p['modelIds'])<=models.keys()|previous_ids or not set(p['verifiedListingIds'])<=ids|external_ids:raise ValueError('MIXED_REFERENCE_MISMATCH')
     # Packages remain packages. A sold-out displayed total never becomes a price.
     if any(m['listings'] for m in models.values() if m['category']=='bundle'):raise ValueError('MIXED_PACKAGE_QUOTE_UNCONFIRMED')
     file=root/'ops/collector/input/products.csv'

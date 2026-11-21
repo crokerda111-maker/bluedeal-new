@@ -19,6 +19,9 @@ def validate_offers(offers,models,now,categories=('fullpc','halfpc')):
         if r['sourceKey']!=merchant+':'+code or not r.get('seller') or not r.get('spec'):raise ValueError('SYSTEM_SOURCE_OR_VARIANT_MISSING')
         parse_price(r['price']);parse_price(r['shippingFee'],allow_zero=True);conditional_prices(r,r['price'])
         checked=parse_checked_at(r['checkedAt'],now)
+        if 'selectedOptions' in r:
+            selected=r['selectedOptions']
+            if r.get('optionSelectionVerified') is not True or not isinstance(selected,list) or not selected or any(not isinstance(o,dict) or not isinstance(o.get('field'),str) or not o['field'].strip() or not isinstance(o.get('value'),str) or not o['value'].strip() for o in selected) or len({o['field'] for o in selected})!=len(selected):raise ValueError('SYSTEM_SELECTED_OPTION_TUPLE_UNCONFIRMED')
         kind=r.get('quantityTotalKind');field={'ordinary':'price','coupon':'couponPrice','card':'cardPrice'}.get(kind)
         if not field or not r.get('quantityOneVerified') or r.get('quantityOneTotal')!=r.get(field) or r.get('availability')!='unknown' or parse_checked_at(r['quantityVerifiedAt'],now)<checked:raise ValueError('SYSTEM_UNIT_TOTAL_UNCONFIRMED')
         if kind in ['coupon','card'] and not r.get(kind+'Note'):raise ValueError('SYSTEM_CONDITIONAL_TOTAL_WITHOUT_NOTE')
