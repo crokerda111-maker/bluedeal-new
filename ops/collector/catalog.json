@@ -48,30 +48,6 @@
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4192562983"
     },
     {
-      "category": "cpu",
-      "id": "amd-ryzen-7-9800x3d-multipack",
-      "seller": "여운스토어G",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4568774118"
-    },
-    {
-      "category": "cpu",
-      "id": "amd-ryzen-5-9600x-multipack",
-      "seller": "여운스토어G",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4618466078"
-    },
-    {
-      "category": "cpu",
-      "id": "amd-ryzen-7-7800x3d-multipack",
-      "seller": "여운스토어G",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4568778642"
-    },
-    {
-      "category": "cpu",
-      "id": "amd-ryzen-7-7700x3d-multipack",
-      "seller": "(주)모든씨앤씨",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4808789181"
-    },
-    {
       "category": "gpu",
       "id": "colorful-rtx-5060-ti-gaming-duo-16gb",
       "seller": "여운스토어G",
@@ -440,6 +416,150 @@
       "category": "motherboard",
       "seller": "oseyomall",
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4526681296"
+    },
+    {
+      "id": "amd-ryzen-7-9800x3d-multipack",
+      "category": "cpu",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4568774118"
+    },
+    {
+      "id": "amd-ryzen-7-9800x3d-multipack-gmarket-4281373613",
+      "category": "cpu",
+      "seller": "1등 아이코다",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4281373613"
+    },
+    {
+      "id": "reviewed-intel-core-ultra-7-270k-plus-retail-gmarket-4865575131",
+      "category": "cpu",
+      "seller": "씨넥스피씨",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4865575131"
+    },
+    {
+      "id": "amd-ryzen-7-7800x3d-multipack-gmarket-3272124970",
+      "category": "cpu",
+      "seller": "1등 아이코다",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3272124970"
+    },
+    {
+      "id": "amd-ryzen-7-9800x3d-multipack-gmarket-4846619766",
+      "category": "cpu",
+      "seller": "도이치솔루션",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4846619766"
+    },
+    {
+      "id": "amd-ryzen-7-9800x3d-multipack-gmarket-2580666849",
+      "category": "cpu",
+      "seller": "페이코리아",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=2580666849"
+    },
+    {
+      "id": "reviewed-amd-9700x-multipack-gmarket-4075917868",
+      "category": "cpu",
+      "seller": "샵다나와",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4075917868"
+    },
+    {
+      "id": "amd-ryzen-7-7800x3d-multipack-gmarket-4771604104",
+      "category": "cpu",
+      "seller": "도이치솔루션",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4771604104"
+    },
+    {
+      "id": "amd-ryzen-5-9600x-multipack-gmarket-4610101588",
+      "category": "cpu",
+      "seller": "컴엔더comender",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4610101588"
+    },
+    {
+      "id": "reviewed-amd-9950x3d-multipack-gmarket-4568773951",
+      "category": "cpu",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4568773951"
+    },
+    {
+      "id": "reviewed-amd-9850x3d-multipack-gmarket-4668591547",
+      "category": "cpu",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4668591547"
+    },
+    {
+      "id": "reviewed-intel-core-ultra-7-270k-plus-retail-11st-9217346694",
+      "category": "cpu",
+      "seller": "씨넥스몰",
+      "sourceUrl": "https://www.11st.co.kr/products/9217346694"
+    },
+    {
+      "id": "reviewed-amd-5800x3d-anniversary-retailer-compuzone-1359462",
+      "category": "cpu",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1359462"
+    },
+    {
+      "id": "amd-ryzen-7-9800x3d-multipack-ssg-1000743752113",
+      "category": "cpu",
+      "seller": "lizz커머스",
+      "sourceUrl": "https://emart.ssg.com/item/itemView.ssg?itemId=1000743752113"
+    },
+    {
+      "id": "amd-ryzen-7-9800x3d-multipack-ssg-1000641961836",
+      "category": "cpu",
+      "seller": "아이코다(주)",
+      "sourceUrl": "https://www.ssg.com/item/itemView.ssg?itemId=1000641961836&siteNo=6001&salestrNo=6005"
+    },
+    {
+      "id": "amd-ryzen-7-7800x3d-multipack-ssg-1000700850462",
+      "category": "cpu",
+      "seller": "메이드시스템",
+      "sourceUrl": "https://www.ssg.com/item/itemView.ssg?itemId=1000700850462&siteNo=6004&salestrNo=6005"
+    },
+    {
+      "id": "reviewed-intel-core-i5-14600kf-bulk-cynex-ssg-1000768699646",
+      "category": "cpu",
+      "seller": "(주)씨넥스존",
+      "sourceUrl": "https://www.ssg.com/item/itemView.ssg?itemId=1000768699646&siteNo=6004&salestrNo=6005"
+    },
+    {
+      "id": "reviewed-amd-7500x3d-multipack-ssg-1000781303690",
+      "category": "cpu",
+      "seller": "메이드시스템",
+      "sourceUrl": "https://shinsegaemall.ssg.com/item/itemView.ssg?itemId=1000781303690"
+    },
+    {
+      "id": "reviewed-intel-core-ultra-5-250k-plus-retail-gmarket-4865576952",
+      "category": "cpu",
+      "seller": "씨넥스피씨",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4865576952"
+    },
+    {
+      "id": "reviewed-intel-core-i5-14600k-bulk-cynex-gmarket-4865090172",
+      "category": "cpu",
+      "seller": "씨넥스피씨",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4865090172"
+    },
+    {
+      "id": "amd-ryzen-7-7700x3d-multipack",
+      "category": "cpu",
+      "seller": "(주)모든씨앤씨",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4808789181"
+    },
+    {
+      "id": "reviewed-amd-epyc-4585px-multipack-gmarket-4627803246",
+      "category": "cpu",
+      "seller": "베이스캠프샵",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4627803246"
+    },
+    {
+      "id": "amd-ryzen-5-9600x-multipack",
+      "category": "cpu",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4618466078"
+    },
+    {
+      "id": "amd-ryzen-7-7800x3d-multipack",
+      "category": "cpu",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4568778642"
     }
   ]
 }

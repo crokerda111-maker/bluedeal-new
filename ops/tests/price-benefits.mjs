@@ -20,3 +20,19 @@ test('conditional offers never replace baseline sorting or imply universally ava
   assert.equal(offer.price,400000);
   assert.equal(priceBenefits({...offer,couponNote:undefined,cardNote:undefined},Date.now()).length,0);
 });
+
+test('an instant quote ends at the exact Korea-time cutoff, not midnight',()=>{
+  const instant={...offer,instantPrice:350000,instantNote:'일부 회원 적용',instantEndsAt:'2026-11-28T04:00:00+09:00'};
+  const before=priceBenefits(instant,Date.parse('2026-11-28T03:59:59+09:00'))[0];
+  assert.equal(before.kind,'instant');assert.equal(before.state,'observed');
+  assert.equal(before.endsAt,instant.instantEndsAt);assert.equal(before.endsOn,undefined);
+  assert.equal(priceBenefits(instant,Date.parse('2026-11-28T04:00:00+09:00'))[0].state,'expired');
+  assert.deepEqual(filterPrices([instant,{id:'other',name:'Other',price:390000,shippingFee:3000}],'cpu',readPriceFilters({})).map(i=>i.id),['other','fixture']);
+});
+
+test('combined card quotes respect an exact coupon cutoff',()=>{
+  const mixed={...offer,couponEndsOn:undefined,couponEndsAt:'2026-11-25T04:00:00+09:00'};
+  const quotes=priceBenefits(mixed,Date.parse('2026-11-25T04:00:00+09:00'));
+  assert.ok(quotes.every(q=>q.state==='expired'));
+  assert.equal(quotes[1].endsAt,mixed.couponEndsAt);assert.equal(quotes[1].endsOn,undefined);
+});

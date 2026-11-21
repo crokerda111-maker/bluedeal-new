@@ -17,14 +17,21 @@ export type PriceItem = {
   shippingFee?: number | null;
   shippingNote?: string;
   priceNote?: string;
+  instantPrice?: number;
+  instantNote?: string;
+  instantStartsOn?: string;
+  instantEndsOn?: string;
+  instantEndsAt?: string;
   couponPrice?: number;
   couponNote?: string;
   couponStartsOn?: string;
   couponEndsOn?: string;
+  couponEndsAt?: string;
   cardPrice?: number;
   cardNote?: string;
   cardStartsOn?: string;
   cardEndsOn?: string;
+  cardEndsAt?: string;
   cardRequiresCoupon?: boolean;
   officialUrl?: string | null;
   /** RAM 키트 총용량, SSD 판매 용량 또는 GPU의 그래픽 메모리 용량(GB). */

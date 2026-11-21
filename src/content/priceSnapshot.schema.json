@@ -45,6 +45,13 @@
     "cardNote",
     "cardStartsOn",
     "cardEndsOn",
-    "cardRequiresCoupon"
+    "cardRequiresCoupon",
+    "instantPrice",
+    "instantNote",
+    "instantStartsOn",
+    "instantEndsOn",
+    "instantEndsAt",
+    "couponEndsAt",
+    "cardEndsAt"
   ]
 }

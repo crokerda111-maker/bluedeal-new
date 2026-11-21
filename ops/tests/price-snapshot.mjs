@@ -44,7 +44,7 @@ test('status summaries do not expose original shopping URLs, account fields or r
 });
 
 test('coupon and card conditions, dates and dependencies affect the deployment fingerprint',()=>{
-  for(const [field,value] of [['couponPrice',123],['couponNote','changed eligibility'],['couponEndsOn','2026-11-25'],['cardPrice',111],['cardNote','changed card'],['cardEndsOn','2026-11-30'],['cardRequiresCoupon',true]]){
+  for(const [field,value] of [['instantPrice',100],['instantNote','members only'],['instantEndsAt','2026-11-28T04:00:00+09:00'],['couponPrice',123],['couponNote','changed eligibility'],['couponEndsOn','2026-11-25'],['cardPrice',111],['cardNote','changed card'],['cardEndsOn','2026-11-30'],['cardRequiresCoupon',true]]){
     const changed=structuredClone(categories);const item=changed.find(c=>c.category==='ram').items[0];item[field]=value;
     assert.notEqual(snapshot(meta,changed).snapshotHash,snapshot().snapshotHash,field);
   }

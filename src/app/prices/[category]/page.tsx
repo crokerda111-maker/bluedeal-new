@@ -14,6 +14,7 @@ import { resolveAffiliateUrl } from "../../../lib/affiliate";
 import { CATALOG_SUMMARY } from "../../../lib/catalogData";
 import PriceCatalogSection from "../../../components/PriceCatalogSection";
 import { priceBenefits } from "../../../lib/priceBenefits";
+import cpuReviewSummary from "../../../content/cpuReviewSummary.json";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -48,7 +49,7 @@ function PriceAmount({ item, now }: { item: PriceItem; now: number }) {
   return (
     <div>
       <div className="text-lg font-semibold text-white">{fmtWon(item.price)}</div>
-      {item.couponPrice || item.cardPrice ? <div className="text-xs text-white/65">쿠폰·카드 적용 전 상품가</div> : null}
+      {item.instantPrice || item.couponPrice || item.cardPrice ? <div className="text-xs text-white/65">{item.instantPrice ? "조건부 할인 적용 전 상품가" : "쿠폰·카드 적용 전 상품가"}</div> : null}
       <div className="mt-1 text-xs text-white/70">
         {typeof shippingFee === "number" ? (shippingFee === 0 ? "기본 배송비 무료" : `기본 배송비 ${fmtWon(shippingFee)}`) : "배송비 판매처 확인"}
       </div>
@@ -56,9 +57,9 @@ function PriceAmount({ item, now }: { item: PriceItem; now: number }) {
       {item.shippingNote ? <div className="mt-1 text-xs text-white/60">{item.shippingNote}</div> : null}
       {item.priceNote ? <div className="mt-2 max-w-xs text-xs leading-relaxed text-white/70">{item.priceNote}</div> : null}
       {priceBenefits(item, now).map(benefit => <details key={benefit.kind} className="mt-3 max-w-xs rounded-lg border border-cyan-200/20 p-2 text-xs leading-6">
-        <summary className="cursor-pointer text-cyan-100">{benefit.state === "expired" ? "종료된 혜택 기록 · " : benefit.state === "upcoming" ? "시작 전 혜택 기록 · " : "조건부 "}{benefit.kind === "coupon" ? "쿠폰가" : item.cardRequiresCoupon ? "쿠폰+카드가" : "카드가"} {fmtWon(benefit.amount)} · 조건 보기</summary>
+        <summary className="cursor-pointer text-cyan-100">{benefit.state === "expired" ? "종료된 혜택 기록 · " : benefit.state === "upcoming" ? "시작 전 혜택 기록 · " : "조건부 "}{benefit.kind === "instant" ? "즉시할인가" : benefit.kind === "coupon" ? "쿠폰가" : item.cardRequiresCoupon ? "쿠폰+카드가" : "카드가"} {fmtWon(benefit.amount)} · 조건 보기</summary>
         <p className="mt-2 text-white/80">{benefit.note}</p>
-        <p className="mt-2 text-white/65">{benefit.startsOn ? `${benefit.startsOn}부터 · ` : ""}{benefit.endsOn ? `${benefit.endsOn}까지 (KST)` : "종료일 미확인 · 판매처 재확인"}</p>
+        <p className="mt-2 text-white/65">{benefit.startsOn ? `${benefit.startsOn}부터 · ` : ""}{benefit.endsAt ? `${fmtKorean(benefit.endsAt)} 종료` : benefit.endsOn ? `${benefit.endsOn}까지 (KST)` : "종료일 미확인 · 판매처 재확인"}</p>
         {benefit.kind === "card" && item.cardRequiresCoupon ? <p className="text-amber-100">쿠폰 발급·유효기간도 함께 충족해야 합니다.</p> : null}
         <p className="text-white/65">배송비 별도 · 확인 시점 표시가 · 개인별 적용은 결제 전 확인</p>
       </details>)}
@@ -144,6 +145,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
 
       <section id="price-records" aria-labelledby="price-records-title" className="scroll-mt-24 space-y-4">
       <h2 id="price-records-title" className="text-xl font-semibold">판매처 가격 기록 <span className="text-cyan-200">{data.items.length}건</span></h2>
+      {category.key === "cpu" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{cpuReviewSummary.reviewedOn} KST 기준, 과거 핫딜 {cpuReviewSummary.reviewedPosts}건을 모델·판매처별로 검토했습니다. 중복과 판매 구성을 구분해 {cpuReviewSummary.retailerModels}개 모델을 정리하고, 실제 판매 페이지에서 확인한 가격 {cpuReviewSummary.priceOffers}건을 제공합니다. 품절·인증 제한·결제수단·관부가세 미확인 상품은 확인되지 않은 금액을 현재가로 등록하지 않았습니다. 과거 포인트·경유·게임 증정 혜택은 현재 할인으로 간주하지 않습니다.</p> : null}
       <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
         <p>표시된 금액은 <b className="text-white">확인 시점의 판매처 가격</b>입니다. 선택한 판매 상품을 안내하며, 전체 판매처의 최저가를 보장하지 않습니다.</p>
         <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요.</p>

@@ -32,6 +32,7 @@ MERCHANT_HOSTS = {
     "naver": ("smartstore.naver.com", "brand.naver.com", "shopping.naver.com"),
     "compuzone": ("compuzone.co.kr",),
     "seorinexpress": ("seorinexpress.com",),
+    "ssg": ("ssg.com",),
 }
 SLUG_RE = re.compile(r"^[A-Za-z0-9_-]{2,100}$")
 
@@ -194,10 +195,10 @@ def load_json(path: Path, fallback: Any) -> Any:
 def conditional_prices(raw: dict[str, Any], baseline: int) -> dict[str, Any]:
     """Observed conditional quotes; never substitute them for the baseline."""
     result: dict[str, Any] = {}
-    for kind in ("coupon", "card"):
+    for kind in ("instant", "coupon", "card"):
         value = raw.get(kind + "Price")
         if value is None or str(value).strip() == "":
-            if any(raw.get(kind + suffix) for suffix in ("Note", "StartsOn", "EndsOn")):
+            if any(raw.get(kind + suffix) for suffix in ("Note", "StartsOn", "EndsOn", "EndsAt")):
                 raise ValueError("할인 조건에는 확인한 조건부 금액이 필요합니다.")
             continue
         amount = parse_price(value)
@@ -216,6 +217,14 @@ def conditional_prices(raw: dict[str, Any], baseline: int) -> dict[str, Any]:
                 datetime.strptime(date, "%Y-%m-%d")
                 result[kind + suffix] = date
         start, end = result.get(kind + "StartsOn"), result.get(kind + "EndsOn")
+        end_at = str(raw.get(kind + "EndsAt") or "").strip()
+        if end_at:
+            if end or not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})", end_at):
+                raise ValueError("정확한 할인 종료시각은 시간대가 있는 ISO 시각 하나로 입력하세요.")
+            parsed_end = datetime.fromisoformat(end_at.replace("Z", "+00:00"))
+            if start and parsed_end <= datetime.fromisoformat(start + "T00:00:00+09:00"):
+                raise ValueError("할인 기간의 시작과 종료를 확인하세요.")
+            result[kind + "EndsAt"] = end_at
         if start and end and start > end:
             raise ValueError("할인 기간의 시작과 종료를 확인하세요.")
     if raw.get("cardRequiresCoupon") in (True, "true", "True", "1", 1):

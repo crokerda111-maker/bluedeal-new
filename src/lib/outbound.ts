@@ -1,6 +1,6 @@
 import generatedOutbound from "../content/outbound.generated.json";
 
-export type Merchant = "coupang" | "aliexpress" | "naver" | "11st" | "gmarket" | "compuzone" | "seorinexpress";
+export type Merchant = "coupang" | "aliexpress" | "naver" | "11st" | "gmarket" | "compuzone" | "seorinexpress" | "ssg";
 
 export type OutboundLink = {
   code: string;

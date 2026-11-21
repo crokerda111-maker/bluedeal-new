@@ -22,6 +22,10 @@ def merchant_identity(url):
     parsed = urlsplit(url)
     if parsed.scheme != 'https' or parsed.username or parsed.password or parsed.port or parsed.fragment:
         raise ValueError('INVALID_MERCHANT_URL')
+    if parsed.hostname in ('www.ssg.com', 'emart.ssg.com', 'shinsegaemall.ssg.com') and parsed.path == '/item/itemView.ssg':
+        query = parse_qs(parsed.query, keep_blank_values=True)
+        if set(query) <= {'itemId', 'siteNo', 'salestrNo'} and 'itemId' in query and all(len(values) == 1 and values[0].isascii() and values[0].isdigit() for values in query.values()):
+            return 'ssg', query['itemId'][0]
     if parsed.hostname in ('seorinexpress.com', 'www.seorinexpress.com') and parsed.path == '/goods/goods_view.php':
         query = parse_qs(parsed.query)
         codes = query.get('goodsNo', [])
