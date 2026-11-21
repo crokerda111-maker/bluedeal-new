@@ -46,6 +46,9 @@ export function filterPrices(items: PriceItem[], category: PriceCategoryKey, fil
     if (category === "ssd" && filters.dram && (item.ssdDram ?? "unknown") !== filters.dram) return false;
     return true;
   }).sort((a, b) => {
+    const aUnavailable = a.availability === "out-of-stock";
+    const bUnavailable = b.availability === "out-of-stock";
+    if (aUnavailable !== bUnavailable) return aUnavailable ? 1 : -1;
     if (filters.sort === "checked-desc") {
       const timestamp = (item: PriceItem) => Date.parse(item.checkedAt || item.updatedAt || "") || 0;
       return timestamp(b) - timestamp(a) || a.id.localeCompare(b.id);

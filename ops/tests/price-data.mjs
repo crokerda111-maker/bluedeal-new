@@ -22,6 +22,21 @@ test('unknown delivery is never treated as free in either total-price order', ()
   assert.deepEqual(ram.map(i=>i.id), ['a','b','c']);
 });
 
+test('sold-out historical prices stay behind current observations in every sort',()=>{
+  const records=[
+    {id:'past-cheap',name:'Historical',price:1,shippingFee:0,availability:'out-of-stock',checkedAt:'2026-11-21T03:00:00Z'},
+    {id:'current',name:'Current observation',price:100,shippingFee:3000,availability:'unknown',checkedAt:'2026-11-20T03:00:00Z'},
+    {id:'past-expensive',name:'Historical',price:999999,shippingFee:0,availability:'out-of-stock',checkedAt:'2026-11-21T04:00:00Z'},
+  ];
+  for(const sort of ['total-asc','total-desc','price-asc','checked-desc']){
+    const result=filterPrices(records,'gpu',filters({sort}));
+    assert.equal(result[0].id,'current',sort);
+    assert.equal(result.filter(r=>r.availability==='out-of-stock').length,2);
+  }
+  assert.equal(records[0].price,1);
+  assert.equal(records[0].checkedAt,'2026-11-21T03:00:00Z');
+});
+
 test('separate search words match across product, spec and seller fields without becoming OR or regex searches', () => {
   const items = [
     {id:'k32',name:'KLEVV FIT V WHITE DDR5-6000 CL30 32GB',spec:'16GB×2',source:'G마켓',seller:'Fixture Seller',price:100},

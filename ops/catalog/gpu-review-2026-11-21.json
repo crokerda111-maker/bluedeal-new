@@ -1,0 +1,2669 @@
+{
+  "reviewedOn": "2026-11-21",
+  "scope": "GPU 분류138건 중 G마켓 첫 반영. 실제 GPU판매 페이지56개(품절30·수량1가격26), PC혼입2·번호누락1을 별도 기록. 다른 마켓의 현재가·전체 제조사 SKU 검증은 진행 중입니다.",
+  "legacyListingIds": [
+    "pny-rtx-5050-dual-fan-8gb",
+    "msi-rtx-5060-shadow-2x-oc-8gb",
+    "galax-rtx-5060-ti-black-oc-v2-8gb",
+    "colorful-rtx-5060-ti-gaming-duo-16gb",
+    "zotac-rtx-5070-solid-oc-12gb",
+    "gigabyte-rtx-5070-ti-eagle-oc-sff-16gb",
+    "galax-rtx-5080-black-oc-16gb-korea-edition",
+    "gigabyte-rtx-5090-windforce-oc-32gb"
+  ],
+  "models": [
+    {
+      "id": "curated-pny-rtx-5050-dual-fan-8gb",
+      "name": "PNY GeForce RTX 5050 Dual Fan 8GB",
+      "brand": "PNY",
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4756691484",
+          "observedAt": "2026-11-21T06:59:19.405Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+      ],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "curated-msi-rtx-5060-shadow-2x-oc-8gb",
+      "name": "MSI GeForce RTX 5060 SHADOW 2X OC 8GB",
+      "brand": "MSI",
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4867006481",
+          "observedAt": "2026-11-21T07:00:51.733Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+      ],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "curated-galax-rtx-5060-ti-black-oc-v2-8gb",
+      "name": "GALAX GeForce RTX 5060 Ti BLACK OC V2 8GB",
+      "brand": "GALAX",
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4882723637",
+          "observedAt": "2026-11-21T07:00:52.590Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+      ],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "curated-colorful-rtx-5060-ti-gaming-duo-16gb",
+      "name": "COLORFUL GeForce RTX 5060 Ti GAMING DUO 16GB",
+      "brand": "COLORFUL",
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4763588180",
+          "observedAt": "2026-11-21T06:56:13.994Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "curated-zotac-rtx-5070-solid-oc-12gb",
+      "name": "ZOTAC GAMING GeForce RTX 5070 SOLID OC 12GB",
+      "brand": "확인 필요",
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4326519362",
+          "observedAt": "2026-11-21T06:56:25.030Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4341591553",
+          "observedAt": "2026-11-21T07:00:54.026Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+      ],
+      "observedMemoryGB": 12
+    },
+    {
+      "id": "curated-gigabyte-rtx-5070-ti-eagle-oc-sff-16gb",
+      "name": "GIGABYTE GeForce RTX 5070 Ti EAGLE OC SFF 16GB",
+      "brand": "GIGABYTE",
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4344459119",
+          "observedAt": "2026-11-21T07:00:54.609Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "확인한 G마켓 상품 4344459119은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "curated-galax-rtx-5080-black-oc-16gb-korea-edition",
+      "name": "GALAX GeForce RTX 5080 BLACK OC 16GB 국대에디션",
+      "brand": "GALAX",
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4896800018",
+          "observedAt": "2026-11-21T06:55:04.475Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "확인한 G마켓 상품 4896800018은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "curated-gigabyte-rtx-5090-windforce-oc-32gb",
+      "name": "GIGABYTE GeForce RTX 5090 WINDFORCE OC 32GB",
+      "brand": "GIGABYTE",
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4901239851",
+          "observedAt": "2026-11-21T07:00:55.326Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "확인한 G마켓 상품 4901239851은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 32
+    },
+    {
+      "id": "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer",
+      "name": "SAPPHIRE RX 9070 XT NITRO+ OC D6 16GB (유통사 추가 확인)",
+      "brand": "SAPPHIRE",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4347035752",
+          "observedAt": "2026-11-21T06:54:48.796Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4685720537",
+          "observedAt": "2026-11-21T06:55:49.920Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4529330557",
+          "observedAt": "2026-11-21T06:59:02.058Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4347035752은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "확인한 G마켓 상품 4685720537은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-msi-rtx5080-vanguard-soc-cl-16gb-retailer",
+      "name": "MSI RTX 5080 VANGUARD SOC D7 16GB 하이퍼프로져 CL (판매 표기)",
+      "brand": "MSI",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4356738541",
+          "observedAt": "2026-11-21T06:59:18.373Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "CL 접미사는 판매명 기준입니다. 접미사 없는 판매 상품과 정확한 제조사 품번 대조 전 합치지 않았습니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-zotac-rtx5090-solid-oc-32gb-retailer",
+      "name": "ZOTAC GAMING RTX 5090 SOLID OC D7 32GB",
+      "brand": "ZOTAC",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4653932035",
+          "observedAt": "2026-11-21T06:55:09.813Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 32
+    },
+    {
+      "id": "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer",
+      "name": "ZOTAC GAMING RTX 5060 Ti Twin Edge OC D7 8GB",
+      "brand": "ZOTAC",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4393133739",
+          "observedAt": "2026-11-21T06:57:59.134Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "reviewed-palit-rtx5070ti-gamingpro-s-16gb-emtek",
+      "name": "PALIT RTX 5070 Ti GAMINGPRO-S D7 16GB 이엠텍",
+      "brand": "Palit",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4434058000",
+          "observedAt": "2026-11-21T06:55:27.226Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung",
+      "name": "PNY RTX 5080 OC D7 16GB Triple Fan 한성 (판매 표기)",
+      "brand": "PNY",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4774903003",
+          "observedAt": "2026-11-21T06:55:28.487Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-sapphire-rx9070xt-pure-oc-16gb-retailer",
+      "name": "SAPPHIRE RX 9070 XT PURE OC D6 16GB (색상 추가 확인)",
+      "brand": "SAPPHIRE",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4685720300",
+          "observedAt": "2026-11-21T06:55:32.802Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "현재 판매명에 색상이 없어 화이트가 명시된 다른 상품과 품번 대조 전 합치지 않았습니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-ultra-oc-white-16gb-pcdirect",
+      "name": "COLORFUL iGame RTX 5080 ULTRA OC White D7 16GB 피씨디렉트",
+      "brand": "COLORFUL",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4573672435",
+          "observedAt": "2026-11-21T06:55:49.182Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4573672435은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-galax-rtx5080-hof-gaming-black-16gb-retailer",
+      "name": "GALAX RTX 5080 HOF GAMING BLACK D7 16GB",
+      "brand": "GALAX",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4886434417",
+          "observedAt": "2026-11-21T06:55:50.654Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4866687887",
+          "observedAt": "2026-11-21T06:56:24.001Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4886434417은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "확인한 G마켓 상품 4866687887은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-palit-rtx5060ti-dual-8gb-emtek",
+      "name": "PALIT RTX 5060 Ti DUAL D7 8GB 이엠텍",
+      "brand": "Palit",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4412125443",
+          "observedAt": "2026-11-21T06:55:51.660Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "reviewed-powercolor-rx9060xt-reaper-8gb-daewon",
+      "name": "PowerColor RX 9060 XT Reaper D6 8GB 대원씨티에스",
+      "brand": "PowerColor",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4879077247",
+          "observedAt": "2026-11-21T06:56:01.448Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "reviewed-colorful-rtx5070-ultra-oc-12gb-dowoo",
+      "name": "COLORFUL iGame RTX 5070 ULTRA OC D7 12GB 도우정보",
+      "brand": "COLORFUL",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4763105602",
+          "observedAt": "2026-11-21T06:56:02.302Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4763105602은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 12
+    },
+    {
+      "id": "reviewed-emtek-rtx5080-miracle-white-16gb",
+      "name": "이엠텍 RTX 5080 MIRACLE WHITE D7 16GB",
+      "brand": "이엠텍",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4317964318",
+          "observedAt": "2026-11-21T06:56:02.954Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4317964318은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-inno3d-rtx5080-x3-oc-white-16gb",
+      "name": "INNO3D RTX 5080 OC D7 16GB X3 White",
+      "brand": "INNO3D",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4578335203",
+          "observedAt": "2026-11-21T06:56:03.780Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4578335203은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-ultra-white-oc-16gb-v-retailer",
+      "name": "COLORFUL iGame RTX 5080 Ultra White OC D7 16GB.V (판매 표기)",
+      "brand": "COLORFUL",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4814176370",
+          "observedAt": "2026-11-21T06:56:10.815Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        ".V 접미사·정확한 제조사 품번·유통사 확인 필요. 피씨디렉트·도우정보 표기 상품과 자동 병합하지 않았습니다.",
+        "확인한 G마켓 상품 4814176370은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-zotac-rtx5080-solid-oc-16gb-retailer",
+      "name": "ZOTAC GAMING RTX 5080 SOLID OC D7 16GB",
+      "brand": "ZOTAC",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4304537435",
+          "observedAt": "2026-11-21T06:56:11.784Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4315490472",
+          "observedAt": "2026-11-21T06:56:36.207Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4315490472은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-zotac-rtx5080-amp-extreme-infinity-16gb",
+      "name": "ZOTAC GAMING RTX 5080 AMP EXTREME INFINITY D7 16GB",
+      "brand": "ZOTAC",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4321166830",
+          "observedAt": "2026-11-21T06:56:12.800Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4321166830은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-zotac-rtx5080-solid-core-oc-16gb",
+      "name": "ZOTAC GAMING RTX 5080 SOLID CORE OC D7 16GB",
+      "brand": "ZOTAC",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4393139285",
+          "observedAt": "2026-11-21T06:56:26.203Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "SOLID OC와 SOLID CORE OC는 별도 판매 모델로 구분했습니다.",
+        "확인한 G마켓 상품 4393139285은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-gainward-rtx5070ti-phoenix-s-16gb",
+      "name": "GAINWARD RTX 5070 Ti Phoenix-S D7 16GB",
+      "brand": "Gainward",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4591462416",
+          "observedAt": "2026-11-21T06:56:27.244Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4591462416은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-gainward-rtx5080-phoenix-16gb",
+      "name": "GAINWARD RTX 5080 Phoenix D7 16GB",
+      "brand": "Gainward",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4593712161",
+          "observedAt": "2026-11-21T06:56:36.958Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4593712161은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-msi-rtx5080-vanguard-soc-16gb-retailer",
+      "name": "MSI RTX 5080 VANGUARD SOC D7 16GB (CL 표기 없음)",
+      "brand": "MSI",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4532513290",
+          "observedAt": "2026-11-21T06:56:37.783Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4367335504",
+          "observedAt": "2026-11-21T06:59:16.703Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4363589250",
+          "observedAt": "2026-11-21T06:58:57.357Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "GPU Holder Kit·게임·리뷰 증정 여부나 가치는 현재 가격에서 차감하지 않았습니다. CL 접미사 상품과 품번 대조 전 별도 기록.",
+        "확인한 G마켓 상품 4532513290은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "확인한 G마켓 상품 4367335504은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "확인한 G마켓 상품 4363589250은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-asus-prime-rx9070xt-oc-16gb-daewon",
+      "name": "ASUS PRIME RX 9070 XT OC D6 16GB 대원씨티에스",
+      "brand": "ASUS",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4839366018",
+          "observedAt": "2026-11-21T06:56:38.891Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4696584092",
+          "observedAt": "2026-11-21T06:58:02.253Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-vulcan-oc-16gb-pcdirect",
+      "name": "COLORFUL iGame RTX 5080 VULCAN OC D7 16GB 피씨디렉트",
+      "brand": "COLORFUL",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4598144241",
+          "observedAt": "2026-11-21T06:57:46.814Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4598144241은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-ultra-white-oc-16gb-dowoo",
+      "name": "COLORFUL iGame RTX 5080 ULTRA OC White D7 16GB 도우정보",
+      "brand": "COLORFUL",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4691589096",
+          "observedAt": "2026-11-21T06:57:47.692Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4691589096은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-gainward-rtx5060ti-ghost-8gb",
+      "name": "GAINWARD RTX 5060 Ti Ghost D7 8GB",
+      "brand": "Gainward",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4548633023",
+          "observedAt": "2026-11-21T06:57:48.349Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4548633023은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-vulcan-oc-16gb-dowoo",
+      "name": "COLORFUL iGame RTX 5080 VULCAN OC D7 16GB 도우정보",
+      "brand": "COLORFUL",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4763105544",
+          "observedAt": "2026-11-21T06:57:57.367Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4763105544은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-colorful-rtx5060ti-gaming-duo-8gb-dowoo",
+      "name": "COLORFUL RTX 5060 Ti GAMING DUO D7 8GB 도우정보",
+      "brand": "COLORFUL",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4691578884",
+          "observedAt": "2026-11-21T06:57:58.151Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4691578884은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "reviewed-xfx-rx9060xt-swift-dual-oc-16gb",
+      "name": "XFX RX 9060 XT SWIFT DUAL OC D6 16GB",
+      "brand": "XFX",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4829611596",
+          "observedAt": "2026-11-21T06:58:00.348Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-palit-rtx5080-gamingpro-16gb-emtek-e-retailer",
+      "name": "PALIT RTX 5080 GAMINGPRO D7 16GB 이엠텍 E (판매 표기)",
+      "brand": "Palit",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4671990062",
+          "observedAt": "2026-11-21T06:58:15.179Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "E 접미사의 정확한 의미·제조사 품번은 확인되지 않아 접미사 없는 상품과 자동 병합하지 않았습니다.",
+        "확인한 G마켓 상품 4671990062은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun",
+      "name": "GIGABYTE RX 9070 XT GAMING OC D6 16GB 제이씨현",
+      "brand": "GIGABYTE",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4435306461",
+          "observedAt": "2026-11-21T06:58:16.250Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4446788728",
+          "observedAt": "2026-11-21T06:59:00.679Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-pcdirect",
+      "name": "GIGABYTE RX 9070 XT GAMING OC D6 16GB 피씨디렉트",
+      "brand": "GIGABYTE",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4690718932",
+          "observedAt": "2026-11-21T06:58:17.319Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4722957162",
+          "observedAt": "2026-11-21T06:58:38.208Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4690718932은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-asrock-rx9060xt-challenger-oc-16gb-daewon",
+      "name": "ASRock RX 9060 XT CHALLENGER OC D6 16GB 대원씨티에스",
+      "brand": "ASRock",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4668767932",
+          "observedAt": "2026-11-21T06:58:18.231Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-asus-rtx5080-noctua-oc-16gb-intech",
+      "name": "ASUS RTX 5080 NOCTUA OC D7 16GB 인텍앤컴퍼니",
+      "brand": "ASUS",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4826577210",
+          "observedAt": "2026-11-21T06:58:19.911Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4826577210은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-sapphire-rx9070xt-nitro-oc-16gb-emtek",
+      "name": "SAPPHIRE RX 9070 XT NITRO+ OC D6 16GB 이엠텍",
+      "brand": "SAPPHIRE",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4815114293",
+          "observedAt": "2026-11-21T06:58:32.480Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "유통사 이엠텍이 명시된 상품을 유통사 미확인 NITRO+와 구분했습니다."
+      ],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-asus-rtx5060-lp-brk-oc-8gb-intech",
+      "name": "ASUS RTX 5060 LP BRK OC D7 8GB 인텍앤컴퍼니",
+      "brand": "ASUS",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4125623356",
+          "observedAt": "2026-11-21T06:58:35.593Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4125623356은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "reviewed-manli-rtx5060-nebula-8gb-daewon",
+      "name": "MANLI RTX 5060 Nebula D7 8GB 대원씨티에스",
+      "brand": "MANLI",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4754484910",
+          "observedAt": "2026-11-21T06:58:36.586Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 8
+    },
+    {
+      "id": "reviewed-sapphire-rx9070xt-pure-oc-white-16gb-retailer",
+      "name": "SAPPHIRE RX 9070 XT PURE OC D6 16GB 화이트 (판매 표기)",
+      "brand": "SAPPHIRE",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4461498344",
+          "observedAt": "2026-11-21T06:58:58.404Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [],
+      "observedMemoryGB": 16
+    },
+    {
+      "id": "reviewed-palit-rtx5080-gamingpro-16gb-emtek",
+      "name": "PALIT RTX 5080 GAMINGPRO D7 16GB 이엠텍",
+      "brand": "Palit",
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4392291318",
+          "observedAt": "2026-11-21T06:59:17.388Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "notes": [
+        "확인한 G마켓 상품 4392291318은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다."
+      ],
+      "observedMemoryGB": 16
+    }
+  ],
+  "posts": [
+    {
+      "post": "2002927",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002927",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002565",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002565",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002832",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002832",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer-gmarket-4529330557"
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002302",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002302",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002056",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002056",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "curated-galax-rtx-5080-black-oc-16gb-korea-edition"
+      ],
+      "outcome": "원 판매처 품절 · 이전 가격 기록 보존",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "galax-rtx-5080-black-oc-16gb-korea-edition"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2002174",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002174",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-msi-rtx5080-vanguard-soc-cl-16gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-msi-rtx5080-vanguard-soc-cl-16gb-retailer-gmarket-4356738541"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2001740",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2001740",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2001858",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2001858",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2001859",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2001859",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2001216",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2001216",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5090-solid-oc-32gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-zotac-rtx5090-solid-oc-32gb-retailer-gmarket-4653932035"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2000931",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2000931",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer-gmarket-4393133739"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2001061",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2001061",
+      "disposition": "GPU 지지대 · 단품 GPU 아님",
+      "modelIds": [],
+      "outcome": "GPU 지지대 · 단품 GPU 아님",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "2000375",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2000375",
+      "disposition": "GPU+쿨러·보드 묶음",
+      "modelIds": [],
+      "outcome": "묶음 구성 · GPU 단품가 제외",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1999501",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1999501",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [
+        "reviewed-palit-rtx5070ti-gamingpro-s-16gb-emtek"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-palit-rtx5070ti-gamingpro-s-16gb-emtek-gmarket-4434058000"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1999104",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1999104",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [
+        "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung-gmarket-4774903003"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1998846",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1998846",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-sapphire-rx9070xt-pure-oc-16gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-sapphire-rx9070xt-pure-oc-16gb-retailer-gmarket-4685720300"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1998914",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1998914",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1997507",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1997507",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-colorful-rtx5080-ultra-oc-white-16gb-pcdirect"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1997593",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1997593",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer-gmarket-4529330557"
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1996883",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1996883",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-galax-rtx5080-hof-gaming-black-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1996645",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1996645",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1995988",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1995988",
+      "disposition": "리퍼·벌크 별도 조건",
+      "modelIds": [],
+      "outcome": "리퍼·보증·구성 현재 조건 추가 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1995683",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1995683",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1994834",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1994834",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-palit-rtx5060ti-dual-8gb-emtek"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-palit-rtx5060ti-dual-8gb-emtek-gmarket-4412125443"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1994606",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1994606",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-powercolor-rx9060xt-reaper-8gb-daewon"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-powercolor-rx9060xt-reaper-8gb-daewon-gmarket-4879077247"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1994162",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1994162",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1992743",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1992743",
+      "disposition": "GPU+쿨러·보드 묶음",
+      "modelIds": [],
+      "outcome": "묶음 구성 · GPU 단품가 제외",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1992466",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1992466",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1991939",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1991939",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-colorful-rtx5070-ultra-oc-12gb-dowoo"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1991525",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1991525",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-emtek-rtx5080-miracle-white-16gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1991031",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1991031",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-inno3d-rtx5080-x3-oc-white-16gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1991034",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1991034",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-emtek-rtx5080-miracle-white-16gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1991035",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1991035",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [
+        "reviewed-colorful-rtx5080-ultra-white-oc-16gb-v-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1990709",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1990709",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1990773",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1990773",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung-gmarket-4774903003"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1990529",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1990529",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5080-solid-oc-16gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-zotac-rtx5080-solid-oc-16gb-retailer-gmarket-4304537435"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1990532",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1990532",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5080-amp-extreme-infinity-16gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1990553",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1990553",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer-gmarket-4393133739"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1990342",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1990342",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "curated-colorful-rtx-5060-ti-gaming-duo-16gb"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "colorful-rtx-5060-ti-gaming-duo-16gb"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1989996",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1989996",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [
+        "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung-gmarket-4774903003"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1990002",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1990002",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-galax-rtx5080-hof-gaming-black-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1989581",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1989581",
+      "disposition": "행사 조건 확인 필요",
+      "modelIds": [],
+      "outcome": "행사 금액을 확정 구매가로 사용하지 않음",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1989684",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1989684",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "curated-zotac-rtx-5070-solid-oc-12gb"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "curated-zotac-rtx-5070-solid-oc-12gb-gmarket-4326519362"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1989898",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1989898",
+      "disposition": "PC·노트북 별도 분류",
+      "modelIds": [],
+      "outcome": "PC·노트북 별도 분류",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1989390",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1989390",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5080-solid-core-oc-16gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1989061",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1989061",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer-gmarket-4393133739"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1988521",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1988521",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1988540",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1988540",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1987540",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1987540",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1987358",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1987358",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1986183",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1986183",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-gainward-rtx5070ti-phoenix-s-16gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1986198",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1986198",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5080-solid-oc-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [
+        "reviewed-zotac-rtx5080-solid-oc-16gb-retailer-gmarket-4304537435"
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1985791",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1985791",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1985460",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1985460",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-gainward-rtx5080-phoenix-16gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1984535",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1984535",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1984559",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1984559",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-msi-rtx5080-vanguard-soc-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1984444",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1984444",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-asus-prime-rx9070xt-oc-16gb-daewon"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-asus-prime-rx9070xt-oc-16gb-daewon-gmarket-4839366018"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1984033",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1984033",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "원 판매주소 상품번호 누락",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1983500",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983500",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-msi-rtx5080-vanguard-soc-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1983567",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983567",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-colorful-rtx5080-vulcan-oc-16gb-pcdirect"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1983583",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983583",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-colorful-rtx5080-ultra-white-oc-16gb-dowoo"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1983163",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983163",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1983383",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983383",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-gainward-rtx5060ti-ghost-8gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1983388",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983388",
+      "disposition": "리퍼·벌크 별도 조건",
+      "modelIds": [],
+      "outcome": "리퍼·보증·구성 현재 조건 추가 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1983440",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983440",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-inno3d-rtx5080-x3-oc-white-16gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1982853",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1982853",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-colorful-rtx5080-vulcan-oc-16gb-dowoo"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1982969",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1982969",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-colorful-rtx5060ti-gaming-duo-8gb-dowoo"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1982985",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1982985",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer-gmarket-4393133739"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1983152",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1983152",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [
+        "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung-gmarket-4774903003"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1982782",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1982782",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1982688",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1982688",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1982506",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1982506",
+      "disposition": "리퍼·벌크 별도 조건",
+      "modelIds": [],
+      "outcome": "리퍼·보증·구성 현재 조건 추가 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1980655",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1980655",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-xfx-rx9060xt-swift-dual-oc-16gb"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-xfx-rx9060xt-swift-dual-oc-16gb-gmarket-4829611596"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1980099",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1980099",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-asus-prime-rx9070xt-oc-16gb-daewon"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-asus-prime-rx9070xt-oc-16gb-daewon-gmarket-4696584092"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1980172",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1980172",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1980253",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1980253",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-palit-rtx5070ti-gamingpro-s-16gb-emtek"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-palit-rtx5070ti-gamingpro-s-16gb-emtek-gmarket-4434058000"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1979664",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1979664",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-palit-rtx5080-gamingpro-16gb-emtek-e-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1979677",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1979677",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1979768",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1979768",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun-gmarket-4435306461"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1979935",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1979935",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1978834",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1978834",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1978930",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1978930",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1978695",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1978695",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-pcdirect"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [
+        "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-pcdirect-gmarket-4722957162"
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1978803",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1978803",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-asrock-rx9060xt-challenger-oc-16gb-daewon"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-asrock-rx9060xt-challenger-oc-16gb-daewon-gmarket-4668767932"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1978028",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1978028",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5080-solid-oc-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [
+        "reviewed-zotac-rtx5080-solid-oc-16gb-retailer-gmarket-4304537435"
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1978088",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1978088",
+      "disposition": "GPU+쿨러·보드 묶음",
+      "modelIds": [],
+      "outcome": "묶음 구성 · GPU 단품가 제외",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1977678",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1977678",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-asus-rtx5080-noctua-oc-16gb-intech"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1977709",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1977709",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-zotac-rtx5080-amp-extreme-infinity-16gb"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1976390",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1976390",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1975903",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1975903",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1974474",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1974474",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-palit-rtx5080-gamingpro-16gb-emtek-e-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1974509",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1974509",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-emtek"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-emtek-gmarket-4815114293"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1974198",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1974198",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1974280",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1974280",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1972415",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1972415",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1972284",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1972284",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1971278",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1971278",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1971170",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1971170",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1970638",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1970638",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1970640",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1970640",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1970673",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1970673",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1970689",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1970689",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1969567",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1969567",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1968684",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1968684",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1968779",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1968779",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1968951",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1968951",
+      "disposition": "판매자 관련 참고 글 · 상품 아님",
+      "modelIds": [],
+      "outcome": "판매자 관련 참고 글 · 상품 아님",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1968229",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1968229",
+      "disposition": "행사 조건 확인 필요",
+      "modelIds": [],
+      "outcome": "행사 금액을 확정 구매가로 사용하지 않음",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1967670",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1967670",
+      "disposition": "리퍼·벌크 별도 조건",
+      "modelIds": [],
+      "outcome": "리퍼·보증·구성 현재 조건 추가 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1967675",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1967675",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1966782",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1966782",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1966111",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1966111",
+      "disposition": "PC·노트북 별도 분류",
+      "modelIds": [],
+      "outcome": "PC·노트북 별도 분류",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1966305",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1966305",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-asus-rtx5060-lp-brk-oc-8gb-intech"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1966343",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1966343",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1965584",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1965584",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1963293",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1963293",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1963295",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1963295",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1963303",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1963303",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1962931",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1962931",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1960734",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1960734",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-manli-rtx5060-nebula-8gb-daewon"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-manli-rtx5060-nebula-8gb-daewon-gmarket-4754484910"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1961035",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1961035",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1960124",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1960124",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-pcdirect"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-pcdirect-gmarket-4722957162"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1959721",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1959721",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-msi-rtx5080-vanguard-soc-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1959762",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1959762",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-sapphire-rx9070xt-pure-oc-white-16gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-sapphire-rx9070xt-pure-oc-white-16gb-retailer-gmarket-4461498344"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1959436",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1959436",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1958971",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1958971",
+      "disposition": "PC·노트북 별도 분류",
+      "modelIds": [],
+      "outcome": "PC·노트북 별도 분류",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1957395",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1957395",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun-gmarket-4446788728"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1957535",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1957535",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer-gmarket-4529330557"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1957612",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1957612",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-msi-rtx5080-vanguard-soc-16gb-retailer"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1957670",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1957670",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1956846",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1956846",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1956865",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1956865",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1956891",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1956891",
+      "disposition": "여러 모델·색상 모음",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1957104",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1957104",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-palit-rtx5080-gamingpro-16gb-emtek"
+      ],
+      "outcome": "확인한 원 판매처 품절",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1957117",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1957117",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer-gmarket-4529330557"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1955608",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1955608",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1954556",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1954556",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [
+        "reviewed-msi-rtx5080-vanguard-soc-cl-16gb-retailer"
+      ],
+      "outcome": "원 판매주소 현재 선택 구성 확인",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [
+        "reviewed-msi-rtx5080-vanguard-soc-cl-16gb-retailer-gmarket-4356738541"
+      ],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1953851",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1953851",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1954033",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1954033",
+      "disposition": "단일 GPU 후보",
+      "modelIds": [],
+      "outcome": "현재 판매 구성·조건 추가 확인 필요",
+      "reason": "과거 글의 가격·게임 증정·리뷰·경유·적립을 현재 구매 혜택으로 승계하지 않았습니다. 접근 제한 출처는 우회하지 않으며 품번·보증·옵션을 추정하지 않습니다.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false
+    }
+  ],
+  "counts": {
+    "단일 GPU 후보": 114,
+    "GPU 지지대 · 단품 GPU 아님": 1,
+    "GPU+쿨러·보드 묶음": 3,
+    "여러 모델·색상 모음": 10,
+    "리퍼·벌크 별도 조건": 4,
+    "행사 조건 확인 필요": 2,
+    "PC·노트북 별도 분류": 3,
+    "판매자 관련 참고 글 · 상품 아님": 1
+  },
+  "outcomes": {
+    "현재 판매 구성·조건 추가 확인 필요": 58,
+    "확인한 원 판매처 품절": 33,
+    "원 판매처 품절 · 이전 가격 기록 보존": 1,
+    "원 판매주소 현재 선택 구성 확인": 31,
+    "GPU 지지대 · 단품 GPU 아님": 1,
+    "묶음 구성 · GPU 단품가 제외": 3,
+    "리퍼·보증·구성 현재 조건 추가 확인": 4,
+    "행사 금액을 확정 구매가로 사용하지 않음": 2,
+    "PC·노트북 별도 분류": 3,
+    "원 판매주소 상품번호 누락": 1,
+    "판매자 관련 참고 글 · 상품 아님": 1
+  },
+  "retainedHistory": [
+    {
+      "id": "galax-rtx-5080-black-oc-16gb-korea-edition",
+      "price": 3090000,
+      "checkedAt": "2026-11-16T21:01:47.276000Z",
+      "goCode": "oCpAmYPPJofLg4Rr",
+      "sourceKey": "gmarket:4896800018",
+      "stockObservedAt": "2026-11-21T06:55:04.475Z"
+    },
+    {
+      "id": "gigabyte-rtx-5070-ti-eagle-oc-sff-16gb",
+      "price": 2013410,
+      "checkedAt": "2026-11-16T21:01:00.520000Z",
+      "goCode": "O_tSc7d-EFyF5YaZ",
+      "sourceKey": "gmarket:4344459119",
+      "stockObservedAt": "2026-11-21T07:00:54.609Z"
+    },
+    {
+      "id": "gigabyte-rtx-5090-windforce-oc-32gb",
+      "price": 10932490,
+      "checkedAt": "2026-11-16T21:03:01.430000Z",
+      "goCode": "CW4H3diNvLrz3Zgu",
+      "sourceKey": "gmarket:4901239851",
+      "stockObservedAt": "2026-11-21T07:00:55.326Z"
+    }
+  ],
+  "verifiedGmarketListings": 56,
+  "freshPriceOffers": 26,
+  "retainedOutOfStockOffers": 3
+}

@@ -17,6 +17,7 @@ import { priceBenefits } from "../../../lib/priceBenefits";
 import cpuReviewSummary from "../../../content/cpuReviewSummary.json";
 import ramReviewSummary from "../../../content/ramReviewSummary.json";
 import ssdReviewSummary from "../../../content/ssdReviewSummary.json";
+import gpuReviewSummary from "../../../content/gpuReviewSummary.json";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -50,6 +51,7 @@ function PriceAmount({ item, now }: { item: PriceItem; now: number }) {
   const freshness = priceFreshness(item, now);
   return (
     <div>
+      {item.availability === "out-of-stock" ? <div className="mb-2 text-xs font-semibold text-amber-200">품절 상품의 이전 가격 기록</div> : null}
       <div className="text-lg font-semibold text-white">{fmtWon(item.price)}</div>
       {item.instantPrice || item.couponPrice || item.cardPrice ? <div className="text-xs text-white/65">{item.instantPrice ? "조건부 할인 적용 전 상품가" : "쿠폰·카드 적용 전 상품가"}</div> : null}
       <div className="mt-1 text-xs text-white/70">
@@ -68,7 +70,7 @@ function PriceAmount({ item, now }: { item: PriceItem; now: number }) {
       <div className="mt-2 text-xs text-white/60">확인 {fmtKorean(item.checkedAt || item.updatedAt)}</div>
       {freshness === "stale" ? <div className="mt-2 text-xs text-amber-200">확인 후 24시간 경과 · 판매처 가격 재확인</div> : null}
       {freshness === "unknown" ? <div className="mt-2 text-xs text-amber-200">가격 확인 시각 미확인</div> : null}
-      <div className="mt-1 text-xs text-white/60">{item.availability === "out-of-stock" ? "확인 시점 품절 · 재입고 여부 판매처 확인" : item.availability === "in-stock" ? "확인 시점 판매 중 · 현재 재고는 판매처 확인" : "재고는 판매처에서 확인해 주세요"}</div>
+      <div className="mt-1 text-xs text-white/60">{item.availability === "out-of-stock" ? `${item.availabilityCheckedAt ? `품절 확인 ${fmtKorean(item.availabilityCheckedAt)}` : "품절 확인일 미기록"} · 재입고 여부 판매처 확인` : item.availability === "in-stock" ? "확인 시점 판매 중 · 현재 재고는 판매처 확인" : "재고는 판매처에서 확인해 주세요"}</div>
     </div>
   );
 }
@@ -150,6 +152,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       {category.key === "cpu" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{cpuReviewSummary.reviewedOn} KST 기준, 과거 핫딜 {cpuReviewSummary.reviewedPosts}건을 모델·판매처별로 검토했습니다. 중복과 판매 구성을 구분해 {cpuReviewSummary.retailerModels}개 모델을 정리하고, 실제 판매 페이지에서 확인한 가격 {cpuReviewSummary.priceOffers}건을 제공합니다. 품절·인증 제한·결제수단·관부가세 미확인 상품은 확인되지 않은 금액을 현재가로 등록하지 않았습니다. 과거 포인트·경유·게임 증정 혜택은 현재 할인으로 간주하지 않습니다.</p> : null}
       {category.key === "ram" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{ramReviewSummary.reviewedOn} KST 기준, 과거 RAM 핫딜 {ramReviewSummary.reviewedPosts}건의 판매주소와 구성을 검토했습니다. 기존 가격 {ramReviewSummary.recheckedLegacyOffers}건을 다시 확인하고 현재 선택 구성의 가격 {ramReviewSummary.priceOffers}건을 제공합니다. 단품·세트, 총 용량·모듈 수, 색상·RGB·CL·AMD 패키지를 구분합니다. 품절·종료 행사와 확인되지 않은 옵션·접근 제한 상품은 금액을 추정하지 않았으며, 모든 원문이나 시장 전체의 현재가 확인이 끝났다는 뜻은 아닙니다.</p> : null}
       {category.key === "ssd" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{ssdReviewSummary.reviewedOn} KST 기준, 과거 SSD 분류 {ssdReviewSummary.reviewedPosts}건을 SSD 본품 후보 {ssdReviewSummary.ssdCandidates}건, 외장 케이스·도킹·허브 {ssdReviewSummary.accessories}건, HDD·NAS {ssdReviewSummary.hddNasCandidates}건으로 나눴습니다. 현재 선택 구성의 가격 {ssdReviewSummary.priceOffers}건을 제공하며, 용량·품번·방열판·수입 형태·국내 보증을 구분합니다. 품절·종료 행사·관부가세·미확인 옵션은 가격을 추정하지 않았습니다. 모든 원문의 현재가 확인이나 독립 성능·후기 검토가 끝났다는 뜻은 아닙니다.</p> : null}
+      {category.key === "gpu" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{gpuReviewSummary.reviewedOn} KST 기준, 과거 GPU 분류 {gpuReviewSummary.reviewedPosts}건의 첫 반영입니다. G마켓 GPU 판매 페이지 {gpuReviewSummary.verifiedGmarketListings}개를 확인해 수량1 가격 {gpuReviewSummary.freshPriceOffers}건을 제공합니다. 기존 품절 상품 {gpuReviewSummary.retainedOutOfStockOffers}건은 이전 가격·확인일을 보존한 과거 기록입니다. 조립PC·지지대·묶음·리퍼·응모성 행사 금액을 신품 GPU 단품가로 섞지 않았습니다. 다른 마켓과 정확한 제조사 품번·보증·성능·후기 검토는 계속 진행 중입니다.</p> : null}
       <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
         <p>표시된 금액은 <b className="text-white">확인 시점의 판매처 가격</b>입니다. 선택한 판매 상품을 안내하며, 전체 판매처의 최저가를 보장하지 않습니다.</p>
         <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요.</p>
@@ -160,7 +163,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       </div>
 
       {data.items.length ? <PriceFilterForm category={category.key} items={data.items} filters={filters} /> : null}
-      <p className="text-sm text-white/70">전체 {data.items.length}개 중 <b className="text-white">{items.length}개</b> 표시 · 배송비 미확인 상품은 포함 금액 정렬에서 마지막에 표시합니다.</p>
+      <p className="text-sm text-white/70">전체 {data.items.length}개 중 <b className="text-white">{items.length}개</b> 표시 · 배송비 미확인 상품은 포함 금액 정렬에서 뒤에 표시하며, 품절 상품의 이전 기록은 모든 정렬에서 마지막에 표시합니다.</p>
       <p className="text-xs leading-relaxed text-white/65">같은 모델도 판매처별로 별도 집계합니다. 색상·구성·유통사·보증 조건을 함께 확인해 비교하세요.</p>
 
       {items.length === 0 ? (

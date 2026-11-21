@@ -41,6 +41,7 @@ export type PriceItem = {
   moduleCount?: number;
   ssdDram?: "present" | "absent" | "unknown";
   availability?: "in-stock" | "out-of-stock" | "unknown";
+  availabilityCheckedAt?: string;
   checkedAt?: string;
   updatedAt?: string;
 };

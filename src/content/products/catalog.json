@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "2e87331f8563beca87a7107a81e2c3d8363ebe88d2861fbb2389103d4a2c93c2",
-  "entries": 485,
+  "catalogHash": "c1d393d09f293d1f1bac37474925ffff568e933a7438f6f3216378776da4fcab",
+  "entries": 523,
   "products": [
     {
       "id": "maker-fractal-case-b32459749f216e6e",
@@ -13295,27 +13295,267 @@
       "referenceCode": "BD-748894748D"
     },
     {
+      "id": "reviewed-emtek-rtx5080-miracle-white-16gb",
+      "name": "이엠텍 RTX 5080 MIRACLE WHITE D7 16GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "이엠텍",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "이엠텍 RTX 5080 MIRACLE WHITE D7 16GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4317964318은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4317964318",
+          "observedAt": "2026-11-21T06:56:02.954Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-7B0A3DDF2A"
+    },
+    {
+      "id": "reviewed-asrock-rx9060xt-challenger-oc-16gb-daewon",
+      "name": "ASRock RX 9060 XT CHALLENGER OC D6 16GB 대원씨티에스",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "ASRock",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ASRock RX 9060 XT CHALLENGER OC D6 16GB 대원씨티에스"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4668767932",
+          "observedAt": "2026-11-21T06:58:18.231Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-asrock-rx9060xt-challenger-oc-16gb-daewon-gmarket-4668767932",
+          "merchant": "G마켓",
+          "seller": "픽셀스테이션",
+          "pricePage": "/prices/gpu#reviewed-asrock-rx9060xt-challenger-oc-16gb-daewon-gmarket-4668767932"
+        }
+      ],
+      "referenceCode": "BD-4588E257F4"
+    },
+    {
+      "id": "reviewed-asus-prime-rx9070xt-oc-16gb-daewon",
+      "name": "ASUS PRIME RX 9070 XT OC D6 16GB 대원씨티에스",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "ASUS",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ASUS PRIME RX 9070 XT OC D6 16GB 대원씨티에스"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4839366018",
+          "observedAt": "2026-11-21T06:56:38.891Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4696584092",
+          "observedAt": "2026-11-21T06:58:02.253Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-asus-prime-rx9070xt-oc-16gb-daewon-gmarket-4839366018",
+          "merchant": "G마켓",
+          "seller": "도이치솔루션",
+          "pricePage": "/prices/gpu#reviewed-asus-prime-rx9070xt-oc-16gb-daewon-gmarket-4839366018"
+        },
+        {
+          "id": "reviewed-asus-prime-rx9070xt-oc-16gb-daewon-gmarket-4696584092",
+          "merchant": "G마켓",
+          "seller": "픽셀스테이션",
+          "pricePage": "/prices/gpu#reviewed-asus-prime-rx9070xt-oc-16gb-daewon-gmarket-4696584092"
+        }
+      ],
+      "referenceCode": "BD-FEC9C7230F"
+    },
+    {
+      "id": "reviewed-asus-rtx5060-lp-brk-oc-8gb-intech",
+      "name": "ASUS RTX 5060 LP BRK OC D7 8GB 인텍앤컴퍼니",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "ASUS",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ASUS RTX 5060 LP BRK OC D7 8GB 인텍앤컴퍼니"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "8"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4125623356은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4125623356",
+          "observedAt": "2026-11-21T06:58:35.593Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-7F94505210"
+    },
+    {
+      "id": "reviewed-asus-rtx5080-noctua-oc-16gb-intech",
+      "name": "ASUS RTX 5080 NOCTUA OC D7 16GB 인텍앤컴퍼니",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "ASUS",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ASUS RTX 5080 NOCTUA OC D7 16GB 인텍앤컴퍼니"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4826577210은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4826577210",
+          "observedAt": "2026-11-21T06:58:19.911Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-D0B28F7235"
+    },
+    {
       "id": "curated-colorful-rtx-5060-ti-gaming-duo-16gb",
       "name": "COLORFUL GeForce RTX 5060 Ti GAMING DUO 16GB",
       "category": "gpu",
       "subtype": "gpu",
       "brand": "COLORFUL",
-      "kind": "curated-model",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "그래픽 메모리 16GB GDDR7 · GPU 메모리 버스 128bit"
+        "COLORFUL GeForce RTX 5060 Ti GAMING DUO 16GB"
       ],
       "specifications": [
         {
-          "label": "등록 용량(GB)",
+          "label": "판매명 그래픽 메모리(GB)",
           "value": "16"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -13323,6 +13563,12 @@
           "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
           "observedAt": null,
           "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4763588180",
+          "observedAt": "2026-11-21T06:56:13.994Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -13335,10 +13581,441 @@
           "id": "colorful-rtx-5060-ti-gaming-duo-16gb",
           "merchant": "G마켓",
           "seller": "여운스토어G",
-          "pricePage": "/prices/gpu"
+          "pricePage": "/prices/gpu#colorful-rtx-5060-ti-gaming-duo-16gb"
         }
       ],
       "referenceCode": "BD-5939651F1D"
+    },
+    {
+      "id": "reviewed-colorful-rtx5070-ultra-oc-12gb-dowoo",
+      "name": "COLORFUL iGame RTX 5070 ULTRA OC D7 12GB 도우정보",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "COLORFUL",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "COLORFUL iGame RTX 5070 ULTRA OC D7 12GB 도우정보"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "12"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4763105602은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4763105602",
+          "observedAt": "2026-11-21T06:56:02.302Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-CF7FDC86B1"
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-ultra-white-oc-16gb-dowoo",
+      "name": "COLORFUL iGame RTX 5080 ULTRA OC White D7 16GB 도우정보",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "COLORFUL",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "COLORFUL iGame RTX 5080 ULTRA OC White D7 16GB 도우정보"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4691589096은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4691589096",
+          "observedAt": "2026-11-21T06:57:47.692Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-1DC40C42EE"
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-ultra-oc-white-16gb-pcdirect",
+      "name": "COLORFUL iGame RTX 5080 ULTRA OC White D7 16GB 피씨디렉트",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "COLORFUL",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "COLORFUL iGame RTX 5080 ULTRA OC White D7 16GB 피씨디렉트"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4573672435은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4573672435",
+          "observedAt": "2026-11-21T06:55:49.182Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-D8D8C0882E"
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-ultra-white-oc-16gb-v-retailer",
+      "name": "COLORFUL iGame RTX 5080 Ultra White OC D7 16GB.V (판매 표기)",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "COLORFUL",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "COLORFUL iGame RTX 5080 Ultra White OC D7 16GB.V (판매 표기)"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        ".V 접미사·정확한 제조사 품번·유통사 확인 필요. 피씨디렉트·도우정보 표기 상품과 자동 병합하지 않았습니다.",
+        "확인한 G마켓 상품 4814176370은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4814176370",
+          "observedAt": "2026-11-21T06:56:10.815Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-DC83C2BB61"
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-vulcan-oc-16gb-dowoo",
+      "name": "COLORFUL iGame RTX 5080 VULCAN OC D7 16GB 도우정보",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "COLORFUL",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "COLORFUL iGame RTX 5080 VULCAN OC D7 16GB 도우정보"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4763105544은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4763105544",
+          "observedAt": "2026-11-21T06:57:57.367Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-EE551B6AAC"
+    },
+    {
+      "id": "reviewed-colorful-rtx5080-vulcan-oc-16gb-pcdirect",
+      "name": "COLORFUL iGame RTX 5080 VULCAN OC D7 16GB 피씨디렉트",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "COLORFUL",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "COLORFUL iGame RTX 5080 VULCAN OC D7 16GB 피씨디렉트"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4598144241은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4598144241",
+          "observedAt": "2026-11-21T06:57:46.814Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-E1DE37B72F"
+    },
+    {
+      "id": "reviewed-colorful-rtx5060ti-gaming-duo-8gb-dowoo",
+      "name": "COLORFUL RTX 5060 Ti GAMING DUO D7 8GB 도우정보",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "COLORFUL",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "COLORFUL RTX 5060 Ti GAMING DUO D7 8GB 도우정보"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "8"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4691578884은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4691578884",
+          "observedAt": "2026-11-21T06:57:58.151Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-D38E20FD6A"
+    },
+    {
+      "id": "reviewed-gainward-rtx5060ti-ghost-8gb",
+      "name": "GAINWARD RTX 5060 Ti Ghost D7 8GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "Gainward",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "GAINWARD RTX 5060 Ti Ghost D7 8GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "8"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4548633023은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4548633023",
+          "observedAt": "2026-11-21T06:57:48.349Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-C67288DCF6"
+    },
+    {
+      "id": "reviewed-gainward-rtx5070ti-phoenix-s-16gb",
+      "name": "GAINWARD RTX 5070 Ti Phoenix-S D7 16GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "Gainward",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "GAINWARD RTX 5070 Ti Phoenix-S D7 16GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4591462416은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4591462416",
+          "observedAt": "2026-11-21T06:56:27.244Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-D2B8A5D9A2"
+    },
+    {
+      "id": "reviewed-gainward-rtx5080-phoenix-16gb",
+      "name": "GAINWARD RTX 5080 Phoenix D7 16GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "Gainward",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "GAINWARD RTX 5080 Phoenix D7 16GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4593712161은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4593712161",
+          "observedAt": "2026-11-21T06:56:36.958Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-155AC7E4D8"
     },
     {
       "id": "curated-galax-rtx-5060-ti-black-oc-v2-8gb",
@@ -13346,22 +14023,25 @@
       "category": "gpu",
       "subtype": "gpu",
       "brand": "GALAX",
-      "kind": "curated-model",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "그래픽 메모리 8GB GDDR7 · GPU 메모리 버스 128bit"
+        "GALAX GeForce RTX 5060 Ti BLACK OC V2 8GB"
       ],
       "specifications": [
         {
-          "label": "등록 용량(GB)",
+          "label": "판매명 그래픽 메모리(GB)",
           "value": "8"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -13369,6 +14049,12 @@
           "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
           "observedAt": null,
           "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4882723637",
+          "observedAt": "2026-11-21T07:00:52.590Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -13381,7 +14067,7 @@
           "id": "galax-rtx-5060-ti-black-oc-v2-8gb",
           "merchant": "G마켓",
           "seller": "여운스토어G",
-          "pricePage": "/prices/gpu"
+          "pricePage": "/prices/gpu#galax-rtx-5060-ti-black-oc-v2-8gb"
         }
       ],
       "referenceCode": "BD-A15349AB07"
@@ -13392,22 +14078,27 @@
       "category": "gpu",
       "subtype": "gpu",
       "brand": "GALAX",
-      "kind": "curated-model",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "그래픽 메모리 16GB GDDR7 · GPU 메모리 버스 256bit"
+        "GALAX GeForce RTX 5080 BLACK OC 16GB 국대에디션"
       ],
       "specifications": [
         {
-          "label": "등록 용량(GB)",
+          "label": "판매명 그래픽 메모리(GB)",
           "value": "16"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "확인한 G마켓 상품 4896800018은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "연결된 가격표에는 품절 전의 과거 기록이 있습니다. 당시 금액과 가격 확인일을 보존했으며 현재 구매 가능한 가격으로 간주하지 마세요."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -13415,6 +14106,12 @@
           "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
           "observedAt": null,
           "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4896800018",
+          "observedAt": "2026-11-21T06:55:04.475Z",
+          "kind": "retailer-availability"
         }
       ],
       "listObservedAt": null,
@@ -13427,10 +14124,60 @@
           "id": "galax-rtx-5080-black-oc-16gb-korea-edition",
           "merchant": "G마켓",
           "seller": "스토어휘현",
-          "pricePage": "/prices/gpu"
+          "pricePage": "/prices/gpu#galax-rtx-5080-black-oc-16gb-korea-edition"
         }
       ],
       "referenceCode": "BD-22B310E6BF"
+    },
+    {
+      "id": "reviewed-galax-rtx5080-hof-gaming-black-16gb-retailer",
+      "name": "GALAX RTX 5080 HOF GAMING BLACK D7 16GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "GALAX",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "GALAX RTX 5080 HOF GAMING BLACK D7 16GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4886434417은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "확인한 G마켓 상품 4866687887은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4886434417",
+          "observedAt": "2026-11-21T06:55:50.654Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4866687887",
+          "observedAt": "2026-11-21T06:56:24.001Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-65654EDF07"
     },
     {
       "id": "curated-gigabyte-rtx-5070-ti-eagle-oc-sff-16gb",
@@ -13438,22 +14185,27 @@
       "category": "gpu",
       "subtype": "gpu",
       "brand": "GIGABYTE",
-      "kind": "curated-model",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "그래픽 메모리 16GB GDDR7 · GPU 메모리 버스 256bit"
+        "GIGABYTE GeForce RTX 5070 Ti EAGLE OC SFF 16GB"
       ],
       "specifications": [
         {
-          "label": "등록 용량(GB)",
+          "label": "판매명 그래픽 메모리(GB)",
           "value": "16"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "확인한 G마켓 상품 4344459119은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "연결된 가격표에는 품절 전의 과거 기록이 있습니다. 당시 금액과 가격 확인일을 보존했으며 현재 구매 가능한 가격으로 간주하지 마세요."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -13461,6 +14213,12 @@
           "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
           "observedAt": null,
           "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4344459119",
+          "observedAt": "2026-11-21T07:00:54.609Z",
+          "kind": "retailer-availability"
         }
       ],
       "listObservedAt": null,
@@ -13473,7 +14231,7 @@
           "id": "gigabyte-rtx-5070-ti-eagle-oc-sff-16gb",
           "merchant": "G마켓",
           "seller": "온라인컴마켓",
-          "pricePage": "/prices/gpu"
+          "pricePage": "/prices/gpu#gigabyte-rtx-5070-ti-eagle-oc-sff-16gb"
         }
       ],
       "referenceCode": "BD-D44E54D3D2"
@@ -13484,22 +14242,27 @@
       "category": "gpu",
       "subtype": "gpu",
       "brand": "GIGABYTE",
-      "kind": "curated-model",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "그래픽 메모리 32GB GDDR7 · GPU 메모리 버스 512bit"
+        "GIGABYTE GeForce RTX 5090 WINDFORCE OC 32GB"
       ],
       "specifications": [
         {
-          "label": "등록 용량(GB)",
+          "label": "판매명 그래픽 메모리(GB)",
           "value": "32"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "확인한 G마켓 상품 4901239851은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "연결된 가격표에는 품절 전의 과거 기록이 있습니다. 당시 금액과 가격 확인일을 보존했으며 현재 구매 가능한 가격으로 간주하지 마세요."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -13507,6 +14270,12 @@
           "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
           "observedAt": null,
           "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4901239851",
+          "observedAt": "2026-11-21T07:00:55.326Z",
+          "kind": "retailer-availability"
         }
       ],
       "listObservedAt": null,
@@ -13519,10 +14288,216 @@
           "id": "gigabyte-rtx-5090-windforce-oc-32gb",
           "merchant": "G마켓",
           "seller": "게이밍컴퓨터",
-          "pricePage": "/prices/gpu"
+          "pricePage": "/prices/gpu#gigabyte-rtx-5090-windforce-oc-32gb"
         }
       ],
       "referenceCode": "BD-A0D363DEB6"
+    },
+    {
+      "id": "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun",
+      "name": "GIGABYTE RX 9070 XT GAMING OC D6 16GB 제이씨현",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "GIGABYTE",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "GIGABYTE RX 9070 XT GAMING OC D6 16GB 제이씨현"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4435306461",
+          "observedAt": "2026-11-21T06:58:16.250Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4446788728",
+          "observedAt": "2026-11-21T06:59:00.679Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun-gmarket-4435306461",
+          "merchant": "G마켓",
+          "seller": "지앤케이솔루션",
+          "pricePage": "/prices/gpu#reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun-gmarket-4435306461"
+        },
+        {
+          "id": "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun-gmarket-4446788728",
+          "merchant": "G마켓",
+          "seller": "제이씨현플레이스",
+          "pricePage": "/prices/gpu#reviewed-gigabyte-rx9070xt-gaming-oc-16gb-jchyun-gmarket-4446788728"
+        }
+      ],
+      "referenceCode": "BD-A2B6E4FB4B"
+    },
+    {
+      "id": "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-pcdirect",
+      "name": "GIGABYTE RX 9070 XT GAMING OC D6 16GB 피씨디렉트",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "GIGABYTE",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "GIGABYTE RX 9070 XT GAMING OC D6 16GB 피씨디렉트"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4690718932은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4690718932",
+          "observedAt": "2026-11-21T06:58:17.319Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4722957162",
+          "observedAt": "2026-11-21T06:58:38.208Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-gigabyte-rx9070xt-gaming-oc-16gb-pcdirect-gmarket-4722957162",
+          "merchant": "G마켓",
+          "seller": "기가바이트한국총판",
+          "pricePage": "/prices/gpu#reviewed-gigabyte-rx9070xt-gaming-oc-16gb-pcdirect-gmarket-4722957162"
+        }
+      ],
+      "referenceCode": "BD-D303664245"
+    },
+    {
+      "id": "reviewed-inno3d-rtx5080-x3-oc-white-16gb",
+      "name": "INNO3D RTX 5080 OC D7 16GB X3 White",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "INNO3D",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "INNO3D RTX 5080 OC D7 16GB X3 White"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4578335203은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4578335203",
+          "observedAt": "2026-11-21T06:56:03.780Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-CA361E602C"
+    },
+    {
+      "id": "reviewed-manli-rtx5060-nebula-8gb-daewon",
+      "name": "MANLI RTX 5060 Nebula D7 8GB 대원씨티에스",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "MANLI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "MANLI RTX 5060 Nebula D7 8GB 대원씨티에스"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "8"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4754484910",
+          "observedAt": "2026-11-21T06:58:36.586Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-manli-rtx5060-nebula-8gb-daewon-gmarket-4754484910",
+          "merchant": "G마켓",
+          "seller": "여운스토어G",
+          "pricePage": "/prices/gpu#reviewed-manli-rtx5060-nebula-8gb-daewon-gmarket-4754484910"
+        }
+      ],
+      "referenceCode": "BD-82AE557D2C"
     },
     {
       "id": "curated-msi-rtx-5060-shadow-2x-oc-8gb",
@@ -13530,22 +14505,25 @@
       "category": "gpu",
       "subtype": "gpu",
       "brand": "MSI",
-      "kind": "curated-model",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "그래픽 메모리 8GB GDDR7 · GPU 메모리 버스 128bit"
+        "MSI GeForce RTX 5060 SHADOW 2X OC 8GB"
       ],
       "specifications": [
         {
-          "label": "등록 용량(GB)",
+          "label": "판매명 그래픽 메모리(GB)",
           "value": "8"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -13553,6 +14531,12 @@
           "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
           "observedAt": null,
           "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4867006481",
+          "observedAt": "2026-11-21T07:00:51.733Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -13565,10 +14549,300 @@
           "id": "msi-rtx-5060-shadow-2x-oc-8gb",
           "merchant": "G마켓",
           "seller": "다다컴",
-          "pricePage": "/prices/gpu"
+          "pricePage": "/prices/gpu#msi-rtx-5060-shadow-2x-oc-8gb"
         }
       ],
       "referenceCode": "BD-EE8DCDE93B"
+    },
+    {
+      "id": "reviewed-msi-rtx5080-vanguard-soc-16gb-retailer",
+      "name": "MSI RTX 5080 VANGUARD SOC D7 16GB (CL 표기 없음)",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "MSI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "MSI RTX 5080 VANGUARD SOC D7 16GB (CL 표기 없음)"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "GPU Holder Kit·게임·리뷰 증정 여부나 가치는 현재 가격에서 차감하지 않았습니다. CL 접미사 상품과 품번 대조 전 별도 기록.",
+        "확인한 G마켓 상품 4532513290은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "확인한 G마켓 상품 4367335504은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "확인한 G마켓 상품 4363589250은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4532513290",
+          "observedAt": "2026-11-21T06:56:37.783Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4367335504",
+          "observedAt": "2026-11-21T06:59:16.703Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4363589250",
+          "observedAt": "2026-11-21T06:58:57.357Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-8284060ABC"
+    },
+    {
+      "id": "reviewed-msi-rtx5080-vanguard-soc-cl-16gb-retailer",
+      "name": "MSI RTX 5080 VANGUARD SOC D7 16GB 하이퍼프로져 CL (판매 표기)",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "MSI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "MSI RTX 5080 VANGUARD SOC D7 16GB 하이퍼프로져 CL (판매 표기)"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "CL 접미사는 판매명 기준입니다. 접미사 없는 판매 상품과 정확한 제조사 품번 대조 전 합치지 않았습니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4356738541",
+          "observedAt": "2026-11-21T06:59:18.373Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-msi-rtx5080-vanguard-soc-cl-16gb-retailer-gmarket-4356738541",
+          "merchant": "G마켓",
+          "seller": "(주)씨앤엘솔루션",
+          "pricePage": "/prices/gpu#reviewed-msi-rtx5080-vanguard-soc-cl-16gb-retailer-gmarket-4356738541"
+        }
+      ],
+      "referenceCode": "BD-0640172095"
+    },
+    {
+      "id": "reviewed-palit-rtx5060ti-dual-8gb-emtek",
+      "name": "PALIT RTX 5060 Ti DUAL D7 8GB 이엠텍",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "Palit",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PALIT RTX 5060 Ti DUAL D7 8GB 이엠텍"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "8"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4412125443",
+          "observedAt": "2026-11-21T06:55:51.660Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-palit-rtx5060ti-dual-8gb-emtek-gmarket-4412125443",
+          "merchant": "G마켓",
+          "seller": "페이코리아",
+          "pricePage": "/prices/gpu#reviewed-palit-rtx5060ti-dual-8gb-emtek-gmarket-4412125443"
+        }
+      ],
+      "referenceCode": "BD-2943FA10C0"
+    },
+    {
+      "id": "reviewed-palit-rtx5070ti-gamingpro-s-16gb-emtek",
+      "name": "PALIT RTX 5070 Ti GAMINGPRO-S D7 16GB 이엠텍",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "Palit",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PALIT RTX 5070 Ti GAMINGPRO-S D7 16GB 이엠텍"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4434058000",
+          "observedAt": "2026-11-21T06:55:27.226Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-palit-rtx5070ti-gamingpro-s-16gb-emtek-gmarket-4434058000",
+          "merchant": "G마켓",
+          "seller": "(주)히트정보",
+          "pricePage": "/prices/gpu#reviewed-palit-rtx5070ti-gamingpro-s-16gb-emtek-gmarket-4434058000"
+        }
+      ],
+      "referenceCode": "BD-DA0D74B775"
+    },
+    {
+      "id": "reviewed-palit-rtx5080-gamingpro-16gb-emtek",
+      "name": "PALIT RTX 5080 GAMINGPRO D7 16GB 이엠텍",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "Palit",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PALIT RTX 5080 GAMINGPRO D7 16GB 이엠텍"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4392291318은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4392291318",
+          "observedAt": "2026-11-21T06:59:17.388Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-309B3D3961"
+    },
+    {
+      "id": "reviewed-palit-rtx5080-gamingpro-16gb-emtek-e-retailer",
+      "name": "PALIT RTX 5080 GAMINGPRO D7 16GB 이엠텍 E (판매 표기)",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "Palit",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PALIT RTX 5080 GAMINGPRO D7 16GB 이엠텍 E (판매 표기)"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "E 접미사의 정확한 의미·제조사 품번은 확인되지 않아 접미사 없는 상품과 자동 병합하지 않았습니다.",
+        "확인한 G마켓 상품 4671990062은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4671990062",
+          "observedAt": "2026-11-21T06:58:15.179Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-DBA9C396BB"
     },
     {
       "id": "curated-pny-rtx-5050-dual-fan-8gb",
@@ -13576,22 +14850,25 @@
       "category": "gpu",
       "subtype": "gpu",
       "brand": "PNY",
-      "kind": "curated-model",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "그래픽 메모리 8GB GDDR6 · GPU 메모리 버스 128bit"
+        "PNY GeForce RTX 5050 Dual Fan 8GB"
       ],
       "specifications": [
         {
-          "label": "등록 용량(GB)",
+          "label": "판매명 그래픽 메모리(GB)",
           "value": "8"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -13599,6 +14876,12 @@
           "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
           "observedAt": null,
           "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4756691484",
+          "observedAt": "2026-11-21T06:59:19.405Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -13611,40 +14894,42 @@
           "id": "pny-rtx-5050-dual-fan-8gb",
           "merchant": "G마켓",
           "seller": "게이밍컴퓨터",
-          "pricePage": "/prices/gpu"
+          "pricePage": "/prices/gpu#pny-rtx-5050-dual-fan-8gb"
         }
       ],
       "referenceCode": "BD-1F28A5ED68"
     },
     {
-      "id": "curated-zotac-rtx-5070-solid-oc-12gb",
-      "name": "ZOTAC GAMING GeForce RTX 5070 SOLID OC 12GB",
+      "id": "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung",
+      "name": "PNY RTX 5080 OC D7 16GB Triple Fan 한성 (판매 표기)",
       "category": "gpu",
       "subtype": "gpu",
-      "brand": "확인 필요",
-      "kind": "curated-model",
+      "brand": "PNY",
+      "kind": "retailer-reviewed-model",
       "features": [
-        "그래픽 메모리 12GB GDDR7 · GPU 메모리 버스 192bit"
+        "PNY RTX 5080 OC D7 16GB Triple Fan 한성 (판매 표기)"
       ],
       "specifications": [
         {
-          "label": "등록 용량(GB)",
-          "value": "12"
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
         }
       ],
-      "description": "기존 부품 가격표에 등록된 모델입니다. 등록 사양과 이전 판매처 정보를 보존했으며 현재 구매 조건은 다시 확인해야 합니다.",
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다."
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
-          "label": "기존 등록 제조사 자료",
-          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
-          "observedAt": null,
-          "kind": "curated-reference"
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4774903003",
+          "observedAt": "2026-11-21T06:55:28.487Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -13654,13 +14939,622 @@
       "reviewSources": [],
       "listings": [
         {
+          "id": "reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung-gmarket-4774903003",
+          "merchant": "G마켓",
+          "seller": "(주)한성",
+          "pricePage": "/prices/gpu#reviewed-pny-rtx5080-oc-triple-fan-16gb-hansung-gmarket-4774903003"
+        }
+      ],
+      "referenceCode": "BD-97B8A0E307"
+    },
+    {
+      "id": "reviewed-powercolor-rx9060xt-reaper-8gb-daewon",
+      "name": "PowerColor RX 9060 XT Reaper D6 8GB 대원씨티에스",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "PowerColor",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PowerColor RX 9060 XT Reaper D6 8GB 대원씨티에스"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "8"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4879077247",
+          "observedAt": "2026-11-21T06:56:01.448Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-powercolor-rx9060xt-reaper-8gb-daewon-gmarket-4879077247",
+          "merchant": "G마켓",
+          "seller": "여운스토어G",
+          "pricePage": "/prices/gpu#reviewed-powercolor-rx9060xt-reaper-8gb-daewon-gmarket-4879077247"
+        }
+      ],
+      "referenceCode": "BD-C9C6189AE8"
+    },
+    {
+      "id": "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer",
+      "name": "SAPPHIRE RX 9070 XT NITRO+ OC D6 16GB (유통사 추가 확인)",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "SAPPHIRE",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "SAPPHIRE RX 9070 XT NITRO+ OC D6 16GB (유통사 추가 확인)"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4347035752은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "확인한 G마켓 상품 4685720537은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4347035752",
+          "observedAt": "2026-11-21T06:54:48.796Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4685720537",
+          "observedAt": "2026-11-21T06:55:49.920Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4529330557",
+          "observedAt": "2026-11-21T06:59:02.058Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer-gmarket-4529330557",
+          "merchant": "G마켓",
+          "seller": "홈플로우클릭나라",
+          "pricePage": "/prices/gpu#reviewed-sapphire-rx9070xt-nitro-oc-16gb-retailer-gmarket-4529330557"
+        }
+      ],
+      "referenceCode": "BD-16EC32709D"
+    },
+    {
+      "id": "reviewed-sapphire-rx9070xt-nitro-oc-16gb-emtek",
+      "name": "SAPPHIRE RX 9070 XT NITRO+ OC D6 16GB 이엠텍",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "SAPPHIRE",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "SAPPHIRE RX 9070 XT NITRO+ OC D6 16GB 이엠텍"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "유통사 이엠텍이 명시된 상품을 유통사 미확인 NITRO+와 구분했습니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4815114293",
+          "observedAt": "2026-11-21T06:58:32.480Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-sapphire-rx9070xt-nitro-oc-16gb-emtek-gmarket-4815114293",
+          "merchant": "G마켓",
+          "seller": "SEAGATE공식-스타배송",
+          "pricePage": "/prices/gpu#reviewed-sapphire-rx9070xt-nitro-oc-16gb-emtek-gmarket-4815114293"
+        }
+      ],
+      "referenceCode": "BD-990F30E8E4"
+    },
+    {
+      "id": "reviewed-sapphire-rx9070xt-pure-oc-16gb-retailer",
+      "name": "SAPPHIRE RX 9070 XT PURE OC D6 16GB (색상 추가 확인)",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "SAPPHIRE",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "SAPPHIRE RX 9070 XT PURE OC D6 16GB (색상 추가 확인)"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "현재 판매명에 색상이 없어 화이트가 명시된 다른 상품과 품번 대조 전 합치지 않았습니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4685720300",
+          "observedAt": "2026-11-21T06:55:32.802Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-sapphire-rx9070xt-pure-oc-16gb-retailer-gmarket-4685720300",
+          "merchant": "G마켓",
+          "seller": "픽셀스테이션",
+          "pricePage": "/prices/gpu#reviewed-sapphire-rx9070xt-pure-oc-16gb-retailer-gmarket-4685720300"
+        }
+      ],
+      "referenceCode": "BD-4E3F2AF7BE"
+    },
+    {
+      "id": "reviewed-sapphire-rx9070xt-pure-oc-white-16gb-retailer",
+      "name": "SAPPHIRE RX 9070 XT PURE OC D6 16GB 화이트 (판매 표기)",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "SAPPHIRE",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "SAPPHIRE RX 9070 XT PURE OC D6 16GB 화이트 (판매 표기)"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4461498344",
+          "observedAt": "2026-11-21T06:58:58.404Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-sapphire-rx9070xt-pure-oc-white-16gb-retailer-gmarket-4461498344",
+          "merchant": "G마켓",
+          "seller": "홈플로우클릭나라",
+          "pricePage": "/prices/gpu#reviewed-sapphire-rx9070xt-pure-oc-white-16gb-retailer-gmarket-4461498344"
+        }
+      ],
+      "referenceCode": "BD-3607C614F4"
+    },
+    {
+      "id": "reviewed-xfx-rx9060xt-swift-dual-oc-16gb",
+      "name": "XFX RX 9060 XT SWIFT DUAL OC D6 16GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "XFX",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "XFX RX 9060 XT SWIFT DUAL OC D6 16GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4829611596",
+          "observedAt": "2026-11-21T06:58:00.348Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-xfx-rx9060xt-swift-dual-oc-16gb-gmarket-4829611596",
+          "merchant": "G마켓",
+          "seller": "픽셀스테이션",
+          "pricePage": "/prices/gpu#reviewed-xfx-rx9060xt-swift-dual-oc-16gb-gmarket-4829611596"
+        }
+      ],
+      "referenceCode": "BD-C092D41007"
+    },
+    {
+      "id": "curated-zotac-rtx-5070-solid-oc-12gb",
+      "name": "ZOTAC GAMING GeForce RTX 5070 SOLID OC 12GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "확인 필요",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ZOTAC GAMING GeForce RTX 5070 SOLID OC 12GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "12"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "기존 등록 제조사 자료",
+          "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/",
+          "observedAt": null,
+          "kind": "curated-reference"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4326519362",
+          "observedAt": "2026-11-21T06:56:25.030Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4341591553",
+          "observedAt": "2026-11-21T07:00:54.026Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "curated-zotac-rtx-5070-solid-oc-12gb-gmarket-4326519362",
+          "merchant": "G마켓",
+          "seller": "LifeWorks",
+          "pricePage": "/prices/gpu#curated-zotac-rtx-5070-solid-oc-12gb-gmarket-4326519362"
+        },
+        {
           "id": "zotac-rtx-5070-solid-oc-12gb",
           "merchant": "G마켓",
           "seller": "(주)히트정보",
-          "pricePage": "/prices/gpu"
+          "pricePage": "/prices/gpu#zotac-rtx-5070-solid-oc-12gb"
         }
       ],
       "referenceCode": "BD-213EB515DE"
+    },
+    {
+      "id": "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer",
+      "name": "ZOTAC GAMING RTX 5060 Ti Twin Edge OC D7 8GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "ZOTAC",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ZOTAC GAMING RTX 5060 Ti Twin Edge OC D7 8GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "8"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4393133739",
+          "observedAt": "2026-11-21T06:57:59.134Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer-gmarket-4393133739",
+          "merchant": "G마켓",
+          "seller": "(주)히트정보",
+          "pricePage": "/prices/gpu#reviewed-zotac-rtx5060ti-twin-edge-oc-8gb-retailer-gmarket-4393133739"
+        }
+      ],
+      "referenceCode": "BD-3D87313372"
+    },
+    {
+      "id": "reviewed-zotac-rtx5080-amp-extreme-infinity-16gb",
+      "name": "ZOTAC GAMING RTX 5080 AMP EXTREME INFINITY D7 16GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "ZOTAC",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ZOTAC GAMING RTX 5080 AMP EXTREME INFINITY D7 16GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4321166830은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4321166830",
+          "observedAt": "2026-11-21T06:56:12.800Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-A7ABCE00D8"
+    },
+    {
+      "id": "reviewed-zotac-rtx5080-solid-core-oc-16gb",
+      "name": "ZOTAC GAMING RTX 5080 SOLID CORE OC D7 16GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "ZOTAC",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ZOTAC GAMING RTX 5080 SOLID CORE OC D7 16GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "SOLID OC와 SOLID CORE OC는 별도 판매 모델로 구분했습니다.",
+        "확인한 G마켓 상품 4393139285은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
+        "확인한 판매 페이지가 품절 상태여서 현재 가격을 새로 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4393139285",
+          "observedAt": "2026-11-21T06:56:26.203Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-00EA87E0ED"
+    },
+    {
+      "id": "reviewed-zotac-rtx5080-solid-oc-16gb-retailer",
+      "name": "ZOTAC GAMING RTX 5080 SOLID OC D7 16GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "ZOTAC",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ZOTAC GAMING RTX 5080 SOLID OC D7 16GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "16"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "확인한 G마켓 상품 4315490472은 2026-11-21 기준 품절 표시였습니다. 다른 판매처나 모델 전체의 품절·단종은 아닙니다.",
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4304537435",
+          "observedAt": "2026-11-21T06:56:11.784Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4315490472",
+          "observedAt": "2026-11-21T06:56:36.207Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-zotac-rtx5080-solid-oc-16gb-retailer-gmarket-4304537435",
+          "merchant": "G마켓",
+          "seller": "LifeWorks",
+          "pricePage": "/prices/gpu#reviewed-zotac-rtx5080-solid-oc-16gb-retailer-gmarket-4304537435"
+        }
+      ],
+      "referenceCode": "BD-0679D62302"
+    },
+    {
+      "id": "reviewed-zotac-rtx5090-solid-oc-32gb-retailer",
+      "name": "ZOTAC GAMING RTX 5090 SOLID OC D7 32GB",
+      "category": "gpu",
+      "subtype": "gpu",
+      "brand": "ZOTAC",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ZOTAC GAMING RTX 5090 SOLID OC D7 32GB"
+      ],
+      "specifications": [
+        {
+          "label": "판매명 그래픽 메모리(GB)",
+          "value": "32"
+        }
+      ],
+      "description": "실제 판매 페이지에서 GPU 모델 표기·판매 상태·수량1 주문 금액을 확인한 항목입니다. 상품가·배송비와 조건부 쿠폰·카드가를 분리하며 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
+      "notes": [
+        "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
+        "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
+        "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4653932035",
+          "observedAt": "2026-11-21T06:55:09.813Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-zotac-rtx5090-solid-oc-32gb-retailer-gmarket-4653932035",
+          "merchant": "G마켓",
+          "seller": "게이밍컴퓨터",
+          "pricePage": "/prices/gpu#reviewed-zotac-rtx5090-solid-oc-32gb-retailer-gmarket-4653932035"
+        }
+      ],
+      "referenceCode": "BD-ECFF4EA43A"
     },
     {
       "id": "reviewed-asrock-b860m-livemixer-wifi",

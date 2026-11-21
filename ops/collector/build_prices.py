@@ -139,6 +139,14 @@ def reference_url(raw: Any) -> str | None:
     return value
 
 
+def availability_fields(raw: dict[str, Any], now: datetime) -> dict[str, str]:
+    value = raw.get("availabilityCheckedAt")
+    if value is None or str(value).strip() == "":
+        return {}
+    checked = parse_checked_at(value, now)
+    return {"availabilityCheckedAt": checked.isoformat().replace("+00:00", "Z")}
+
+
 def product_attributes(raw: dict[str, Any], category: str) -> dict[str, Any]:
     attributes: dict[str, Any] = {}
     for key in ("capacityGB", "moduleCapacityGB", "moduleCount"):
@@ -345,6 +353,7 @@ def _build(input_path: Path, root: Path, now: datetime, dry_run: bool, schedule:
             official_url = reference_url(raw.get("officialUrl"))
             attributes = product_attributes(raw, category)
             benefits = conditional_prices(raw, price)
+            stock_observation = availability_fields(raw, now)
             normalized_url, merchant = normalize_url(raw.get("url"))
             code = make_code(normalized_url, outbound)
             outbound[code] = {"code": code, "merchant": merchant, "originalUrl": normalized_url}
@@ -380,6 +389,7 @@ def _build(input_path: Path, root: Path, now: datetime, dry_run: bool, schedule:
                 "updatedAt": checked_iso,
                 **attributes,
                 **benefits,
+                **stock_observation,
             }
             grouped[category].append(item)
         except (TypeError, ValueError) as error:

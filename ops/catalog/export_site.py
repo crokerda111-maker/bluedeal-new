@@ -84,6 +84,8 @@ def export(root=ROOT):
         if ram_file.exists(): reviewed += json.loads(ram_file.read_text(encoding='utf-8'))
         ssd_file = root / 'src/content/products/reviewed-ssds.json'
         if ssd_file.exists(): reviewed += json.loads(ssd_file.read_text(encoding='utf-8'))
+        gpu_file = root / 'src/content/products/reviewed-gpus.json'
+        if gpu_file.exists(): reviewed += json.loads(gpu_file.read_text(encoding='utf-8'))
         claimed = {listing['id'] for product in reviewed for listing in product['listings']}
         for model in models:
             if all(listing in claimed for listing in model['listing_ids']):

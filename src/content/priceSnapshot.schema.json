@@ -35,6 +35,7 @@
     "moduleCount",
     "ssdDram",
     "availability",
+    "availabilityCheckedAt",
     "checkedAt",
     "updatedAt",
     "couponPrice",
