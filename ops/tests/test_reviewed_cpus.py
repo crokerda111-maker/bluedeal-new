@@ -22,6 +22,9 @@ class ReviewedCpus(unittest.TestCase):
         epyc = next(p for p in review['posts'] if p['post'] == '1963279')
         self.assertIn('epyc-4585px', epyc['modelId'])
         self.assertNotIn('9950', epyc['modelId'])
+        by_post = {p['post']: p for p in review['posts']}
+        self.assertEqual(by_post['2003013']['outcome'], '원 판매처 접근·인증 제한')
+        self.assertEqual(by_post['1999021']['outcome'], '원 판매조건 추가 확인 필요')
 
     def test_cpu_variants_and_unconfirmed_total_cost_do_not_collapse_into_prices(self):
         models = json.loads((ROOT / 'src/content/products/reviewed-cpus.json').read_text(encoding='utf-8'))
