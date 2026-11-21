@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 
 const base = process.env.BLUEDEAL_CATALOG_TEST_URL ?? 'http://127.0.0.1:3100';
 const catalog = JSON.parse(await fs.readFile(new URL('../../src/content/products/catalog.json', import.meta.url), 'utf8'));
-const categories = ['ram', 'cpu', 'ssd', 'motherboard', 'gpu', 'cooler', 'psu', 'case', 'hdd', 'halfpc', 'fullpc'];
+const categories = ['ram', 'cpu', 'ssd', 'motherboard', 'gpu', 'cooler', 'psu', 'case', 'hdd', 'halfpc', 'fullpc', 'bundle'];
 const ids = html => [...html.matchAll(/data-product-id="([a-z0-9-]+)"/g)].map(match => match[1]);
 let requests = 0;
 async function get(route, status = 200) {

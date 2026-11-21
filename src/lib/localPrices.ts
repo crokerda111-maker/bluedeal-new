@@ -12,6 +12,7 @@ import fullpc from "../content/prices/fullpc.json";
 import psu from "../content/prices/psu.json";
 import casePrices from "../content/prices/case.json";
 import hdd from "../content/prices/hdd.json";
+import bundle from "../content/prices/bundle.json";
 
 const LOCAL_PRICES: Record<PriceCategoryKey, unknown> = {
   ram,
@@ -25,6 +26,7 @@ const LOCAL_PRICES: Record<PriceCategoryKey, unknown> = {
   psu,
   case: casePrices,
   hdd,
+  bundle,
 };
 
 export function getLocalMeta(): MetaPayload {

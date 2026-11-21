@@ -38,7 +38,7 @@ ops/collector/input/products.csv
 지원 category:
 
 ```text
-ram, cpu, ssd, motherboard, gpu, cooler, halfpc, fullpc
+ram, cpu, ssd, motherboard, gpu, cooler, halfpc, fullpc, psu, case, hdd, bundle
 ```
 
 현재 허용 판매처는 쿠팡, AliExpress, 11번가, G마켓, 네이버 스마트스토어·브랜드스토어·쇼핑입니다. 다나와 주소와 다른 도메인은 구매 링크로 등록할 수 없습니다.

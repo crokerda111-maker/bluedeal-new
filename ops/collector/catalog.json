@@ -954,6 +954,36 @@
       "category": "fullpc",
       "seller": "아싸컴 · (주)공이일공",
       "sourceUrl": "https://www.11st.co.kr/products/9423305936"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-gmarket-4840266488-offer",
+      "category": "fullpc",
+      "seller": "피씨포맨스토어",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4840266488"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-11st-8564658171-offer",
+      "category": "fullpc",
+      "seller": "아싸컴 · (주)공이일공",
+      "sourceUrl": "https://www.11st.co.kr/products/8564658171"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-11st-8271959297-offer",
+      "category": "fullpc",
+      "seller": "씨넥스몰 · (주) 씨넥스존",
+      "sourceUrl": "https://www.11st.co.kr/products/8271959297"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-11st-8221231651-offer",
+      "category": "fullpc",
+      "seller": "한성컴퓨터 · (주)한성",
+      "sourceUrl": "https://www.11st.co.kr/products/8221231651"
+    },
+    {
+      "id": "reviewed-mixed-ram-11st-8209876314-offer",
+      "category": "ram",
+      "seller": "서린씨앤아이 · (주)서린씨앤아이",
+      "sourceUrl": "https://www.11st.co.kr/products/8209876314"
     }
   ]
 }

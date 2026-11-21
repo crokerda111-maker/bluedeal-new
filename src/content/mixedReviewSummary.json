@@ -1,0 +1,18 @@
+{
+  "reviewedOn": "2026-11-21",
+  "candidatePosts": 30,
+  "recoveredRamPosts": 1,
+  "reviewedPosts": 31,
+  "newModels": {
+    "bundle": 2,
+    "fullpc": 13,
+    "motherboard": 1,
+    "ram": 2
+  },
+  "priceRecords": {
+    "fullpc": 4,
+    "ram": 1
+  },
+  "restrictedPosts": 1,
+  "packageModels": 2
+}

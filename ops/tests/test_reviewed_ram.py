@@ -33,7 +33,9 @@ class ReviewedRam(unittest.TestCase):
         claimed=[s['id'] for m in models for s in m['listings']]
         self.assertEqual(len(claimed),37)
         self.assertEqual(len(set(claimed)),37)
-        self.assertEqual(set(claimed),{p['id'] for p in prices})
+        supplemental=read('src/content/products/reviewed-mixed.json')
+        mixed_claimed={s['id'] for m in supplemental if m['category']=='ram' for s in m['listings']}
+        self.assertEqual(set(claimed)|mixed_claimed,{p['id'] for p in prices})
         for token in ['samsung-ddr5-5600-24gb-retailer','agi-ud238-5600-cl46-32gb-retailer']:
             row=next(p for p in prices if token in p['id'])
             self.assertNotIn('moduleCount',row)

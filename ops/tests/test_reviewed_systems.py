@@ -26,7 +26,7 @@ class ReviewedSystems(unittest.TestCase):
             if any(c['status']=='model-identity-insufficient' for c in post['merchantChecks']):self.assertEqual(post['modelIds']+post['verifiedListingIds'],[])
 
     def test_price_types_and_shipping_are_not_inferred_from_benefit_labels(self):
-        items=read('src/content/prices/fullpc.json')['items']
+        items=[p for p in read('src/content/prices/fullpc.json')['items'] if p['id'].startswith('reviewed-fullpc-')]
         actual={p['id']:(p['price'],p['shippingFee']) for p in items if p['source']=='G마켓'}
         self.assertEqual(actual,{'reviewed-fullpc-gmarket-4805310267-offer':(3765850,0),'reviewed-fullpc-gmarket-4864796475-offer':(1614340,0),'reviewed-fullpc-gmarket-4653902503-offer':(5956750,0),'reviewed-fullpc-gmarket-4653892370-offer':(2392600,0)})
         lotte=[r for r in items if r['source']=='롯데온']

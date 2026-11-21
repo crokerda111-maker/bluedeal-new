@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "encoding": "typed-ieee754-v1",
   "categories": [
+    "bundle",
     "case",
     "cooler",
     "cpu",

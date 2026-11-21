@@ -51,7 +51,9 @@ def prepare(root=ROOT):
         reader = csv.DictReader(stream); fields = list(reader.fieldnames); previous = list(reader)
     prior = {row['id']: row for row in previous}
     old_ram = {row['id'] for row in previous if row['category'] == 'ram'}
-    if not old_ram <= ids: raise ValueError('RAM_LEGACY_LISTING_MISSING')
+    mixed_file=root/'src/content/products/reviewed-mixed.json'
+    mixed_ids={r['id'] for m in json.loads(mixed_file.read_text(encoding='utf-8')) for r in m['listings']} if mixed_file.exists() else set()
+    if not old_ram <= ids | mixed_ids: raise ValueError('RAM_LEGACY_LISTING_MISSING')
     for offer in offers:
         if offer['id'] in prior and prior[offer['id']]['url'] != offer['url']:
             raise ValueError('RAM_LEGACY_URL_DRIFT')

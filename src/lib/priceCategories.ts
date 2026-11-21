@@ -9,7 +9,8 @@ export type PriceCategoryKey =
   | "hdd"
   | "cooler"
   | "halfpc"
-  | "fullpc";
+  | "fullpc"
+  | "bundle";
 
 export type PriceCategory = {
   key: PriceCategoryKey;
@@ -94,7 +95,14 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
     key: "fullpc",
     title: "완본체 가격현황",
     shortTitle: "완본체",
-    description: "OS 포함 완제품 PC(완본체) 가격을 모아봅니다.",
+    description: "완제품 PC의 판매 구성을 확인합니다. OS 포함 여부는 상품별로 다릅니다.",
+    unitHint: "원",
+  },
+  {
+    key: "bundle",
+    title: "부품 패키지 상품·가격현황",
+    shortTitle: "부품 패키지",
+    description: "CPU·메인보드 등 묶음 판매 구성을 확인합니다. 완본체와 개별 부품 가격을 구분합니다.",
     unitHint: "원",
   },
 ];

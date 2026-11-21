@@ -21,6 +21,7 @@ import gpuReviewSummary from "../../../content/gpuReviewSummary.json";
 import coolingReviewSummary from "../../../content/coolingReviewSummary.json";
 import caseReviewSummary from "../../../content/caseReviewSummary.json";
 import systemsReviewSummary from "../../../content/systemsReviewSummary.json";
+import mixedReviewSummary from "../../../content/mixedReviewSummary.json";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -171,21 +172,23 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       {category.key === "halfpc" || category.key === "fullpc" ? (
         <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">
           {systemsReviewSummary.reviewedOn} KST 기준, 과거 {category.key === "halfpc" ? "반본체" : "완본체"} 후보 글 {systemsReviewSummary.totalCandidatePosts[category.key]}건 중 {systemsReviewSummary.reviewedPosts[category.key]}건을 첫 분류했습니다.
-          실제 판매 제목과 페이지 식별자로 확인한 구성 {systemsReviewSummary.retailerModels[category.key]}개를 아래 목록에서 확인할 수 있습니다.{" "}
+          이 분류에는 부품 묶음 후보에서 재분류한 항목도 포함하며, 등록 구성 {CATALOG_SUMMARY.categoryCounts[category.key]}개를 위 목록에서 확인할 수 있습니다.{" "}
           {category.key === "halfpc" ? <>필수 옵션·전체 기본 구성·할인 조건 확인이 남아 가격표에 금액을 등록하지 않았습니다. 기존 접근 제한 {systemsReviewSummary.restrictedPosts.halfpc}건은 재시도하지 않았습니다.</> : <>
-            기본 표시 구성의 수량1 금액·배송 안내가 확인된 {systemsReviewSummary.priceRecords.fullpc}건을 가격표에 연결했습니다. 자동 쿠폰·카드 금액은 대상·기간·중복조건을 추가 확인해야 하는 조건부 표시입니다.{" "}
+            수량1 금액·배송 안내가 확인된 {data.items.length}건을 가격표에 연결했습니다. 부품 묶음 후보에서 확인한 추가 판매 기록 {mixedReviewSummary.priceRecords.fullpc}건을 포함합니다. 자동 쿠폰·카드 금액은 대상·기간·중복조건을 추가 확인해야 하는 조건부 표시입니다.{" "}
             {systemsReviewSummary.remainingPosts.fullpc > 0 ? <>남은 {systemsReviewSummary.remainingPosts.fullpc}건은 아직 판매처 검토가 필요합니다.</> : <>후보 글의 첫 분류를 마쳤으며, 기존 접근 제한 {systemsReviewSummary.restrictedPosts.fullpc}건은 재시도하지 않았습니다. 품절·판매 종료·구성 식별 불가·옵션 미확인 항목을 현재 구매가로 등록하지 않았습니다.</>}
           </>}{" "}
           메인보드·SSD·파워 등 정확한 전체 부품 목록과 개별 구매가를 모두 확인하기 전에는 부품 등급·조립 대비 절약률·품질 점수를 산정하지 않습니다.
         </p>
       ) : null}
+      {category.key === "bundle" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{mixedReviewSummary.reviewedOn} KST 기준, 부품 묶음 후보 {mixedReviewSummary.candidatePosts}건을 완본체·단일 부품·일부 부품 패키지로 구분했습니다. 실제 패키지 {mixedReviewSummary.packageModels}개는 확인 시점 품절 상태여서 현재 구매가를 등록하지 않았습니다. 제목에 없는 부품의 포함·미포함을 추정하지 않았고, 묶음 금액을 개별 부품 가격으로 나누지 않았습니다. 정확한 포함 구성·호환성·보증·부품별 구매가를 추가 확인해야 합니다.</p> : null}
+      {category.key === "ram" ? <p className="text-sm leading-relaxed text-white/70">원문에서 복구한 판매주소 {mixedReviewSummary.recoveredRamPosts}건을 추가 확인해 이 표에는 가격 기록 총 {data.items.length}건을 제공합니다. CL28·CL30과 화이트·다른 색상은 별도 구성으로 구분합니다.</p> : null}
       {data.items.length ? <PriceFilterForm category={category.key} items={data.items} filters={filters} /> : null}
       <p className="text-sm text-white/70">전체 {data.items.length}개 중 <b className="text-white">{items.length}개</b> 표시 · 배송비 미확인 상품은 포함 금액 정렬에서 뒤에 표시하며, 품절 상품의 이전 기록은 모든 정렬에서 마지막에 표시합니다.</p>
       <p className="text-xs leading-relaxed text-white/65">같은 모델도 판매처별로 별도 집계합니다. 색상·구성·유통사·보증 조건을 함께 확인해 비교하세요.</p>
 
       {items.length === 0 ? (
         <div className="bd-surface-md px-4 py-10 text-center text-white/70">
-          {data.items.length ? <>조건에 맞는 상품이 없습니다. <Link className="text-cyan-200 hover:underline" href={`/prices/${category.key}#price-records`}>필터 초기화</Link></> : <>판매처 가격·재고는 아직 확인하지 못했습니다. {CATALOG_SUMMARY.categoryCounts[category.key] ? <a href="#registered-products" className="text-cyan-200 underline">위의 등록 상품·특징을 먼저 살펴보세요.</a> : null} <Link className="text-cyan-200 hover:underline" href={reportHref}>판매처 제보하기</Link></>}
+          {data.items.length ? <>조건에 맞는 상품이 없습니다. <Link className="text-cyan-200 hover:underline" href={`/prices/${category.key}#price-records`}>필터 초기화</Link></> : <>{category.key === "bundle" ? "확인한 패키지는 품절 상태여서 현재 구매가를 등록하지 않았습니다." : "확인된 현재 구매가가 아직 없습니다."} {CATALOG_SUMMARY.categoryCounts[category.key] ? <a href="#registered-products" className="text-cyan-200 underline">위의 등록 상품·특징을 먼저 살펴보세요.</a> : null} <Link className="text-cyan-200 hover:underline" href={reportHref}>판매처 제보하기</Link></>}
         </div>
       ) : (
         <>

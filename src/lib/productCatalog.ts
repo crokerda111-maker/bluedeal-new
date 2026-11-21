@@ -1,4 +1,4 @@
-export type ProductCategory = "cpu" | "motherboard" | "ram" | "gpu" | "psu" | "ssd" | "hdd" | "case" | "cooler" | "fullpc" | "halfpc";
+export type ProductCategory = "cpu" | "motherboard" | "ram" | "gpu" | "psu" | "ssd" | "hdd" | "case" | "cooler" | "fullpc" | "halfpc" | "bundle";
 export type ProductSource = { label: string; url: string; observedAt: string | null; kind: string };
 export type CatalogProduct = {
   id: string; referenceCode: string; name: string; category: ProductCategory; subtype: string; brand: string;
@@ -18,6 +18,7 @@ export const PRODUCT_CATEGORIES: { key: ProductCategory; label: string }[] = [
   { key: "gpu", label: "그래픽카드" }, { key: "psu", label: "파워" }, { key: "ssd", label: "SSD" },
   { key: "hdd", label: "HDD" }, { key: "case", label: "케이스" }, { key: "cooler", label: "쿨러·방열판" },
   { key: "fullpc", label: "완본체" }, { key: "halfpc", label: "반본체" },
+  { key: "bundle", label: "부품 패키지" },
 ];
 
 export const PRODUCT_KIND_LABELS: Record<CatalogProduct["kind"], string> = {

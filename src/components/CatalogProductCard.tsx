@@ -14,7 +14,7 @@ export default function CatalogProductCard({ product }: { product: CatalogProduc
     <p className="mt-3 break-words text-sm leading-6 text-white/75">{product.features.slice(0, 2).join(" · ") || "상세 자료를 확인하고 있습니다."}</p>
     <div className="mt-auto pt-5">
       <p className="text-xs leading-6 text-white/60">{product.listObservedAt ? `공식 목록 확인 ${catalogDate(product.listObservedAt)}` : product.kind === "source-reviewed-model" ? "공식 사양·공지 검토 자료" : product.kind === "retailer-reviewed-model" ? "판매 표기 확인 · 상세 사양 추가 대조 중" : "기존 등록 사양 · 추가 대조 중"}</p>
-      <p className="mt-1 text-xs leading-6 text-white/65">{product.listings.length ? `판매처 가격 기록 ${product.listings.length}건 · 확인 시각은 가격표 참조` : "판매처 가격·재고 확인 전"}</p>
+      <p className="mt-1 text-xs leading-6 text-white/65">{product.listings.length ? `판매처 가격 기록 ${product.listings.length}건 · 확인 시각은 가격표 참조` : "현재 구매가 미등록 · 확인 상태·출처는 상세 참조"}</p>
       <Link href={`/products/${product.id}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-medium text-cyan-200 hover:underline">특징·출처·확인 상태 보기 <span aria-hidden="true" className="ml-2">→</span></Link>
     </div>
   </article>;

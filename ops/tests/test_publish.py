@@ -40,7 +40,7 @@ class PublishGuardTests(unittest.TestCase):
     def prepare_valid_price_fixture(self):
         prices = self.root / "src/content/prices"
         prices.mkdir(parents=True)
-        for category in ("ram", "cpu", "ssd", "motherboard", "gpu", "cooler", "halfpc", "fullpc", "psu", "case", "hdd", "meta"):
+        for category in ("ram", "cpu", "ssd", "motherboard", "gpu", "cooler", "halfpc", "fullpc", "psu", "case", "hdd", "bundle", "meta"):
             (prices / f"{category}.json").write_text('{"items": []}', encoding="utf-8")
         (self.root / "src/content/outbound.generated.json").write_text('{}', encoding="utf-8")
         (self.root / "ops/collector/ingest_snapshot.py").write_text("import sys\nfrom pathlib import Path\nif '--dry-run' not in sys.argv: Path('src/content/prices/ram.json').write_text('{\"items\": [\"TEST ONLY\"]}')\n", encoding="utf-8")

@@ -9,11 +9,11 @@ from ops.catalog.store import merchant_identity
 from ops.collector.build_prices import conditional_prices,parse_checked_at,parse_now,parse_price
 ROOT=Path(__file__).resolve().parents[2]
 
-def validate_offers(offers,models,now):
+def validate_offers(offers,models,now,categories=('fullpc','halfpc')):
     ids=set();keys=set()
     for r in offers:
         m=models.get(r['productId'])
-        if not m or r['id'] in ids or r['category'] not in ['fullpc','halfpc'] or m['category']!=r['category'] or r['sourceKey'] in keys:raise ValueError('SYSTEM_MODEL_OR_ID_CONFLICT')
+        if not m or r['id'] in ids or r['category'] not in categories or m['category']!=r['category'] or r['sourceKey'] in keys:raise ValueError('SYSTEM_MODEL_OR_ID_CONFLICT')
         ids.add(r['id']);keys.add(r['sourceKey'])
         merchant,code=merchant_identity(r['url'])
         if r['sourceKey']!=merchant+':'+code or not r.get('seller') or not r.get('spec'):raise ValueError('SYSTEM_SOURCE_OR_VARIANT_MISSING')
@@ -44,7 +44,9 @@ def prepare(root=ROOT):
     with file.open(encoding='utf-8-sig',newline='') as f:
         reader=csv.DictReader(f);fields=list(reader.fieldnames);prior=list(reader)
     old={r['id']:r for r in prior}
-    if not {r['id'] for r in prior if r['category'] in ['fullpc','halfpc']}<=ids:raise ValueError('SYSTEM_PREVIOUS_LISTING_MISSING')
+    mixed_file=root/'src/content/products/reviewed-mixed.json'
+    mixed_ids={r['id'] for m in read(mixed_file) for r in m['listings']} if mixed_file.exists() else set()
+    if not {r['id'] for r in prior if r['category'] in ['fullpc','halfpc']}<=ids|mixed_ids:raise ValueError('SYSTEM_PREVIOUS_LISTING_MISSING')
     if any(r['id'] in old and old[r['id']]['url']!=r['url'] for r in offers):raise ValueError('SYSTEM_URL_DRIFT')
     for field in BENEFIT_FIELDS:
         if field not in fields:fields.append(field)

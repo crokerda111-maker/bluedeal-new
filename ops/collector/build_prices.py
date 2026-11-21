@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit, urlunsplit
 
-CATEGORIES = ("ram", "cpu", "ssd", "motherboard", "gpu", "cooler", "halfpc", "fullpc", "psu", "case", "hdd")
+CATEGORIES = ("ram", "cpu", "ssd", "motherboard", "gpu", "cooler", "halfpc", "fullpc", "psu", "case", "hdd", "bundle")
 MERCHANT_HOSTS = {
     "ohou": ("store.ohou.se",),
     "coupang": ("coupang.com", "link.coupang.com"),

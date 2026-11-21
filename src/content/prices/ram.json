@@ -1,7 +1,7 @@
 {
   "category": "ram",
-  "updatedAt": "2026-11-21T06:22:56.117000Z",
-  "generatedAt": "2026-11-21T09:28:05.032057Z",
+  "updatedAt": "2026-11-21T09:41:27.640000Z",
+  "generatedAt": "2026-11-21T09:45:16.258240Z",
   "items": [
     {
       "id": "reviewed-samsung-ddr5-5600-24gb-retailer-gmarket-4763093282",
@@ -429,6 +429,29 @@
       "cardPrice": 850250,
       "cardNote": "G마켓 삼성카드 10,000원 할인. 쿠폰·옵션 적용 후 실구매금액 300,000원 이상, 최대 10,000원. 다른 카드 할인과 합산하지 않음. 해당 카드·예산·결제창 적용 확인 필요.",
       "cardEndsOn": "2026-11-30"
+    },
+    {
+      "id": "reviewed-mixed-ram-11st-8209876314-offer",
+      "name": "[서린공식] 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+      "spec": "[서린공식] 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2)) · 기본 표시 구성 · 수량1 · 세부 보증 추가 확인",
+      "price": 886000,
+      "low7d": null,
+      "low30d": null,
+      "change24hPct": null,
+      "goCode": "_C7rxg0R5jvrmks_",
+      "source": "11번가",
+      "seller": "서린씨앤아이 · (주)서린씨앤아이",
+      "shippingFee": 2500,
+      "shippingNote": "기본 배송비2500원 · 제주·도서산간5000원 표기, 적용 범위는 판매처 확인",
+      "priceNote": "확인 시점 수량1 상품가입니다. 적립·리뷰 보상은 차감하지 않았으며 정확한 구성·OS 라이선스·보증을 확인하세요.",
+      "officialUrl": null,
+      "checkedAt": "2026-11-21T09:41:27.640000Z",
+      "updatedAt": "2026-11-21T09:41:27.640000Z",
+      "capacityGB": 32,
+      "moduleCapacityGB": 16,
+      "moduleCount": 2,
+      "memoryType": "DDR5",
+      "availability": "unknown"
     },
     {
       "id": "reviewed-teamgroup-delta-rgb-black-6000-cl30-32gb-lotteon-LO2251046520",
