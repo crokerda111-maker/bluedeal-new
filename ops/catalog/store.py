@@ -22,6 +22,10 @@ def merchant_identity(url):
     parsed = urlsplit(url)
     if parsed.scheme != 'https' or parsed.username or parsed.password or parsed.port or parsed.fragment:
         raise ValueError('INVALID_MERCHANT_URL')
+    if parsed.hostname == 'store.ohou.se' and not parsed.query:
+        segments = parsed.path.strip('/').split('/')
+        if len(segments) == 2 and segments[0] == 'goods' and segments[1].isascii() and segments[1].isdigit():
+            return 'ohou', segments[1]
     if parsed.hostname == 'usr.icoda.co.kr' and not parsed.query:
         segments = parsed.path.strip('/').split('/')
         if len(segments) == 3 and segments[:2] == ['item', 'view'] and segments[2].isascii() and segments[2].isdigit():

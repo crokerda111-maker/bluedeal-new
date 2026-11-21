@@ -1,0 +1,27 @@
+{
+  "reviewedOn": "2026-11-21",
+  "totalCandidatePosts": {
+    "halfpc": 8,
+    "fullpc": 101
+  },
+  "reviewedPosts": {
+    "halfpc": 8,
+    "fullpc": 16
+  },
+  "remainingPosts": {
+    "halfpc": 0,
+    "fullpc": 85
+  },
+  "merchantObservations": {
+    "halfpc": 5,
+    "fullpc": 13
+  },
+  "freshPriceOffers": 3,
+  "retailerModels": {
+    "halfpc": 5,
+    "fullpc": 10
+  },
+  "priceRecords": {
+    "fullpc": 3
+  }
+}

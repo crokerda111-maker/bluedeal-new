@@ -18,6 +18,14 @@ test('issued short links preserve tracking values and parameter order', () => {
   assert.equal(resolveAffiliateUrl({merchant:'gmarket',originalUrl,code:'fixture'}),null);
 });
 
+test('verified Ohou product links remain ordinary links with strict domain boundaries',()=>{
+  const originalUrl='https://store.ohou.se/goods/4100098';
+  assert.deepEqual(resolveAffiliateUrl({merchant:'ohou',originalUrl,code:'fixture'}),{merchant:'ohou',url:originalUrl,mode:'passthrough'});
+  assert.equal(normalizeOutboundUrl('https://store.ohou.se.evil.invalid/goods/4100098'),null);
+  assert.equal(normalizeOutboundUrl('https://evil.ohou.se/goods/4100098'),null);
+  assert.equal(normalizeOutboundUrl('https://user:secret@store.ohou.se/goods/4100098'),null);
+});
+
 test('ordinary product URLs are not claimed as commission-enabled by adding a tag', () => {
   const previous=process.env.COUPANG_LPTAG;
   process.env.COUPANG_LPTAG='TEST_ONLY';

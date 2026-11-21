@@ -876,6 +876,24 @@
       "category": "case",
       "seller": "컴퓨존",
       "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1368746&BigDivNo=4&MediumDivNo=1147&DivNo=2750"
+    },
+    {
+      "id": "reviewed-fullpc-lotteon-lo2782542885-offer",
+      "category": "fullpc",
+      "seller": "컴집",
+      "sourceUrl": "https://www.lotteon.com/p/product/LO2782542885"
+    },
+    {
+      "id": "reviewed-fullpc-lotteon-lo2785173873-offer",
+      "category": "fullpc",
+      "seller": "주연테크X긱스타",
+      "sourceUrl": "https://www.lotteon.com/p/product/LO2785173873"
+    },
+    {
+      "id": "reviewed-fullpc-ohou-4100098-offer",
+      "category": "fullpc",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://store.ohou.se/goods/4100098"
     }
   ]
 }

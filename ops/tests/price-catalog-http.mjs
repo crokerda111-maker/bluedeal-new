@@ -68,6 +68,13 @@ for(const item of coolingItems){
   assert.ok(['www.compuzone.co.kr','item.gmarket.co.kr','www.ssg.com'].includes(new URL(response.headers.get('location')).hostname));
 }
 const gpuItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/gpu.json',import.meta.url),'utf8')).items;
+const systemItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/fullpc.json',import.meta.url),'utf8')).items;
+const systemHtml=await get('/prices/fullpc');
+for(const item of systemItems){
+  assert.ok(systemHtml.includes(`id="${item.id}"`));
+  const response=await fetch(`${base}/go/${item.goCode}`,{redirect:'manual',signal:AbortSignal.timeout(25000)});requests++;
+  assert.equal(response.status,302);assert.ok(['www.lotteon.com','store.ohou.se'].includes(new URL(response.headers.get('location')).hostname));
+}
 const caseItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/case.json',import.meta.url),'utf8')).items;
 const caseHtml=await get('/prices/case');
 for(const item of caseItems){

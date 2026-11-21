@@ -25,6 +25,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 CATEGORIES = ("ram", "cpu", "ssd", "motherboard", "gpu", "cooler", "halfpc", "fullpc", "psu", "case", "hdd")
 MERCHANT_HOSTS = {
+    "ohou": ("store.ohou.se",),
     "coupang": ("coupang.com", "link.coupang.com"),
     "aliexpress": ("aliexpress.com", "aliexpress.us", "a.aliexpress.com", "s.click.aliexpress.com"),
     "11st": ("11st.co.kr",),
