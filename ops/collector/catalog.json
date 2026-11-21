@@ -380,6 +380,36 @@
       "category": "motherboard",
       "seller": "스토어휘현",
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4768647010"
+    },
+    {
+      "id": "asus-rog-strix-b860-g-wifi-gm4456654479",
+      "category": "motherboard",
+      "seller": "1등 아이코다",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4456654479"
+    },
+    {
+      "id": "asus-rog-maximus-z890-apex-cz1344432",
+      "category": "motherboard",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1344432"
+    },
+    {
+      "id": "asrock-taichi-tc1650t-11st9548264512",
+      "category": "psu",
+      "seller": "마이크로닉스",
+      "sourceUrl": "https://www.11st.co.kr/products/9548264512"
+    },
+    {
+      "id": "lianli-sp1000-white-se1000008591",
+      "category": "psu",
+      "seller": "서린씨앤아이(서린익스프레스)",
+      "sourceUrl": "https://seorinexpress.com/goods/goods_view.php?goodsNo=1000008591"
+    },
+    {
+      "id": "lianli-sx1200-white-se1000007999",
+      "category": "psu",
+      "seller": "서린씨앤아이(서린익스프레스)",
+      "sourceUrl": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007999"
     }
   ]
 }

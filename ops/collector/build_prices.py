@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit, urlunsplit
 
-CATEGORIES = ("ram", "cpu", "ssd", "motherboard", "gpu", "cooler", "halfpc", "fullpc")
+CATEGORIES = ("ram", "cpu", "ssd", "motherboard", "gpu", "cooler", "halfpc", "fullpc", "psu", "case", "hdd")
 MERCHANT_HOSTS = {
     "coupang": ("coupang.com", "link.coupang.com"),
     "aliexpress": ("aliexpress.com", "aliexpress.us", "a.aliexpress.com", "s.click.aliexpress.com"),
@@ -31,6 +31,7 @@ MERCHANT_HOSTS = {
     "gmarket": ("gmarket.co.kr",),
     "naver": ("smartstore.naver.com", "brand.naver.com", "shopping.naver.com"),
     "compuzone": ("compuzone.co.kr",),
+    "seorinexpress": ("seorinexpress.com",),
 }
 SLUG_RE = re.compile(r"^[A-Za-z0-9_-]{2,100}$")
 

@@ -2,12 +2,15 @@
   "schemaVersion": 1,
   "encoding": "typed-ieee754-v1",
   "categories": [
+    "case",
     "cooler",
     "cpu",
     "fullpc",
     "gpu",
     "halfpc",
+    "hdd",
     "motherboard",
+    "psu",
     "ram",
     "ssd"
   ],

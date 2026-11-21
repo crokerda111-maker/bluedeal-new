@@ -10,6 +10,12 @@ from ops.hotdeals.inspect_post_links import extract
 
 
 class ReviewedBoards(unittest.TestCase):
+    def test_psu_posts_keep_wattage_color_and_collections_separate(self):
+        data=json.loads((ROOT/'ops/catalog/psu-review-2026-11-21.json').read_text(encoding='utf-8'))
+        ids=[p for g in data['groups'] for p in g['posts']]+[r['post'] for r in data['separateOffers']]
+        self.assertEqual(len(ids),19);self.assertEqual(len(set(ids)),19)
+        self.assertEqual(len(data['groups']),14);self.assertEqual(len(data['separateOffers']),3)
+
     def test_all_forty_posts_have_one_disposition_and_bundles_are_separate(self):
         data=json.loads((ROOT/'ops/catalog/motherboard-review-2026-11-21.json').read_text(encoding='utf-8'))
         ids=[p for g in data['groups'] for p in g['posts']]+[r['post'] for r in data['separateOffers']]

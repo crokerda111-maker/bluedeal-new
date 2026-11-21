@@ -27,7 +27,7 @@ class MaintenanceTests(unittest.TestCase):
 
     def mock_fetch(self,changes=None):
         self.version={'service':'BLUEDEAL','version':'0.0.1','commit':'a'*40}
-        self.snapshot={**self.version,'schemaVersion':1,'snapshotHash':'b'*64,'itemCount':8,'categories':[{'category':category,'itemCount':1} for category in sorted(maintenance.CATEGORIES)]}
+        self.snapshot={**self.version,'schemaVersion':1,'snapshotHash':'b'*64,'itemCount':len(maintenance.CATEGORIES),'categories':[{'category':category,'itemCount':1} for category in sorted(maintenance.CATEGORIES)]}
         def fetch(route):
             response={'status':200,'type':'text/html','body':b'<main id="main-content"></main>'}
             if route.startswith('/api/'):
@@ -51,7 +51,7 @@ class MaintenanceTests(unittest.TestCase):
             self.assertIn('DEPLOYED_PRICE_SNAPSHOT_MISMATCH',result['failures']);read.assert_not_called()
         with patch.object(maintenance,'load_price_snapshot',return_value={'snapshotHash':'b'*64}),patch.object(maintenance,'read_snapshot_json',return_value={'items':[{'id':'sample','checkedAt':NOW.isoformat()}]}):
             result=maintenance.production_health(NOW,fetch)
-            self.assertEqual(result['failures'],[]);self.assertEqual(result['price_freshness']['total'],8)
+            self.assertEqual(result['failures'],[]);self.assertEqual(result['price_freshness']['total'],len(maintenance.CATEGORIES))
 
     def test_api_release_mismatch_and_malformed_category_are_failures(self):
         fetch=self.mock_fetch();self.snapshot['commit']='c'*40

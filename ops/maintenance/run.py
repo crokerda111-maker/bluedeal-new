@@ -95,7 +95,7 @@ def production_health(now, fetch=fetch_public, root=ROOT):
     fresh = None
     if snapshot:
         categories = snapshot.get('categories')
-        if not (snapshot.get('schemaVersion') == 1 and re.fullmatch(r'[a-f0-9]{64}', str(snapshot.get('snapshotHash', ''))) and isinstance(categories, list) and len(categories) == 8 and all(isinstance(row, dict) and isinstance(row.get('category'), str) and type(row.get('itemCount')) is int and row['itemCount'] >= 0 for row in categories) and {row['category'] for row in categories} == CATEGORIES and snapshot.get('itemCount') == sum(row['itemCount'] for row in categories)):
+        if not (snapshot.get('schemaVersion') == 1 and re.fullmatch(r'[a-f0-9]{64}', str(snapshot.get('snapshotHash', ''))) and isinstance(categories, list) and len(categories) == len(CATEGORIES) and all(isinstance(row, dict) and isinstance(row.get('category'), str) and type(row.get('itemCount')) is int and row['itemCount'] >= 0 for row in categories) and {row['category'] for row in categories} == CATEGORIES and snapshot.get('itemCount') == sum(row['itemCount'] for row in categories)):
             failures.append('SNAPSHOT_CONTRACT')
         elif snapshot.get('version') != version.get('version') or snapshot.get('commit') != version.get('commit'):
             failures.append('RELEASE_MISMATCH')

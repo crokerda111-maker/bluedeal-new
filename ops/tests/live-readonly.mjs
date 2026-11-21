@@ -1,6 +1,7 @@
 // Public deployment checks only: no credentials, writes, or outbound clicks.
 import assert from 'node:assert/strict';
 import { writeFile } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { assertBrowserHeaders } from './browser-headers.mjs';
 import { assertPublicMetadata, assertExcludedMetadata } from './page-metadata.mjs';
 
@@ -59,7 +60,8 @@ await check('price snapshot release, privacy and cache policy', async () => {
   assert.match(data.snapshotHash, /^[a-f0-9]{64}$/);
   if (expectedCommit) assert.equal(data.commit, expectedCommit);
   assert.deepEqual(Object.keys(data).sort(), ['categories', 'commit', 'generatedAt', 'itemCount', 'schedule', 'schemaVersion', 'service', 'snapshotHash', 'updatedAt', 'version']);
-  assert.equal(data.categories.length, 8);
+  const contract = JSON.parse(readFileSync(new URL('../../src/content/priceSnapshot.schema.json',import.meta.url),'utf8'));
+  assert.equal(data.categories.length, contract.categories.length);
   assert.equal(data.itemCount, data.categories.reduce((total, item) => total + item.itemCount, 0));
   assert.doesNotMatch(text, /https?:|originalUrl|seller|token|password|secret/i);
   assert.match(response.headers.get('cache-control'), /no-store/);

@@ -1,0 +1,139 @@
+{
+  "checkedDate": "2026-11-21",
+  "scope": "기존 파워 핫딜 후보 19개 글의 판매주소와 조건 종류 확인. 제목 후보이며 인증·성능·보증 검증 완료를 뜻하지 않음.",
+  "groups": [
+    {
+      "id": "reviewed-asrock-sl-1200g",
+      "name": "ASRock Steel Legend SL-1200G",
+      "posts": [
+        "1999969",
+        "1998860"
+      ],
+      "brand": "ASRock"
+    },
+    {
+      "id": "reviewed-asrock-sl-850gw",
+      "name": "ASRock Steel Legend SL-850GW White",
+      "posts": [
+        "1995183"
+      ],
+      "brand": "ASRock"
+    },
+    {
+      "id": "reviewed-aone-signature-850-black",
+      "name": "AONE SIGNATURE 850W GOLD ATX3.1 Black",
+      "posts": [
+        "1993261"
+      ],
+      "brand": "AONE"
+    },
+    {
+      "id": "reviewed-darkflash-upmost-1250-white",
+      "name": "darkFlash UPMOST 1250W ATX3.0 White",
+      "posts": [
+        "1989111"
+      ],
+      "brand": "darkFlash"
+    },
+    {
+      "id": "reviewed-msi-mpg-ai1300ts",
+      "name": "MSI MPG Ai1300TS",
+      "posts": [
+        "1982201",
+        "1969904"
+      ],
+      "brand": "MSI"
+    },
+    {
+      "id": "reviewed-asrock-sl-850g",
+      "name": "ASRock Steel Legend SL-850G",
+      "posts": [
+        "1980542"
+      ],
+      "brand": "ASRock"
+    },
+    {
+      "id": "reviewed-asrock-taichi-tc-1650t",
+      "name": "ASRock TAICHI TC-1650T",
+      "posts": [
+        "1979406"
+      ],
+      "brand": "ASRock"
+    },
+    {
+      "id": "reviewed-lianli-sx1200-white",
+      "name": "LIAN LI SX1200 White",
+      "posts": [
+        "1978514"
+      ],
+      "brand": "LIAN LI"
+    },
+    {
+      "id": "reviewed-antec-neoeco-850-platinum",
+      "name": "Antec NeoECO 850W PLATINUM",
+      "posts": [
+        "1978066"
+      ],
+      "note": "외 할인행사 문구. 판매 옵션의 정확한 품번·리비전 추가 확인 필요",
+      "brand": "Antec"
+    },
+    {
+      "id": "reviewed-darkflash-perfectmost-750-white",
+      "name": "darkFlash PERFECTMOST 750W ATX3.1 White",
+      "posts": [
+        "1973595"
+      ],
+      "brand": "darkFlash"
+    },
+    {
+      "id": "reviewed-lianli-sp1000-white",
+      "name": "LIAN LI SP1000 White",
+      "posts": [
+        "1971114"
+      ],
+      "brand": "LIAN LI"
+    },
+    {
+      "id": "reviewed-corsair-rm850x-atx31",
+      "name": "CORSAIR RM850x ATX3.1",
+      "posts": [
+        "1966867"
+      ],
+      "brand": "CORSAIR"
+    },
+    {
+      "id": "reviewed-micronics-classic-ii-750-gold-black",
+      "name": "Micronics Classic II 750W GOLD ATX3.1 Black",
+      "posts": [
+        "1964149"
+      ],
+      "brand": "Micronics"
+    },
+    {
+      "id": "reviewed-nzxt-c650-black-bulk",
+      "name": "NZXT C650 GOLD Black Bulk",
+      "posts": [
+        "1953839"
+      ],
+      "note": "정확한 세대·품번·벌크 구성 및 보증 추가 확인 필요",
+      "brand": "NZXT"
+    }
+  ],
+  "separateOffers": [
+    {
+      "post": "1975084",
+      "kind": "color-collection",
+      "note": "LIAN LI SX1200 블랙·화이트. 옵션별 품번과 가격을 확인하기 전 단품 병합 금지"
+    },
+    {
+      "post": "1974286",
+      "kind": "wattage-collection",
+      "note": "Antec HCG PRO 850W·1000W. 출력별 모델 분리 필요"
+    },
+    {
+      "post": "1954565",
+      "kind": "category-sale",
+      "note": "Antec 1000W GOLD 블랙·화이트 모음. 정확한 제품군과 품번 미확인"
+    }
+  ]
+}

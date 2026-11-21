@@ -22,6 +22,11 @@ def merchant_identity(url):
     parsed = urlsplit(url)
     if parsed.scheme != 'https' or parsed.username or parsed.password or parsed.port or parsed.fragment:
         raise ValueError('INVALID_MERCHANT_URL')
+    if parsed.hostname in ('seorinexpress.com', 'www.seorinexpress.com') and parsed.path == '/goods/goods_view.php':
+        query = parse_qs(parsed.query)
+        codes = query.get('goodsNo', [])
+        if len(query) == 1 and len(codes) == 1 and codes[0].isascii() and codes[0].isdigit():
+            return 'seorinexpress', codes[0]
     if parsed.hostname == 'www.compuzone.co.kr' and parsed.path == '/product/product_detail.htm':
         query = parse_qs(parsed.query)
         codes = query.get('ProductNo', [])

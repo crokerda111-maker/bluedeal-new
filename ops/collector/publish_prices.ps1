@@ -14,7 +14,7 @@ if ($ValidateOnly -and $Publish) { throw "검증만 실행하거나 배포 중 �
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 if (-not $InputPath) { $InputPath = Join-Path $PSScriptRoot "input\products.csv" }
 $OutputPaths = @("src/content/outbound.generated.json", "src/content/prices/meta.json") +
-  (@("ram","cpu","ssd","motherboard","gpu","cooler","halfpc","fullpc") | ForEach-Object { "src/content/prices/$_.json" })
+  (@("ram","cpu","ssd","motherboard","gpu","cooler","halfpc","fullpc","psu","case","hdd") | ForEach-Object { "src/content/prices/$_.json" })
 
 if ($CollectDanawa) {
   if ($Publish -or $FromFeed -or $ValidateOnly) { throw "다나와 후보 목록은 가격 스냅샷으로 배포할 수 없습니다." }

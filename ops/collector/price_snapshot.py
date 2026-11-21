@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 CONTRACT_PATH = "src/content/priceSnapshot.schema.json"
-CATEGORIES = {"cooler", "cpu", "fullpc", "gpu", "halfpc", "motherboard", "ram", "ssd"}
+CATEGORIES = {"cooler", "cpu", "fullpc", "gpu", "halfpc", "motherboard", "ram", "ssd", "psu", "case", "hdd"}
 
 
 def scalar(value: Any) -> list[str]:

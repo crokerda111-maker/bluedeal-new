@@ -22,6 +22,7 @@ PUBLIC_NOTES = {
     'reviewed-asus-tuf-x870-plus-wifi': 'X870-PLUS WIFI 모델입니다. X870E-PLUS WIFI7과 다른 모델입니다.',
 }
 MANUALS = {
+    'reviewed-asus-rog-strix-b860-g-gaming-wifi': ('ASUS 공식 사용자 설명서', 'https://dlcdnets.asus.com/pub/ASUS/mb/LGA1851/ROG_STRIX_B860-G_GAMING_WIFI/E25168_ROG_STRIX_B860-G_GAMING_WIFI_EM_WEB.pdf', [('CPU 소켓', 'Intel LGA1851 · Core Ultra Series 2'), ('칩셋', 'Intel B860'), ('규격', 'microATX 24.4 × 24.4cm'), ('메모리', 'DDR5 슬롯 4개')]),
     'reviewed-asus-tuf-x870e-plus-wifi7': ('ASUS 공식 사용자 설명서', 'https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_X870E-PLUS_WIFI7/E26142_TUF_GAMING_X870E-PLUS_WIFI7_EM_WEB.pdf', [('CPU 소켓', 'AMD AM5'), ('칩셋', 'AMD X870E'), ('규격', 'ATX 30.5 × 24.4cm'), ('메모리', 'DDR5 슬롯 4개'), ('유선 네트워크', '2.5Gb Ethernet')]),
     'reviewed-asus-tuf-b850-plus-wifi': ('ASUS 공식 사용자 설명서', 'https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_B850-PLUS_WIFI/E25809_TUF_GAMING_B850-PLUS_WIFI_UM_V2_WEB.pdf', [('CPU 소켓', 'AMD AM5'), ('메모리', 'DDR5')]),
 }
@@ -61,7 +62,7 @@ def prepare(root=ROOT):
     for group in review['groups']:
         model_offers = [row for row in accepted if row['productId'] == group['id']]
         observations = [row for row in offers if row['productId'] == group['id']]
-        stopped = [row for row in unavailable if row['productId'] == group['id'] and row['state'] in ('sold-out', 'not-selling')]
+        stopped = [row for row in unavailable if row['productId'] == group['id'] and row['state'] in ('sold-out', 'not-selling') and row.get('identityConfirmed', True)]
         if not observations and not stopped:
             continue
         sources = [{'label': row['source'] + ' 판매 표기 확인', 'url': row['url'], 'observedAt': row['checkedAt'], 'kind': 'retailer-listing'} for row in observations]

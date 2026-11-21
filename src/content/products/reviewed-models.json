@@ -240,6 +240,74 @@
     ]
   },
   {
+    "id": "reviewed-asus-rog-strix-b860-g-gaming-wifi",
+    "name": "ASUS ROG STRIX B860-G GAMING WIFI",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "source-reviewed-model",
+    "features": [
+      "Intel LGA1851 · Core Ultra Series 2",
+      "Intel B860"
+    ],
+    "specifications": [
+      {
+        "label": "CPU 소켓",
+        "value": "Intel LGA1851 · Core Ultra Series 2"
+      },
+      {
+        "label": "칩셋",
+        "value": "Intel B860"
+      },
+      {
+        "label": "규격",
+        "value": "microATX 24.4 × 24.4cm"
+      },
+      {
+        "label": "메모리",
+        "value": "DDR5 슬롯 4개"
+      },
+      {
+        "label": "판매 표기 1",
+        "value": "B860-G GAMING WIFI · 코잇 · 단일 보드"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "ASUS 공식 사용자 설명서",
+        "url": "https://dlcdnets.asus.com/pub/ASUS/mb/LGA1851/ROG_STRIX_B860-G_GAMING_WIFI/E25168_ROG_STRIX_B860-G_GAMING_WIFI_EM_WEB.pdf",
+        "observedAt": "2026-11-21",
+        "kind": "manufacturer-manual"
+      },
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4456654479",
+        "observedAt": "2026-11-21T03:27:25.091Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "asus-rog-strix-b860-g-wifi-gm4456654479",
+        "merchant": "G마켓",
+        "seller": "1등 아이코다",
+        "pricePage": "/prices/motherboard#asus-rog-strix-b860-g-wifi-gm4456654479"
+      }
+    ]
+  },
+  {
     "id": "reviewed-asus-tuf-b850m-plus-ii",
     "name": "ASUS TUF GAMING B850M-PLUS II",
     "category": "motherboard",
@@ -722,6 +790,51 @@
         "merchant": "G마켓",
         "seller": "지앤케이솔루션",
         "pricePage": "/prices/motherboard#gigabyte-b850m-force-gm4551356658"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-asus-rog-maximus-z890-apex",
+    "name": "ASUS ROG MAXIMUS Z890 APEX",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "Z890 APEX 인텍앤컴퍼니 · ENCORE 표기 없음 · 단일 보드"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "Z890 APEX 인텍앤컴퍼니 · ENCORE 표기 없음 · 단일 보드"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "컴퓨존 판매 표기 확인",
+        "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1344432",
+        "observedAt": "2026-11-21T03:28:58.334Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "asus-rog-maximus-z890-apex-cz1344432",
+        "merchant": "컴퓨존",
+        "seller": "컴퓨존",
+        "pricePage": "/prices/motherboard#asus-rog-maximus-z890-apex-cz1344432"
       }
     ]
   }

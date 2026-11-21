@@ -18,6 +18,13 @@ export function priceBenefits(item: PriceItem, now: number) {
       const couponState = period(item.couponStartsOn, item.couponEndsOn, now);
       if (couponState !== "observed") state = couponState;
     }
-    return [{ kind, amount, note, state, startsOn: item[`${kind}StartsOn`], endsOn: item[`${kind}EndsOn`] }];
+    const starts = [item[`${kind}StartsOn`]];
+    const ends = [item[`${kind}EndsOn`]];
+    if (kind === "card" && item.cardRequiresCoupon) {
+      starts.push(item.couponStartsOn); ends.push(item.couponEndsOn);
+    }
+    const startsOn = starts.filter((date): date is string => Boolean(date)).sort().at(-1);
+    const endsOn = ends.filter((date): date is string => Boolean(date)).sort().at(0);
+    return [{ kind, amount, note, state, startsOn, endsOn }];
   });
 }

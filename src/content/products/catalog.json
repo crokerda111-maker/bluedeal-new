@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "25021bfcb0834c5afa4283472825bbe7aa5cd6fc1d52152a2c70cf2bcae7f41c",
-  "entries": 420,
+  "catalogHash": "c16818568f3cd2f4455a726b0eed6bd9cd8db1fa11778a88d1f74b746b5af95e",
+  "entries": 425,
   "products": [
     {
       "id": "maker-fractal-case-b32459749f216e6e",
@@ -13039,6 +13039,52 @@
       "referenceCode": "BD-23CBFED516"
     },
     {
+      "id": "reviewed-asus-rog-maximus-z890-apex",
+      "name": "ASUS ROG MAXIMUS Z890 APEX",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "brand": "ASUS",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "Z890 APEX 인텍앤컴퍼니 · ENCORE 표기 없음 · 단일 보드"
+      ],
+      "specifications": [
+        {
+          "label": "판매 표기 1",
+          "value": "Z890 APEX 인텍앤컴퍼니 · ENCORE 표기 없음 · 단일 보드"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+      "notes": [
+        "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "컴퓨존 판매 표기 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1344432",
+          "observedAt": "2026-11-21T03:28:58.334Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "asus-rog-maximus-z890-apex-cz1344432",
+          "merchant": "컴퓨존",
+          "seller": "컴퓨존",
+          "pricePage": "/prices/motherboard#asus-rog-maximus-z890-apex-cz1344432"
+        }
+      ],
+      "referenceCode": "BD-B45064EA35"
+    },
+    {
       "id": "reviewed-asus-rog-strix-b850-e-gaming-wifi",
       "name": "ASUS ROG STRIX B850-E GAMING WIFI",
       "category": "motherboard",
@@ -13078,6 +13124,75 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-E49ABEC579"
+    },
+    {
+      "id": "reviewed-asus-rog-strix-b860-g-gaming-wifi",
+      "name": "ASUS ROG STRIX B860-G GAMING WIFI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "brand": "ASUS",
+      "kind": "source-reviewed-model",
+      "features": [
+        "Intel LGA1851 · Core Ultra Series 2",
+        "Intel B860"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "Intel LGA1851 · Core Ultra Series 2"
+        },
+        {
+          "label": "칩셋",
+          "value": "Intel B860"
+        },
+        {
+          "label": "규격",
+          "value": "microATX 24.4 × 24.4cm"
+        },
+        {
+          "label": "메모리",
+          "value": "DDR5 슬롯 4개"
+        },
+        {
+          "label": "판매 표기 1",
+          "value": "B860-G GAMING WIFI · 코잇 · 단일 보드"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+      "notes": [
+        "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "ASUS 공식 사용자 설명서",
+          "url": "https://dlcdnets.asus.com/pub/ASUS/mb/LGA1851/ROG_STRIX_B860-G_GAMING_WIFI/E25168_ROG_STRIX_B860-G_GAMING_WIFI_EM_WEB.pdf",
+          "observedAt": "2026-11-21",
+          "kind": "manufacturer-manual"
+        },
+        {
+          "label": "G마켓 판매 표기 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4456654479",
+          "observedAt": "2026-11-21T03:27:25.091Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "asus-rog-strix-b860-g-wifi-gm4456654479",
+          "merchant": "G마켓",
+          "seller": "1등 아이코다",
+          "pricePage": "/prices/motherboard#asus-rog-strix-b860-g-wifi-gm4456654479"
+        }
+      ],
+      "referenceCode": "BD-84F50B2ACE"
     },
     {
       "id": "reviewed-asus-rog-strix-x870-i-gaming-wifi",
@@ -13686,6 +13801,53 @@
         }
       ],
       "referenceCode": "BD-8E057B5C65"
+    },
+    {
+      "id": "reviewed-asrock-taichi-tc-1650t",
+      "name": "ASRock TAICHI TC-1650T 80PLUS티타늄 풀모듈러 ATX3.1",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "ASRock",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "TC-1650T 단일 모델 · 수량1"
+      ],
+      "specifications": [
+        {
+          "label": "판매 모델",
+          "value": "TC-1650T 단일 모델 · 수량1"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델명과 상품가·기본 배송비를 확인한 파워입니다. 인증·보호회로·커넥터 구성·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "적립금·구매 후 보상·외부 광고의 쿠폰을 실결제 할인으로 차감하지 않습니다.",
+        "정확한 제조사 품번·리비전·국내 보증과 시스템 전력·전원 커넥터를 구매 전에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "11번가 판매 페이지",
+          "url": "https://www.11st.co.kr/products/9548264512",
+          "observedAt": "2026-11-21T03:34:42.580Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "asrock-taichi-tc1650t-11st9548264512",
+          "merchant": "11번가",
+          "seller": "마이크로닉스",
+          "pricePage": "/prices/psu#asrock-taichi-tc1650t-11st9548264512"
+        }
+      ],
+      "referenceCode": "BD-FEF0400573"
     },
     {
       "id": "maker-seasonic-psu-bf40f678a1b53ee6",
@@ -15867,6 +16029,100 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-9C221B4A3C"
+    },
+    {
+      "id": "reviewed-lianli-sp1000-white",
+      "name": "LIAN LI SP1000 80PLUS 플래티넘 화이트",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "LIAN LI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "SP1000 화이트 · 5주년 행사 판매 상품 · 수량1"
+      ],
+      "specifications": [
+        {
+          "label": "판매 모델",
+          "value": "SP1000 화이트 · 5주년 행사 판매 상품 · 수량1"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델명과 상품가·기본 배송비를 확인한 파워입니다. 인증·보호회로·커넥터 구성·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "적립금·구매 후 보상·외부 광고의 쿠폰을 실결제 할인으로 차감하지 않습니다.",
+        "정확한 제조사 품번·리비전·국내 보증과 시스템 전력·전원 커넥터를 구매 전에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린익스프레스 판매 페이지",
+          "url": "https://seorinexpress.com/goods/goods_view.php?goodsNo=1000008591",
+          "observedAt": "2026-11-21T03:38:50.598Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "lianli-sp1000-white-se1000008591",
+          "merchant": "서린익스프레스",
+          "seller": "서린씨앤아이(서린익스프레스)",
+          "pricePage": "/prices/psu#lianli-sp1000-white-se1000008591"
+        }
+      ],
+      "referenceCode": "BD-70CED02FED"
+    },
+    {
+      "id": "reviewed-lianli-sx1200-white",
+      "name": "LIAN LI SX1200 80PLUS 플래티넘 화이트",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "LIAN LI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "SX1200 화이트 · 단품 · 수량1"
+      ],
+      "specifications": [
+        {
+          "label": "판매 모델",
+          "value": "SX1200 화이트 · 단품 · 수량1"
+        }
+      ],
+      "description": "실제 판매 페이지에서 모델명과 상품가·기본 배송비를 확인한 파워입니다. 인증·보호회로·커넥터 구성·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "적립금·구매 후 보상·외부 광고의 쿠폰을 실결제 할인으로 차감하지 않습니다.",
+        "정확한 제조사 품번·리비전·국내 보증과 시스템 전력·전원 커넥터를 구매 전에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린익스프레스 판매 페이지",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007999",
+          "observedAt": "2026-11-21T03:41:33.278756+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "lianli-sx1200-white-se1000007999",
+          "merchant": "서린익스프레스",
+          "seller": "서린씨앤아이(서린익스프레스)",
+          "pricePage": "/prices/psu#lianli-sx1200-white-se1000007999"
+        }
+      ],
+      "referenceCode": "BD-35B961AEB2"
     },
     {
       "id": "maker-seasonic-psu-94ab401f6ce935ce",
