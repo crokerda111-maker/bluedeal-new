@@ -6,22 +6,26 @@
   },
   "reviewedPosts": {
     "halfpc": 8,
-    "fullpc": 58
+    "fullpc": 101
   },
   "remainingPosts": {
     "halfpc": 0,
-    "fullpc": 43
+    "fullpc": 0
   },
   "merchantObservations": {
     "halfpc": 5,
-    "fullpc": 46
+    "fullpc": 67
   },
-  "freshPriceOffers": 7,
+  "freshPriceOffers": 13,
   "retailerModels": {
     "halfpc": 5,
-    "fullpc": 40
+    "fullpc": 57
   },
   "priceRecords": {
-    "fullpc": 7
+    "fullpc": 13
+  },
+  "restrictedPosts": {
+    "halfpc": 3,
+    "fullpc": 20
   }
 }

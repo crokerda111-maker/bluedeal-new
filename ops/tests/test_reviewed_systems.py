@@ -37,6 +37,9 @@ class ReviewedSystems(unittest.TestCase):
         self.assertEqual((ordinary['price'],ordinary['shippingFee']),(2399000,0))
         self.assertIn('제주20,000원',ordinary['shippingNote'])
         self.assertTrue(all(r['availability']=='unknown' for r in items))
+        eleven={p['id']:(p['price'],p['couponPrice']) for p in items if p['source']=='11번가'}
+        self.assertEqual(eleven,{'reviewed-fullpc-11st-8148462758-offer':(4500000,4320000),'reviewed-fullpc-11st-3165988782-offer':(6394800,6138920),'reviewed-fullpc-11st-9450696630-offer':(6099000,5855040),'reviewed-fullpc-11st-9480175624-offer':(4399000,4223040),'reviewed-fullpc-11st-8813146141-offer':(4579430,4396260),'reviewed-fullpc-11st-9423305936-offer':(3348710,3214770)})
+        self.assertFalse(any(token in p['id'] for p in items for token in ['8564907426','8564950916']))
 
     def test_conditional_unit_total_must_match_its_own_kind_and_source(self):
         checked='2026-11-21T01:00:00Z';url='https://www.lotteon.com/p/product/LO123'
@@ -45,6 +48,11 @@ class ReviewedSystems(unittest.TestCase):
         self.assertEqual(validate_offers([row],models,now),{'fixture'})
         for change in [dict(quantityTotalKind='ordinary'),dict(quantityOneTotal=89),dict(quantityOneVerified=False),dict(cardNote=''),dict(shippingFee=None),dict(sourceKey='lotteon:LO999'),dict(cardRequiresCoupon=True)]:
             with self.assertRaises(ValueError):validate_offers([dict(row,**change)],models,now)
+        coupon={k:v for k,v in row.items() if not k.startswith('card')}
+        coupon.update(couponPrice=90,couponNote='자동쿠폰 조건 미확인',quantityTotalKind='coupon',preCouponDisplayed=100,autoCouponDisplayed=10,couponBaselineMatches=True)
+        self.assertEqual(validate_offers([coupon],models,now),{'fixture'})
+        for change in [dict(preCouponDisplayed=101),dict(autoCouponDisplayed=9),dict(couponBaselineMatches=False)]:
+            with self.assertRaises(ValueError):validate_offers([dict(coupon,**change)],models,now)
 
     def test_ohou_identity_rejects_deceptive_domains_other_routes_or_tracking(self):
         good='https://store.ohou.se/goods/4100098'

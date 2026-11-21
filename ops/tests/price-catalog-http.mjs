@@ -73,7 +73,7 @@ const systemHtml=await get('/prices/fullpc');
 for(const item of systemItems){
   assert.ok(systemHtml.includes(`id="${item.id}"`));
   const response=await fetch(`${base}/go/${item.goCode}`,{redirect:'manual',signal:AbortSignal.timeout(25000)});requests++;
-  assert.equal(response.status,302);assert.ok(['www.lotteon.com','store.ohou.se','item.gmarket.co.kr'].includes(new URL(response.headers.get('location')).hostname));
+  assert.equal(response.status,302);assert.ok(['www.lotteon.com','store.ohou.se','item.gmarket.co.kr','www.11st.co.kr'].includes(new URL(response.headers.get('location')).hostname));
 }
 const caseItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/case.json',import.meta.url),'utf8')).items;
 const caseHtml=await get('/prices/case');

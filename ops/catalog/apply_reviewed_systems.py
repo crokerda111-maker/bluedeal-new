@@ -22,6 +22,9 @@ def validate_offers(offers,models,now):
         kind=r.get('quantityTotalKind');field={'ordinary':'price','coupon':'couponPrice','card':'cardPrice'}.get(kind)
         if not field or not r.get('quantityOneVerified') or r.get('quantityOneTotal')!=r.get(field) or r.get('availability')!='unknown' or parse_checked_at(r['quantityVerifiedAt'],now)<checked:raise ValueError('SYSTEM_UNIT_TOTAL_UNCONFIRMED')
         if kind in ['coupon','card'] and not r.get(kind+'Note'):raise ValueError('SYSTEM_CONDITIONAL_TOTAL_WITHOUT_NOTE')
+        if kind=='coupon':
+            observed_discount=parse_price(r.get('autoCouponDisplayed'))
+            if r.get('couponBaselineMatches') is not True or r.get('preCouponDisplayed')!=r['price'] or observed_discount!=r['price']-r['couponPrice']:raise ValueError('SYSTEM_COUPON_BASELINE_UNCONFIRMED')
         if kind=='card' and r.get('cardRequiresCoupon') and not r.get('couponPrice'):raise ValueError('SYSTEM_COUPON_DEPENDENCY_MISSING')
         if not any(s['url']==r['url'] and s['kind']=='retailer-listing' and parse_checked_at(s['observedAt'],now)==checked for s in m['sources']):raise ValueError('SYSTEM_EVIDENCE_MISMATCH')
     return ids
@@ -48,7 +51,7 @@ def prepare(root=ROOT):
     with file.open('w',encoding='utf-8',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows([r for r in prior if r['id'] not in ids]+[{k:r.get(k,'') for k in fields} for r in offers])
     (root/'src/content/products/reviewed-systems.json').write_text(json.dumps(review['models'],ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    summary={k:review[k] for k in ['reviewedOn','totalCandidatePosts','reviewedPosts','remainingPosts','merchantObservations','freshPriceOffers']};summary.update(retailerModels=dict(Counter(m['category'] for m in models.values())),priceRecords=dict(Counter(r['category'] for r in offers)))
+    summary={k:review[k] for k in ['reviewedOn','totalCandidatePosts','reviewedPosts','remainingPosts','merchantObservations','freshPriceOffers']};summary.update(retailerModels=dict(Counter(m['category'] for m in models.values())),priceRecords=dict(Counter(r['category'] for r in offers)),restrictedPosts=review.get('restrictedPosts',{}))
     (root/'src/content/systemsReviewSummary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     file=root/'ops/collector/catalog.json';catalog=read(file);catalog['products']=[r for r in catalog['products'] if r['id'] not in ids]+[dict(id=r['id'],category=r['category'],seller=r['seller'],sourceUrl=r['url']) for r in offers];file.write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     return summary

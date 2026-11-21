@@ -2117,5 +2117,822 @@
     "reviewSummary": null,
     "reviewSources": [],
     "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-8675734943",
+    "name": "서린컴퓨터 9800X3D_RTX5080_RAM32GB_POP 2 AIR RGB 블랙 조립PC",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "서린컴퓨터",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "서린컴퓨터 9800X3D_RTX5080_RAM32GB_POP 2 AIR RGB 블랙 조립PC"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "현재 판매중인 상품이 아닙니다 표시. 현행금액/수량합계없음. 정확한전체BOM과재판매가능성미확인, 과거행사가승계안함.",
+      "확인한 판매 페이지는 판매 종료 상태입니다. 모델 전체 단종을 뜻하지 않으며 현재 구매가를 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/8675734943",
+        "observedAt": "2026-11-21T09:12:34.656Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-8813907328",
+    "name": "AMD 9800X3D RTX5090 32GB+64GB+2TB",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "아싸컴",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "AMD 9800X3D RTX5090 32GB+64GB+2TB"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "현재 판매중인 상품이 아닙니다. 과거9950X3D2 ASUS20주년구성과현재9800X3D제목이다르므로같은구성으로확정안함. 그래픽메모리32와시스템메모리64는별도, 현재가미등록.",
+      "확인한 판매 페이지는 판매 종료 상태입니다. 모델 전체 단종을 뜻하지 않으며 현재 구매가를 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/8813907328",
+        "observedAt": "2026-11-21T09:12:34.658Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-9566586118",
+    "name": "인텔 i5 14400F RTX 5060 8GB +32GB +1TB 조립PC 게이밍 데스크탑 조립컴퓨터",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "한성컴퓨터",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "인텔 i5 14400F RTX 5060 8GB +32GB +1TB 조립PC 게이밍 데스크탑 조립컴퓨터"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "판매 페이지 품절 안내. 현재 구매 가능한 가격으로 사용하지 않습니다.",
+      "확인한 판매 페이지는 품절 상태입니다. 현재 구매가를 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/9566586118",
+        "observedAt": "2026-11-21T09:15:20.666Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-9566586592",
+    "name": "라이젠7 9800X3D RTX 5070Ti 16GB +32GB +1TB 조립PC 게이밍 데스크탑 조립컴퓨터",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "한성컴퓨터",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "라이젠7 9800X3D RTX 5070Ti 16GB +32GB +1TB 조립PC 게이밍 데스크탑 조립컴퓨터"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "판매 페이지 품절 안내. 현재 구매 가능한 가격으로 사용하지 않습니다.",
+      "확인한 판매 페이지는 품절 상태입니다. 현재 구매가를 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/9566586592",
+        "observedAt": "2026-11-21T09:15:20.822Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-9566589121",
+    "name": "라이젠7 9800X3D RTX 5080 16GB +32GB +1TB 조립PC 게이밍 데스크탑 조립컴퓨터",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "한성컴퓨터",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "라이젠7 9800X3D RTX 5080 16GB +32GB +1TB 조립PC 게이밍 데스크탑 조립컴퓨터"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "판매 페이지 품절 안내. 현재 구매 가능한 가격으로 사용하지 않습니다.",
+      "확인한 판매 페이지는 품절 상태입니다. 현재 구매가를 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/9566589121",
+        "observedAt": "2026-11-21T09:15:39.051Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-9566586450",
+    "name": "라이젠7 7800X3D RTX 5070 12GB +32GB +1TB 조립PC 게이밍 데스크탑 조립컴퓨터",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "한성컴퓨터",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "라이젠7 7800X3D RTX 5070 12GB +32GB +1TB 조립PC 게이밍 데스크탑 조립컴퓨터"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "페이지 로딩과 기본 구성 수량1 합계 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다. 현재상단금액3068650원은필수옵션선택·수량1합계를확인하지못해가격표미등록. 제주/도서산간요금은기본무료와별도."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/9566586450",
+        "observedAt": "2026-11-21T09:15:54.547Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-8148462758",
+    "name": "씨넥스PC 라이젠 9800X3D RTX5070Ti 32G 1TB 게이밍 완본체 CY98X3D57Ti32G1TK_261102",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "씨넥스",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "씨넥스PC 라이젠 9800X3D RTX5070Ti 32G 1TB 게이밍 완본체 CY98X3D57Ti32G1TK_261102"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "화면 수량1·총1개 합계를 관측했습니다. 해당 합계에는 쿠폰 자동적용이 표시되어 일반 판매가·누구나 적용 가능한 금액으로 확정하지 않습니다. 쿠폰명·대상·최소액·한도·발급/사용 기간·중복·예산은 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/8148462758",
+        "observedAt": "2026-11-21T09:16:25.426Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-fullpc-11st-8148462758-offer",
+        "merchant": "11번가",
+        "seller": "씨넥스몰 · (주) 씨넥스존",
+        "pricePage": "/prices/fullpc#reviewed-fullpc-11st-8148462758-offer"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-fullpc-11st-3165988782",
+    "name": "라이젠7 9800X3D RTX5080_16GB RAM_32GB SSD_2TB 조립PC 게이밍 컴퓨터 데스크탑 본체 전문가 조립 9919",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "포유컴퓨터",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "라이젠7 9800X3D RTX5080_16GB RAM_32GB SSD_2TB 조립PC 게이밍 컴퓨터 데스크탑 본체 전문가 조립 9919"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "화면 수량1·총1개 합계를 관측했습니다. 해당 합계에는 쿠폰 자동적용이 표시되어 일반 판매가·누구나 적용 가능한 금액으로 확정하지 않습니다. 쿠폰명·대상·최소액·한도·발급/사용 기간·중복·예산은 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/3165988782",
+        "observedAt": "2026-11-21T09:16:25.916Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-fullpc-11st-3165988782-offer",
+        "merchant": "11번가",
+        "seller": "포유컴퓨터 · 주식회사 포유컴퓨터",
+        "pricePage": "/prices/fullpc#reviewed-fullpc-11st-3165988782-offer"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-fullpc-11st-9450696630",
+    "name": "파이온PC 라이젠7 9800X3D RTX5080 32G 삼성990 2T 조립PC 게이밍 컴퓨터 배그 로아 롤 아이온2 데스크탑",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "파이온PC",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "파이온PC 라이젠7 9800X3D RTX5080 32G 삼성990 2T 조립PC 게이밍 컴퓨터 배그 로아 롤 아이온2 데스크탑"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "화면 수량1·총1개 합계를 관측했습니다. 해당 합계에는 쿠폰 자동적용이 표시되어 일반 판매가·누구나 적용 가능한 금액으로 확정하지 않습니다. 쿠폰명·대상·최소액·한도·발급/사용 기간·중복·예산은 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다. 판매제목의삼성990 2T는990PRO/EVO등정확한SSD제품명을확인한것이아닙니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/9450696630",
+        "observedAt": "2026-11-21T09:18:28.546Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-fullpc-11st-9450696630-offer",
+        "merchant": "11번가",
+        "seller": "파이온PC · (주)아인스시스템선인",
+        "pricePage": "/prices/fullpc#reviewed-fullpc-11st-9450696630-offer"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-fullpc-11st-9480175624",
+    "name": "파이온PC 라이젠7 9800X3D RTX5070Ti_16GB 32G SSD 1T 조립PC 게이밍 컴퓨터 배그 로아 롤 아이온2 데스크탑",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "파이온PC",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "파이온PC 라이젠7 9800X3D RTX5070Ti_16GB 32G SSD 1T 조립PC 게이밍 컴퓨터 배그 로아 롤 아이온2 데스크탑"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "화면 수량1·총1개 합계를 관측했습니다. 해당 합계에는 쿠폰 자동적용이 표시되어 일반 판매가·누구나 적용 가능한 금액으로 확정하지 않습니다. 쿠폰명·대상·최소액·한도·발급/사용 기간·중복·예산은 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/9480175624",
+        "observedAt": "2026-11-21T09:18:49.654Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-fullpc-11st-9480175624-offer",
+        "merchant": "11번가",
+        "seller": "파이온PC · (주)아인스시스템선인",
+        "pricePage": "/prices/fullpc#reviewed-fullpc-11st-9480175624-offer"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-fullpc-11st-8221785744",
+    "name": "씨넥스PC 라이젠 7500X3D RTX5060Ti 32G 1TB 게이밍 완본체 CY75X3D56Ti32G1T_261021",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "씨넥스",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "씨넥스PC 라이젠 7500X3D RTX5060Ti 32G 1TB 게이밍 완본체 CY75X3D56Ti32G1T_261021"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "현재 판매중인 상품이 아닙니다. 과거 구성·가격·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "확인한 판매 페이지는 판매 종료 상태입니다. 모델 전체 단종을 뜻하지 않으며 현재 구매가를 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/8221785744",
+        "observedAt": "2026-11-21T09:19:37.202Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-8564936297",
+    "name": "AMD 9800X3D+RX9070XT 16GB+32GB+1TB",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "아싸컴",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "AMD 9800X3D+RX9070XT 16GB+32GB+1TB"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "현재 판매중인 상품이 아닙니다. 과거 구성·가격·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "확인한 판매 페이지는 판매 종료 상태입니다. 모델 전체 단종을 뜻하지 않으며 현재 구매가를 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/8564936297",
+        "observedAt": "2026-11-21T09:19:47.110Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-7942485399",
+    "name": "라이젠7 9800X3D RTX5090 게이밍 컴퓨터 어드레날린 AX98-FX90G 지포스 그래픽카드 AMD 데스크탑 조립 PC 본체",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "퍼플랩",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "라이젠7 9800X3D RTX5090 게이밍 컴퓨터 어드레날린 AX98-FX90G 지포스 그래픽카드 AMD 데스크탑 조립 PC 본체"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "현재 판매중인 상품이 아닙니다. 과거 구성·가격·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "확인한 판매 페이지는 판매 종료 상태입니다. 모델 전체 단종을 뜻하지 않으며 현재 구매가를 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/7942485399",
+        "observedAt": "2026-11-21T09:19:55.965Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-8813146141",
+    "name": "AMD 9800X3D RTX5070Ti 16GB+32GB+1TB_MANLI",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "아싸컴",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "AMD 9800X3D RTX5070Ti 16GB+32GB+1TB_MANLI"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "화면 수량1·총1개 합계를 관측했습니다. 해당 합계에는 쿠폰 자동적용이 표시되어 일반 판매가·누구나 적용 가능한 금액으로 확정하지 않습니다. 쿠폰명·대상·최소액·한도·발급/사용 기간·중복·예산은 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/8813146141",
+        "observedAt": "2026-11-21T09:20:33.482Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-fullpc-11st-8813146141-offer",
+        "merchant": "11번가",
+        "seller": "아싸컴 · (주)공이일공",
+        "pricePage": "/prices/fullpc#reviewed-fullpc-11st-8813146141-offer"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-fullpc-11st-8564907426",
+    "name": "AMD 7800X3D RX9070 GRE 12GB + RAM 용량 확인 필요 + 1TB",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "아싸컴",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "AMD 7800X3D RX9070 GRE 12GB+32B+1TB"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "화면 수량1·총1개 합계를 관측했습니다. 해당 합계에는 쿠폰 자동적용이 표시되어 일반 판매가·누구나 적용 가능한 금액으로 확정하지 않습니다. 쿠폰명·대상·최소액·한도·발급/사용 기간·중복·예산은 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다. 과거RX9070XT16GB와현재RX9070GRE12GB제목이다르며, 현재메모리표기가32B여서32GB로임의수정하지않습니다. 실제메모리용량확인필요.",
+      "현재 판매 제목의32B 표기를32GB로 수정하지 않았습니다. 실제 메모리 용량이 불분명해 수량1 금액이 표시되어도 현재 가격표에는 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/8564907426",
+        "observedAt": "2026-11-21T09:20:42.512Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-fullpc-11st-9423305936",
+    "name": "AMD 7800X3D RX9070XT 16GB+32GB+1TB 조립PC 게이밍컴퓨터",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "아싸컴",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "AMD 7800X3D RX9070XT 16GB+32GB+1TB 조립PC 게이밍컴퓨터"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "화면 수량1·총1개 합계를 관측했습니다. 해당 합계에는 쿠폰 자동적용이 표시되어 일반 판매가·누구나 적용 가능한 금액으로 확정하지 않습니다. 쿠폰명·대상·최소액·한도·발급/사용 기간·중복·예산은 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다. 과거글의메인보드M/K구분을현재정확한보드모델로승계하지않습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/9423305936",
+        "observedAt": "2026-11-21T09:20:42.861Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-fullpc-11st-9423305936-offer",
+        "merchant": "11번가",
+        "seller": "아싸컴 · (주)공이일공",
+        "pricePage": "/prices/fullpc#reviewed-fullpc-11st-9423305936-offer"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-fullpc-11st-8564950916",
+    "name": "AMD 7800X3D RTX5070 12GB + RAM 용량 확인 필요 + 1TB",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "아싸컴",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "완본체 판매 구성",
+      "전체 부품 모델·개별 구매가 추가 확인"
+    ],
+    "specifications": [
+      {
+        "label": "판매 제목 원문 표기",
+        "value": "AMD 7800X3D RTX5070 12GB+32B+1TB"
+      },
+      {
+        "label": "정확한 전체 부품 목록(BOM)",
+        "value": "추가 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "notes": [
+      "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
+      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+      "화면 수량1·총1개 합계를 관측했습니다. 해당 합계에는 쿠폰 자동적용이 표시되어 일반 판매가·누구나 적용 가능한 금액으로 확정하지 않습니다. 쿠폰명·대상·최소액·한도·발급/사용 기간·중복·예산은 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다. 과거9800X3D/RX9070XT와현재7800X3D/RTX5070제목이다릅니다. 현재RAM32B표기는32GB로고치지않고실제용량확인필요로표시합니다.",
+      "현재 판매 제목의32B 표기를32GB로 수정하지 않았습니다. 실제 메모리 용량이 불분명해 수량1 금액이 표시되어도 현재 가격표에는 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 PC 판매 제목·구성·상태 확인",
+        "url": "https://www.11st.co.kr/products/8564950916",
+        "observedAt": "2026-11-21T09:20:57.676Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
   }
 ]
