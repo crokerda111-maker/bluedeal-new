@@ -25,7 +25,7 @@ test('public fingerprint is stable across input order without changing original 
 
 test('price, option, seller, delivery and real observation time changes cannot pass as the same deployment',()=>{
   const original=snapshot().snapshotHash;
-  for(const [field,value] of [['price',999],['seller','DIFFERENT SELLER'],['shippingFee',987],['capacityGB',7],['moduleCount',3],['checkedAt','2026-11-17T00:00:00+09:00'],['availabilityCheckedAt','2026-11-21T09:00:00+09:00'],['priceNote','different terms']]){
+  for(const [field,value] of [['price',999],['seller','DIFFERENT SELLER'],['shippingFee',987],['capacityGB',7],['moduleCount',3],['checkedAt','2026-11-17T00:00:00+09:00'],['availabilityCheckedAt','2026-11-21T09:00:00+09:00'],['condition','refurbished'],['priceNote','different terms']]){
     const changed=structuredClone(categories);changed.find(c=>c.items.length).items[0][field]=value;
     assert.notEqual(snapshot(meta,changed).snapshotHash,original,field);
   }

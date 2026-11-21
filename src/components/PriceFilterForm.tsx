@@ -29,6 +29,13 @@ export default function PriceFilterForm({ category, items, filters }: { category
           </select>
         </label>
       ) : null}
+      {category === "gpu" ? (
+        <label className="text-xs text-white/75">상품 상태
+          <select className={controlClass} name="condition" defaultValue={filters.condition}>
+            <option value="standard">일반 판매 기록 · 리퍼 제외</option><option value="refurbished">리퍼·벌크</option><option value="all">모두 보기</option>
+          </select>
+        </label>
+      ) : null}
       {category === "ssd" ? (
         <label className="text-xs text-white/75">DRAM 캐시
           <select className={controlClass} name="dram" defaultValue={filters.dram}>

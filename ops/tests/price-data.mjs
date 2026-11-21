@@ -9,6 +9,14 @@ const ram = [
 ];
 const filters = search => readPriceFilters(search);
 
+test('GPU default excludes refurbished offers, with explicit separate and combined views',()=>{
+  const items=[{id:'ordinary',name:'Fixture',price:500},{id:'refurb',name:'Fixture refurb',price:100,condition:'refurbished'}];
+  assert.deepEqual(filterPrices(items,'gpu',filters({})).map(i=>i.id),['ordinary']);
+  assert.deepEqual(filterPrices(items,'gpu',filters({condition:'refurbished'})).map(i=>i.id),['refurb']);
+  assert.deepEqual(filterPrices(items,'gpu',filters({condition:'all'})).map(i=>i.id),['refurb','ordinary']);
+  assert.deepEqual(filterPrices(items,'cpu',filters({condition:'refurbished'})).map(i=>i.id),['refurb','ordinary']);
+});
+
 test('RAM filters use verified total kit capacity and memory type together', () => {
   assert.deepEqual(filterPrices(ram, 'ram', filters({capacity:'32', memory:'DDR5'})).map(i=>i.id), ['a']);
   assert.deepEqual(filterPrices(ram, 'ram', filters({capacity:'48'})).map(i=>i.id), ['b']);
@@ -75,7 +83,7 @@ test('GPU capacity filters combine with model search and never infer VRAM from a
 });
 
 test('malformed filters are safely ignored and searches are bounded', () => {
-  assert.deepEqual(filters({capacity:'-32',memory:'DDR99',dram:'guess',sort:'__proto__'}), {query:'',capacity:'',memory:'',dram:'',sort:'total-asc'});
+  assert.deepEqual(filters({capacity:'-32',memory:'DDR99',dram:'guess',sort:'__proto__',condition:'new-guessed'}), {query:'',capacity:'',memory:'',dram:'',condition:'standard',sort:'total-asc'});
   assert.equal(filters({q:['  FIXTURE  ','unused']}).query,'FIXTURE');
   assert.equal(filters({q:'a'.repeat(500)}).query.length,100);
   assert.equal(filterPrices(ram,'ram',filters({q:'not a product'})).length,0);

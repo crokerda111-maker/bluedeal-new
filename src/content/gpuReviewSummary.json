@@ -1,9 +1,11 @@
 {
   "reviewedOn": "2026-11-21",
   "reviewedPosts": 138,
-  "retailerModels": 46,
+  "retailerModels": 48,
   "verifiedGmarketListings": 56,
   "freshPriceOffers": 26,
   "retainedOutOfStockOffers": 3,
-  "priceRecords": 29
+  "priceRecords": 31,
+  "additionalMerchantObservations": 40,
+  "refurbishedOffers": 2
 }

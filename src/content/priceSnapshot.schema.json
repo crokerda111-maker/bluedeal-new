@@ -36,6 +36,7 @@
     "ssdDram",
     "availability",
     "availabilityCheckedAt",
+    "condition",
     "checkedAt",
     "updatedAt",
     "couponPrice",

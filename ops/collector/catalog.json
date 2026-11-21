@@ -798,6 +798,18 @@
       "category": "gpu",
       "seller": "게이밍컴퓨터",
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4901239851"
+    },
+    {
+      "id": "reviewed-evga-rtx3070-ftw3-ultra-3767-refurb-bulk-redbitmall",
+      "category": "gpu",
+      "seller": "(주)이엠텍아이엔씨",
+      "sourceUrl": "https://www.redbitmall.com/goods/goods_view.php?goodsNo=1000001190"
+    },
+    {
+      "id": "reviewed-evga-rtx3070-xc3-ultra-gaming-3755-refurb-bulk-redbitmall",
+      "category": "gpu",
+      "seller": "(주)이엠텍아이엔씨",
+      "sourceUrl": "https://www.redbitmall.com/goods/goods_view.php?goodsNo=1000001441"
     }
   ]
 }

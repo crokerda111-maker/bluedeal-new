@@ -36,6 +36,7 @@ MERCHANT_HOSTS = {
     "darkflash": ("darkflash.co.kr",),
     "lotteon": ("lotteon.com",),
     "icoda": ("icoda.co.kr",),
+    "redbitmall": ("redbitmall.com",),
 }
 SLUG_RE = re.compile(r"^[A-Za-z0-9_-]{2,100}$")
 
@@ -149,6 +150,11 @@ def availability_fields(raw: dict[str, Any], now: datetime) -> dict[str, str]:
 
 def product_attributes(raw: dict[str, Any], category: str) -> dict[str, Any]:
     attributes: dict[str, Any] = {}
+    condition = str(raw.get("condition") or "").strip()
+    if condition:
+        if condition != "refurbished":
+            raise ValueError("condition은 확인된 refurbished만 지원합니다. 신품 여부를 추정하지 마세요.")
+        attributes["condition"] = condition
     for key in ("capacityGB", "moduleCapacityGB", "moduleCount"):
         value = raw.get(key)
         if value is not None and str(value).strip():
@@ -358,7 +364,10 @@ def _build(input_path: Path, root: Path, now: datetime, dry_run: bool, schedule:
             code = make_code(normalized_url, outbound)
             outbound[code] = {"code": code, "merchant": merchant, "originalUrl": normalized_url}
 
-            offer = hashlib.sha256(json.dumps([normalized_url, raw.get("seller"), raw.get("priceNote"), attributes.get("capacityGB"), attributes.get("memoryType")], ensure_ascii=False).encode()).hexdigest()[:20]
+            identity = [normalized_url, raw.get("seller"), raw.get("priceNote"), attributes.get("capacityGB"), attributes.get("memoryType")]
+            if attributes.get("condition"):
+                identity.append(attributes["condition"])
+            offer = hashlib.sha256(json.dumps(identity, ensure_ascii=False).encode()).hexdigest()[:20]
             points = list(new_history.get(key, [])) if isinstance(new_history.get(key), list) else []
             points = [point for point in points if isinstance(point, dict) and point.get("offer") == offer]
             # 같은 확인 CSV의 재생성에서는 관측 횟수·확인 시각을 늘리지 않습니다.

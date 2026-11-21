@@ -42,6 +42,8 @@ export type PriceItem = {
   ssdDram?: "present" | "absent" | "unknown";
   availability?: "in-stock" | "out-of-stock" | "unknown";
   availabilityCheckedAt?: string;
+  /** 판매처가 명시한 리퍼 상태. 미입력은 신품 확인을 뜻하지 않습니다. */
+  condition?: "refurbished";
   checkedAt?: string;
   updatedAt?: string;
 };

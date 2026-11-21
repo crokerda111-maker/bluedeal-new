@@ -13,6 +13,7 @@ export type PriceFilters = {
   capacity: string;
   memory: string;
   dram: string;
+  condition: "standard" | "refurbished" | "all";
   sort: keyof typeof PRICE_SORTS;
 };
 
@@ -30,6 +31,7 @@ export function readPriceFilters(search: Search): PriceFilters {
     capacity: /^[1-9][0-9]{0,5}$/.test(capacity) ? capacity : "",
     memory: ["DDR4", "DDR5"].includes(first("memory")) ? first("memory") : "",
     dram: ["present", "absent", "unknown"].includes(first("dram")) ? first("dram") : "",
+    condition: ["refurbished", "all"].includes(first("condition")) ? first("condition") as PriceFilters["condition"] : "standard",
     sort: Object.hasOwn(PRICE_SORTS, sort) ? sort as PriceFilters["sort"] : "total-asc",
   };
 }
@@ -37,6 +39,7 @@ export function readPriceFilters(search: Search): PriceFilters {
 export function filterPrices(items: PriceItem[], category: PriceCategoryKey, filters: PriceFilters): PriceItem[] {
   const terms = filters.query.toLocaleLowerCase("ko-KR").split(/\s+/).filter(Boolean);
   return items.filter(item => {
+    if (category === "gpu" && filters.condition !== "all" && (item.condition === "refurbished") !== (filters.condition === "refurbished")) return false;
     if (terms.length) {
       const text = [item.name, item.spec, item.source, item.seller].filter(Boolean).join(" ").toLocaleLowerCase("ko-KR");
       if (!terms.every(term => text.includes(term))) return false;

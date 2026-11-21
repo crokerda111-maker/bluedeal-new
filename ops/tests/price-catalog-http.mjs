@@ -51,6 +51,20 @@ assert.deepEqual(ids(await get('/prices/cooler?catalogPage=-1')), ids(await get(
 await get('/prices/no-such-category', 404);
 
 const prices = JSON.parse(await get('/api/prices/status'));
+const gpuItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/gpu.json',import.meta.url),'utf8')).items;
+const gpuStandard=await get('/prices/gpu');
+const gpuRefurbished=await get('/prices/gpu?condition=refurbished');
+const gpuAll=await get('/prices/gpu?condition=all');
+for(const item of gpuItems){
+  assert.equal(gpuStandard.includes(`id="${item.id}"`),item.condition!=='refurbished');
+  assert.equal(gpuRefurbished.includes(`id="${item.id}"`),item.condition==='refurbished');
+  assert.ok(gpuAll.includes(`id="${item.id}"`));
+  if(item.condition==='refurbished'){
+    assert.ok(gpuRefurbished.includes('리퍼·벌크 · 보증기간 별도 확인'));
+    const response=await fetch(`${base}/go/${item.goCode}`,{redirect:'manual',signal:AbortSignal.timeout(25000)});requests++;
+    assert.equal(response.status,302);assert.ok(response.headers.get('location').startsWith('https://www.redbitmall.com/goods/goods_view.php?goodsNo='));
+  }
+}
 const contract = JSON.parse(await fs.readFile(new URL('../../src/content/priceSnapshot.schema.json', import.meta.url), 'utf8'));
 const priceRecords = (await Promise.all(contract.categories.map(async category => JSON.parse(await fs.readFile(new URL(`../../src/content/prices/${category}.json`, import.meta.url), 'utf8')).items.length))).reduce((a, b) => a + b, 0);
 assert.equal(prices.itemCount, priceRecords);

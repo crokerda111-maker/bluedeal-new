@@ -5,12 +5,28 @@ import unittest
 
 from ops.catalog.apply_reviewed_gpus import validate_offers
 from ops.collector.build_prices import parse_now, availability_fields
+from ops.catalog.store import merchant_identity
 
 ROOT=Path(__file__).resolve().parents[2]
 read=lambda p:json.loads((ROOT/p).read_text(encoding='utf-8'))
 
 
 class ReviewedGpus(unittest.TestCase):
+    def test_refurbished_condition_and_merchant_identity_cannot_be_dropped(self):
+        from ops.collector.build_prices import product_attributes
+        self.assertNotIn('condition',product_attributes({},'gpu'))
+        self.assertEqual(product_attributes({'condition':'refurbished'},'gpu')['condition'],'refurbished')
+        for value in ['new','used-guessed','REFURBISHED']:
+            with self.assertRaises(ValueError):product_attributes({'condition':value},'gpu')
+        good='https://www.redbitmall.com/goods/goods_view.php?goodsNo=1000001190'
+        self.assertEqual(merchant_identity(good),('redbitmall','1000001190'))
+        for bad in [good+'&goodsNo=2',good+'&tracking=1',good.replace('www.redbitmall.com','www.redbitmall.com.evil.invalid'),good+'#qna']:
+            with self.assertRaises(ValueError):merchant_identity(bad)
+        row=dict(id='fixture',productId='model',category='gpu',sourceKey='redbitmall:1000001190',url=good,seller='Fixture',spec='refurbished AS3months',price=100,shippingFee=0,checkedAt='2026-11-20T01:00:00Z',quantityOneVerified=True,quantityOneTotal=100,quantityVerifiedAt='2026-11-21T01:00:00Z',availability='unknown',condition='refurbished')
+        self.assertEqual(validate_offers([row],{'model':{}},{},parse_now(None)),{'fixture'})
+        bad=dict(row);bad.pop('condition')
+        with self.assertRaises(ValueError):validate_offers([bad],{'model':{}},{},parse_now(None))
+
     def test_all_posts_have_review_and_non_gpu_or_event_prices_are_excluded(self):
         review=read('ops/catalog/gpu-review-2026-11-21.json')
         self.assertEqual(len(review['posts']),138)
@@ -20,7 +36,7 @@ class ReviewedGpus(unittest.TestCase):
         for p in review['posts']:
             self.assertFalse(p['originalPromotionVerified'])
             self.assertFalse(p['verifiedListingIds'] and p['alternativeListingIds'])
-            if p['disposition'] not in ['단일 GPU 후보','여러 모델·색상 모음']:
+            if p['disposition'] not in ['단일 GPU 후보','여러 모델·색상 모음','리퍼·벌크 별도 조건']:
                 self.assertEqual(p['modelIds'],[])
                 self.assertEqual(p['verifiedListingIds'],[])
         by_post={p['post']:p for p in review['posts']}
@@ -30,7 +46,7 @@ class ReviewedGpus(unittest.TestCase):
     def test_three_sold_out_prices_keep_their_original_amounts_timestamps_and_links(self):
         review=read('ops/catalog/gpu-review-2026-11-21.json')
         prices={p['id']:p for p in read('src/content/prices/gpu.json')['items']}
-        self.assertEqual(len(prices),29)
+        self.assertEqual(len(prices),31)
         self.assertEqual(sum(p['availability']=='out-of-stock' for p in prices.values()),3)
         for old in review['retainedHistory']:
             item=prices[old['id']]
@@ -44,8 +60,11 @@ class ReviewedGpus(unittest.TestCase):
         listings=[p['id'] for m in models for p in m['listings']]
         self.assertEqual(len(set(listings)),len(listings))
         self.assertEqual(set(listings),{p['id'] for p in prices})
-        self.assertEqual(sum(p['availability']!='out-of-stock' for p in prices),26)
-        self.assertTrue(all(p.get('capacityGB') in [8,12,16,32] for p in prices))
+        self.assertEqual(sum(p['availability']!='out-of-stock' and p.get('condition')!='refurbished' for p in prices),26)
+        self.assertTrue(all(p.get('capacityGB') in [8,12,16,32] for p in prices if p.get('condition')!='refurbished'))
+        refurb=[p for p in prices if p.get('condition')=='refurbished']
+        self.assertEqual(len(refurb),2)
+        self.assertTrue(all('AS3개월' in p['name'] and 'capacityGB' not in p for p in refurb))
         core=next(m for m in models if 'rtx5080-solid-core' in m['id'])
         ordinary=next(m for m in models if 'rtx5080-solid-oc' in m['id'])
         self.assertNotEqual(core['id'],ordinary['id'])

@@ -39,6 +39,11 @@ def merchant_identity(url):
         query = parse_qs(parsed.query, keep_blank_values=True)
         if set(query) <= {'itemId', 'siteNo', 'salestrNo'} and 'itemId' in query and all(len(values) == 1 and values[0].isascii() and values[0].isdigit() for values in query.values()):
             return 'ssg', query['itemId'][0]
+    if parsed.hostname in ('www.redbitmall.com',) and parsed.path == '/goods/goods_view.php':
+        query = parse_qs(parsed.query, keep_blank_values=True)
+        codes = query.get('goodsNo', [])
+        if set(query) == {'goodsNo'} and len(codes) == 1 and codes[0].isascii() and codes[0].isdigit():
+            return 'redbitmall', codes[0]
     if parsed.hostname in ('seorinexpress.com', 'www.seorinexpress.com') and parsed.path == '/goods/goods_view.php':
         query = parse_qs(parsed.query)
         codes = query.get('goodsNo', [])
