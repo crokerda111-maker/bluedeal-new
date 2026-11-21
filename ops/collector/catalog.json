@@ -298,6 +298,24 @@
       "sourceUrl": "https://www.11st.co.kr/products/9436454644"
     },
     {
+      "id": "asrock-taichi-tc1650t-11st9548264512",
+      "category": "psu",
+      "seller": "마이크로닉스",
+      "sourceUrl": "https://www.11st.co.kr/products/9548264512"
+    },
+    {
+      "id": "lianli-sp1000-white-se1000008591",
+      "category": "psu",
+      "seller": "서린씨앤아이(서린익스프레스)",
+      "sourceUrl": "https://seorinexpress.com/goods/goods_view.php?goodsNo=1000008591"
+    },
+    {
+      "id": "lianli-sx1200-white-se1000007999",
+      "category": "psu",
+      "seller": "서린씨앤아이(서린익스프레스)",
+      "sourceUrl": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007999"
+    },
+    {
       "id": "asus-tuf-b850-plus-wifi-stcom-gm4278758978",
       "category": "motherboard",
       "seller": "빌트웍스",
@@ -394,22 +412,34 @@
       "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1344432"
     },
     {
-      "id": "asrock-taichi-tc1650t-11st9548264512",
-      "category": "psu",
-      "seller": "마이크로닉스",
-      "sourceUrl": "https://www.11st.co.kr/products/9548264512"
+      "id": "gigabyte-b760m-aorus-elite-d4-gm4638920540",
+      "category": "motherboard",
+      "seller": "이엠에스트리",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4638920540"
     },
     {
-      "id": "lianli-sp1000-white-se1000008591",
-      "category": "psu",
-      "seller": "서린씨앤아이(서린익스프레스)",
-      "sourceUrl": "https://seorinexpress.com/goods/goods_view.php?goodsNo=1000008591"
+      "id": "gigabyte-b850m-aorus-elite-wifi6e-gm4667029547",
+      "category": "motherboard",
+      "seller": "픽셀스테이션",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4667029547"
     },
     {
-      "id": "lianli-sx1200-white-se1000007999",
-      "category": "psu",
-      "seller": "서린씨앤아이(서린익스프레스)",
-      "sourceUrl": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007999"
+      "id": "asus-tuf-b850-pro-wifi7-w-neo-gm4845768897",
+      "category": "motherboard",
+      "seller": "은성이에스",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4845768897"
+    },
+    {
+      "id": "nzxt-n7-b850-white-gm4526657537",
+      "category": "motherboard",
+      "seller": "대박노트북",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4526657537"
+    },
+    {
+      "id": "nzxt-n7-b850-black-gm4526681296",
+      "category": "motherboard",
+      "seller": "oseyomall",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4526681296"
     }
   ]
 }

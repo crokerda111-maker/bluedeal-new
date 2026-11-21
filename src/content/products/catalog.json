@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "c16818568f3cd2f4455a726b0eed6bd9cd8db1fa11778a88d1f74b746b5af95e",
-  "entries": 425,
+  "catalogHash": "1dc18420278288b429e40bf95dd32445ff22872ccff9d4871beb67b4de9850ec",
+  "entries": 430,
   "products": [
     {
       "id": "maker-fractal-case-b32459749f216e6e",
@@ -13337,6 +13337,52 @@
       "referenceCode": "BD-471718525C"
     },
     {
+      "id": "reviewed-asus-tuf-b850-pro-wifi7-w-neo",
+      "name": "ASUS TUF GAMING B850-PRO WIFI7 W NEO",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "brand": "ASUS",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "B850-PRO WIFI7 W NEO · 인텍앤컴퍼니 · 단품"
+      ],
+      "specifications": [
+        {
+          "label": "판매 표기 1",
+          "value": "B850-PRO WIFI7 W NEO · 인텍앤컴퍼니 · 단품"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+      "notes": [
+        "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 표기 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4845768897",
+          "observedAt": "2026-11-21T05:05:19.209Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "asus-tuf-b850-pro-wifi7-w-neo-gm4845768897",
+          "merchant": "G마켓",
+          "seller": "은성이에스",
+          "pricePage": "/prices/motherboard#asus-tuf-b850-pro-wifi7-w-neo-gm4845768897"
+        }
+      ],
+      "referenceCode": "BD-CC8F0B7B9A"
+    },
+    {
       "id": "reviewed-asus-tuf-b850m-plus-ii",
       "name": "ASUS TUF GAMING B850M-PLUS II",
       "category": "motherboard",
@@ -13568,6 +13614,52 @@
       "referenceCode": "BD-0EE8CBB6C4"
     },
     {
+      "id": "reviewed-gigabyte-b760m-aorus-elite-d4",
+      "name": "GIGABYTE B760M AORUS ELITE D4",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "brand": "GIGABYTE",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "B760M AORUS ELITE D4 · 피씨디렉트 · 판매명에 GEN5 표기 없음 · 단품"
+      ],
+      "specifications": [
+        {
+          "label": "판매 표기 1",
+          "value": "B760M AORUS ELITE D4 · 피씨디렉트 · 판매명에 GEN5 표기 없음 · 단품"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+      "notes": [
+        "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 표기 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4638920540",
+          "observedAt": "2026-11-21T05:03:45.680Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "gigabyte-b760m-aorus-elite-d4-gm4638920540",
+          "merchant": "G마켓",
+          "seller": "이엠에스트리",
+          "pricePage": "/prices/motherboard#gigabyte-b760m-aorus-elite-d4-gm4638920540"
+        }
+      ],
+      "referenceCode": "BD-11F07DDD4F"
+    },
+    {
       "id": "reviewed-gigabyte-b760m-aorus-elite-d4-gen5",
       "name": "GIGABYTE B760M AORUS ELITE D4 GEN5",
       "category": "motherboard",
@@ -13614,6 +13706,52 @@
         }
       ],
       "referenceCode": "BD-0F42BA6E03"
+    },
+    {
+      "id": "reviewed-gigabyte-b850m-aorus-elite-wifi6e",
+      "name": "GIGABYTE B850M AORUS ELITE WIFI6E",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "brand": "GIGABYTE",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "B850M AORUS ELITE WIFI6E · 일반 색상(ICE 표기 없음) · 피씨디렉트 · 리비전 판매처 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 표기 1",
+          "value": "B850M AORUS ELITE WIFI6E · 일반 색상(ICE 표기 없음) · 피씨디렉트 · 리비전 판매처 확인"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+      "notes": [
+        "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 표기 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4667029547",
+          "observedAt": "2026-11-21T05:04:17.962Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "gigabyte-b850m-aorus-elite-wifi6e-gm4667029547",
+          "merchant": "G마켓",
+          "seller": "픽셀스테이션",
+          "pricePage": "/prices/motherboard#gigabyte-b850m-aorus-elite-wifi6e-gm4667029547"
+        }
+      ],
+      "referenceCode": "BD-720D5B5154"
     },
     {
       "id": "reviewed-gigabyte-b850m-aorus-elite-wifi6e-ice",
@@ -13801,6 +13939,98 @@
         }
       ],
       "referenceCode": "BD-8E057B5C65"
+    },
+    {
+      "id": "reviewed-nzxt-n7-b850-black",
+      "name": "NZXT N7 B850 Black",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "brand": "NZXT",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "N7 B850 블랙 · 새상품/국내배송 표기 · 유통사·국내 보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 표기 1",
+          "value": "N7 B850 블랙 · 새상품/국내배송 표기 · 유통사·국내 보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+      "notes": [
+        "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 표기 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4526681296",
+          "observedAt": "2026-11-21T05:06:02.638Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "nzxt-n7-b850-black-gm4526681296",
+          "merchant": "G마켓",
+          "seller": "oseyomall",
+          "pricePage": "/prices/motherboard#nzxt-n7-b850-black-gm4526681296"
+        }
+      ],
+      "referenceCode": "BD-D8818DBB47"
+    },
+    {
+      "id": "reviewed-nzxt-n7-b850-white",
+      "name": "NZXT N7 B850 White",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "brand": "NZXT",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "N7 B850 화이트 · 새상품/국내배송 표기 · 유통사·국내 보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 표기 1",
+          "value": "N7 B850 화이트 · 새상품/국내배송 표기 · 유통사·국내 보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+      "notes": [
+        "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 표기 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4526657537",
+          "observedAt": "2026-11-21T05:05:44.741Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "nzxt-n7-b850-white-gm4526657537",
+          "merchant": "G마켓",
+          "seller": "대박노트북",
+          "pricePage": "/prices/motherboard#nzxt-n7-b850-white-gm4526657537"
+        }
+      ],
+      "referenceCode": "BD-6E7ED69815"
     },
     {
       "id": "reviewed-asrock-taichi-tc-1650t",
