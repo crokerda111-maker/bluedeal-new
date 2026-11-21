@@ -6,7 +6,7 @@ import { PART_DOSSIERS } from '../../src/content/partDossiers.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const base = JSON.parse(await fs.readFile(path.join(root, 'ops/private/catalog/public-catalog.base.local.json'), 'utf8'));
-const reviewed = (await Promise.all(['reviewed-models.json', 'reviewed-psus.json', 'reviewed-cpus.json', 'reviewed-ram.json', 'reviewed-ssds.json', 'reviewed-gpus.json', 'reviewed-cooling.json', 'reviewed-cases.json', 'reviewed-systems.json', 'reviewed-mixed.json'].map(file => fs.readFile(path.join(root, 'src/content/products', file), 'utf8').then(JSON.parse)))).flat();
+const reviewed = (await Promise.all(['reviewed-models.json', 'reviewed-psus.json', 'reviewed-cpus.json', 'reviewed-ram.json', 'reviewed-ssds.json', 'reviewed-gpus.json', 'reviewed-cooling.json', 'reviewed-cases.json', 'reviewed-systems.json', 'reviewed-mixed.json', 'reviewed-hdds.json'].map(file => fs.readFile(path.join(root, 'src/content/products', file), 'utf8').then(JSON.parse)))).flat();
 const claimedListings = new Set(reviewed.flatMap(product => product.listings.map(listing => listing.id)));
 base.products = base.products.filter(product => !product.listings.length || !product.listings.every(listing => claimedListings.has(listing.id)));
 for (const product of reviewed) {

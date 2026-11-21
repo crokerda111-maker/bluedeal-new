@@ -1,0 +1,148 @@
+[
+  {
+    "id": "reviewed-wd-blue-wd40ezzx",
+    "name": "Western Digital WD Blue 4TB WD40EZZX",
+    "category": "hdd",
+    "subtype": "internal-hdd",
+    "brand": "Western Digital",
+    "kind": "source-reviewed-model",
+    "features": [
+      "4TB · 3.5인치 SATA HDD",
+      "CMR · 5,400rpm · 캐시128MB"
+    ],
+    "specifications": [
+      {
+        "label": "제조사 품번",
+        "value": "WD40EZZX"
+      },
+      {
+        "label": "제조사 표기 용량",
+        "value": "4TB"
+      },
+      {
+        "label": "기록 방식",
+        "value": "CMR"
+      },
+      {
+        "label": "인터페이스",
+        "value": "SATA 6Gb/s"
+      },
+      {
+        "label": "폼 팩터",
+        "value": "3.5인치"
+      },
+      {
+        "label": "회전 속도",
+        "value": "5,400rpm"
+      },
+      {
+        "label": "캐시",
+        "value": "128MB"
+      },
+      {
+        "label": "제조사 내부 전송 속도 최대",
+        "value": "180MB/s"
+      },
+      {
+        "label": "제조사 제한적 보증 표기",
+        "value": "2년 · 지역별 조건 및 실제 유통사 보증 별도 확인"
+      }
+    ],
+    "description": "WD 공식 한국어 데이터시트의 해당 품번 열을 대조한 데스크톱 HDD입니다. 제조사 사양과 현재 국내 판매 가격·재고·유통사 보증은 별도로 확인합니다.",
+    "notes": [
+      "공식 데이터시트는 2025년9월 표기 자료이며 사양은 예고 없이 변경될 수 있습니다. 품번이 비슷한 다른 모델의 캐시·RPM·CMR/SMR 방식을 대신 적용하지 않았습니다.",
+      "용량은 제조사 십진 표기입니다(1TB=1조 바이트). 실제 사용 가능 용량은 운영 환경에 따라 줄어들 수 있습니다. 최대 전송 속도는 제조사 내부 시험값이며 실제 환경의 성능을 보장하지 않습니다.",
+      "국내 현재 판매·배송비·할인·재고·유통사 보증을 확인한 가격 기록은 아직 없습니다. 과거 핫딜이나 검색 대표 상품의 금액을 현재 가격으로 사용하지 않았습니다. 독립 후기·실측 성능·품질 점수는 검토 전입니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "unverified",
+    "manufacturerPartNumber": "WD40EZZX",
+    "sources": [
+      {
+        "label": "WD 공식 한국어 데이터시트 · 2쪽 품번별 사양표",
+        "url": "https://documents.westerndigital.com/content/dam/doc-library/ko_kr/assets/public/western-digital/product/internal-drives/wd-blue-hdd/data-sheet-western-digital-wd-blue-pc-hdd.pdf",
+        "observedAt": "2026-11-21T10:02:13.222781+00:00",
+        "kind": "manufacturer-datasheet"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-wd-blue-wd80eaaz",
+    "name": "Western Digital WD Blue 8TB WD80EAAZ",
+    "category": "hdd",
+    "subtype": "internal-hdd",
+    "brand": "Western Digital",
+    "kind": "source-reviewed-model",
+    "features": [
+      "8TB · 3.5인치 SATA HDD",
+      "CMR · 5,640rpm · 캐시256MB"
+    ],
+    "specifications": [
+      {
+        "label": "제조사 품번",
+        "value": "WD80EAAZ"
+      },
+      {
+        "label": "제조사 표기 용량",
+        "value": "8TB"
+      },
+      {
+        "label": "기록 방식",
+        "value": "CMR"
+      },
+      {
+        "label": "인터페이스",
+        "value": "SATA 6Gb/s"
+      },
+      {
+        "label": "폼 팩터",
+        "value": "3.5인치"
+      },
+      {
+        "label": "회전 속도",
+        "value": "5,640rpm"
+      },
+      {
+        "label": "캐시",
+        "value": "256MB"
+      },
+      {
+        "label": "제조사 내부 전송 속도 최대",
+        "value": "215MB/s"
+      },
+      {
+        "label": "제조사 제한적 보증 표기",
+        "value": "2년 · 지역별 조건 및 실제 유통사 보증 별도 확인"
+      }
+    ],
+    "description": "WD 공식 한국어 데이터시트의 해당 품번 열을 대조한 데스크톱 HDD입니다. 제조사 사양과 현재 국내 판매 가격·재고·유통사 보증은 별도로 확인합니다.",
+    "notes": [
+      "공식 데이터시트는 2025년9월 표기 자료이며 사양은 예고 없이 변경될 수 있습니다. 품번이 비슷한 다른 모델의 캐시·RPM·CMR/SMR 방식을 대신 적용하지 않았습니다.",
+      "용량은 제조사 십진 표기입니다(1TB=1조 바이트). 실제 사용 가능 용량은 운영 환경에 따라 줄어들 수 있습니다. 최대 전송 속도는 제조사 내부 시험값이며 실제 환경의 성능을 보장하지 않습니다.",
+      "국내 현재 판매·배송비·할인·재고·유통사 보증을 확인한 가격 기록은 아직 없습니다. 과거 핫딜이나 검색 대표 상품의 금액을 현재 가격으로 사용하지 않았습니다. 독립 후기·실측 성능·품질 점수는 검토 전입니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "unverified",
+    "manufacturerPartNumber": "WD80EAAZ",
+    "sources": [
+      {
+        "label": "WD 공식 한국어 데이터시트 · 2쪽 품번별 사양표",
+        "url": "https://documents.westerndigital.com/content/dam/doc-library/ko_kr/assets/public/western-digital/product/internal-drives/wd-blue-hdd/data-sheet-western-digital-wd-blue-pc-hdd.pdf",
+        "observedAt": "2026-11-21T10:02:13.222781+00:00",
+        "kind": "manufacturer-datasheet"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  }
+]

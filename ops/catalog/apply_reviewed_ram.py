@@ -40,8 +40,12 @@ def prepare(root=ROOT):
     if len(models) != len(review['models']): raise ValueError('RAM_MODEL_ID_CONFLICT')
     offers = json.loads((root / 'ops/private/catalog-review/ram-reviewed-offers.local.json').read_text(encoding='utf-8'))
     ids = validate_offers(offers, models, parse_now(None))
+    mixed_file=root/'src/content/products/reviewed-mixed.json'
+    mixed_models=[m for m in json.loads(mixed_file.read_text(encoding='utf-8')) if m['category']=='ram'] if mixed_file.exists() else []
+    mixed_ids={r['id'] for m in mixed_models for r in m['listings']}
+    mixed_model_ids={m['id'] for m in mixed_models}
     for row in review['posts']:
-        if not set(row['modelIds']) <= models.keys() or not set(row['verifiedListingIds'] + row['alternativeListingIds']) <= ids:
+        if not set(row['modelIds']) <= models.keys() | mixed_model_ids or not set(row['verifiedListingIds'] + row['alternativeListingIds']) <= ids | mixed_ids:
             raise ValueError('RAM_POST_LISTING_MISMATCH')
         for listing in row['verifiedListingIds'] + row['alternativeListingIds']:
             if next(r['productId'] for r in offers if r['id'] == listing) not in row['modelIds']:
@@ -51,8 +55,6 @@ def prepare(root=ROOT):
         reader = csv.DictReader(stream); fields = list(reader.fieldnames); previous = list(reader)
     prior = {row['id']: row for row in previous}
     old_ram = {row['id'] for row in previous if row['category'] == 'ram'}
-    mixed_file=root/'src/content/products/reviewed-mixed.json'
-    mixed_ids={r['id'] for m in json.loads(mixed_file.read_text(encoding='utf-8')) for r in m['listings']} if mixed_file.exists() else set()
     if not old_ram <= ids | mixed_ids: raise ValueError('RAM_LEGACY_LISTING_MISSING')
     for offer in offers:
         if offer['id'] in prior and prior[offer['id']]['url'] != offer['url']:

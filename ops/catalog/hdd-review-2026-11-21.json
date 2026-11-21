@@ -1,0 +1,234 @@
+{
+  "reviewedOn": "2026-11-21",
+  "scope": "SSD 분류에서 분리한 HDD·NAS 후보4건. WD HDD2개 품번은 공식 PDF2쪽 열을 시각 대조. 국내 현재 판매가 전수 완료 아님.",
+  "models": [
+    {
+      "id": "reviewed-wd-blue-wd40ezzx",
+      "name": "Western Digital WD Blue 4TB WD40EZZX",
+      "category": "hdd",
+      "subtype": "internal-hdd",
+      "brand": "Western Digital",
+      "kind": "source-reviewed-model",
+      "features": [
+        "4TB · 3.5인치 SATA HDD",
+        "CMR · 5,400rpm · 캐시128MB"
+      ],
+      "specifications": [
+        {
+          "label": "제조사 품번",
+          "value": "WD40EZZX"
+        },
+        {
+          "label": "제조사 표기 용량",
+          "value": "4TB"
+        },
+        {
+          "label": "기록 방식",
+          "value": "CMR"
+        },
+        {
+          "label": "인터페이스",
+          "value": "SATA 6Gb/s"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "3.5인치"
+        },
+        {
+          "label": "회전 속도",
+          "value": "5,400rpm"
+        },
+        {
+          "label": "캐시",
+          "value": "128MB"
+        },
+        {
+          "label": "제조사 내부 전송 속도 최대",
+          "value": "180MB/s"
+        },
+        {
+          "label": "제조사 제한적 보증 표기",
+          "value": "2년 · 지역별 조건 및 실제 유통사 보증 별도 확인"
+        }
+      ],
+      "description": "WD 공식 한국어 데이터시트의 해당 품번 열을 대조한 데스크톱 HDD입니다. 제조사 사양과 현재 국내 판매 가격·재고·유통사 보증은 별도로 확인합니다.",
+      "notes": [
+        "공식 데이터시트는 2025년9월 표기 자료이며 사양은 예고 없이 변경될 수 있습니다. 품번이 비슷한 다른 모델의 캐시·RPM·CMR/SMR 방식을 대신 적용하지 않았습니다.",
+        "용량은 제조사 십진 표기입니다(1TB=1조 바이트). 실제 사용 가능 용량은 운영 환경에 따라 줄어들 수 있습니다. 최대 전송 속도는 제조사 내부 시험값이며 실제 환경의 성능을 보장하지 않습니다.",
+        "국내 현재 판매·배송비·할인·재고·유통사 보증을 확인한 가격 기록은 아직 없습니다. 과거 핫딜이나 검색 대표 상품의 금액을 현재 가격으로 사용하지 않았습니다. 독립 후기·실측 성능·품질 점수는 검토 전입니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": "WD40EZZX",
+      "sources": [
+        {
+          "label": "WD 공식 한국어 데이터시트 · 2쪽 품번별 사양표",
+          "url": "https://documents.westerndigital.com/content/dam/doc-library/ko_kr/assets/public/western-digital/product/internal-drives/wd-blue-hdd/data-sheet-western-digital-wd-blue-pc-hdd.pdf",
+          "observedAt": "2026-11-21T10:02:13.222781+00:00",
+          "kind": "manufacturer-datasheet"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": []
+    },
+    {
+      "id": "reviewed-wd-blue-wd80eaaz",
+      "name": "Western Digital WD Blue 8TB WD80EAAZ",
+      "category": "hdd",
+      "subtype": "internal-hdd",
+      "brand": "Western Digital",
+      "kind": "source-reviewed-model",
+      "features": [
+        "8TB · 3.5인치 SATA HDD",
+        "CMR · 5,640rpm · 캐시256MB"
+      ],
+      "specifications": [
+        {
+          "label": "제조사 품번",
+          "value": "WD80EAAZ"
+        },
+        {
+          "label": "제조사 표기 용량",
+          "value": "8TB"
+        },
+        {
+          "label": "기록 방식",
+          "value": "CMR"
+        },
+        {
+          "label": "인터페이스",
+          "value": "SATA 6Gb/s"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "3.5인치"
+        },
+        {
+          "label": "회전 속도",
+          "value": "5,640rpm"
+        },
+        {
+          "label": "캐시",
+          "value": "256MB"
+        },
+        {
+          "label": "제조사 내부 전송 속도 최대",
+          "value": "215MB/s"
+        },
+        {
+          "label": "제조사 제한적 보증 표기",
+          "value": "2년 · 지역별 조건 및 실제 유통사 보증 별도 확인"
+        }
+      ],
+      "description": "WD 공식 한국어 데이터시트의 해당 품번 열을 대조한 데스크톱 HDD입니다. 제조사 사양과 현재 국내 판매 가격·재고·유통사 보증은 별도로 확인합니다.",
+      "notes": [
+        "공식 데이터시트는 2025년9월 표기 자료이며 사양은 예고 없이 변경될 수 있습니다. 품번이 비슷한 다른 모델의 캐시·RPM·CMR/SMR 방식을 대신 적용하지 않았습니다.",
+        "용량은 제조사 십진 표기입니다(1TB=1조 바이트). 실제 사용 가능 용량은 운영 환경에 따라 줄어들 수 있습니다. 최대 전송 속도는 제조사 내부 시험값이며 실제 환경의 성능을 보장하지 않습니다.",
+        "국내 현재 판매·배송비·할인·재고·유통사 보증을 확인한 가격 기록은 아직 없습니다. 과거 핫딜이나 검색 대표 상품의 금액을 현재 가격으로 사용하지 않았습니다. 독립 후기·실측 성능·품질 점수는 검토 전입니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": "WD80EAAZ",
+      "sources": [
+        {
+          "label": "WD 공식 한국어 데이터시트 · 2쪽 품번별 사양표",
+          "url": "https://documents.westerndigital.com/content/dam/doc-library/ko_kr/assets/public/western-digital/product/internal-drives/wd-blue-hdd/data-sheet-western-digital-wd-blue-pc-hdd.pdf",
+          "observedAt": "2026-11-21T10:02:13.222781+00:00",
+          "kind": "manufacturer-datasheet"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": []
+    }
+  ],
+  "posts": [
+    {
+      "post": "1996052",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1996052",
+      "disposition": "HDD 공식 사양 대조",
+      "modelIds": [
+        "reviewed-wd-blue-wd40ezzx"
+      ],
+      "outcome": "현재 구매가 미등록 · 공식 사양만 확인",
+      "reason": "원 주소는 홈으로 연결. 검색 UI에서 WD40EZZX를 입력해 HDD 제품군과4TB 단일 표시315000원을 확인했지만4TB 개별 상세·최종 합계를 확인하지 못함. 검색 대표 상세1290655는1TB WD10EARZ이므로4TB가격으로 사용하지 않음.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false,
+      "merchantChecks": [
+        {
+          "source": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1388431",
+          "observedAt": "2026-11-21T10:00:26.224Z",
+          "status": "original-product-redirected-to-home",
+          "identityVerified": false
+        }
+      ]
+    },
+    {
+      "post": "2002185",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/2002185",
+      "disposition": "NAS·HDD 패키지 별도 식별 필요",
+      "modelIds": [],
+      "outcome": "개별 HDD 품번·판매조건 미확인",
+      "reason": "Naver 기존 접근 제한, 재시도하지 않음. NAS본체/4TB HDD 등 혼합행사이며 개별HDD모델 미식별.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false,
+      "merchantChecks": [
+        {
+          "source": "https://quasarzone.com/bbs/qb_saleinfo/views/2002185",
+          "observedAt": null,
+          "status": "previous-access-restriction-not-retried",
+          "identityVerified": false
+        }
+      ]
+    },
+    {
+      "post": "1981108",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1981108",
+      "disposition": "HDD 공식 사양 대조",
+      "modelIds": [
+        "reviewed-wd-blue-wd80eaaz"
+      ],
+      "outcome": "현재 구매가 미등록 · 공식 사양만 확인",
+      "reason": "Naver 기존 접근 제한 재시도하지 않음. WD80EAAZ 공식사양만 별도 확인.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false,
+      "merchantChecks": [
+        {
+          "source": "https://quasarzone.com/bbs/qb_saleinfo/views/1981108",
+          "observedAt": null,
+          "status": "previous-access-restriction-not-retried",
+          "identityVerified": false
+        }
+      ]
+    },
+    {
+      "post": "1969676",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1969676",
+      "disposition": "NAS·HDD 패키지 별도 식별 필요",
+      "modelIds": [],
+      "outcome": "개별 HDD 품번·판매조건 미확인",
+      "reason": "Coupang 기존 접근 제한 재시도하지 않음.6TB4개 패키지의정확한품번·판매조건미확인, 단일6TB가격으로분해하지 않음.",
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "originalPromotionVerified": false,
+      "merchantChecks": [
+        {
+          "source": "https://quasarzone.com/bbs/qb_saleinfo/views/1969676",
+          "observedAt": null,
+          "status": "previous-access-restriction-not-retried",
+          "identityVerified": false
+        }
+      ]
+    }
+  ]
+}

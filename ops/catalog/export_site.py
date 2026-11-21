@@ -94,6 +94,8 @@ def export(root=ROOT):
         if systems_file.exists(): reviewed += json.loads(systems_file.read_text(encoding='utf-8'))
         mixed_file = root / 'src/content/products/reviewed-mixed.json'
         if mixed_file.exists(): reviewed += json.loads(mixed_file.read_text(encoding='utf-8'))
+        hdd_file = root / 'src/content/products/reviewed-hdds.json'
+        if hdd_file.exists(): reviewed += json.loads(hdd_file.read_text(encoding='utf-8'))
         claimed = {listing['id'] for product in reviewed for listing in product['listings']}
         for model in models:
             if all(listing in claimed for listing in model['listing_ids']):

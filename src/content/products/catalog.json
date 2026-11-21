@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "6a5a7a93fb50e94790086e2a7c76d9ce5e8f347224e90e2fa4e1f67e2c0fc6e7",
-  "entries": 618,
+  "catalogHash": "53bc02cde5e3600b15084a6036d70c8fbecbb39b1bde1a7eef07265fe2b3afa1",
+  "entries": 620,
   "products": [
     {
       "id": "reviewed-mixed-bundle-etland-s6295842",
@@ -15449,56 +15449,56 @@
           "value": "아싸컴 PBA_9800X3D+9070XT 기본 구성"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "CPU [AMD] 라이젠7 9800X3D[8코어 5.2G]"
+          "label": "판매처 기본사양 · CPU",
+          "value": "[AMD] 라이젠7 9800X3D[8코어 5.2G]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "쿨러 [ASUS] PRIME LC 360 ARGB 블랙"
+          "label": "판매처 기본사양 · 쿨러",
+          "value": "[ASUS] PRIME LC 360 ARGB 블랙"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "메인보드 [ASUS] X870E-PLUS WIFI7 대원[HDMI/Type-C]"
+          "label": "판매처 기본사양 · 메인보드",
+          "value": "[ASUS] X870E-PLUS WIFI7 대원[HDMI/Type-C]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "메모리[RAM] [팀그룹] 32G D5 6000/CL38[16G×2]RGB 방열판 블랙"
+          "label": "판매처 기본사양 · 메모리[RAM]",
+          "value": "[팀그룹] 32G D5 6000/CL38[16G×2]RGB 방열판 블랙"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "그래픽[VGA] [ASUS] 라데온 RX9070 XT[16GB/OC]"
+          "label": "판매처 기본사양 · 그래픽[VGA]",
+          "value": "[ASUS] 라데온 RX9070 XT[16GB/OC]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "HDD 하드디스크 미포함"
+          "label": "판매처 기본사양 · HDD",
+          "value": "하드디스크 미포함"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "SSD [MSI] 1TB NVMe/PCIe4.0/D램[M480 PRO]"
+          "label": "판매처 기본사양 · SSD",
+          "value": "[MSI] 1TB NVMe/PCIe4.0/D램[M480 PRO]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "DVD/리더기 CD/DVD롬 미포함 추가하기"
+          "label": "판매처 기본사양 · DVD/리더기",
+          "value": "CD/DVD롬 미포함 추가하기"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "랜/사운드 기가랜카드+사운드카드[내장형]"
+          "label": "판매처 기본사양 · 랜/사운드",
+          "value": "기가랜카드+사운드카드[내장형]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "파워 [쿨러마스터] 850W [80+골드]"
+          "label": "판매처 기본사양 · 파워",
+          "value": "[쿨러마스터] 850W [80+골드]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "케이스 [ASUS] 미들타워[A32 PLUS 블랙]"
+          "label": "판매처 기본사양 · 케이스",
+          "value": "[ASUS] 미들타워[A32 PLUS 블랙]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "윈도우[OS] 윈도우 탑재 모델로 구입 바로가기"
+          "label": "판매처 기본사양 · 윈도우[OS]",
+          "value": "윈도우 탑재 모델로 구입 바로가기"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "모니터 모니터 패키지 모델로 구입 바로가기"
+          "label": "판매처 기본사양 · 모니터",
+          "value": "모니터 패키지 모델로 구입 바로가기"
         },
         {
           "label": "부품표 검증 범위",
@@ -17353,60 +17353,60 @@
           "value": "Y70 Touch Infinite 블랙 고사양 데스크테리어 하이엔드 PC (9850X3D/RTX5080/32GB)"
         },
         {
-          "label": "판매처 기본 부품표",
+          "label": "판매처 구성명",
           "value": "Y70 Touch Infinite 블랙 고사양 데스크테리어 하이엔드 PC (9850X3D/RTX5080/32GB)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "조립비+AS 수랭쿨러 조립비"
+          "label": "판매처 기본사양 · 조립비+AS",
+          "value": "수랭쿨러 조립비"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "프로세서 AMD 라이젠7-6세대 9850X3D (그래니트 릿지) (멀티팩 정품)"
+          "label": "판매처 기본사양 · 프로세서",
+          "value": "AMD 라이젠7-6세대 9850X3D (그래니트 릿지) (멀티팩 정품)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "프로세서 쿨러 리안리 Hydroshift II LCD-C 360N (블랙)"
+          "label": "판매처 기본사양 · 프로세서 쿨러",
+          "value": "리안리 Hydroshift II LCD-C 360N (블랙)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "메모리 ESSENCORE KLEVV DDR5-6000 CL28 CRAS V RGB 패키지 서린 (32GB(16Gx2))"
+          "label": "판매처 기본사양 · 메모리",
+          "value": "ESSENCORE KLEVV DDR5-6000 CL28 CRAS V RGB 패키지 서린 (32GB(16Gx2))"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "메인보드 GIGABYTE B850 AORUS ELITE WIFI7 피씨디렉트"
+          "label": "판매처 기본사양 · 메인보드",
+          "value": "GIGABYTE B850 AORUS ELITE WIFI7 피씨디렉트"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "그래픽카드 Colorful iGame 지포스 RTX 5080 VULCAN OC D7 16GB 도우정보"
+          "label": "판매처 기본사양 · 그래픽카드",
+          "value": "Colorful iGame 지포스 RTX 5080 VULCAN OC D7 16GB 도우정보"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "SSD AGI AI838 M.2 NVMe 서린 (1TB)"
+          "label": "판매처 기본사양 · SSD",
+          "value": "AGI AI838 M.2 NVMe 서린 (1TB)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "케이스 HYTE Y70 Touch Infinite 피치 블랙 (미들타워)"
+          "label": "판매처 기본사양 · 케이스",
+          "value": "HYTE Y70 Touch Infinite 피치 블랙 (미들타워)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "파워 리안리 SX1200 80PLUS플래티넘 블랙"
+          "label": "판매처 기본사양 · 파워",
+          "value": "리안리 SX1200 80PLUS플래티넘 블랙"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "구성품 A 리안리 UNI FAN SL-INF FLEX 120 (블랙)"
+          "label": "판매처 기본사양 · 구성품 A",
+          "value": "리안리 UNI FAN SL-INF FLEX 120 (블랙)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "구성품 B 리안리 UNI FAN SL-INF FLEX 120 (3팩, 블랙)"
+          "label": "판매처 기본사양 · 구성품 B",
+          "value": "리안리 UNI FAN SL-INF FLEX 120 (3팩, 블랙)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "구성품 C 리안리 UNI FAN SL-INF FLEX 120 리버스 (3팩, 블랙)"
+          "label": "판매처 기본사양 · 구성품 C",
+          "value": "리안리 UNI FAN SL-INF FLEX 120 리버스 (3팩, 블랙)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "구성품 D ASRock DeskMini USB Hub 에즈윈"
+          "label": "판매처 기본사양 · 구성품 D",
+          "value": "ASRock DeskMini USB Hub 에즈윈"
         },
         {
           "label": "부품표 검증 범위",
@@ -20021,6 +20021,154 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-7DC07770B6"
+    },
+    {
+      "id": "reviewed-wd-blue-wd40ezzx",
+      "name": "Western Digital WD Blue 4TB WD40EZZX",
+      "category": "hdd",
+      "subtype": "internal-hdd",
+      "brand": "Western Digital",
+      "kind": "source-reviewed-model",
+      "features": [
+        "4TB · 3.5인치 SATA HDD",
+        "CMR · 5,400rpm · 캐시128MB"
+      ],
+      "specifications": [
+        {
+          "label": "제조사 품번",
+          "value": "WD40EZZX"
+        },
+        {
+          "label": "제조사 표기 용량",
+          "value": "4TB"
+        },
+        {
+          "label": "기록 방식",
+          "value": "CMR"
+        },
+        {
+          "label": "인터페이스",
+          "value": "SATA 6Gb/s"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "3.5인치"
+        },
+        {
+          "label": "회전 속도",
+          "value": "5,400rpm"
+        },
+        {
+          "label": "캐시",
+          "value": "128MB"
+        },
+        {
+          "label": "제조사 내부 전송 속도 최대",
+          "value": "180MB/s"
+        },
+        {
+          "label": "제조사 제한적 보증 표기",
+          "value": "2년 · 지역별 조건 및 실제 유통사 보증 별도 확인"
+        }
+      ],
+      "description": "WD 공식 한국어 데이터시트의 해당 품번 열을 대조한 데스크톱 HDD입니다. 제조사 사양과 현재 국내 판매 가격·재고·유통사 보증은 별도로 확인합니다.",
+      "notes": [
+        "공식 데이터시트는 2025년9월 표기 자료이며 사양은 예고 없이 변경될 수 있습니다. 품번이 비슷한 다른 모델의 캐시·RPM·CMR/SMR 방식을 대신 적용하지 않았습니다.",
+        "용량은 제조사 십진 표기입니다(1TB=1조 바이트). 실제 사용 가능 용량은 운영 환경에 따라 줄어들 수 있습니다. 최대 전송 속도는 제조사 내부 시험값이며 실제 환경의 성능을 보장하지 않습니다.",
+        "국내 현재 판매·배송비·할인·재고·유통사 보증을 확인한 가격 기록은 아직 없습니다. 과거 핫딜이나 검색 대표 상품의 금액을 현재 가격으로 사용하지 않았습니다. 독립 후기·실측 성능·품질 점수는 검토 전입니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": "WD40EZZX",
+      "sources": [
+        {
+          "label": "WD 공식 한국어 데이터시트 · 2쪽 품번별 사양표",
+          "url": "https://documents.westerndigital.com/content/dam/doc-library/ko_kr/assets/public/western-digital/product/internal-drives/wd-blue-hdd/data-sheet-western-digital-wd-blue-pc-hdd.pdf",
+          "observedAt": "2026-11-21T10:02:13.222781+00:00",
+          "kind": "manufacturer-datasheet"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-35C70CDFCC"
+    },
+    {
+      "id": "reviewed-wd-blue-wd80eaaz",
+      "name": "Western Digital WD Blue 8TB WD80EAAZ",
+      "category": "hdd",
+      "subtype": "internal-hdd",
+      "brand": "Western Digital",
+      "kind": "source-reviewed-model",
+      "features": [
+        "8TB · 3.5인치 SATA HDD",
+        "CMR · 5,640rpm · 캐시256MB"
+      ],
+      "specifications": [
+        {
+          "label": "제조사 품번",
+          "value": "WD80EAAZ"
+        },
+        {
+          "label": "제조사 표기 용량",
+          "value": "8TB"
+        },
+        {
+          "label": "기록 방식",
+          "value": "CMR"
+        },
+        {
+          "label": "인터페이스",
+          "value": "SATA 6Gb/s"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "3.5인치"
+        },
+        {
+          "label": "회전 속도",
+          "value": "5,640rpm"
+        },
+        {
+          "label": "캐시",
+          "value": "256MB"
+        },
+        {
+          "label": "제조사 내부 전송 속도 최대",
+          "value": "215MB/s"
+        },
+        {
+          "label": "제조사 제한적 보증 표기",
+          "value": "2년 · 지역별 조건 및 실제 유통사 보증 별도 확인"
+        }
+      ],
+      "description": "WD 공식 한국어 데이터시트의 해당 품번 열을 대조한 데스크톱 HDD입니다. 제조사 사양과 현재 국내 판매 가격·재고·유통사 보증은 별도로 확인합니다.",
+      "notes": [
+        "공식 데이터시트는 2025년9월 표기 자료이며 사양은 예고 없이 변경될 수 있습니다. 품번이 비슷한 다른 모델의 캐시·RPM·CMR/SMR 방식을 대신 적용하지 않았습니다.",
+        "용량은 제조사 십진 표기입니다(1TB=1조 바이트). 실제 사용 가능 용량은 운영 환경에 따라 줄어들 수 있습니다. 최대 전송 속도는 제조사 내부 시험값이며 실제 환경의 성능을 보장하지 않습니다.",
+        "국내 현재 판매·배송비·할인·재고·유통사 보증을 확인한 가격 기록은 아직 없습니다. 과거 핫딜이나 검색 대표 상품의 금액을 현재 가격으로 사용하지 않았습니다. 독립 후기·실측 성능·품질 점수는 검토 전입니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": "WD80EAAZ",
+      "sources": [
+        {
+          "label": "WD 공식 한국어 데이터시트 · 2쪽 품번별 사양표",
+          "url": "https://documents.westerndigital.com/content/dam/doc-library/ko_kr/assets/public/western-digital/product/internal-drives/wd-blue-hdd/data-sheet-western-digital-wd-blue-pc-hdd.pdf",
+          "observedAt": "2026-11-21T10:02:13.222781+00:00",
+          "kind": "manufacturer-datasheet"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-F73909B980"
     },
     {
       "id": "reviewed-asrock-b860m-livemixer-wifi",

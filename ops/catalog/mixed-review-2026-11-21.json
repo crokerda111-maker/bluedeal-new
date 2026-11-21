@@ -593,60 +593,60 @@
           "value": "Y70 Touch Infinite 블랙 고사양 데스크테리어 하이엔드 PC (9850X3D/RTX5080/32GB)"
         },
         {
-          "label": "판매처 기본 부품표",
+          "label": "판매처 구성명",
           "value": "Y70 Touch Infinite 블랙 고사양 데스크테리어 하이엔드 PC (9850X3D/RTX5080/32GB)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "조립비+AS 수랭쿨러 조립비"
+          "label": "판매처 기본사양 · 조립비+AS",
+          "value": "수랭쿨러 조립비"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "프로세서 AMD 라이젠7-6세대 9850X3D (그래니트 릿지) (멀티팩 정품)"
+          "label": "판매처 기본사양 · 프로세서",
+          "value": "AMD 라이젠7-6세대 9850X3D (그래니트 릿지) (멀티팩 정품)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "프로세서 쿨러 리안리 Hydroshift II LCD-C 360N (블랙)"
+          "label": "판매처 기본사양 · 프로세서 쿨러",
+          "value": "리안리 Hydroshift II LCD-C 360N (블랙)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "메모리 ESSENCORE KLEVV DDR5-6000 CL28 CRAS V RGB 패키지 서린 (32GB(16Gx2))"
+          "label": "판매처 기본사양 · 메모리",
+          "value": "ESSENCORE KLEVV DDR5-6000 CL28 CRAS V RGB 패키지 서린 (32GB(16Gx2))"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "메인보드 GIGABYTE B850 AORUS ELITE WIFI7 피씨디렉트"
+          "label": "판매처 기본사양 · 메인보드",
+          "value": "GIGABYTE B850 AORUS ELITE WIFI7 피씨디렉트"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "그래픽카드 Colorful iGame 지포스 RTX 5080 VULCAN OC D7 16GB 도우정보"
+          "label": "판매처 기본사양 · 그래픽카드",
+          "value": "Colorful iGame 지포스 RTX 5080 VULCAN OC D7 16GB 도우정보"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "SSD AGI AI838 M.2 NVMe 서린 (1TB)"
+          "label": "판매처 기본사양 · SSD",
+          "value": "AGI AI838 M.2 NVMe 서린 (1TB)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "케이스 HYTE Y70 Touch Infinite 피치 블랙 (미들타워)"
+          "label": "판매처 기본사양 · 케이스",
+          "value": "HYTE Y70 Touch Infinite 피치 블랙 (미들타워)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "파워 리안리 SX1200 80PLUS플래티넘 블랙"
+          "label": "판매처 기본사양 · 파워",
+          "value": "리안리 SX1200 80PLUS플래티넘 블랙"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "구성품 A 리안리 UNI FAN SL-INF FLEX 120 (블랙)"
+          "label": "판매처 기본사양 · 구성품 A",
+          "value": "리안리 UNI FAN SL-INF FLEX 120 (블랙)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "구성품 B 리안리 UNI FAN SL-INF FLEX 120 (3팩, 블랙)"
+          "label": "판매처 기본사양 · 구성품 B",
+          "value": "리안리 UNI FAN SL-INF FLEX 120 (3팩, 블랙)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "구성품 C 리안리 UNI FAN SL-INF FLEX 120 리버스 (3팩, 블랙)"
+          "label": "판매처 기본사양 · 구성품 C",
+          "value": "리안리 UNI FAN SL-INF FLEX 120 리버스 (3팩, 블랙)"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "구성품 D ASRock DeskMini USB Hub 에즈윈"
+          "label": "판매처 기본사양 · 구성품 D",
+          "value": "ASRock DeskMini USB Hub 에즈윈"
         },
         {
           "label": "부품표 검증 범위",
@@ -819,56 +819,56 @@
           "value": "아싸컴 PBA_9800X3D+9070XT 기본 구성"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "CPU [AMD] 라이젠7 9800X3D[8코어 5.2G]"
+          "label": "판매처 기본사양 · CPU",
+          "value": "[AMD] 라이젠7 9800X3D[8코어 5.2G]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "쿨러 [ASUS] PRIME LC 360 ARGB 블랙"
+          "label": "판매처 기본사양 · 쿨러",
+          "value": "[ASUS] PRIME LC 360 ARGB 블랙"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "메인보드 [ASUS] X870E-PLUS WIFI7 대원[HDMI/Type-C]"
+          "label": "판매처 기본사양 · 메인보드",
+          "value": "[ASUS] X870E-PLUS WIFI7 대원[HDMI/Type-C]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "메모리[RAM] [팀그룹] 32G D5 6000/CL38[16G×2]RGB 방열판 블랙"
+          "label": "판매처 기본사양 · 메모리[RAM]",
+          "value": "[팀그룹] 32G D5 6000/CL38[16G×2]RGB 방열판 블랙"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "그래픽[VGA] [ASUS] 라데온 RX9070 XT[16GB/OC]"
+          "label": "판매처 기본사양 · 그래픽[VGA]",
+          "value": "[ASUS] 라데온 RX9070 XT[16GB/OC]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "HDD 하드디스크 미포함"
+          "label": "판매처 기본사양 · HDD",
+          "value": "하드디스크 미포함"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "SSD [MSI] 1TB NVMe/PCIe4.0/D램[M480 PRO]"
+          "label": "판매처 기본사양 · SSD",
+          "value": "[MSI] 1TB NVMe/PCIe4.0/D램[M480 PRO]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "DVD/리더기 CD/DVD롬 미포함 추가하기"
+          "label": "판매처 기본사양 · DVD/리더기",
+          "value": "CD/DVD롬 미포함 추가하기"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "랜/사운드 기가랜카드+사운드카드[내장형]"
+          "label": "판매처 기본사양 · 랜/사운드",
+          "value": "기가랜카드+사운드카드[내장형]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "파워 [쿨러마스터] 850W [80+골드]"
+          "label": "판매처 기본사양 · 파워",
+          "value": "[쿨러마스터] 850W [80+골드]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "케이스 [ASUS] 미들타워[A32 PLUS 블랙]"
+          "label": "판매처 기본사양 · 케이스",
+          "value": "[ASUS] 미들타워[A32 PLUS 블랙]"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "윈도우[OS] 윈도우 탑재 모델로 구입 바로가기"
+          "label": "판매처 기본사양 · 윈도우[OS]",
+          "value": "윈도우 탑재 모델로 구입 바로가기"
         },
         {
-          "label": "판매처 기본 부품표",
-          "value": "모니터 모니터 패키지 모델로 구입 바로가기"
+          "label": "판매처 기본사양 · 모니터",
+          "value": "모니터 패키지 모델로 구입 바로가기"
         },
         {
           "label": "부품표 검증 범위",
