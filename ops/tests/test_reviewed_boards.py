@@ -42,5 +42,17 @@ class ReviewedBoards(unittest.TestCase):
         self.assertIn('쿠폰 언급',row['condition_flags'])
         self.assertNotIn('SECRET_BODY',json.dumps(row));self.assertNotIn('PRIVATE_AUTHOR',json.dumps(row))
 
+    def test_official_http_11st_share_text_is_recovered_without_executing_js(self):
+        html='<h1>Fixture</h1><table class="market-info-view-table"><tr><th>구매링크</th><td><a href="javascript:goToLink(\'NOT_EXECUTED\')">http://www.11st.co.kr/products/123/share</a></td></tr></table>'
+        row=extract(html,'https://quasarzone.com/bbs/qb_saleinfo/views/123')
+        self.assertEqual(row['merchant_link_candidates'],['https://www.11st.co.kr/products/123/share'])
+        self.assertFalse(row['current_price_verified'])
+        self.assertFalse(row['body_stored']);self.assertFalse(row['comments_stored'])
+
+    def test_http_recovery_does_not_upgrade_lookalikes_credentials_or_other_routes(self):
+        urls=['http://www.11st.co.kr.evil.invalid/products/123/share','http://user:secret@www.11st.co.kr/products/123/share','http://www.11st.co.kr:8080/products/123/share','http://www.11st.co.kr/orders/123','https://user:secret@www.11st.co.kr/products/123']
+        html='<h1>Fixture</h1><table class="market-info-view-table"><tr><th>구매링크</th><td>'+' '.join(urls)+'</td></tr></table>'
+        self.assertEqual(extract(html,'https://quasarzone.com/bbs/qb_saleinfo/views/123')['merchant_link_candidates'],[])
+
 
 if __name__=='__main__': unittest.main()

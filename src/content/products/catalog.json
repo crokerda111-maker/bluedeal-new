@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "e2bec07069532b97d809494744af130f8cfbef7e0aebd42997f86c1cf9701728",
-  "entries": 553,
+  "catalogHash": "5502fdcacae1126d8e9ee7c246829ccb0da21b2df974007b944d99374fbb000c",
+  "entries": 583,
   "products": [
     {
       "id": "reviewed-1stplayer-wa7-k-rgb-black-retailer",
@@ -13841,6 +13841,53 @@
       "referenceCode": "BD-748894748D"
     },
     {
+      "id": "reviewed-fullpc-gmarket-4532495414",
+      "name": "긱스타 98X58DK 라이젠7 9800X3D RTX5080 32G 1TB WIFI",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "긱스타",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "긱스타 98X58DK 라이젠7 9800X3D RTX5080 32G 1TB WIFI"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "SSD/색상/Windows/파워 필수옵션선택 전. PALIT세부모델·과거체감가422만원·1%기준가 미확정. 포인트/리뷰보상 제외, 수량1 합계/BOM·보증 미확인.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4532495414",
+          "observedAt": "2026-11-21T08:53:55.322Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-E8534C4080"
+    },
+    {
       "id": "reviewed-fullpc-lotteon-lo2785173873",
       "name": "긱스타 게이밍PC 75F46T2 라이젠5 7500F RTX5060Ti",
       "category": "fullpc",
@@ -13891,6 +13938,382 @@
         }
       ],
       "referenceCode": "BD-2992BB6945"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4355054602",
+      "name": "라이젠7 7800X3D RX9070XT 16GB + 32GB + 1TB 어드레날린 AX78-R97XTA 라데온 그래픽카드 AMD 조립 PC",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "퍼플랩",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "라이젠7 7800X3D RX9070XT 16GB + 32GB + 1TB 어드레날린 AX78-R97XTA 라데온 그래픽카드 AMD 조립 PC"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
+          "observedAt": "2026-11-21T09:01:25.080Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-9C1B8F6604"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4366262287",
+      "name": "라이젠7 9800X3D RTX5070TI 16GB+32GB+1TB 조립PC",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "한성컴퓨터",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "라이젠7 9800X3D RTX5070TI 16GB+32GB+1TB 조립PC"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "OS/메모리/쿨러/케이스/파워 필수선택 전. 과거990PRO표기를 현재SSD모델로 확정 안 함. 수량1합계/BOM/카드조건 추가 확인.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4366262287",
+          "observedAt": "2026-11-21T08:55:11.314Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-519808887B"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4366263439",
+      "name": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "한성컴퓨터",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "OS/메모리/CPU쿨러/케이스/파워 필수옵션 미선택. 과거990PRO1TB·체감가420만원을 현재SSD정확모델/가격으로 승계 안 함. 수량1 합계/BOM/카드조건 확인 필요.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4366263439",
+          "observedAt": "2026-11-21T08:54:17.946Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-63A1983E77"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4890427920",
+      "name": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "한성컴퓨터",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB 조립PC"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "OS/케이스/메모리/쿨러/파워 필수선택 전. 비슷한제목의4366263439와 판매번호가 달라 별도구성으로 보존. 수량1합계/기본BOM/카드조건 미확인.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4890427920",
+          "observedAt": "2026-11-21T08:55:11.314Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-7C49A9C642"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4427437930",
+      "name": "라이젠7 9800X3D RTX5080+32GB+1TB 조립PC 게이밍 데스크탑 조립컴퓨터",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "한성컴퓨터",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "라이젠7 9800X3D RTX5080+32GB+1TB 조립PC 게이밍 데스크탑 조립컴퓨터"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4427437930",
+          "observedAt": "2026-11-21T08:57:46.008Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-CC0C8AD0DE"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4427752068",
+      "name": "라이젠7 9800X3D RX9070XT 16GB + 32GB + 1TB 어드레날린 AX98-R97XTPA 라데온 그래픽카드 AMD 조립 PC",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "퍼플랩",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "라이젠7 9800X3D RX9070XT 16GB + 32GB + 1TB 어드레날린 AX98-R97XTPA 라데온 그래픽카드 AMD 조립 PC"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4427752068",
+          "observedAt": "2026-11-21T08:57:46.160Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-95C8DF9B43"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4308596942",
+      "name": "라이젠7 9800X3D x MSI 지포스 RTX 5080 뱅가드 SOC D7 16GB 컴퓨터본체 AMD게이밍컴퓨터 조립PC",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "MSI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "라이젠7 9800X3D x MSI 지포스 RTX 5080 뱅가드 SOC D7 16GB 컴퓨터본체 AMD게이밍컴퓨터 조립PC"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4308596942",
+          "observedAt": "2026-11-21T08:58:19.728Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-BC7F72C600"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4529465563",
+      "name": "서린컴퓨터 7800X3D_RTX 5060 Ti 16GB_RAM 32GB_블랙 조립PC",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "서린컴퓨터",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "서린컴퓨터 7800X3D_RTX 5060 Ti 16GB_RAM 32GB_블랙 조립PC"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인. 과거9800X3D·5080·RAM64GB와현재7800X3D·5060Ti16GB·RAM32GB 표기가달라승계하지않습니다.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4529465563",
+          "observedAt": "2026-11-21T09:01:52.458Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-758E9856AC"
     },
     {
       "id": "reviewed-fullpc-kream-1092936",
@@ -14037,6 +14460,200 @@
       "referenceCode": "BD-BDB1A74129"
     },
     {
+      "id": "reviewed-fullpc-gmarket-4864796475",
+      "name": "씨넥스PC 인텔 14600KF RTX5060 16G 1000GB 게이밍 완본체 CY146KF5616G1000G_261102",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "씨넥스",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "씨넥스PC 인텔 14600KF RTX5060 16G 1000GB 게이밍 완본체 CY146KF5616G1000G_261102"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "기본 구성 수량1·총 금액이 화면 상품가와 일치함을 확인했습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 과거7800X3D·RTX5070·32G·2TB 글과 현재14600KF·RTX5060·16G·1000GB 구성이 달라 현재판매구성으로 별도 기록합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4864796475",
+          "observedAt": "2026-11-21T08:59:05.190Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4864796475-offer",
+          "merchant": "G마켓",
+          "seller": "씨넥스피씨",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4864796475-offer"
+        }
+      ],
+      "referenceCode": "BD-12ADB4CB38"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4454429644",
+      "name": "씨넥스PC 인텔 225F RTX5060 16G 1TB 게이밍 완본체 CY225F5616G1T_261101AION",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "씨넥스",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "씨넥스PC 인텔 225F RTX5060 16G 1TB 게이밍 완본체 CY225F5616G1T_261101AION"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인. 과거7800X3D/9070XT와현재225F/5060/16G가달라동일구성으로합치지않습니다.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4454429644",
+          "observedAt": "2026-11-21T09:02:36.576Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-0C900C83F1"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4454228249",
+      "name": "씨넥스PC 인텔 울트라 250K RTX5070 B860 32G 1TB 게이밍 완본체 CYINTELCH_250K_V2조립 발송",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "씨넥스",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "씨넥스PC 인텔 울트라 250K RTX5070 B860 32G 1TB 게이밍 완본체 CYINTELCH_250K_V2조립 발송"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4454228249",
+          "observedAt": "2026-11-21T09:02:18.773Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-5506BB4662"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4454239904",
+      "name": "씨넥스PC 인텔 울트라 270K RTX5070Ti Z890 32G 1TB 게이밍 완본체 CYINTELCH_270K_V2조립 발송",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "씨넥스",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "씨넥스PC 인텔 울트라 270K RTX5070Ti Z890 32G 1TB 게이밍 완본체 CYINTELCH_270K_V2조립 발송"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4454239904",
+          "observedAt": "2026-11-21T09:03:13.770Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-D65FBFAEED"
+    },
+    {
       "id": "reviewed-fullpc-himart-0070995841",
       "name": "씨넥스PC 인텔270K RTX5090 Z890 64G 2TB",
       "category": "fullpc",
@@ -14139,6 +14756,200 @@
       "referenceCode": "BD-F0C87DE002"
     },
     {
+      "id": "reviewed-fullpc-gmarket-4427748101",
+      "name": "퍼플랩 라이젠5 7500X3D RX9070 16GB +16GB +1TB 어드레날린 AX75-R97",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "퍼플랩",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "퍼플랩 라이젠5 7500X3D RX9070 16GB +16GB +1TB 어드레날린 AX75-R97"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "메모리/SSD/케이스/쿨러/파워 필수선택 전, 기본구성 수량1 합계 미확인. 제목의GPU16GB·시스템메모리16GB를32GB램으로 합치지 않음. 정확한BOM·카드조건 미확인.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4427748101",
+          "observedAt": "2026-11-21T08:53:28.495Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-969CE5F7F9"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4296584278",
+      "name": "퍼플랩 라이젠7 9800X3D RTX5080 16GB+32GB+1TB X870 360수랭 AX98-FX580G",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "퍼플랩",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "퍼플랩 라이젠7 9800X3D RTX5080 16GB+32GB+1TB X870 360수랭 AX98-FX580G"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "SOLD OUT. X870·360수랭은 판매제목 표기이며 정확한 보드/쿨러 모델·호환성과 전체BOM 검증 아님.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4296584278",
+          "observedAt": "2026-11-21T08:53:28.495Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-90E18063B3"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4653892370",
+      "name": "AMD 7500X3D RTX5060Ti 8GB+32GB+1TB 조립PC 게이밍컴퓨터 게임용 컴퓨터 게이밍 본체 배그 팰월드",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 7500X3D RTX5060Ti 8GB+32GB+1TB 조립PC 게이밍컴퓨터 게임용 컴퓨터 게이밍 본체 배그 팰월드"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "기본 구성 수량1·총 금액이 화면 상품가와 일치함을 확인했습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 과거9600X/RTX5060글과현재7500X3D/RTX5060Ti8GB판매제목이다릅니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4653892370",
+          "observedAt": "2026-11-21T09:02:54.226Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4653892370-offer",
+          "merchant": "G마켓",
+          "seller": "전체판매1위_아싸컴",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4653892370-offer"
+        }
+      ],
+      "referenceCode": "BD-DDF2DED029"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4697748052",
+      "name": "AMD 7800X3D RX9070XT 16GB+32GB+1TB 조립PC 게이밍컴퓨터 조립컴퓨터 본체 게임용 PC 배그",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 7800X3D RX9070XT 16GB+32GB+1TB 조립PC 게이밍컴퓨터 조립컴퓨터 본체 게임용 PC 배그"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인. 과거9800X3D글과현재7800X3D제목이다릅니다.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4697748052",
+          "observedAt": "2026-11-21T09:02:36.671Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-9772A09764"
+    },
+    {
       "id": "reviewed-fullpc-himart-0065636328",
       "name": "AMD 9800X3D RTX5070 Ti 16GB+32GB+1TB / B850M",
       "category": "fullpc",
@@ -14187,6 +14998,100 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-53495D5157"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4428358112",
+      "name": "AMD 9800X3D RTX5080 16GB+32GB +1TB 조립PC 게이밍컴퓨터 조립 본체 게임용 배그 스트리밍 방송",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 9800X3D RTX5080 16GB+32GB +1TB 조립PC 게이밍컴퓨터 조립 본체 게임용 배그 스트리밍 방송"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4428358112",
+          "observedAt": "2026-11-21T08:58:19.246Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-F1E865E4FF"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4577268566",
+      "name": "AMD 9800X3D RTX5080 16GB+32GB +1TB 화이트/B850 조립PC 게이밍컴퓨터 본체 롤 팰월드 배그 발로란트",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 9800X3D RTX5080 16GB+32GB +1TB 화이트/B850 조립PC 게이밍컴퓨터 본체 롤 팰월드 배그 발로란트"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4577268566",
+          "observedAt": "2026-11-21T08:58:02.805Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-817BD612CB"
     },
     {
       "id": "reviewed-fullpc-himart-0062944617",
@@ -14239,6 +15144,294 @@
       "referenceCode": "BD-E932FC7F6F"
     },
     {
+      "id": "reviewed-fullpc-gmarket-4653902503",
+      "name": "AMD 9800X3D RTX5080 16GB+32GB+1TB 조립PC 게이밍컴퓨터 게임용 컴퓨터 게이밍 본체 배그 팰월드",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 9800X3D RTX5080 16GB+32GB+1TB 조립PC 게이밍컴퓨터 게임용 컴퓨터 게이밍 본체 배그 팰월드"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "기본 구성 수량1·총 금액이 화면 상품가와 일치함을 확인했습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4653902503",
+          "observedAt": "2026-11-21T09:00:32.612Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4653902503-offer",
+          "merchant": "G마켓",
+          "seller": "전체판매1위_아싸컴",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4653902503-offer"
+        }
+      ],
+      "referenceCode": "BD-6C6E85C735"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4653905821",
+      "name": "AMD 9800X3D RTX5080 16GB+64GB+2TB 조립PC 게이밍컴퓨터 게임용 컴퓨터 게이밍 본체 배그 팰월드",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 9800X3D RTX5080 16GB+64GB+2TB 조립PC 게이밍컴퓨터 게임용 컴퓨터 게이밍 본체 배그 팰월드"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4653905821",
+          "observedAt": "2026-11-21T08:58:02.641Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-828800E169"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4577261087",
+      "name": "AMD 9800X3D RTX5080+32GB+1TB/B850 조립PC 게이밍컴퓨터 본체 롤 팰월드 배그 발로란트",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 9800X3D RTX5080+32GB+1TB/B850 조립PC 게이밍컴퓨터 본체 롤 팰월드 배그 발로란트"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "실제 판매 제목과 표시금액·옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 과거2TB/B650EM표기와현재1TB/B850표기가달라같은저장장치·메인보드구성으로합치지않습니다.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4577261087",
+          "observedAt": "2026-11-21T09:02:18.655Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-2172D89180"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4470884406",
+      "name": "AMD 9800X3D RTX5090 32GB+32GB+1TB 조립PC 게이밍컴퓨터 본체 롤 팰월드 배그 발로란트",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 9800X3D RTX5090 32GB+32GB+1TB 조립PC 게이밍컴퓨터 본체 롤 팰월드 배그 발로란트"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인. 과거글9850X3D와현재9800X3D 제목이다르며GPU32GB와RAM32GB를시스템메모리64GB로합치지않음.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4470884406",
+          "observedAt": "2026-11-21T09:01:06.912Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-B3D91F1974"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4638008638",
+      "name": "AMD 9800X3D RX9070 GRE 12GB +32GB +1TB 화이트 조립PC",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 9800X3D RX9070 GRE 12GB +32GB +1TB 화이트 조립PC"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "과거글 RX9070XT16GB와 현재판매제목 RX9070GRE12GB가 다름. 과거GPU사양/가격 승계 안 함. RAM/보드/파워 필수옵션선택 전 수량1합계·BOM·혜택조건 미확인.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4638008638",
+          "observedAt": "2026-11-21T08:53:55.322Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-95AEB179BA"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-3951478263",
+      "name": "AMD 9800X3D RX9070XT 16GB +32GB +1TB 조립PC",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 9800X3D RX9070XT 16GB +32GB +1TB 조립PC"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "RAM/메인보드/파워 필수선택 전, 수량1 합계 미확인. 삼성카드 최대1만원 표시의 상세조건 미확인. GPU/SSD/PSU 정확모델·OS/보증·정확BOM 추가 확인.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=3951478263",
+          "observedAt": "2026-11-21T08:50:08.766Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-3BC9D2E49C"
+    },
+    {
       "id": "reviewed-fullpc-himart-0049887906",
       "name": "AMD 9800X3D RX9070XT 16GB+32GB+1TB",
       "category": "fullpc",
@@ -14289,6 +15482,200 @@
       "referenceCode": "BD-3190435113"
     },
     {
+      "id": "reviewed-fullpc-gmarket-4805310267",
+      "name": "AMD 9800X3D RX9070XT 16GB+32GB+1TB 조립PC 게이밍컴퓨터 팰월드 배그 러스트",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AMD 9800X3D RX9070XT 16GB+32GB+1TB 조립PC 게이밍컴퓨터 팰월드 배그 러스트"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "로딩후 기본구성 수량1·총금액3765850원·무료배송 확인. OS/ASUS주변기기는 추가구성으로 미선택. 삼성카드표시3755850원은 대상/한도/기간/개인조건 미확인 조건부이며 적립 차감 안 함. 정확한GPU·메인보드·램모듈수·SSD·PSU·쿨러/케이스·보증은 추가 확인. 과거블랙사양을 현재제목에 없는 색상으로 확정하지 않음."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4805310267",
+          "observedAt": "2026-11-21T08:57:06.611Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4805310267-offer",
+          "merchant": "G마켓",
+          "seller": "전체판매1위_아싸컴",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4805310267-offer"
+        }
+      ],
+      "referenceCode": "BD-E9E84083A3"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4729003731",
+      "name": "MSI MAG 코덱스 Z2 B9NVR (A18) 게이밍 컴퓨터 R7-9800X3D RTX5070Ti 1TB 32G 수냉 무선랜 출장AS /빅스마일",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "MSI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "MSI MAG 코덱스 Z2 B9NVR (A18) 게이밍 컴퓨터 R7-9800X3D RTX5070Ti 1TB 32G 수냉 무선랜 출장AS /빅스마일"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4729003731",
+          "observedAt": "2026-11-21T09:01:06.778Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-3C2E6439A0"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4601813739",
+      "name": "MSI MAG 코덱스 Z2 X3D B9NVV (A25-W) R7-9800X3D RTX5080 1TB 32G 850W 무선랜 수냉 출장AS",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "MSI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "MSI MAG 코덱스 Z2 X3D B9NVV (A25-W) R7-9800X3D RTX5080 1TB 32G 850W 무선랜 수냉 출장AS"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "서로 다른2단축주소가 같은판매번호로 연결. SOLD OUT. 과거Vanguard표기를 현재 정확GPU품번으로 승계 안 함. 출장AS/850W는 판매제목 표기, 세부보증·PSU등급·전체BOM 추가 확인.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4601813739",
+          "observedAt": "2026-11-21T08:52:06.175Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-0958D269F8"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4817230783",
+      "name": "MSI MPG 인피니티 Z2 X3D C9NVZ HDD 8TB (A19-H8T) 게이밍 컴퓨터 R9-9950X3D RTX5090 SSD1TB+HDD8TB 램32G",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "MSI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "MSI MPG 인피니티 Z2 X3D C9NVZ HDD 8TB (A19-H8T) 게이밍 컴퓨터 R9-9950X3D RTX5090 SSD1TB+HDD8TB 램32G"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "판매 화면 SOLD OUT. 표시된 카드·배송 안내는 현재 구매 가능 근거가 아니며 전체BOM·정확한 부품 품번·보증 추가 확인.",
+        "확인한 판매처에서 품절을 안내합니다. 현재 구매가를 등록하지 않았으며 모델 전체의 단종을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4817230783",
+          "observedAt": "2026-11-21T08:59:54.510Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-E17DD2D8AF"
+    },
+    {
       "id": "reviewed-fullpc-himart-0061972750",
       "name": "PLUX AMD 게이밍 조립PC 9800X3D RTX5070Ti 32G 1TB",
       "category": "fullpc",
@@ -14337,6 +15724,53 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-8235CF84EC"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4895851667",
+      "name": "SUDOKOO S 고사양 게이밍 컴퓨터 R7 7800X3D + RTX 5060 Ti 본체 조립 PC 데스크탑",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "판매 구성 확인 필요",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "완본체 판매 구성",
+        "전체 부품 모델·개별 구매가 추가 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "SUDOKOO S 고사양 게이밍 컴퓨터 R7 7800X3D + RTX 5060 Ti 본체 조립 PC 데스크탑"
+        },
+        {
+          "label": "정확한 전체 부품 목록(BOM)",
+          "value": "추가 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지에서 현재 PC 판매 제목과 안내 상태를 확인했습니다. 기본 구성의 수량1 금액·배송 안내가 확인된 상품만 가격표에 연결하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
+      "notes": [
+        "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메모리 모듈 수·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·색상·행사 가격을 현재 조건으로 승계하지 않습니다.",
+        "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
+        "실제 판매 제목과 표시금액·필수 옵션·배송 안내만 관측했습니다. 기본 구성 수량1 최종 합계를 확인하지 않아 현재 가격표에 등록하지 않습니다. 정확한 전체 부품 모델·GPU VRAM/램 모듈 수·OS·보증·카드 대상/한도/기간/중복조건 추가 확인. 과거 글의 사양·가격을 현재 조건으로 승계하지 않습니다. 과거 글의9800X3D·5070Ti·화이트와 현재7800X3D·5060Ti 제목이 달라 같은 구성으로 합치지 않습니다.",
+        "필수 옵션과 기본 구성 수량1 최종 합계 확인이 남아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 완본체 판매 제목·기본 구성·상태 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4895851667",
+          "observedAt": "2026-11-21T08:55:55.933Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-1127F97197"
     },
     {
       "id": "reviewed-emtek-rtx5080-miracle-white-16gb",

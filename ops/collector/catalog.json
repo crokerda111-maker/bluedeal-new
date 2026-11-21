@@ -894,6 +894,30 @@
       "category": "fullpc",
       "seller": "(주)서린씨앤아이",
       "sourceUrl": "https://store.ohou.se/goods/4100098"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4805310267-offer",
+      "category": "fullpc",
+      "seller": "전체판매1위_아싸컴",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4805310267"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4864796475-offer",
+      "category": "fullpc",
+      "seller": "씨넥스피씨",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4864796475"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4653902503-offer",
+      "category": "fullpc",
+      "seller": "전체판매1위_아싸컴",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4653902503"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4653892370-offer",
+      "category": "fullpc",
+      "seller": "전체판매1위_아싸컴",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4653892370"
     }
   ]
 }

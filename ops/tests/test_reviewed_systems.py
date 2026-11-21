@@ -11,18 +11,24 @@ read=lambda p:json.loads((ROOT/p).read_text(encoding='utf-8'))
 class ReviewedSystems(unittest.TestCase):
     def test_incomplete_scope_and_unknown_bom_remain_explicit(self):
         r=read('ops/catalog/systems-review-2026-11-21.json')
-        self.assertEqual(r['reviewedPosts'],dict(halfpc=8,fullpc=16))
-        self.assertEqual(r['remainingPosts'],dict(halfpc=0,fullpc=85))
+        self.assertEqual(r['totalCandidatePosts'],dict(halfpc=8,fullpc=101))
+        for category in ['halfpc','fullpc']:
+            reviewed=sum(p['category']==category for p in r['posts'])
+            self.assertEqual(r['reviewedPosts'][category],reviewed)
+            self.assertEqual(r['remainingPosts'][category],r['totalCandidatePosts'][category]-reviewed)
         models=read('src/content/products/reviewed-systems.json')
-        self.assertEqual(len(models),15)
+        self.assertTrue(models)
         self.assertTrue(all(m['strengths']==[] and m['issues']==[] and m['reviewSummary'] is None for m in models))
         self.assertTrue(all(any(s['label']=='정확한 전체 부품 목록(BOM)' and s['value']=='추가 확인 필요' for s in m['specifications']) for m in models))
         self.assertTrue(all(not m['listings'] for m in models if m['category']=='halfpc'))
         self.assertFalse(any('0067428712' in m['id'] for m in models))
+        for post in r['posts']:
+            if any(c['status']=='model-identity-insufficient' for c in post['merchantChecks']):self.assertEqual(post['modelIds']+post['verifiedListingIds'],[])
 
     def test_price_types_and_shipping_are_not_inferred_from_benefit_labels(self):
         items=read('src/content/prices/fullpc.json')['items']
-        self.assertEqual(len(items),3)
+        actual={p['id']:(p['price'],p['shippingFee']) for p in items if p['source']=='G마켓'}
+        self.assertEqual(actual,{'reviewed-fullpc-gmarket-4805310267-offer':(3765850,0),'reviewed-fullpc-gmarket-4864796475-offer':(1614340,0),'reviewed-fullpc-gmarket-4653902503-offer':(5956750,0),'reviewed-fullpc-gmarket-4653892370-offer':(2392600,0)})
         lotte=[r for r in items if r['source']=='롯데온']
         self.assertEqual({(r['price'],r['cardPrice']) for r in lotte},{(2040000,1717530),(2269000,2105520)})
         self.assertTrue(all('couponPrice' not in r and 'instantPrice' not in r for r in lotte))

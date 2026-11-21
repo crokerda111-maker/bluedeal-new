@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 import re
 import sys
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit,urlunsplit
 
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from bs4 import BeautifulSoup
@@ -20,6 +20,7 @@ from crawler import Transport, CrawlStop
 from parsers import KST, detail_posted_at
 
 ROOT=Path(__file__).resolve().parents[2]
+PARSER_VERSION=3
 FLAGS={'쿠폰 언급':r'쿠폰|할인코드','카드 언급':r'카드|롯카|국카|VISA','포인트·적립':r'적립|포인트|캐시백','리뷰 보상':r'리뷰.{0,12}이벤트|포토.{0,12}이벤트','경유 조건':r'페이북|경유|바로가기','코인':r'코인','체감가':r'체감'}
 
 def extract(html,post_url):
@@ -34,10 +35,17 @@ def extract(html,post_url):
         if len(cells)>=2: fields[cells[0].get_text(' ',strip=True)]=cells[1].get_text(' ',strip=True)
     links=[]
     candidates=[anchor.get('href','').strip() for anchor in table.select('a[href]')]
-    candidates+=re.findall(r'https://[^\s<>"\x27]+',table.get_text(' ',strip=True))
+    candidates+=re.findall(r'https?://[^\s<>"\x27]+',table.get_text(' ',strip=True))
     for href in candidates:
-        try: parsed=urlsplit(href)
+        try:
+            parsed=urlsplit(href)
+            if parsed.username or parsed.password or parsed.port:continue
         except ValueError: continue
+        # The observed official share URL is sometimes displayed as HTTP.
+        # Upgrade only this known merchant route; never execute the JS wrapper.
+        if parsed.scheme=='http' and parsed.hostname=='www.11st.co.kr' and re.fullmatch(r'/products/\d+(?:/share)?',parsed.path):
+            href=urlunsplit(('https',parsed.netloc,parsed.path,parsed.query,parsed.fragment))
+            parsed=urlsplit(href)
         if parsed.scheme=='https' and parsed.hostname and not parsed.username and not parsed.password and parsed.hostname!='quasarzone.com':
             links.append(href)
     body=soup.select_one('#org_contents')
@@ -48,19 +56,20 @@ def extract(html,post_url):
             'community_shipping_text':fields.get('배송/직배'),'merchant_link_candidates':list(dict.fromkeys(links)),
             'condition_flags':[name for name,pattern in FLAGS.items() if re.search(pattern,text,re.I)],
             'published_at':published.isoformat() if published else None,'body_stored':False,'comments_stored':False,
-            'current_price_verified':False,'parser_version':2}
+            'current_price_verified':False,'parser_version':PARSER_VERSION}
 
-def run(category):
+def run(category,missing_links_only=False):
     audit=json.loads((ROOT/'ops/private/catalog-review/event-audit/review.generated.local.json').read_text(encoding='utf-8'))
     rows=[row for row in audit['posts'] if row['category']==category and row['disposition']=='상품 후보']
     if not rows: raise ValueError('검토 대상이 없습니다.')
     out=ROOT/'ops/private/catalog-review'/f'{category}-post-links.local.json'
     result=json.loads(out.read_text(encoding='utf-8')) if out.exists() else {'category':category,'state':'new','posts':[]}
     if result['state']=='access-stopped': raise ValueError('이 출처는 중단 상태입니다. 자동 재시도하지 않습니다.')
-    known={row['post_id'] for row in result['posts'] if row.get('parser_version')==2}
-    transport=Transport('https://quasarzone.com'); transport.load_robots()
+    known={row['post_id'] for row in result['posts'] if row.get('parser_version',0)>=PARSER_VERSION or missing_links_only and row.get('merchant_link_candidates')}
+    transport=Transport('https://quasarzone.com')
     result['state']='running'
     try:
+        transport.load_robots()
         for row in rows:
             post_id=row['id'].split(':')[1]
             if post_id in known: continue
@@ -82,4 +91,5 @@ def run(category):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--category',required=True,choices=['motherboard','psu','cpu','ram','gpu','ssd','cooler','case','halfpc','fullpc','bundle'])
-    run(parser.parse_args().category)
+    parser.add_argument('--missing-links-only',action='store_true',help='Revisit only old rows missing merchant links; preserve existing observations.')
+    args=parser.parse_args();run(args.category,args.missing_links_only)
