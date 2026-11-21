@@ -22,6 +22,10 @@ def merchant_identity(url):
     parsed = urlsplit(url)
     if parsed.scheme != 'https' or parsed.username or parsed.password or parsed.port or parsed.fragment:
         raise ValueError('INVALID_MERCHANT_URL')
+    if parsed.hostname == 'www.lotteon.com' and not parsed.query:
+        segments = parsed.path.strip('/').split('/')
+        if len(segments) == 3 and segments[:2] == ['p', 'product'] and segments[2].startswith('LO') and segments[2][2:].isascii() and segments[2][2:].isdigit():
+            return 'lotteon', segments[2]
     if parsed.hostname in ('darkflash.co.kr', 'www.darkflash.co.kr') and parsed.path == '/product/detail.html':
         query = parse_qs(parsed.query, keep_blank_values=True)
         codes = query.get('product_no', [])

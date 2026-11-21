@@ -2,36 +2,6 @@
   "version": 1,
   "products": [
     {
-      "category": "ram",
-      "id": "klevv-fit-v-white-6000-cl30-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4426484979"
-    },
-    {
-      "category": "ram",
-      "id": "gskill-flare-x5-6000-cl36-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3517264707"
-    },
-    {
-      "category": "ram",
-      "id": "klevv-cras-v-rgb-white-6000-cl30-48gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3582945309"
-    },
-    {
       "category": "ssd",
       "id": "samsung-990-pro-2tb",
       "seller": "삼성전자SSD공식총판 (삼성씨앤에이치㈜)",
@@ -102,176 +72,6 @@
       "seller": "게이밍컴퓨터",
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4901239851",
       "capacityGB": 32
-    },
-    {
-      "category": "ram",
-      "id": "agi-turbojet-ud858-rgb-black-6000-cl30-48gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4671770491"
-    },
-    {
-      "category": "ram",
-      "id": "klevv-urbane-v-rgb-6000-cl30-48gb",
-      "seller": "공식판매점o",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4866710039"
-    },
-    {
-      "category": "ram",
-      "id": "klevv-cras-v-rgb-white-6400-cl32-48gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4491405905"
-    },
-    {
-      "category": "ram",
-      "id": "biwin-dw100-rgb-black-6000-cl28-48gb",
-      "seller": "여운스토어G",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4764113762"
-    },
-    {
-      "category": "ram",
-      "id": "klevv-cras-v-rgb-white-6000-cl30-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=3517254963"
-    },
-    {
-      "category": "ram",
-      "id": "klevv-cras-v-rgb-black-6000-cl30-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=3517255256"
-    },
-    {
-      "category": "ram",
-      "id": "agi-turbojet-ud858-rgb-white-6000-cl30-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4747743007"
-    },
-    {
-      "category": "ram",
-      "id": "klevv-urbane-v-rgb-6000-cl30-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4245880636"
-    },
-    {
-      "category": "ram",
-      "id": "klevv-fit-v-black-6000-cl30-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4426485168"
-    },
-    {
-      "category": "ram",
-      "id": "agi-turbojet-ud858-rgb-black-6000-cl30-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4609851559"
-    },
-    {
-      "category": "ram",
-      "id": "apacer-nox-white-6000-cl38-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4598271392"
-    },
-    {
-      "category": "ram",
-      "id": "gskill-ripjaws-m5-rgb-black-6000-cl36-32gb",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 32,
-      "moduleCapacityGB": 16,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4226699716"
-    },
-    {
-      "category": "ram",
-      "id": "klevv-urbane-v-rgb-6400-cl32-48gb",
-      "seller": "공식판매점o",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4866710100"
-    },
-    {
-      "category": "ram",
-      "id": "biwin-dw100-rgb-white-6000-cl28-48gb",
-      "seller": "여운스토어G",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4764113723"
-    },
-    {
-      "category": "ram",
-      "id": "klevv-cras-v-rgb-white-6000-cl30-48gb-11st",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://www.11st.co.kr/products/8209875752"
-    },
-    {
-      "category": "ram",
-      "id": "agi-turbojet-ud858-rgb-black-6000-cl30-48gb-11st",
-      "seller": "(주)서린씨앤아이",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://www.11st.co.kr/products/9096161008"
-    },
-    {
-      "category": "ram",
-      "id": "biwin-dw100-rgb-black-6000-cl28-48gb-11st",
-      "seller": "린드스토어",
-      "memoryType": "DDR5",
-      "capacityGB": 48,
-      "moduleCapacityGB": 24,
-      "moduleCount": 2,
-      "sourceUrl": "https://www.11st.co.kr/products/9436454644"
     },
     {
       "id": "asus-tuf-b850-plus-wifi-stcom-gm4278758978",
@@ -632,6 +432,228 @@
       "category": "psu",
       "seller": "(주)투웨이(다크플래쉬 공식몰)",
       "sourceUrl": "https://darkflash.co.kr/product/detail.html?product_no=591"
+    },
+    {
+      "id": "apacer-nox-white-6000-cl38-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4598271392"
+    },
+    {
+      "id": "agi-turbojet-ud858-rgb-white-6000-cl30-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4747743007"
+    },
+    {
+      "id": "klevv-fit-v-black-6000-cl30-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4426485168"
+    },
+    {
+      "id": "klevv-fit-v-white-6000-cl30-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4426484979"
+    },
+    {
+      "id": "agi-turbojet-ud858-rgb-black-6000-cl30-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4609851559"
+    },
+    {
+      "id": "gskill-flare-x5-6000-cl36-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3517264707"
+    },
+    {
+      "id": "klevv-urbane-v-rgb-6000-cl30-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4245880636"
+    },
+    {
+      "id": "klevv-cras-v-rgb-black-6000-cl30-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=3517255256"
+    },
+    {
+      "id": "klevv-cras-v-rgb-white-6000-cl30-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=3517254963"
+    },
+    {
+      "id": "gskill-ripjaws-m5-rgb-black-6000-cl36-32gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4226699716"
+    },
+    {
+      "id": "agi-turbojet-ud858-rgb-black-6000-cl30-48gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4671770491"
+    },
+    {
+      "id": "klevv-cras-v-rgb-white-6000-cl30-48gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3582945309"
+    },
+    {
+      "id": "klevv-cras-v-rgb-white-6400-cl32-48gb",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4491405905"
+    },
+    {
+      "id": "klevv-urbane-v-rgb-6000-cl30-48gb",
+      "category": "ram",
+      "seller": "공식판매점o",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4866710039"
+    },
+    {
+      "id": "klevv-urbane-v-rgb-6400-cl32-48gb",
+      "category": "ram",
+      "seller": "공식판매점o",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4866710100"
+    },
+    {
+      "id": "biwin-dw100-rgb-black-6000-cl28-48gb",
+      "category": "ram",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4764113762"
+    },
+    {
+      "id": "biwin-dw100-rgb-white-6000-cl28-48gb",
+      "category": "ram",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4764113723"
+    },
+    {
+      "id": "agi-turbojet-ud858-rgb-black-6000-cl30-48gb-11st",
+      "category": "ram",
+      "seller": "서린씨앤아이",
+      "sourceUrl": "https://www.11st.co.kr/products/9096161008"
+    },
+    {
+      "id": "klevv-cras-v-rgb-white-6000-cl30-48gb-11st",
+      "category": "ram",
+      "seller": "서린씨앤아이",
+      "sourceUrl": "https://www.11st.co.kr/products/8209875752"
+    },
+    {
+      "id": "biwin-dw100-rgb-black-6000-cl28-48gb-11st",
+      "category": "ram",
+      "seller": "린드스토어",
+      "sourceUrl": "https://www.11st.co.kr/products/9436454644"
+    },
+    {
+      "id": "reviewed-apacer-nox-black-6000-cl38-32gb-gmarket-4598271556",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4598271556"
+    },
+    {
+      "id": "reviewed-samsung-ddr5-5600-24gb-retailer-gmarket-4763093282",
+      "category": "ram",
+      "seller": "여운스토어G",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4763093282"
+    },
+    {
+      "id": "reviewed-teamgroup-tcreate-expert-white-6000-cl40-128gb-gmarket-4680689043",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4680689043"
+    },
+    {
+      "id": "reviewed-klevv-cras-v-rgb-white-6000-cl30-64gb-gmarket-3582945481",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3582945481"
+    },
+    {
+      "id": "reviewed-klevv-cras-v-rgb-black-6000-cl30-48gb-gmarket-3517254393",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3517254393"
+    },
+    {
+      "id": "reviewed-gskill-ripjaws-s5-j-white-6000-cl30-32gb-seorinexpress-1000002375",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000002375"
+    },
+    {
+      "id": "reviewed-biwin-origin-code-vortex-rgb-6000-cl26-192gb-compuzone-1381972",
+      "category": "ram",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1381972"
+    },
+    {
+      "id": "reviewed-kingston-fury-beast-white-5600-cl36-single-32gb-compuzone-1296171",
+      "category": "ram",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1296171"
+    },
+    {
+      "id": "reviewed-kingston-fury-beast-rgb-black-6000-cl30-32gb-compuzone-1275775",
+      "category": "ram",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1275775"
+    },
+    {
+      "id": "curated-biwin-dw100-rgb-white-6000-cl28-48gb-compuzone-1270920",
+      "category": "ram",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1270920"
+    },
+    {
+      "id": "reviewed-klevv-bolt-v-white-amd-6400-cl32-32gb-11st-9541402660",
+      "category": "ram",
+      "seller": "서린씨앤아이",
+      "sourceUrl": "https://www.11st.co.kr/products/9541402660"
+    },
+    {
+      "id": "reviewed-teamgroup-delta-rgb-black-6000-cl30-32gb-lotteon-LO2251046520",
+      "category": "ram",
+      "seller": "서린씨앤아이",
+      "sourceUrl": "https://www.lotteon.com/p/product/LO2251046520"
+    },
+    {
+      "id": "reviewed-agi-ud238-5600-cl46-32gb-retailer-lotteon-LO2582468282",
+      "category": "ram",
+      "seller": "서린씨앤아이",
+      "sourceUrl": "https://www.lotteon.com/p/product/LO2582468282"
+    },
+    {
+      "id": "curated-klevv-fit-v-white-6000-cl30-32gb-11st-8323227821",
+      "category": "ram",
+      "seller": "서린씨앤아이",
+      "sourceUrl": "https://www.11st.co.kr/products/8323227821"
+    },
+    {
+      "id": "reviewed-apacer-nox-rgb-black-6000-cl38-32gb-11st-8814184577",
+      "category": "ram",
+      "seller": "서린씨앤아이",
+      "sourceUrl": "https://www.11st.co.kr/products/8814184577"
+    },
+    {
+      "id": "reviewed-apacer-nox-rgb-black-6000-cl38-32gb-gmarket-4584004500",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4584004500"
+    },
+    {
+      "id": "reviewed-klevv-cras-v-rgb-black-6000-cl30-64gb-gmarket-3517254698",
+      "category": "ram",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3517254698"
     }
   ]
 }

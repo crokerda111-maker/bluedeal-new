@@ -15,6 +15,7 @@ import { CATALOG_SUMMARY } from "../../../lib/catalogData";
 import PriceCatalogSection from "../../../components/PriceCatalogSection";
 import { priceBenefits } from "../../../lib/priceBenefits";
 import cpuReviewSummary from "../../../content/cpuReviewSummary.json";
+import ramReviewSummary from "../../../content/ramReviewSummary.json";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -146,6 +147,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       <section id="price-records" aria-labelledby="price-records-title" className="scroll-mt-24 space-y-4">
       <h2 id="price-records-title" className="text-xl font-semibold">판매처 가격 기록 <span className="text-cyan-200">{data.items.length}건</span></h2>
       {category.key === "cpu" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{cpuReviewSummary.reviewedOn} KST 기준, 과거 핫딜 {cpuReviewSummary.reviewedPosts}건을 모델·판매처별로 검토했습니다. 중복과 판매 구성을 구분해 {cpuReviewSummary.retailerModels}개 모델을 정리하고, 실제 판매 페이지에서 확인한 가격 {cpuReviewSummary.priceOffers}건을 제공합니다. 품절·인증 제한·결제수단·관부가세 미확인 상품은 확인되지 않은 금액을 현재가로 등록하지 않았습니다. 과거 포인트·경유·게임 증정 혜택은 현재 할인으로 간주하지 않습니다.</p> : null}
+      {category.key === "ram" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{ramReviewSummary.reviewedOn} KST 기준, 과거 RAM 핫딜 {ramReviewSummary.reviewedPosts}건의 판매주소와 구성을 검토했습니다. 기존 가격 {ramReviewSummary.recheckedLegacyOffers}건을 다시 확인하고 현재 선택 구성의 가격 {ramReviewSummary.priceOffers}건을 제공합니다. 단품·세트, 총 용량·모듈 수, 색상·RGB·CL·AMD 패키지를 구분합니다. 품절·종료 행사와 확인되지 않은 옵션·접근 제한 상품은 금액을 추정하지 않았으며, 모든 원문이나 시장 전체의 현재가 확인이 끝났다는 뜻은 아닙니다.</p> : null}
       <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
         <p>표시된 금액은 <b className="text-white">확인 시점의 판매처 가격</b>입니다. 선택한 판매 상품을 안내하며, 전체 판매처의 최저가를 보장하지 않습니다.</p>
         <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요.</p>
