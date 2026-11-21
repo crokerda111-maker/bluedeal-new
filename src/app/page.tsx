@@ -6,6 +6,7 @@ import { PRICE_CATEGORIES } from "../lib/priceCategories";
 import { listOnlinePostsByBoard } from "../lib/onlinePosts";
 import type { Post } from "../lib/postTypes";
 import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from "../lib/site";
+import { CATALOG_SUMMARY } from "../lib/catalogData";
 
 export const metadata = pageMetadata("블루딜 | PC 부품 가격·핫딜·IT 커뮤니티", SITE_DESCRIPTION, "/");
 export const dynamic = "force-dynamic";
@@ -17,6 +18,13 @@ function formatDate(value: string) {
 }
 
 const PRIMARY_ROUTES = [
+  {
+    eyebrow: "PRODUCTS",
+    title: "PC 상품 목록",
+    desc: "부품의 특징과 공식 자료, 확인 상태를 분류별로 살펴봅니다.",
+    href: "/products",
+    action: "전체 상품 보기",
+  },
   {
     eyebrow: "NEWS",
     title: "IT 소식",
@@ -90,9 +98,9 @@ export default async function HomePage() {
   return (
     <div className="space-y-16 pb-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "블루딜", alternateName: "BLUEDEAL", url: SITE_URL, inLanguage: "ko-KR" }).replace(/</g, "\\u003c") }} />
-      <HomeHero updatedAt={meta.updatedAt} schedule={meta.schedule} itemCount={itemCount} />
+      <HomeHero updatedAt={meta.updatedAt} schedule={meta.schedule} itemCount={itemCount} catalogCount={CATALOG_SUMMARY.entries} />
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {PRIMARY_ROUTES.map((item) => (
           <Link
             key={item.href}

@@ -15,23 +15,27 @@ function cn(...v: Array<string | false | null | undefined>) {
   return v.filter(Boolean).join(" ");
 }
 
-export default function ContactWritePage() {
+type ProductContext = { id: string; name: string; referenceCode: string };
+
+export default function ContactWritePage({ productContext }: { productContext?: ProductContext }) {
   const sp = useSearchParams();
   const from = (sp.get("from") ?? "").toLowerCase();
   const fromPrices = from === "prices";
   const category = sp.get("cat") ?? "";
   const initialVis: InquiryVisibility = sp.get("vis") === "private" ? "private" : "public";
 
-  return <ContactForm key={`${fromPrices}:${category}:${initialVis}`} fromPrices={fromPrices} category={category} initialVis={initialVis} />;
+  const product = from === "products" ? productContext : undefined;
+  return <ContactForm key={`${fromPrices}:${category}:${initialVis}:${product?.id ?? ""}`} fromPrices={fromPrices} product={product} category={category} initialVis={initialVis} />;
 }
 
-function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean; category: string; initialVis: InquiryVisibility }) {
+function ContactForm({ fromPrices, product, category, initialVis }: { fromPrices: boolean; product?: ProductContext; category: string; initialVis: InquiryVisibility }) {
+  const adminOnly = fromPrices || Boolean(product);
   const router = useRouter();
-  const [visibility, setVisibility] = useState<InquiryVisibility>(fromPrices ? "private" : initialVis);
+  const [visibility, setVisibility] = useState<InquiryVisibility>(adminOnly ? "private" : initialVis);
 
   const [type, setType] = useState<PostType>("general");
-  const [title, setTitle] = useState(fromPrices ? category ? `[가격현황 제보] ${category}` : "[가격현황 제보]" : "");
-  const [content, setContent] = useState(fromPrices ? "제보/추가요청 내용을 적어주세요.\n\n- 제품/모델명\n- 링크(가능하면)\n- 현재가/조건\n- 수정 요청 내용" : "");
+  const [title, setTitle] = useState(product ? `[상품 정보 수정] ${product.name}`.slice(0, POST_LIMITS.title) : fromPrices ? category ? `[가격현황 제보] ${category}` : "[가격현황 제보]" : "");
+  const [content, setContent] = useState(product ? `상품: ${product.name}\n상품 관리번호: ${product.referenceCode}\n상품 페이지: https://bluedeal.co.kr/products/${product.id}\n\n- 수정하거나 추가할 내용\n- 확인한 근거 링크\n- 모델·옵션·사용 조건` : fromPrices ? "제보/추가요청 내용을 적어주세요.\n\n- 제품/모델명\n- 링크(가능하면)\n- 현재가/조건\n- 수정 요청 내용" : "");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -46,19 +50,19 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
     if (submitted) receiptHeading.current?.focus();
   }, [submitted]);
 
-  const effectiveVis: InquiryVisibility = fromPrices ? "private" : visibility;
+  const effectiveVis: InquiryVisibility = adminOnly ? "private" : visibility;
 
   const notice = useMemo(() => {
-    if (!fromPrices) return null;
+    if (!adminOnly) return null;
     return (
       <div className="rounded-xl border border-cyan-300/30 bg-cyan-300/10 p-3 text-sm text-cyan-100">
-        <div className="font-semibold">가격현황 제보/추가요청</div>
+        <div className="font-semibold">{product ? "상품 정보 수정·추가 요청" : "가격현황 제보/추가요청"}</div>
         <div className="mt-1 text-[13px] text-white/80">
           이 글은 <b>운영자 확인용 비공개 문의</b>로 등록됩니다. 작성자용 열람 비밀번호는 제공되지 않습니다.
         </div>
       </div>
     );
-  }, [fromPrices]);
+  }, [adminOnly, product]);
 
   const onSubmit = async () => {
     if (submissionState.current !== "idle") return;
@@ -67,7 +71,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
     if (!title.trim()) return setError("제목을 입력하세요.");
     if (!content.trim()) return setError("내용을 입력하세요.");
 
-    if (effectiveVis === "private" && !fromPrices && !password.trim()) {
+    if (effectiveVis === "private" && !adminOnly && !password.trim()) {
       return setError("비공개 문의는 비밀번호가 필요합니다.");
     }
 
@@ -81,13 +85,13 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
         content,
         authorName: authorName || "게스트",
         isPrivate: effectiveVis === "private",
-        password: effectiveVis === "private" && !fromPrices ? password : null,
-        lockToAdminPassword: fromPrices,
-        extra: { email },
+        password: effectiveVis === "private" && !adminOnly ? password : null,
+        lockToAdminPassword: adminOnly,
+        extra: { email, ...(product ? { productId: product.id, productReference: product.referenceCode } : {}) },
       });
 
       submissionState.current = "submitted";
-      if (fromPrices) {
+      if (adminOnly) {
         setSubmitted(true);
       } else {
         const href = `/contact/${post.id}`;
@@ -108,9 +112,9 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
     return (
       <section className="bd-surface-md mx-auto max-w-2xl p-6" aria-labelledby="inquiry-received-title">
         <h1 ref={receiptHeading} tabIndex={-1} id="inquiry-received-title" className="text-2xl font-semibold focus:outline-none">제보가 접수되었습니다</h1>
-        <p className="mt-4 text-sm leading-7 text-white/75">운영자 확인용 비공개 문의로 등록했습니다. 보내주신 가격 오류·상품 추가 요청을 검토하겠습니다.</p>
+        <p className="mt-4 text-sm leading-7 text-white/75">운영자 확인용 비공개 문의로 등록했습니다. 보내주신 {product ? "상품 정보 수정·추가" : "가격 오류·상품 추가"} 요청을 검토하겠습니다.</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/prices" className="rounded-xl bg-cyan-200 px-4 py-3 text-sm font-semibold text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">가격현황으로</Link>
+          <Link href={product ? `/products/${product.id}` : "/prices"} className="rounded-xl bg-cyan-200 px-4 py-3 text-sm font-semibold text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">{product ? "상품 정보로" : "가격현황으로"}</Link>
           <Link href="/contact" className="rounded-xl border border-white/20 px-4 py-3 text-sm hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200">문의 목록</Link>
         </div>
       </section>
@@ -153,8 +157,8 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
             <div className="mt-2 flex gap-2">
               <button
                 type="button"
-                onClick={() => !fromPrices && setVisibility("public")}
-                disabled={fromPrices}
+                onClick={() => !adminOnly && setVisibility("public")}
+                disabled={adminOnly}
                 aria-pressed={effectiveVis === "public"}
                 className={cn(
                   "rounded-xl border px-3 py-2 text-sm disabled:opacity-60",
@@ -167,8 +171,8 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
               </button>
               <button
                 type="button"
-                onClick={() => !fromPrices && setVisibility("private")}
-                disabled={fromPrices}
+                onClick={() => !adminOnly && setVisibility("private")}
+                disabled={adminOnly}
                 aria-pressed={effectiveVis === "private"}
                 className={cn(
                   "rounded-xl border px-3 py-2 text-sm disabled:opacity-60",
@@ -181,7 +185,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
               </button>
             </div>
             <div className="mt-1 text-[12px] text-white/70">
-              {fromPrices ? "가격현황 제보는 자동으로 비공개 처리됩니다." : "비공개 글은 비밀번호를 입력한 사람만 열람할 수 있습니다."}
+              {adminOnly ? `${product ? "상품 정보 수정 요청" : "가격현황 제보"}은 자동으로 비공개 처리됩니다.` : "비공개 글은 비밀번호를 입력한 사람만 열람할 수 있습니다."}
             </div>
           </div>
 
@@ -235,7 +239,7 @@ function ContactForm({ fromPrices, category, initialVis }: { fromPrices: boolean
             {effectiveVis === "public" ? <p className="mt-2 text-xs leading-5 text-amber-200">공개 문의에 적은 이메일은 다른 방문자도 볼 수 있습니다. 공개를 원하지 않으면 비공개 문의를 선택해 주세요.</p> : null}
           </label>
 
-          {effectiveVis === "private" && !fromPrices ? (
+          {effectiveVis === "private" && !adminOnly ? (
             <label className="block">
               <div className="text-sm text-white/80">비밀번호</div>
               <input

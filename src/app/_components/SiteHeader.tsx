@@ -12,6 +12,7 @@ function cn(...v: Array<string | false | null | undefined>) {
 }
 
 const mobileLinks = [
+  { href: "/products", label: "상품목록" },
   { href: "/it", label: "IT 소식" },
   { href: "/prices", label: "가격현황" },
   { href: "/community/hotdeal", label: "핫딜" },
@@ -128,7 +129,8 @@ export default function SiteHeader() {
           </Link>
 
           {/* Desktop nav */}
-          <nav aria-label="주요 메뉴" className="hidden items-center gap-6 text-sm text-white/75 md:flex">
+          <nav aria-label="주요 메뉴" className="hidden items-center gap-5 text-sm text-white/75 lg:flex">
+            <Link className="hover:text-white" href="/products">상품목록</Link>
             <Dropdown label="IT 소식" href="/it">
               <div className="px-4 py-2 text-xs text-white/70">바로가기</div>
               <DropItem href="/it?section=news">뉴스</DropItem>
@@ -138,6 +140,7 @@ export default function SiteHeader() {
             <Dropdown label="가격현황" href="/prices">
               <div className="px-4 py-2 text-xs text-white/70">카테고리</div>
               <DropItem href="/prices">전체 보기</DropItem>
+              <DropItem href="/evaluate">PC 구매 판단 · 시험 운영</DropItem>
               <div className="my-2 h-px bg-white/10" />
               {priceItems.map((c) => (
                 <DropItem key={c.key} href={`/prices/${c.key}`}>
@@ -171,7 +174,7 @@ export default function SiteHeader() {
           </div>
         </div>
 
-        <nav aria-label="모바일 주요 메뉴" className="mt-3 grid grid-cols-5 gap-1.5 md:hidden">
+        <nav aria-label="모바일 주요 메뉴" className="mt-3 grid grid-cols-3 gap-1.5 sm:grid-cols-6 lg:hidden">
           {mobileLinks.map(({ href, label }) => (
             <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}
               className={cn("inline-flex min-h-11 min-w-0 items-center justify-center whitespace-nowrap rounded-xl border px-1 text-[11px] min-[360px]:text-xs",

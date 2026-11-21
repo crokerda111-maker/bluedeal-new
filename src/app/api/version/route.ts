@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { version } from "../../../../package.json";
+import packageInfo from "../../../../package.json";
 
 export const dynamic = "force-dynamic";
 
@@ -9,7 +9,7 @@ export function GET() {
   return NextResponse.json(
     {
       service: "BLUEDEAL",
-      version,
+      version: packageInfo.version,
       commit: /^[a-f0-9]{40}$/i.test(gitCommit) ? gitCommit : null,
     },
     { headers: { "Cache-Control": "no-store" } },

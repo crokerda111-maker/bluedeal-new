@@ -1,0 +1,75 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { searchCatalog, summarizeCatalog, catalogHref } from '../../src/lib/productCatalog.ts';
+
+const catalog=JSON.parse(fs.readFileSync(new URL('../../src/content/products/catalog.json',import.meta.url),'utf8'));
+const products=catalog.products;
+
+test('every exported entry has stable unique page and management identifiers',()=>{
+  assert.equal(products.length,catalog.entries);
+  assert.equal(new Set(products.map(p=>p.id)).size,products.length);
+  assert.equal(new Set(products.map(p=>p.referenceCode)).size,products.length);
+  assert.ok(products.every(p=>/^[a-z0-9-]+$/.test(p.id)&&/^BD-[A-F0-9]{10}$/.test(p.referenceCode)));
+});
+
+test('models, wattage options and families are counted separately',()=>{
+  const summary=summarizeCatalog(products);
+  assert.equal(summary.models+summary.outputOptions+summary.families,summary.entries);
+  assert.equal(summary.discontinued,38);
+  assert.equal(summary.categoryCounts.cooler,242);
+  assert.equal(summary.categoryCounts.cpu,5);
+});
+
+test('all pages of the catalog expose every entry exactly once',()=>{
+  const ids=[];const first=searchCatalog(products,{});
+  for(let page=1;page<=first.totalPages;page++) ids.push(...searchCatalog(products,{page:String(page)}).items.map(p=>p.id));
+  assert.equal(ids.length,products.length);assert.equal(new Set(ids).size,products.length);
+});
+
+test('category, brand and excluded discontinued filter compose without implying stock',()=>{
+  const psus=searchCatalog(products,{category:'psu',brand:'Seasonic',lifecycle:'exclude-discontinued'},1000);
+  assert.equal(psus.total,53);
+  assert.ok(psus.items.every(p=>p.lifecycle==='listed-current'&&p.domesticState==='unverified'));
+});
+
+test('Unicode-normalized multiple search terms match names and known features',()=>{
+  const a=searchCatalog(products,{q:'ＰＥＥＲＬＥＳＳ black',category:'cooler'},1000);
+  assert.ok(a.total>0);assert.ok(a.items.every(p=>p.name.toLowerCase().includes('peerless')&&p.name.toLowerCase().includes('black')));
+  const b=searchCatalog(products,{q:'CPU 공랭',category:'cooler'},1000);
+  assert.equal(b.total,218);
+});
+
+test('invalid pages and duplicate query values are bounded and deterministic',()=>{
+  for(const page of ['-1','1.5','Infinity','999999999999', ['2','3']]) assert.equal(searchCatalog(products,{page}).page,1);
+  assert.equal(searchCatalog(products,{page:'999999'}).page,searchCatalog(products,{}).totalPages);
+  assert.equal(searchCatalog(products,{category:'not-a-category'}).total,0);
+  assert.equal(searchCatalog(products,{category:['cpu','gpu']}).total,products.length);
+});
+
+test('pagination links preserve filters and escape text as query parameters',()=>{
+  const href=catalogHref({q:'RAM & DDR5',category:'ram',brand:'G.SKILL',lifecycle:''},2);
+  const url=new URL(href,'https://bluedeal.co.kr');
+  assert.equal(url.searchParams.get('q'),'RAM & DDR5');assert.equal(url.searchParams.get('page'),'2');
+});
+
+test('public records do not invent current prices, stock, ratings or reviewed buyer sentiment',()=>{
+  for(const product of products){
+    assert.equal(product.reviewSummary,null);
+    assert.equal(product.reviewSources.length,0);
+    for(const field of ['price','rating','score','stock','affiliateUrl','goCode','qualityScore']) assert.ok(!(field in product));
+    assert.ok(product.sources.length>0);
+    for(const source of product.sources){const url=new URL(source.url);assert.equal(url.protocol,'https:');assert.equal(url.username,'');assert.equal(url.password,'');}
+  }
+});
+
+test('the reviewed Intel issue belongs only to the exact Intel model',()=>{
+  const reviewed=products.filter(p=>p.issues.length);
+  assert.equal(reviewed.length,1);assert.equal(reviewed[0].id,'intel-core-i7-14700k');
+  assert.ok(reviewed[0].issues[0].conditions.includes('모든 개별 CPU'));
+});
+
+test('case families and mismatched PSU labels retain visible uncertainty',()=>{
+  assert.ok(products.filter(p=>p.kind==='product-family').every(p=>p.notes.some(note=>note.includes('제품군'))));
+  assert.ok(products.some(p=>p.category==='psu'&&p.notes.some(note=>note.includes('출력'))));
+});

@@ -37,6 +37,8 @@ export default async function PricesHubPage() {
 
         <p className="mt-4 text-sm text-white/75">현재 {populatedCount}개 분류에서 확인한 상품 <b className="text-cyan-200">{itemCount}개</b>를 안내합니다. 가격 확인 시각은 상품마다 다릅니다.</p>
         <p className="mt-2 text-xs text-white/65">같은 모델의 판매처별 상품도 각각 집계합니다.</p>
+        <Link href="/products" className="mt-4 mr-4 inline-flex min-h-11 items-center rounded-xl border border-white/20 px-4 text-sm text-cyan-200 hover:bg-white/10">전체 상품 특징·상세 정보 보기 →</Link>
+        <Link href="/evaluate" className="mt-4 inline-flex min-h-11 items-center rounded-xl border border-cyan-300/25 bg-cyan-300/5 px-4 text-sm text-cyan-200 hover:bg-cyan-300/10">PC 구성 비용·부품 이슈 확인 →</Link>
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

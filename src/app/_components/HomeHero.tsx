@@ -72,7 +72,7 @@ function Stat({ k, v, d }: { k: string; v: string; d: string }) {
   );
 }
 
-export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt: string; schedule: string; itemCount: number }) {
+export default function HomeHero({ updatedAt, schedule, itemCount, catalogCount }: { updatedAt: string; schedule: string; itemCount: number; catalogCount: number }) {
   const chips = useMemo(() => PRICE_CATEGORIES.slice(0, 8), []);
 
   return (
@@ -97,8 +97,8 @@ export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt
           </p>
 
           <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-            <ButtonLink href="/community" variant="primary">
-              커뮤니티 둘러보기
+            <ButtonLink href="/products" variant="primary">
+              PC 상품 둘러보기
             </ButtonLink>
             <ButtonLink href="/it" variant="soft">
               IT 소식 보기
@@ -143,8 +143,9 @@ export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt
             </div>
 
             <div className="mt-2 text-sm font-semibold leading-6">
-              {itemCount > 0 ? `현재 등록 상품 ${itemCount}개` : "첫 가격 데이터 등록 준비 중"}
+              상품 목록 {catalogCount}개 항목
             </div>
+            <p className="mt-2 text-xs leading-6 text-white/65">모델·출력 옵션·제품군을 포함합니다. 기존 가격표의 판매 상품은 {itemCount}개입니다.</p>
 
             <div className="mt-3 text-xs text-white/65">최근 가격 확인: {fmtKorean(updatedAt)} KST</div>
 
@@ -157,8 +158,8 @@ export default function HomeHero({ updatedAt, schedule, itemCount }: { updatedAt
               <ButtonLink href="/prices" className="flex-1" variant="primary">
                 가격현황 보기
               </ButtonLink>
-              <ButtonLink href="/community" className="flex-1" variant="ghost">
-                커뮤니티
+              <ButtonLink href="/products" className="flex-1" variant="ghost">
+                전체 상품
               </ButtonLink>
             </div>
 
