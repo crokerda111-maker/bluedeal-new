@@ -1,6 +1,6 @@
 {
   "name": "bluedeal-mvp",
-  "version": "0.3.38",
+  "version": "0.3.39",
   "private": true,
   "scripts": {
     "dev": "next dev",

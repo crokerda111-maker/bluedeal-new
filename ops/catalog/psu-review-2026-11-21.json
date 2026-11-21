@@ -1,6 +1,6 @@
 {
   "checkedDate": "2026-11-21",
-  "scope": "기존 파워 핫딜 후보 19개 글의 판매주소와 조건 종류 확인. 제목 후보이며 인증·성능·보증 검증 완료를 뜻하지 않음.",
+  "scope": "파워 핫딜 19건의 중복·출력·색상·세대·판매주소 검토. 현재 판매조건 확인과 원문 행사 혜택 확인은 별개입니다. 인증·성능·보증 검증 완료를 뜻하지 않습니다.",
   "groups": [
     {
       "id": "reviewed-asrock-sl-1200g",
@@ -135,5 +135,231 @@
       "kind": "category-sale",
       "note": "Antec 1000W GOLD 블랙·화이트 모음. 정확한 제품군과 품번 미확인"
     }
+  ],
+  "additionalModels": [
+    {
+      "id": "reviewed-micronics-classic-ii-ev-750-gold",
+      "name": "Micronics Classic II EV 750W GOLD ATX3.1 (판매 표기)",
+      "brand": "Micronics",
+      "posts": [],
+      "note": "EV 표기 모델을 이전 Classic II와 별도 기록. 색상·정확한 품번 확인 필요."
+    },
+    {
+      "id": "reviewed-antec-hcg-pro-850-platinum",
+      "name": "Antec HCG PRO 850W PLATINUM ATX3.1 (판매 표기)",
+      "brand": "Antec",
+      "posts": [],
+      "note": "HCG PRO 850W와 1000W는 출력별 별도 상품입니다."
+    },
+    {
+      "id": "reviewed-antec-hcg-pro-1000-platinum",
+      "name": "Antec HCG PRO 1000W PLATINUM ATX3.1 (판매 표기)",
+      "brand": "Antec",
+      "posts": [],
+      "note": "HCG PRO 850W와 1000W는 출력별 별도 상품입니다."
+    },
+    {
+      "id": "reviewed-lianli-sx1200-black",
+      "name": "LIAN LI SX1200 Black",
+      "brand": "LIAN LI",
+      "posts": [],
+      "note": "SX1200 블랙. 화이트와 별도 판매 상품입니다."
+    },
+    {
+      "id": "reviewed-nzxt-c650-bulk-retailer",
+      "name": "NZXT C650 GOLD 벌크 (판매 표기)",
+      "brand": "NZXT",
+      "posts": [],
+      "note": "판매 제목에 세대·색상·품번이 없어 이전 컴퓨존 C650 블랙 벌크와 동일한 상품으로 합치지 않았습니다. 케이블 구성·국내 보증 확인 필요."
+    }
+  ],
+  "decisions": [
+    {
+      "post": "1999969",
+      "modelIds": [
+        "reviewed-asrock-sl-1200g"
+      ],
+      "currentListingIds": [
+        "reviewed-asrock-sl-1200g-gmarket-4707847370"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1998860",
+      "modelIds": [
+        "reviewed-asrock-sl-1200g"
+      ],
+      "currentListingIds": [
+        "reviewed-asrock-sl-1200g-gmarket-4707847370"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1995183",
+      "modelIds": [
+        "reviewed-asrock-sl-850gw"
+      ],
+      "currentListingIds": [
+        "reviewed-asrock-sl-850gw-gmarket-4707847125"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1993261",
+      "modelIds": [
+        "reviewed-aone-signature-850-black"
+      ],
+      "currentListingIds": [
+        "reviewed-aone-signature-850-black-gmarket-4654061660"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1989111",
+      "modelIds": [
+        "reviewed-darkflash-upmost-1250-white"
+      ],
+      "currentListingIds": [
+        "reviewed-darkflash-upmost-1250-white-darkflash-591"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1982201",
+      "modelIds": [
+        "reviewed-msi-mpg-ai1300ts"
+      ],
+      "currentListingIds": [],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1969904",
+      "modelIds": [
+        "reviewed-msi-mpg-ai1300ts"
+      ],
+      "currentListingIds": [],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1980542",
+      "modelIds": [
+        "reviewed-asrock-sl-850g"
+      ],
+      "currentListingIds": [],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1979406",
+      "modelIds": [
+        "reviewed-asrock-taichi-tc-1650t"
+      ],
+      "currentListingIds": [
+        "asrock-taichi-tc1650t-11st9548264512"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1978514",
+      "modelIds": [
+        "reviewed-lianli-sx1200-white"
+      ],
+      "currentListingIds": [
+        "lianli-sx1200-white-se1000007999"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1978066",
+      "modelIds": [
+        "reviewed-antec-neoeco-850-platinum"
+      ],
+      "currentListingIds": [
+        "reviewed-antec-neoeco-850-platinum-gmarket-4883662291"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1973595",
+      "modelIds": [
+        "reviewed-darkflash-perfectmost-750-white"
+      ],
+      "currentListingIds": [
+        "reviewed-darkflash-perfectmost-750-white-darkflash-785"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1971114",
+      "modelIds": [
+        "reviewed-lianli-sp1000-white"
+      ],
+      "currentListingIds": [
+        "lianli-sp1000-white-se1000008591"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1966867",
+      "modelIds": [
+        "reviewed-corsair-rm850x-atx31"
+      ],
+      "currentListingIds": [
+        "reviewed-corsair-rm850x-atx31-gmarket-4770081270"
+      ],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1964149",
+      "modelIds": [
+        "reviewed-micronics-classic-ii-750-gold-black"
+      ],
+      "currentListingIds": [],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1953839",
+      "modelIds": [
+        "reviewed-nzxt-c650-black-bulk"
+      ],
+      "currentListingIds": [],
+      "note": "현재 판매처 조건을 확인한 경우에만 가격표에 반영. 원문 쿠폰·경유·사은품·적립은 승계하지 않음."
+    },
+    {
+      "post": "1975084",
+      "modelIds": [
+        "reviewed-lianli-sx1200-white",
+        "reviewed-lianli-sx1200-black"
+      ],
+      "currentListingIds": [
+        "lianli-sx1200-white-se1000007999",
+        "reviewed-lianli-sx1200-black-seorinexpress-1000008000"
+      ],
+      "note": "원문 색상 모음을 블랙·화이트 실제 단품으로 분리. 과거 행사조건은 승계하지 않음."
+    },
+    {
+      "post": "1974286",
+      "modelIds": [
+        "reviewed-antec-hcg-pro-850-platinum",
+        "reviewed-antec-hcg-pro-1000-platinum"
+      ],
+      "currentListingIds": [
+        "reviewed-antec-hcg-pro-850-platinum-gmarket-4065627821",
+        "reviewed-antec-hcg-pro-1000-platinum-gmarket-4065627876"
+      ],
+      "note": "850W·1000W별 실제 판매 상품을 분리. 원 네이버 상품의 할인·보증 조건과 동일시하지 않음."
+    },
+    {
+      "post": "1954565",
+      "modelIds": [],
+      "currentListingIds": [],
+      "note": "카테고리 행사이며 정확한 제품군·품번이 확인되지 않아 임의의 Antec 1000W로 가격을 대체하지 않음."
+    }
+  ],
+  "currentOffers": 15,
+  "notes": [
+    "인증·ATX·PCIe 버전은 판매명 표기와 공식·독립 검증 여부를 구분합니다.",
+    "MSI Ai1300TS 새 판매처는 옵션을 확인했지만 수입·보증 조건 미확인이라 가격표에 넣지 않았습니다.",
+    "Classic II EV와 이전 세대, NZXT C650 벌크의 세대·색상 미확인 상품은 별도 구분합니다.",
+    "서린 Npay 5% 행사 안내는 최소40만원·최대6만원. 단품289000원은 최소금액 미달이며 행사 이미지의 예시6%와 본문5%가 달라 실제 결제 적용을 확정하지 않았습니다."
   ]
 }

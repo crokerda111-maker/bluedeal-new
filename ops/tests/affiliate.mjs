@@ -43,6 +43,15 @@ const source='https://item.gmarket.co.kr/Item?goodsCode=FIXTURE001';
 const issued={merchant:'gmarket',provider:'linkprice',originalUrl:source,affiliateUrl:'https://app.ac/FIXTURE01'};
 const resolve=(originalUrl=source,merchant='gmarket')=>resolveAffiliateUrl({merchant,originalUrl,code:'stable-code'});
 
+test('newly reviewed stores keep ordinary links until an exact issued mapping exists',()=>{
+  withMappings([],()=>{
+    for(const [merchant,originalUrl] of [['darkflash','https://darkflash.co.kr/product/detail.html?product_no=785'],['ssg','https://www.ssg.com/item/itemView.ssg?itemId=123&siteNo=6004']]){
+      assert.deepEqual(resolveAffiliateUrl({merchant,originalUrl,code:'fixture'}),{merchant,url:originalUrl,mode:'passthrough'});
+    }
+    assert.equal(normalizeOutboundUrl('https://darkflash.co.kr.example.invalid/product/detail.html?product_no=785'),null);
+  });
+});
+
 test('verified mappings change only the destination, preserving canonical product codes and source identity',()=>{
   withMappings([issued],()=>{
     assert.deepEqual(resolve(),{merchant:'gmarket',url:issued.affiliateUrl,mode:'registered-affiliate'});

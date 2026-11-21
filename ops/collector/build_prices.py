@@ -33,6 +33,7 @@ MERCHANT_HOSTS = {
     "compuzone": ("compuzone.co.kr",),
     "seorinexpress": ("seorinexpress.com",),
     "ssg": ("ssg.com",),
+    "darkflash": ("darkflash.co.kr",),
 }
 SLUG_RE = re.compile(r"^[A-Za-z0-9_-]{2,100}$")
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "e3f537f8f439d83116d7a9bafbe52b313793d87e1d894dcd99b952286dfb75f3",
-  "entries": 441,
+  "catalogHash": "8f33679fdd0c075468029e6c93919c72a627ce1136da0033681db8a96f34dd59",
+  "entries": 456,
   "products": [
     {
       "id": "maker-fractal-case-b32459749f216e6e",
@@ -14749,8 +14749,299 @@
       "referenceCode": "BD-6E7ED69815"
     },
     {
+      "id": "reviewed-antec-hcg-pro-1000-platinum",
+      "name": "Antec HCG PRO 1000W PLATINUM ATX3.1 (판매 표기)",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "Antec",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "안텍 HCG PRO 1000W 80PLUS 플래티넘 풀모듈러 ATX3.1 파워 · 수량1 · 정확한 품번·보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "안텍 HCG PRO 1000W 80PLUS 플래티넘 풀모듈러 ATX3.1 파워 · 수량1 · 정확한 품번·보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "HCG PRO 850W와 1000W는 출력별 별도 상품입니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 페이지",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4065627876",
+          "observedAt": "2026-11-21T05:44:42.403Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-antec-hcg-pro-1000-platinum-gmarket-4065627876",
+          "merchant": "G마켓",
+          "seller": "1등 아이코다",
+          "pricePage": "/prices/psu#reviewed-antec-hcg-pro-1000-platinum-gmarket-4065627876"
+        }
+      ],
+      "referenceCode": "BD-2623CB3351"
+    },
+    {
+      "id": "reviewed-antec-hcg-pro-850-platinum",
+      "name": "Antec HCG PRO 850W PLATINUM ATX3.1 (판매 표기)",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "Antec",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "안텍 HCG PRO 850W 80PLUS 플래티넘 풀모듈러 ATX3.1 파워 · 수량1 · 정확한 품번·보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "안텍 HCG PRO 850W 80PLUS 플래티넘 풀모듈러 ATX3.1 파워 · 수량1 · 정확한 품번·보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "HCG PRO 850W와 1000W는 출력별 별도 상품입니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 페이지",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4065627821",
+          "observedAt": "2026-11-21T05:44:39.666Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-antec-hcg-pro-850-platinum-gmarket-4065627821",
+          "merchant": "G마켓",
+          "seller": "1등 아이코다",
+          "pricePage": "/prices/psu#reviewed-antec-hcg-pro-850-platinum-gmarket-4065627821"
+        }
+      ],
+      "referenceCode": "BD-552385B03D"
+    },
+    {
+      "id": "reviewed-antec-neoeco-850-platinum",
+      "name": "Antec NeoECO 850W PLATINUM",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "Antec",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "안텍 Antec NeoECO 850W 80PLUS플래티넘 풀모듈러 ATX 3.1 파워서플라이 · 수량1 · 정확한 품번·보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "안텍 Antec NeoECO 850W 80PLUS플래티넘 풀모듈러 ATX 3.1 파워서플라이 · 수량1 · 정확한 품번·보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "외 할인행사 문구. 판매 옵션의 정확한 품번·리비전 추가 확인 필요"
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 페이지",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4883662291",
+          "observedAt": "2026-11-21T05:42:50.910Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-antec-neoeco-850-platinum-gmarket-4883662291",
+          "merchant": "G마켓",
+          "seller": "린드스토어",
+          "pricePage": "/prices/psu#reviewed-antec-neoeco-850-platinum-gmarket-4883662291"
+        }
+      ],
+      "referenceCode": "BD-57AD33230B"
+    },
+    {
+      "id": "reviewed-aone-signature-850-black",
+      "name": "AONE SIGNATURE 850W GOLD ATX3.1 Black",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "AONE",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "AONE 시그니처 850W 80PLUS 골드 풀모듈러 ATX 3.1 (PCIE 5.1) 블랙 · 수량1 · 정확한 품번·보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "AONE 시그니처 850W 80PLUS 골드 풀모듈러 ATX 3.1 (PCIE 5.1) 블랙 · 수량1 · 정확한 품번·보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 페이지",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4654061660",
+          "observedAt": "2026-11-21T05:41:45.166Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-aone-signature-850-black-gmarket-4654061660",
+          "merchant": "G마켓",
+          "seller": "도이치솔루션",
+          "pricePage": "/prices/psu#reviewed-aone-signature-850-black-gmarket-4654061660"
+        }
+      ],
+      "referenceCode": "BD-4241A452CF"
+    },
+    {
+      "id": "reviewed-asrock-sl-1200g",
+      "name": "ASRock Steel Legend SL-1200G",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "ASRock",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ASRock 스틸레전드 SL-1200G 80PLUS골드 풀모듈러 ATX3.1 (정격 컴퓨터 파워서플라이) · 수량1 · 정확한 품번·보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "ASRock 스틸레전드 SL-1200G 80PLUS골드 풀모듈러 ATX3.1 (정격 컴퓨터 파워서플라이) · 수량1 · 정확한 품번·보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 페이지",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4707847370",
+          "observedAt": "2026-11-21T05:41:15.208Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-asrock-sl-1200g-gmarket-4707847370",
+          "merchant": "G마켓",
+          "seller": "베이스캠프샵",
+          "pricePage": "/prices/psu#reviewed-asrock-sl-1200g-gmarket-4707847370"
+        }
+      ],
+      "referenceCode": "BD-4629B4C59F"
+    },
+    {
+      "id": "reviewed-asrock-sl-850gw",
+      "name": "ASRock Steel Legend SL-850GW White",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "ASRock",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "ASRock 스틸레전드 SL-850GW 80PLUS골드 풀모듈러 ATX3.1 화이트 (정격 컴퓨터 파워서플라이) · 수량1 · 정확한 품번·보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "ASRock 스틸레전드 SL-850GW 80PLUS골드 풀모듈러 ATX3.1 화이트 (정격 컴퓨터 파워서플라이) · 수량1 · 정확한 품번·보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 페이지",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4707847125",
+          "observedAt": "2026-11-21T05:41:34.725Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-asrock-sl-850gw-gmarket-4707847125",
+          "merchant": "G마켓",
+          "seller": "베이스캠프샵",
+          "pricePage": "/prices/psu#reviewed-asrock-sl-850gw-gmarket-4707847125"
+        }
+      ],
+      "referenceCode": "BD-F21C4C9153"
+    },
+    {
       "id": "reviewed-asrock-taichi-tc-1650t",
-      "name": "ASRock TAICHI TC-1650T 80PLUS티타늄 풀모듈러 ATX3.1",
+      "name": "ASRock TAICHI TC-1650T",
       "category": "psu",
       "subtype": "power-supply",
       "brand": "ASRock",
@@ -14760,14 +15051,15 @@
       ],
       "specifications": [
         {
-          "label": "판매 모델",
+          "label": "판매 구성 표기",
           "value": "TC-1650T 단일 모델 · 수량1"
         }
       ],
-      "description": "실제 판매 페이지에서 모델명과 상품가·기본 배송비를 확인한 파워입니다. 인증·보호회로·커넥터 구성·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
       "notes": [
-        "적립금·구매 후 보상·외부 광고의 쿠폰을 실결제 할인으로 차감하지 않습니다.",
-        "정확한 제조사 품번·리비전·국내 보증과 시스템 전력·전원 커넥터를 구매 전에 확인하세요."
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -15696,6 +15988,174 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-0213DD8FCF"
+    },
+    {
+      "id": "reviewed-corsair-rm850x-atx31",
+      "name": "CORSAIR RM850x ATX3.1",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "CORSAIR",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "CORSAIR RMx Series RM850x ATX3.1 · 수량1 · 정확한 품번·보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "CORSAIR RMx Series RM850x ATX3.1 · 수량1 · 정확한 품번·보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "품절·판매 중단 또는 판매조건 미확인. 모델 전체 품절을 뜻하지 않음.",
+        "위 상태는 확인한 특정 판매 상품에 한정되며 다른 판매처나 모델 전체의 품절을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 페이지",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4770081270",
+          "observedAt": "2026-11-21T05:43:21.594Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "판매 상태·조건 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4130203203",
+          "observedAt": "2026-11-21",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-corsair-rm850x-atx31-gmarket-4770081270",
+          "merchant": "G마켓",
+          "seller": "(주)두현시스템",
+          "pricePage": "/prices/psu#reviewed-corsair-rm850x-atx31-gmarket-4770081270"
+        }
+      ],
+      "referenceCode": "BD-4C4FF0C1B9"
+    },
+    {
+      "id": "reviewed-darkflash-perfectmost-750-white",
+      "name": "darkFlash PERFECTMOST 750W ATX3.1 White",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "darkFlash",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PERFECTMOST 750W ATX3.1 화이트 판매 표기 · 옵션 없음 · 수량1"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "PERFECTMOST 750W ATX3.1 화이트 판매 표기 · 옵션 없음 · 수량1"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "원 판매페이지가 Cafe24 404와 페이지 사라짐·변경 안내를 표시. 다른 출력 제품으로 대체하지 않음.",
+        "위 상태는 확인한 특정 판매 상품에 한정되며 다른 판매처나 모델 전체의 품절을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "다크플래쉬 공식몰 판매 페이지",
+          "url": "https://darkflash.co.kr/product/detail.html?product_no=785",
+          "observedAt": "2026-11-21T05:47:18.782Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "판매 상태·조건 확인",
+          "url": "https://darkflash.co.kr/product/%ED%8D%BC%ED%8E%99%ED%8A%B8%EB%AA%A8%EC%8A%A4%ED%8A%B8-750w-80plus%EA%B3%A8%EB%93%9C-%ED%92%80%EB%AA%A8%EB%93%88%EB%9F%AC-atx31-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%B0%98%EA%B0%92%EC%88%98%EB%8B%A4/1034/category/160/display/1/",
+          "observedAt": "2026-11-21T05:44:16.724Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-darkflash-perfectmost-750-white-darkflash-785",
+          "merchant": "다크플래쉬 공식몰",
+          "seller": "(주)투웨이(다크플래쉬 공식몰)",
+          "pricePage": "/prices/psu#reviewed-darkflash-perfectmost-750-white-darkflash-785"
+        }
+      ],
+      "referenceCode": "BD-256BDFCF57"
+    },
+    {
+      "id": "reviewed-darkflash-upmost-1250-white",
+      "name": "darkFlash UPMOST 1250W ATX3.0 White",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "darkFlash",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "UPMOST 1250W ATX3.0 화이트 판매 표기 · 옵션 없음 · 수량1"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "UPMOST 1250W ATX3.0 화이트 판매 표기 · 옵션 없음 · 수량1"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "품절 표시와 SOLD OUT을 확인. 과거 핫딜 제목 가격을 현재 구매가로 사용하지 않음.",
+        "위 상태는 확인한 특정 판매 상품에 한정되며 다른 판매처나 모델 전체의 품절을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "다크플래쉬 공식몰 판매 페이지",
+          "url": "https://darkflash.co.kr/product/detail.html?product_no=591",
+          "observedAt": "2026-11-21T05:47:46.183Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "판매 상태·조건 확인",
+          "url": "https://darkflash.co.kr/product/detail.html?product_no=1093",
+          "observedAt": "2026-11-21",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-darkflash-upmost-1250-white-darkflash-591",
+          "merchant": "다크플래쉬 공식몰",
+          "seller": "(주)투웨이(다크플래쉬 공식몰)",
+          "pricePage": "/prices/psu#reviewed-darkflash-upmost-1250-white-darkflash-591"
+        }
+      ],
+      "referenceCode": "BD-1AF4C9DB57"
     },
     {
       "id": "maker-seasonic-psu-8e5058fa50e14bea",
@@ -16978,7 +17438,7 @@
     },
     {
       "id": "reviewed-lianli-sp1000-white",
-      "name": "LIAN LI SP1000 80PLUS 플래티넘 화이트",
+      "name": "LIAN LI SP1000 White",
       "category": "psu",
       "subtype": "power-supply",
       "brand": "LIAN LI",
@@ -16988,14 +17448,15 @@
       ],
       "specifications": [
         {
-          "label": "판매 모델",
+          "label": "판매 구성 표기",
           "value": "SP1000 화이트 · 5주년 행사 판매 상품 · 수량1"
         }
       ],
-      "description": "실제 판매 페이지에서 모델명과 상품가·기본 배송비를 확인한 파워입니다. 인증·보호회로·커넥터 구성·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
       "notes": [
-        "적립금·구매 후 보상·외부 광고의 쿠폰을 실결제 할인으로 차감하지 않습니다.",
-        "정확한 제조사 품번·리비전·국내 보증과 시스템 전력·전원 커넥터를 구매 전에 확인하세요."
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -17024,8 +17485,57 @@
       "referenceCode": "BD-70CED02FED"
     },
     {
+      "id": "reviewed-lianli-sx1200-black",
+      "name": "LIAN LI SX1200 Black",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "LIAN LI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "SX1200 블랙 · 수량1"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "SX1200 블랙 · 수량1"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "SX1200 블랙. 화이트와 별도 판매 상품입니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린익스프레스 판매 페이지",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008000",
+          "observedAt": "2026-11-21T05:45:16.158Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-lianli-sx1200-black-seorinexpress-1000008000",
+          "merchant": "서린익스프레스",
+          "seller": "서린씨앤아이(서린익스프레스)",
+          "pricePage": "/prices/psu#reviewed-lianli-sx1200-black-seorinexpress-1000008000"
+        }
+      ],
+      "referenceCode": "BD-27791C42EA"
+    },
+    {
       "id": "reviewed-lianli-sx1200-white",
-      "name": "LIAN LI SX1200 80PLUS 플래티넘 화이트",
+      "name": "LIAN LI SX1200 White",
       "category": "psu",
       "subtype": "power-supply",
       "brand": "LIAN LI",
@@ -17035,14 +17545,15 @@
       ],
       "specifications": [
         {
-          "label": "판매 모델",
+          "label": "판매 구성 표기",
           "value": "SX1200 화이트 · 단품 · 수량1"
         }
       ],
-      "description": "실제 판매 페이지에서 모델명과 상품가·기본 배송비를 확인한 파워입니다. 인증·보호회로·커넥터 구성·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
       "notes": [
-        "적립금·구매 후 보상·외부 광고의 쿠폰을 실결제 할인으로 차감하지 않습니다.",
-        "정확한 제조사 품번·리비전·국내 보증과 시스템 전력·전원 커넥터를 구매 전에 확인하세요."
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -17069,6 +17580,244 @@
         }
       ],
       "referenceCode": "BD-35B961AEB2"
+    },
+    {
+      "id": "reviewed-micronics-classic-ii-750-gold-black",
+      "name": "Micronics Classic II 750W GOLD ATX3.1 Black",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "Micronics",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "판매 모델·현재 조건 추가 대조 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "판매 모델·현재 조건 추가 대조 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "모델 CLASSIC_II_FM_750W_GOLD, 수입자 마이크로닉스 표기 확인. 입점 판매자 상호와 개인별 할인 적용은 추가 확인 필요.",
+        "위 상태는 확인한 특정 판매 상품에 한정되며 다른 판매처나 모델 전체의 품절을 뜻하지 않습니다.",
+        "정확한 현재 판매조건이 확인되지 않아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "판매 상태·조건 확인",
+          "url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0065431443",
+          "observedAt": "2026-11-21",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-8B7909744D"
+    },
+    {
+      "id": "reviewed-micronics-classic-ii-ev-750-gold",
+      "name": "Micronics Classic II EV 750W GOLD ATX3.1 (판매 표기)",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "Micronics",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "마이크로닉스 Classic II EV 750W 80PLUS골드 풀모듈러 ATX3.1 · 수량1 · 정확한 품번·보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "마이크로닉스 Classic II EV 750W 80PLUS골드 풀모듈러 ATX3.1 · 수량1 · 정확한 품번·보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "EV 표기 모델을 이전 Classic II와 별도 기록. 색상·정확한 품번 확인 필요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 페이지",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4886048782",
+          "observedAt": "2026-11-21T05:43:48.632Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-micronics-classic-ii-ev-750-gold-gmarket-4886048782",
+          "merchant": "G마켓",
+          "seller": "micronics",
+          "pricePage": "/prices/psu#reviewed-micronics-classic-ii-ev-750-gold-gmarket-4886048782"
+        }
+      ],
+      "referenceCode": "BD-4EFA31773E"
+    },
+    {
+      "id": "reviewed-msi-mpg-ai1300ts",
+      "name": "MSI MPG Ai1300TS",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "MSI",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "판매 모델·현재 조건 추가 대조 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "판매 모델·현재 조건 추가 대조 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "품절·판매 중단 또는 판매조건 미확인. 모델 전체 품절을 뜻하지 않음.",
+        "1300TS 옵션 선택 후 1094700원 확인. 국내 배송 표시이나 판매자 올아웃아마존의 수입 경로·국내 보증·전원 케이블 규격은 미확인. 국내 정식 유통 상품과 동일 조건으로 묶지 않음.",
+        "위 상태는 확인한 특정 판매 상품에 한정되며 다른 판매처나 모델 전체의 품절을 뜻하지 않습니다.",
+        "정확한 현재 판매조건이 확인되지 않아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "판매 상태·조건 확인",
+          "url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0066579825",
+          "observedAt": "2026-11-21T03:34:24.029Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "판매 상태·조건 확인",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4764823302",
+          "observedAt": "2026-11-21T05:42:05.943Z",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-46554D6401"
+    },
+    {
+      "id": "reviewed-nzxt-c650-bulk-retailer",
+      "name": "NZXT C650 GOLD 벌크 (판매 표기)",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "NZXT",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "NZXT C650 80PLUS골드 벌크 · 수량1 · 정확한 품번·보증 확인 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "NZXT C650 80PLUS골드 벌크 · 수량1 · 정확한 품번·보증 확인 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "판매 제목에 세대·색상·품번이 없어 이전 컴퓨존 C650 블랙 벌크와 동일한 상품으로 합치지 않았습니다. 케이블 구성·국내 보증 확인 필요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 판매 페이지",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4717840102",
+          "observedAt": "2026-11-21T05:44:26.371Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-nzxt-c650-bulk-retailer-gmarket-4717840102",
+          "merchant": "G마켓",
+          "seller": "샵다나와",
+          "pricePage": "/prices/psu#reviewed-nzxt-c650-bulk-retailer-gmarket-4717840102"
+        }
+      ],
+      "referenceCode": "BD-E8DB58F3F4"
+    },
+    {
+      "id": "reviewed-nzxt-c650-black-bulk",
+      "name": "NZXT C650 GOLD Black Bulk",
+      "category": "psu",
+      "subtype": "power-supply",
+      "brand": "NZXT",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "판매 모델·현재 조건 추가 대조 필요"
+      ],
+      "specifications": [
+        {
+          "label": "판매 구성 표기",
+          "value": "판매 모델·현재 조건 추가 대조 필요"
+        }
+      ],
+      "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
+      "notes": [
+        "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
+        "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "정확한 세대·품번·벌크 구성 및 보증 추가 확인 필요",
+        "입고예정 미정·재입고 알림 안내. 벌크/보증스티커 미동봉 표기와 IDE 케이블 없음 주의. 현재 구매 가능한 가격으로 등록하지 않음.",
+        "위 상태는 확인한 특정 판매 상품에 한정되며 다른 판매처나 모델 전체의 품절을 뜻하지 않습니다.",
+        "정확한 현재 판매조건이 확인되지 않아 가격표에 금액을 등록하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "판매 상태·조건 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1300940",
+          "observedAt": "2026-11-21",
+          "kind": "retailer-availability"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "referenceCode": "BD-5E7358DA2E"
     },
     {
       "id": "maker-seasonic-psu-94ab401f6ce935ce",

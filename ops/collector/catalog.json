@@ -274,24 +274,6 @@
       "sourceUrl": "https://www.11st.co.kr/products/9436454644"
     },
     {
-      "id": "asrock-taichi-tc1650t-11st9548264512",
-      "category": "psu",
-      "seller": "마이크로닉스",
-      "sourceUrl": "https://www.11st.co.kr/products/9548264512"
-    },
-    {
-      "id": "lianli-sp1000-white-se1000008591",
-      "category": "psu",
-      "seller": "서린씨앤아이(서린익스프레스)",
-      "sourceUrl": "https://seorinexpress.com/goods/goods_view.php?goodsNo=1000008591"
-    },
-    {
-      "id": "lianli-sx1200-white-se1000007999",
-      "category": "psu",
-      "seller": "서린씨앤아이(서린익스프레스)",
-      "sourceUrl": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007999"
-    },
-    {
       "id": "asus-tuf-b850-plus-wifi-stcom-gm4278758978",
       "category": "motherboard",
       "seller": "빌트웍스",
@@ -560,6 +542,96 @@
       "category": "cpu",
       "seller": "여운스토어G",
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4568778642"
+    },
+    {
+      "id": "asrock-taichi-tc1650t-11st9548264512",
+      "category": "psu",
+      "seller": "마이크로닉스",
+      "sourceUrl": "https://www.11st.co.kr/products/9548264512"
+    },
+    {
+      "id": "lianli-sp1000-white-se1000008591",
+      "category": "psu",
+      "seller": "서린씨앤아이(서린익스프레스)",
+      "sourceUrl": "https://seorinexpress.com/goods/goods_view.php?goodsNo=1000008591"
+    },
+    {
+      "id": "lianli-sx1200-white-se1000007999",
+      "category": "psu",
+      "seller": "서린씨앤아이(서린익스프레스)",
+      "sourceUrl": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007999"
+    },
+    {
+      "id": "reviewed-asrock-sl-1200g-gmarket-4707847370",
+      "category": "psu",
+      "seller": "베이스캠프샵",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4707847370"
+    },
+    {
+      "id": "reviewed-asrock-sl-850gw-gmarket-4707847125",
+      "category": "psu",
+      "seller": "베이스캠프샵",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4707847125"
+    },
+    {
+      "id": "reviewed-aone-signature-850-black-gmarket-4654061660",
+      "category": "psu",
+      "seller": "도이치솔루션",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4654061660"
+    },
+    {
+      "id": "reviewed-antec-neoeco-850-platinum-gmarket-4883662291",
+      "category": "psu",
+      "seller": "린드스토어",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4883662291"
+    },
+    {
+      "id": "reviewed-corsair-rm850x-atx31-gmarket-4770081270",
+      "category": "psu",
+      "seller": "(주)두현시스템",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4770081270"
+    },
+    {
+      "id": "reviewed-micronics-classic-ii-ev-750-gold-gmarket-4886048782",
+      "category": "psu",
+      "seller": "micronics",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4886048782"
+    },
+    {
+      "id": "reviewed-nzxt-c650-bulk-retailer-gmarket-4717840102",
+      "category": "psu",
+      "seller": "샵다나와",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4717840102"
+    },
+    {
+      "id": "reviewed-antec-hcg-pro-850-platinum-gmarket-4065627821",
+      "category": "psu",
+      "seller": "1등 아이코다",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4065627821"
+    },
+    {
+      "id": "reviewed-antec-hcg-pro-1000-platinum-gmarket-4065627876",
+      "category": "psu",
+      "seller": "1등 아이코다",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4065627876"
+    },
+    {
+      "id": "reviewed-lianli-sx1200-black-seorinexpress-1000008000",
+      "category": "psu",
+      "seller": "서린씨앤아이(서린익스프레스)",
+      "sourceUrl": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008000"
+    },
+    {
+      "id": "reviewed-darkflash-perfectmost-750-white-darkflash-785",
+      "category": "psu",
+      "seller": "(주)투웨이(다크플래쉬 공식몰)",
+      "sourceUrl": "https://darkflash.co.kr/product/detail.html?product_no=785"
+    },
+    {
+      "id": "reviewed-darkflash-upmost-1250-white-darkflash-591",
+      "category": "psu",
+      "seller": "(주)투웨이(다크플래쉬 공식몰)",
+      "sourceUrl": "https://darkflash.co.kr/product/detail.html?product_no=591"
     }
   ]
 }
