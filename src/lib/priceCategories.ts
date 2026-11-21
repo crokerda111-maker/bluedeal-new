@@ -59,7 +59,7 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
     key: "cooler",
     title: "쿨러 가격현황",
     shortTitle: "쿨러·방열판",
-    description: "쿨러·방열판의 상품 정보와 판매 가격을 확인합니다.",
+    description: "CPU 공랭·수랭 쿨러, 시스템 팬, 방열판을 구분해 확인합니다.",
     unitHint: "원",
   },
   {

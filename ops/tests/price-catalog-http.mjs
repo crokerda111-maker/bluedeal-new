@@ -51,6 +51,22 @@ assert.deepEqual(ids(await get('/prices/cooler?catalogPage=-1')), ids(await get(
 await get('/prices/no-such-category', 404);
 
 const prices = JSON.parse(await get('/api/prices/status'));
+const coolingItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/cooler.json',import.meta.url),'utf8')).items;
+const coolingHtml=await get('/prices/cooler');
+if(coolingItems.length){
+  const liquidHtml=await get('/prices/cooler?q=CPU%20%EC%88%98%EB%9E%AD');
+  const fanHtml=await get('/prices/cooler?q=%EC%8B%9C%EC%8A%A4%ED%85%9C%20%ED%8C%AC');
+  for(const item of coolingItems){
+    assert.equal(liquidHtml.includes(`id="${item.id}"`),item.spec.startsWith('CPU 수랭'));
+    assert.equal(fanHtml.includes(`id="${item.id}"`),item.spec.startsWith('시스템 팬'));
+  }
+}
+for(const item of coolingItems){
+  assert.ok(coolingHtml.includes(`id="${item.id}"`));
+  const response=await fetch(`${base}/go/${item.goCode}`,{redirect:'manual',signal:AbortSignal.timeout(25000)});requests++;
+  assert.equal(response.status,302);
+  assert.ok(['www.compuzone.co.kr','item.gmarket.co.kr','www.ssg.com'].includes(new URL(response.headers.get('location')).hostname));
+}
 const gpuItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/gpu.json',import.meta.url),'utf8')).items;
 const gpuStandard=await get('/prices/gpu');
 const gpuRefurbished=await get('/prices/gpu?condition=refurbished');

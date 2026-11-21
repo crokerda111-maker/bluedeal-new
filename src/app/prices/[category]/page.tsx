@@ -18,6 +18,7 @@ import cpuReviewSummary from "../../../content/cpuReviewSummary.json";
 import ramReviewSummary from "../../../content/ramReviewSummary.json";
 import ssdReviewSummary from "../../../content/ssdReviewSummary.json";
 import gpuReviewSummary from "../../../content/gpuReviewSummary.json";
+import coolingReviewSummary from "../../../content/coolingReviewSummary.json";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -163,6 +164,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
             : "상품별 판매 조건과 링크는 확인된 정보가 있을 때 표시합니다."}</p>
       </div>
 
+      {category.key === "cooler" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{coolingReviewSummary.reviewedOn} KST 기준, 과거 쿨러 분류 {coolingReviewSummary.reviewedPosts}건에서 판매주소 {coolingReviewSummary.merchantObservations}개를 확인해 수량1 상품가·배송비 {coolingReviewSummary.freshPriceOffers}건을 등록했습니다. CPU 수랭·공랭, 시스템 팬, 방열판과 리퍼 상태를 구분합니다. 등록된 제조사 목록의 모든 모델에 국내 가격이 확인된 것은 아닙니다. 종료 행사·구매 불가·404·접근 제한 출처와 케이스·음료·휴대용 팬 혼입은 현재 쿨러 가격으로 사용하지 않았습니다.</p> : null}
       {data.items.length ? <PriceFilterForm category={category.key} items={data.items} filters={filters} /> : null}
       <p className="text-sm text-white/70">전체 {data.items.length}개 중 <b className="text-white">{items.length}개</b> 표시 · 배송비 미확인 상품은 포함 금액 정렬에서 뒤에 표시하며, 품절 상품의 이전 기록은 모든 정렬에서 마지막에 표시합니다.</p>
       <p className="text-xs leading-relaxed text-white/65">같은 모델도 판매처별로 별도 집계합니다. 색상·구성·유통사·보증 조건을 함께 확인해 비교하세요.</p>

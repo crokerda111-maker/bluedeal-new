@@ -50,9 +50,10 @@ def merchant_identity(url):
         if len(query) == 1 and len(codes) == 1 and codes[0].isascii() and codes[0].isdigit():
             return 'seorinexpress', codes[0]
     if parsed.hostname == 'www.compuzone.co.kr' and parsed.path == '/product/product_detail.htm':
-        query = parse_qs(parsed.query)
+        query = parse_qs(parsed.query, keep_blank_values=True)
         codes = query.get('ProductNo', [])
-        if len(query) == 1 and len(codes) == 1 and codes[0].isascii() and codes[0].isdigit():
+        navigation = {'BigDivNo','MediumDivNo','DivNo'}
+        if set(query) <= {'ProductNo',*navigation} and len(codes) == 1 and codes[0].isascii() and codes[0].isdigit() and all(len(v)==1 and (v[0]=='' or v[0].isascii() and v[0].isdigit()) for k,v in query.items() if k in navigation):
             return 'compuzone', codes[0]
     if parsed.hostname == 'item.gmarket.co.kr' and parsed.path == '/Item':
         query = parse_qs(parsed.query)

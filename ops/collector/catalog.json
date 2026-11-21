@@ -810,6 +810,48 @@
       "category": "gpu",
       "seller": "(주)이엠텍아이엔씨",
       "sourceUrl": "https://www.redbitmall.com/goods/goods_view.php?goodsNo=1000001441"
+    },
+    {
+      "id": "reviewed-coolermaster-pl360-flux-black-retailer-compuzone-870947",
+      "category": "cooler",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=870947&BigDivNo=4&MediumDivNo=1020&DivNo=4582"
+    },
+    {
+      "id": "reviewed-msi-mpg-coreliquid-p22-360-black-retailer-compuzone-1384874",
+      "category": "cooler",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1384874&BigDivNo=&MediumDivNo=1020&DivNo=4582"
+    },
+    {
+      "id": "reviewed-tcomas-neox-360-argb-white-retailer-compuzone-1384425",
+      "category": "cooler",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1384425&BigDivNo=4&MediumDivNo=1020&DivNo=4582"
+    },
+    {
+      "id": "reviewed-antec-nova-120-pwm-black-1pack-controller-retailer-compuzone-1252712",
+      "category": "cooler",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1252712&BigDivNo=4&MediumDivNo=1020&DivNo=0"
+    },
+    {
+      "id": "reviewed-deepcool-lt360-vision-argb-black-retailer-compuzone-1332721",
+      "category": "cooler",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1332721&BigDivNo=4&MediumDivNo=1020&DivNo=4582"
+    },
+    {
+      "id": "reviewed-arctic-liquid-freezer-iii-pro-360-seorin-retailer-gmarket-4440739203",
+      "category": "cooler",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4440739203"
+    },
+    {
+      "id": "reviewed-noctua-nl-lc1-36-retailer-ssg-1000848335149",
+      "category": "cooler",
+      "seller": "G마켓 판매자스토어",
+      "sourceUrl": "https://www.ssg.com/item/itemView.ssg?itemId=1000848335149&siteNo=7024&salestrNo=6005"
     }
   ]
 }

@@ -1,0 +1,365 @@
+[
+  {
+    "id": "reviewed-coolermaster-pl360-flux-black-retailer",
+    "name": "쿨러마스터 MasterLiquid PL360 FLUX 블랙",
+    "category": "cooler",
+    "subtype": "cpu-liquid-cooler",
+    "brand": "쿨러마스터",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "CPU 수랭 쿨러"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지에서 모델 표기와 확인 가능한 판매 상태를 검토했습니다. 가격표에 등록한 상품만 수량1 금액·기본 배송비를 대조했으며 현재 품질·후기 점수는 없습니다.",
+    "notes": [
+      "판매 표기 기준 모델입니다. 정확한 제조사 품번·색상·리비전·구성품·동봉 브래킷·케이스 간섭과 국내 보증·누수보상 조건을 추가 확인해야 합니다. 소음·냉각 성능·품질 점수를 산정하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 판매 구성·수량·배송·상태 확인",
+        "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=870947&BigDivNo=4&MediumDivNo=1020&DivNo=4582",
+        "observedAt": "2026-11-21T07:58:45.320Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-coolermaster-pl360-flux-black-retailer-compuzone-870947",
+        "merchant": "컴퓨존",
+        "seller": "컴퓨존",
+        "pricePage": "/prices/cooler#reviewed-coolermaster-pl360-flux-black-retailer-compuzone-870947"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-msi-mpg-coreliquid-p22-360-black-retailer",
+    "name": "MSI MPG 코어리퀴드 P22 360 블랙",
+    "category": "cooler",
+    "subtype": "cpu-liquid-cooler",
+    "brand": "MSI",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "CPU 수랭 쿨러"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지에서 모델 표기와 확인 가능한 판매 상태를 검토했습니다. 가격표에 등록한 상품만 수량1 금액·기본 배송비를 대조했으며 현재 품질·후기 점수는 없습니다.",
+    "notes": [
+      "판매 표기 기준 모델입니다. 정확한 제조사 품번·색상·리비전·구성품·동봉 브래킷·케이스 간섭과 국내 보증·누수보상 조건을 추가 확인해야 합니다. 소음·냉각 성능·품질 점수를 산정하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 판매 구성·수량·배송·상태 확인",
+        "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1384874&BigDivNo=&MediumDivNo=1020&DivNo=4582",
+        "observedAt": "2026-11-21T07:58:47.179Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-msi-mpg-coreliquid-p22-360-black-retailer-compuzone-1384874",
+        "merchant": "컴퓨존",
+        "seller": "컴퓨존",
+        "pricePage": "/prices/cooler#reviewed-msi-mpg-coreliquid-p22-360-black-retailer-compuzone-1384874"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-tcomas-neox-360-argb-white-retailer",
+    "name": "TCOMAS NEOX 360 ARGB 화이트",
+    "category": "cooler",
+    "subtype": "cpu-liquid-cooler",
+    "brand": "TCOMAS",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "CPU 수랭 쿨러"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지에서 모델 표기와 확인 가능한 판매 상태를 검토했습니다. 가격표에 등록한 상품만 수량1 금액·기본 배송비를 대조했으며 현재 품질·후기 점수는 없습니다.",
+    "notes": [
+      "판매 표기 기준 모델입니다. 정확한 제조사 품번·색상·리비전·구성품·동봉 브래킷·케이스 간섭과 국내 보증·누수보상 조건을 추가 확인해야 합니다. 소음·냉각 성능·품질 점수를 산정하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 판매 구성·수량·배송·상태 확인",
+        "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1384425&BigDivNo=4&MediumDivNo=1020&DivNo=4582",
+        "observedAt": "2026-11-21T07:58:48.884Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-tcomas-neox-360-argb-white-retailer-compuzone-1384425",
+        "merchant": "컴퓨존",
+        "seller": "컴퓨존",
+        "pricePage": "/prices/cooler#reviewed-tcomas-neox-360-argb-white-retailer-compuzone-1384425"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-antec-nova-120-pwm-black-1pack-controller-retailer",
+    "name": "Antec NOVA 120 PWM 블랙 [1PACK/컨트롤러] (판매 표기)",
+    "category": "cooler",
+    "subtype": "case-fan",
+    "brand": "Antec",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "시스템 팬"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지에서 모델 표기와 확인 가능한 판매 상태를 검토했습니다. 가격표에 등록한 상품만 수량1 금액·기본 배송비를 대조했으며 현재 품질·후기 점수는 없습니다.",
+    "notes": [
+      "판매 표기 기준 모델입니다. 정확한 제조사 품번·색상·리비전·구성품·동봉 브래킷·케이스 간섭과 국내 보증·누수보상 조건을 추가 확인해야 합니다. 소음·냉각 성능·품질 점수를 산정하지 않았습니다.",
+      "시스템 팬 판매 상품입니다. CPU 수랭·공랭 쿨러와 구분하며 1PACK/컨트롤러는 판매명의 원문 표기입니다. 팬·컨트롤러의 정확한 포함 수량과 전용 연결 방식은 구매 전 확인 필요."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 판매 구성·수량·배송·상태 확인",
+        "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1252712&BigDivNo=4&MediumDivNo=1020&DivNo=0",
+        "observedAt": "2026-11-21T07:58:50.489Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-antec-nova-120-pwm-black-1pack-controller-retailer-compuzone-1252712",
+        "merchant": "컴퓨존",
+        "seller": "컴퓨존",
+        "pricePage": "/prices/cooler#reviewed-antec-nova-120-pwm-black-1pack-controller-retailer-compuzone-1252712"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-deepcool-lt360-vision-argb-black-retailer",
+    "name": "DEEPCOOL LT360 VISION ARGB 블랙",
+    "category": "cooler",
+    "subtype": "cpu-liquid-cooler",
+    "brand": "DEEPCOOL",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "CPU 수랭 쿨러"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지에서 모델 표기와 확인 가능한 판매 상태를 검토했습니다. 가격표에 등록한 상품만 수량1 금액·기본 배송비를 대조했으며 현재 품질·후기 점수는 없습니다.",
+    "notes": [
+      "판매 표기 기준 모델입니다. 정확한 제조사 품번·색상·리비전·구성품·동봉 브래킷·케이스 간섭과 국내 보증·누수보상 조건을 추가 확인해야 합니다. 소음·냉각 성능·품질 점수를 산정하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 판매 구성·수량·배송·상태 확인",
+        "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1332721&BigDivNo=4&MediumDivNo=1020&DivNo=4582",
+        "observedAt": "2026-11-21T07:59:57.596Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-deepcool-lt360-vision-argb-black-retailer-compuzone-1332721",
+        "merchant": "컴퓨존",
+        "seller": "컴퓨존",
+        "pricePage": "/prices/cooler#reviewed-deepcool-lt360-vision-argb-black-retailer-compuzone-1332721"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-arctic-liquid-freezer-iii-pro-360-seorin-retailer",
+    "name": "ARCTIC Liquid Freezer III PRO 360 서린 (색상·ARGB 구성 추가 확인)",
+    "category": "cooler",
+    "subtype": "cpu-liquid-cooler",
+    "brand": "ARCTIC",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "CPU 수랭 쿨러"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지에서 모델 표기와 확인 가능한 판매 상태를 검토했습니다. 가격표에 등록한 상품만 수량1 금액·기본 배송비를 대조했으며 현재 품질·후기 점수는 없습니다.",
+    "notes": [
+      "판매 표기 기준 모델입니다. 정확한 제조사 품번·색상·리비전·구성품·동봉 브래킷·케이스 간섭과 국내 보증·누수보상 조건을 추가 확인해야 합니다. 소음·냉각 성능·품질 점수를 산정하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 판매 구성·수량·배송·상태 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodscode=4440739203",
+        "observedAt": "2026-11-21T08:00:52.889Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-arctic-liquid-freezer-iii-pro-360-seorin-retailer-gmarket-4440739203",
+        "merchant": "G마켓",
+        "seller": "(주)서린씨앤아이",
+        "pricePage": "/prices/cooler#reviewed-arctic-liquid-freezer-iii-pro-360-seorin-retailer-gmarket-4440739203"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-noctua-nl-lc1-36-retailer",
+    "name": "Noctua NL-LC1-36",
+    "category": "cooler",
+    "subtype": "cpu-liquid-cooler",
+    "brand": "Noctua",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "CPU 수랭 쿨러",
+      "360mm 라디에이터",
+      "NF-A12x25 G2 120mm 팬 3개"
+    ],
+    "specifications": [
+      {
+        "label": "제조사 안내 기본 지원 소켓",
+        "value": "AMD AM5·AM4 / Intel LGA1851·1700"
+      }
+    ],
+    "description": "실제 판매 페이지에서 모델 표기와 확인 가능한 판매 상태를 검토했습니다. 가격표에 등록한 상품만 수량1 금액·기본 배송비를 대조했으며 현재 품질·후기 점수는 없습니다.",
+    "notes": [
+      "판매 표기 기준 모델입니다. 정확한 제조사 품번·색상·리비전·구성품·동봉 브래킷·케이스 간섭과 국내 보증·누수보상 조건을 추가 확인해야 합니다. 소음·냉각 성능·품질 점수를 산정하지 않았습니다.",
+      "제조사 기본 보증6년 안내와 실제 국내 판매품의 보증·누수보상 적용은 별개입니다. 동봉 브래킷·설치 공간·국내 서비스 범위를 확인하세요. 제조사 홍보 문구를 독립 소음·성능 평가로 사용하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 판매 구성·수량·배송·상태 확인",
+        "url": "https://www.ssg.com/item/itemView.ssg?itemId=1000848335149&siteNo=7024&salestrNo=6005",
+        "observedAt": "2026-11-21T08:03:06.816Z",
+        "kind": "retailer-listing"
+      },
+      {
+        "label": "Noctua NL-LC1-36 공식 상품 자료",
+        "url": "https://www.noctua.at/en/products/nl-lc1-36",
+        "observedAt": "2026-11-21T08:06:29.407257+00:00",
+        "kind": "manufacturer-product"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-noctua-nl-lc1-36-retailer-ssg-1000848335149",
+        "merchant": "SSG.COM",
+        "seller": "G마켓 판매자스토어",
+        "pricePage": "/prices/cooler#reviewed-noctua-nl-lc1-36-retailer-ssg-1000848335149"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-deepcool-lm360-black-retailer",
+    "name": "DEEPCOOL LM360 블랙",
+    "category": "cooler",
+    "subtype": "cpu-liquid-cooler",
+    "brand": "DEEPCOOL",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "CPU 수랭 쿨러"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지에서 모델 표기와 확인 가능한 판매 상태를 검토했습니다. 가격표에 등록한 상품만 수량1 금액·기본 배송비를 대조했으며 현재 품질·후기 점수는 없습니다.",
+    "notes": [
+      "판매 표기 기준 모델입니다. 정확한 제조사 품번·색상·리비전·구성품·동봉 브래킷·케이스 간섭과 국내 보증·누수보상 조건을 추가 확인해야 합니다. 소음·냉각 성능·품질 점수를 산정하지 않았습니다.",
+      "확인한 판매처가 재입고 알림 상태이므로 현재 가격을 등록하지 않았습니다. 모델 전체의 품절·단종을 뜻하지 않습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 판매 구성·수량·배송·상태 확인",
+        "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1274870",
+        "observedAt": "2026-11-21T07:59:44.759Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-thermalright-pa120-se-refurb-retailer",
+    "name": "Thermalright Peerless Assassin 120 SE · 리퍼 (색상 추가 확인)",
+    "category": "cooler",
+    "subtype": "cpu-air-cooler",
+    "brand": "Thermalright",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "CPU 공랭 쿨러"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지에서 모델 표기와 확인 가능한 판매 상태를 검토했습니다. 가격표에 등록한 상품만 수량1 금액·기본 배송비를 대조했으며 현재 품질·후기 점수는 없습니다.",
+    "notes": [
+      "판매 표기 기준 모델입니다. 정확한 제조사 품번·색상·리비전·구성품·동봉 브래킷·케이스 간섭과 국내 보증·누수보상 조건을 추가 확인해야 합니다. 소음·냉각 성능·품질 점수를 산정하지 않았습니다.",
+      "확인한 판매처가 구매 불가인 리퍼 상품이므로 현재 가격을 등록하지 않았습니다. 모델 전체의 품절·단종을 뜻하지 않습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "실제 판매 구성·수량·배송·상태 확인",
+        "url": "https://seorinexpress.com/goods/goods_view.php?goodsNo=1000004458",
+        "observedAt": "2026-11-21T08:01:29.373Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  }
+]

@@ -17,7 +17,8 @@ test('models, wattage options and families are counted separately',()=>{
   const summary=summarizeCatalog(products);
   assert.equal(summary.models+summary.outputOptions+summary.families,summary.entries);
   assert.equal(summary.discontinued,38);
-  assert.equal(summary.categoryCounts.cooler,242);
+  const reviewedCooling=JSON.parse(fs.readFileSync(new URL('../../src/content/products/reviewed-cooling.json',import.meta.url),'utf8'));
+  assert.equal(summary.categoryCounts.cooler,242+reviewedCooling.length); // Existing official list plus reviewed retailer variants.
   const reviewedCpus=JSON.parse(fs.readFileSync(new URL('../../src/content/products/reviewed-cpus.json',import.meta.url),'utf8'));
   assert.equal(summary.categoryCounts.cpu,reviewedCpus.length+1); // Separate Intel issue dossier.
 });
@@ -38,7 +39,10 @@ test('Unicode-normalized multiple search terms match names and known features',(
   const a=searchCatalog(products,{q:'ＰＥＥＲＬＥＳＳ black',category:'cooler'},1000);
   assert.ok(a.total>0);assert.ok(a.items.every(p=>p.name.toLowerCase().includes('peerless')&&p.name.toLowerCase().includes('black')));
   const b=searchCatalog(products,{q:'CPU 공랭',category:'cooler'},1000);
-  assert.equal(b.total,218);
+  assert.ok(b.total>0);
+  assert.ok(b.items.every(p=>p.subtype==='cpu-air-cooler'));
+  assert.ok(b.items.some(p=>p.id==='reviewed-thermalright-pa120-se-refurb-retailer'));
+  assert.deepEqual(b.items.map(p=>p.id),searchCatalog(products,{q:'공랭 CPU',category:'cooler'},1000).items.map(p=>p.id));
 });
 
 test('invalid pages and duplicate query values are bounded and deterministic',()=>{
