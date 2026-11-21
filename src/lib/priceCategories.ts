@@ -4,6 +4,9 @@ export type PriceCategoryKey =
   | "ssd"
   | "motherboard"
   | "gpu"
+  | "psu"
+  | "case"
+  | "hdd"
   | "cooler"
   | "halfpc"
   | "fullpc";
@@ -55,8 +58,29 @@ export const PRICE_CATEGORIES: PriceCategory[] = [
   {
     key: "cooler",
     title: "쿨러 가격현황",
-    shortTitle: "쿨러",
-    description: "공랭/수랭 쿨러 가격을 모아봅니다.",
+    shortTitle: "쿨러·방열판",
+    description: "쿨러·방열판의 상품 정보와 판매 가격을 확인합니다.",
+    unitHint: "원",
+  },
+  {
+    key: "psu",
+    title: "파워 상품·가격현황",
+    shortTitle: "파워",
+    description: "파워의 모델·출력 옵션과 판매 가격을 확인합니다.",
+    unitHint: "원",
+  },
+  {
+    key: "case",
+    title: "케이스 상품·가격현황",
+    shortTitle: "케이스",
+    description: "케이스 제품군의 특징과 판매 가격을 확인합니다.",
+    unitHint: "원",
+  },
+  {
+    key: "hdd",
+    title: "HDD 상품·가격현황",
+    shortTitle: "HDD",
+    description: "하드디스크의 상품 정보와 판매 가격을 확인합니다.",
     unitHint: "원",
   },
   {

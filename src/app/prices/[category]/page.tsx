@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCategory } from "../../../lib/priceCategories";
-import type { PriceCategoryKey } from "../../../lib/priceCategories";
 import type { PriceItem } from "../../../lib/mockPrices";
 import { getPriceView } from "../../../lib/prices";
 import SmartLink from "../../../components/SmartLink";
@@ -12,6 +11,8 @@ import { filterPrices, priceFreshness, readPriceFilters } from "../../../lib/pri
 import { pageMetadata } from "../../../lib/site";
 import { OUTBOUND_LINKS } from "../../../lib/outbound";
 import { resolveAffiliateUrl } from "../../../lib/affiliate";
+import { CATALOG_SUMMARY } from "../../../lib/catalogData";
+import PriceCatalogSection from "../../../components/PriceCatalogSection";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -94,8 +95,9 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
   const { category: categoryKey } = await params;
   const category = getCategory(categoryKey);
   if (!category) return notFound();
-  const { meta, data, now } = await getPriceView(category.key as PriceCategoryKey);
-  const filters = readPriceFilters(await searchParams);
+  const { meta, data, now } = await getPriceView(category.key);
+  const query = await searchParams;
+  const filters = readPriceFilters(query);
   const items = filterPrices(data.items, category.key, filters);
   const affiliateCodes = new Set<string>();
   for (const item of items) {
@@ -125,6 +127,15 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       </div>
 
       <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
+        <p>등록 항목 <b className="text-cyan-200">{CATALOG_SUMMARY.categoryCounts[category.key]}개</b> · 판매처 가격 기록 <b className="text-cyan-200">{data.items.length}건</b></p>
+        <nav aria-label="분류 내 바로가기" className="mt-2 flex flex-wrap gap-4 text-cyan-200"><a href="#registered-products" className="inline-flex min-h-11 items-center underline">등록 상품·특징</a><a href="#price-records" className="inline-flex min-h-11 items-center underline">판매처 가격 기록</a></nav>
+      </div>
+
+      <PriceCatalogSection category={category} query={query} />
+
+      <section id="price-records" aria-labelledby="price-records-title" className="scroll-mt-24 space-y-4">
+      <h2 id="price-records-title" className="text-xl font-semibold">판매처 가격 기록 <span className="text-cyan-200">{data.items.length}건</span></h2>
+      <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
         <p>표시된 금액은 <b className="text-white">확인 시점의 판매처 가격</b>입니다. 선택한 판매 상품을 안내하며, 전체 판매처의 최저가를 보장하지 않습니다.</p>
         <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요.</p>
         <p className="mt-2 text-white" role="note">{affiliateCodes.size > 0
@@ -133,13 +144,13 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
             : "상품별 판매 조건과 링크는 확인된 정보가 있을 때 표시합니다."}</p>
       </div>
 
-      <PriceFilterForm category={category.key} items={data.items} filters={filters} />
+      {data.items.length ? <PriceFilterForm category={category.key} items={data.items} filters={filters} /> : null}
       <p className="text-sm text-white/70">전체 {data.items.length}개 중 <b className="text-white">{items.length}개</b> 표시 · 배송비 미확인 상품은 포함 금액 정렬에서 마지막에 표시합니다.</p>
       <p className="text-xs leading-relaxed text-white/65">같은 모델도 판매처별로 별도 집계합니다. 색상·구성·유통사·보증 조건을 함께 확인해 비교하세요.</p>
 
       {items.length === 0 ? (
         <div className="bd-surface-md px-4 py-10 text-center text-white/70">
-          {data.items.length ? <>조건에 맞는 상품이 없습니다. <Link className="text-cyan-200 hover:underline" href={`/prices/${category.key}`}>필터 초기화</Link></> : <>확인한 가격 데이터가 아직 없습니다. <Link className="text-cyan-200 hover:underline" href={reportHref}>제보하기</Link></>}
+          {data.items.length ? <>조건에 맞는 상품이 없습니다. <Link className="text-cyan-200 hover:underline" href={`/prices/${category.key}#price-records`}>필터 초기화</Link></> : <>판매처 가격·재고는 아직 확인하지 못했습니다. {CATALOG_SUMMARY.categoryCounts[category.key] ? <a href="#registered-products" className="text-cyan-200 underline">위의 등록 상품·특징을 먼저 살펴보세요.</a> : null} <Link className="text-cyan-200 hover:underline" href={reportHref}>판매처 제보하기</Link></>}
         </div>
       ) : (
         <>
@@ -190,6 +201,8 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
           <p className="text-xs leading-relaxed text-white/60">상품가 관측 기록 기준입니다. 24시간 전후의 비교 기록이 없거나 7일·30일의 기록 기간을 채우지 못하면 ‘기록 대기’로 표시합니다. 기록 사이의 가격 변동은 반영되지 않을 수 있습니다.</p>
         </>
       )}
+
+      </section>
 
       {category.key === "cpu" ? <CpuReferenceGuide /> : null}
       {category.key === "gpu" ? <GpuReferenceGuide /> : null}

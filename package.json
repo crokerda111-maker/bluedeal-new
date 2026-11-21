@@ -1,6 +1,6 @@
 {
   "name": "bluedeal-mvp",
-  "version": "0.3.33",
+  "version": "0.3.34",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -20,6 +20,7 @@
     "test:hotdeals": "python -m unittest discover -s ops/tests -p test_hotdeals.py",
     "test:assessment": "node --experimental-strip-types --test ops/tests/value-assessment.mjs",
     "test:catalog": "node --experimental-strip-types --test ops/tests/product-catalog.mjs",
+    "test:price-catalog": "node ops/tests/price-catalog-http.mjs",
     "test:ops": "python -m unittest discover -s ops/tests -p test_*.py"
   },
   "dependencies": {

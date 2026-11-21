@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { CATALOG_BRANDS, CATALOG_PRODUCTS, CATALOG_SUMMARY } from "../../lib/catalogData";
-import { catalogDate, catalogHref, PRODUCT_CATEGORIES, PRODUCT_KIND_LABELS, productCategoryLabel, searchCatalog } from "../../lib/productCatalog";
+import { catalogHref, PRODUCT_CATEGORIES, searchCatalog } from "../../lib/productCatalog";
 import type { CatalogQuery } from "../../lib/productCatalog";
+import CatalogProductCard from "../../components/CatalogProductCard";
 import { pageMetadata } from "../../lib/site";
 
 export const metadata = pageMetadata("PC 상품 목록 | BLUEDEAL", "부품·제품군의 특징과 확인한 출처를 살펴보고, 필요한 정보와 구매 조건을 확인하세요.", "/products", true);
@@ -36,14 +37,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Pro
 
     <section aria-labelledby="catalog-results-title">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3"><h2 id="catalog-results-title" className="text-lg font-semibold">검색 결과 <span className="text-cyan-200">{results.total}개</span></h2><p className="text-xs text-white/65">{results.page} / {results.totalPages} 페이지</p></div>
-      {results.items.length ? <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{results.items.map(product =>
-        <article key={product.id} className="bd-surface-md flex min-w-0 flex-col p-5">
-          <div className="flex flex-wrap items-center gap-2 text-[11px]"><span className="rounded-md bg-cyan-300/10 px-2 py-1 text-cyan-100">{productCategoryLabel(product.category)}</span><span className="text-white/60">{PRODUCT_KIND_LABELS[product.kind]}</span>{product.lifecycle === "listed-discontinued" ? <span className="rounded-md bg-amber-200/10 px-2 py-1 text-amber-100">제조사 단종 목록</span> : null}</div>
-          <p className="mt-4 text-xs text-white/60">{product.brand}</p>
-          <h3 className="mt-2 break-words text-base font-semibold leading-7"><Link href={`/products/${product.id}`} className="hover:text-cyan-100">{product.name}</Link></h3>
-          <p className="mt-3 break-words text-sm leading-6 text-white/75">{product.features.slice(0, 2).join(" · ") || "상세 자료를 확인하고 있습니다."}</p>
-          <div className="mt-auto pt-5"><p className="text-xs leading-6 text-white/60">{product.listObservedAt ? `공식 목록 확인 ${catalogDate(product.listObservedAt)}` : product.kind === "source-reviewed-model" ? "공식 사양·공지 검토 자료" : "기존 등록 사양 · 추가 대조 중"}</p><Link href={`/products/${product.id}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-medium text-cyan-200 hover:underline">특징·출처·확인 상태 보기 <span aria-hidden="true" className="ml-2">→</span></Link></div>
-        </article>)}</div> : <div className="rounded-2xl border border-white/15 p-7"><h3 className="font-semibold">조건에 맞는 등록 항목이 없습니다.</h3><p className="mt-3 text-sm leading-7 text-white/70">검색어를 줄이거나 다른 분류를 선택해 주세요. 아직 비어 있는 분류는 제품 목록을 추가하고 있습니다.</p><Link href="/products" className="mt-4 inline-flex min-h-11 items-center text-cyan-200 underline">전체 목록 보기</Link></div>}
+      {results.items.length ? <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{results.items.map(product => <CatalogProductCard key={product.id} product={product} />)}</div> : <div className="rounded-2xl border border-white/15 p-7"><h3 className="font-semibold">조건에 맞는 등록 항목이 없습니다.</h3><p className="mt-3 text-sm leading-7 text-white/70">검색어를 줄이거나 다른 분류를 선택해 주세요. 아직 비어 있는 분류는 제품 목록을 추가하고 있습니다.</p><Link href="/products" className="mt-4 inline-flex min-h-11 items-center text-cyan-200 underline">전체 목록 보기</Link></div>}
       {results.totalPages > 1 ? <nav aria-label="상품 목록 페이지" className="mt-6 flex items-center justify-center gap-4">{results.page > 1 ? <Link rel="prev" href={catalogHref(results, results.page - 1)} className="inline-flex min-h-11 items-center rounded-xl border border-white/20 px-5 text-sm hover:bg-white/10">이전</Link> : null}<span className="text-sm text-white/70">{results.page} / {results.totalPages}</span>{results.page < results.totalPages ? <Link rel="next" href={catalogHref(results, results.page + 1)} className="inline-flex min-h-11 items-center rounded-xl border border-white/20 px-5 text-sm hover:bg-white/10">다음</Link> : null}</nav> : null}
     </section>
   </div>;

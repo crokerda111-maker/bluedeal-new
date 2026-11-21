@@ -19,6 +19,9 @@ const LOCAL_PRICES: Record<PriceCategoryKey, unknown> = {
   cooler,
   halfpc,
   fullpc,
+  psu: { category: "psu", updatedAt: "", items: [] },
+  case: { category: "case", updatedAt: "", items: [] },
+  hdd: { category: "hdd", updatedAt: "", items: [] },
 };
 
 export function getLocalMeta(): MetaPayload {

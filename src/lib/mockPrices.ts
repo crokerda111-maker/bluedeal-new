@@ -81,6 +81,9 @@ const MOCK: Record<PriceCategoryKey, PricesPayload> = {
   cooler: { category: "cooler", updatedAt: nowIso, items: baseItems("cooler") },
   halfpc: { category: "halfpc", updatedAt: nowIso, items: baseItems("halfpc") },
   fullpc: { category: "fullpc", updatedAt: nowIso, items: baseItems("fullpc") },
+  psu: { category: "psu", updatedAt: "", items: [] },
+  case: { category: "case", updatedAt: "", items: [] },
+  hdd: { category: "hdd", updatedAt: "", items: [] },
 };
 
 export function getMockPrices(category: PriceCategoryKey): PricesPayload {
