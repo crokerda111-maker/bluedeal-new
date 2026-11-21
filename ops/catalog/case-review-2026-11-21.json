@@ -1,0 +1,340 @@
+{
+  "reviewedOn": "2026-11-21",
+  "scope": "원 케이스 분류5건과 쿨러에서 옮긴 해외 케이스2건 첫 검토. 실제 판매주소5개에서 현재 수량1가격4건 확인. 전체 시장 전수 수집·품질 점수 완료 아님.",
+  "models": [
+    {
+      "id": "reviewed-1stplayer-wa7-k-rgb-black-retailer",
+      "name": "1STPlayer 와칠 WA7-K RGB 블랙",
+      "category": "case",
+      "subtype": "pc-case",
+      "brand": "1STPlayer",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PC 케이스 단품",
+        "미들타워",
+        "블랙"
+      ],
+      "specifications": [],
+      "description": "실제 판매주소에서 모델·색상·수량1 상품가·기본 배송비를 확인한 케이스입니다. 제조사 제품군 목록과 별도 판매 구성으로 구분합니다.",
+      "notes": [
+        "판매 표기의 모델·색상 기준입니다. 정확한 제조사 품번·리비전·기본팬 수·구성품·국내 보증과 설치 공간은 추가 확인해야 합니다. 판매자 평점·적립 후기를 독립 성능·품질 평가로 사용하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 판매 구성·수량·배송·안내 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1377849",
+          "observedAt": "2026-11-21T08:17:52.508Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-1stplayer-wa7-k-rgb-black-retailer-compuzone-1377849",
+          "merchant": "컴퓨존",
+          "seller": "컴퓨존",
+          "pricePage": "/prices/case#reviewed-1stplayer-wa7-k-rgb-black-retailer-compuzone-1377849"
+        }
+      ]
+    },
+    {
+      "id": "reviewed-phanteks-ex5-black-retailer",
+      "name": "PHANTEKS EX5 블랙",
+      "category": "case",
+      "subtype": "pc-case",
+      "brand": "PHANTEKS",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PC 케이스 단품",
+        "미들타워",
+        "블랙"
+      ],
+      "specifications": [],
+      "description": "실제 판매주소에서 모델·색상·수량1 상품가·기본 배송비를 확인한 케이스입니다. 제조사 제품군 목록과 별도 판매 구성으로 구분합니다.",
+      "notes": [
+        "판매 표기의 모델·색상 기준입니다. 정확한 제조사 품번·리비전·기본팬 수·구성품·국내 보증과 설치 공간은 추가 확인해야 합니다. 판매자 평점·적립 후기를 독립 성능·품질 평가로 사용하지 않았습니다.",
+        "판매 요약에 CPU 쿨러 높이 약72mm가 표시되어 있으나 제조사 도면과 교차 확인하지 못했습니다. 이 수치를 호환성 판정에 사용하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 판매 구성·수량·배송·안내 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1384367&BigDivNo=4&MediumDivNo=1147&DivNo=2750",
+          "observedAt": "2026-11-21T08:18:11.238Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-phanteks-ex5-black-retailer-compuzone-1384367",
+          "merchant": "컴퓨존",
+          "seller": "컴퓨존",
+          "pricePage": "/prices/case#reviewed-phanteks-ex5-black-retailer-compuzone-1384367"
+        }
+      ]
+    },
+    {
+      "id": "reviewed-antec-flux-pro-mesh-white-retailer",
+      "name": "Antec FLUX PRO MESH 화이트",
+      "category": "case",
+      "subtype": "pc-case",
+      "brand": "Antec",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PC 케이스 단품",
+        "빅타워",
+        "화이트"
+      ],
+      "specifications": [],
+      "description": "실제 판매주소에서 모델·색상·수량1 상품가·기본 배송비를 확인한 케이스입니다. 제조사 제품군 목록과 별도 판매 구성으로 구분합니다.",
+      "notes": [
+        "판매 표기의 모델·색상 기준입니다. 정확한 제조사 품번·리비전·기본팬 수·구성품·국내 보증과 설치 공간은 추가 확인해야 합니다. 판매자 평점·적립 후기를 독립 성능·품질 평가로 사용하지 않았습니다.",
+        "판매 요약의 CPU 쿨러 높이181mm/190mm와 색상 표기가 충돌합니다. 화이트 판매 제목만 식별에 사용했으며 치수·팬·장착 가능 부품은 제조사 자료와 실판매 구성을 확인해야 합니다. 입고예정 미정 표시이므로 즉시 출고를 보장하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 판매 구성·수량·배송·안내 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1195122",
+          "observedAt": "2026-11-21T08:18:30.278Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-antec-flux-pro-mesh-white-retailer-compuzone-1195122",
+          "merchant": "컴퓨존",
+          "seller": "컴퓨존",
+          "pricePage": "/prices/case#reviewed-antec-flux-pro-mesh-white-retailer-compuzone-1195122"
+        }
+      ]
+    },
+    {
+      "id": "reviewed-darkflash-floatron-f1-argb-black-retailer",
+      "name": "darkFlash FLOATRON F1 ARGB 블랙",
+      "category": "case",
+      "subtype": "pc-case",
+      "brand": "darkFlash",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PC 케이스 단품",
+        "미들타워",
+        "블랙"
+      ],
+      "specifications": [],
+      "description": "실제 판매주소에서 모델·색상·수량1 상품가·기본 배송비를 확인한 케이스입니다. 제조사 제품군 목록과 별도 판매 구성으로 구분합니다.",
+      "notes": [
+        "판매 표기의 모델·색상 기준입니다. 정확한 제조사 품번·리비전·기본팬 수·구성품·국내 보증과 설치 공간은 추가 확인해야 합니다. 판매자 평점·적립 후기를 독립 성능·품질 평가로 사용하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 판매 구성·수량·배송·안내 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1368746&BigDivNo=4&MediumDivNo=1147&DivNo=2750",
+          "observedAt": "2026-11-21T08:18:48.096Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-darkflash-floatron-f1-argb-black-retailer-compuzone-1368746",
+          "merchant": "컴퓨존",
+          "seller": "컴퓨존",
+          "pricePage": "/prices/case#reviewed-darkflash-floatron-f1-argb-black-retailer-compuzone-1368746"
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "post": "1993990",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1993990",
+      "disposition": "케이스 단품",
+      "outcome": "원 판매주소 수량1 금액·배송비 확인",
+      "reason": "과거 글의 행사 가격·할인율·배송조건을 현재 조건으로 승계하지 않았습니다.",
+      "modelIds": [
+        "reviewed-1stplayer-wa7-k-rgb-black-retailer"
+      ],
+      "verifiedListingIds": [
+        "reviewed-1stplayer-wa7-k-rgb-black-retailer-compuzone-1377849"
+      ],
+      "alternativeListingIds": [],
+      "merchantChecks": [
+        {
+          "sourceKey": "compuzone:1377849",
+          "title": "[1STPlayer] 와칠 WA7-K RGB [미들타워] [블랙]",
+          "observedAt": "2026-11-21T08:17:52.508Z",
+          "notes": "컴퓨존 단독25%는 판매 제목 문구이며 비교 기준가 미확인. 신규가입2천원쿠폰3만원이상 표시는 발급대상·기한·중복 미확인으로 차감 안 함. 토스 계좌50만원/150만원, 삼성80만원, Npay40만원 기준은 단품 미충족. 리뷰 표본은 독립 품질 평가로 사용하지 않음.",
+          "source": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1377849",
+          "status": "price-observed",
+          "identityVerified": true
+        }
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1987821",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1987821",
+      "disposition": "케이스 단품",
+      "outcome": "원 판매주소 수량1 금액·배송비 확인",
+      "reason": "과거 글의 행사 가격·할인율·배송조건을 현재 조건으로 승계하지 않았습니다. 판매 요약 사양 충돌·입고 안내는 별도 확인 필요.",
+      "modelIds": [
+        "reviewed-phanteks-ex5-black-retailer"
+      ],
+      "verifiedListingIds": [
+        "reviewed-phanteks-ex5-black-retailer-compuzone-1384367"
+      ],
+      "alternativeListingIds": [],
+      "merchantChecks": [
+        {
+          "sourceKey": "compuzone:1384367",
+          "title": "PHANTEKS EX5 미들타워 블랙",
+          "observedAt": "2026-11-21T08:18:11.238Z",
+          "notes": "판매 요약의 CPU쿨러 약72mm 등 호환 수치는 제조사 도면 대조 전 확정하지 않음. 제공고시는 부품별5년/과실제외라 단일 무조건5년 보증으로 확대하지 않음. 신규가입 쿠폰과 고액 결제혜택은 차감하지 않음.",
+          "source": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1384367&BigDivNo=4&MediumDivNo=1147&DivNo=2750",
+          "status": "price-observed",
+          "identityVerified": true
+        }
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1977822",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1977822",
+      "disposition": "케이스 단품",
+      "outcome": "원 판매주소 수량1 금액·배송비 확인",
+      "reason": "과거 글의 행사 가격·할인율·배송조건을 현재 조건으로 승계하지 않았습니다. 판매 요약 사양 충돌·입고 안내는 별도 확인 필요.",
+      "modelIds": [
+        "reviewed-antec-flux-pro-mesh-white-retailer"
+      ],
+      "verifiedListingIds": [
+        "reviewed-antec-flux-pro-mesh-white-retailer-compuzone-1195122"
+      ],
+      "alternativeListingIds": [],
+      "merchantChecks": [
+        {
+          "sourceKey": "compuzone:1195122",
+          "title": "Antec FLUX PRO MESH 빅타워 화이트",
+          "observedAt": "2026-11-21T08:18:30.278Z",
+          "notes": "수량1 합계269000·무료배송. 입고예정 미정 표시가 구매버튼과 함께 있어 즉시 출고·재고를 확정하지 않음. CPU쿨러181mm/190mm·색상블랙 요약과 화이트 제목 등 판매 사양 충돌은 제조사 대조 필요. 고액결제혜택·신규가입 쿠폰 차감 안 함.",
+          "source": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1195122",
+          "status": "price-observed",
+          "identityVerified": true
+        }
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1976069",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1976069",
+      "disposition": "케이스 단품",
+      "outcome": "원 판매주소 수량1 금액·배송비 확인",
+      "reason": "과거 글의 행사 가격·할인율·배송조건을 현재 조건으로 승계하지 않았습니다.",
+      "modelIds": [
+        "reviewed-darkflash-floatron-f1-argb-black-retailer"
+      ],
+      "verifiedListingIds": [
+        "reviewed-darkflash-floatron-f1-argb-black-retailer-compuzone-1368746"
+      ],
+      "alternativeListingIds": [],
+      "merchantChecks": [
+        {
+          "sourceKey": "compuzone:1368746",
+          "title": "darkFlash FLOATRON F1 ARGB 미들타워 블랙",
+          "observedAt": "2026-11-21T08:18:48.096Z",
+          "notes": "과거 예약판매99,000원과 구분한 현재 수량1 합계125,000원. 신규가입쿠폰·고액 결제혜택·리뷰적립을 차감하지 않음. 실제 동봉팬·장착공간·국내보증은 추가 대조 필요.",
+          "source": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1368746&BigDivNo=4&MediumDivNo=1147&DivNo=2750",
+          "status": "price-observed",
+          "identityVerified": true
+        }
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1961903",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1961903",
+      "disposition": "리퍼 케이스 여러제품 행사",
+      "outcome": "현재 리퍼 분류0건 · 개별 가격 미등록",
+      "reason": "과거 글의 행사 가격·할인율·배송조건을 현재 조건으로 승계하지 않았습니다.",
+      "modelIds": [],
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "merchantChecks": [
+        {
+          "sourceKey": "seorinexpress:category-027001",
+          "title": "서린 리퍼몰 PC CASE 분류",
+          "observedAt": "2026-11-21T08:19:08.094Z",
+          "notes": "현재 분류 화면0 item. 과거 LANCOOL207·Fractal 여러제품54,500원은 개별 현재 판매가로 사용하지 않음. 카테고리0건이 전체 제조사 단종·품절을 뜻하지 않음.",
+          "source": "https://www.seorinexpress.com/goods/goods_list.php?cateCd=027001",
+          "status": "empty-category",
+          "identityVerified": false
+        }
+      ],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1965372",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1965372",
+      "disposition": "쿨러 분류에서 옮긴 케이스 후보",
+      "outcome": "해외 판매 구성·배송·세금 확인 필요",
+      "reason": "기존 해외 판매처 접근 제한을 우회하지 않았습니다. 원문 제목만으로 현재 제품·색상·재고·국내 도착가를 확정하지 않았습니다.",
+      "modelIds": [],
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "merchantChecks": [],
+      "originalPromotionVerified": false
+    },
+    {
+      "post": "1954577",
+      "sourcePost": "https://quasarzone.com/bbs/qb_saleinfo/views/1954577",
+      "disposition": "쿨러 분류에서 옮긴 케이스 후보",
+      "outcome": "해외 판매 구성·배송·세금 확인 필요",
+      "reason": "기존 해외 판매처 접근 제한을 우회하지 않았습니다. 원문 제목만으로 현재 제품·색상·재고·국내 도착가를 확정하지 않았습니다.",
+      "modelIds": [],
+      "verifiedListingIds": [],
+      "alternativeListingIds": [],
+      "merchantChecks": [],
+      "originalPromotionVerified": false
+    }
+  ],
+  "counts": {
+    "케이스 단품": 4,
+    "리퍼 케이스 여러제품 행사": 1,
+    "쿨러 분류에서 옮긴 케이스 후보": 2
+  },
+  "outcomes": {
+    "원 판매주소 수량1 금액·배송비 확인": 4,
+    "현재 리퍼 분류0건 · 개별 가격 미등록": 1,
+    "해외 판매 구성·배송·세금 확인 필요": 2
+  },
+  "merchantObservations": 5,
+  "freshPriceOffers": 4
+}

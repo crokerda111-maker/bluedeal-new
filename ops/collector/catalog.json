@@ -852,6 +852,30 @@
       "category": "cooler",
       "seller": "G마켓 판매자스토어",
       "sourceUrl": "https://www.ssg.com/item/itemView.ssg?itemId=1000848335149&siteNo=7024&salestrNo=6005"
+    },
+    {
+      "id": "reviewed-1stplayer-wa7-k-rgb-black-retailer-compuzone-1377849",
+      "category": "case",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1377849"
+    },
+    {
+      "id": "reviewed-phanteks-ex5-black-retailer-compuzone-1384367",
+      "category": "case",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1384367&BigDivNo=4&MediumDivNo=1147&DivNo=2750"
+    },
+    {
+      "id": "reviewed-antec-flux-pro-mesh-white-retailer-compuzone-1195122",
+      "category": "case",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1195122"
+    },
+    {
+      "id": "reviewed-darkflash-floatron-f1-argb-black-retailer-compuzone-1368746",
+      "category": "case",
+      "seller": "컴퓨존",
+      "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1368746&BigDivNo=4&MediumDivNo=1147&DivNo=2750"
     }
   ]
 }

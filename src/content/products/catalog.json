@@ -1,8 +1,95 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "4ca0185a7fb3ac99a1519c5ce2b2376187a44ed0a555d360fcca6456d942064a",
-  "entries": 534,
+  "catalogHash": "d2e3192aaac570212ce6498330d41cfbe808a52847729e9cce1b136b79118abb",
+  "entries": 538,
   "products": [
+    {
+      "id": "reviewed-1stplayer-wa7-k-rgb-black-retailer",
+      "name": "1STPlayer 와칠 WA7-K RGB 블랙",
+      "category": "case",
+      "subtype": "pc-case",
+      "brand": "1STPlayer",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PC 케이스 단품",
+        "미들타워",
+        "블랙"
+      ],
+      "specifications": [],
+      "description": "실제 판매주소에서 모델·색상·수량1 상품가·기본 배송비를 확인한 케이스입니다. 제조사 제품군 목록과 별도 판매 구성으로 구분합니다.",
+      "notes": [
+        "판매 표기의 모델·색상 기준입니다. 정확한 제조사 품번·리비전·기본팬 수·구성품·국내 보증과 설치 공간은 추가 확인해야 합니다. 판매자 평점·적립 후기를 독립 성능·품질 평가로 사용하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 판매 구성·수량·배송·안내 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1377849",
+          "observedAt": "2026-11-21T08:17:52.508Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-1stplayer-wa7-k-rgb-black-retailer-compuzone-1377849",
+          "merchant": "컴퓨존",
+          "seller": "컴퓨존",
+          "pricePage": "/prices/case#reviewed-1stplayer-wa7-k-rgb-black-retailer-compuzone-1377849"
+        }
+      ],
+      "referenceCode": "BD-6D70BB4879"
+    },
+    {
+      "id": "reviewed-antec-flux-pro-mesh-white-retailer",
+      "name": "Antec FLUX PRO MESH 화이트",
+      "category": "case",
+      "subtype": "pc-case",
+      "brand": "Antec",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PC 케이스 단품",
+        "빅타워",
+        "화이트"
+      ],
+      "specifications": [],
+      "description": "실제 판매주소에서 모델·색상·수량1 상품가·기본 배송비를 확인한 케이스입니다. 제조사 제품군 목록과 별도 판매 구성으로 구분합니다.",
+      "notes": [
+        "판매 표기의 모델·색상 기준입니다. 정확한 제조사 품번·리비전·기본팬 수·구성품·국내 보증과 설치 공간은 추가 확인해야 합니다. 판매자 평점·적립 후기를 독립 성능·품질 평가로 사용하지 않았습니다.",
+        "판매 요약의 CPU 쿨러 높이181mm/190mm와 색상 표기가 충돌합니다. 화이트 판매 제목만 식별에 사용했으며 치수·팬·장착 가능 부품은 제조사 자료와 실판매 구성을 확인해야 합니다. 입고예정 미정 표시이므로 즉시 출고를 보장하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 판매 구성·수량·배송·안내 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1195122",
+          "observedAt": "2026-11-21T08:18:30.278Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-antec-flux-pro-mesh-white-retailer-compuzone-1195122",
+          "merchant": "컴퓨존",
+          "seller": "컴퓨존",
+          "pricePage": "/prices/case#reviewed-antec-flux-pro-mesh-white-retailer-compuzone-1195122"
+        }
+      ],
+      "referenceCode": "BD-362953710B"
+    },
     {
       "id": "maker-fractal-case-b32459749f216e6e",
       "name": "Core 1000",
@@ -70,6 +157,49 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-1B96D3F422"
+    },
+    {
+      "id": "reviewed-darkflash-floatron-f1-argb-black-retailer",
+      "name": "darkFlash FLOATRON F1 ARGB 블랙",
+      "category": "case",
+      "subtype": "pc-case",
+      "brand": "darkFlash",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PC 케이스 단품",
+        "미들타워",
+        "블랙"
+      ],
+      "specifications": [],
+      "description": "실제 판매주소에서 모델·색상·수량1 상품가·기본 배송비를 확인한 케이스입니다. 제조사 제품군 목록과 별도 판매 구성으로 구분합니다.",
+      "notes": [
+        "판매 표기의 모델·색상 기준입니다. 정확한 제조사 품번·리비전·기본팬 수·구성품·국내 보증과 설치 공간은 추가 확인해야 합니다. 판매자 평점·적립 후기를 독립 성능·품질 평가로 사용하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 판매 구성·수량·배송·안내 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1368746&BigDivNo=4&MediumDivNo=1147&DivNo=2750",
+          "observedAt": "2026-11-21T08:18:48.096Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-darkflash-floatron-f1-argb-black-retailer-compuzone-1368746",
+          "merchant": "컴퓨존",
+          "seller": "컴퓨존",
+          "pricePage": "/prices/case#reviewed-darkflash-floatron-f1-argb-black-retailer-compuzone-1368746"
+        }
+      ],
+      "referenceCode": "BD-74ED4EA8CE"
     },
     {
       "id": "maker-fractal-case-8910e101a659fbf8",
@@ -954,6 +1084,50 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-F58BA35044"
+    },
+    {
+      "id": "reviewed-phanteks-ex5-black-retailer",
+      "name": "PHANTEKS EX5 블랙",
+      "category": "case",
+      "subtype": "pc-case",
+      "brand": "PHANTEKS",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "PC 케이스 단품",
+        "미들타워",
+        "블랙"
+      ],
+      "specifications": [],
+      "description": "실제 판매주소에서 모델·색상·수량1 상품가·기본 배송비를 확인한 케이스입니다. 제조사 제품군 목록과 별도 판매 구성으로 구분합니다.",
+      "notes": [
+        "판매 표기의 모델·색상 기준입니다. 정확한 제조사 품번·리비전·기본팬 수·구성품·국내 보증과 설치 공간은 추가 확인해야 합니다. 판매자 평점·적립 후기를 독립 성능·품질 평가로 사용하지 않았습니다.",
+        "판매 요약에 CPU 쿨러 높이 약72mm가 표시되어 있으나 제조사 도면과 교차 확인하지 못했습니다. 이 수치를 호환성 판정에 사용하지 않았습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "실제 판매 구성·수량·배송·안내 확인",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1384367&BigDivNo=4&MediumDivNo=1147&DivNo=2750",
+          "observedAt": "2026-11-21T08:18:11.238Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-phanteks-ex5-black-retailer-compuzone-1384367",
+          "merchant": "컴퓨존",
+          "seller": "컴퓨존",
+          "pricePage": "/prices/case#reviewed-phanteks-ex5-black-retailer-compuzone-1384367"
+        }
+      ],
+      "referenceCode": "BD-38C698CCA6"
     },
     {
       "id": "maker-fractal-case-8786341709c3fbc9",

@@ -68,6 +68,14 @@ for(const item of coolingItems){
   assert.ok(['www.compuzone.co.kr','item.gmarket.co.kr','www.ssg.com'].includes(new URL(response.headers.get('location')).hostname));
 }
 const gpuItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/gpu.json',import.meta.url),'utf8')).items;
+const caseItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/case.json',import.meta.url),'utf8')).items;
+const caseHtml=await get('/prices/case');
+for(const item of caseItems){
+  assert.ok(caseHtml.includes(`id="${item.id}"`));
+  assert.ok(caseHtml.includes('수량1'));
+  const response=await fetch(`${base}/go/${item.goCode}`,{redirect:'manual',signal:AbortSignal.timeout(25000)});requests++;
+  assert.equal(response.status,302);assert.equal(new URL(response.headers.get('location')).hostname,'www.compuzone.co.kr');
+}
 const gpuStandard=await get('/prices/gpu');
 const gpuRefurbished=await get('/prices/gpu?condition=refurbished');
 const gpuAll=await get('/prices/gpu?condition=all');
