@@ -6,7 +6,7 @@ const data=JSON.parse(await fs.readFile(new URL('../../src/content/products/cata
 const status=await fetch(base+'/api/products/status').then(r=>r.json());
 assert.equal(status.catalogHash,data.catalogHash);assert.equal(status.entries,data.products.length);
 const get=async route=>{const response=await fetch(base+route,{redirect:'manual'});return {status:response.status,html:await response.text()};};
-const home=await get('/products');assert.equal(home.status,200);assert.ok(home.html.includes('PC 상품 목록'));assert.ok(home.html.includes('405'));
+const home=await get('/products');assert.equal(home.status,200);assert.ok(home.html.includes('PC 상품 목록'));assert.ok(home.html.includes(String(data.entries)));
 assert.match(home.html,/<meta name="robots" content="noindex, nofollow"/);
 const psus=await get('/products?category=psu&lifecycle=exclude-discontinued');assert.equal(psus.status,200);assert.ok(psus.html.includes('53'));
 const empty=await get('/products?q=NO_SUCH_PRODUCT_9383');assert.ok(empty.html.includes('조건에 맞는 등록 항목이 없습니다'));

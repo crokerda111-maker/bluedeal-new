@@ -1,6 +1,6 @@
 // Local HTTP integration checks for the server-rendered calculator. No outbound clicks.
 import assert from 'node:assert/strict';
-const base='http://127.0.0.1:3000';
+const base=process.env.BLUEDEAL_CATALOG_TEST_URL??'http://127.0.0.1:3000';
 async function read(path){const r=await fetch(base+path,{redirect:'manual',signal:AbortSignal.timeout(15000)});assert.equal(r.status,200);return r.text();}
 const empty=await read('/evaluate');
 assert.match(empty,/PC 구매 판단/);assert.match(empty,/name="robots" content="noindex, nofollow"/);

@@ -6,6 +6,13 @@ import { PART_DOSSIERS } from '../../src/content/partDossiers.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const base = JSON.parse(await fs.readFile(path.join(root, 'ops/private/catalog/public-catalog.base.local.json'), 'utf8'));
+const reviewed = JSON.parse(await fs.readFile(path.join(root, 'src/content/products/reviewed-models.json'), 'utf8'));
+const claimedListings = new Set(reviewed.flatMap(product => product.listings.map(listing => listing.id)));
+base.products = base.products.filter(product => !product.listings.length || !product.listings.every(listing => claimedListings.has(listing.id)));
+for (const product of reviewed) {
+  if (base.products.some(existing => existing.id === product.id)) throw new Error('REVIEWED_PRODUCT_ID_CONFLICT');
+  base.products.push(product);
+}
 for (const dossier of PART_DOSSIERS) {
   const existing = base.products.find(p => p.id === dossier.skuId || p.id === `curated-${dossier.skuId}`);
   const references = [...dossier.strengths.flatMap(s => s.sources), ...dossier.findings.flatMap(f => f.sources)];

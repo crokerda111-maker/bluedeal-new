@@ -1,0 +1,728 @@
+[
+  {
+    "id": "reviewed-asus-tuf-x870e-plus-wifi7",
+    "name": "ASUS TUF GAMING X870E-PLUS WIFI7",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "source-reviewed-model",
+    "features": [
+      "AMD AM5",
+      "AMD X870E"
+    ],
+    "specifications": [
+      {
+        "label": "CPU 소켓",
+        "value": "AMD AM5"
+      },
+      {
+        "label": "칩셋",
+        "value": "AMD X870E"
+      },
+      {
+        "label": "규격",
+        "value": "ATX 30.5 × 24.4cm"
+      },
+      {
+        "label": "메모리",
+        "value": "DDR5 슬롯 4개"
+      },
+      {
+        "label": "유선 네트워크",
+        "value": "2.5Gb Ethernet"
+      },
+      {
+        "label": "판매 표기 1",
+        "value": "인텍앤컴퍼니 국내 유통 표기 · 단일 보드 · 수량 1"
+      },
+      {
+        "label": "판매 표기 2",
+        "value": "대원씨티에스 · 단일 보드 · 수량 1"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "공식 설명서: M.2_2를 x4로 사용하면 PCIe(G5)_1 그래픽 슬롯은 x8로 동작합니다. Ryzen 8000 계열에서는 M.2_2가 지원되지 않습니다. CPU·슬롯별 대역폭과 BIOS 지원을 확인하세요."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "ASUS 공식 사용자 설명서",
+        "url": "https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_X870E-PLUS_WIFI7/E26142_TUF_GAMING_X870E-PLUS_WIFI7_EM_WEB.pdf",
+        "observedAt": "2026-11-21",
+        "kind": "manufacturer-manual"
+      },
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4816037105",
+        "observedAt": "2026-11-21T02:56:35.673Z",
+        "kind": "retailer-listing"
+      },
+      {
+        "label": "컴퓨존 판매 표기 확인",
+        "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1292012",
+        "observedAt": "2026-11-21T02:58:09.954Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "asus-tuf-x870e-plus-wifi7-gm4816037105",
+        "merchant": "G마켓",
+        "seller": "은성이에스",
+        "pricePage": "/prices/motherboard#asus-tuf-x870e-plus-wifi7-gm4816037105"
+      },
+      {
+        "id": "asus-tuf-x870e-plus-wifi7-cz1292012",
+        "merchant": "컴퓨존",
+        "seller": "컴퓨존",
+        "pricePage": "/prices/motherboard#asus-tuf-x870e-plus-wifi7-cz1292012"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-gigabyte-x870-aorus-elite-wifi7-ice",
+    "name": "GIGABYTE X870 AORUS ELITE WIFI7 ICE",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "GIGABYTE",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "ICE · 피씨디렉트 · 정확한 보드 리비전은 판매처 확인 필요"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "ICE · 피씨디렉트 · 정확한 보드 리비전은 판매처 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4667029990",
+        "observedAt": "2026-11-21T03:03:50.637Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "gigabyte-x870-aorus-elite-wifi7-ice-gm4667029990",
+        "merchant": "G마켓",
+        "seller": "픽셀스테이션",
+        "pricePage": "/prices/motherboard#gigabyte-x870-aorus-elite-wifi7-ice-gm4667029990"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-asus-tuf-b850-plus-wifi",
+    "name": "ASUS TUF GAMING B850-PLUS WIFI",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "source-reviewed-model",
+    "features": [
+      "AMD AM5",
+      "DDR5"
+    ],
+    "specifications": [
+      {
+        "label": "CPU 소켓",
+        "value": "AMD AM5"
+      },
+      {
+        "label": "메모리",
+        "value": "DDR5"
+      },
+      {
+        "label": "판매 표기 1",
+        "value": "STCOM 국내 유통 표기 · 단일 메인보드 · 수량 1"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "ASUS 공식 사용자 설명서",
+        "url": "https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_B850-PLUS_WIFI/E25809_TUF_GAMING_B850-PLUS_WIFI_UM_V2_WEB.pdf",
+        "observedAt": "2026-11-21",
+        "kind": "manufacturer-manual"
+      },
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4278758978",
+        "observedAt": "2026-11-21T02:53:19.120Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "asus-tuf-b850-plus-wifi-stcom-gm4278758978",
+        "merchant": "G마켓",
+        "seller": "빌트웍스",
+        "pricePage": "/prices/motherboard#asus-tuf-b850-plus-wifi-stcom-gm4278758978"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-colorful-battle-ax-a520m-k-m2-v14",
+    "name": "COLORFUL BATTLE-AX A520M-K M.2 V14",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "COLORFUL",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "A520M-K M.2 V14 · 도우정보 표기 · 단일 보드"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "A520M-K M.2 V14 · 도우정보 표기 · 단일 보드"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "V14 표기가 있는 판매 상품입니다. 다른 리비전과 구분해 확인하세요."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4697504736",
+        "observedAt": "2026-11-21T02:56:58.867Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "colorful-a520m-k-v14-gm4697504736",
+        "merchant": "G마켓",
+        "seller": "지앤케이솔루션",
+        "pricePage": "/prices/motherboard#colorful-a520m-k-v14-gm4697504736"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-asus-tuf-b850m-plus-ii",
+    "name": "ASUS TUF GAMING B850M-PLUS II",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "B850M-PLUS II · 인텍앤컴퍼니 · 상품01"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "B850M-PLUS II · 인텍앤컴퍼니 · 상품01"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "B850M-PLUS II 모델입니다. B850-PLUS WIFI나 B850M Wi-Fi 모델의 사양을 대신하지 않습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4775621015",
+        "observedAt": "2026-11-21T02:57:27.595Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "asus-tuf-b850m-plus-ii-gm4775621015",
+        "merchant": "G마켓",
+        "seller": "은성이에스",
+        "pricePage": "/prices/motherboard#asus-tuf-b850m-plus-ii-gm4775621015"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-gigabyte-b850m-force-v2",
+    "name": "GIGABYTE B850M FORCE V2",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "GIGABYTE",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "FORCE V2 · 피씨디렉트. FORCE와 별도 모델"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "FORCE V2 · 피씨디렉트. FORCE와 별도 모델"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "FORCE V2 모델입니다. V2 표기가 없는 FORCE와 구분해 비교하세요."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4768647010",
+        "observedAt": "2026-11-21T03:06:05.410Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "gigabyte-b850m-force-v2-gm4768647010",
+        "merchant": "G마켓",
+        "seller": "스토어휘현",
+        "pricePage": "/prices/motherboard#gigabyte-b850m-force-v2-gm4768647010"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-asus-rog-strix-x870-i-gaming-wifi",
+    "name": "ASUS ROG STRIX X870-I GAMING WIFI",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "인텍앤컴퍼니 · X870-I GAMING WIFI · 단일 보드"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "인텍앤컴퍼니 · X870-I GAMING WIFI · 단일 보드"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4775501199",
+        "observedAt": "2026-11-21T03:02:05.872Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "asus-rog-strix-x870-i-gaming-wifi-gm4775501199",
+        "merchant": "G마켓",
+        "seller": "은성이에스",
+        "pricePage": "/prices/motherboard#asus-rog-strix-x870-i-gaming-wifi-gm4775501199"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-asus-tuf-x870-plus-wifi",
+    "name": "ASUS TUF GAMING X870-PLUS WIFI",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "인텍앤컴퍼니 · X870-PLUS WIFI · 단일 보드"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "인텍앤컴퍼니 · X870-PLUS WIFI · 단일 보드"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "X870-PLUS WIFI 모델입니다. X870E-PLUS WIFI7과 다른 모델입니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4372255591",
+        "observedAt": "2026-11-21T03:03:37.509Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "asus-tuf-x870-plus-wifi-gm4372255591",
+        "merchant": "G마켓",
+        "seller": "은성이에스",
+        "pricePage": "/prices/motherboard#asus-tuf-x870-plus-wifi-gm4372255591"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-gigabyte-b760m-aorus-elite-d4-gen5",
+    "name": "GIGABYTE B760M AORUS ELITE D4 GEN5",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "GIGABYTE",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "D4 GEN5 · 피씨디렉트. ELTIE는 판매 페이지 표기이며 정확한 제조사 품번 확인 필요."
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "D4 GEN5 · 피씨디렉트. ELTIE는 판매 페이지 표기이며 정확한 제조사 품번 확인 필요."
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "D4 GEN5 표기가 있는 판매 상품입니다. 이전 D4 모델과 구분해 확인하세요.",
+      "판매 페이지는 ELTIE D4 GEN5로 표기합니다. 제목의 철자 차이가 있어 제조사 정확한 품번 대조 전이며 이전 D4와 합치지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4671937228",
+        "observedAt": "2026-11-21T03:04:22.011Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "gigabyte-b760m-aorus-d4-gen5-gm4671937228",
+        "merchant": "G마켓",
+        "seller": "픽셀스테이션",
+        "pricePage": "/prices/motherboard#gigabyte-b760m-aorus-d4-gen5-gm4671937228"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-asus-rog-crosshair-x870e-apex",
+    "name": "ASUS ROG CROSSHAIR X870E APEX",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "CROSSHAIR X870E APEX · 대원씨티에스 · 단일 보드"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "CROSSHAIR X870E APEX · 대원씨티에스 · 단일 보드"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4654032883",
+        "observedAt": "2026-11-21T03:04:01.540Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "asus-rog-crosshair-x870e-apex-gm4654032883",
+        "merchant": "G마켓",
+        "seller": "여운스토어G",
+        "pricePage": "/prices/motherboard#asus-rog-crosshair-x870e-apex-gm4654032883"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-gigabyte-b850m-aorus-elite-wifi6e-ice",
+    "name": "GIGABYTE B850M AORUS ELITE WIFI6E ICE",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "GIGABYTE",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "ICE · 제이씨현 · 정확한 하드웨어 리비전은 판매처 확인 필요"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "ICE · 제이씨현 · 정확한 하드웨어 리비전은 판매처 확인 필요"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "ICE 색상 모델입니다. 일반 색상과 정확한 리비전이 같은지 별도로 확인하세요."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4287093335",
+        "observedAt": "2026-11-21T03:04:33.366Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "gigabyte-b850m-aorus-elite-wifi6e-ice-gm4287093335",
+        "merchant": "G마켓",
+        "seller": "지앤케이솔루션",
+        "pricePage": "/prices/motherboard#gigabyte-b850m-aorus-elite-wifi6e-ice-gm4287093335"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-asus-tuf-b650em-e-wifi",
+    "name": "ASUS TUF GAMING B650EM-E WIFI",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "판매 페이지의 모델명 확인 · 상세 사양 대조 중"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "확인한 특정 판매 페이지에 품절 또는 판매 중단 안내가 있었습니다. 전체 시장의 품절을 뜻하지 않으며 해당 페이지의 과거 가격을 현재가로 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "판매처 상태 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4399805766",
+        "observedAt": "2026-11-21T03:02:28.968Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-asus-rog-strix-b850-e-gaming-wifi",
+    "name": "ASUS ROG STRIX B850-E GAMING WIFI",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASUS",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "판매 페이지의 모델명 확인 · 상세 사양 대조 중"
+    ],
+    "specifications": [],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "확인한 특정 판매 페이지에 품절 또는 판매 중단 안내가 있었습니다. 전체 시장의 품절을 뜻하지 않으며 해당 페이지의 과거 가격을 현재가로 등록하지 않았습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "판매처 상태 확인",
+        "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1219835",
+        "observedAt": "2026-11-21T02:59:40.040Z",
+        "kind": "retailer-availability"
+      },
+      {
+        "label": "판매처 상태 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=3333943922",
+        "observedAt": "2026-11-21T03:03:21.804Z",
+        "kind": "retailer-availability"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": []
+  },
+  {
+    "id": "reviewed-asrock-b860m-livemixer-wifi",
+    "name": "ASRock B860M LiveMixer WiFi",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "ASRock",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "B860M LiveMixer WiFi · 인텍앤컴퍼니 · 단일 보드"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "B860M LiveMixer WiFi · 인텍앤컴퍼니 · 단일 보드"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4763538101",
+        "observedAt": "2026-11-21T03:03:02.733Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "asrock-b860m-livemixer-wifi-gm4763538101",
+        "merchant": "G마켓",
+        "seller": "여운스토어G",
+        "pricePage": "/prices/motherboard#asrock-b860m-livemixer-wifi-gm4763538101"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-gigabyte-b850m-force",
+    "name": "GIGABYTE B850M FORCE",
+    "category": "motherboard",
+    "subtype": "motherboard",
+    "brand": "GIGABYTE",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "FORCE · 제이씨현 · FORCE V2와 별도 모델"
+    ],
+    "specifications": [
+      {
+        "label": "판매 표기 1",
+        "value": "FORCE · 제이씨현 · FORCE V2와 별도 모델"
+      }
+    ],
+    "description": "실제 판매 페이지의 모델·유통 표기를 확인한 메인보드입니다. 가격은 판매처별 확인 시각과 할인 조건을 구분해 제공합니다. 성능·품질·후기 평가는 추가 검토 중입니다.",
+    "notes": [
+      "같은 모델도 국내 유통사·정확한 리비전·보증 조건은 판매 상품별로 확인해야 합니다.",
+      "V2 표기가 없는 FORCE 모델입니다. FORCE V2와 구분해 비교하세요."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 판매 표기 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodsCode=4551356658",
+        "observedAt": "2026-11-21T03:04:46.274Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "gigabyte-b850m-force-gm4551356658",
+        "merchant": "G마켓",
+        "seller": "지앤케이솔루션",
+        "pricePage": "/prices/motherboard#gigabyte-b850m-force-gm4551356658"
+      }
+    ]
+  }
+]

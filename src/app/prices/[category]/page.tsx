@@ -13,6 +13,7 @@ import { OUTBOUND_LINKS } from "../../../lib/outbound";
 import { resolveAffiliateUrl } from "../../../lib/affiliate";
 import { CATALOG_SUMMARY } from "../../../lib/catalogData";
 import PriceCatalogSection from "../../../components/PriceCatalogSection";
+import { priceBenefits } from "../../../lib/priceBenefits";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -47,12 +48,20 @@ function PriceAmount({ item, now }: { item: PriceItem; now: number }) {
   return (
     <div>
       <div className="text-lg font-semibold text-white">{fmtWon(item.price)}</div>
+      {item.couponPrice || item.cardPrice ? <div className="text-xs text-white/65">쿠폰·카드 적용 전 상품가</div> : null}
       <div className="mt-1 text-xs text-white/70">
         {typeof shippingFee === "number" ? (shippingFee === 0 ? "기본 배송비 무료" : `기본 배송비 ${fmtWon(shippingFee)}`) : "배송비 판매처 확인"}
       </div>
       {typeof shippingFee === "number" ? <div className="mt-1 text-xs text-cyan-200">배송비 포함 {fmtWon(item.price + shippingFee)}</div> : null}
       {item.shippingNote ? <div className="mt-1 text-xs text-white/60">{item.shippingNote}</div> : null}
       {item.priceNote ? <div className="mt-2 max-w-xs text-xs leading-relaxed text-white/70">{item.priceNote}</div> : null}
+      {priceBenefits(item, now).map(benefit => <details key={benefit.kind} className="mt-3 max-w-xs rounded-lg border border-cyan-200/20 p-2 text-xs leading-6">
+        <summary className="cursor-pointer text-cyan-100">{benefit.state === "expired" ? "종료된 혜택 기록 · " : benefit.state === "upcoming" ? "시작 전 혜택 기록 · " : "조건부 "}{benefit.kind === "coupon" ? "쿠폰가" : item.cardRequiresCoupon ? "쿠폰+카드가" : "카드가"} {fmtWon(benefit.amount)} · 조건 보기</summary>
+        <p className="mt-2 text-white/80">{benefit.note}</p>
+        <p className="mt-2 text-white/65">{benefit.startsOn ? `${benefit.startsOn}부터 · ` : ""}{benefit.endsOn ? `${benefit.endsOn}까지 (KST)` : "종료일 미확인 · 판매처 재확인"}</p>
+        {benefit.kind === "card" && item.cardRequiresCoupon ? <p className="text-amber-100">쿠폰 발급·유효기간도 함께 충족해야 합니다.</p> : null}
+        <p className="text-white/65">배송비 별도 · 확인 시점 표시가 · 개인별 적용은 결제 전 확인</p>
+      </details>)}
       <div className="mt-2 text-xs text-white/60">확인 {fmtKorean(item.checkedAt || item.updatedAt)}</div>
       {freshness === "stale" ? <div className="mt-2 text-xs text-amber-200">확인 후 24시간 경과 · 판매처 가격 재확인</div> : null}
       {freshness === "unknown" ? <div className="mt-2 text-xs text-amber-200">가격 확인 시각 미확인</div> : null}
@@ -185,7 +194,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
                 </thead>
                 <tbody>
                   {items.map((item) => (
-                    <tr key={item.id} className="border-t border-white/10 align-top">
+                    <tr key={item.id} id={item.id} className="scroll-mt-24 border-t border-white/10 align-top">
                       <th scope="row" className="px-4 py-5 text-left font-normal"><ProductInfo item={item} officialLabel={category.key === "gpu" ? "GPU 공식 사양" : "공식 사양"} /></th>
                       <td className="px-4 py-5"><PriceAmount item={item} now={now} /></td>
                       <td className="whitespace-nowrap px-3 py-5 text-right text-white/70">{pct(item.change24hPct)}</td>

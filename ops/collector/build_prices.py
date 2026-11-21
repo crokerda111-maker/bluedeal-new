@@ -30,6 +30,7 @@ MERCHANT_HOSTS = {
     "11st": ("11st.co.kr",),
     "gmarket": ("gmarket.co.kr",),
     "naver": ("smartstore.naver.com", "brand.naver.com", "shopping.naver.com"),
+    "compuzone": ("compuzone.co.kr",),
 }
 SLUG_RE = re.compile(r"^[A-Za-z0-9_-]{2,100}$")
 
@@ -189,6 +190,42 @@ def load_json(path: Path, fallback: Any) -> Any:
         return fallback
 
 
+def conditional_prices(raw: dict[str, Any], baseline: int) -> dict[str, Any]:
+    """Observed conditional quotes; never substitute them for the baseline."""
+    result: dict[str, Any] = {}
+    for kind in ("coupon", "card"):
+        value = raw.get(kind + "Price")
+        if value is None or str(value).strip() == "":
+            if any(raw.get(kind + suffix) for suffix in ("Note", "StartsOn", "EndsOn")):
+                raise ValueError("할인 조건에는 확인한 조건부 금액이 필요합니다.")
+            continue
+        amount = parse_price(value)
+        if amount > baseline:
+            raise ValueError("조건부 금액이 기본 상품가보다 높습니다.")
+        note = str(raw.get(kind + "Note") or "").strip()
+        if not note or len(note) > 700:
+            raise ValueError("조건부 가격의 적용 조건을 700자 이내로 입력하세요.")
+        result[kind + "Price"] = amount
+        result[kind + "Note"] = note
+        for suffix in ("StartsOn", "EndsOn"):
+            date = str(raw.get(kind + suffix) or "").strip()
+            if date:
+                if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
+                    raise ValueError("할인 기간은 YYYY-MM-DD 형식이어야 합니다.")
+                datetime.strptime(date, "%Y-%m-%d")
+                result[kind + suffix] = date
+        start, end = result.get(kind + "StartsOn"), result.get(kind + "EndsOn")
+        if start and end and start > end:
+            raise ValueError("할인 기간의 시작과 종료를 확인하세요.")
+    if raw.get("cardRequiresCoupon") in (True, "true", "True", "1", 1):
+        if "cardPrice" not in result or "couponPrice" not in result:
+            raise ValueError("쿠폰 조합 카드가는 두 조건부 금액이 모두 필요합니다.")
+        if result["cardPrice"] > result["couponPrice"]:
+            raise ValueError("쿠폰 조합 카드가가 쿠폰가보다 높습니다.")
+        result["cardRequiresCoupon"] = True
+    return result
+
+
 def atomic_write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_suffix(path.suffix + ".tmp")
@@ -294,6 +331,7 @@ def _build(input_path: Path, root: Path, now: datetime, dry_run: bool, schedule:
             shipping_fee = parse_price(shipping_raw, allow_zero=True) if shipping_raw is not None and str(shipping_raw).strip() else None
             official_url = reference_url(raw.get("officialUrl"))
             attributes = product_attributes(raw, category)
+            benefits = conditional_prices(raw, price)
             normalized_url, merchant = normalize_url(raw.get("url"))
             code = make_code(normalized_url, outbound)
             outbound[code] = {"code": code, "merchant": merchant, "originalUrl": normalized_url}
@@ -328,6 +366,7 @@ def _build(input_path: Path, root: Path, now: datetime, dry_run: bool, schedule:
                 "checkedAt": checked_iso,
                 "updatedAt": checked_iso,
                 **attributes,
+                **benefits,
             }
             grouped[category].append(item)
         except (TypeError, ValueError) as error:

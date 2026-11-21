@@ -1,0 +1,33 @@
+{
+  "checkedDate": "2026-11-21",
+  "scope": "최근 6개월 원장의 메인보드 분류 판매 후보 40개 글. 제목/원문 판매주소에 따른 후보 그룹이며 모든 SKU 검증 완료를 뜻하지 않음.",
+  "groups": [
+    {"id":"reviewed-asus-tuf-x870e-plus-wifi7","name":"ASUS TUF GAMING X870E-PLUS WIFI7","brand":"ASUS","posts":["2000802","1996636","1994824","1974628","1965063","1964427"],"note":"인텍앤컴퍼니·대원씨티에스 판매 상품의 유통/보증은 각 판매처에서 분리"},
+    {"id":"reviewed-gigabyte-x870-aorus-elite-wifi7-ice","name":"GIGABYTE X870 AORUS ELITE WIFI7 ICE","brand":"GIGABYTE","posts":["2000695"]},
+    {"id":"reviewed-asus-tuf-b850-plus-wifi","name":"ASUS TUF GAMING B850-PLUS WIFI","brand":"ASUS","posts":["1999504","1958369"],"note":"TUF 약칭을 공식 전체 모델명과 대조. STCOM·인텍 유통/보증은 분리"},
+    {"id":"reviewed-colorful-battle-ax-a520m-k-m2-v14","name":"COLORFUL BATTLE-AX A520M-K M.2 V14","brand":"COLORFUL","posts":["1998843"],"note":"V14 표기를 생략하거나 다른 리비전과 합치지 않음"},
+    {"id":"reviewed-asus-rog-strix-b860-g-gaming-wifi","name":"ASUS ROG STRIX B860-G GAMING WIFI","brand":"ASUS","posts":["1995531"],"note":"별도의 CPU+보드 세트 글은 이 단품 가격으로 사용하지 않음"},
+    {"id":"reviewed-asus-tuf-b850m-plus-ii","name":"ASUS TUF GAMING B850M-PLUS II","brand":"ASUS","posts":["1996620","1994604"],"note":"II 버전. B850-PLUS WIFI 또는 Wi-Fi 모델로 자동 병합하지 않음"},
+    {"id":"reviewed-gigabyte-b760m-aorus-elite-d4","name":"GIGABYTE B760M AORUS ELITE D4","brand":"GIGABYTE","posts":["1996507"],"note":"GEN5 표기가 있는 별도 후보와 분리"},
+    {"id":"reviewed-gigabyte-b850m-force-v2","name":"GIGABYTE B850M FORCE V2","brand":"GIGABYTE","posts":["1995184","1991754"],"note":"같은 네이버 판매 상품 번호 13732589140. FORCE와 V2는 분리"},
+    {"id":"reviewed-asus-rog-strix-x870-i-gaming-wifi","name":"ASUS ROG STRIX X870-I GAMING WIFI","brand":"ASUS","posts":["1994761"]},
+    {"id":"reviewed-asus-tuf-x870-plus-wifi","name":"ASUS TUF GAMING X870-PLUS WIFI","brand":"ASUS","posts":["1994544","1988936","1979096"],"note":"X870E-PLUS WIFI7과 별도 모델"},
+    {"id":"reviewed-gigabyte-b760m-aorus-elite-d4-gen5","name":"GIGABYTE B760M AORUS ELITE D4 GEN5","brand":"GIGABYTE","posts":["1994636"],"note":"원 제목 ELTIE 오타는 판매 페이지 전체 모델명을 확인한 뒤 정정. 기존 D4와 분리"},
+    {"id":"reviewed-gigabyte-b850m-aorus-elite-wifi6e","name":"GIGABYTE B850M AORUS ELITE WIFI6E","brand":"GIGABYTE","posts":["1991060","1981224"],"note":"알리 원주소가 ICE 글과 동일하므로 옵션 확인 전 ICE/일반 모델을 동일 SKU로 확정하지 않음"},
+    {"id":"reviewed-asus-rog-crosshair-x870e-apex","name":"ASUS ROG CROSSHAIR X870E APEX","brand":"ASUS","posts":["1986978"]},
+    {"id":"reviewed-gigabyte-b850m-aorus-elite-wifi6e-ice","name":"GIGABYTE B850M AORUS ELITE WIFI6E ICE","brand":"GIGABYTE","posts":["1985875","1983295"],"note":"일반 색상·다른 리비전과 분리. 알리 옵션 확인 필요"},
+    {"id":"reviewed-asus-tuf-b650em-e-wifi","name":"ASUS TUF GAMING B650EM-E WIFI","brand":"ASUS","posts":["1984531"]},
+    {"id":"reviewed-asus-tuf-b850-pro-wifi7-w-neo","name":"ASUS TUF GAMING B850-PRO WIFI7 W NEO","brand":"ASUS","posts":["1984068"],"note":"W NEO 모델 구분"},
+    {"id":"reviewed-asus-rog-strix-b850-e-gaming-wifi","name":"ASUS ROG STRIX B850-E GAMING WIFI","brand":"ASUS","posts":["1982866","1982484","1973444"],"note":"두 컴퓨존 글의 원본 상품 번호 1219835 동일. 현재 판매 중이 아님을 판매 페이지에서 확인"},
+    {"id":"reviewed-asrock-b860m-livemixer-wifi","name":"ASRock B860M LiveMixer WiFi","brand":"ASRock","posts":["1977142","1962262"],"note":"같은 G마켓 상품 번호 4763538101"},
+    {"id":"reviewed-gigabyte-b850m-force","name":"GIGABYTE B850M FORCE","brand":"GIGABYTE","posts":["1974706"],"note":"FORCE V2와 병합하지 않음"},
+    {"id":"reviewed-asus-rog-maximus-z890-apex","name":"ASUS ROG MAXIMUS Z890 APEX","brand":"ASUS","posts":["1960071"],"note":"APEX/ENCORE 등 정확한 모델은 판매 페이지 재확인 필요"},
+    {"id":"reviewed-nzxt-n7-b850-black","name":"NZXT N7 B850 Black","brand":"NZXT","posts":["1955562"],"note":"짧은 제목의 N7 여부는 원본 컴퓨존 상품 1278605 확인 필요. 화이트와 색상 옵션 분리"},
+    {"id":"reviewed-nzxt-n7-b850-white","name":"NZXT N7 B850 White","brand":"NZXT","posts":["1954333"],"note":"Black과 색상 옵션 분리"}
+  ],
+  "separateOffers": [
+    {"post":"1998628","kind":"cpu-board-bundle","modelHint":"ASUS ROG STRIX B860-G GAMING WIFI","note":"Intel 270KP+보드 세트. 세트 전체 가격을 보드 단품 가격으로 표시 금지"},
+    {"post":"1971077","kind":"multi-part-bundle","modelHint":null,"note":"783D+9070XT+B850M. 보드의 제조사·정확한 모델 미확인. 단품으로 자동 분해 금지"},
+    {"post":"1970665","kind":"multi-model-collection","modelHint":"ASUS B850M MAX GAMING WIFI","note":"여러 ASUS 보드 모음. 선택 옵션과 추가금을 확인하기 전 단일 모델 가격 확정 금지"}
+  ]
+}

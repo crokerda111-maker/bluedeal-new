@@ -1,0 +1,36 @@
+{
+  "checked_date_kst": "2026-11-21",
+  "purpose": "비공개 행사 준비용 검토. 아래 사례를 다음 행사·다른 상품의 확정 혜택으로 재사용하지 않는다.",
+  "calculation_ready": false,
+  "markets": [
+    {"market":"G마켓","evidence":"공식 행사 발표 확인","period":"2026-11-02~11-13 종료 행사","structure":"행사 쿠폰·선착순 쿠폰·카드 결제 할인·추후 캐시 적립을 구분","verified_example":"11월 빅스는 자정 단독 상품 공개, 오전 10시 추가 쿠폰 발급. 플래시세일 캐시는 ID당 1회, 11월 30일 지급 안내.","stacking":"발표에 조합 혜택은 소개되지만 상품별 적용 순서·상한은 별도 원문 필요","next_check":"선택 상품의 쿠폰 대상·카드·상한·발급 회차·적립 지급일을 확인. 페이북 등 외부 경유는 블루딜 제휴 경로와 별도 대조","source":"https://www.shinsegaegroupnewsroom.com/gmarket-launches-big-smile-day/","state":"종료 행사 구조만 확인"},
+    {"market":"11번가","evidence":"공식 기획전 유의사항 확인","period":"2026-11-06 종료·푸마 전용 사례","structure":"이미 적용된 즉시할인·주문서 결제 할인·11pay 포인트를 구분","verified_example":"해당 사례는 KB 7%(최대 5천원), 토스페이 5%(최대 3천원), 11pay 카드 포인트를 별도 안내","stacking":"서로 다른 결제수단 할인을 합산하지 않는다. PC 부품 적용 근거는 아님","next_check":"PC 행사별 카드/간편결제 중 선택 관계, 기준 금액, 적립 시점·예산과 재발급 확인","source":"https://plan.11st.co.kr/plan/mobile/exhibitions/2243546/detail","state":"종료·다른 품목의 구조 사례"},
+    {"market":"네이버","evidence":"공식 넾다세일 발표 확인","period":"2026-10-26~11-08 종료 행사","structure":"행사 쿠폰·스토어 쿠폰·멤버십 적립·카드/페이 혜택을 각각 조사","verified_example":"해당 넾다세일의 선착순 쿠폰 발급은 00·10·18시. 회원 추가 적립은 특정 일자·금액 조건 안내","stacking":"발표의 최대 할인·적립을 모든 PC 상품에 일괄 적용하지 않음","next_check":"동일 스토어·옵션, 쿠폰별 구매 기준·상한, 구매확정 이후 적립과 멤버십 한도를 확인","source":"https://www.navercorp.com/media/pressReleasesDetail?seq=10034785","state":"종료 행사 구조만 확인"},
+    {"market":"쿠팡","evidence":"공식 와우 멤버스데이 발표 확인","period":"2026-11-02~11-08 종료 행사","structure":"와우 자격·선착순 장바구니 쿠폰·상품별 카드 할인·쿠팡캐시 분리","verified_example":"와멤데 행사 상품용 쿠폰은 매일 10·17시, 회차당 2종. 단품/여러 상품 장바구니 적용을 안내","stacking":"장바구니 단위 혜택을 각 부품에 중복 배분하지 않음. 회원·대상 상품 필요","next_check":"현재 상품 주문서에서 쿠폰·카드 중복과 캐시 지급 조건을 확인. 개인별 노출 차이를 기록","source":"https://news.coupang.com/archives/68041/","state":"종료 행사 구조만 확인"},
+    {"market":"알리익스프레스","evidence":"KB국민카드 공식 행사 조건 확인","period":"2026-11-19~12-03 예정 구간·예산 소진 가능","structure":"국가·USD·배송지·K-Venue·프로모션 코드·카드 직접 결제·코인 구분","verified_example":"이 KB Visa 사례는 순수 물품금액 USD150 이상 USD22 즉시할인, 한국 발송 K-Venue 제외","stacking":"다른 프로모션 코드 및 다른 행사와 중복 불가. 간편결제 제외, ID당 1회. 취소 후 재사용 불가","next_check":"같은 발급사·브랜드·개인카드인지, USD 및 대상 직구 상품인지 확인. 원화 환산·해외 수수료·세금은 별도 확인","source":"https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?eventNum=1002171&mainCC=a","state":"공식 조건 확인·실제 적용/예산 미확인"},
+    {"market":"SSG","evidence":"공식 쓱데이 안내 확인","period":"2026-10-30~11-08 종료 행사","structure":"쿠폰·결제 혜택·SSG머니 적립을 구분하고 품목 자격 확인","verified_example":"쓱데이 안내는 SSG닷컴 다운로드 쿠폰을 소개하며 계열사별 혜택을 따로 구분","stacking":"다른 계열사·품목·장보기 혜택을 PC 부품 혜택으로 옮기지 않음","next_check":"PC 상품의 쿠폰 적용 범위·결제수단·청구할인 여부·멤버십 적립을 실제 원문과 대조","source":"https://www.shinsegaegroupnewsroom.com/inside-the-expanded-2026-ssg-day/","state":"종료 행사·PC 세부 조건 미확인"},
+    {"market":"하이마트","evidence":"공식 쿠폰 안내 확인","period":"2026-11월 안내·일부 자격 문구 충돌","structure":"회원·신규·상품 쿠폰·제휴 경유 쿠폰·카드/페이·포인트 구분","verified_example":"무적쿠폰과 제휴쿠폰은 중복 불가, 카테고리 쿠폰도 다른 쿠폰과 중복 불가. 추가 구성·배송비는 할인 기준 제외","stacking":"1주문 1상품 등 제한 확인. 웰컴 자격 설명의 10~11월/11월 문구 차이는 확인 필요","next_check":"PC·GPU의 정확한 품번, 카드 직접/간편결제 조건, 회원 쿠폰과 경유 조건의 배타성 확인","source":"https://www.e-himart.co.kr/app/event/eventDetails?evtNo=attend&stonType=PC","state":"공식 규칙 확인·개별 행사 적용 미확인"},
+    {"market":"롯데ON","evidence":"공식 검색 색인에서 카드 안내 확인·본문 미확보","period":"2026년 안내 색인·직접 화면 재확인 필요","structure":"몰 구분·카드 종류·L.PAY 경로·장바구니 쿠폰·L.POINT 분리 조사","verified_example":"롯데멤버스카드 안내 색인은 일반 롯데카드·다른 간편결제 경로 제외와 대상 몰/상품 제한을 명시","stacking":"읽을 수 있는 본문을 확보하지 못했으므로 자동 계산 규칙으로 사용 금지","next_check":"공식 행사 본문을 다시 확보한 뒤 기간·제외 몰·정확한 카드와 L.PAY 조건 검증","source":"https://www.lotteon.com/p/display/planV2/planDetail/124049","state":"공식 검색 색인만·본문 확인 필요"},
+    {"market":"옥션","evidence":"최신 PC 행사 조건 미확보","period":"다음 행사 미발표·확인 필요","structure":"G마켓과 별도 행사·쿠폰·카드 한도를 확인","verified_example":"현재 조사에서 최신 PC 행사 원문을 확보하지 못함","stacking":"G마켓 규칙·계정 한도를 그대로 복제하지 않음","next_check":"옥션 공식 최신 행사와 실제 상품 주문서 확인","source":null,"state":"추가 조사 필요"},
+    {"market":"아마존","evidence":"최신 PC 행사 조건 미확보","period":"확인 필요","structure":"통화·배송국가·수입부가세·상품 쿠폰·카드 혜택 별도 조사","verified_example":"현재 조사에서 최신 PC 행사 원문을 확보하지 못함","stacking":"알리 카드 행사와 합치거나 동일하게 적용하지 않음","next_check":"공식 상품·배송·세금·결제 혜택 확인","source":null,"state":"추가 조사 필요"},
+    {"market":"오늘의집","evidence":"최신 PC 행사 조건 미확보","period":"확인 필요","structure":"스토어·앱·쿠폰·카드 조건을 별도 조사","verified_example":"데스크톱 스피커 글은 완본체 후보에서 재분류함","stacking":"다른 마켓 규칙을 복제하지 않음","next_check":"실제 PC 상품과 공식 행사 원문 확보","source":null,"state":"추가 조사 필요"}
+  ],
+  "post_cases": [
+    {"post_id":"1999504","market":"알리익스프레스","candidate":"ASUS TUF GAMING B850-PLUS WIFI","post_date":"2026-11-07","posted_amount_krw":245610,"reported_basis":"게시글 가격란 표기·결제 검증 아님","coupon":"PQWM31(과거 글 표기 코드)","payment":"롯데카드 조합이라고 게시자가 설명","post_payment":"리뷰 보상 일부 종료·금액 수정 설명 있음","risk":"제목 체감가와 가격란이 다르며 코인 미적용이라고 설명. 현재 코드/리뷰 보상으로 재사용 금지","url":"https://quasarzone.com/bbs/qb_saleinfo/views/1999504","merchant_url":null,"current_price_verified":false},
+    {"post_id":"1998860","market":"네이버","candidate":"ASRock Steel Legend SL-1200G","post_date":"2026-11-05","posted_amount_krw":183140,"reported_basis":"게시글 주장 쿠폰 적용가·결제 검증 아님","coupon":"당시 넾다 7% 쿠폰 적용가라고 설명","payment":"추가 카드 조건 미확인","post_payment":"검토한 본문에는 적립 확정 근거 없음","risk":"판매자 보증·정확한 모델·현재 행사 재확인 필요. 커뮤니티의 품질/인증 주장은 제조사 검증 전","url":"https://quasarzone.com/bbs/qb_saleinfo/views/1998860","merchant_url":"https://smartstore.naver.com/micronics/products/13223472681","current_price_verified":false},
+    {"post_id":"1991146","market":"G마켓","candidate":"7800X3D + 32GB + 1TB 반본체","post_date":"2026-10-07","posted_amount_krw":1667830,"reported_basis":"게시자가 카드 적용 결제액이라고 설명·직접 검증 아님","coupon":"카드 이전 쿠폰 상세 미확인","payment":"카드명·상한·중복 규칙 미확인","post_payment":"꼭멤버십 40000원, 페이북 경유 33000원 적립 주장","risk":"적립은 결제액에서 차감하지 않음. 외부 경유는 제휴 귀속과 충돌할 수 있어 중복 확정 금지. 부품별 품번·보증도 미확인","url":"https://quasarzone.com/bbs/qb_saleinfo/views/1991146","merchant_url":null,"current_price_verified":false}
+  ],
+  "current_watch": [
+    {"market":"쿠팡","event":"가전·디지털 블랙프라이데이","announced_period":"공식 본문 2026-11-16~11-29; 별도 PDF 배너는 11-30 표기가 있어 종료일 재확인 필요","watch":"11-23~11-27 라이브 구간에 인텔 등 참여 예정. PC 부품별 대상·시간표·할인은 미확인","source":"https://news.coupang.com/archives/68557/"},
+    {"market":"알리익스프레스","event":"KB Visa 블랙프라이데이 구간","announced_period":"2026-11-19~12-03","watch":"직구/K-Venue·USD·직접 카드 결제·다른 코드 중복 불가 조건 확인. 실제 잔여 예산은 미확인","source":"https://card.kbcard.com/BON/DVIEW/HBBMCXCRVNEC0001?eventNum=1002171&mainCC=a"}
+  ],
+  "event_checklist": [
+    ["행사 전 14일","누락 후보에서 국내 유통·제조사 품번·정확한 옵션 확인","상품 ID·판매자·보증·원본 판매 URL","담당 검토"],
+    ["행사 전 7일","평상시 동일 옵션 상품가·배송비 관측","확인 시각·재고·원화/외화·판매자","과거 가격을 현재가로 갱신하지 않음"],
+    ["행사 전 3일","공식 쿠폰·카드·회원 조건 버전 저장","시작/종료·시간대·최소금액·상한·횟수·예산","발표 안 된 다음 행사 날짜는 추정하지 않음"],
+    ["행사 전 1일","발급 회차·대상·중복/배타·경유 조건 대조","앱/바로가기·결제 경로·적립 지급일·취소/재발급","외부 캐시백 경유와 우리 제휴 귀속은 별도 확인"],
+    ["행사 시작","동일 옵션 장바구니에서 적용 조건 확인","상품가→쿠폰→카드→배송→실제 결제액","캐시백·포인트·리뷰 보상은 결제액과 분리"],
+    ["행사 중 변경","가격·예산·품절·조건 변경을 새 버전으로 기록","확인 시각·변경 근거·실패 이유","고정 횟수/요청 간격 내 수집, 차단은 중단"],
+    ["행사 종료","쿠폰/기간 만료 표시·가격·적립 결과 분리 보존","과거 행사 이력·제휴 링크 상태·다음 검토","다음 행사에 과거 코드를 자동 재사용하지 않음"]
+  ]
+}

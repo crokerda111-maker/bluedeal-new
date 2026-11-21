@@ -2,10 +2,10 @@ export type ProductCategory = "cpu" | "motherboard" | "ram" | "gpu" | "psu" | "s
 export type ProductSource = { label: string; url: string; observedAt: string | null; kind: string };
 export type CatalogProduct = {
   id: string; referenceCode: string; name: string; category: ProductCategory; subtype: string; brand: string;
-  kind: "curated-model" | "source-reviewed-model" | "model" | "listed-wattage-option" | "product-family";
+  kind: "curated-model" | "source-reviewed-model" | "retailer-reviewed-model" | "model" | "listed-wattage-option" | "product-family";
   features: string[]; specifications: { label: string; value: string }[]; description: string; notes: string[];
   lifecycle: "unknown" | "listed-current" | "listed-discontinued";
-  domesticState: "unverified"; manufacturerPartNumber: string | null;
+  domesticState: "unverified" | "listing-observed"; manufacturerPartNumber: string | null;
   sources: ProductSource[]; listObservedAt: string | null;
   strengths: { title: string; detail: string; conditions: string; sources: ProductSource[] }[];
   issues: { title: string; summary: string; conditions: string; action: string; sources: ProductSource[] }[];
@@ -23,6 +23,7 @@ export const PRODUCT_CATEGORIES: { key: ProductCategory; label: string }[] = [
 export const PRODUCT_KIND_LABELS: Record<CatalogProduct["kind"], string> = {
   "curated-model": "등록 모델", "source-reviewed-model": "공식 자료 검토 모델", "model": "목록 모델",
   "listed-wattage-option": "출력 옵션", "product-family": "제품군",
+  "retailer-reviewed-model": "판매페이지 확인 모델",
 };
 
 export function productCategoryLabel(category: ProductCategory) {

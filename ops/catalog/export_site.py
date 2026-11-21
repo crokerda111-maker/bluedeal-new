@@ -74,7 +74,14 @@ def export(root=ROOT):
             data = json.loads(path.read_text(encoding='utf-8-sig'))
             for item in data.get('items', []): raw[item['id']] = {**item, 'category': data['category']}
         products = []; merchants = []
+        reviewed_file = root / 'src/content/products/reviewed-models.json'
+        reviewed = json.loads(reviewed_file.read_text(encoding='utf-8')) if reviewed_file.exists() else []
+        claimed = {listing['id'] for product in reviewed for listing in product['listings']}
         for model in models:
+            if all(listing in claimed for listing in model['listing_ids']):
+                continue
+            if any(listing in claimed for listing in model['listing_ids']):
+                raise ValueError('PARTIALLY_CLAIMED_PUBLIC_MODEL')
             product_id = 'curated-' + model['internal_model_id']
             primary = raw[model['internal_model_id']]
             specifications = []
