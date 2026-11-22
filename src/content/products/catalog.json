@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "16e61ad240fc4d9d7dbafc32f2c4436f8735f989ea375e40eb5794cc47ef2996",
-  "entries": 801,
+  "catalogHash": "1a6b2dc0e805bdd84dba4688092904b7d2f7c51e81bdbfc7bc6bcefb75c2977b",
+  "entries": 814,
   "products": [
     {
       "id": "reviewed-mixed-bundle-etland-s6295842",
@@ -92969,6 +92969,116 @@
       "referenceCode": "BD-E395630C9D"
     },
     {
+      "id": "reviewed-crucial-t500-1tb",
+      "name": "Crucial T500 1TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Crucial",
+      "kind": "source-reviewed-model",
+      "features": [
+        "1TB · M.2 2280 · PCIe 4.0 ×4 · NVMe 2.0"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "1TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 4.0 ×4 · NVMe 2.0"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "LPDDR4 탑재"
+        },
+        {
+          "label": "제조사 공식 소매 품번 기준",
+          "value": "방열판 미포함"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "게시글의 OEM 포장과 제조사 공식 소매 품번의 판매·보증 조건은 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": "CT1000T500SSD8",
+      "sources": [
+        {
+          "label": "Crucial T500 제조사 자료 (Bechtle 공개본)",
+          "url": "https://media.bechtle.com/asrc/180712/1c4b3d4ee288fc9434f5175bf56070570/c3/-/59c8c75228d744e789dc471cb43fea8d/crucial-t500-ssd-1tb-data-sheet-1",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1959137",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        },
+        {
+          "label": "Crucial T500 용량별 사양과 분해",
+          "url": "https://www.tomshardware.com/reviews/crucial-2tb-t500-ssd-review",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "independent-review"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "Crucial T500 제조사 자료 (Bechtle 공개본)",
+            "url": "https://media.bechtle.com/asrc/180712/1c4b3d4ee288fc9434f5175bf56070570/c3/-/59c8c75228d744e789dc471cb43fea8d/crucial-t500-ssd-1tb-data-sheet-1",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "Crucial T500 제조사 자료 (Bechtle 공개본)",
+            "url": "https://media.bechtle.com/asrc/180712/1c4b3d4ee288fc9434f5175bf56070570/c3/-/59c8c75228d744e789dc471cb43fea8d/crucial-t500-ssd-1tb-data-sheet-1",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 4.0",
+          "source": {
+            "label": "Crucial T500 제조사 자료 (Bechtle 공개본)",
+            "url": "https://media.bechtle.com/asrc/180712/1c4b3d4ee288fc9434f5175bf56070570/c3/-/59c8c75228d744e789dc471cb43fea8d/crucial-t500-ssd-1tb-data-sheet-1",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "present",
+          "source": {
+            "label": "Crucial T500 용량별 사양과 분해",
+            "url": "https://www.tomshardware.com/reviews/crucial-2tb-t500-ssd-review",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "independent-review"
+          }
+        }
+      ],
+      "referenceCode": "BD-9FCDEDA847"
+    },
+    {
       "id": "reviewed-crucial-t500-2tb-daewon-retailer",
       "name": "Crucial T500 M.2 NVMe 2TB 대원씨티에스 (판매 표기)",
       "category": "ssd",
@@ -93066,6 +93176,232 @@
         }
       ],
       "referenceCode": "BD-1FC77DDA9B"
+    },
+    {
+      "id": "reviewed-crucial-t710-1tb",
+      "name": "Crucial T710 1TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Crucial",
+      "kind": "source-reviewed-model",
+      "features": [
+        "1TB · M.2 2280 · PCIe 5.0 ×4 · NVMe"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "1TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 5.0 ×4 · NVMe"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "LPDDR4 탑재"
+        },
+        {
+          "label": "방열판 미포함 공식 품번",
+          "value": "CT1000T710SSD8"
+        },
+        {
+          "label": "방열판 포함 공식 품번",
+          "value": "CT1000T710SSD5"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "Crucial T710 공식 용량별 자료",
+          "url": "https://www.crucial.com/content/dam/crucial/ssd-products/t710/flyer/crucial-t710-b2c-product-flyer-en.pdf",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1956572",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        },
+        {
+          "label": "Crucial T710 분해·용량별 사양표",
+          "url": "https://www.tomshardware.com/pc-components/ssds/crucial-t710-2tb-ssd-review",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "independent-review"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "Crucial T710 공식 용량별 자료",
+            "url": "https://www.crucial.com/content/dam/crucial/ssd-products/t710/flyer/crucial-t710-b2c-product-flyer-en.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "Crucial T710 공식 용량별 자료",
+            "url": "https://www.crucial.com/content/dam/crucial/ssd-products/t710/flyer/crucial-t710-b2c-product-flyer-en.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 5.0",
+          "source": {
+            "label": "Crucial T710 공식 용량별 자료",
+            "url": "https://www.crucial.com/content/dam/crucial/ssd-products/t710/flyer/crucial-t710-b2c-product-flyer-en.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "present",
+          "source": {
+            "label": "Crucial T710 분해·용량별 사양표",
+            "url": "https://www.tomshardware.com/pc-components/ssds/crucial-t710-2tb-ssd-review",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "independent-review"
+          }
+        }
+      ],
+      "referenceCode": "BD-60DCB1EDA6"
+    },
+    {
+      "id": "reviewed-crucial-t710-2tb",
+      "name": "Crucial T710 2TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Crucial",
+      "kind": "source-reviewed-model",
+      "features": [
+        "2TB · M.2 2280 · PCIe 5.0 ×4 · NVMe"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "2TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 5.0 ×4 · NVMe"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "LPDDR4 탑재"
+        },
+        {
+          "label": "방열판 미포함 공식 품번",
+          "value": "CT2000T710SSD8"
+        },
+        {
+          "label": "방열판 포함 공식 품번",
+          "value": "CT2000T710SSD5"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "Crucial T710 공식 용량별 자료",
+          "url": "https://www.crucial.com/content/dam/crucial/ssd-products/t710/flyer/crucial-t710-b2c-product-flyer-en.pdf",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2002054",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        },
+        {
+          "label": "Crucial T710 분해·용량별 사양표",
+          "url": "https://www.tomshardware.com/pc-components/ssds/crucial-t710-2tb-ssd-review",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "independent-review"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "2000",
+          "source": {
+            "label": "Crucial T710 공식 용량별 자료",
+            "url": "https://www.crucial.com/content/dam/crucial/ssd-products/t710/flyer/crucial-t710-b2c-product-flyer-en.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "Crucial T710 공식 용량별 자료",
+            "url": "https://www.crucial.com/content/dam/crucial/ssd-products/t710/flyer/crucial-t710-b2c-product-flyer-en.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 5.0",
+          "source": {
+            "label": "Crucial T710 공식 용량별 자료",
+            "url": "https://www.crucial.com/content/dam/crucial/ssd-products/t710/flyer/crucial-t710-b2c-product-flyer-en.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "present",
+          "source": {
+            "label": "Crucial T710 분해·용량별 사양표",
+            "url": "https://www.tomshardware.com/pc-components/ssds/crucial-t710-2tb-ssd-review",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "independent-review"
+          }
+        }
+      ],
+      "referenceCode": "BD-5BAC9851AC"
     },
     {
       "id": "reviewed-fanxiang-s500-pro-512gb",
@@ -93525,6 +93861,202 @@
         }
       ],
       "referenceCode": "BD-4A81199CA0"
+    },
+    {
+      "id": "reviewed-fanxiang-s910-pro-1tb",
+      "name": "Fanxiang S910 PRO 1TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Fanxiang",
+      "kind": "source-reviewed-model",
+      "features": [
+        "1TB · M.2 2280 · PCIe 5.0 ×4 · NVMe"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "1TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 5.0 ×4 · NVMe"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "탑재"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "S910 MAX와 별도 모델입니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "Fanxiang S910 PRO 공식 모델·용량 선택",
+          "url": "https://www.fanxiangssd.com/products/fanxiang-1tb-pcie-5-0-x4-nvme-m-2-ssd-up-to-14000-mb-s-high-density-3d-tlc-nand-high-performance-solid-state-drive-for-ai-applications-gaming-pc-laptop",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1987581",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        },
+        {
+          "label": "Fanxiang 공식 판매점 S910 PRO 사양",
+          "url": "https://item.rakuten.co.jp/fanxiang-official/s910pro-cp/",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "Fanxiang S910 PRO 공식 모델·용량 선택",
+            "url": "https://www.fanxiangssd.com/products/fanxiang-1tb-pcie-5-0-x4-nvme-m-2-ssd-up-to-14000-mb-s-high-density-3d-tlc-nand-high-performance-solid-state-drive-for-ai-applications-gaming-pc-laptop",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "Fanxiang S910 PRO 공식 모델·용량 선택",
+            "url": "https://www.fanxiangssd.com/products/fanxiang-1tb-pcie-5-0-x4-nvme-m-2-ssd-up-to-14000-mb-s-high-density-3d-tlc-nand-high-performance-solid-state-drive-for-ai-applications-gaming-pc-laptop",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 5.0",
+          "source": {
+            "label": "Fanxiang S910 PRO 공식 모델·용량 선택",
+            "url": "https://www.fanxiangssd.com/products/fanxiang-1tb-pcie-5-0-x4-nvme-m-2-ssd-up-to-14000-mb-s-high-density-3d-tlc-nand-high-performance-solid-state-drive-for-ai-applications-gaming-pc-laptop",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "present",
+          "source": {
+            "label": "Fanxiang 공식 판매점 S910 PRO 사양",
+            "url": "https://item.rakuten.co.jp/fanxiang-official/s910pro-cp/",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "referenceCode": "BD-A7AA72F197"
+    },
+    {
+      "id": "reviewed-kioxia-exceria-g3-2tb",
+      "name": "KIOXIA EXCERIA G3 2TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "KIOXIA",
+      "kind": "source-reviewed-model",
+      "features": [
+        "2TB · M.2 2280 · PCIe 5.0 ×4 · NVMe 2.0c"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "2TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 5.0 ×4 · NVMe 2.0c"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "해당 모델의 공개 근거 확인 필요"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "EXCERIA PLUS G3와 별도 모델입니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "키오시아 한국 EXCERIA G3 공식 사양",
+          "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1994401",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "2000",
+          "source": {
+            "label": "키오시아 한국 EXCERIA G3 공식 사양",
+            "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "키오시아 한국 EXCERIA G3 공식 사양",
+            "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 5.0",
+          "source": {
+            "label": "키오시아 한국 EXCERIA G3 공식 사양",
+            "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-4BB52A642E"
     },
     {
       "id": "reviewed-kioxia-exceria-plus-g3-2tb-retailer",
@@ -94043,6 +94575,352 @@
       "referenceCode": "BD-F8638D52B7"
     },
     {
+      "id": "reviewed-samsung-9100-pro-2tb",
+      "name": "Samsung 9100 PRO 2TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Samsung",
+      "kind": "source-reviewed-model",
+      "features": [
+        "2TB · M.2 2280 · PCIe 5.0 ×4 · NVMe 2.0"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "2TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 5.0 ×4 · NVMe 2.0"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "2GB LPDDR4X 탑재"
+        },
+        {
+          "label": "방열판 구성",
+          "value": "제조사 품번 기준 미포함"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "게시글에 나온 해외 판매 포장과 국내 보증 범위는 별도로 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": "MZ-VAP2T0BW",
+      "sources": [
+        {
+          "label": "삼성 9100 PRO 2TB 제품 사양",
+          "url": "https://www.samsung.com/sec/memory-storage/9100-pro-ssd-1tb/MZ-VAP2T0BW/",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2002031",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        },
+        {
+          "label": "삼성 9100 PRO 용량별 데이터시트",
+          "url": "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_9100_PRO_Datasheet_Rev.2.0_10149814992944.pdf",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "2000",
+          "source": {
+            "label": "삼성 9100 PRO 2TB 제품 사양",
+            "url": "https://www.samsung.com/sec/memory-storage/9100-pro-ssd-1tb/MZ-VAP2T0BW/",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "삼성 9100 PRO 2TB 제품 사양",
+            "url": "https://www.samsung.com/sec/memory-storage/9100-pro-ssd-1tb/MZ-VAP2T0BW/",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 5.0",
+          "source": {
+            "label": "삼성 9100 PRO 2TB 제품 사양",
+            "url": "https://www.samsung.com/sec/memory-storage/9100-pro-ssd-1tb/MZ-VAP2T0BW/",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "present",
+          "source": {
+            "label": "삼성 9100 PRO 용량별 데이터시트",
+            "url": "https://download.semiconductor.samsung.com/resources/data-sheet/Samsung_NVMe_SSD_9100_PRO_Datasheet_Rev.2.0_10149814992944.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-B34D1AEAAA"
+    },
+    {
+      "id": "reviewed-sandisk-gx-pro-8100-1tb",
+      "name": "SanDisk Optimus GX PRO 8100 1TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "SanDisk",
+      "kind": "source-reviewed-model",
+      "features": [
+        "1TB · M.2 2280 · PCIe 5.0 ×4 · NVMe 2.0",
+        "이전 제품명 WD_BLACK SN8100"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "1TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 5.0 ×4 · NVMe 2.0"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "탑재"
+        },
+        {
+          "label": "이전 제품명",
+          "value": "WD_BLACK SN8100"
+        },
+        {
+          "label": "현행 방열판 미포함 공식 품번",
+          "value": "SDSP82100TAN-000E0"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "신·구 포장의 정확한 품번과 방열판 구성에 따라 판매 조건을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+          "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "SanDisk의 WD SSD 명칭·품번 대응표",
+          "url": "https://support-en.sandisk.com/app/answers/detailweb/a_id/53788/kw/g-raid%20shuttle/related/1",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-support"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1997685",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 5.0",
+          "source": {
+            "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "present",
+          "source": {
+            "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-3F33A33708"
+    },
+    {
+      "id": "reviewed-sandisk-gx-pro-8100-2tb",
+      "name": "SanDisk Optimus GX PRO 8100 2TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "SanDisk",
+      "kind": "source-reviewed-model",
+      "features": [
+        "2TB · M.2 2280 · PCIe 5.0 ×4 · NVMe 2.0",
+        "이전 제품명 WD_BLACK SN8100"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "2TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 5.0 ×4 · NVMe 2.0"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "탑재"
+        },
+        {
+          "label": "이전 제품명",
+          "value": "WD_BLACK SN8100"
+        },
+        {
+          "label": "현행 방열판 미포함 공식 품번",
+          "value": "SDSP82200TAN-000E0"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "신·구 포장의 정확한 품번과 방열판 구성에 따라 판매 조건을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+          "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "SanDisk의 WD SSD 명칭·품번 대응표",
+          "url": "https://support-en.sandisk.com/app/answers/detailweb/a_id/53788/kw/g-raid%20shuttle/related/1",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-support"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1991961",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1994271",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "2000",
+          "source": {
+            "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 5.0",
+          "source": {
+            "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "present",
+          "source": {
+            "label": "SanDisk GX PRO 8100 공식 용량별 사양표",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/internal-drives/sandisk-optimus-gx-pro/data-sheet-optimus-gx-pro-8100-internal-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-11E8BF722F"
+    },
+    {
       "id": "reviewed-sandisk-ssd-plus-nvme-2tb-daewon-retailer",
       "name": "SanDisk SSD PLUS M.2 NVMe 2TB 대원씨티에스 (판매 표기)",
       "category": "ssd",
@@ -94116,6 +94994,99 @@
         }
       ],
       "referenceCode": "BD-1F618AEE5B"
+    },
+    {
+      "id": "reviewed-seagate-game-drive-external-ps5-1tb",
+      "name": "Seagate Game Drive 외장 SSD for PS5 1TB",
+      "category": "ssd",
+      "subtype": "external-ssd",
+      "brand": "Seagate",
+      "kind": "source-reviewed-model",
+      "features": [
+        "1TB · 외장 SSD · USB 3.2 · USB-C"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "1TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "외장 SSD"
+        },
+        {
+          "label": "인터페이스",
+          "value": "USB 3.2 · USB-C"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "해당 모델의 공개 근거 확인 필요"
+        },
+        {
+          "label": "PS5 게임",
+          "value": "USB SSD에 보관하고 실행 시 본체 저장소 또는 호환 M.2 SSD로 이동"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": "STMH1000100",
+      "sources": [
+        {
+          "label": "Seagate Game Drive 외장 SSD 1TB 데이터시트",
+          "url": "https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/game-drive-ps5-ssd/game-drive-external-ssd-1tb-DS4-1-2407US-en_US.pdf",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1968270",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "Seagate Game Drive 외장 SSD 1TB 데이터시트",
+            "url": "https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/game-drive-ps5-ssd/game-drive-external-ssd-1tb-DS4-1-2407US-en_US.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "외장 SSD",
+          "source": {
+            "label": "Seagate Game Drive 외장 SSD 1TB 데이터시트",
+            "url": "https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/game-drive-ps5-ssd/game-drive-external-ssd-1tb-DS4-1-2407US-en_US.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "USB 3.2",
+          "source": {
+            "label": "Seagate Game Drive 외장 SSD 1TB 데이터시트",
+            "url": "https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/game-drive-ps5-ssd/game-drive-external-ssd-1tb-DS4-1-2407US-en_US.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-8B3BD46E28"
     },
     {
       "id": "reviewed-seagate-game-drive-external-ps5-2tb-retailer",
@@ -94204,6 +95175,302 @@
         }
       ],
       "referenceCode": "BD-6C1C0322E2"
+    },
+    {
+      "id": "reviewed-seagate-game-drive-ps5-nvme-2tb",
+      "name": "Seagate Game Drive M.2 SSD for PS5 2TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Seagate",
+      "kind": "source-reviewed-model",
+      "features": [
+        "2TB · M.2 2280 · PCIe 4.0 ×4 · NVMe"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "2TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 4.0 ×4 · NVMe"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "탑재"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "PS5 내장 M.2 슬롯용입니다. 동일 브랜드 외장 USB SSD와 용도가 다릅니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": "ZP2000GP300001",
+      "sources": [
+        {
+          "label": "Seagate PS5 내장 NVMe 모델별 사양",
+          "url": "https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/game-drive-ps5-nvme-ssd/game-drive-ps5-nvme-ssd-SC12-1-2305-AMER-en_US.pdf",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1976229",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        },
+        {
+          "label": "Game Drive PS5 M.2 2TB 실측 자료",
+          "url": "https://ssd-tester.co.uk/seagate_game_drive_ps5_2tb.html",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "independent-review"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "2000",
+          "source": {
+            "label": "Seagate PS5 내장 NVMe 모델별 사양",
+            "url": "https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/game-drive-ps5-nvme-ssd/game-drive-ps5-nvme-ssd-SC12-1-2305-AMER-en_US.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "Seagate PS5 내장 NVMe 모델별 사양",
+            "url": "https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/game-drive-ps5-nvme-ssd/game-drive-ps5-nvme-ssd-SC12-1-2305-AMER-en_US.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 4.0",
+          "source": {
+            "label": "Seagate PS5 내장 NVMe 모델별 사양",
+            "url": "https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/game-drive-ps5-nvme-ssd/game-drive-ps5-nvme-ssd-SC12-1-2305-AMER-en_US.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "present",
+          "source": {
+            "label": "Game Drive PS5 M.2 2TB 실측 자료",
+            "url": "https://ssd-tester.co.uk/seagate_game_drive_ps5_2tb.html",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "independent-review"
+          }
+        }
+      ],
+      "referenceCode": "BD-7A46FE7BC9"
+    },
+    {
+      "id": "reviewed-synology-beedrive-2tb",
+      "name": "Synology BeeDrive 2TB",
+      "category": "ssd",
+      "subtype": "external-ssd",
+      "brand": "Synology",
+      "kind": "source-reviewed-model",
+      "features": [
+        "2TB · 외장 SSD · USB 3.2 Gen 2 · USB-C"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "2TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "외장 SSD"
+        },
+        {
+          "label": "인터페이스",
+          "value": "USB 3.2 Gen 2 · USB-C"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "해당 모델의 공개 근거 확인 필요"
+        },
+        {
+          "label": "호스트 연결 속도",
+          "value": "USB 10Gbps (연결 규격)"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "자동 백업 기능의 기기·운영체제 지원 조건을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": "BDS70-2T",
+      "sources": [
+        {
+          "label": "Synology BeeDrive 2TB 공식 사양",
+          "url": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/BeeDrive/23-year/BDS70-2T/krn/Product_Spec_BDS70-2T_krn.pdf",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1965478",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "2000",
+          "source": {
+            "label": "Synology BeeDrive 2TB 공식 사양",
+            "url": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/BeeDrive/23-year/BDS70-2T/krn/Product_Spec_BDS70-2T_krn.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "외장 SSD",
+          "source": {
+            "label": "Synology BeeDrive 2TB 공식 사양",
+            "url": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/BeeDrive/23-year/BDS70-2T/krn/Product_Spec_BDS70-2T_krn.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "USB 3.2 Gen 2",
+          "source": {
+            "label": "Synology BeeDrive 2TB 공식 사양",
+            "url": "https://global.download.synology.com/download/Document/Hardware/ProductSpec/BeeDrive/23-year/BDS70-2T/krn/Product_Spec_BDS70-2T_krn.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-CF70ECAC66"
+    },
+    {
+      "id": "reviewed-cusu-cv3500-2tb",
+      "name": "TWSC CUSU CV3500 2TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "CUSU",
+      "kind": "source-reviewed-model",
+      "features": [
+        "2TB · M.2 2280 · PCIe 3.0 ×4 · NVMe"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "2TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 3.0 ×4 · NVMe"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "해당 모델의 공개 근거 확인 필요"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "판매 옵션에서 CV3500M·CV3500Q와 구분하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "씨넥스PC CV3500 2TB 제품 사양",
+          "url": "https://www.cynexpc.com/shop/product_detail.html?pd_no=204271",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "TWSC CUSU 모델 목록",
+          "url": "https://www.twsc.com.cn/CUSU/index.html",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1969382",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "2000",
+          "source": {
+            "label": "씨넥스PC CV3500 2TB 제품 사양",
+            "url": "https://www.cynexpc.com/shop/product_detail.html?pd_no=204271",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "씨넥스PC CV3500 2TB 제품 사양",
+            "url": "https://www.cynexpc.com/shop/product_detail.html?pd_no=204271",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 3.0",
+          "source": {
+            "label": "씨넥스PC CV3500 2TB 제품 사양",
+            "url": "https://www.cynexpc.com/shop/product_detail.html?pd_no=204271",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "referenceCode": "BD-911190E50E"
     },
     {
       "id": "reviewed-wd-black-sn850x-1tb",
@@ -94424,6 +95691,116 @@
         }
       ],
       "referenceCode": "BD-894FE8A740"
+    },
+    {
+      "id": "reviewed-wd-black-sn850x-4tb",
+      "name": "WD_BLACK SN850X 4TB",
+      "category": "ssd",
+      "subtype": "internal-ssd",
+      "brand": "Western Digital",
+      "kind": "source-reviewed-model",
+      "features": [
+        "4TB · M.2 2280 · PCIe 4.0 ×4 · NVMe"
+      ],
+      "specifications": [
+        {
+          "label": "확인한 용량",
+          "value": "4TB"
+        },
+        {
+          "label": "폼 팩터",
+          "value": "M.2 2280"
+        },
+        {
+          "label": "인터페이스",
+          "value": "PCIe 4.0 ×4 · NVMe"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "DDR4 탑재"
+        },
+        {
+          "label": "방열판 미포함 공식 품번",
+          "value": "WDS400T2X0E"
+        }
+      ],
+      "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
+      "notes": [
+        "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
+        "4TB 옵션의 방열판과 국내 보증은 판매처에 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "WD_BLACK SN850X 공식 데이터시트",
+          "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-black-ssd/data-sheet-wd-black-sn850x-nvme-ssd.pdf",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "과거 핫딜 원문",
+          "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1975897",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "community-deal"
+        },
+        {
+          "label": "WD_BLACK SN850X 용량별 사양 및 분해",
+          "url": "https://www.tomshardware.com/reviews/wd-black-sn850x-ssd-review-back-in-black",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "independent-review"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "4000",
+          "source": {
+            "label": "WD_BLACK SN850X 공식 데이터시트",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-black-ssd/data-sheet-wd-black-sn850x-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2 2280",
+          "source": {
+            "label": "WD_BLACK SN850X 공식 데이터시트",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-black-ssd/data-sheet-wd-black-sn850x-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "PCIe 4.0",
+          "source": {
+            "label": "WD_BLACK SN850X 공식 데이터시트",
+            "url": "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/western-digital/product/internal-drives/wd-black-ssd/data-sheet-wd-black-sn850x-nvme-ssd.pdf",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "present",
+          "source": {
+            "label": "WD_BLACK SN850X 용량별 사양 및 분해",
+            "url": "https://www.tomshardware.com/reviews/wd-black-sn850x-ssd-review-back-in-black",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "independent-review"
+          }
+        }
+      ],
+      "referenceCode": "BD-5EE79F84AC"
     },
     {
       "id": "reviewed-ymtc-zhitai-tipro9000-2tb-retailer",
