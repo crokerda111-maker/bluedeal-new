@@ -5,6 +5,7 @@ import type { PriceItem } from "../../../lib/mockPrices";
 import { getPriceView } from "../../../lib/prices";
 import SmartLink from "../../../components/SmartLink";
 import ProductSearchForm from "../../../components/ProductSearchForm";
+import DailyPcComparison from "../../../components/DailyPcComparison";
 import CpuReferenceGuide from "../../../components/CpuReferenceGuide";
 import GpuReferenceGuide from "../../../components/GpuReferenceGuide";
 import { filterPrices, readPriceFilters } from "../../../lib/priceFilters";
@@ -114,6 +115,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
         <nav aria-label="분류 내 바로가기" className="mt-2 flex flex-wrap gap-4 text-cyan-200"><a href="#registered-products" className="inline-flex min-h-11 items-center underline">등록 상품·특징</a><a href="#price-records" className="inline-flex min-h-11 items-center underline">판매처 가격 기록</a></nav>
       </div>
 
+      {category.key === "fullpc" || category.key === "halfpc" ? <DailyPcComparison kind={category.key} now={now} /> : null}
       <ProductSearchForm category={category.key} products={products} offersById={offersById} query={query} />
       <PriceCatalogSection category={category} query={canonicalQuery} results={results} offersById={matchedOffers} now={now} />
 

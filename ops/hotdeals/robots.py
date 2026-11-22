@@ -20,7 +20,7 @@ class RobotsPolicy:
         groups = []
         agents, rules, delays = [], [], []
         directives = False
-        for line in text.splitlines():
+        for line in text.lstrip('\ufeff').splitlines():
             line = line.split('#', 1)[0].strip()
             if ':' not in line:
                 continue

@@ -20,6 +20,10 @@ export default async function EvaluatePage({ searchParams }: { searchParams: Pro
       <p className="text-sm font-medium text-cyan-200">PC 구매 판단 · 시험 운영</p>
       <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">가격 뒤의 구성까지 확인하세요</h1>
       <p className="mt-4 max-w-3xl text-sm leading-7 text-white/75">완본체·반본체의 가치는 부품 이름과 할인율만으로 결정되지 않습니다. 같은 부품을 직접 모으는 비용, 부품별 장점과 이슈, OS·조립·보증 조건을 함께 비교합니다.</p>
+      <div className="mt-4 flex flex-wrap gap-5 text-sm text-cyan-200">
+        <Link href="/prices/fullpc#today-pc" className="inline-flex min-h-11 items-center underline">오늘의 완본체 비교</Link>
+        <Link href="/prices/halfpc#today-pc" className="inline-flex min-h-11 items-center underline">오늘의 반본체 비교</Link>
+      </div>
       <div className="mt-5 flex flex-wrap gap-3 text-sm"><a href="#calculator" className="inline-flex min-h-11 items-center rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 text-cyan-100 hover:bg-cyan-300/20">구성 비용 비교</a><a href="#parts" className="inline-flex min-h-11 items-center rounded-xl border border-white/20 px-4 hover:bg-white/10">부품 정보 확인</a></div>
     </section>
 
