@@ -49,7 +49,7 @@ for (const product of base.products) {
     product.sources = [...new Map(product.sources.map(source => [source.url, source])).values()];
   }
 }
-for (const filename of ['component-specifications-reviewed.json', 'component-specifications-manufacturer.json']) {
+for (const filename of ['component-specifications-reviewed.json', 'component-specifications-manufacturer.json', 'case-classifications.json']) {
   const doc = JSON.parse(await fs.readFile(path.join(root, 'src/content/products', filename), 'utf8'));
   const additions = reviewModelSpecifications(doc);
   base.products = applyDistributorReview(base.products, { schemaVersion: 1, enrichments: additions, additions: [] });
