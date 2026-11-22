@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "3e0a82edfb4cae9c6d879d52b5ac3f2228732bd52487965c533839f795eb5301",
+  "catalogHash": "4aa97b307245bc67504b8bd7ff8d8f57efb42379fa77105e546de281a01e662e",
   "entries": 792,
   "products": [
     {
@@ -91498,16 +91498,16 @@
           "value": "AGI AI298 M.2 NVMe 서린 (512GB) · 수량1 · 추가 선택 없음"
         },
         {
+          "label": "전용 DRAM",
+          "value": "미탑재 · 컴퓨존 동일 모델·용량 사양"
+        },
+        {
           "label": "제조사 표기 연결 규격",
           "value": "PCIe 3.0 · NVMe"
         },
         {
           "label": "제조사 표기 장착 규격",
           "value": "M.2 2280"
-        },
-        {
-          "label": "전용 DRAM",
-          "value": "공개 제품 사양에서 탑재 여부 확인되지 않음"
         }
       ],
       "facts": [
@@ -91542,6 +91542,16 @@
           }
         },
         {
+          "key": "dram",
+          "value": "absent",
+          "source": {
+            "label": "AGI AI298 512GB 컴퓨존 판매 사양",
+            "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1303160",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
           "key": "interface",
           "value": "PCIe 3.0",
           "source": {
@@ -91557,6 +91567,12 @@
           "label": "서린 공식몰 · AGI AI298 M.2 NVMe 서린 (512GB)",
           "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008277",
           "observedAt": "2026-11-22T03:10:09.491697+00:00",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "AGI AI298 512GB 컴퓨존 판매 사양",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1303160",
+          "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "retailer-listing"
         },
         {
@@ -92003,6 +92019,10 @@
         {
           "label": "판매처 선택 구성",
           "value": "AGI AI828G4L M.2 NVMe (1TB) · 수량1 · 추가 선택 없음"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "서린 공식몰 공개 사양에서 확인되지 않음"
         }
       ],
       "facts": [
@@ -92039,9 +92059,9 @@
       ],
       "sources": [
         {
-          "label": "서린 공식몰 · AGI AI828G4L M.2 NVMe (1TB)",
+          "label": "AGI AI828G4L 1TB 서린 공식몰",
           "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009113",
-          "observedAt": "2026-11-22T03:07:35.059921+00:00",
+          "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "retailer-listing"
         }
       ],
@@ -92487,16 +92507,16 @@
           "value": "Apacer AS2280Q4X M.2 NVMe (512GB) · 수량1 · 추가 선택 없음"
         },
         {
+          "label": "전용 DRAM",
+          "value": "미탑재 · 컴퓨존 동일 모델·용량 사양"
+        },
+        {
           "label": "제조사 표기 연결 규격",
           "value": "PCIe 4.0 ×4 · NVMe 1.4"
         },
         {
           "label": "제조사 표기 장착 규격",
           "value": "M.2 2280"
-        },
-        {
-          "label": "전용 DRAM",
-          "value": "공개 제품 사양에서 탑재 여부 확인되지 않음"
         }
       ],
       "facts": [
@@ -92531,6 +92551,16 @@
           }
         },
         {
+          "key": "dram",
+          "value": "absent",
+          "source": {
+            "label": "Apacer AS2280Q4X 512GB 서린 컴퓨존 판매 사양",
+            "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1313923",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
           "key": "interface",
           "value": "PCIe 4.0",
           "source": {
@@ -92546,6 +92576,12 @@
           "label": "서린 공식몰 · Apacer AS2280Q4X M.2 NVMe (512GB)",
           "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007931",
           "observedAt": "2026-11-22T03:10:33.410961+00:00",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "Apacer AS2280Q4X 512GB 서린 컴퓨존 판매 사양",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1313923",
+          "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "retailer-listing"
         },
         {
@@ -92606,16 +92642,16 @@
           "value": "Apacer AST280X M.2 SATA (512GB) · 수량1 · 추가 선택 없음"
         },
         {
+          "label": "전용 DRAM",
+          "value": "미탑재 · 컴퓨존 동일 모델·용량 사양"
+        },
+        {
           "label": "제조사 표기 연결 규격",
           "value": "SATA III"
         },
         {
           "label": "제조사 표기 장착 규격",
           "value": "M.2 2280"
-        },
-        {
-          "label": "전용 DRAM",
-          "value": "공개 제품 사양에서 탑재 여부 확인되지 않음"
         }
       ],
       "facts": [
@@ -92650,6 +92686,16 @@
           }
         },
         {
+          "key": "dram",
+          "value": "absent",
+          "source": {
+            "label": "Apacer AST280X 512GB 서린 컴퓨존 판매 사양",
+            "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1313927",
+            "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
           "key": "interface",
           "value": "SATA",
           "source": {
@@ -92665,6 +92711,12 @@
           "label": "서린 공식몰 · Apacer AST280X M.2 SATA (512GB)",
           "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007934",
           "observedAt": "2026-11-22T03:10:24.399279+00:00",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "Apacer AST280X 512GB 서린 컴퓨존 판매 사양",
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1313927",
+          "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "retailer-listing"
         },
         {
@@ -93339,6 +93391,10 @@
         {
           "label": "폼 팩터",
           "value": "M.2 2280"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "2TB 제조사 사양에 공개되지 않음"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
@@ -93363,7 +93419,7 @@
         },
         {
           "label": "해당 모델 제조사 공식 사양",
-          "url": "https://www.sandisk.com/products/ssd/internal-ssd/sandisk-ssd-plus-m2-nvme",
+          "url": "https://www.sandisk.com/products/ssd/internal-ssd/sandisk-ssd-plus-m2-nvme?sku=SDSSDA3N-2T00-G26",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
         }
@@ -93380,7 +93436,7 @@
           "value": "M.2 2280",
           "source": {
             "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.sandisk.com/products/ssd/internal-ssd/sandisk-ssd-plus-m2-nvme",
+            "url": "https://www.sandisk.com/products/ssd/internal-ssd/sandisk-ssd-plus-m2-nvme?sku=SDSSDA3N-2T00-G26",
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
@@ -93414,6 +93470,10 @@
         {
           "label": "PS5 게임",
           "value": "외장 SSD에서 보관 후 실행할 때 본체 또는 PS5 호환 M.2 SSD로 이동"
+        },
+        {
+          "label": "전용 DRAM",
+          "value": "외장 모델의 제조사 공개 사양에 표기 없음"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
