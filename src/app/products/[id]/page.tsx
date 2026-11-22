@@ -29,6 +29,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const { data, now } = await getPriceView(product.category);
   const listingIds = new Set(product.listings.map(listing => listing.id));
   const offers = data.items.filter(item => listingIds.has(item.id));
+  const componentSpecs = product.specifications.filter(spec => /^판매처 (부품표|기본사양) · /.test(spec.label));
   const affiliateCodes = new Set(offers.filter(item => {
     const outbound = item.goCode ? OUTBOUND_LINKS[item.goCode] : undefined;
     const resolution = outbound ? resolveAffiliateUrl(outbound) : null;
@@ -71,6 +72,12 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
       </div>
 
       <aside className="min-w-0 space-y-6">
+        {product.category === "fullpc" || product.category === "halfpc" ? <section className="bd-surface-md p-5 sm:p-6" aria-labelledby="pc-savings-title">
+          <h2 id="pc-savings-title" className="text-lg font-semibold">조립 대비 절약률</h2>
+          <p className="mt-3 font-semibold text-amber-100">동일 구성 가격 대조 중</p>
+          <p className="mt-3 text-sm leading-7 text-white/75">{componentSpecs.length ? `판매처 부품표 ${componentSpecs.length}개 항목을 아래 상세 사양에 기록했습니다. ` : "정확한 전체 부품 구성을 확인하고 있습니다. "}각 부품의 동일 모델·옵션 가격과 배송비, 본체의 최종 결제금액·OS·보증 조건을 대조한 뒤 절약률을 제공합니다.</p>
+          <Link href="/evaluate" className="mt-3 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">직접 확인한 구성 비용 계산하기</Link>
+        </section> : null}
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-lg font-semibold">확인 상태</h2><dl className="mt-4 space-y-4 text-sm"><div><dt className="text-white/60">항목 기준</dt><dd className="mt-1">{PRODUCT_KIND_LABELS[product.kind]}</dd></div><div><dt className="text-white/60">국내 판매·보증</dt><dd className="mt-1">{product.domesticState === "listing-observed" ? "판매 표기 확인 · 보증 조건 별도 확인" : "확인 필요"}</dd></div><div><dt className="text-white/60">정확한 제조사 품번</dt><dd className="mt-1">{product.manufacturerPartNumber ?? "확인 필요"}</dd></div><div><dt className="text-white/60">현재 가격·할인·재고</dt><dd className="mt-1">판매처 재확인 필요</dd></div><div><dt className="text-white/60">자료 확인일</dt><dd className="mt-1">{catalogDate(informationCheckedAt)}</dd></div></dl>{product.lifecycle === "listed-current" ? <p className="mt-5 text-xs leading-6 text-white/65">제조사 현행 목록에 포함된 항목입니다. 국내 판매 또는 재고 보유를 뜻하지 않습니다.</p> : null}</section>
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-lg font-semibold">공식 자료·출처</h2><div className="mt-4"><Sources items={product.sources} /></div></section>
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-lg font-semibold">판매처 연결</h2>{product.listings.length ? <><p className="mt-3 text-sm leading-7 text-white/70">확인한 판매 상품의 가격표입니다. 가격 확인일과 옵션을 함께 확인해 주세요.</p><ul className="mt-4 space-y-3">{product.listings.map(listing => <li key={listing.id}><Link href={listing.pricePage} className="inline-flex min-h-11 items-center text-sm text-cyan-200 underline">{listing.merchant} 등록 가격표 보기</Link><p className="break-words text-xs leading-6 text-white/60">{listing.seller}</p></li>)}</ul></> : <p className="mt-3 text-sm leading-7 text-white/70">같은 모델·옵션의 판매처를 확인하고 있습니다. 검증한 구매 링크를 연결하면 가격·배송·혜택 조건을 함께 안내하겠습니다.</p>}</section>

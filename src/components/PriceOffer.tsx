@@ -57,4 +57,3 @@ export function PurchaseLink({ item, affiliate }: { item: PriceItem; affiliate: 
     </SmartLink><div className="text-xs text-white/65">{affiliate ? "제휴 링크" : "일반 링크"}</div></div>
   );
 }
-

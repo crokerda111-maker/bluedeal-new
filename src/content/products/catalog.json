@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "961f530dbbca9a99a9a7ca610600af5f611c72d4b9eff56e5dcb6483aa6a05fd",
-  "entries": 620,
+  "catalogHash": "1ee141effdbc9deeeab4f95188ea44f1f4a653471ce2703802b1febd7a0a9ef2",
+  "entries": 669,
   "products": [
     {
       "id": "reviewed-mixed-bundle-etland-s6295842",
@@ -19105,6 +19105,1956 @@
       "referenceCode": "BD-D303664245"
     },
     {
+      "id": "distributor-inovia-901",
+      "name": "Inno3D 지포스 GT 1030 D5 2GB 무소음",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 GT 1030 · 그래픽 메모리 2GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "GT 1030"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "2GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "GT 1030",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "2",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-84D6A1FF3B"
+    },
+    {
+      "id": "distributor-inovia-1255",
+      "name": "INNO3D 지포스 RTX 3050 D6 6GB TWIN X2",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 3050 · 그래픽 메모리 6GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 3050"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "6GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 3050",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "6",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-B825575702"
+    },
+    {
+      "id": "distributor-inovia-1323",
+      "name": "INNO3D 지포스 RTX 3050 D6 6GB TWIN X2 V2",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 3050 · 그래픽 메모리 6GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 3050"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "6GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 3050",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "6",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-4A6F9C581D"
+    },
+    {
+      "id": "distributor-inovia-1310",
+      "name": "INNO3D 지포스 RTX 5050 D6 8GB TWIN X2",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5050 · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5050"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5050",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-0A537CFD71"
+    },
+    {
+      "id": "distributor-inovia-1304",
+      "name": "INNO3D 지포스 RTX 5060 D7 8GB TWIN X2",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-AB116241C3"
+    },
+    {
+      "id": "distributor-inovia-1305",
+      "name": "INNO3D 지포스 RTX 5060 D7 8GB TWIN X2 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-2A6F5A457B"
+    },
+    {
+      "id": "distributor-inovia-1313",
+      "name": "INNO3D 지포스 RTX 5060 D7 8GB TWIN X2 OC V2",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-8BAA6E1402"
+    },
+    {
+      "id": "distributor-inovia-1309",
+      "name": "INNO3D 지포스 RTX 5060 D7 8GB TWIN X2 OC WHITE",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-47B5C1EC43"
+    },
+    {
+      "id": "distributor-inovia-1334",
+      "name": "INNO3D 지포스 RTX 5060 D7 8GB TWIN X2 V2",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-510CF2B006"
+    },
+    {
+      "id": "distributor-inovia-1299",
+      "name": "INNO3D 지포스 RTX 5060 Ti D7 16GB TWIN X2",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 Ti · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-8EBC8DFA5A"
+    },
+    {
+      "id": "distributor-inovia-1300",
+      "name": "INNO3D 지포스 RTX 5060 Ti D7 16GB TWIN X2 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 Ti · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-60623155EF"
+    },
+    {
+      "id": "distributor-inovia-1303",
+      "name": "INNO3D 지포스 RTX 5060 Ti D7 16GB TWIN X2 OC WHITE",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 Ti · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-47AB2E77ED"
+    },
+    {
+      "id": "distributor-inovia-1301",
+      "name": "INNO3D 지포스 RTX 5060 Ti D7 16GB X3 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 Ti · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-12FE4BA53E"
+    },
+    {
+      "id": "distributor-inovia-1296",
+      "name": "INNO3D 지포스 RTX 5060 Ti D7 8GB TWIN X2",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 Ti · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-ABB8D20CB2"
+    },
+    {
+      "id": "distributor-inovia-1297",
+      "name": "INNO3D 지포스 RTX 5060 Ti D7 8GB TWIN X2 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 Ti · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-86C5DD2352"
+    },
+    {
+      "id": "distributor-inovia-1302",
+      "name": "INNO3D 지포스 RTX 5060 Ti D7 8GB TWIN X2 OC WHITE",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 Ti · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-0489F1D57D"
+    },
+    {
+      "id": "distributor-inovia-1298",
+      "name": "INNO3D 지포스 RTX 5060 Ti D7 8GB X3 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5060 Ti · 그래픽 메모리 8GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5060 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "8GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5060 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "8",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-089E68024D"
+    },
+    {
+      "id": "distributor-inovia-1290",
+      "name": "INNO3D 지포스 RTX 5070 D7 12GB X2",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5070 · 그래픽 메모리 12GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5070"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "12GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5070",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "12",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-4E11987EAD"
+    },
+    {
+      "id": "distributor-inovia-1291",
+      "name": "INNO3D 지포스 RTX 5070 D7 12GB X2 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5070 · 그래픽 메모리 12GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5070"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "12GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5070",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "12",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-633F4F10AD"
+    },
+    {
+      "id": "distributor-inovia-1292",
+      "name": "INNO3D 지포스 RTX 5070 D7 12GB X2 OC WHITE",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5070 · 그래픽 메모리 12GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5070"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "12GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5070",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "12",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-85250F4747"
+    },
+    {
+      "id": "distributor-inovia-1293",
+      "name": "INNO3D 지포스 RTX 5070 D7 12GB X3 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5070 · 그래픽 메모리 12GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5070"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "12GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5070",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "12",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-C5F4F04E9D"
+    },
+    {
+      "id": "distributor-inovia-1286",
+      "name": "INNO3D 지포스 RTX 5070 Ti D7 16GB X3",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5070 Ti · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5070 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5070 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-5730538C7D"
+    },
+    {
+      "id": "distributor-inovia-1287",
+      "name": "INNO3D 지포스 RTX 5070 Ti D7 16GB X3 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5070 Ti · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5070 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5070 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-4AE1C39001"
+    },
+    {
+      "id": "distributor-inovia-1288",
+      "name": "INNO3D 지포스 RTX 5070 Ti D7 16GB X3 OC WHITE",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5070 Ti · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5070 Ti"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5070 Ti",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-0F942A0B77"
+    },
+    {
+      "id": "distributor-inovia-1280",
+      "name": "INNO3D 지포스 RTX 5080 D7 16GB X3",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5080 · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5080"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5080",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-3E3D63B912"
+    },
+    {
+      "id": "distributor-inovia-1295",
+      "name": "INNO3D 지포스 RTX 5080 D7 16GB X3 GAMING OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5080 · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5080"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5080",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-77F46B84EE"
+    },
+    {
+      "id": "distributor-inovia-1281",
+      "name": "INNO3D 지포스 RTX 5080 D7 16GB X3 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5080 · 그래픽 메모리 16GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5080"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5080",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-38BB2DEA85"
+    },
+    {
+      "id": "distributor-inovia-1312",
+      "name": "INNO3D 지포스 RTX 5090 D7 32GB ICHILL X3",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5090 · 그래픽 메모리 32GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5090"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "32GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5090",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-36D40367E5"
+    },
+    {
+      "id": "distributor-inovia-1285",
+      "name": "INNO3D 지포스 RTX 5090 D7 32GB X3",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5090 · 그래픽 메모리 32GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5090"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "32GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5090",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-6ABC656AAD"
+    },
+    {
+      "id": "distributor-inovia-1294",
+      "name": "INNO3D 지포스 RTX 5090 D7 32GB X3 OC",
+      "category": "gpu",
+      "brand": "INNO3D",
+      "subtype": "graphics-card",
+      "kind": "model",
+      "features": [
+        "유통사 목록 RTX 5090 · 그래픽 메모리 32GB 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5090"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "32GB"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5090",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-88B6D17A72"
+    },
+    {
       "id": "reviewed-inno3d-rtx5080-x3-oc-white-16gb",
       "name": "INNO3D RTX 5080 OC D7 16GB X3 White",
       "category": "gpu",
@@ -19112,12 +21062,47 @@
       "brand": "INNO3D",
       "kind": "retailer-reviewed-model",
       "features": [
-        "INNO3D RTX 5080 OC D7 16GB X3 White"
+        "INNO3D RTX 5080 OC D7 16GB X3 White",
+        "유통사 목록 RTX 5080 · 그래픽 메모리 16GB 표기",
+        "16GB GDDR7 메모리 · 2.5슬롯 화이트 모델",
+        "제조사 표기 길이 300mm · 시스템 전원 최소 850W 안내"
       ],
       "specifications": [
         {
           "label": "판매명 그래픽 메모리(GB)",
           "value": "16"
+        },
+        {
+          "label": "유통사 목록 GPU 표기",
+          "value": "RTX 5080"
+        },
+        {
+          "label": "유통사 목록 그래픽 메모리",
+          "value": "16GB"
+        },
+        {
+          "label": "제조사 메모리",
+          "value": "16GB GDDR7 · 256-bit"
+        },
+        {
+          "label": "제조사 부스트 클럭",
+          "value": "2640MHz"
+        },
+        {
+          "label": "제조사 외형 치수",
+          "value": "길이 300mm × 높이 120mm × 두께 50mm · 2.5슬롯"
+        },
+        {
+          "label": "제조사 최소 시스템 전원",
+          "value": "850W"
+        },
+        {
+          "label": "제조사 보조전원 안내",
+          "value": "PCIe 8핀 케이블 3개(동봉 어댑터) 또는 450W 이상 PCIe Gen 5 케이블 1개"
+        },
+        {
+          "label": "제조사 출력 단자",
+          "value": "DisplayPort 2.1b × 3 · HDMI 2.1b × 1"
         }
       ],
       "description": "실제 판매 페이지에서 GPU 모델 표기와 확인 가능한 판매 상태를 검토한 항목입니다. 가격표에 등록한 상품만 수량1 금액·배송비를 대조했습니다. 독립적인 성능·품질·후기 점수는 아직 산정하지 않았습니다.",
@@ -19126,7 +21111,9 @@
         "여기서 확인한 항목은 판매명과 판매 구성입니다. 제조사 품번·색상·OC/SOC·쿨러·리비전·국내 유통·보증을 추가 대조해야 하며 전체 시장의 고유 SKU 수를 뜻하지 않습니다.",
         "게임 코드·리뷰·사은품·적립·경유를 결제 할인으로 차감하지 않았습니다. 증정 행사가 판매명에 남아 있어도 현재 제공을 보장하지 않습니다.",
         "장착 길이·슬롯 두께·케이스 간섭·전원 커넥터·파워 요구 조건과 성능·소음·발열·후기 평가는 별도 확인이 필요합니다.",
-        "현재 가격표에 등록된 금액은 없습니다. 확인한 판매 상태와 범위는 개별 출처·주의사항을 참조하세요."
+        "현재 가격표에 등록된 금액은 없습니다. 확인한 판매 상태와 범위는 개별 출처·주의사항을 참조하세요.",
+        "아이노비아 그래픽카드 전체 목록 1~3페이지에서 확인했습니다. 목록 등록은 현재 재고·구매 가능 여부나 모든 판매처의 국내 정식 보증을 뜻하지 않습니다.",
+        "케이스 GPU 길이·슬롯 여유와 전원 케이블 공간을 확인하세요. 850W 안내만으로 개별 시스템의 전원 호환이 확정되지는 않습니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -19137,14 +21124,62 @@
           "url": "https://item.gmarket.co.kr/Item?goodsCode=4578335203",
           "observedAt": "2026-11-21T06:56:03.780Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "아이노비아 · 그래픽카드 공식 목록",
+          "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+          "observedAt": "2026-11-22T02:00:01.740Z",
+          "kind": "distributor-list"
+        },
+        {
+          "label": "INNO3D · RTX 5080 X3 OC WHITE 공식 사양",
+          "url": "https://www.inno3d.com/product/inno3d-geforce-rtx-5080-x3-oc-white",
+          "observedAt": "2026-11-22T02:05:56.208519+00:00",
+          "kind": "manufacturer"
         }
       ],
       "listObservedAt": null,
-      "strengths": [],
+      "strengths": [
+        {
+          "title": "외형·장착 조건을 비교할 수 있는 공식 치수",
+          "detail": "제조사가 300 × 120 × 50mm와 2.5슬롯을 명시해 케이스의 GPU 허용 공간과 대조할 수 있습니다.",
+          "conditions": "라디에이터·전면 팬·전원 커넥터 공간까지 확인해야 합니다. 모든 소형 케이스 장착을 보장하지 않습니다.",
+          "sources": [
+            {
+              "label": "INNO3D · RTX 5080 X3 OC WHITE 공식 사양",
+              "url": "https://www.inno3d.com/product/inno3d-geforce-rtx-5080-x3-oc-white",
+              "observedAt": "2026-11-22T02:05:56.208519+00:00",
+              "kind": "manufacturer"
+            }
+          ]
+        }
+      ],
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
       "listings": [],
+      "facts": [
+        {
+          "key": "chip",
+          "value": "RTX 5080",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "아이노비아 · 그래픽카드 공식 목록",
+            "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+            "observedAt": "2026-11-22T02:00:01.740Z",
+            "kind": "distributor-list"
+          }
+        }
+      ],
       "referenceCode": "BD-CA361E602C"
     },
     {
@@ -26518,7 +28553,9 @@
       "brand": "KLEVV",
       "kind": "retailer-reviewed-model",
       "features": [
-        "RAM 선택 구성 확인"
+        "RAM 선택 구성 확인",
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -26540,13 +28577,30 @@
         {
           "label": "판매 색상",
           "value": "화이트"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
         }
       ],
       "description": "실제 판매 페이지에서 제목·구성·상태를 확인한 상품입니다. 판매처 표기와 독립 사양 검증을 구분하며 확인되지 않은 할인·보증·품질 점수를 채우지 않습니다.",
       "notes": [
         "실제 제목의 URBANE V RGB 화이트 DDR5-6000 CL30 32GB(16GB×2) 확인. 기본 배송비2500원, 제주·도서산간5000원 표기. 과거 행사 가격·적립 미승계. 국내 보증과 현재 혜택 상세 추가 확인.",
         "판매 페이지의 제목·상태와 관측한 구성만 반영했습니다. 과거 핫딜의 모델·옵션·가격·행사를 현재 조건으로 승계하지 않았습니다. 판매처 품절·종료는 모델 전체 단종을 뜻하지 않습니다.",
-        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다."
+        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -26557,6 +28611,12 @@
           "url": "https://www.11st.co.kr/products/8209876314",
           "observedAt": "2026-11-21T09:41:27.640Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006923",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -26570,6 +28630,58 @@
           "merchant": "11번가",
           "seller": "서린씨앤아이 · (주)서린씨앤아이",
           "pricePage": "/prices/ram#reviewed-mixed-ram-11st-8209876314-offer"
+        }
+      ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006923",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006923",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006923",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006923",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006923",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
         }
       ],
       "referenceCode": "BD-8E624B41EB"
@@ -26614,6 +28726,1986 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-375C86EBE8"
+    },
+    {
+      "id": "distributor-seorin-1000007565",
+      "name": "에센코어 클레브 DDR5-5600 CL30 FIT V 블랙 서린 (16GB)",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-5600 · CL30",
+        "총 16GB · 16GB 모듈 1개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "16GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 1"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "5600MT/s · CL30"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-5600 CL30 FIT V 블랙 서린 (16GB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007565",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-5600 CL30 FIT V 블랙 서린 (16GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007565",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-5600 CL30 FIT V 블랙 서린 (16GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007565",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "1",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-5600 CL30 FIT V 블랙 서린 (16GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007565",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "5600",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-5600 CL30 FIT V 블랙 서린 (16GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007565",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-5600 CL30 FIT V 블랙 서린 (16GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007565",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-C095AE291F"
+    },
+    {
+      "id": "distributor-seorin-1000007517",
+      "name": "에센코어 클레브 DDR5-6000 CL28 BOLT V 블랙 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL28",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL28"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 블랙 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007517",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007517",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007517",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007517",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007517",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "28",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007517",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-69C0F317DB"
+    },
+    {
+      "id": "distributor-seorin-1000007518",
+      "name": "에센코어 클레브 DDR5-6000 CL28 BOLT V 화이트 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL28",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL28"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 화이트 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007518",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007518",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007518",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007518",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007518",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "28",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 BOLT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007518",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-2C37B55BA8"
+    },
+    {
+      "id": "distributor-seorin-1000007516",
+      "name": "에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL28",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL28"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007516",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007516",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007516",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007516",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007516",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "28",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007516",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-AB222BF78F"
+    },
+    {
+      "id": "distributor-seorin-1000007519",
+      "name": "에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL28",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL28"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007519",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007519",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007519",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007519",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007519",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "28",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007519",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-9E721EAE16"
+    },
+    {
+      "id": "distributor-seorin-1000008767",
+      "name": "에센코어 클레브 DDR5-6000 CL28 FIT V BLACK AMD 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL28",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL28"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다.",
+        "AMD 패키지 표기를 별도 구성으로 보존했습니다. 이 표기만으로 모든 AMD 시스템의 호환을 보장하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V BLACK AMD 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008767",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V BLACK AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008767",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V BLACK AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008767",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V BLACK AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008767",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V BLACK AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008767",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "28",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V BLACK AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008767",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-F5BD7C0B90"
+    },
+    {
+      "id": "distributor-seorin-1000008766",
+      "name": "에센코어 클레브 DDR5-6000 CL28 FIT V WHITE AMD 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL28",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL28"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다.",
+        "AMD 패키지 표기를 별도 구성으로 보존했습니다. 이 표기만으로 모든 AMD 시스템의 호환을 보장하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V WHITE AMD 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008766",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V WHITE AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008766",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V WHITE AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008766",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V WHITE AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008766",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V WHITE AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008766",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "28",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL28 FIT V WHITE AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008766",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-D039F0C145"
+    },
+    {
+      "id": "distributor-seorin-1000004938",
+      "name": "에센코어 클레브 DDR5-6000 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004938",
+          "observedAt": "2026-11-22T02:00:54.365070+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004938",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004938",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004938",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004938",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004938",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-1ED6B6AE0B"
+    },
+    {
+      "id": "distributor-seorin-1000007742",
+      "name": "에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 (64GB(32Gx2)",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 64GB · 32GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "64GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "32GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 (64GB(32Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007742",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 (64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007742",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "64",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 (64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007742",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 (64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007742",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 (64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007742",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 (64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007742",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-6C725A7BE8"
+    },
+    {
+      "id": "distributor-seorin-1000007566",
+      "name": "에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 32GB(16Gx2)",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 32GB(16Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007566",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007566",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007566",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007566",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007566",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 BOLT V 화이트 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007566",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-0CB1A56702"
+    },
+    {
+      "id": "distributor-seorin-1000008541",
+      "name": "에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 AMD 패키지 서린 (16GB(8Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 16GB · 8GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "16GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "8GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다.",
+        "AMD 패키지 표기를 별도 구성으로 보존했습니다. 이 표기만으로 모든 AMD 시스템의 호환을 보장하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 AMD 패키지 서린 (16GB(8Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008541",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 AMD 패키지 서린 (16GB(8Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008541",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "16",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 AMD 패키지 서린 (16GB(8Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008541",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 AMD 패키지 서린 (16GB(8Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008541",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 AMD 패키지 서린 (16GB(8Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008541",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 AMD 패키지 서린 (16GB(8Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008541",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-AD718A45CA"
+    },
+    {
+      "id": "distributor-seorin-1000007915",
+      "name": "에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007915",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007915",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007915",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007915",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007915",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 URBANE V RGB 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007915",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-2C13287F85"
+    },
+    {
+      "id": "distributor-seorin-1000007688",
+      "name": "에센코어 클레브 DDR5-6400 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6400 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6400MT/s · CL30"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007688",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007688",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007688",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007688",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6400",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007688",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007688",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-89998EA34A"
+    },
+    {
+      "id": "distributor-seorin-1000007687",
+      "name": "에센코어 클레브 DDR5-6400 CL30 BOLT V WHITE 패키지 서린 32GB(16Gx2)",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6400 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6400MT/s · CL30"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V WHITE 패키지 서린 32GB(16Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007687",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V WHITE 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007687",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V WHITE 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007687",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V WHITE 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007687",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6400",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V WHITE 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007687",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL30 BOLT V WHITE 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007687",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-EF0E67E8EB"
+    },
+    {
+      "id": "distributor-seorin-1000005421",
+      "name": "에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6400 · CL32",
+        "총 64GB · 32GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "64GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "32GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6400MT/s · CL32"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005421",
+          "observedAt": "2026-11-22T02:00:54.365070+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005421",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "64",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005421",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005421",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6400",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005421",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005421",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-7401952B5F"
+    },
+    {
+      "id": "distributor-seorin-1000005532",
+      "name": "에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6400 · CL32",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6400MT/s · CL32"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005532",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005532",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005532",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005532",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6400",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005532",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005532",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-5366F553EC"
+    },
+    {
+      "id": "distributor-seorin-1000008693",
+      "name": "에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6400 · CL32",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6400MT/s · CL32"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다.",
+        "AMD 패키지 표기를 별도 구성으로 보존했습니다. 이 표기만으로 모든 AMD 시스템의 호환을 보장하지 않습니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008693",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008693",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008693",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008693",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6400",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008693",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008693",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-533A4760BF"
+    },
+    {
+      "id": "distributor-seorin-1000006922",
+      "name": "에센코어 클레브 DDR5-6400 CL32 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-6400 · CL32",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6400MT/s · CL32"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006922",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006922",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006922",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006922",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6400",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006922",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 URBANE V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006922",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-E03D606F00"
+    },
+    {
+      "id": "distributor-seorin-1000004942",
+      "name": "에센코어 클레브 DDR5-7200 CL34 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+      "category": "ram",
+      "brand": "KLEVV",
+      "subtype": "desktop-memory",
+      "kind": "model",
+      "features": [
+        "유통사 판매명 기준 DDR5-7200 · CL34",
+        "총 32GB · 16GB 모듈 2개 표기"
+      ],
+      "specifications": [
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "7200MT/s · CL34"
+        }
+      ],
+      "description": "국내 유통사 공식 목록에서 확인한 제품입니다. 판매 옵션과 사양은 아래 출처 기준이며, 현재 가격·재고·보증 조건은 별도 확인이 필요합니다.",
+      "notes": [
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-7200 CL34 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004942",
+          "observedAt": "2026-11-22T02:00:54.365070+00:00",
+          "kind": "distributor-list"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-7200 CL34 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004942",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-7200 CL34 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004942",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-7200 CL34 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004942",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "7200",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-7200 CL34 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004942",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "34",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-7200 CL34 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004942",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
+      "referenceCode": "BD-ECBADE8095"
     },
     {
       "id": "curated-agi-turbojet-ud858-rgb-black-6000-cl30-32gb",
@@ -27886,7 +31978,9 @@
       "brand": "KLEVV",
       "kind": "retailer-reviewed-model",
       "features": [
-        "[서린공식] 에센코어 클레브 DDR5-6400 CL32 BOLT V 화이트 AMD 패키지 서린 (32GB(16Gx2)) · 정확한 품번·국내 보증 확인 필요"
+        "[서린공식] 에센코어 클레브 DDR5-6400 CL32 BOLT V 화이트 AMD 패키지 서린 (32GB(16Gx2)) · 정확한 품번·국내 보증 확인 필요",
+        "유통사 판매명 기준 DDR5-6400 · CL32",
+        "총 32GB · 16GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -27908,13 +32002,31 @@
         {
           "label": "판매 구성 표기",
           "value": "[서린공식] 에센코어 클레브 DDR5-6400 CL32 BOLT V 화이트 AMD 패키지 서린 (32GB(16Gx2)) · 정확한 품번·국내 보증 확인 필요"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6400MT/s · CL32"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
       "notes": [
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다.",
+        "AMD 패키지 표기를 별도 구성으로 보존했습니다. 이 표기만으로 모든 AMD 시스템의 호환을 보장하지 않습니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -27925,6 +32037,12 @@
           "url": "https://www.11st.co.kr/products/9541402660",
           "observedAt": "2026-11-21T06:17:47.455Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 BOLT V 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008695",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -27940,6 +32058,58 @@
           "pricePage": "/prices/ram#reviewed-klevv-bolt-v-white-amd-6400-cl32-32gb-11st-9541402660"
         }
       ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 BOLT V 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008695",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 BOLT V 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008695",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 BOLT V 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008695",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6400",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 BOLT V 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008695",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 BOLT V 화이트 AMD 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008695",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
       "referenceCode": "BD-9C734BEB52"
     },
     {
@@ -27950,7 +32120,9 @@
       "brand": "KLEVV",
       "kind": "retailer-reviewed-model",
       "features": [
-        "서린공식 ESSENCORE KLEVV DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 48GB(24Gx2) · 정확한 품번·국내 보증 확인 필요"
+        "서린공식 ESSENCORE KLEVV DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 48GB(24Gx2) · 정확한 품번·국내 보증 확인 필요",
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 48GB · 24GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -27972,13 +32144,30 @@
         {
           "label": "판매 구성 표기",
           "value": "서린공식 ESSENCORE KLEVV DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 48GB(24Gx2) · 정확한 품번·국내 보증 확인 필요"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "48GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "24GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
       "notes": [
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -27989,6 +32178,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodsCode=3517254393",
           "observedAt": "2026-11-21T06:06:40.099Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 48GB(24Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005418",
+          "observedAt": "2026-11-22T02:00:54.365070+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -28004,6 +32199,58 @@
           "pricePage": "/prices/ram#reviewed-klevv-cras-v-rgb-black-6000-cl30-48gb-gmarket-3517254393"
         }
       ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 48GB(24Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005418",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "48",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 48GB(24Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005418",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 48GB(24Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005418",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 48GB(24Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005418",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 48GB(24Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005418",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
       "referenceCode": "BD-7A2F3BDA22"
     },
     {
@@ -28014,7 +32261,9 @@
       "brand": "KLEVV",
       "kind": "retailer-reviewed-model",
       "features": [
-        "서린공식 ESSENCORE KLEVV DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2) · 정확한 품번·국내 보증 확인 필요"
+        "서린공식 ESSENCORE KLEVV DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2) · 정확한 품번·국내 보증 확인 필요",
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 64GB · 32GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -28036,6 +32285,22 @@
         {
           "label": "판매 구성 표기",
           "value": "서린공식 ESSENCORE KLEVV DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2) · 정확한 품번·국내 보증 확인 필요"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "64GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "32GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -28044,7 +32309,8 @@
         "확인한 특정 판매 페이지의 상태입니다. 모델 전체나 다른 판매처의 품절을 뜻하지 않습니다.",
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -28061,6 +32327,12 @@
           "url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0023982415",
           "observedAt": "2026-11-21T06:23:31.224Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005419",
+          "observedAt": "2026-11-22T02:00:54.365070+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -28074,6 +32346,58 @@
           "merchant": "G마켓",
           "seller": "(주)서린씨앤아이",
           "pricePage": "/prices/ram#reviewed-klevv-cras-v-rgb-black-6000-cl30-64gb-gmarket-3517254698"
+        }
+      ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005419",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "64",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005419",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005419",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005419",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 64GB(32Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005419",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
         }
       ],
       "referenceCode": "BD-6C3561D8FA"
@@ -28150,7 +32474,9 @@
       "brand": "KLEVV",
       "kind": "retailer-reviewed-model",
       "features": [
-        "서린공식 ESSENCORE KLEVV DDR5-6000 CL30 CRAS V RGB WHITE 패키지 서린 (64GB(32Gx2)) · 정확한 품번·국내 보증 확인 필요"
+        "서린공식 ESSENCORE KLEVV DDR5-6000 CL30 CRAS V RGB WHITE 패키지 서린 (64GB(32Gx2)) · 정확한 품번·국내 보증 확인 필요",
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 64GB · 32GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -28172,13 +32498,30 @@
         {
           "label": "판매 구성 표기",
           "value": "서린공식 ESSENCORE KLEVV DDR5-6000 CL30 CRAS V RGB WHITE 패키지 서린 (64GB(32Gx2)) · 정확한 품번·국내 보증 확인 필요"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "64GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "32GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
       "notes": [
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -28189,6 +32532,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodsCode=3582945481",
           "observedAt": "2026-11-21T06:06:39.017Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (64GB(32Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005674",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -28204,6 +32553,58 @@
           "pricePage": "/prices/ram#reviewed-klevv-cras-v-rgb-white-6000-cl30-64gb-gmarket-3582945481"
         }
       ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (64GB(32Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005674",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "64",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (64GB(32Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005674",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (64GB(32Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005674",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (64GB(32Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005674",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (64GB(32Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005674",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
       "referenceCode": "BD-3108F2F2A9"
     },
     {
@@ -28214,7 +32615,9 @@
       "brand": "KLEVV",
       "kind": "retailer-reviewed-model",
       "features": [
-        "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 블랙 RGB · 서린 국내 유통(판매처 표기)"
+        "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 블랙 RGB · 서린 국내 유통(판매처 표기)",
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -28236,6 +32639,22 @@
         {
           "label": "판매 구성 표기",
           "value": "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 블랙 RGB · 서린 국내 유통(판매처 표기)"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -28245,7 +32664,8 @@
         "확인한 특정 판매 페이지의 상태입니다. 모델 전체나 다른 판매처의 품절을 뜻하지 않습니다.",
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -28268,6 +32688,12 @@
           "url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0023887859",
           "observedAt": "2026-11-21T06:23:48.471Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004940",
+          "observedAt": "2026-11-22T02:00:54.365070+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -28283,6 +32709,58 @@
           "pricePage": "/prices/ram#klevv-cras-v-rgb-black-6000-cl30-32gb"
         }
       ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004940",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004940",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004940",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004940",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 블랙 패키지 서린 32GB(16Gx2)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004940",
+            "observedAt": "2026-11-22T02:00:54.365070+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
       "referenceCode": "BD-5D82784EFF"
     },
     {
@@ -28293,7 +32771,9 @@
       "brand": "KLEVV",
       "kind": "retailer-reviewed-model",
       "features": [
-        "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 화이트 RGB · 서린 국내 유통(판매처 표기)"
+        "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 화이트 RGB · 서린 국내 유통(판매처 표기)",
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -28315,6 +32795,22 @@
         {
           "label": "판매 구성 표기",
           "value": "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 화이트 RGB · 서린 국내 유통(판매처 표기)"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -28322,7 +32818,8 @@
         "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -28339,6 +32836,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodsCode=3517254963",
           "observedAt": "2026-11-21T06:04:10.207Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005527",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -28354,6 +32857,58 @@
           "pricePage": "/prices/ram#klevv-cras-v-rgb-white-6000-cl30-32gb"
         }
       ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005527",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005527",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005527",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005527",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005527",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
       "referenceCode": "BD-7FE1B7D86F"
     },
     {
@@ -28365,7 +32920,9 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "48GB (24GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 화이트 RGB · 서린 국내 유통",
-        "48GB (24GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 화이트 RGB · 서린 국내 유통(판매처 표기)"
+        "48GB (24GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 화이트 RGB · 서린 국내 유통(판매처 표기)",
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 48GB · 24GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -28391,6 +32948,22 @@
         {
           "label": "판매 구성 표기",
           "value": "48GB (24GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 화이트 RGB · 서린 국내 유통(판매처 표기)"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "48GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "24GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -28398,7 +32971,8 @@
         "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -28421,6 +32995,12 @@
           "url": "https://www.11st.co.kr/products/8209875752",
           "observedAt": "2026-11-21T06:05:08.462Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005673",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -28442,6 +33022,58 @@
           "pricePage": "/prices/ram#klevv-cras-v-rgb-white-6000-cl30-48gb-11st"
         }
       ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005673",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "48",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005673",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005673",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005673",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005673",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
       "referenceCode": "BD-60376DEFA8"
     },
     {
@@ -28452,7 +33084,9 @@
       "brand": "KLEVV",
       "kind": "retailer-reviewed-model",
       "features": [
-        "48GB (24GB×2) · DDR5 UDIMM · 6400MT/s · CL32 · 화이트 RGB · 서린 국내 유통(판매처 표기)"
+        "48GB (24GB×2) · DDR5 UDIMM · 6400MT/s · CL32 · 화이트 RGB · 서린 국내 유통(판매처 표기)",
+        "유통사 판매명 기준 DDR5-6400 · CL32",
+        "총 48GB · 24GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -28474,6 +33108,22 @@
         {
           "label": "판매 구성 표기",
           "value": "48GB (24GB×2) · DDR5 UDIMM · 6400MT/s · CL32 · 화이트 RGB · 서린 국내 유통(판매처 표기)"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "48GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "24GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6400MT/s · CL32"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -28481,7 +33131,8 @@
         "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -28498,6 +33149,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodsCode=4491405905",
           "observedAt": "2026-11-21T06:04:14.583Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005675",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -28513,6 +33170,58 @@
           "pricePage": "/prices/ram#klevv-cras-v-rgb-white-6400-cl32-48gb"
         }
       ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005675",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "48",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005675",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005675",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6400",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005675",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6400 CL32 CRAS V RGB 화이트 패키지 서린 (48GB(24Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005675",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
       "referenceCode": "BD-6B9EBDF7B1"
     },
     {
@@ -28523,7 +33232,9 @@
       "brand": "KLEVV",
       "kind": "retailer-reviewed-model",
       "features": [
-        "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 블랙 · 서린 국내 유통(판매처 표기)"
+        "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 블랙 · 서린 국내 유통(판매처 표기)",
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -28545,6 +33256,22 @@
         {
           "label": "판매 구성 표기",
           "value": "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 블랙 · 서린 국내 유통(판매처 표기)"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -28552,7 +33279,8 @@
         "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -28569,6 +33297,12 @@
           "url": "https://item.gmarket.co.kr/Item?goodsCode=4426485168",
           "observedAt": "2026-11-21T06:02:51.091Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 블랙 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007513",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -28584,6 +33318,58 @@
           "pricePage": "/prices/ram#klevv-fit-v-black-6000-cl30-32gb"
         }
       ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007513",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007513",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007513",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007513",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 블랙 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007513",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        }
+      ],
       "referenceCode": "BD-41D6EA8A99"
     },
     {
@@ -28595,7 +33381,9 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "32GB (16GB×2) · DDR5 UDIMM · 6000MT/s · CL30 · 화이트 · 서린 국내 유통",
-        "에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 패키지 서린 (32GB(16Gx2)) · 정확한 품번·국내 보증 확인 필요"
+        "에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 패키지 서린 (32GB(16Gx2)) · 정확한 품번·국내 보증 확인 필요",
+        "유통사 판매명 기준 DDR5-6000 · CL30",
+        "총 32GB · 16GB 모듈 2개 표기"
       ],
       "specifications": [
         {
@@ -28621,6 +33409,22 @@
         {
           "label": "판매 구성 표기",
           "value": "에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 패키지 서린 (32GB(16Gx2)) · 정확한 품번·국내 보증 확인 필요"
+        },
+        {
+          "label": "유통사 판매명 메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "유통사 판매명 총 용량",
+          "value": "32GB"
+        },
+        {
+          "label": "유통사 판매명 모듈 구성",
+          "value": "16GB × 2"
+        },
+        {
+          "label": "유통사 판매명 전송률·타이밍",
+          "value": "6000MT/s · CL30"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -28631,7 +33435,8 @@
         "확인한 특정 판매 페이지의 상태입니다. 모델 전체나 다른 판매처의 품절을 뜻하지 않습니다.",
         "속도·CL·색상·RGB·총 용량·모듈 수·AMD 패키지를 구분했습니다. 품번·메모리 프로필·폼팩터·국내 보증은 구매 전에 확인하세요.",
         "판매 페이지의 품절·행사 종료는 해당 상품의 확인 시점 상태이며 모델 전체의 단종이나 모든 판매처의 품절을 뜻하지 않습니다.",
-        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다."
+        "과거 핫딜의 적립·경유·리뷰 보상·BTC를 현재 결제 할인으로 승계하지 않았습니다.",
+        "전송률·타이밍과 구성은 공식 유통사 판매명 표기입니다. 메모리 다이·동작 전압·XMP/EXPO 프로파일과 보드 QVL은 별도 확인이 필요합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -28660,6 +33465,12 @@
           "url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0046128640",
           "observedAt": "2026-11-21T06:23:39.900Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 패키지 서린 (32GB(16Gx2))",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007512",
+          "observedAt": "2026-11-22T02:00:51.412234+00:00",
+          "kind": "distributor-list"
         }
       ],
       "listObservedAt": null,
@@ -28679,6 +33490,58 @@
           "merchant": "11번가",
           "seller": "서린씨앤아이",
           "pricePage": "/prices/ram#curated-klevv-fit-v-white-6000-cl30-32gb-11st-8323227821"
+        }
+      ],
+      "facts": [
+        {
+          "key": "memory",
+          "value": "DDR5",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007512",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "capacity",
+          "value": "32",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007512",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "modules",
+          "value": "2",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007512",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "speed",
+          "value": "6000",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007512",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "latency",
+          "value": "30",
+          "source": {
+            "label": "서린 공식몰 · 에센코어 클레브 DDR5-6000 CL30 FIT V 화이트 패키지 서린 (32GB(16Gx2))",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007512",
+            "observedAt": "2026-11-22T02:00:51.412234+00:00",
+            "kind": "distributor-list"
+          }
         }
       ],
       "referenceCode": "BD-EE725577D7"

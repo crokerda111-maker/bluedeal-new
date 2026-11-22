@@ -1,0 +1,60 @@
+{
+  "reviewedOn": "2026-11-22",
+  "observedEntries": 218,
+  "reviewedEntries": 61,
+  "addedModels": 49,
+  "enrichedModels": 12,
+  "pendingMatches": 157,
+  "scopes": [
+    {
+      "distributor": "서린씨앤아이 공식몰",
+      "scope": "air-coolers",
+      "entries": 39,
+      "url": "https://www.seorinexpress.com/goods/goods_list.php?cateCd=046009002",
+      "category": "cooler"
+    },
+    {
+      "distributor": "서린씨앤아이 공식몰",
+      "scope": "atx-psu",
+      "entries": 19,
+      "url": "https://www.seorinexpress.com/goods/goods_list.php?cateCd=034001",
+      "category": "psu"
+    },
+    {
+      "distributor": "아이노비아",
+      "scope": "그래픽카드 전체 1~3페이지",
+      "entries": 31,
+      "url": "https://www.inovia.co.kr/product/product.php?part_idx=5",
+      "category": "gpu"
+    },
+    {
+      "distributor": "서린씨앤아이 공식몰",
+      "scope": "klevv",
+      "entries": 30,
+      "url": "https://www.seorinexpress.com/goods/goods_list.php?cateCd=056001",
+      "category": "ram"
+    },
+    {
+      "distributor": "서린씨앤아이 공식몰",
+      "scope": "m2-ssd",
+      "entries": 17,
+      "url": "https://www.seorinexpress.com/goods/goods_list.php?cateCd=076001",
+      "category": "ssd"
+    },
+    {
+      "distributor": "서린씨앤아이 공식몰",
+      "scope": "mid-tower",
+      "entries": 77,
+      "url": "https://www.seorinexpress.com/goods/goods_list.php?cateCd=035009",
+      "category": "case"
+    },
+    {
+      "distributor": "서린씨앤아이 공식몰",
+      "scope": "sfx-psu",
+      "entries": 5,
+      "url": "https://www.seorinexpress.com/goods/goods_list.php?cateCd=034002",
+      "category": "psu"
+    }
+  ],
+  "limitation": "선정한 공식 목록의 대조입니다. 국내 전체 유통사·전체 시장·현재 재고의 조사가 끝났다는 뜻은 아닙니다."
+}

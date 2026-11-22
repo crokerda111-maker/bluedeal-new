@@ -7,6 +7,7 @@ import ProductSearchForm from "../../components/ProductSearchForm";
 import PriceCatalogSection from "../../components/PriceCatalogSection";
 import { indexProductOffers, matchesProductSearch, readProductFilters, searchProducts, type SearchQuery } from "../../lib/productFilters";
 import { filterPrices, readPriceFilters } from "../../lib/priceFilters";
+import distributorReview from "../../content/distributorReviewSummary.json";
 
 export async function generateMetadata({ searchParams }: { searchParams: Promise<SearchQuery> }) {
   const query = await searchParams;
@@ -62,6 +63,12 @@ export default async function PricesHubPage({ searchParams }: { searchParams: Pr
           <div className="rounded-xl bg-[#050b18]/60 p-4"><dt className="text-xs text-white/65">판매처 가격 기록</dt><dd className="mt-2 text-2xl font-semibold text-cyan-100">{itemCount}<span className="ml-1 text-xs font-normal">건 · {populatedCount}개 분류</span></dd></div>
         </dl>
         <p className="mt-3 text-xs leading-6 text-white/65">모델·출력 옵션·제품군을 구분해 집계하며, 전체 시장 목록은 보완 중입니다. 가격 기록은 판매처별로 집계한 과거 확인 자료입니다. 현재 가격·배송·할인 조건은 판매처에서 다시 확인해 주세요.</p>
+        <details className="mt-3 text-xs leading-6 text-white/70">
+          <summary className="cursor-pointer text-cyan-200">국내 유통사 목록 대조 · {distributorReview.reviewedOn} KST</summary>
+          <p className="mt-2">확보한 목록 {distributorReview.observedEntries}개 중 {distributorReview.reviewedEntries}개 구성 대조 · 신규 {distributorReview.addedModels}개 등록 · 기존 {distributorReview.enrichedModels}개 사양 보강. 다른 {distributorReview.pendingMatches}개는 모델·옵션 중복을 확인 중입니다.</p>
+          <ul className="mt-2 list-disc pl-4">{distributorReview.scopes.map(scope => <li key={scope.url}><a href={scope.url} target="_blank" rel="noopener noreferrer" className="text-cyan-200 underline">{scope.distributor} · {scope.scope}<span className="sr-only"> (새 창)</span></a> · {scope.entries}개</li>)}</ul>
+          <p className="mt-2">{distributorReview.limitation}</p>
+        </details>
         <Link href="/prices?sort=total-asc#registered-products" className="mt-4 mr-4 inline-flex min-h-11 items-center rounded-xl border border-white/20 px-4 text-sm text-cyan-200 hover:bg-white/10">전체 등록 상품 보기 →</Link>
         <Link href="/evaluate" className="mt-4 inline-flex min-h-11 items-center rounded-xl border border-cyan-300/25 bg-cyan-300/5 px-4 text-sm text-cyan-200 hover:bg-cyan-300/10">PC 구성 비용·부품 이슈 확인 →</Link>
       </section>
