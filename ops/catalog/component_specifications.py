@@ -26,6 +26,27 @@ def cells(table):
         yield [text(cell) for cell in row.find_all(['th', 'td'], recursive=False)]
 
 
+def dimensions(value):
+    suffix = re.search(r'\s*\((with fan|without fan|fin area only)\)$', value, re.I)
+    qualifier = suffix[1].lower() if suffix else ''
+    value = value[:suffix.start()] if suffix else value
+    parts = re.split(r'\s*[x×]\s*', value, flags=re.I)
+    if len(parts) != 3:
+        return None, None, qualifier
+    measures = []
+    for part in parts:
+        number = re.fullmatch(r'(?:(Length|Width|Height|[LWH])\s*)?(\d+(?:\.\d+)?(?:[-–]\d+(?:\.\d+)?)?)\s*mm', part, re.I)
+        if number:
+            measures.append(((number[1] or '')[:1].upper(), number[2]))
+    known = dict(measures)
+    if set(known) == {'L', 'W', 'H'}:
+        return [known[axis] for axis in 'LWH'], known['H'], qualifier
+    if len(measures) == 3 and all(not axis for axis, _ in measures):
+        values = [number for _, number in measures]
+        return values, values[2], qualifier
+    return None, known.get('H'), qualifier
+
+
 def thermalright(soup, product):
     official_model = model_key(text(soup.h1))
     listed_model = model_key(product['name'])
@@ -37,33 +58,51 @@ def thermalright(soup, product):
     if product['subtype'] == 'cpu-air-cooler' and description:
         sockets = set()
         for part in re.split(r'(?i)\b(AMD|Intel)\s*[：:]', text(description))[2::2]:
-            sockets.update(re.findall(r'\b(?:AM[2345]|FM[12]|TR4|sTRX4|sWRX8)\b', part, re.I))
+            sockets.update(re.findall(r'\b(?:AM[2345]\+?|FM[12]\+?|TR4|sTR[5X]4?|sWRX8)(?!\w)', part, re.I))
             sockets.update('LGA' + value.upper() for value in re.findall(r'(?<!\d)(?:LGA\s*)?(11[56][0-9X]|1200|1366|1700|1851|2011|2066)(?!\d)', part, re.I))
         if sockets:
             facts['socket'] = sorted(sockets)
             specs['제조사 표기 지원 소켓'] = ' · '.join(facts['socket'])
+    if product['subtype'] in {'ssd-heatsink', 'ram-cooler'}:
+        for table in soup.select('.product table'):
+            for fields in cells(table):
+                if len(fields) == 2 and fields[0].lower() in {'dimension', 'dimensions'}:
+                    size, _, _ = dimensions(fields[1])
+                    if size:
+                        specs['제품 치수'] = ' × '.join(size) + ' mm'
+                    break
+        if product['subtype'] == 'ssd-heatsink' and (length := re.search(r'\b(2280|22110)\b', text(soup.h1))):
+            specs['제조사 모델 표기 장착 규격'] = 'M.2 ' + length[1]
+        return specs, facts
+
+    fan_dimensions = []
     for heading in soup.select('.product h3, .product h4'):
         title = text(heading)
-        if not re.search(r'(?i)\b(Heatsink|Fan)\b', title) or not re.search(r'(?i)\bSpec', title):
+        if not re.search(r'(?i)\bSpec', title):
             continue
         table = heading.find_next('table')
         if table is None:
             continue
-        data = {row[0].strip(':'): row[1] for row in cells(table) if len(row) == 2}
-        dim = data.get('Dimension') or data.get('Dimensions') or ''
-        size = re.fullmatch(r'(?:L)?(\d+(?:\.\d+)?)\s*mm\s*[x×]\s*(?:W)?(\d+(?:\.\d+)?)\s*mm\s*[x×]\s*(?:H)?(\d+(?:\.\d+)?)\s*mm', dim, re.I)
-        if re.search(r'(?i)\bHeatsink\b', title):
-            if size:
-                specs['방열판 치수'] = ' × '.join(size.groups()) + ' mm'
-                if product['subtype'] == 'cpu-air-cooler':
-                    specs['방열판 높이'] = size[3] + ' mm'
-                    facts['heatsinkHeight'] = size[3]
-            pipes = data.get('Heat pipes', '')
+        fields = [(row[0].strip(':'), row[1]) for row in cells(table) if len(row) == 2]
+        measured = [dimensions(value) for name, value in fields if name in {'Dimension', 'Dimensions'}]
+        if not re.search(r'(?i)\bfan\b', title):
+            for size, height, qualifier in measured:
+                installed = qualifier == 'with fan'
+                scope = '팬 포함' if installed else '방열판'
+                if size:
+                    specs.setdefault(scope + ' 치수', ' × '.join(size) + ' mm')
+                if height and re.fullmatch(r'\d+(?:\.\d+)?', height):
+                    specs.setdefault('공랭 장착 높이' if installed else '방열판 높이',
+                                     height + ' mm' + (' · 핀 영역' if qualifier == 'fin area only' else ''))
+                    facts.setdefault('height' if installed else 'heatsinkHeight', height)
+            pipes = dict(fields).get('Heat pipes', '')
             count = re.search(r'(?:[×x]\s*(\d+)\s*(?:units?|pcs)?\s*$|^(\d+)\s*(?:units?|pcs))', pipes, re.I)
             if count:
                 specs['히트파이프 수'] = next(n for n in count.groups() if n) + '개'
-        elif size:
-            specs['기본 팬 치수'] = ' × '.join(size.groups()) + ' mm'
+        else:
+            fan_dimensions.extend(' × '.join(size) + ' mm' for size, _, _ in measured if size)
+    if fan_dimensions:
+        specs['기본 팬 치수'] = ' · '.join(dict.fromkeys(fan_dimensions))
     return specs, facts
 
 
@@ -182,6 +221,8 @@ def seasonic(soup, product):
         if label.replace(' ', '').upper().startswith('80PLUS') and value.upper() in {'BRONZE', 'GOLD', 'PLATINUM', 'SILVER', 'TITANIUM', 'STANDARD'}:
             specs['효율 인증'] = '80 PLUS ' + value
             facts['efficiency'] = value.upper()
+        if label == 'Cybenetics Efficiency Level' and value in {'Gold', 'Platinum', 'Titanium', 'Diamond', 'Silver', 'Bronze'}:
+            specs['Cybenetics 효율 인증'] = value
         if label == 'Dimensions' and re.fullmatch(r'[\d.]+\s*[x×]\s*[\d.]+\s*[x×]\s*[\d.]+\s*mm', value):
             specs['파워 본체 치수'] = value
         if label == 'Warranty' and (years := re.fullmatch(r'(\d+) years?', value, re.I)):
@@ -189,6 +230,8 @@ def seasonic(soup, product):
     if version := re.search(r'\bATX (3\.[01])\b', series):
         specs['전원 설계 규격'] = 'ATX ' + version[1]
         facts['atx'] = version[1]
+    if 'efficiency' not in facts and 'Cybenetics 효율 인증' in specs:
+        facts['efficiency'] = 'Cybenetics ' + specs['Cybenetics 효율 인증']
     power_table = next((t for t in panel.find_all('table') if t.find('tr') and text(t.find('tr')) == 'Power Output'), None)
     if power_table is not None:
         totals = [m[1] for row in cells(power_table) if any('total' in cell.lower() for cell in row)

@@ -7,6 +7,8 @@ const memory = { key: "memory", label: "메모리 규격" };
 const capacity = (label: string): Facet => ({ key: "capacity", label, unit: "capacity" });
 const formFactor = { key: "formFactor", label: "제품 규격" };
 const boardSizes: Record<string, string> = { microatx: "microATX", miniitx: "Mini-ITX", eatx: "E-ATX", atx: "ATX" };
+const efficiencyGrades: Record<string, string> = { 골드: "GOLD", 브론즈: "BRONZE", 실버: "SILVER", 플래티넘: "PLATINUM", 티타늄: "TITANIUM", 스탠다드: "STANDARD" };
+const normalizeEfficiency = (value: string) => efficiencyGrades[value] ?? value.toUpperCase();
 function boardSize(value: string) {
   const size = value.match(/^(Micro[- ]?ATX|Mini[- ]?ITX|E[- ]?ATX|ATX)\b/i)?.[1];
   return size ? boardSizes[size.toLowerCase().replace(/[- ]/g, "")] : undefined;
@@ -40,6 +42,7 @@ export function readProductFilters(query: SearchQuery, category?: ProductCategor
   const rawPage = scalar(query.page) || scalar(query.catalogPage);
   const facets = Object.fromEntries(facetKeys(category).map(key => [key, scalar(query[key]).trim().slice(0, 100)]));
   if (category === "motherboard") facets.formFactor = boardSize(facets.formFactor) ?? facets.formFactor;
+  if (category === "psu" && facets.efficiency !== "__unknown") facets.efficiency = normalizeEfficiency(facets.efficiency);
   return {
     q: (scalar(query.q) || scalar(query.catalogQ)).trim().slice(0, 100), brand: scalar(query.brand).slice(0, 100),
     lifecycle: lifecycle === "exclude-discontinued" ? lifecycle : "",
@@ -55,7 +58,8 @@ export function productFacetValues(product: CatalogProduct, offers: readonly Pri
   const values: Record<string, Set<string>> = {};
   const add = (key: string, value: string | number | undefined | null) => {
     if (value === null || value === undefined || value === "" || /추가 확인|확인 필요|미확인|변경없음/.test(String(value))) return;
-    (values[key] ??= new Set()).add(String(value).trim());
+    const normalized = String(value).trim();
+    (values[key] ??= new Set()).add(key === "efficiency" ? normalizeEfficiency(normalized) : normalized);
   };
   for (const fact of product.facts ?? []) {
     try {
@@ -91,10 +95,14 @@ export function productFacetValues(product: CatalogProduct, offers: readonly Pri
     add("speed", speed?.[1] ?? speed?.[2]);
     add("latency", value.match(/\bCL(\d+)\b/i)?.[1]);
   }
-  for (const value of labeled("인터페이스", "공식 제품군 인터페이스", "공식 인터페이스·NAND", "공식 폼팩터·인터페이스")) {
+  for (const value of labeled("인터페이스", "제조사 표기 연결 규격", "공식 제품군 인터페이스", "공식 인터페이스·NAND", "공식 폼팩터·인터페이스")) {
     if (/SATA/i.test(value)) add("interface", "SATA");
     if (/NVMe/i.test(value)) add("interface", "NVMe");
     for (const match of value.matchAll(/PCIe\s?([345])\.0/gi)) add("interface", "PCIe " + match[1] + ".0");
+  }
+  if (product.category === "ssd") for (const value of labeled("제조사 표기 장착 규격", "공식 폼팩터·인터페이스", "공식 폼팩터·기능")) {
+    const form = value.match(/\bM\.2\s+(22(?:30|42|60|80|110))\b/i);
+    if (form) add("formFactor", "M.2 " + form[1]);
   }
   for (const value of labeled("기록 방식")) add("recording", value);
   for (const value of labeled("회전 속도")) add("rpm", number(value.replace(/rpm|,/gi, "")));

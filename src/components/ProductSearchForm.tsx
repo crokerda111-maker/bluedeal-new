@@ -40,6 +40,6 @@ export default function ProductSearchForm({ category, products, offersById, quer
       <label className="text-xs text-white/75">등록 기준<select name="kind" defaultValue={filters.kind} className={control}><option value="">모두 보기</option><option value="model">모델·판매 구성</option><option value="listed-wattage-option">파워 출력 옵션</option><option value="product-family">제품군</option></select></label>
     </div>
     <div className="flex flex-wrap items-center gap-3"><button type="submit" className="min-h-11 rounded-xl bg-cyan-200 px-5 text-sm font-semibold text-slate-950 hover:bg-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200">상품·가격 찾기</button><a href={path} className="inline-flex min-h-11 items-center px-2 text-sm text-cyan-200 underline">조건 초기화</a></div>
-    <p id="product-search-help" className="text-xs leading-6 text-white/65">{category === "cpu" ? "DDR4와 DDR5를 모두 지원하는 CPU도 메인보드가 지원하는 규격에 맞춰 메모리를 골라야 합니다. " : ""}상세 조건은 확인된 사양과 판매 구성 기준입니다. 가격은 상품별 확인 시점의 기록입니다.</p>
+    <p id="product-search-help" className="text-xs leading-6 text-white/65">{category === "cpu" ? "DDR4와 DDR5를 모두 지원하는 CPU도 메인보드가 지원하는 규격에 맞춰 메모리를 골라야 합니다. " : ""}{category === "cooler" ? "케이스와 비교할 때는 팬을 포함한 장착 높이를 확인하세요. 방열판 높이는 방열판 자체 치수입니다. " : ""}상세 조건은 확인된 사양과 판매 구성 기준입니다. 가격은 상품별 확인 시점의 기록입니다.</p>
   </form>;
 }
