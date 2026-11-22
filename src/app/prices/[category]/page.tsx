@@ -4,16 +4,16 @@ import { getCategory } from "../../../lib/priceCategories";
 import type { PriceItem } from "../../../lib/mockPrices";
 import { getPriceView } from "../../../lib/prices";
 import SmartLink from "../../../components/SmartLink";
-import PriceFilterForm from "../../../components/PriceFilterForm";
+import ProductSearchForm from "../../../components/ProductSearchForm";
 import CpuReferenceGuide from "../../../components/CpuReferenceGuide";
 import GpuReferenceGuide from "../../../components/GpuReferenceGuide";
-import { filterPrices, priceFreshness, readPriceFilters } from "../../../lib/priceFilters";
+import { filterPrices, readPriceFilters } from "../../../lib/priceFilters";
 import { pageMetadata } from "../../../lib/site";
 import { OUTBOUND_LINKS } from "../../../lib/outbound";
 import { resolveAffiliateUrl } from "../../../lib/affiliate";
-import { CATALOG_SUMMARY } from "../../../lib/catalogData";
+import { CATALOG_SUMMARY, CATALOG_PRODUCTS } from "../../../lib/catalogData";
 import PriceCatalogSection from "../../../components/PriceCatalogSection";
-import { priceBenefits } from "../../../lib/priceBenefits";
+import { formatPriceTime as fmtKorean, PriceAmount, PurchaseLink, fmtWon } from "../../../components/PriceOffer";
 import cpuReviewSummary from "../../../content/cpuReviewSummary.json";
 import ramReviewSummary from "../../../content/ramReviewSummary.json";
 import ssdReviewSummary from "../../../content/ssdReviewSummary.json";
@@ -26,62 +26,22 @@ import hddReviewSummary from "../../../content/hddReviewSummary.json";
 import pcOptionReviewSummary from "../../../content/pcOptionReviewSummary.json";
 import halfpcOptionReviewSummary from "../../../content/halfpcOptionReviewSummary.json";
 import pcFollowupReviewSummary from "../../../content/pcFollowupReviewSummary.json";
+import { indexProductOffers, matchesProduct, matchesProductSearch, readProductFilters, searchProducts } from "../../../lib/productFilters";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
 export async function generateMetadata({ params, searchParams }: PricePageProps) {
   const category = getCategory((await params).category);
-  if (!category) return pageMetadata("가격현황 | BLUEDEAL", "가격 카테고리를 찾을 수 없습니다.", undefined, true);
+  if (!category) return pageMetadata("상품·가격비교 | BLUEDEAL", "가격 카테고리를 찾을 수 없습니다.", undefined, true);
   const { data } = await getPriceView(category.key);
   const query = await searchParams;
   const filtered = Object.values(query).some(value => Array.isArray(value) ? value.some(Boolean) : Boolean(value));
   return pageMetadata(`${category.title} | BLUEDEAL`, `${category.description} 상품가·배송비·판매자·확인 시각을 함께 비교하세요.`, `/prices/${category.key}`, filtered || !data.items.length);
 }
 
-function fmtKorean(ts?: string) {
-  if (!ts) return "확인 전";
-  const date = new Date(ts);
-  if (Number.isNaN(date.getTime())) return "확인 전";
-  return date.toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST";
-}
-
-function fmtWon(value: number) {
-  return new Intl.NumberFormat("ko-KR").format(value) + "원";
-}
-
 function pct(value?: number | null) {
   if (typeof value !== "number") return "기록 대기";
   return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
-}
-
-function PriceAmount({ item, now }: { item: PriceItem; now: number }) {
-  const shippingFee = item.shippingFee;
-  const freshness = priceFreshness(item, now);
-  return (
-    <div>
-      {item.condition === "refurbished" ? <div className="mb-2 text-xs font-semibold text-amber-200">리퍼·벌크 · 보증기간 별도 확인</div> : null}
-      {item.availability === "out-of-stock" ? <div className="mb-2 text-xs font-semibold text-amber-200">품절 상품의 이전 가격 기록</div> : null}
-      <div className="text-lg font-semibold text-white">{fmtWon(item.price)}</div>
-      {item.instantPrice || item.couponPrice || item.cardPrice ? <div className="text-xs text-white/65">{item.instantPrice ? "조건부 할인 적용 전 상품가" : "쿠폰·카드 적용 전 상품가"}</div> : null}
-      <div className="mt-1 text-xs text-white/70">
-        {typeof shippingFee === "number" ? (shippingFee === 0 ? "기본 배송비 무료" : `기본 배송비 ${fmtWon(shippingFee)}`) : "배송비 판매처 확인"}
-      </div>
-      {typeof shippingFee === "number" ? <div className="mt-1 text-xs text-cyan-200">배송비 포함 {fmtWon(item.price + shippingFee)}</div> : null}
-      {item.shippingNote ? <div className="mt-1 text-xs text-white/60">{item.shippingNote}</div> : null}
-      {item.priceNote ? <div className="mt-2 max-w-xs text-xs leading-relaxed text-white/70">{item.priceNote}</div> : null}
-      {priceBenefits(item, now).map(benefit => <details key={benefit.kind} className="mt-3 max-w-xs rounded-lg border border-cyan-200/20 p-2 text-xs leading-6">
-        <summary className="cursor-pointer text-cyan-100">{benefit.state === "expired" ? "종료된 혜택 기록 · " : benefit.state === "upcoming" ? "시작 전 혜택 기록 · " : "조건부 "}{benefit.kind === "instant" ? "즉시할인가" : benefit.kind === "coupon" ? "쿠폰가" : item.cardRequiresCoupon ? "쿠폰+카드가" : "카드가"} {fmtWon(benefit.amount)} · 조건 보기</summary>
-        <p className="mt-2 text-white/80">{benefit.note}</p>
-        <p className="mt-2 text-white/65">{benefit.startsOn ? `${benefit.startsOn}부터 · ` : ""}{benefit.endsAt ? `${fmtKorean(benefit.endsAt)} 종료` : benefit.endsOn ? `${benefit.endsOn}까지 (KST)` : "종료일 미확인 · 판매처 재확인"}</p>
-        {benefit.kind === "card" && item.cardRequiresCoupon ? <p className="text-amber-100">쿠폰 발급·유효기간도 함께 충족해야 합니다.</p> : null}
-        <p className="text-white/65">배송비 별도 · 확인 시점 표시가 · 개인별 적용은 결제 전 확인</p>
-      </details>)}
-      <div className="mt-2 text-xs text-white/60">확인 {fmtKorean(item.checkedAt || item.updatedAt)}</div>
-      {freshness === "stale" ? <div className="mt-2 text-xs text-amber-200">확인 후 24시간 경과 · 판매처 가격 재확인</div> : null}
-      {freshness === "unknown" ? <div className="mt-2 text-xs text-amber-200">가격 확인 시각 미확인</div> : null}
-      <div className="mt-1 text-xs text-white/60">{item.availability === "out-of-stock" ? `${item.availabilityCheckedAt ? `품절 확인 ${fmtKorean(item.availabilityCheckedAt)}` : "품절 확인일 미기록"} · 재입고 여부 판매처 확인` : item.availability === "in-stock" ? "확인 시점 판매 중 · 현재 재고는 판매처 확인" : "재고는 판매처에서 확인해 주세요"}</div>
-    </div>
-  );
 }
 
 function ProductInfo({ item, officialLabel = "공식 사양" }: { item: PriceItem; officialLabel?: string }) {
@@ -100,20 +60,6 @@ function ProductInfo({ item, officialLabel = "공식 사양" }: { item: PriceIte
   );
 }
 
-function PurchaseLink({ item, affiliate }: { item: PriceItem; affiliate: boolean }) {
-  if (!item.goCode) return <span className="text-xs text-white/60">판매처 링크 준비 중</span>;
-  return (
-    <div className="space-y-1"><SmartLink
-      className="inline-flex min-h-11 items-center whitespace-nowrap rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-sm text-cyan-100 hover:bg-cyan-300/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
-      href={`/go/${item.goCode}`}
-      rel={affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer"}
-      title={`${item.name} 판매처 보기 (새 창)`}
-    >
-      판매처 보기 ↗
-    </SmartLink><div className="text-xs text-white/65">{affiliate ? "제휴 링크" : "일반 링크"}</div></div>
-  );
-}
-
 export default async function PricesCategoryPage({ params, searchParams }: PricePageProps) {
   const { category: categoryKey } = await params;
   const category = getCategory(categoryKey);
@@ -121,7 +67,18 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
   const { meta, data, now } = await getPriceView(category.key);
   const query = await searchParams;
   const filters = readPriceFilters(query);
-  const items = filterPrices(data.items, category.key, filters);
+  const productFilters = readProductFilters(query, category.key);
+  const products = CATALOG_PRODUCTS.filter(product => product.category === category.key);
+  const offersById = indexProductOffers(products, data.items);
+  const owners = new Map(products.flatMap(product => product.listings.map(listing => [listing.id, product] as const)));
+  const matching = new Set(products.filter(product => matchesProduct(product, offersById.get(product.id) ?? [], productFilters)).map(product => product.id));
+  const items = filterPrices(data.items, category.key, { ...filters, query: "" }).filter(item => {
+    const product = owners.get(item.id);
+    return Boolean(product && matching.has(product.id) && matchesProductSearch(product, [item], productFilters.q));
+  });
+  const results = searchProducts(products, offersById, productFilters, items);
+  const matchedOffers = indexProductOffers(products, items);
+  const canonicalQuery = { ...query, q: productFilters.q, lifecycle: productFilters.lifecycle };
   const affiliateCodes = new Set<string>();
   for (const item of items) {
     if (!item.goCode) continue;
@@ -137,7 +94,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
           <div className="text-sm text-white/60">
-            <Link className="hover:text-white" href="/prices">가격현황</Link>{" "}
+            <Link className="hover:text-white" href="/prices">상품·가격비교</Link>{" "}
             <span aria-hidden="true">/</span> <span className="text-white">{category.shortTitle}</span>
           </div>
           <h1 className="mt-2 text-2xl font-semibold tracking-tight">{category.title}</h1>
@@ -154,7 +111,8 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
         <nav aria-label="분류 내 바로가기" className="mt-2 flex flex-wrap gap-4 text-cyan-200"><a href="#registered-products" className="inline-flex min-h-11 items-center underline">등록 상품·특징</a><a href="#price-records" className="inline-flex min-h-11 items-center underline">판매처 가격 기록</a></nav>
       </div>
 
-      <PriceCatalogSection category={category} query={query} />
+      <ProductSearchForm category={category.key} products={products} offersById={offersById} query={query} />
+      <PriceCatalogSection category={category} query={canonicalQuery} results={results} offersById={matchedOffers} now={now} />
 
       <section id="price-records" aria-labelledby="price-records-title" className="scroll-mt-24 space-y-4">
       <h2 id="price-records-title" className="text-xl font-semibold">판매처 가격 기록 <span className="text-cyan-200">{data.items.length}건</span></h2>
@@ -189,7 +147,6 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       {category.key === "hdd" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{hddReviewSummary.reviewedOn} KST 기준, SSD 분류에서 분리한 HDD·NAS 후보 {hddReviewSummary.reviewedPosts}건을 검토했습니다. WD 공식 데이터시트의 품번별 표를 대조한 HDD {hddReviewSummary.manufacturerModels}개를 등록했으며 현재 구매가 기록은 {data.items.length}건입니다. NAS 본체·다개입 패키지·검색 대표 상품의 금액을 HDD 단품 가격으로 사용하지 않았습니다. 기존 접근 제한 {hddReviewSummary.restrictedPosts}건은 재시도하지 않았고 국내 판매·배송·할인·유통사 보증은 추가 확인이 필요합니다.</p> : null}
       {category.key === "fullpc" ? <p className="text-sm leading-relaxed text-white/70">선택형 판매번호 {pcOptionReviewSummary.reviewedMerchantPages}개를 후속 확인해 기본 선택·수량1 가격 {pcOptionReviewSummary.verifiedQuotes}건을 추가했습니다. 기본 RAM·SSD 옵션이 품절인 {pcOptionReviewSummary.defaultOptionUnavailable}건은 현재 구매가에 넣지 않았습니다. 선택한 부품명·OS 포함 범위는 각 상품에서 확인하세요. ‘변경없음’ 표기만으로 정확한 부품 품번을 확정하지 않습니다.</p> : null}
       {category.key === "fullpc" ? <p className="text-sm leading-relaxed text-white/70">{pcFollowupReviewSummary.reviewedOn} KST에 남은 수량 합계 미확인 판매처 {pcFollowupReviewSummary.reviewedMerchantPages}건을 추가 검토해 선택 색상·수량1 쿠폰 합계 {pcFollowupReviewSummary.verifiedQuotes}건을 연결했습니다. 판매처 부품표 {pcFollowupReviewSummary.sellerComponentRows}종을 확인한 {pcFollowupReviewSummary.pendingMerchantIdentity}건은 판매 주체·OS·보증 추가 확인이 남아 새 구매가를 등록하지 않았습니다. <Link href="/products/reviewed-mixed-fullpc-himart-0058108391" className="text-cyan-200 underline underline-offset-4">부품표와 남은 확인사항 보기 →</Link></p> : null}
-      {data.items.length ? <PriceFilterForm category={category.key} items={data.items} filters={filters} /> : null}
       <p className="text-sm text-white/70">전체 {data.items.length}개 중 <b className="text-white">{items.length}개</b> 표시 · 배송비 미확인 상품은 포함 금액 정렬에서 뒤에 표시하며, 품절 상품의 이전 기록은 모든 정렬에서 마지막에 표시합니다.</p>
       <p className="text-xs leading-relaxed text-white/65">같은 모델도 판매처별로 별도 집계합니다. 색상·구성·유통사·보증 조건을 함께 확인해 비교하세요.</p>
 

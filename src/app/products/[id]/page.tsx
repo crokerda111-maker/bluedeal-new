@@ -1,9 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { connection } from "next/server";
 import { CATALOG_PRODUCTS, getCatalogProduct } from "../../../lib/catalogData";
 import { catalogDate, PRODUCT_KIND_LABELS, productCategoryLabel } from "../../../lib/productCatalog";
 import type { ProductSource } from "../../../lib/productCatalog";
 import { pageMetadata } from "../../../lib/site";
+import { getPriceView } from "../../../lib/prices";
+import { OUTBOUND_LINKS } from "../../../lib/outbound";
+import { resolveAffiliateUrl } from "../../../lib/affiliate";
+import { PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
@@ -20,9 +25,18 @@ function Sources({ items }: { items: ProductSource[] }) {
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const product = getCatalogProduct((await params).id);
   if (!product) notFound();
+  if (product.listings.length) await connection();
+  const { data, now } = await getPriceView(product.category);
+  const listingIds = new Set(product.listings.map(listing => listing.id));
+  const offers = data.items.filter(item => listingIds.has(item.id));
+  const affiliateCodes = new Set(offers.filter(item => {
+    const outbound = item.goCode ? OUTBOUND_LINKS[item.goCode] : undefined;
+    const resolution = outbound ? resolveAffiliateUrl(outbound) : null;
+    return resolution && resolution.mode !== "passthrough";
+  }).map(item => item.goCode));
   const informationCheckedAt = product.listObservedAt ?? product.sources.map(source => source.observedAt).filter((value): value is string => Boolean(value)).sort().at(-1) ?? null;
   return <article className="space-y-6">
-    <nav aria-label="상품 경로" className="flex flex-wrap gap-2 text-sm text-white/65"><Link href="/products" className="text-cyan-200 hover:underline">상품 목록</Link><span aria-hidden="true">/</span><Link href={`/products?category=${product.category}`} className="hover:underline">{productCategoryLabel(product.category)}</Link></nav>
+    <nav aria-label="상품 경로" className="flex flex-wrap gap-2 text-sm text-white/65"><Link href="/prices" className="text-cyan-200 hover:underline">상품·가격비교</Link><span aria-hidden="true">/</span><Link href={`/prices/${product.category}`} className="hover:underline">{productCategoryLabel(product.category)}</Link></nav>
     <header className="bd-surface p-5 sm:p-7">
       <div className="flex flex-wrap gap-2 text-xs"><span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-cyan-100">{productCategoryLabel(product.category)}</span><span className="rounded-full border border-white/15 px-3 py-1 text-white/75">{PRODUCT_KIND_LABELS[product.kind]}</span>{product.lifecycle === "listed-discontinued" ? <span className="rounded-full border border-amber-200/30 bg-amber-200/10 px-3 py-1 text-amber-100">제조사 단종 목록</span> : null}</div>
       <p className="mt-5 text-sm text-white/65">{product.brand}</p><h1 className="mt-2 break-words text-2xl font-semibold leading-relaxed tracking-tight sm:text-3xl">{product.name}</h1><p className="mt-4 max-w-3xl text-sm leading-7 text-white/75">{product.description}</p><p className="mt-3 text-xs text-white/55">상품 관리번호 {product.referenceCode}</p>
@@ -31,6 +45,21 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
     <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
       <div className="min-w-0 space-y-6">
+        <section id="product-prices" className="bd-surface-md scroll-mt-24 p-5 sm:p-6" aria-labelledby="product-prices-title">
+          <h2 id="product-prices-title" className="text-xl font-semibold">판매처별 가격·할인</h2>
+          <p className="mt-3 text-sm leading-7 text-white/75">확인 시점의 가격입니다. 같은 모델·용량·옵션과 보증 조건인지 확인해 주세요. 전체 판매처의 최저가를 보장하지 않습니다.</p>
+          {offers.length ? <>
+            <p className="mt-3 text-sm leading-7 text-white" role="note">{affiliateCodes.size ? "이 포스팅은 제휴마케팅이 포함된 광고로 커미션을 지급 받습니다." : "이 상품의 판매처 링크는 일반 링크입니다."}</p>
+            <ul className="mt-5 space-y-5">{offers.map(item => <li key={item.id} className="rounded-xl border border-white/15 p-4">
+              <h3 className="break-words font-semibold">{item.name}</h3>
+              <p className="mt-2 break-words text-sm text-white/65">{[item.source, item.seller].filter(Boolean).join(" · ")}</p>
+              {item.spec ? <p className="mt-2 text-sm leading-7 text-white/80">{item.spec}</p> : null}
+              <div className="mt-4"><PriceAmount item={item} now={now} /></div>
+              <div className="mt-4"><PurchaseLink item={item} affiliate={affiliateCodes.has(item.goCode)} /></div>
+            </li>)}</ul>
+          </> : <p className="mt-4 text-sm leading-7 text-white/70">가격 확인 중입니다. 동일한 판매 구성·배송비·확인 시각이 검증되면 표시합니다.</p>}
+          <Link href={`/prices/${product.category}`} className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">같은 부품의 다른 상품 비교</Link>
+        </section>
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">특징·상세 정보</h2>{product.features.length ? <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-white/80">{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul> : <p className="mt-4 text-sm leading-7 text-white/70">추가 사양 자료를 확인하고 있습니다.</p>}
           {product.specifications.length ? <dl className="mt-5 divide-y divide-white/10 border-y border-white/10">{product.specifications.map(specification => <div key={`${specification.label}:${specification.value}`} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-4 py-3 text-sm"><dt className="text-white/60">{specification.label}</dt><dd className="break-words text-white/85">{specification.value}</dd></div>)}</dl> : null}
           {product.notes.length ? <div className="mt-5 rounded-xl border border-amber-200/25 bg-amber-200/5 p-4"><h3 className="text-sm font-semibold text-amber-100">옵션 확인사항</h3><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-7 text-white/75">{product.notes.map(note => <li key={note}>{note}</li>)}</ul></div> : null}

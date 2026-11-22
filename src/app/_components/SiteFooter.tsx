@@ -16,7 +16,7 @@ export default function SiteFooter() {
             커뮤니티
           </Link>
           <Link className="hover:text-white" href="/prices">
-            가격현황
+            상품·가격비교
           </Link>
           <Link className="hover:text-white" href="/community/hotdeal">
             핫딜

@@ -1,10 +1,17 @@
 import Link from "next/link";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
-import { getMeta, getPrices } from "../../lib/prices";
+import { getPrices, getPriceView } from "../../lib/prices";
 import { CATALOG_PRODUCTS, CATALOG_SUMMARY } from "../../lib/catalogData";
 import { pageMetadata } from "../../lib/site";
+import ProductSearchForm from "../../components/ProductSearchForm";
+import PriceCatalogSection from "../../components/PriceCatalogSection";
+import { indexProductOffers, matchesProductSearch, readProductFilters, searchProducts, type SearchQuery } from "../../lib/productFilters";
+import { filterPrices, readPriceFilters } from "../../lib/priceFilters";
 
-export const metadata = pageMetadata("PC 상품·가격현황 | BLUEDEAL", "분류별 등록 상품의 특징과 확인한 판매처 가격·배송 조건·확인 시각을 함께 살펴보세요.", "/prices");
+export async function generateMetadata({ searchParams }: { searchParams: Promise<SearchQuery> }) {
+  const query = await searchParams;
+  return pageMetadata("PC 상품·가격비교 | BLUEDEAL", "부품별 조건으로 상품과 판매처 가격·배송·할인을 함께 비교하세요.", "/prices", Object.values(query).some(value => Boolean(typeof value === "string" && value)));
+}
 
 function fmtKorean(ts: string) {
   if (!ts) return "확인 전";
@@ -13,20 +20,34 @@ function fmtKorean(ts: string) {
   return d.toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST";
 }
 
-export default async function PricesHubPage() {
-  const [meta, prices] = await Promise.all([
-    getMeta(),
-    Promise.all(PRICE_CATEGORIES.map(category => getPrices(category.key))),
+export default async function PricesHubPage({ searchParams }: { searchParams: Promise<SearchQuery> }) {
+  const [firstView, remainingPrices] = await Promise.all([
+    getPriceView(PRICE_CATEGORIES[0].key),
+    Promise.all(PRICE_CATEGORIES.slice(1).map(category => getPrices(category.key))),
   ]);
+  const { meta, now } = firstView;
+  const prices = [firstView.data, ...remainingPrices];
   const itemCount = prices.reduce((total, category) => total + category.items.length, 0);
   const populatedCount = prices.filter(category => category.items.length > 0).length;
+  const query = await searchParams;
+  const filters = readProductFilters(query);
+  const allOffers = prices.flatMap(category => category.items);
+  const offersById = indexProductOffers(CATALOG_PRODUCTS, allOffers);
+  const owners = new Map(CATALOG_PRODUCTS.flatMap(product => product.listings.map(listing => [listing.id, product] as const)));
+  const rankedOffers = filterPrices(allOffers, "cpu", { ...readPriceFilters(query), query: "" }).filter(offer => {
+    const product = owners.get(offer.id);
+    return Boolean(product && matchesProductSearch(product, [offer], filters.q));
+  });
+  const results = searchProducts(CATALOG_PRODUCTS, offersById, filters, rankedOffers, 24);
+  const matchedOffers = indexProductOffers(CATALOG_PRODUCTS, rankedOffers);
+  const hasSearch = Object.values(query).some(value => typeof value === "string" && value.trim());
 
   return (
     <div className="space-y-8">
       <section className="bd-surface-md p-6">
         <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
-            <h1 className="text-2xl font-semibold tracking-tight">상품·가격현황</h1>
+            <h1 className="text-2xl font-semibold tracking-tight">상품·가격비교</h1>
             <p className="mt-2 text-sm text-white/70">
               분류를 선택하면 등록 상품의 특징과 판매처 가격 기록을 함께 볼 수 있습니다.
             </p>
@@ -41,11 +62,12 @@ export default async function PricesHubPage() {
           <div className="rounded-xl bg-[#050b18]/60 p-4"><dt className="text-xs text-white/65">판매처 가격 기록</dt><dd className="mt-2 text-2xl font-semibold text-cyan-100">{itemCount}<span className="ml-1 text-xs font-normal">건 · {populatedCount}개 분류</span></dd></div>
         </dl>
         <p className="mt-3 text-xs leading-6 text-white/65">모델·출력 옵션·제품군을 구분해 집계하며, 전체 시장 목록은 보완 중입니다. 가격 기록은 판매처별로 집계한 과거 확인 자료입니다. 현재 가격·배송·할인 조건은 판매처에서 다시 확인해 주세요.</p>
-        <Link href="/products" className="mt-4 mr-4 inline-flex min-h-11 items-center rounded-xl border border-white/20 px-4 text-sm text-cyan-200 hover:bg-white/10">전체 상품 특징·상세 정보 보기 →</Link>
+        <Link href="/prices?sort=total-asc#registered-products" className="mt-4 mr-4 inline-flex min-h-11 items-center rounded-xl border border-white/20 px-4 text-sm text-cyan-200 hover:bg-white/10">전체 등록 상품 보기 →</Link>
         <Link href="/evaluate" className="mt-4 inline-flex min-h-11 items-center rounded-xl border border-cyan-300/25 bg-cyan-300/5 px-4 text-sm text-cyan-200 hover:bg-cyan-300/10">PC 구성 비용·부품 이슈 확인 →</Link>
       </section>
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ProductSearchForm products={CATALOG_PRODUCTS} offersById={offersById} query={query} />
+      {hasSearch ? <PriceCatalogSection query={query} results={results} offersById={matchedOffers} now={now} /> : <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-label="부품별 상품·가격비교">
         {PRICE_CATEGORIES.map((c, index) => {
           const registered = CATALOG_SUMMARY.categoryCounts[c.key];
           const examples = CATALOG_PRODUCTS.filter(product => product.category === c.key).slice(0, 2);
@@ -71,7 +93,7 @@ export default async function PricesHubPage() {
             </div>
           </Link>
         ); })}
-      </section>
+      </section>}
 
       <section className="bd-surface-md p-6 text-sm text-white/70">
         <div className="font-semibold text-white">제휴/가격 안내</div>

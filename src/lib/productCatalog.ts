@@ -11,6 +11,7 @@ export type CatalogProduct = {
   issues: { title: string; summary: string; conditions: string; action: string; sources: ProductSource[] }[];
   reviewSummary: string | null; reviewSources: ProductSource[];
   listings: { id: string; merchant: string; seller: string; pricePage: string }[];
+  facts?: { key: string; value: string; source: ProductSource }[];
 };
 
 export const PRODUCT_CATEGORIES: { key: ProductCategory; label: string }[] = [

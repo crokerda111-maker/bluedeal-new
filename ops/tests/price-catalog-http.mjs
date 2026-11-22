@@ -15,7 +15,7 @@ async function get(route, status = 200) {
 }
 
 const hub = await get('/prices');
-assert.ok(hub.includes('상품·가격현황'));
+assert.ok(hub.includes('상품·가격비교'));
 assert.ok(hub.includes('등록 상품·옵션·제품군'));
 assert.ok(hub.includes('판매처 가격 기록'));
 for (const category of categories) assert.ok(hub.includes(`href="/prices/${category}"`), category);
@@ -25,7 +25,7 @@ await Promise.all(categories.map(async category => {
   const expected = catalog.products.filter(product => product.category === category);
   const found = [];
   for (let page = 1; page <= Math.max(1, Math.ceil(expected.length / 12)); page++) {
-    const html = await get(`/prices/${category}${page > 1 ? `?catalogPage=${page}` : ''}`);
+    const html = await get(`/prices/${category}?condition=all&page=${page}`);
     assert.ok(html.includes('id="registered-products"'), category);
     assert.ok(html.includes('id="price-records"'), category);
     found.push(...ids(html));
@@ -36,6 +36,16 @@ await Promise.all(categories.map(async category => {
 }));
 assert.equal(new Set(seen).size, catalog.products.length);
 
+const facetNames = {cpu:['socket','cores','graphics'],motherboard:['socket','chipset','formFactor','memory','wireless'],ram:['memory','capacity','modules','speed','latency'],gpu:['chip','capacity','condition'],ssd:['capacity','interface','formFactor','dram'],hdd:['capacity','formFactor','rpm','recording'],psu:['wattage','formFactor','efficiency','modular','atx'],case:['caseType','boardSupport','gpuLength'],cooler:['coolerType','socket','height','radiator','led'],fullpc:['os','components'],halfpc:['os','components'],bundle:['components']};
+for (const [category,names] of Object.entries(facetNames)) {
+  const html = await get(`/prices/${category}`);
+  assert.equal((html.match(/aria-label="상품 검색과 필터"/g)||[]).length,1);
+  for (const name of names) assert.ok(html.includes(`name="${name}"`),`${category}/${name}`);
+  assert.equal(html.includes('name="chipset"'),category==='motherboard');
+}
+const global = await get('/prices?q=PEERLESS%20black');
+assert.ok(ids(global).length>0);
+assert.match(global, /<meta name="robots" content="noindex, nofollow"/);
 const filtered = await get('/prices/cooler?catalogQ=PEERLESS%20black&catalogPage=2');
 assert.ok(ids(filtered).length > 0);
 for (const id of ids(filtered)) {

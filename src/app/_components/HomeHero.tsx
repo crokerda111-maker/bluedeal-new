@@ -97,8 +97,8 @@ export default function HomeHero({ updatedAt, schedule, itemCount, catalogCount 
           </p>
 
           <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-            <ButtonLink href="/products" variant="primary">
-              PC 상품 둘러보기
+            <ButtonLink href="/prices" variant="primary">
+              PC 상품·가격 비교
             </ButtonLink>
             <ButtonLink href="/it" variant="soft">
               IT 소식 보기
@@ -156,10 +156,10 @@ export default function HomeHero({ updatedAt, schedule, itemCount, catalogCount 
 
             <div className="mt-4 flex gap-2">
               <ButtonLink href="/prices" className="flex-1" variant="primary">
-                가격현황 보기
+                상품·가격비교
               </ButtonLink>
-              <ButtonLink href="/products" className="flex-1" variant="ghost">
-                전체 상품
+              <ButtonLink href="/evaluate" className="flex-1" variant="ghost">
+                PC 구매 판단
               </ButtonLink>
             </div>
 

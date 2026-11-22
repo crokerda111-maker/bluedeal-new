@@ -1,8 +1,8 @@
 import PriceCategoryNav from "../../components/PriceCategoryNav";
 
 export const metadata = {
-  title: "가격현황 | BLUEDEAL",
-  description: "PC 부품/본체 가격현황",
+  title: "상품·가격비교 | BLUEDEAL",
+  description: "PC 부품·본체 상품과 확인 시점 가격 비교",
 };
 
 export default function PricesLayout({ children }: { children: React.ReactNode }) {
