@@ -1,0 +1,157 @@
+{
+  "reviewedOn": "2026-11-22",
+  "reviewedMerchantPages": 5,
+  "verifiedQuotes": 4,
+  "ordinaryQuotes": 3,
+  "conditionalCouponQuotes": 1,
+  "unconfirmedQuotes": 1,
+  "selectedFields": 15,
+  "verifiedCardMinimums": 3,
+  "scope": "기존 반본체5개 판매처 후속 검토. 가격4건은 실제 수량1 합계를 대조했으며 전체 BOM·독립 후기·품질 점수·개별 부품 대비 절약률 완료가 아님.",
+  "checks": [
+    {
+      "productId": "reviewed-halfpc-gmarket-4653763736",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4653763736",
+      "observedAt": "2026-11-22T00:38:02.043Z",
+      "status": "unit-quote-observed",
+      "verifiedListingIds": [
+        "reviewed-halfpc-gmarket-4653763736-offer"
+      ],
+      "selectedOptions": [
+        {
+          "field": "운영체제",
+          "value": "조립 + 프리도스(운영체제 미탑재)"
+        },
+        {
+          "field": "메모리",
+          "value": "킹뱅크 DDR5 6000 32GB 블랙 (16GBx2)"
+        },
+        {
+          "field": "CPU쿨러",
+          "value": "3RSYS RC1900 ARGB 솔더링 블랙"
+        },
+        {
+          "field": "케이스",
+          "value": "DAVEN D7 MESH 세븐팬 블랙"
+        },
+        {
+          "field": "파워",
+          "value": "쿨러마스터 MWE GOLD 850 V3 ATX3.1 블랙"
+        }
+      ],
+      "cardPromotion": {
+        "card": "G마켓 삼성카드",
+        "minimumPayment": 300000,
+        "maximumDiscount": 10000,
+        "endsLabel": "~11/30",
+        "exactEndTimeVerified": false,
+        "eligibilityVerified": false,
+        "stackingVerified": false,
+        "observedAt": "2026-11-22T00:40:56.969Z"
+      }
+    },
+    {
+      "productId": "reviewed-halfpc-gmarket-4653764404",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4653764404",
+      "observedAt": "2026-11-22T00:39:01.317Z",
+      "status": "unit-quote-observed",
+      "verifiedListingIds": [
+        "reviewed-halfpc-gmarket-4653764404-offer"
+      ],
+      "selectedOptions": [
+        {
+          "field": "운영체제",
+          "value": "조립 + 프리도스(운영체제 미탑재)"
+        },
+        {
+          "field": "케이스",
+          "value": "다크플래쉬 DLX21 RGB MESH 화이트"
+        },
+        {
+          "field": "메모리",
+          "value": "PNY DDR5-5600 CL46 AMD 32GB (16GBx2)"
+        },
+        {
+          "field": "CPU쿨러",
+          "value": "ID-COOLING FROZN A620 PRO XE ARGB (스노우)"
+        },
+        {
+          "field": "파워",
+          "value": "쿨러마스터 MWE GOLD 850 V3 ATX3.1 화이트"
+        }
+      ],
+      "cardPromotion": {
+        "card": "G마켓 삼성카드",
+        "minimumPayment": 300000,
+        "maximumDiscount": 10000,
+        "endsLabel": "~11/30",
+        "exactEndTimeVerified": false,
+        "eligibilityVerified": false,
+        "stackingVerified": false,
+        "observedAt": "2026-11-22T00:40:58.175Z"
+      }
+    },
+    {
+      "productId": "reviewed-halfpc-gmarket-4653763522",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4653763522",
+      "observedAt": "2026-11-22T00:39:20.440Z",
+      "status": "unit-quote-observed",
+      "verifiedListingIds": [
+        "reviewed-halfpc-gmarket-4653763522-offer"
+      ],
+      "selectedOptions": [
+        {
+          "field": "운영체제",
+          "value": "조립 + 프리도스(운영체제 미탑재)"
+        },
+        {
+          "field": "메모리",
+          "value": "킹뱅크 DDR5 6000 32GB 블랙 (16GBx2)"
+        },
+        {
+          "field": "CPU쿨러",
+          "value": "3RSYS RC1900 ARGB 솔더링 블랙"
+        },
+        {
+          "field": "케이스",
+          "value": "DAVEN D7 MESH 세븐팬 블랙"
+        },
+        {
+          "field": "파워",
+          "value": "쿨러마스터 MWE GOLD 850 V3 ATX3.1 블랙"
+        }
+      ],
+      "cardPromotion": {
+        "card": "G마켓 삼성카드",
+        "minimumPayment": 300000,
+        "maximumDiscount": 10000,
+        "endsLabel": "~11/30",
+        "exactEndTimeVerified": false,
+        "eligibilityVerified": false,
+        "stackingVerified": false,
+        "observedAt": "2026-11-22T00:39:44.203Z"
+      }
+    },
+    {
+      "productId": "reviewed-halfpc-11st-8847096814",
+      "source": "https://www.11st.co.kr/products/8847096814",
+      "observedAt": "2026-11-22T00:39:58.408Z",
+      "status": "automatic-coupon-quote",
+      "verifiedListingIds": [
+        "reviewed-halfpc-11st-8847096814-offer"
+      ],
+      "optionalAddonsSelected": false,
+      "couponAmount": 80150,
+      "couponBefore": 2003780,
+      "couponAfter": 1923630,
+      "couponConditionsVerified": false
+    },
+    {
+      "productId": "reviewed-halfpc-kream-1109437",
+      "source": "https://kream.co.kr/products/1109437",
+      "observedAt": "2026-11-22T00:40:55.228Z",
+      "status": "headline-benefits-and-unit-unconfirmed",
+      "verifiedListingIds": []
+    }
+  ]
+}

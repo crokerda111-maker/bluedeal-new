@@ -23,6 +23,8 @@ class Response(io.BytesIO):
         self.headers["Content-Type"] = content_type
 
 
+# Replace only the Python mapping. Clearing/restoring the process environment on
+# Windows drops empty Git config values and breaks unrelated child-process tests.
 class LinkPriceFetchTests(unittest.TestCase):
     def setUp(self):
         base = Path(__file__).resolve().parents[2] / ".test-tmp"
@@ -49,7 +51,7 @@ class LinkPriceFetchTests(unittest.TestCase):
 
     def test_one_registered_account_is_reused_without_exposing_or_modifying_configuration(self):
         self.config([f"https://click.linkprice.com/click.php?a={self.identifier}&m=gmarket", f"https://click.linkprice.com/click.php?m=11st&a={self.identifier}"])
-        with patch.dict(os.environ, {}, clear=True):
+        with patch.object(os, "environ", {}):
             self.assertEqual(fetcher.account_id(self.root), self.identifier)
 
     def test_ambiguous_accounts_deceptive_hosts_duplicate_parameters_and_invalid_environment_are_rejected(self):
@@ -58,9 +60,9 @@ class LinkPriceFetchTests(unittest.TestCase):
                      [f"https://click.linkprice.com/click.php?a={self.identifier}&a="],
                      [f"https://click.linkprice.com/click.php?a={self.identifier}", "https://click.linkprice.com/click.php?a=A987654321"]):
             self.config(urls)
-            with patch.dict(os.environ, {}, clear=True), self.assertRaises(fetcher.FetchReviewError):
+            with patch.object(os, "environ", {}), self.assertRaises(fetcher.FetchReviewError):
                 fetcher.account_id(self.root)
-        with patch.dict(os.environ, {"LINKPRICE_AFFILIATE_ID": "PRIVATE_TOKEN/invalid"}, clear=True), self.assertRaises(fetcher.FetchReviewError):
+        with patch.object(os, "environ", {"LINKPRICE_AFFILIATE_ID": "PRIVATE_TOKEN/invalid"}), self.assertRaises(fetcher.FetchReviewError):
             fetcher.account_id(self.root)
 
     def test_requests_use_only_fixed_official_endpoints_without_cookies_passwords_or_redirect_following(self):
@@ -108,7 +110,7 @@ class LinkPriceFetchTests(unittest.TestCase):
         config = self.config([f"https://click.linkprice.com/click.php?a={self.identifier}&m=gmarket"])
         before = {name: (self.root / name).read_bytes() for name in ("ops/collector/input/products.csv", "src/content/prices/ram.json", "ops/private/affiliate-config.local.json")}
         output = io.StringIO()
-        with patch.dict(os.environ, {}, clear=True), patch.object(fetcher, "repo_root", return_value=self.root), patch.object(fetcher, "fetch_body", side_effect=[(json.dumps(self.normal).encode(), "application/json"), (json.dumps(self.real).encode(), "text/html")]), contextlib.redirect_stdout(output):
+        with patch.object(os, "environ", {}), patch.object(fetcher, "repo_root", return_value=self.root), patch.object(fetcher, "fetch_body", side_effect=[(json.dumps(self.normal).encode(), "application/json"), (json.dumps(self.real).encode(), "text/html")]), contextlib.redirect_stdout(output):
             self.assertEqual(fetcher.main([]), 0)
         files = list((self.root / "ops/private/linkprice-review").glob("*.review.local.json"))
         self.assertEqual(len(files), 2)
@@ -133,7 +135,7 @@ class LinkPriceFetchTests(unittest.TestCase):
         previous.write_text('"PREVIOUS"', encoding="utf-8")
         for body in (b"<html>PRIVATE_TOKEN</html>", b'{"success":true,"success":false}'):
             output = io.StringIO()
-            with patch.dict(os.environ, {}, clear=True), patch.object(fetcher, "repo_root", return_value=self.root), patch.object(fetcher, "fetch_body", return_value=(body, "text/html")), contextlib.redirect_stdout(output), contextlib.redirect_stderr(output):
+            with patch.object(os, "environ", {}), patch.object(fetcher, "repo_root", return_value=self.root), patch.object(fetcher, "fetch_body", return_value=(body, "text/html")), contextlib.redirect_stdout(output), contextlib.redirect_stderr(output):
                 self.assertEqual(fetcher.main(["--kind", "hotdeal"]), 1)
             self.assertEqual(previous.read_text(encoding="utf-8"), '"PREVIOUS"')
             self.assertNotIn("PRIVATE_TOKEN", output.getvalue())

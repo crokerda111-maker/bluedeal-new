@@ -878,6 +878,54 @@
       "sourceUrl": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1368746&BigDivNo=4&MediumDivNo=1147&DivNo=2750"
     },
     {
+      "id": "reviewed-mixed-fullpc-gmarket-4840266488-offer",
+      "category": "fullpc",
+      "seller": "피씨포맨스토어",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4840266488"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-11st-8564658171-offer",
+      "category": "fullpc",
+      "seller": "아싸컴 · (주)공이일공",
+      "sourceUrl": "https://www.11st.co.kr/products/8564658171"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-11st-8271959297-offer",
+      "category": "fullpc",
+      "seller": "씨넥스몰 · (주) 씨넥스존",
+      "sourceUrl": "https://www.11st.co.kr/products/8271959297"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-11st-8221231651-offer",
+      "category": "fullpc",
+      "seller": "한성컴퓨터 · (주)한성",
+      "sourceUrl": "https://www.11st.co.kr/products/8221231651"
+    },
+    {
+      "id": "reviewed-mixed-ram-11st-8209876314-offer",
+      "category": "ram",
+      "seller": "서린씨앤아이 · (주)서린씨앤아이",
+      "sourceUrl": "https://www.11st.co.kr/products/8209876314"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-gmarket-4463680822-offer",
+      "category": "fullpc",
+      "seller": "전체판매1위_아싸컴",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4463680822"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-gmarket-4432429738-offer",
+      "category": "fullpc",
+      "seller": "퍼플랩",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4432429738"
+    },
+    {
+      "id": "reviewed-mixed-fullpc-gmarket-4685925482-offer",
+      "category": "fullpc",
+      "seller": "퍼플랩",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4685925482"
+    },
+    {
       "id": "reviewed-fullpc-lotteon-lo2782542885-offer",
       "category": "fullpc",
       "seller": "컴집",
@@ -1016,52 +1064,28 @@
       "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4895851667"
     },
     {
-      "id": "reviewed-mixed-fullpc-gmarket-4840266488-offer",
-      "category": "fullpc",
-      "seller": "피씨포맨스토어",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4840266488"
+      "id": "reviewed-halfpc-gmarket-4653763736-offer",
+      "category": "halfpc",
+      "seller": "(주)한성컴퓨터",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4653763736"
     },
     {
-      "id": "reviewed-mixed-fullpc-11st-8564658171-offer",
-      "category": "fullpc",
+      "id": "reviewed-halfpc-gmarket-4653764404-offer",
+      "category": "halfpc",
+      "seller": "(주)한성컴퓨터",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4653764404"
+    },
+    {
+      "id": "reviewed-halfpc-gmarket-4653763522-offer",
+      "category": "halfpc",
+      "seller": "(주)한성컴퓨터",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4653763522"
+    },
+    {
+      "id": "reviewed-halfpc-11st-8847096814-offer",
+      "category": "halfpc",
       "seller": "아싸컴 · (주)공이일공",
-      "sourceUrl": "https://www.11st.co.kr/products/8564658171"
-    },
-    {
-      "id": "reviewed-mixed-fullpc-11st-8271959297-offer",
-      "category": "fullpc",
-      "seller": "씨넥스몰 · (주) 씨넥스존",
-      "sourceUrl": "https://www.11st.co.kr/products/8271959297"
-    },
-    {
-      "id": "reviewed-mixed-fullpc-11st-8221231651-offer",
-      "category": "fullpc",
-      "seller": "한성컴퓨터 · (주)한성",
-      "sourceUrl": "https://www.11st.co.kr/products/8221231651"
-    },
-    {
-      "id": "reviewed-mixed-ram-11st-8209876314-offer",
-      "category": "ram",
-      "seller": "서린씨앤아이 · (주)서린씨앤아이",
-      "sourceUrl": "https://www.11st.co.kr/products/8209876314"
-    },
-    {
-      "id": "reviewed-mixed-fullpc-gmarket-4463680822-offer",
-      "category": "fullpc",
-      "seller": "전체판매1위_아싸컴",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4463680822"
-    },
-    {
-      "id": "reviewed-mixed-fullpc-gmarket-4432429738-offer",
-      "category": "fullpc",
-      "seller": "퍼플랩",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4432429738"
-    },
-    {
-      "id": "reviewed-mixed-fullpc-gmarket-4685925482-offer",
-      "category": "fullpc",
-      "seller": "퍼플랩",
-      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4685925482"
+      "sourceUrl": "https://www.11st.co.kr/products/8847096814"
     }
   ]
 }

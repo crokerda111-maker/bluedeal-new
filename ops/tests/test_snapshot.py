@@ -58,7 +58,7 @@ class SnapshotTests(unittest.TestCase):
         url = "https://feed.example.invalid/data?key=TEST_URL_SECRET"
         opener = MagicMock()
         opener.open.side_effect = HTTPError(url, 403, "TEST_PRIVATE_BODY", {}, None)
-        with patch.dict(os.environ, {"BLUEDEAL_PRICE_FEED_URL": url, "BLUEDEAL_PRICE_FEED_TOKEN": "TEST_TOKEN_SECRET"}), patch.object(snapshot, "build_opener", return_value=opener):
+        with patch.object(os, "environ", {**os.environ, "BLUEDEAL_PRICE_FEED_URL": url, "BLUEDEAL_PRICE_FEED_TOKEN": "TEST_TOKEN_SECRET"}), patch.object(snapshot, "build_opener", return_value=opener):
             with self.assertRaises(ValueError) as caught:
                 snapshot.fetch_feed()
         self.assertIn("403", str(caught.exception))

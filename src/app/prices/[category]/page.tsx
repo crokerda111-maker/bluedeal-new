@@ -24,6 +24,7 @@ import systemsReviewSummary from "../../../content/systemsReviewSummary.json";
 import mixedReviewSummary from "../../../content/mixedReviewSummary.json";
 import hddReviewSummary from "../../../content/hddReviewSummary.json";
 import pcOptionReviewSummary from "../../../content/pcOptionReviewSummary.json";
+import halfpcOptionReviewSummary from "../../../content/halfpcOptionReviewSummary.json";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -175,7 +176,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
         <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">
           {systemsReviewSummary.reviewedOn} KST 기준, 과거 {category.key === "halfpc" ? "반본체" : "완본체"} 후보 글 {systemsReviewSummary.totalCandidatePosts[category.key]}건 중 {systemsReviewSummary.reviewedPosts[category.key]}건을 첫 분류했습니다.
           이 분류에는 부품 묶음 후보에서 재분류한 항목도 포함하며, 등록 구성 {CATALOG_SUMMARY.categoryCounts[category.key]}개를 위 목록에서 확인할 수 있습니다.{" "}
-          {category.key === "halfpc" ? <>필수 옵션·전체 기본 구성·할인 조건 확인이 남아 가격표에 금액을 등록하지 않았습니다. 기존 접근 제한 {systemsReviewSummary.restrictedPosts.halfpc}건은 재시도하지 않았습니다.</> : <>
+          {category.key === "halfpc" ? <>{halfpcOptionReviewSummary.reviewedOn} KST에 판매처 {halfpcOptionReviewSummary.reviewedMerchantPages}개를 후속 확인해 수량1 합계 {halfpcOptionReviewSummary.verifiedQuotes}건을 가격표에 연결했습니다. 일반가 {halfpcOptionReviewSummary.ordinaryQuotes}건과 조건부 자동 쿠폰가 {halfpcOptionReviewSummary.conditionalCouponQuotes}건을 구분합니다. 최대 혜택가·수량 조건이 확인되지 않은 {halfpcOptionReviewSummary.unconfirmedQuotes}건은 구매가를 등록하지 않았습니다. 기존 접근 제한 {systemsReviewSummary.restrictedPosts.halfpc}건은 재시도하지 않았습니다.</> : <>
             수량1 금액·배송 안내가 확인된 {data.items.length}건을 가격표에 연결했습니다. 부품 묶음 후보에서 확인한 추가 판매 기록 {mixedReviewSummary.priceRecords.fullpc}건을 포함합니다. 자동 쿠폰·카드 금액은 대상·기간·중복조건을 추가 확인해야 하는 조건부 표시입니다.{" "}
             {systemsReviewSummary.remainingPosts.fullpc > 0 ? <>남은 {systemsReviewSummary.remainingPosts.fullpc}건은 아직 판매처 검토가 필요합니다.</> : <>후보 글의 첫 분류를 마쳤으며, 기존 접근 제한 {systemsReviewSummary.restrictedPosts.fullpc}건은 재시도하지 않았습니다. 품절·판매 종료·구성 식별 불가·옵션 미확인 항목을 현재 구매가로 등록하지 않았습니다.</>}
           </>}{" "}

@@ -75,6 +75,15 @@ for(const item of systemItems){
   const response=await fetch(`${base}/go/${item.goCode}`,{redirect:'manual',signal:AbortSignal.timeout(25000)});requests++;
   assert.equal(response.status,302);assert.ok(['www.lotteon.com','store.ohou.se','item.gmarket.co.kr','www.11st.co.kr'].includes(new URL(response.headers.get('location')).hostname));
 }
+const halfItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/halfpc.json',import.meta.url),'utf8')).items;
+const halfHtml=await get('/prices/halfpc');
+if(halfItems.length)assert.ok(!halfHtml.includes('가격표에 금액을 등록하지 않았습니다'));
+for(const item of halfItems){
+  assert.ok(halfHtml.includes(`id="${item.id}"`));
+  assert.ok(halfHtml.includes('조건부 자동 쿠폰가'));
+  const response=await fetch(`${base}/go/${item.goCode}`,{redirect:'manual',signal:AbortSignal.timeout(25000)});requests++;
+  assert.equal(response.status,302);assert.ok(['item.gmarket.co.kr','www.11st.co.kr'].includes(new URL(response.headers.get('location')).hostname));
+}
 const caseItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/case.json',import.meta.url),'utf8')).items;
 const caseHtml=await get('/prices/case');
 for(const item of caseItems){

@@ -20,7 +20,9 @@ class ReviewedSystems(unittest.TestCase):
         self.assertTrue(models)
         self.assertTrue(all(m['strengths']==[] and m['issues']==[] and m['reviewSummary'] is None for m in models))
         self.assertTrue(all(any(s['label']=='정확한 전체 부품 목록(BOM)' and s['value']=='추가 확인 필요' for s in m['specifications']) for m in models))
-        self.assertTrue(all(not m['listings'] for m in models if m['category']=='halfpc'))
+        halfpc=[m for m in models if m['category']=='halfpc']
+        followup=read('ops/catalog/halfpc-option-review-2026-11-22.json')
+        self.assertEqual({m['id'] for m in halfpc if m['listings']},{c['productId'] for c in followup['checks'] if c['verifiedListingIds']})
         self.assertFalse(any('0067428712' in m['id'] for m in models))
         for post in r['posts']:
             if any(c['status']=='model-identity-insufficient' for c in post['merchantChecks']):self.assertEqual(post['modelIds']+post['verifiedListingIds'],[])
