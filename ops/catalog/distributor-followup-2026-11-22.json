@@ -1,0 +1,19 @@
+{
+  "reviewedOn": "2026-11-22",
+  "scope": "서린·아이노비아 선정 목록 218건 대조 이후 추가 유통사 공개 자료 조사",
+  "limitation": "브랜드 소개·신제품 목록 확인은 전체 SKU 확인이나 현재 판매가 확인을 뜻하지 않습니다. 접근 차단 출처는 우회하지 않았습니다.",
+  "sources": [
+    {"distributor":"제이씨현시스템", "url":"https://www.jchyun.com/business/gigabyte/gigabyte", "status":"브랜드·취급 범위 확인", "finding":"PC 하드웨어 사업 소개 확인. 완전한 모델 목록과 현재가 자료는 확보하지 못함.", "next":"브랜드별 상세 모델 목록과 실제 국내 판매 옵션을 대조"},
+    {"distributor":"제이씨현시스템", "url":"https://www.jchyun.com/news/blogList", "status":"신제품 뉴스 목록 확인", "finding":"공개 첫 페이지의 최근 PC 뉴스는 2026-02-10. 최근 6개월 전체 출시 목록으로 사용할 수 없음.", "next":"신규 부품 모델은 별도 공식 자료와 판매처 확인 필요"},
+    {"distributor":"디앤디컴", "url":"https://www.dndcom.co.kr/asrock", "status":"모델 후보 2건 확인", "finding":"공식 소개에 X870E Taichi White, B860M Challenger WiFi 7 White 표기. 판매 옵션·가격·유통 보증은 미확인.", "next":"기존 모델의 색상·WiFi 버전·유통 구성과 대조 후 실제 판매가 확인"},
+    {"distributor":"디앤디컴", "url":"https://www.dndcom.co.kr/maxsun", "status":"모델 후보 2건 확인", "finding":"공식 소개에 iCraft Z890 ARCTIC, eSport B850ITX WIFI ICE 표기. 현재가·재고는 미확인.", "next":"제조사 품번·상세 사양과 국내 실제 판매 옵션 확인"},
+    {"distributor":"한미마이크로닉스", "url":"https://www.micronics.co.kr/", "status":"접근 차단", "finding":"공개 요청 403. 다른 브라우저·전송 방식으로 우회하지 않음.", "next":"정상 공개 접근이 가능해진 뒤 목록 확인"},
+    {"distributor":"브라보텍", "url":"https://bravotec.co.kr/", "status":"접근 차단", "finding":"공개 페이지가 접근 불가를 표시. 추가 우회 요청하지 않음.", "next":"정상 공개 접근이 가능해진 뒤 목록 확인"}
+  ],
+  "pendingModels": [
+    {"name":"ASRock X870E Taichi White", "category":"motherboard", "url":"https://www.dndcom.co.kr/asrock", "state":"identity-and-retail-review-pending"},
+    {"name":"ASRock B860M Challenger WiFi 7 White", "category":"motherboard", "url":"https://www.dndcom.co.kr/asrock", "state":"identity-and-retail-review-pending"},
+    {"name":"MAXSUN iCraft Z890 ARCTIC", "category":"motherboard", "url":"https://www.dndcom.co.kr/maxsun", "state":"identity-and-retail-review-pending"},
+    {"name":"MAXSUN eSport B850ITX WIFI ICE", "category":"motherboard", "url":"https://www.dndcom.co.kr/maxsun", "state":"identity-and-retail-review-pending"}
+  ]
+}

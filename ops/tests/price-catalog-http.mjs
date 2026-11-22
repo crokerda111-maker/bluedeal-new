@@ -5,6 +5,7 @@ import fs from 'node:fs/promises';
 const base = process.env.BLUEDEAL_CATALOG_TEST_URL ?? 'http://127.0.0.1:3100';
 const catalog = JSON.parse(await fs.readFile(new URL('../../src/content/products/catalog.json', import.meta.url), 'utf8'));
 const categories = ['ram', 'cpu', 'ssd', 'motherboard', 'gpu', 'cooler', 'psu', 'case', 'hdd', 'halfpc', 'fullpc', 'bundle'];
+const outbound=JSON.parse(await fs.readFile(new URL('../../src/content/outbound.generated.json',import.meta.url),'utf8'));
 const ids = html => [...html.matchAll(/data-product-id="([a-z0-9-]+)"/g)].map(match => match[1]);
 let requests = 0;
 async function get(route, status = 200) {
@@ -75,7 +76,7 @@ for(const item of coolingItems){
   assert.ok(coolingHtml.includes(`id="${item.id}"`));
   const response=await fetch(`${base}/go/${item.goCode}`,{redirect:'manual',signal:AbortSignal.timeout(25000)});requests++;
   assert.equal(response.status,302);
-  assert.ok(['www.compuzone.co.kr','item.gmarket.co.kr','www.ssg.com'].includes(new URL(response.headers.get('location')).hostname));
+  assert.equal(response.headers.get('location'),outbound[item.goCode].originalUrl);
 }
 const gpuItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/gpu.json',import.meta.url),'utf8')).items;
 const systemItems=JSON.parse(await fs.readFile(new URL('../../src/content/prices/fullpc.json',import.meta.url),'utf8')).items;
@@ -100,7 +101,7 @@ for(const item of caseItems){
   assert.ok(caseHtml.includes(`id="${item.id}"`));
   assert.ok(caseHtml.includes('수량1'));
   const response=await fetch(`${base}/go/${item.goCode}`,{redirect:'manual',signal:AbortSignal.timeout(25000)});requests++;
-  assert.equal(response.status,302);assert.equal(new URL(response.headers.get('location')).hostname,'www.compuzone.co.kr');
+  assert.equal(response.status,302);assert.equal(response.headers.get('location'),outbound[item.goCode].originalUrl);
 }
 const gpuStandard=await get('/prices/gpu');
 const gpuRefurbished=await get('/prices/gpu?condition=refurbished');

@@ -21,7 +21,10 @@ class ReviewedCooling(unittest.TestCase):
             if p['disposition'] in ['PC 부품 아님','케이스 별도 분류']:self.assertEqual(p['modelIds']+p['verifiedListingIds'],[])
 
     def test_fan_and_liquid_models_are_distinct_and_unavailable_quotes_not_published(self):
-        models=read('src/content/products/reviewed-cooling.json');items=read('src/content/prices/cooler.json')['items']
+        models=read('src/content/products/reviewed-cooling.json');all_items=read('src/content/prices/cooler.json')['items']
+        retail_ids={r['listingId'] for r in read('src/content/products/distributor-retail-reviewed.json')['decisions'] if r['category']=='cooler' and r['priceState']=='confirmed'}
+        items=[p for p in all_items if p['id'] not in retail_ids]
+        self.assertEqual({p['id'] for p in all_items},retail_ids|{p['id'] for p in items})
         self.assertEqual(len(models),9);self.assertEqual(len(items),7)
         self.assertEqual(sum(m['subtype']=='case-fan' for m in models),1)
         self.assertTrue(all(p['availability']=='unknown' for p in items))

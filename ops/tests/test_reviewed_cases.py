@@ -19,7 +19,10 @@ class ReviewedCases(unittest.TestCase):
         self.assertTrue(all(not p['verifiedListingIds'] for p in r['posts'] if p['post'] in ['1965372','1954577']))
 
     def test_current_variant_prices_and_uncertain_stock_do_not_inherit_old_promotions(self):
-        items=read('src/content/prices/case.json')['items']
+        all_items=read('src/content/prices/case.json')['items']
+        retail_ids={r['listingId'] for r in read('src/content/products/distributor-retail-reviewed.json')['decisions'] if r['category']=='case' and r['priceState']=='confirmed'}
+        items=[p for p in all_items if p['id'] not in retail_ids]
+        self.assertEqual({p['id'] for p in all_items},retail_ids|{p['id'] for p in items})
         self.assertEqual(len(items),4)
         actual={p['name']:(p['price'],p['shippingFee']) for p in items}
         self.assertEqual(actual,{'1STPlayer 와칠 WA7-K RGB 블랙':(39000,2500),'PHANTEKS EX5 블랙':(176740,2500),'Antec FLUX PRO MESH 화이트':(269000,0),'darkFlash FLOATRON F1 ARGB 블랙':(125000,2500)})

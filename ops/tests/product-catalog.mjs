@@ -18,7 +18,8 @@ test('models, wattage options and families are counted separately',()=>{
   assert.equal(summary.models+summary.outputOptions+summary.families,summary.entries);
   assert.equal(summary.discontinued,38);
   const reviewedCooling=JSON.parse(fs.readFileSync(new URL('../../src/content/products/reviewed-cooling.json',import.meta.url),'utf8'));
-  assert.equal(summary.categoryCounts.cooler,242+reviewedCooling.length); // Existing official list plus reviewed retailer variants.
+  const retail=JSON.parse(fs.readFileSync(new URL('../../src/content/products/distributor-retail-reviewed.json',import.meta.url),'utf8'));
+  assert.equal(summary.categoryCounts.cooler,242+reviewedCooling.length+retail.additions.filter(p=>p.category==='cooler').length);
   const reviewedCpus=JSON.parse(fs.readFileSync(new URL('../../src/content/products/reviewed-cpus.json',import.meta.url),'utf8'));
   assert.equal(summary.categoryCounts.cpu,reviewedCpus.length+1); // Separate Intel issue dossier.
 });

@@ -38,5 +38,10 @@ class SeorinOfferTests(unittest.TestCase):
     def test_invalid_money_is_not_coerced(self):
         for value in ['-1','1e3','free','100원<script>','1.1']:
             with self.assertRaises(ValueError):money(value)
+    def test_quantity_delivery_rule_is_only_a_single_unit_quote(self):
+        html=fixture().replace('0원 이상 ~ 500,000원 미만 2,500원','0 개 이상 ~ 2 개 미만 2,500원').replace('500,000원 이상 0원','2 개 이상 1 개 마다 추가 2,500원')
+        row=parse_offer(html,SOURCE)
+        self.assertEqual(row['shippingFee'],2500);self.assertIn('여러 개 주문',row['shippingNote'])
+        self.assertEqual(parse_offer(html.replace('name="goodsCnt[]" value="1"','name="goodsCnt[]" value="2"'),SOURCE)['state'],'review-required')
 
 if __name__=='__main__':unittest.main()
