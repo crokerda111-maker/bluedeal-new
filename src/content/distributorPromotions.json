@@ -1,0 +1,25 @@
+{
+  "reviewedOn": "2026-11-22",
+  "sourceUrl": "https://www.seorinexpress.com/goods/event_sale.php?sno=256",
+  "sourceImage": "https://godomall-storage.cdn-nhncommerce.com/2180f373ee6eede9bbd7a8f1988d2d96/editor/promotion/display-theme/256/af4845f660da8b787f17081e3967ebf6.png",
+  "observedAt": "2026-11-22T03:20:31.620647+00:00",
+  "label": "서린 공식몰 Npay 카드 결제 안내",
+  "ratePercent": 5,
+  "minimumGoodsKRW": 400000,
+  "maximumDiscountKRW": 60000,
+  "statedPeriod": "11/6~11/30",
+  "statedYear": null,
+  "cards": [
+    "삼성카드",
+    "우리카드",
+    "NH농협카드"
+  ],
+  "conditions": [
+    "상품 상세의 Npay 구매 경로와 결제창의 카드사 결제 할인 선택 필요",
+    "상품 할인 후 상품금액 기준. 배송비·추가상품은 할인 제외",
+    "페이포인트·페이머니 복합결제 불가",
+    "예산 소진 시 조기 종료. 카드 종류·이용 횟수와 잔여 한도는 결제창 확인",
+    "원문 이미지에 연도가 명시되지 않아 현재 적용 가능 여부를 확정하지 않음"
+  ],
+  "computedCurrentCardPrices": false
+}

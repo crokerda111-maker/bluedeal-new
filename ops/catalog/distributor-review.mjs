@@ -39,3 +39,21 @@ export function applyDistributorReview(products, review, now=Date.now()) {
   }
   return result;
 }
+
+/** A separate evidence gate links already-validated merchant observations, never prices in model rows. */
+export function linkDistributorOffers(products, links, pricePayloads) {
+  const result=structuredClone(products);
+  const byId=new Map(result.map(p=>[p.id,p]));
+  const prices=new Map(pricePayloads.flatMap(payload=>payload.items.map(item=>[item.id,{...item,category:payload.category}])));
+  const owners=new Map(result.flatMap(p=>p.listings.map(listing=>[listing.id,p.id])));
+  const seen=new Set();
+  for(const link of links){
+    const product=byId.get(link.productId),offer=prices.get(link.listingId);
+    if(!product||!offer||offer.category!==product.category||offer.source!=='서린 공식몰'||offer.seller!=='서린씨앤아이'||offer.checkedAt!==link.checkedAt||!offer.goCode||seen.has(link.listingId)||(owners.has(link.listingId)&&owners.get(link.listingId)!==product.id))throw new Error('INVALID_DISTRIBUTOR_OFFER_LINK');
+    seen.add(link.listingId);owners.set(link.listingId,product.id);
+    if(!product.listings.some(listing=>listing.id===offer.id))product.listings.push({id:offer.id,merchant:offer.source,seller:offer.seller,pricePage:`/prices/${product.category}#${offer.id}`});
+    product.domesticState='listing-observed';
+    if(product.kind==='model')product.kind='retailer-reviewed-model';
+  }
+  return result;
+}

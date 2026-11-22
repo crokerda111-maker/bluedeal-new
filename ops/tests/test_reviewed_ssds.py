@@ -28,8 +28,11 @@ class ReviewedSsds(unittest.TestCase):
     def test_imported_capacity_drift_and_ended_prices_do_not_become_offers(self):
         models=read('src/content/products/reviewed-ssds.json')
         prices=read('src/content/prices/ssd.json')['items']
-        self.assertEqual(len(prices),7)
-        self.assertEqual({r['id'] for r in prices},{s['id'] for p in models for s in p['listings']})
+        cohort_ids={s['id'] for p in models for s in p['listings']}
+        retail=read('src/content/products/distributor-retail-reviewed.json')
+        retail_ids={d['listingId'] for d in retail['decisions'] if d['category']=='ssd' and d['priceState']=='confirmed'}
+        self.assertEqual(len(cohort_ids),7)
+        self.assertEqual({r['id'] for r in prices},cohort_ids|retail_ids)
         for token in ['lexar-nm710-500gb','tipro9000','crucial-t500','sandisk-ssd-plus','seagate-game-drive-external']:
             model=next(p for p in models if token in p['id'])
             self.assertEqual(model['listings'],[])

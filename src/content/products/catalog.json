@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "1ee141effdbc9deeeab4f95188ea44f1f4a653471ce2703802b1febd7a0a9ef2",
-  "entries": 669,
+  "catalogHash": "08aaf691cc2d8e6c1c1e9dd11359bb1cc89a1a2a69fcbb50b19de357cdc99ca8",
+  "entries": 708,
   "products": [
     {
       "id": "reviewed-mixed-bundle-etland-s6295842",
@@ -23917,6 +23917,1598 @@
       "referenceCode": "BD-6E7ED69815"
     },
     {
+      "id": "distributor-seorin-1000009054",
+      "features": [
+        "리안리 EDGE 1000W 80PLUS골드 V2 블랙"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 EDGE 1000W 80PLUS골드 V2 블랙 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS골드 V2 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009054",
+            "observedAt": "2026-11-22T03:10:57.500260+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS골드 V2 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009054",
+            "observedAt": "2026-11-22T03:10:57.500260+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS골드 V2 블랙",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009054",
+          "observedAt": "2026-11-22T03:10:57.500260+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 EDGE 1000W 80PLUS골드 V2 블랙",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009054",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000009054"
+        }
+      ],
+      "referenceCode": "BD-41B1C8D5CB"
+    },
+    {
+      "id": "distributor-seorin-1000009053",
+      "features": [
+        "리안리 EDGE 1000W 80PLUS골드 V2 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 EDGE 1000W 80PLUS골드 V2 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS골드 V2 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009053",
+            "observedAt": "2026-11-22T03:11:00.507443+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS골드 V2 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009053",
+            "observedAt": "2026-11-22T03:11:00.507443+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS골드 V2 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009053",
+          "observedAt": "2026-11-22T03:11:00.507443+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 EDGE 1000W 80PLUS골드 V2 화이트",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009053",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000009053"
+        }
+      ],
+      "referenceCode": "BD-A819252BC8"
+    },
+    {
+      "id": "distributor-seorin-1000009046",
+      "features": [
+        "리안리 EDGE 1000W 80PLUS플래티넘 V2 (블랙)"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 EDGE 1000W 80PLUS플래티넘 V2 (블랙) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS플래티넘 V2 (블랙)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009046",
+            "observedAt": "2026-11-22T03:11:03.540779+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS플래티넘 V2 (블랙)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009046",
+            "observedAt": "2026-11-22T03:11:03.540779+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS플래티넘 V2 (블랙)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009046",
+          "observedAt": "2026-11-22T03:11:03.540779+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 EDGE 1000W 80PLUS플래티넘 V2 (블랙)",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009046",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000009046"
+        }
+      ],
+      "referenceCode": "BD-477C44C4B5"
+    },
+    {
+      "id": "distributor-seorin-1000009045",
+      "features": [
+        "리안리 EDGE 1000W 80PLUS플래티넘 V2 (화이트)"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 EDGE 1000W 80PLUS플래티넘 V2 (화이트) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS플래티넘 V2 (화이트)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009045",
+            "observedAt": "2026-11-22T03:11:06.528851+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS플래티넘 V2 (화이트)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009045",
+            "observedAt": "2026-11-22T03:11:06.528851+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 EDGE 1000W 80PLUS플래티넘 V2 (화이트)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009045",
+          "observedAt": "2026-11-22T03:11:06.528851+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 EDGE 1000W 80PLUS플래티넘 V2 (화이트)",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009045",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000009045"
+        }
+      ],
+      "referenceCode": "BD-CB66EF0361"
+    },
+    {
+      "id": "distributor-seorin-1000009044",
+      "features": [
+        "리안리 EDGE 1200W 80PLUS플래티넘 V2 (블랙)"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "1200"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 EDGE 1200W 80PLUS플래티넘 V2 (블랙) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "1200",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1200W 80PLUS플래티넘 V2 (블랙)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009044",
+            "observedAt": "2026-11-22T03:11:09.507679+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1200W 80PLUS플래티넘 V2 (블랙)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009044",
+            "observedAt": "2026-11-22T03:11:09.507679+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 EDGE 1200W 80PLUS플래티넘 V2 (블랙)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009044",
+          "observedAt": "2026-11-22T03:11:09.507679+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 EDGE 1200W 80PLUS플래티넘 V2 (블랙)",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009044",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000009044"
+        }
+      ],
+      "referenceCode": "BD-78CD293727"
+    },
+    {
+      "id": "distributor-seorin-1000009043",
+      "features": [
+        "리안리 EDGE 1200W 80PLUS플래티넘 V2 (화이트)"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "1200"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 EDGE 1200W 80PLUS플래티넘 V2 (화이트) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "1200",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1200W 80PLUS플래티넘 V2 (화이트)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009043",
+            "observedAt": "2026-11-22T03:11:12.495329+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1200W 80PLUS플래티넘 V2 (화이트)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009043",
+            "observedAt": "2026-11-22T03:11:12.495329+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 EDGE 1200W 80PLUS플래티넘 V2 (화이트)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009043",
+          "observedAt": "2026-11-22T03:11:12.495329+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 EDGE 1200W 80PLUS플래티넘 V2 (화이트)",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009043",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000009043"
+        }
+      ],
+      "referenceCode": "BD-4722C3C224"
+    },
+    {
+      "id": "distributor-seorin-1000009112",
+      "features": [
+        "리안리 EDGE 1350W 80PLUS플래티넘 V2 블랙"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "1350"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 EDGE 1350W 80PLUS플래티넘 V2 블랙 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "1350",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1350W 80PLUS플래티넘 V2 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009112",
+            "observedAt": "2026-11-22T03:10:48.514304+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1350W 80PLUS플래티넘 V2 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009112",
+            "observedAt": "2026-11-22T03:10:48.514304+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 EDGE 1350W 80PLUS플래티넘 V2 블랙",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009112",
+          "observedAt": "2026-11-22T03:10:48.514304+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 EDGE 1350W 80PLUS플래티넘 V2 블랙",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009112",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000009112"
+        }
+      ],
+      "referenceCode": "BD-33A2CCDA08"
+    },
+    {
+      "id": "distributor-seorin-1000009111",
+      "features": [
+        "리안리 EDGE 1350W 80PLUS플래티넘 V2 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "1350"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 EDGE 1350W 80PLUS플래티넘 V2 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "1350",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1350W 80PLUS플래티넘 V2 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009111",
+            "observedAt": "2026-11-22T03:10:51.460119+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 1350W 80PLUS플래티넘 V2 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009111",
+            "observedAt": "2026-11-22T03:10:51.460119+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 EDGE 1350W 80PLUS플래티넘 V2 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009111",
+          "observedAt": "2026-11-22T03:10:51.460119+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 EDGE 1350W 80PLUS플래티넘 V2 화이트",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009111",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000009111"
+        }
+      ],
+      "referenceCode": "BD-C13F9B3481"
+    },
+    {
+      "id": "distributor-seorin-1000009110",
+      "features": [
+        "리안리 EDGE 850W 80PLUS골드 V2 블랙"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "850"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 EDGE 850W 80PLUS골드 V2 블랙 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "850",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 850W 80PLUS골드 V2 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009110",
+            "observedAt": "2026-11-22T03:10:54.498806+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 EDGE 850W 80PLUS골드 V2 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009110",
+            "observedAt": "2026-11-22T03:10:54.498806+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 EDGE 850W 80PLUS골드 V2 블랙",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009110",
+          "observedAt": "2026-11-22T03:10:54.498806+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 EDGE 850W 80PLUS골드 V2 블랙",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009110",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000009110"
+        }
+      ],
+      "referenceCode": "BD-BD52F75DED"
+    },
+    {
+      "id": "distributor-seorin-1000008031",
+      "features": [
+        "리안리 RS1000 80PLUS골드 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 RS1000 80PLUS골드 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 RS1000 80PLUS골드 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008031",
+            "observedAt": "2026-11-22T03:11:15.429279+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 RS1000 80PLUS골드 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008031",
+          "observedAt": "2026-11-22T03:11:15.429279+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 RS1000 80PLUS골드 화이트",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008031",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008031"
+        }
+      ],
+      "referenceCode": "BD-DDDD03FECA"
+    },
+    {
+      "id": "distributor-seorin-1000008030",
+      "features": [
+        "리안리 RS1000 80PLUS골드 with hub 블랙"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 RS1000 80PLUS골드 with hub 블랙 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 RS1000 80PLUS골드 with hub 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008030",
+            "observedAt": "2026-11-22T03:11:18.410759+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 RS1000 80PLUS골드 with hub 블랙",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008030",
+          "observedAt": "2026-11-22T03:11:18.410759+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 RS1000 80PLUS골드 with hub 블랙",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008030",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008030"
+        }
+      ],
+      "referenceCode": "BD-B030135CE1"
+    },
+    {
+      "id": "distributor-seorin-1000008029",
+      "features": [
+        "리안리 RS1000 80PLUS골드 with hub 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 RS1000 80PLUS골드 with hub 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 RS1000 80PLUS골드 with hub 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008029",
+            "observedAt": "2026-11-22T03:11:21.407361+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 RS1000 80PLUS골드 with hub 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008029",
+          "observedAt": "2026-11-22T03:11:21.407361+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 RS1000 80PLUS골드 with hub 화이트",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008029",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008029"
+        }
+      ],
+      "referenceCode": "BD-F48B4D1F5C"
+    },
+    {
+      "id": "distributor-seorin-1000008028",
+      "features": [
+        "리안리 RS1200 80PLUS골드 with hub 블랙"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 RS1200 80PLUS골드 with hub 블랙 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 RS1200 80PLUS골드 with hub 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008028",
+            "observedAt": "2026-11-22T03:11:24.419586+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 RS1200 80PLUS골드 with hub 블랙",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008028",
+          "observedAt": "2026-11-22T03:11:24.419586+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 RS1200 80PLUS골드 with hub 블랙",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008028",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008028"
+        }
+      ],
+      "referenceCode": "BD-3822891E06"
+    },
+    {
+      "id": "distributor-seorin-1000008027",
+      "features": [
+        "리안리 RS1200 80PLUS골드 with hub 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 RS1200 80PLUS골드 with hub 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 RS1200 80PLUS골드 with hub 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008027",
+            "observedAt": "2026-11-22T03:11:27.437340+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 RS1200 80PLUS골드 with hub 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008027",
+          "observedAt": "2026-11-22T03:11:27.437340+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 RS1200 80PLUS골드 with hub 화이트",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008027",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008027"
+        }
+      ],
+      "referenceCode": "BD-F5609090DE"
+    },
+    {
+      "id": "distributor-seorin-1000007957",
+      "features": [
+        "리안리 SP1000 80PLUS플래티넘 블랙"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 SP1000 80PLUS플래티넘 블랙 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 SP1000 80PLUS플래티넘 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007957",
+            "observedAt": "2026-11-22T03:11:54.516935+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 SP1000 80PLUS플래티넘 블랙",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007957",
+          "observedAt": "2026-11-22T03:11:54.516935+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 SP1000 80PLUS플래티넘 블랙",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000007957",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000007957"
+        }
+      ],
+      "referenceCode": "BD-E36CFABF56"
+    },
+    {
+      "id": "distributor-seorin-1000007942",
+      "features": [
+        "리안리 SP750 V2 80PLUS골드 블랙"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 SP750 V2 80PLUS골드 블랙 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 SP750 V2 80PLUS골드 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007942",
+            "observedAt": "2026-11-22T03:11:57.480290+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 SP750 V2 80PLUS골드 블랙",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007942",
+          "observedAt": "2026-11-22T03:11:57.480290+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 SP750 V2 80PLUS골드 블랙",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000007942",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000007942"
+        }
+      ],
+      "referenceCode": "BD-DFDCDDBBCB"
+    },
+    {
+      "id": "distributor-seorin-1000008052",
+      "features": [
+        "리안리 SP750 V2 80PLUS골드 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 SP750 V2 80PLUS골드 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 SP750 V2 80PLUS골드 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008052",
+            "observedAt": "2026-11-22T03:11:45.473924+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 SP750 V2 80PLUS골드 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008052",
+          "observedAt": "2026-11-22T03:11:45.473924+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 SP750 V2 80PLUS골드 화이트",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008052",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008052"
+        }
+      ],
+      "referenceCode": "BD-4C53D379CA"
+    },
+    {
+      "id": "distributor-seorin-1000008051",
+      "features": [
+        "리안리 SP850 V2 80PLUS골드 블랙"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 SP850 V2 80PLUS골드 블랙 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 SP850 V2 80PLUS골드 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008051",
+            "observedAt": "2026-11-22T03:11:48.489546+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 SP850 V2 80PLUS골드 블랙",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008051",
+          "observedAt": "2026-11-22T03:11:48.489546+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 SP850 V2 80PLUS골드 블랙",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008051",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008051"
+        }
+      ],
+      "referenceCode": "BD-8FF56EEEFD"
+    },
+    {
+      "id": "distributor-seorin-1000008050",
+      "features": [
+        "리안리 SP850 V2 80PLUS골드 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 SP850 V2 80PLUS골드 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 리안리 SP850 V2 80PLUS골드 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008050",
+            "observedAt": "2026-11-22T03:11:51.488528+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 SP850 V2 80PLUS골드 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008050",
+          "observedAt": "2026-11-22T03:11:51.488528+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 SP850 V2 80PLUS골드 화이트",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008050",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008050"
+        }
+      ],
+      "referenceCode": "BD-D3870FD6FA"
+    },
+    {
+      "id": "distributor-seorin-1000008001",
+      "features": [
+        "리안리 SX1000 80PLUS플래티넘 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 SX1000 80PLUS플래티넘 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 SX1000 80PLUS플래티넘 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008001",
+            "observedAt": "2026-11-22T03:11:33.500365+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 SX1000 80PLUS플래티넘 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008001",
+          "observedAt": "2026-11-22T03:11:33.500365+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 SX1000 80PLUS플래티넘 화이트",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008001",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008001"
+        }
+      ],
+      "referenceCode": "BD-711D0863FE"
+    },
+    {
+      "id": "distributor-seorin-1000008003",
+      "features": [
+        "리안리 SX850 80PLUS플래티넘 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 SX850 80PLUS플래티넘 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 SX850 80PLUS플래티넘 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008003",
+            "observedAt": "2026-11-22T03:11:30.455414+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 리안리 SX850 80PLUS플래티넘 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008003",
+          "observedAt": "2026-11-22T03:11:30.455414+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "리안리 SX850 80PLUS플래티넘 화이트",
+      "category": "psu",
+      "brand": "LIAN LI",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008003",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000008003"
+        }
+      ],
+      "referenceCode": "BD-1674DE0846"
+    },
+    {
+      "id": "distributor-seorin-1000007995",
+      "features": [
+        "프렉탈디자인 Ion 3 1000W 80PLUS골드 화이트"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 정격 출력(W)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "GOLD"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "프렉탈디자인 Ion 3 1000W 80PLUS골드 화이트 · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "wattage",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · 프렉탈디자인 Ion 3 1000W 80PLUS골드 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007995",
+            "observedAt": "2026-11-22T03:11:42.505074+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "서린 공식몰 · 프렉탈디자인 Ion 3 1000W 80PLUS골드 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007995",
+            "observedAt": "2026-11-22T03:11:42.505074+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 프렉탈디자인 Ion 3 1000W 80PLUS골드 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007995",
+          "observedAt": "2026-11-22T03:11:42.505074+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
+      ],
+      "name": "프렉탈디자인 Ion 3 1000W 80PLUS골드 화이트",
+      "category": "psu",
+      "brand": "Fractal Design",
+      "subtype": "power-supply",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000007995",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/psu#retail-seorin-1000007995"
+        }
+      ],
+      "referenceCode": "BD-4E76577A6F"
+    },
+    {
       "id": "reviewed-antec-hcg-pro-1000-platinum",
       "name": "Antec HCG PRO 1000W PLATINUM ATX3.1 (판매 표기)",
       "category": "psu",
@@ -26660,12 +28252,25 @@
       "brand": "LIAN LI",
       "kind": "retailer-reviewed-model",
       "features": [
-        "SX1200 블랙 · 수량1"
+        "SX1200 블랙 · 수량1",
+        "리안리 SX1200 80PLUS플래티넘 블랙"
       ],
       "specifications": [
         {
           "label": "판매 구성 표기",
           "value": "SX1200 블랙 · 수량1"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "블랙"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 SX1200 80PLUS플래티넘 블랙 · 수량1 · 추가 선택 없음"
         }
       ],
       "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
@@ -26673,7 +28278,8 @@
         "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
         "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
         "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
-        "SX1200 블랙. 화이트와 별도 판매 상품입니다."
+        "SX1200 블랙. 화이트와 별도 판매 상품입니다.",
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -26683,6 +28289,12 @@
           "label": "서린익스프레스 판매 페이지",
           "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008000",
           "observedAt": "2026-11-21T05:45:16.158Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 리안리 SX1200 80PLUS플래티넘 블랙",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008000",
+          "observedAt": "2026-11-22T03:11:36.484707+00:00",
           "kind": "retailer-listing"
         }
       ],
@@ -26699,6 +28311,18 @@
           "pricePage": "/prices/psu#reviewed-lianli-sx1200-black-seorinexpress-1000008000"
         }
       ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 SX1200 80PLUS플래티넘 블랙",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008000",
+            "observedAt": "2026-11-22T03:11:36.484707+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
       "referenceCode": "BD-27791C42EA"
     },
     {
@@ -26709,19 +28333,33 @@
       "brand": "LIAN LI",
       "kind": "retailer-reviewed-model",
       "features": [
-        "SX1200 화이트 · 단품 · 수량1"
+        "SX1200 화이트 · 단품 · 수량1",
+        "리안리 SX1200 80PLUS플래티넘 화이트"
       ],
       "specifications": [
         {
           "label": "판매 구성 표기",
           "value": "SX1200 화이트 · 단품 · 수량1"
+        },
+        {
+          "label": "판매처 표기 · 효율 인증 표기",
+          "value": "PLATINUM"
+        },
+        {
+          "label": "판매처 표기 · 색상",
+          "value": "화이트"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "리안리 SX1200 80PLUS플래티넘 화이트 · 수량1 · 추가 선택 없음"
         }
       ],
       "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
       "notes": [
         "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
         "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
-        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요."
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -26731,6 +28369,12 @@
           "label": "서린익스프레스 판매 페이지",
           "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007999",
           "observedAt": "2026-11-21T03:41:33.278756+00:00",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "서린 공식몰 · 리안리 SX1200 80PLUS플래티넘 화이트",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007999",
+          "observedAt": "2026-11-22T03:11:39.480019+00:00",
           "kind": "retailer-listing"
         }
       ],
@@ -26745,6 +28389,18 @@
           "merchant": "서린익스프레스",
           "seller": "서린씨앤아이(서린익스프레스)",
           "pricePage": "/prices/psu#lianli-sx1200-white-se1000007999"
+        }
+      ],
+      "facts": [
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "서린 공식몰 · 리안리 SX1200 80PLUS플래티넘 화이트",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007999",
+            "observedAt": "2026-11-22T03:11:39.480019+00:00",
+            "kind": "retailer-listing"
+          }
         }
       ],
       "referenceCode": "BD-35B961AEB2"
@@ -34129,6 +35785,552 @@
       "referenceCode": "BD-532998C2D0"
     },
     {
+      "id": "distributor-seorin-1000008061",
+      "features": [
+        "1TB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "팀그룹 MP33 M.2 NVMe 서린 (1TB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP33 M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008061",
+            "observedAt": "2026-11-22T03:10:21.468227+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP33 M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008061",
+            "observedAt": "2026-11-22T03:10:21.468227+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP33 M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008061",
+            "observedAt": "2026-11-22T03:10:21.468227+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 팀그룹 MP33 M.2 NVMe 서린 (1TB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008061",
+          "observedAt": "2026-11-22T03:10:21.468227+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "팀그룹 MP33 M.2 NVMe 서린 (1TB)",
+      "category": "ssd",
+      "brand": "TEAMGROUP",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008061",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000008061"
+        }
+      ],
+      "referenceCode": "BD-A04DE9224E"
+    },
+    {
+      "id": "distributor-seorin-1000008062",
+      "features": [
+        "512GB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "512"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "팀그룹 MP33 M.2 NVMe 서린 (512GB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "512",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP33 M.2 NVMe 서린 (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008062",
+            "observedAt": "2026-11-22T03:10:18.493901+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP33 M.2 NVMe 서린 (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008062",
+            "observedAt": "2026-11-22T03:10:18.493901+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP33 M.2 NVMe 서린 (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008062",
+            "observedAt": "2026-11-22T03:10:18.493901+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 팀그룹 MP33 M.2 NVMe 서린 (512GB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008062",
+          "observedAt": "2026-11-22T03:10:18.493901+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "팀그룹 MP33 M.2 NVMe 서린 (512GB)",
+      "category": "ssd",
+      "brand": "TEAMGROUP",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008062",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000008062"
+        }
+      ],
+      "referenceCode": "BD-1D42718047"
+    },
+    {
+      "id": "distributor-seorin-1000004207",
+      "features": [
+        "500GB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "500"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "팀그룹 MP44L M.2 NVMe 500GB · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "500",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP44L M.2 NVMe 500GB",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004207",
+            "observedAt": "2026-11-22T03:10:39.469047+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP44L M.2 NVMe 500GB",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004207",
+            "observedAt": "2026-11-22T03:10:39.469047+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP44L M.2 NVMe 500GB",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004207",
+            "observedAt": "2026-11-22T03:10:39.469047+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 팀그룹 MP44L M.2 NVMe 500GB",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004207",
+          "observedAt": "2026-11-22T03:10:39.469047+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "팀그룹 MP44L M.2 NVMe 500GB",
+      "category": "ssd",
+      "brand": "TEAMGROUP",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000004207",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000004207"
+        }
+      ],
+      "referenceCode": "BD-8AE07F1C3D"
+    },
+    {
+      "id": "distributor-seorin-1000004208",
+      "features": [
+        "1TB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "팀그룹 MP44L M.2 NVMe 서린 (1TB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP44L M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004208",
+            "observedAt": "2026-11-22T03:10:36.476602+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP44L M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004208",
+            "observedAt": "2026-11-22T03:10:36.476602+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MP44L M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004208",
+            "observedAt": "2026-11-22T03:10:36.476602+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 팀그룹 MP44L M.2 NVMe 서린 (1TB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000004208",
+          "observedAt": "2026-11-22T03:10:36.476602+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "팀그룹 MP44L M.2 NVMe 서린 (1TB)",
+      "category": "ssd",
+      "brand": "TEAMGROUP",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000004208",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000004208"
+        }
+      ],
+      "referenceCode": "BD-6F72623B50"
+    },
+    {
+      "id": "distributor-seorin-1000001188",
+      "features": [
+        "256GB · M.2 · SATA 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "256"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "SATA"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "팀그룹 MS30 M.2 SATA 256GB · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "256",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MS30 M.2 SATA 256GB",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000001188",
+            "observedAt": "2026-11-22T03:10:42.470233+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MS30 M.2 SATA 256GB",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000001188",
+            "observedAt": "2026-11-22T03:10:42.470233+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "SATA",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MS30 M.2 SATA 256GB",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000001188",
+            "observedAt": "2026-11-22T03:10:42.470233+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 팀그룹 MS30 M.2 SATA 256GB",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000001188",
+          "observedAt": "2026-11-22T03:10:42.470233+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "팀그룹 MS30 M.2 SATA 256GB",
+      "category": "ssd",
+      "brand": "TEAMGROUP",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000001188",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000001188"
+        }
+      ],
+      "referenceCode": "BD-CD087A6B2F"
+    },
+    {
+      "id": "distributor-seorin-1000001187",
+      "features": [
+        "512GB · M.2 · SATA 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "512"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "SATA"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "팀그룹 MS30 M.2 SATA 512GB · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "512",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MS30 M.2 SATA 512GB",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000001187",
+            "observedAt": "2026-11-22T03:10:45.462948+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MS30 M.2 SATA 512GB",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000001187",
+            "observedAt": "2026-11-22T03:10:45.462948+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "SATA",
+          "source": {
+            "label": "서린 공식몰 · 팀그룹 MS30 M.2 SATA 512GB",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000001187",
+            "observedAt": "2026-11-22T03:10:45.462948+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · 팀그룹 MS30 M.2 SATA 512GB",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000001187",
+          "observedAt": "2026-11-22T03:10:45.462948+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "팀그룹 MS30 M.2 SATA 512GB",
+      "category": "ssd",
+      "brand": "TEAMGROUP",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000001187",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000001187"
+        }
+      ],
+      "referenceCode": "BD-BFF6815FCD"
+    },
+    {
       "id": "reviewed-acer-predator-gm9000-2tb-retailer",
       "name": "Acer Predator GM9000 M.2 NVMe 2TB (판매 표기)",
       "category": "ssd",
@@ -34180,6 +36382,1007 @@
         }
       ],
       "referenceCode": "BD-76068B5A57"
+    },
+    {
+      "id": "distributor-seorin-1000008276",
+      "features": [
+        "1TB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "AGI AI298 M.2 NVMe 서린 (1TB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · AGI AI298 M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008276",
+            "observedAt": "2026-11-22T03:10:12.523908+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · AGI AI298 M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008276",
+            "observedAt": "2026-11-22T03:10:12.523908+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · AGI AI298 M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008276",
+            "observedAt": "2026-11-22T03:10:12.523908+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · AGI AI298 M.2 NVMe 서린 (1TB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008276",
+          "observedAt": "2026-11-22T03:10:12.523908+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "AGI AI298 M.2 NVMe 서린 (1TB)",
+      "category": "ssd",
+      "brand": "AGI",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008276",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000008276"
+        }
+      ],
+      "referenceCode": "BD-143CE574AE"
+    },
+    {
+      "id": "distributor-seorin-1000008277",
+      "features": [
+        "512GB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "512"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "AGI AI298 M.2 NVMe 서린 (512GB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "512",
+          "source": {
+            "label": "서린 공식몰 · AGI AI298 M.2 NVMe 서린 (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008277",
+            "observedAt": "2026-11-22T03:10:09.491697+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · AGI AI298 M.2 NVMe 서린 (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008277",
+            "observedAt": "2026-11-22T03:10:09.491697+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · AGI AI298 M.2 NVMe 서린 (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008277",
+            "observedAt": "2026-11-22T03:10:09.491697+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · AGI AI298 M.2 NVMe 서린 (512GB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008277",
+          "observedAt": "2026-11-22T03:10:09.491697+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "AGI AI298 M.2 NVMe 서린 (512GB)",
+      "category": "ssd",
+      "brand": "AGI",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008277",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000008277"
+        }
+      ],
+      "referenceCode": "BD-086F6055E2"
+    },
+    {
+      "id": "distributor-seorin-1000008771",
+      "features": [
+        "1TB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "AGI AI818 M.2 NVMe 서린 (1TB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · AGI AI818 M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008771",
+            "observedAt": "2026-11-22T03:07:38.028879+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · AGI AI818 M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008771",
+            "observedAt": "2026-11-22T03:07:38.028879+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · AGI AI818 M.2 NVMe 서린 (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008771",
+            "observedAt": "2026-11-22T03:07:38.028879+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · AGI AI818 M.2 NVMe 서린 (1TB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008771",
+          "observedAt": "2026-11-22T03:07:38.028879+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "AGI AI818 M.2 NVMe 서린 (1TB)",
+      "category": "ssd",
+      "brand": "AGI",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008771",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000008771"
+        }
+      ],
+      "referenceCode": "BD-D6D02B6A8F"
+    },
+    {
+      "id": "distributor-seorin-1000008275",
+      "features": [
+        "1TB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "AGI AI828 M.2 NVMe (1TB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · AGI AI828 M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008275",
+            "observedAt": "2026-11-22T03:10:15.497313+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · AGI AI828 M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008275",
+            "observedAt": "2026-11-22T03:10:15.497313+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · AGI AI828 M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008275",
+            "observedAt": "2026-11-22T03:10:15.497313+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · AGI AI828 M.2 NVMe (1TB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008275",
+          "observedAt": "2026-11-22T03:10:15.497313+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "AGI AI828 M.2 NVMe (1TB)",
+      "category": "ssd",
+      "brand": "AGI",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008275",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000008275"
+        }
+      ],
+      "referenceCode": "BD-0E4CF85606"
+    },
+    {
+      "id": "distributor-seorin-1000008770",
+      "features": [
+        "512GB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "512"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "AGI AI828 M.2 NVMe (512GB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "512",
+          "source": {
+            "label": "서린 공식몰 · AGI AI828 M.2 NVMe (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008770",
+            "observedAt": "2026-11-22T03:10:03.485948+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · AGI AI828 M.2 NVMe (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008770",
+            "observedAt": "2026-11-22T03:10:03.485948+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · AGI AI828 M.2 NVMe (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008770",
+            "observedAt": "2026-11-22T03:10:03.485948+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · AGI AI828 M.2 NVMe (512GB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008770",
+          "observedAt": "2026-11-22T03:10:03.485948+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "AGI AI828 M.2 NVMe (512GB)",
+      "category": "ssd",
+      "brand": "AGI",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008770",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000008770"
+        }
+      ],
+      "referenceCode": "BD-35DE865C50"
+    },
+    {
+      "id": "distributor-seorin-1000009113",
+      "features": [
+        "1TB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "AGI AI828G4L M.2 NVMe (1TB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · AGI AI828G4L M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009113",
+            "observedAt": "2026-11-22T03:07:35.059921+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · AGI AI828G4L M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009113",
+            "observedAt": "2026-11-22T03:07:35.059921+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · AGI AI828G4L M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009113",
+            "observedAt": "2026-11-22T03:07:35.059921+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · AGI AI828G4L M.2 NVMe (1TB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000009113",
+          "observedAt": "2026-11-22T03:07:35.059921+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "AGI AI828G4L M.2 NVMe (1TB)",
+      "category": "ssd",
+      "brand": "AGI",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000009113",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000009113"
+        }
+      ],
+      "referenceCode": "BD-67046BF997"
+    },
+    {
+      "id": "distributor-seorin-1000008542",
+      "features": [
+        "1TB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "Apacer AS2280F4L M.2 NVMe (1TB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280F4L M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008542",
+            "observedAt": "2026-11-22T03:10:06.470469+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280F4L M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008542",
+            "observedAt": "2026-11-22T03:10:06.470469+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280F4L M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008542",
+            "observedAt": "2026-11-22T03:10:06.470469+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · Apacer AS2280F4L M.2 NVMe (1TB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000008542",
+          "observedAt": "2026-11-22T03:10:06.470469+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "Apacer AS2280F4L M.2 NVMe (1TB)",
+      "category": "ssd",
+      "brand": "Apacer",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000008542",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000008542"
+        }
+      ],
+      "referenceCode": "BD-3736339FC3"
+    },
+    {
+      "id": "distributor-seorin-1000007932",
+      "features": [
+        "1TB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "1000"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "Apacer AS2280P4X M.2 NVMe (1TB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "1000",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280P4X M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007932",
+            "observedAt": "2026-11-22T03:10:30.423914+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280P4X M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007932",
+            "observedAt": "2026-11-22T03:10:30.423914+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280P4X M.2 NVMe (1TB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007932",
+            "observedAt": "2026-11-22T03:10:30.423914+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · Apacer AS2280P4X M.2 NVMe (1TB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007932",
+          "observedAt": "2026-11-22T03:10:30.423914+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "Apacer AS2280P4X M.2 NVMe (1TB)",
+      "category": "ssd",
+      "brand": "Apacer",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000007932",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000007932"
+        }
+      ],
+      "referenceCode": "BD-C749E69CCF"
+    },
+    {
+      "id": "distributor-seorin-1000007933",
+      "features": [
+        "512GB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "512"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "Apacer AS2280P4X M.2 NVMe (512GB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "512",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280P4X M.2 NVMe (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007933",
+            "observedAt": "2026-11-22T03:10:27.410948+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280P4X M.2 NVMe (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007933",
+            "observedAt": "2026-11-22T03:10:27.410948+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280P4X M.2 NVMe (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007933",
+            "observedAt": "2026-11-22T03:10:27.410948+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · Apacer AS2280P4X M.2 NVMe (512GB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007933",
+          "observedAt": "2026-11-22T03:10:27.410948+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "Apacer AS2280P4X M.2 NVMe (512GB)",
+      "category": "ssd",
+      "brand": "Apacer",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000007933",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000007933"
+        }
+      ],
+      "referenceCode": "BD-72BBCC0A29"
+    },
+    {
+      "id": "distributor-seorin-1000007931",
+      "features": [
+        "512GB · M.2 · NVMe 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "512"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "NVMe"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "Apacer AS2280Q4X M.2 NVMe (512GB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "512",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280Q4X M.2 NVMe (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007931",
+            "observedAt": "2026-11-22T03:10:33.410961+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280Q4X M.2 NVMe (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007931",
+            "observedAt": "2026-11-22T03:10:33.410961+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "NVMe",
+          "source": {
+            "label": "서린 공식몰 · Apacer AS2280Q4X M.2 NVMe (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007931",
+            "observedAt": "2026-11-22T03:10:33.410961+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · Apacer AS2280Q4X M.2 NVMe (512GB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007931",
+          "observedAt": "2026-11-22T03:10:33.410961+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "Apacer AS2280Q4X M.2 NVMe (512GB)",
+      "category": "ssd",
+      "brand": "Apacer",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000007931",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000007931"
+        }
+      ],
+      "referenceCode": "BD-261B9E6597"
+    },
+    {
+      "id": "distributor-seorin-1000007934",
+      "features": [
+        "512GB · M.2 · SATA 판매 구성"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 표기 · 용량(GB)",
+          "value": "512"
+        },
+        {
+          "label": "판매처 표기 · 폼 팩터",
+          "value": "M.2"
+        },
+        {
+          "label": "판매처 표기 · 연결 표기",
+          "value": "SATA"
+        },
+        {
+          "label": "판매처 선택 구성",
+          "value": "Apacer AST280X M.2 SATA (512GB) · 수량1 · 추가 선택 없음"
+        }
+      ],
+      "facts": [
+        {
+          "key": "capacity",
+          "value": "512",
+          "source": {
+            "label": "서린 공식몰 · Apacer AST280X M.2 SATA (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007934",
+            "observedAt": "2026-11-22T03:10:24.399279+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "formFactor",
+          "value": "M.2",
+          "source": {
+            "label": "서린 공식몰 · Apacer AST280X M.2 SATA (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007934",
+            "observedAt": "2026-11-22T03:10:24.399279+00:00",
+            "kind": "retailer-listing"
+          }
+        },
+        {
+          "key": "interface",
+          "value": "SATA",
+          "source": {
+            "label": "서린 공식몰 · Apacer AST280X M.2 SATA (512GB)",
+            "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007934",
+            "observedAt": "2026-11-22T03:10:24.399279+00:00",
+            "kind": "retailer-listing"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "서린 공식몰 · Apacer AST280X M.2 SATA (512GB)",
+          "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000007934",
+          "observedAt": "2026-11-22T03:10:24.399279+00:00",
+          "kind": "retailer-listing"
+        }
+      ],
+      "notes": [
+        "정확한 제조사 품번·상세 사양·국내 보증은 판매명과 별도로 대조해야 합니다. 제휴 여부와 품질 평가를 연결하지 않습니다.",
+        "M.2는 크기 계열 표기입니다. PCIe 세대·길이·DRAM·NAND·성능 수치는 판매명으로 추정하지 않았습니다."
+      ],
+      "name": "Apacer AST280X M.2 SATA (512GB)",
+      "category": "ssd",
+      "brand": "Apacer",
+      "subtype": "internal-ssd",
+      "kind": "retailer-reviewed-model",
+      "description": "국내 유통사 공식 판매 상세에서 모델·판매 구성과 조건을 확인한 항목입니다. 사양·보증·후기와 품질 평가는 출처별로 구분합니다.",
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "retail-seorin-1000007934",
+          "merchant": "서린 공식몰",
+          "seller": "서린씨앤아이",
+          "pricePage": "/prices/ssd#retail-seorin-1000007934"
+        }
+      ],
+      "referenceCode": "BD-53341EA171"
     },
     {
       "id": "reviewed-crucial-t500-2tb-daewon-retailer",

@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { applyDistributorReview } from './distributor-review.mjs';
+import { applyDistributorReview, linkDistributorOffers } from './distributor-review.mjs';
 import { PART_DOSSIERS } from '../../src/content/partDossiers.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -32,6 +32,10 @@ for (const dossier of PART_DOSSIERS) {
 // Apply explicitly reviewed distributor matches only; never fuzzy-merge options or prices.
 const distributor = JSON.parse(await fs.readFile(path.join(root, 'src/content/products/distributor-reviewed.json'), 'utf8'));
 base.products = applyDistributorReview(base.products, distributor);
+const retail = JSON.parse(await fs.readFile(path.join(root, 'src/content/products/distributor-retail-reviewed.json'), 'utf8'));
+base.products = applyDistributorReview(base.products, retail);
+const retailPrices = await Promise.all(['ram','cpu','ssd','motherboard','gpu','cooler','psu','case','hdd','halfpc','fullpc','bundle'].map(key => fs.readFile(path.join(root,'src/content/prices',key+'.json'),'utf8').then(JSON.parse)));
+base.products = linkDistributorOffers(base.products, retail.links, retailPrices);
 base.products.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name, 'ko'));
 const ids = new Set();
 const referenceCodes = new Set();

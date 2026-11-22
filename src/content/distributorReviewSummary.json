@@ -1,10 +1,10 @@
 {
   "reviewedOn": "2026-11-22",
   "observedEntries": 218,
-  "reviewedEntries": 61,
-  "addedModels": 49,
-  "enrichedModels": 12,
-  "pendingMatches": 157,
+  "reviewedEntries": 102,
+  "addedModels": 88,
+  "enrichedModels": 14,
+  "pendingMatches": 116,
   "scopes": [
     {
       "distributor": "서린씨앤아이 공식몰",
@@ -56,5 +56,13 @@
       "category": "psu"
     }
   ],
-  "limitation": "선정한 공식 목록의 대조입니다. 국내 전체 유통사·전체 시장·현재 재고의 조사가 끝났다는 뜻은 아닙니다."
+  "limitation": "선정한 공식 목록의 대조입니다. 국내 전체 유통사·전체 시장·현재 재고의 조사가 끝났다는 뜻은 아닙니다.",
+  "verifiedRetailObservations": 41,
+  "pendingRetailPrices": 0,
+  "retailCategoryCounts": {
+    "ssd": 17,
+    "psu": 24,
+    "case": 0,
+    "cooler": 0
+  }
 }
