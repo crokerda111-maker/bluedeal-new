@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { CATEGORY_FACETS, readProductFilters, productFacetValues, matchesProduct, matchesProductSearch, productSearchHref, legacyProductsHref, indexProductOffers, searchProducts } from '../../src/lib/productFilters.ts';
+import { CATEGORY_FACETS, readProductFilters, productFacetValues, productFacetOptions, matchesProduct, matchesProductSearch, productSearchHref, legacyProductsHref, indexProductOffers, searchProducts } from '../../src/lib/productFilters.ts';
 
 const products=JSON.parse(fs.readFileSync(new URL('../../src/content/products/catalog.json',import.meta.url),'utf8')).products;
 const offers=fs.readdirSync(new URL('../../src/content/prices/',import.meta.url)).filter(n=>n.endsWith('.json')).flatMap(n=>JSON.parse(fs.readFileSync(new URL('../../src/content/prices/'+n,import.meta.url),'utf8')).items||[]);
@@ -11,9 +11,30 @@ const base={id:'sample',name:'B850M AM5 DDR5 RTX5090 32GB',category:'motherboard
 test('different hardware categories expose relevant facets',()=>{
   assert.equal(Object.keys(CATEGORY_FACETS).length,12);
   assert.ok(CATEGORY_FACETS.motherboard.some(f=>f.key==='chipset'));
-  assert.ok(!CATEGORY_FACETS.cpu.some(f=>f.key==='chipset'));
+  assert.deepEqual(CATEGORY_FACETS.cpu.map(f=>f.key), ['memory','socket','graphics']);
   assert.ok(CATEGORY_FACETS.ram.some(f=>f.key==='modules'));
   assert.ok(CATEGORY_FACETS.psu.some(f=>f.key==='wattage'));
+});
+test('all registered CPUs and boards have model-specific socket and memory details',()=>{
+  for(const product of products.filter(p=>p.category==='cpu'||p.category==='motherboard')){
+    const facts=productFacetValues(product);
+    assert.ok(facts.socket?.length, product.id);
+    assert.ok(facts.memory?.length, product.id);
+    assert.ok(product.sources.some(s=>[ 'manufacturer-specifications', 'retailer-listing' ].includes(s.kind) && s.observedAt), product.id);
+  }
+  const cpus=products.filter(p=>p.category==='cpu');
+  const options=productFacetOptions(cpus,index,CATEGORY_FACETS.cpu[0]);
+  assert.deepEqual(options,{values:[['DDR4',5],['DDR5',14]],unknown:0});
+  const forMemory=value=>searchProducts(cpus,index,readProductFilters({memory:value},'cpu'),offers,30).items.map(p=>p.id);
+  for(const cpu of ['reviewed-intel-core-i5-14600k-bulk-cynex','reviewed-intel-core-i5-14600kf-bulk-cynex','intel-core-i7-14700k']){
+    assert.ok(forMemory('DDR4').includes(cpu));
+    assert.ok(forMemory('DDR5').includes(cpu));
+  }
+  assert.ok(!forMemory('DDR5').includes('reviewed-amd-5800x3d-anniversary-retailer'));
+  assert.ok(!forMemory('DDR4').includes('curated-amd-ryzen-7-9800x3d-multipack'));
+  const kf=cpus.find(p=>p.id==='reviewed-intel-core-i5-14600kf-bulk-cynex');
+  assert.deepEqual(productFacetValues(kf).graphics,['absent']);
+  assert.ok(matchesProduct(kf,[],readProductFilters({cores:'14'},'cpu')));
 });
 test('a name alone cannot establish sockets, memory, capacities or compatibility',()=>{
   assert.deepEqual(productFacetValues(base),{});

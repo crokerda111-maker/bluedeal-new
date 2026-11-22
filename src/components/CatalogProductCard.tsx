@@ -3,9 +3,11 @@ import type { CatalogProduct } from "../lib/productCatalog";
 import { catalogDate, PRODUCT_KIND_LABELS, productCategoryLabel } from "../lib/productCatalog";
 import type { PriceItem } from "../lib/mockPrices";
 import { priceFreshness } from "../lib/priceFilters";
+import { productHighlights } from "../lib/productFilters";
 
 export default function CatalogProductCard({ product, offers, now }: { product: CatalogProduct; offers?: readonly PriceItem[]; now: number }) {
   const offer = offers?.[0];
+  const highlights = productHighlights(product, offers);
   const observed = offer?.checkedAt || offer?.updatedAt || "";
   const observedLabel = Number.isFinite(Date.parse(observed)) ? new Date(observed).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST" : "시각 미확인";
   return <article data-product-id={product.id} className="bd-surface-md flex min-w-0 flex-col p-5">
@@ -16,7 +18,10 @@ export default function CatalogProductCard({ product, offers, now }: { product: 
     </div>
     <p className="mt-4 text-xs text-white/60">{product.brand}</p>
     <h3 className="mt-2 break-words text-base font-semibold leading-7"><Link href={`/products/${product.id}`} className="hover:text-cyan-100">{product.name}</Link></h3>
-    <p className="mt-3 break-words text-sm leading-6 text-white/75">{product.features.slice(0, 2).join(" · ") || "상세 자료를 확인하고 있습니다."}</p>
+    {highlights.length ? <dl className="mt-3 flex flex-wrap gap-2">{highlights.map(({ key, label, value }) => <div key={key} className="rounded-lg bg-white/5 px-2.5 py-1.5 text-xs">
+      <dt className="text-white/65">{label}</dt><dd className="mt-0.5 font-medium text-cyan-100">{value}</dd>
+    </div>)}</dl> : null}
+    {product.features.length ? <p className="mt-3 break-words text-sm leading-6 text-white/75">{product.features.slice(0, 2).join(" · ")}</p> : null}
     <div className="mt-auto pt-5">
       {offer ? <div className="mb-4 rounded-xl border border-cyan-300/20 bg-cyan-300/5 p-3">
         {offer.availability === "out-of-stock" ? <p className="text-xs text-amber-100">품절 상품의 이전 가격</p> : null}
@@ -26,9 +31,9 @@ export default function CatalogProductCard({ product, offers, now }: { product: 
         <p className="mt-1 text-xs leading-6 text-white/75">{offer.source} · {typeof offer.shippingFee === "number" ? `배송비 포함 ${(offer.price + offer.shippingFee).toLocaleString("ko-KR")}원` : "배송비 미확인"}</p>
         <p className="mt-1 text-xs leading-5 text-white/60">확인 {observedLabel}</p>
         {priceFreshness(offer, now) === "stale" ? <p className="mt-1 text-xs text-amber-100">24시간 경과 · 판매처 재확인</p> : null}
-      </div> : offers ? <p className="mb-3 text-sm text-white/70">{product.listings.length ? "현재 조건에 맞는 가격 기록 없음" : "가격 확인 중"}</p> : null}
-      <p className="text-xs leading-6 text-white/60">{product.listObservedAt ? `공식 목록 확인 ${catalogDate(product.listObservedAt)}` : product.kind === "source-reviewed-model" ? "공식 사양·공지 검토 자료" : product.kind === "retailer-reviewed-model" ? "판매 표기 확인 · 상세 사양 추가 대조 중" : "기존 등록 사양 · 추가 대조 중"}</p>
-      <p className="mt-1 text-xs leading-6 text-white/65">{product.listings.length ? `판매처 가격 기록 ${product.listings.length}건 · 확인 시각은 가격표 참조` : "현재 구매가 미등록 · 확인 상태·출처는 상세 참조"}</p>
+      </div> : offers ? <p className="mb-3 text-sm text-white/70">{product.listings.length ? "현재 조건에 맞는 가격 기록 없음" : "등록된 판매처 가격 없음"}</p> : null}
+      {product.listObservedAt ? <p className="text-xs leading-6 text-white/60">공식 목록 확인 {catalogDate(product.listObservedAt)}</p> : null}
+      {product.listings.length > 0 ? <p className="mt-1 text-xs leading-6 text-white/65">판매처 가격 기록 {product.listings.length}건</p> : null}
       <Link href={`/products/${product.id}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-medium text-cyan-200 hover:underline">가격·특징·출처 보기 <span aria-hidden="true" className="ml-2">→</span></Link>
     </div>
   </article>;

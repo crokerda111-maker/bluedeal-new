@@ -9,6 +9,7 @@ import { getPriceView } from "../../../lib/prices";
 import { OUTBOUND_LINKS } from "../../../lib/outbound";
 import { resolveAffiliateUrl } from "../../../lib/affiliate";
 import { PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
+import { productHighlights } from "../../../lib/productFilters";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
@@ -29,18 +30,22 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const { data, now } = await getPriceView(product.category);
   const listingIds = new Set(product.listings.map(listing => listing.id));
   const offers = data.items.filter(item => listingIds.has(item.id));
+  const highlights = productHighlights(product, offers);
   const componentSpecs = product.specifications.filter(spec => /^판매처 (부품표|기본사양) · /.test(spec.label));
   const affiliateCodes = new Set(offers.filter(item => {
     const outbound = item.goCode ? OUTBOUND_LINKS[item.goCode] : undefined;
     const resolution = outbound ? resolveAffiliateUrl(outbound) : null;
     return resolution && resolution.mode !== "passthrough";
   }).map(item => item.goCode));
-  const informationCheckedAt = product.listObservedAt ?? product.sources.map(source => source.observedAt).filter((value): value is string => Boolean(value)).sort().at(-1) ?? null;
+  const informationCheckedAt = [product.listObservedAt, ...product.sources.map(source => source.observedAt)].filter((value): value is string => Boolean(value)).sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? null;
   return <article className="space-y-6">
     <nav aria-label="상품 경로" className="flex flex-wrap gap-2 text-sm text-white/65"><Link href="/prices" className="text-cyan-200 hover:underline">상품·가격비교</Link><span aria-hidden="true">/</span><Link href={`/prices/${product.category}`} className="hover:underline">{productCategoryLabel(product.category)}</Link></nav>
     <header className="bd-surface p-5 sm:p-7">
       <div className="flex flex-wrap gap-2 text-xs"><span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-cyan-100">{productCategoryLabel(product.category)}</span><span className="rounded-full border border-white/15 px-3 py-1 text-white/75">{PRODUCT_KIND_LABELS[product.kind]}</span>{product.lifecycle === "listed-discontinued" ? <span className="rounded-full border border-amber-200/30 bg-amber-200/10 px-3 py-1 text-amber-100">제조사 단종 목록</span> : null}</div>
       <p className="mt-5 text-sm text-white/65">{product.brand}</p><h1 className="mt-2 break-words text-2xl font-semibold leading-relaxed tracking-tight sm:text-3xl">{product.name}</h1><p className="mt-4 max-w-3xl text-sm leading-7 text-white/75">{product.description}</p><p className="mt-3 text-xs text-white/55">상품 관리번호 {product.referenceCode}</p>
+      {highlights.length ? <dl className="mt-5 grid max-w-3xl gap-2 sm:grid-cols-3">{highlights.map(({ key, label, value }) => <div key={key} className="rounded-xl border border-white/15 bg-slate-950/25 p-3" data-spec-summary={key}>
+        <dt className="text-xs text-white/70">{label}</dt><dd className="mt-1 break-words font-semibold text-cyan-100">{value}</dd>
+      </div>)}</dl> : null}
       <div className="mt-5 flex flex-wrap gap-3"><Link href={`/contact/write?from=products&product=${product.id}`} className="inline-flex min-h-11 items-center rounded-xl bg-cyan-200 px-4 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-100">상품 정보 수정·추가 요청</Link><Link href="/community/review" className="inline-flex min-h-11 items-center rounded-xl border border-white/20 px-4 py-3 text-sm text-white/80 hover:bg-white/10">사용기 게시판</Link></div>
     </header>
 
@@ -58,7 +63,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
               <div className="mt-4"><PriceAmount item={item} now={now} /></div>
               <div className="mt-4"><PurchaseLink item={item} affiliate={affiliateCodes.has(item.goCode)} /></div>
             </li>)}</ul>
-          </> : <p className="mt-4 text-sm leading-7 text-white/70">가격 확인 중입니다. 동일한 판매 구성·배송비·확인 시각이 검증되면 표시합니다.</p>}
+          </> : <p className="mt-4 text-sm leading-7 text-white/70">이 모델의 등록된 판매처 가격이 없습니다.</p>}
           <Link href={`/prices/${product.category}`} className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">같은 부품의 다른 상품 비교</Link>
         </section>
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">특징·상세 정보</h2>{product.features.length ? <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-white/80">{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul> : <p className="mt-4 text-sm leading-7 text-white/70">추가 사양 자료를 확인하고 있습니다.</p>}
@@ -81,7 +86,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         </section> : null}
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-lg font-semibold">확인 상태</h2><dl className="mt-4 space-y-4 text-sm"><div><dt className="text-white/60">항목 기준</dt><dd className="mt-1">{PRODUCT_KIND_LABELS[product.kind]}</dd></div><div><dt className="text-white/60">국내 판매·보증</dt><dd className="mt-1">{product.domesticState === "listing-observed" ? "판매 표기 확인 · 보증 조건 별도 확인" : "확인 필요"}</dd></div><div><dt className="text-white/60">정확한 제조사 품번</dt><dd className="mt-1">{product.manufacturerPartNumber ?? "확인 필요"}</dd></div><div><dt className="text-white/60">현재 가격·할인·재고</dt><dd className="mt-1">판매처 재확인 필요</dd></div><div><dt className="text-white/60">자료 확인일</dt><dd className="mt-1">{catalogDate(informationCheckedAt)}</dd></div></dl>{product.lifecycle === "listed-current" ? <p className="mt-5 text-xs leading-6 text-white/65">제조사 현행 목록에 포함된 항목입니다. 국내 판매 또는 재고 보유를 뜻하지 않습니다.</p> : null}</section>
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-lg font-semibold">공식 자료·출처</h2><div className="mt-4"><Sources items={product.sources} /></div></section>
-        <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-lg font-semibold">판매처 연결</h2>{product.listings.length ? <><p className="mt-3 text-sm leading-7 text-white/70">확인한 판매 상품의 가격표입니다. 가격 확인일과 옵션을 함께 확인해 주세요.</p><ul className="mt-4 space-y-3">{product.listings.map(listing => <li key={listing.id}><Link href={listing.pricePage} className="inline-flex min-h-11 items-center text-sm text-cyan-200 underline">{listing.merchant} 등록 가격표 보기</Link><p className="break-words text-xs leading-6 text-white/60">{listing.seller}</p></li>)}</ul></> : <p className="mt-3 text-sm leading-7 text-white/70">같은 모델·옵션의 판매처를 확인하고 있습니다. 검증한 구매 링크를 연결하면 가격·배송·혜택 조건을 함께 안내하겠습니다.</p>}</section>
+        {product.listings.length ? <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-lg font-semibold">판매처 연결</h2><p className="mt-3 text-sm leading-7 text-white/70">가격 확인일과 옵션을 함께 확인해 주세요.</p><ul className="mt-4 space-y-3">{product.listings.map(listing => <li key={listing.id}><Link href={listing.pricePage} className="inline-flex min-h-11 items-center text-sm text-cyan-200 underline">{listing.merchant} 등록 가격표 보기</Link><p className="break-words text-xs leading-6 text-white/60">{listing.seller}</p></li>)}</ul></section> : null}
       </aside>
     </div>
   </article>;

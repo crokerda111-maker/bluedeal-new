@@ -37,13 +37,33 @@ await Promise.all(categories.map(async category => {
 }));
 assert.equal(new Set(seen).size, catalog.products.length);
 
-const facetNames = {cpu:['socket','cores','graphics'],motherboard:['socket','chipset','formFactor','memory','wireless'],ram:['memory','capacity','modules','speed','latency'],gpu:['chip','capacity','condition'],ssd:['capacity','interface','formFactor','dram'],hdd:['capacity','formFactor','rpm','recording'],psu:['wattage','formFactor','efficiency','modular','atx'],case:['caseType','boardSupport','gpuLength'],cooler:['coolerType','socket','height','radiator','led'],fullpc:['os','components'],halfpc:['os','components'],bundle:['components']};
+const facetNames = {cpu:['memory','socket','graphics'],motherboard:['socket','chipset','formFactor','memory','wireless'],ram:['memory','capacity','modules','speed','latency'],gpu:['chip','capacity','condition'],ssd:['capacity','interface','formFactor','dram'],hdd:['capacity','formFactor','rpm','recording'],psu:['wattage','formFactor','efficiency','modular','atx'],case:['caseType','boardSupport','gpuLength'],cooler:['coolerType','socket','height','radiator','led'],fullpc:['os','components'],halfpc:['os','components'],bundle:['components']};
 for (const [category,names] of Object.entries(facetNames)) {
   const html = await get(`/prices/${category}`);
   assert.equal((html.match(/aria-label="상품 검색과 필터"/g)||[]).length,1);
   for (const name of names) assert.ok(html.includes(`name="${name}"`),`${category}/${name}`);
   assert.equal(html.includes('name="chipset"'),category==='motherboard');
+  assert.ok(!html.includes('사양 확인 중'),category);
 }
+const cpu = await get('/prices/cpu');
+assert.ok(cpu.indexOf('name="memory"') < cpu.indexOf('name="socket"'));
+assert.ok(!cpu.includes('name="cores"'));
+const memorySelect = cpu.match(/<select name="memory"[^>]*>(.*?)<\/select>/)?.[1]?.replaceAll("<!-- -->", "") ?? "";
+assert.ok(memorySelect.includes('<option value="DDR4">DDR4 (5)</option>'));
+assert.ok(memorySelect.includes('<option value="DDR5">DDR5 (14)</option>'));
+const ddr4 = ids(await get('/prices/cpu?memory=DDR4'));
+assert.equal(ddr4.length, 5);
+assert.ok(ddr4.includes('reviewed-amd-5800x3d-anniversary-retailer'));
+assert.ok(ddr4.includes('reviewed-intel-core-i5-14600k-bulk-cynex'));
+assert.ok(!ddr4.includes('curated-amd-ryzen-7-9800x3d-multipack'));
+const am5 = ids(await get('/prices/cpu?memory=DDR5&socket=AM5'));
+assert.equal(am5.length, 9);
+assert.ok(am5.includes('curated-amd-ryzen-7-9800x3d-multipack'));
+const i7 = await get('/products/intel-core-i7-14700k');
+assert.ok(i7.indexOf('data-spec-summary="memory"') < i7.indexOf('id="product-prices"'));
+assert.match(i7, /DDR4 · DDR5/);
+assert.match(i7, /등록된 판매처 가격이 없습니다/);
+assert.match(i7, /Vmin Shift/);
 const global = await get('/prices?q=PEERLESS%20black');
 assert.ok(ids(global).length>0);
 assert.match(global, /<meta name="robots" content="noindex, nofollow"/);

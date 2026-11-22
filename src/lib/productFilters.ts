@@ -6,9 +6,14 @@ export type Facet = { key: string; label: string; unit?: string; labels?: Record
 const memory = { key: "memory", label: "메모리 규격" };
 const capacity = (label: string): Facet => ({ key: "capacity", label, unit: "capacity" });
 const formFactor = { key: "formFactor", label: "제품 규격" };
+const boardSizes: Record<string, string> = { microatx: "microATX", miniitx: "Mini-ITX", eatx: "E-ATX", atx: "ATX" };
+function boardSize(value: string) {
+  const size = value.match(/^(Micro[- ]?ATX|Mini[- ]?ITX|E[- ]?ATX|ATX)\b/i)?.[1];
+  return size ? boardSizes[size.toLowerCase().replace(/[- ]/g, "")] : undefined;
+}
 export const CATEGORY_FACETS: Record<ProductCategory, Facet[]> = {
-  cpu: [{ key: "socket", label: "CPU 소켓" }, { key: "cores", label: "코어 수", unit: "코어" }, { key: "graphics", label: "내장그래픽", labels: { present: "있음", absent: "없음" } }],
-  motherboard: [{ key: "socket", label: "CPU 소켓" }, { key: "chipset", label: "칩셋" }, formFactor, memory, { key: "wireless", label: "무선랜", labels: { present: "있음", absent: "없음" } }],
+  cpu: [{ key: "memory", label: "지원 메모리" }, { key: "socket", label: "CPU 소켓" }, { key: "graphics", label: "내장그래픽", labels: { present: "있음", absent: "없음" } }],
+  motherboard: [{ key: "socket", label: "CPU 소켓" }, memory, { key: "chipset", label: "칩셋" }, formFactor, { key: "wireless", label: "무선랜", labels: { present: "있음", absent: "없음" } }],
   ram: [memory, capacity("키트 총용량"), { key: "modules", label: "모듈 수", unit: "개" }, { key: "speed", label: "메모리 전송률", unit: "MT/s" }, { key: "latency", label: "CAS 지연", unit: "CL" }],
   gpu: [{ key: "chip", label: "GPU 칩셋" }, capacity("그래픽 메모리")],
   ssd: [capacity("SSD 용량"), { key: "interface", label: "연결 규격" }, formFactor, { key: "dram", label: "DRAM 캐시", labels: { present: "있음", absent: "없음", unknown: "미확인" } }],
@@ -24,6 +29,7 @@ const categories = Object.keys(CATEGORY_FACETS) as ProductCategory[];
 const scalar = (value: string | string[] | undefined) => typeof value === "string" ? value : "";
 export const normalizeProductText = (value: string) => value.normalize("NFKC").toLocaleLowerCase("ko-KR").replace(/\s+/g, " ").trim();
 export const unknownBrand = (value: string) => /확인 필요|확인필요|미확인/.test(value);
+const facetKeys = (category?: ProductCategory) => category ? [...CATEGORY_FACETS[category].map(facet => facet.key), ...(category === "cpu" ? ["cores"] : [])] : [];
 
 export type ProductFilters = {
   q: string; brand: string; lifecycle: string; priceState: string; kind: string;
@@ -32,7 +38,8 @@ export type ProductFilters = {
 export function readProductFilters(query: SearchQuery, category?: ProductCategory): ProductFilters {
   const lifecycle = scalar(query.lifecycle) || scalar(query.catalogLifecycle);
   const rawPage = scalar(query.page) || scalar(query.catalogPage);
-  const facets = Object.fromEntries((category ? CATEGORY_FACETS[category] : []).map(field => [field.key, scalar(query[field.key]).trim().slice(0, 100)]));
+  const facets = Object.fromEntries(facetKeys(category).map(key => [key, scalar(query[key]).trim().slice(0, 100)]));
+  if (category === "motherboard") facets.formFactor = boardSize(facets.formFactor) ?? facets.formFactor;
   return {
     q: (scalar(query.q) || scalar(query.catalogQ)).trim().slice(0, 100), brand: scalar(query.brand).slice(0, 100),
     lifecycle: lifecycle === "exclude-discontinued" ? lifecycle : "",
@@ -59,13 +66,15 @@ export function productFacetValues(product: CatalogProduct, offers: readonly Pri
   const specs = product.specifications;
   const labeled = (...labels: string[]) => specs.filter(s => labels.includes(s.label)).map(s => s.value);
   const number = (value: string) => /^\d+(?:\.\d+)?$/.test(value.trim()) ? value.trim() : undefined;
-  const memorySpec = labeled("메모리 종류", "메모리", "메모리 규격", "속도·타이밍");
+  const memorySpec = labeled("지원 메모리", "메모리 종류", "메모리", "메모리 규격", "속도·타이밍");
   for (const value of memorySpec) for (const match of value.matchAll(/\bDDR[345]\b/g)) add("memory", match[0]);
   for (const value of labeled("CPU 소켓", "지원 소켓", "제조사 안내 기본 지원 소켓")) {
     for (const match of value.matchAll(/AM[45]|LGA\s?\d{4}|소켓\s?(\d{4})/gi)) add("socket", match[1] ? "LGA" + match[1] : match[0].replace(/\s/g, "").toUpperCase());
   }
   for (const value of labeled("칩셋", "세부 칩셋")) add("chipset", value);
-  for (const value of labeled("규격", "폼 팩터", "폼팩터")) add("formFactor", value);
+  for (const value of labeled("규격", "폼 팩터", "폼팩터")) {
+    add("formFactor", (product.category === "motherboard" ? boardSize(value) : undefined) ?? value);
+  }
   for (const value of labeled("코어 수")) add("cores", number(value.replace(/\s*코어$/, "")));
   for (const value of labeled("판매 용량(GB)", "등록 용량(GB)", "판매명 그래픽 메모리(GB)")) add("capacity", number(value));
   for (const value of labeled("판매 총 용량", "제조사 표기 용량")) {
@@ -77,8 +86,14 @@ export function productFacetValues(product: CatalogProduct, offers: readonly Pri
   for (const value of labeled("속도·타이밍")) {
     add("speed", value.match(/DDR[345]-(\d+)/)?.[1]); add("latency", value.match(/\bCL(\d+)\b/)?.[1]);
   }
+  if (product.category === "ram") for (const value of labeled("판매 구성 표기")) {
+    const speed = value.match(/\bDDR[345][- ](\d{4})\b|\b(\d{4})\s*MT\/s\b/i);
+    add("speed", speed?.[1] ?? speed?.[2]);
+    add("latency", value.match(/\bCL(\d+)\b/i)?.[1]);
+  }
   for (const value of labeled("인터페이스", "공식 제품군 인터페이스", "공식 인터페이스·NAND", "공식 폼팩터·인터페이스")) {
     if (/SATA/i.test(value)) add("interface", "SATA");
+    if (/NVMe/i.test(value)) add("interface", "NVMe");
     for (const match of value.matchAll(/PCIe\s?([345])\.0/gi)) add("interface", "PCIe " + match[1] + ".0");
   }
   for (const value of labeled("기록 방식")) add("recording", value);
@@ -155,9 +170,16 @@ export function facetLabel(facet: Facet, value: string) {
   if (facet.unit === "CL") return "CL" + value;
   return value + (facet.unit ? " " + facet.unit : "");
 }
+export function productHighlights(product: CatalogProduct, offers?: readonly PriceItem[]) {
+  const values = productFacetValues(product, offers);
+  return CATEGORY_FACETS[product.category].flatMap(facet => {
+    const labels = values[facet.key]?.map(value => facetLabel(facet, value));
+    return labels?.length ? [{ key: facet.key, label: facet.label, value: labels.join(" · ") }] : [];
+  }).slice(0, 3);
+}
 export function productSearchHref(category: ProductCategory | undefined, query: SearchQuery, page = 1) {
   const params = new URLSearchParams();
-  const keys = ["q", "brand", "lifecycle", "kind", "priceState", "condition", "sort", ...(category ? CATEGORY_FACETS[category].map(f => f.key) : [])];
+  const keys = ["q", "brand", "lifecycle", "kind", "priceState", "condition", "sort", ...facetKeys(category)];
   for (const key of keys) if (typeof query[key] === "string" && query[key]) params.set(key, query[key] as string);
   if (page > 1) params.set("page", String(page));
   return `/prices${category ? "/" + category : ""}${params.size ? "?" + params : ""}`;

@@ -1,0 +1,27 @@
+{
+  "checkedOn": "2026-11-22",
+  "models": [
+    {"ids":["reviewed-asrock-b860m-livemixer-wifi"],"url":"https://asrock.com/MB/Intel/B860M%20LiveMixer%20WiFi/index.asp","socket":"LGA1851","chipset":"Intel B860","memory":"DDR5","slots":4,"size":"microATX","wifi":"Wi-Fi 6E"},
+    {"ids":["reviewed-asus-rog-crosshair-x870e-apex"],"url":"https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-apex/spec/","socket":"AM5","chipset":"AMD X870E","memory":"DDR5","slots":2,"size":"ATX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-asus-rog-maximus-z890-apex"],"url":"https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/spec/","socket":"LGA1851","chipset":"Intel Z890","memory":"DDR5","slots":2,"size":"ATX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-asus-rog-strix-b850-e-gaming-wifi"],"url":"https://rog.asus.com/motherboards/rog-strix/rog-strix-b850-e-gaming-wifi/spec/","socket":"AM5","chipset":"AMD B850","memory":"DDR5","slots":4,"size":"ATX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-asus-rog-strix-b860-g-gaming-wifi"],"url":"https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/spec/","socket":"LGA1851","chipset":"Intel B860","memory":"DDR5","slots":4,"size":"microATX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-asus-rog-strix-x870-i-gaming-wifi"],"url":"https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/","socket":"AM5","chipset":"AMD X870","memory":"DDR5","slots":2,"size":"Mini-ITX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-asus-tuf-b650em-e-wifi"],"url":"https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b650em-e-wifi/techspec/","socket":"AM5","chipset":"AMD B650","memory":"DDR5","slots":4,"size":"microATX","wifi":"Wi-Fi 6"},
+    {"ids":["reviewed-asus-tuf-b850-plus-wifi"],"url":"https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/","socket":"AM5","chipset":"AMD B850","memory":"DDR5","slots":4,"size":"ATX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-asus-tuf-b850-pro-wifi7-w-neo"],"url":"https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/techspec/","socket":"AM5","chipset":"AMD B850","memory":"DDR5","slots":4,"size":"ATX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-asus-tuf-b850m-plus-ii"],"url":"https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850m-plus-ii/techspec/","socket":"AM5","chipset":"AMD B850","memory":"DDR5","slots":4,"size":"microATX","wifi":null},
+    {"ids":["reviewed-asus-tuf-x870-plus-wifi"],"url":"https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_X870-PLUS_WIFI/E24080_TUF_GAMING_X870-PLUS_WIFI_EM_WEB.pdf","socket":"AM5","chipset":"AMD X870","memory":"DDR5","slots":4,"size":"ATX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-asus-tuf-x870e-plus-wifi7"],"url":"https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_X870E-PLUS_WIFI7/E26142_TUF_GAMING_X870E-PLUS_WIFI7_EM_WEB.pdf","socket":"AM5","chipset":"AMD X870E","memory":"DDR5","slots":4,"size":"ATX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-colorful-battle-ax-a520m-k-m2-v14"],"url":"https://www.manualslib.com/manual/4050214/Colorful-Battle-Ax-A520m-K-M-2-V14.html?page=3","socket":"AM4","chipset":"AMD A520","memory":"DDR4","slots":2,"size":"microATX","wifi":null,"manual":true},
+    {"ids":["reviewed-gigabyte-b760m-aorus-elite-d4"],"url":"https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-rev-1x/sp","socket":"LGA1700","chipset":"Intel B760","memory":"DDR4","slots":4,"size":"microATX","wifi":null},
+    {"ids":["reviewed-gigabyte-b760m-aorus-elite-d4-gen5"],"url":"https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-GEN5/sp","socket":"LGA1700","chipset":"Intel B760","memory":"DDR4","slots":4,"size":"microATX","wifi":null},
+    {"ids":["reviewed-gigabyte-b850m-aorus-elite-wifi6e"],"url":"https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-rev-1x/sp","socket":"AM5","chipset":"AMD B850","memory":"DDR5","slots":4,"size":"microATX","wifi":"Wi-Fi 6E"},
+    {"ids":["reviewed-gigabyte-b850m-aorus-elite-wifi6e-ice"],"url":"https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp","socket":"AM5","chipset":"AMD B850","memory":"DDR5","slots":4,"size":"microATX","wifi":"Wi-Fi 6E"},
+    {"ids":["reviewed-gigabyte-b850m-force"],"url":"https://www.gigabyte.com/Motherboard/B850M-FORCE-rev-10/sp","socket":"AM5","chipset":"AMD B850","memory":"DDR5","slots":2,"size":"microATX","wifi":null},
+    {"ids":["reviewed-gigabyte-b850m-force-v2"],"url":"https://www.gigabyte.com/latam/Motherboard/B850M-FORCE-V2/sp","socket":"AM5","chipset":"AMD B850","memory":"DDR5","slots":2,"size":"microATX","wifi":null},
+    {"ids":["reviewed-gigabyte-x870-aorus-elite-wifi7-ice"],"url":"https://www.gigabyte.com/Motherboard/X870-AORUS-ELITE-WIFI7-ICE-rev-10-11/sp","socket":"AM5","chipset":"AMD X870","memory":"DDR5","slots":4,"size":"ATX","wifi":"Wi-Fi 7"},
+    {"ids":["reviewed-mixed-motherboard-himart-0054257890"],"url":"https://www.msi.com/Motherboard/PRO-B760M-A-DDR4-II/Specification","socket":"LGA1700","chipset":"Intel B760","memory":"DDR4","slots":4,"size":"microATX","wifi":null},
+    {"ids":["reviewed-nzxt-n7-b850-black","reviewed-nzxt-n7-b850-white"],"url":"https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs","socket":"AM5","chipset":"AMD B850","memory":"DDR5","slots":4,"size":"ATX","wifi":"Wi-Fi 6E"}
+  ]
+}

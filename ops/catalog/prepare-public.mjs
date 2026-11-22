@@ -3,6 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { applyDistributorReview, linkDistributorOffers } from './distributor-review.mjs';
+import { reviewBoardSpecifications, reviewCpuSpecifications, reviewModelSpecifications } from './reviewed-specifications.mjs';
 import { PART_DOSSIERS } from '../../src/content/partDossiers.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -34,6 +35,20 @@ const distributor = JSON.parse(await fs.readFile(path.join(root, 'src/content/pr
 base.products = applyDistributorReview(base.products, distributor);
 const retail = JSON.parse(await fs.readFile(path.join(root, 'src/content/products/distributor-retail-reviewed.json'), 'utf8'));
 base.products = applyDistributorReview(base.products, retail);
+const [cpuSpecs, boardSpecs, modelSpecs] = await Promise.all(['cpu-specifications.json', 'motherboard-specifications.json', 'model-specifications.json'].map(file =>
+  fs.readFile(path.join(root, 'src/content/products', file), 'utf8').then(JSON.parse)));
+const enrichments = [...reviewCpuSpecifications(cpuSpecs), ...reviewBoardSpecifications(boardSpecs, base.products), ...reviewModelSpecifications(modelSpecs)];
+const enrichedIds = new Set(enrichments.map(specification => specification.id));
+base.products = applyDistributorReview(base.products, {
+  schemaVersion: 1,
+  enrichments,
+  additions: [],
+});
+for (const product of base.products) {
+  if (enrichedIds.has(product.id)) {
+    product.sources = [...new Map(product.sources.map(source => [source.url, source])).values()];
+  }
+}
 const retailPrices = await Promise.all(['ram','cpu','ssd','motherboard','gpu','cooler','psu','case','hdd','halfpc','fullpc','bundle'].map(key => fs.readFile(path.join(root,'src/content/prices',key+'.json'),'utf8').then(JSON.parse)));
 base.products = linkDistributorOffers(base.products, retail.links, retailPrices);
 base.products.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name, 'ko'));
