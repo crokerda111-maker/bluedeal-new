@@ -41,7 +41,7 @@ class ReviewedSystems(unittest.TestCase):
         self.assertIn('제주20,000원',ordinary['shippingNote'])
         self.assertTrue(all(r['availability']=='unknown' for r in items))
         eleven={p['id']:(p['price'],p['couponPrice']) for p in items if p['source']=='11번가'}
-        self.assertEqual(eleven,{'reviewed-fullpc-11st-8148462758-offer':(4500000,4320000),'reviewed-fullpc-11st-3165988782-offer':(6394800,6138920),'reviewed-fullpc-11st-9450696630-offer':(6099000,5855040),'reviewed-fullpc-11st-9480175624-offer':(4399000,4223040),'reviewed-fullpc-11st-8813146141-offer':(4579430,4396260),'reviewed-fullpc-11st-9423305936-offer':(3348710,3214770)})
+        self.assertEqual(eleven,{'reviewed-fullpc-11st-8148462758-offer':(4500000,4320000),'reviewed-fullpc-11st-3165988782-offer':(6394800,6138920),'reviewed-fullpc-11st-9450696630-offer':(6099000,5855040),'reviewed-fullpc-11st-9480175624-offer':(4399000,4223040),'reviewed-fullpc-11st-8813146141-offer':(4579430,4396260),'reviewed-fullpc-11st-9423305936-offer':(3348710,3214770),'reviewed-fullpc-11st-9566586450-offer':(3196510,3068650)})
         self.assertFalse(any(token in p['id'] for p in items for token in ['8564907426','8564950916']))
 
     def test_conditional_unit_total_must_match_its_own_kind_and_source(self):

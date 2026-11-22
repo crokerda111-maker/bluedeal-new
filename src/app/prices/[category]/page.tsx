@@ -25,6 +25,7 @@ import mixedReviewSummary from "../../../content/mixedReviewSummary.json";
 import hddReviewSummary from "../../../content/hddReviewSummary.json";
 import pcOptionReviewSummary from "../../../content/pcOptionReviewSummary.json";
 import halfpcOptionReviewSummary from "../../../content/halfpcOptionReviewSummary.json";
+import pcFollowupReviewSummary from "../../../content/pcFollowupReviewSummary.json";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -187,6 +188,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
       {category.key === "ram" ? <p className="text-sm leading-relaxed text-white/70">원문에서 복구한 판매주소 {mixedReviewSummary.recoveredRamPosts}건을 추가 확인해 이 표에는 가격 기록 총 {data.items.length}건을 제공합니다. CL28·CL30과 화이트·다른 색상은 별도 구성으로 구분합니다.</p> : null}
       {category.key === "hdd" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{hddReviewSummary.reviewedOn} KST 기준, SSD 분류에서 분리한 HDD·NAS 후보 {hddReviewSummary.reviewedPosts}건을 검토했습니다. WD 공식 데이터시트의 품번별 표를 대조한 HDD {hddReviewSummary.manufacturerModels}개를 등록했으며 현재 구매가 기록은 {data.items.length}건입니다. NAS 본체·다개입 패키지·검색 대표 상품의 금액을 HDD 단품 가격으로 사용하지 않았습니다. 기존 접근 제한 {hddReviewSummary.restrictedPosts}건은 재시도하지 않았고 국내 판매·배송·할인·유통사 보증은 추가 확인이 필요합니다.</p> : null}
       {category.key === "fullpc" ? <p className="text-sm leading-relaxed text-white/70">선택형 판매번호 {pcOptionReviewSummary.reviewedMerchantPages}개를 후속 확인해 기본 선택·수량1 가격 {pcOptionReviewSummary.verifiedQuotes}건을 추가했습니다. 기본 RAM·SSD 옵션이 품절인 {pcOptionReviewSummary.defaultOptionUnavailable}건은 현재 구매가에 넣지 않았습니다. 선택한 부품명·OS 포함 범위는 각 상품에서 확인하세요. ‘변경없음’ 표기만으로 정확한 부품 품번을 확정하지 않습니다.</p> : null}
+      {category.key === "fullpc" ? <p className="text-sm leading-relaxed text-white/70">{pcFollowupReviewSummary.reviewedOn} KST에 남은 수량 합계 미확인 판매처 {pcFollowupReviewSummary.reviewedMerchantPages}건을 추가 검토해 선택 색상·수량1 쿠폰 합계 {pcFollowupReviewSummary.verifiedQuotes}건을 연결했습니다. 판매처 부품표 {pcFollowupReviewSummary.sellerComponentRows}종을 확인한 {pcFollowupReviewSummary.pendingMerchantIdentity}건은 판매 주체·OS·보증 추가 확인이 남아 새 구매가를 등록하지 않았습니다. <Link href="/products/reviewed-mixed-fullpc-himart-0058108391" className="text-cyan-200 underline underline-offset-4">부품표와 남은 확인사항 보기 →</Link></p> : null}
       {data.items.length ? <PriceFilterForm category={category.key} items={data.items} filters={filters} /> : null}
       <p className="text-sm text-white/70">전체 {data.items.length}개 중 <b className="text-white">{items.length}개</b> 표시 · 배송비 미확인 상품은 포함 금액 정렬에서 뒤에 표시하며, 품절 상품의 이전 기록은 모든 정렬에서 마지막에 표시합니다.</p>
       <p className="text-xs leading-relaxed text-white/65">같은 모델도 판매처별로 별도 집계합니다. 색상·구성·유통사·보증 조건을 함께 확인해 비교하세요.</p>

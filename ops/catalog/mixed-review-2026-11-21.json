@@ -817,7 +817,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "OS 포함·정확한 부품 품번 추가 확인"
+        "판매처 부품표8종 확인 · 판매 주체·OS·보증 추가 확인"
       ],
       "specifications": [
         {
@@ -827,13 +827,49 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "판매처 부품표 · CPU",
+          "value": "AMD Ryzen 7 9800X3D · 국내 정품은 판매처 표기이며 독립 유통사 확인 전"
+        },
+        {
+          "label": "판매처 부품표 · 메인보드",
+          "value": "GIGABYTE X870 AORUS ELITE WIFI7"
+        },
+        {
+          "label": "판매처 부품표 · 그래픽카드",
+          "value": "PALIT GeForce RTX 5080 GAMINGPRO D7 16GB"
+        },
+        {
+          "label": "판매처 부품표 · 메모리",
+          "value": "Micron Crucial DDR5 5600 CL46 Pro 히트싱크 32GB(16GB×2)"
+        },
+        {
+          "label": "판매처 부품표 · SSD",
+          "value": "ADATA LEGEND 960 M.2 NVMe 1TB"
+        },
+        {
+          "label": "판매처 부품표 · CPU쿨러",
+          "value": "Thermalright AQUA ELITE 360 ARGB V3 Black 벌크"
+        },
+        {
+          "label": "판매처 부품표 · 파워",
+          "value": "SuperFlower SF-850F14GE LEADEX III GOLD UP ATX3.1"
+        },
+        {
+          "label": "판매처 부품표 · 케이스",
+          "value": "DarkFlash DRX90 MESH RGB 강화유리"
+        },
+        {
+          "label": "판매처 모델명",
+          "value": "AX98-FX580ZA"
         }
       ],
-      "description": "실제 판매 페이지에서 제목·구성·상태를 확인한 상품입니다. 판매처 표기와 독립 사양 검증을 구분하며 확인되지 않은 할인·보증·품질 점수를 채우지 않습니다.",
+      "description": "판매처 상세 이미지에서 부품8종 표기와 판매 모델명을 대조한 PC입니다. 판매 주체·OS·보증·개별 부품 구매가를 추가 확인해야 하며 현재 가격표에는 새 구매가를 등록하지 않았습니다.",
       "notes": [
-        "상품가·총합계5593000 및 무료배송 표시는 확인했으나 구매수량 값을 확인하지 못해 현재 가격표 미등록. 제주/도서산간4000원 추가. 최대혜택5181140의 대상·기간·중복 미확인. 정확한 전체 부품·OS·보증 추가 확인.",
         "판매 페이지의 제목·상태와 관측한 구성만 반영했습니다. 과거 핫딜의 모델·옵션·가격·행사를 현재 조건으로 승계하지 않았습니다. 판매처 품절·종료는 모델 전체 단종을 뜻하지 않습니다.",
-        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다."
+        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다.",
+        "구매 전 구성 선택 창에서 수량1·총 합계5,593,000원을 시각 대조했고 상세 이미지의 부품8종 표기를 읽었습니다. 필수 고시의 제조사 PERFLAB·모델 AX98-FX580ZA를 대조했지만 판매 주체의 정확한 상호와 OS·실제 보증 조건이 확인되지 않아 가격표에 새 구매가를 등록하지 않습니다. 최대 혜택가5,181,140원의 쿠폰·결제수단 중복·한도·대상을 확인하지 않아 차감하지 않았습니다. 장바구니·바로구매·쿠폰 발급·상담 신청은 실행하지 않았습니다. 부품표는 판매처 표기이며 공식 사양·현재 동일 부품 개별 구매가·이득률·품질 점수와 구분합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -844,6 +880,18 @@
           "url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0058108391",
           "observedAt": "2026-11-21T09:40:43.841Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "수량1 표시 합계·판매자 고시·부품표 후속 확인",
+          "url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0058108391",
+          "observedAt": "2026-11-22T00:54:33.400Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "판매 상세 부품표 이미지 · 26.11.18 17:36 스펙 표기",
+          "url": "https://static1.e-himart.co.kr/app/goods/getGoodsDescContMob?goodsNo=0058108391&stonType=PC/pagedesk/mxt/resource/JFQnAUyUDELhsKIYflzhLtEaaOIIVKNJOcaxCOJIkO68Yx-49PEkKGeaGnP45MuCq9sQFhp9h-XVHpSTP6vrwfMkt6AhzrX~vWx4e7CwQG8_/dims/crop/0x1200+0+1200/optimize",
+          "observedAt": "2026-11-22T00:57:26.600Z",
+          "kind": "retailer-component-table"
         }
       ],
       "listObservedAt": null,
@@ -1680,8 +1728,8 @@
       "category": "fullpc",
       "originalCategory": "bundle",
       "disposition": "완본체 판매 구성",
-      "outcome": "현재 구매가 미등록 · 상태/옵션 추가 확인",
-      "reason": "상품가·총합계5593000 및 무료배송 표시는 확인했으나 구매수량 값을 확인하지 못해 현재 가격표 미등록. 제주/도서산간4000원 추가. 최대혜택5181140의 대상·기간·중복 미확인. 정확한 전체 부품·OS·보증 추가 확인.",
+      "outcome": "부품표8종·수량1 합계 관측 · 판매 주체 미확인",
+      "reason": "구매 전 구성 선택 창에서 수량1·총 합계5,593,000원을 시각 대조했고 상세 이미지의 부품8종 표기를 읽었습니다. 필수 고시의 제조사 PERFLAB·모델 AX98-FX580ZA를 대조했지만 판매 주체의 정확한 상호와 OS·실제 보증 조건이 확인되지 않아 가격표에 새 구매가를 등록하지 않습니다. 최대 혜택가5,181,140원의 쿠폰·결제수단 중복·한도·대상을 확인하지 않아 차감하지 않았습니다. 장바구니·바로구매·쿠폰 발급·상담 신청은 실행하지 않았습니다. 부품표는 판매처 표기이며 공식 사양·현재 동일 부품 개별 구매가·이득률·품질 점수와 구분합니다.",
       "modelIds": [
         "reviewed-mixed-fullpc-himart-0058108391"
       ],
@@ -1692,6 +1740,12 @@
           "source": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0058108391",
           "observedAt": "2026-11-21T09:40:43.841Z",
           "status": "unit-total-not-verified",
+          "identityVerified": true
+        },
+        {
+          "source": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0058108391",
+          "observedAt": "2026-11-22T00:54:33.400Z",
+          "status": "unit-quote-seller-unconfirmed",
           "identityVerified": true
         }
       ],
@@ -1828,11 +1882,12 @@
   "counts": {
     "기존 접근 제한 · 재시도 없음": 1,
     "현재 수량1 금액·배송 확인": 6,
-    "현재 구매가 미등록 · 상태/옵션 추가 확인": 13,
+    "현재 구매가 미등록 · 상태/옵션 추가 확인": 12,
     "개별 판매 상품 식별자 누락": 1,
     "후속 기본 선택·수량1 가격 확인": 6,
     "기본 선택 옵션 품절 · 현재 구매가 미등록": 1,
-    "상품 식별 불충분 · 현재 구매가 미등록": 3
+    "상품 식별 불충분 · 현재 구매가 미등록": 3,
+    "부품표8종·수량1 합계 관측 · 판매 주체 미확인": 1
   },
   "newPriceOffers": 8
 }

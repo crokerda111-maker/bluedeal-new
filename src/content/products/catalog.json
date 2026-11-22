@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "7a31d30d404f5908264bfa69329d650b74f99e8b02983dce4193c15dd2721f65",
+  "catalogHash": "75a6128831b37d359fbfba1a2a124fd4b8a7e072f004641584ecdc5aa56be4bf",
   "entries": 620,
   "products": [
     {
@@ -14132,7 +14132,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "전체 부품 모델·개별 구매가 추가 확인"
+        "블랙 선택·수량1 쿠폰 합계 확인"
       ],
       "specifications": [
         {
@@ -14142,13 +14142,17 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "확인한 선택 · 색상",
+          "value": "블랙"
         }
       ],
       "description": "실제 판매 페이지에서 PC 제목과 기본 구성·판매 상태를 확인했습니다. 쿠폰이 표시되는 금액은 적용 조건 확인이 필요한 조건부 금액으로 구분하며 전체 부품 등급·조립 대비 이득률은 추가 검증이 필요합니다.",
       "notes": [
         "판매 제목과 판매번호 기준 구성입니다. 정확한 CPU·GPU 품번·메인보드·SSD·파워·메모리 모듈 수·쿨러·케이스·OS 라이선스·국내 보증을 모두 대조한 것은 아닙니다. 과거 글의 모델·용량·행사·카드 혜택을 현재 조건으로 승계하지 않습니다.",
         "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다.",
-        "페이지 로딩과 기본 구성 수량1 합계 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다. 현재상단금액3068650원은필수옵션선택·수량1합계를확인하지못해가격표미등록. 제주/도서산간요금은기본무료와별도."
+        "필수 색상 블랙을 선택해 수량1·총1개 합계와 자동 쿠폰을 대조했습니다. 추가구성품은 선택하지 않았습니다. 화면 수량1·총1개 합계를 관측했습니다. 해당 합계에는 쿠폰 자동적용이 표시되어 일반 판매가·누구나 적용 가능한 금액으로 확정하지 않습니다. 쿠폰명·대상·최소액·한도·발급/사용 기간·중복·예산은 추가 확인 필요. 정확한 전체 부품 모델·GPU VRAM·메모리 모듈 수·OS 라이선스·국내 보증을 대조하기 전 품질·조립 대비 이득률을 산정하지 않습니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -14159,6 +14163,12 @@
           "url": "https://www.11st.co.kr/products/9566586450",
           "observedAt": "2026-11-21T09:15:54.547Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "선택 색상·수량1 자동쿠폰 합계 후속 확인",
+          "url": "https://www.11st.co.kr/products/9566586450",
+          "observedAt": "2026-11-22T00:53:02.517Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -14166,7 +14176,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": [],
+      "listings": [
+        {
+          "id": "reviewed-fullpc-11st-9566586450-offer",
+          "merchant": "11번가",
+          "seller": "한성컴퓨터 · (주)한성",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-11st-9566586450-offer"
+        }
+      ],
       "referenceCode": "BD-E4A5DC565D"
     },
     {
@@ -17583,7 +17600,7 @@
       "kind": "retailer-reviewed-model",
       "features": [
         "완본체 판매 구성",
-        "OS 포함·정확한 부품 품번 추가 확인"
+        "판매처 부품표8종 확인 · 판매 주체·OS·보증 추가 확인"
       ],
       "specifications": [
         {
@@ -17593,13 +17610,49 @@
         {
           "label": "정확한 전체 부품 목록(BOM)",
           "value": "추가 확인 필요"
+        },
+        {
+          "label": "판매처 부품표 · CPU",
+          "value": "AMD Ryzen 7 9800X3D · 국내 정품은 판매처 표기이며 독립 유통사 확인 전"
+        },
+        {
+          "label": "판매처 부품표 · 메인보드",
+          "value": "GIGABYTE X870 AORUS ELITE WIFI7"
+        },
+        {
+          "label": "판매처 부품표 · 그래픽카드",
+          "value": "PALIT GeForce RTX 5080 GAMINGPRO D7 16GB"
+        },
+        {
+          "label": "판매처 부품표 · 메모리",
+          "value": "Micron Crucial DDR5 5600 CL46 Pro 히트싱크 32GB(16GB×2)"
+        },
+        {
+          "label": "판매처 부품표 · SSD",
+          "value": "ADATA LEGEND 960 M.2 NVMe 1TB"
+        },
+        {
+          "label": "판매처 부품표 · CPU쿨러",
+          "value": "Thermalright AQUA ELITE 360 ARGB V3 Black 벌크"
+        },
+        {
+          "label": "판매처 부품표 · 파워",
+          "value": "SuperFlower SF-850F14GE LEADEX III GOLD UP ATX3.1"
+        },
+        {
+          "label": "판매처 부품표 · 케이스",
+          "value": "DarkFlash DRX90 MESH RGB 강화유리"
+        },
+        {
+          "label": "판매처 모델명",
+          "value": "AX98-FX580ZA"
         }
       ],
-      "description": "실제 판매 페이지에서 제목·구성·상태를 확인한 상품입니다. 판매처 표기와 독립 사양 검증을 구분하며 확인되지 않은 할인·보증·품질 점수를 채우지 않습니다.",
+      "description": "판매처 상세 이미지에서 부품8종 표기와 판매 모델명을 대조한 PC입니다. 판매 주체·OS·보증·개별 부품 구매가를 추가 확인해야 하며 현재 가격표에는 새 구매가를 등록하지 않았습니다.",
       "notes": [
-        "상품가·총합계5593000 및 무료배송 표시는 확인했으나 구매수량 값을 확인하지 못해 현재 가격표 미등록. 제주/도서산간4000원 추가. 최대혜택5181140의 대상·기간·중복 미확인. 정확한 전체 부품·OS·보증 추가 확인.",
         "판매 페이지의 제목·상태와 관측한 구성만 반영했습니다. 과거 핫딜의 모델·옵션·가격·행사를 현재 조건으로 승계하지 않았습니다. 판매처 품절·종료는 모델 전체 단종을 뜻하지 않습니다.",
-        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다."
+        "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다.",
+        "구매 전 구성 선택 창에서 수량1·총 합계5,593,000원을 시각 대조했고 상세 이미지의 부품8종 표기를 읽었습니다. 필수 고시의 제조사 PERFLAB·모델 AX98-FX580ZA를 대조했지만 판매 주체의 정확한 상호와 OS·실제 보증 조건이 확인되지 않아 가격표에 새 구매가를 등록하지 않습니다. 최대 혜택가5,181,140원의 쿠폰·결제수단 중복·한도·대상을 확인하지 않아 차감하지 않았습니다. 장바구니·바로구매·쿠폰 발급·상담 신청은 실행하지 않았습니다. 부품표는 판매처 표기이며 공식 사양·현재 동일 부품 개별 구매가·이득률·품질 점수와 구분합니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -17610,6 +17663,18 @@
           "url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0058108391",
           "observedAt": "2026-11-21T09:40:43.841Z",
           "kind": "retailer-availability"
+        },
+        {
+          "label": "수량1 표시 합계·판매자 고시·부품표 후속 확인",
+          "url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0058108391",
+          "observedAt": "2026-11-22T00:54:33.400Z",
+          "kind": "retailer-availability"
+        },
+        {
+          "label": "판매 상세 부품표 이미지 · 26.11.18 17:36 스펙 표기",
+          "url": "https://static1.e-himart.co.kr/app/goods/getGoodsDescContMob?goodsNo=0058108391&stonType=PC/pagedesk/mxt/resource/JFQnAUyUDELhsKIYflzhLtEaaOIIVKNJOcaxCOJIkO68Yx-49PEkKGeaGnP45MuCq9sQFhp9h-XVHpSTP6vrwfMkt6AhzrX~vWx4e7CwQG8_/dims/crop/0x1200+0+1200/optimize",
+          "observedAt": "2026-11-22T00:57:26.600Z",
+          "kind": "retailer-component-table"
         }
       ],
       "listObservedAt": null,

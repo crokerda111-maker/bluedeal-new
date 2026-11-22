@@ -49,4 +49,28 @@ class PcSelectedOptions(unittest.TestCase):
         for change in [dict(optionSelectionVerified=False),dict(selectedOptions=[]),dict(selectedOptions=[{}]),dict(selectedOptions=[dict(field='RAM',value='')]),dict(selectedOptions=[*row['selectedOptions'],*row['selectedOptions']])]:
             with self.assertRaises(ValueError):validate_offers([dict(row,**change)],models,now)
 
+    def test_selected_black_coupon_total_keeps_its_before_price_and_conditions(self):
+        review=read('ops/catalog/pc-followup-review-2026-11-22.json')
+        quoted=next(c for c in review['checks'] if c['verifiedListingIds'])
+        item=next(i for i in read('src/content/prices/fullpc.json')['items'] if i['id']==quoted['verifiedListingIds'][0])
+        self.assertEqual((item['price'],item['couponPrice']),(3196510,3068650))
+        self.assertEqual(item['price']-item['couponPrice'],quoted['couponAmount'])
+        self.assertEqual(quoted['selectedOptions'],[dict(field='색상선택',value='블랙')])
+        self.assertIn('색상선택: 블랙',item['spec'])
+        self.assertFalse(quoted['couponConditionsVerified'])
+        self.assertIn('추가 확인',item['couponNote'])
+
+    def test_seller_component_table_does_not_become_a_verified_quote_or_quality_score(self):
+        review=read('ops/catalog/pc-followup-review-2026-11-22.json')
+        pending=next(c for c in review['checks'] if not c['verifiedListingIds'])
+        product=next(p for p in read('src/content/products/catalog.json')['products'] if p['id']==pending['productId'])
+        self.assertTrue(pending['quantityOneVerified']);self.assertFalse(pending['sellerVerified'])
+        self.assertEqual(pending['unitTotalObserved'],5593000)
+        self.assertEqual((product['listings'],product['strengths'],product['issues'],product['reviewSummary']),([],[],[],None))
+        self.assertEqual(len(pending['sellerComponentSpecifications']),8)
+        for spec in pending['sellerComponentSpecifications']:self.assertIn(spec,product['specifications'])
+        self.assertTrue(any(s['url']==pending['componentTableSource'] and s['kind']=='retailer-component-table' for s in product['sources']))
+        self.assertIn('OS 포함 범위·라이선스',pending['unconfirmedFields'])
+        self.assertFalse(any('0058108391' in p['id'] for p in read('src/content/prices/fullpc.json')['items']))
+
 if __name__=='__main__':unittest.main()

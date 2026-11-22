@@ -1,0 +1,84 @@
+{
+  "reviewedOn": "2026-11-22",
+  "reviewedMerchantPages": 2,
+  "verifiedQuotes": 1,
+  "pendingMerchantIdentity": 1,
+  "sellerComponentRows": 8,
+  "scope": "남은 수량 합계 미확인 PC2건 후속 검토. 전체 BOM·보증·개별 부품 가격·독립 품질 평가 완료 아님.",
+  "checks": [
+    {
+      "productId": "reviewed-fullpc-11st-9566586450",
+      "source": "https://www.11st.co.kr/products/9566586450",
+      "observedAt": "2026-11-22T00:53:02.517Z",
+      "status": "automatic-coupon-quote",
+      "verifiedListingIds": [
+        "reviewed-fullpc-11st-9566586450-offer"
+      ],
+      "selectedOptions": [
+        {
+          "field": "색상선택",
+          "value": "블랙"
+        }
+      ],
+      "optionalAddonsSelected": false,
+      "couponBefore": 3196510,
+      "couponAfter": 3068650,
+      "couponAmount": 127860,
+      "couponConditionsVerified": false
+    },
+    {
+      "productId": "reviewed-mixed-fullpc-himart-0058108391",
+      "source": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0058108391",
+      "observedAt": "2026-11-22T00:54:33.400Z",
+      "status": "unit-quote-seller-unconfirmed",
+      "verifiedListingIds": [],
+      "sellerVerified": false,
+      "unitTotalObserved": 5593000,
+      "quantityOneVerified": true,
+      "componentTableSource": "https://static1.e-himart.co.kr/app/goods/getGoodsDescContMob?goodsNo=0058108391&stonType=PC/pagedesk/mxt/resource/JFQnAUyUDELhsKIYflzhLtEaaOIIVKNJOcaxCOJIkO68Yx-49PEkKGeaGnP45MuCq9sQFhp9h-XVHpSTP6vrwfMkt6AhzrX~vWx4e7CwQG8_/dims/crop/0x1200+0+1200/optimize",
+      "componentTableObservedAt": "2026-11-22T00:57:26.600Z",
+      "componentTableLabel": "판매처 이미지 최종 스펙 업데이트 26.11.18 17:36",
+      "sellerComponentSpecifications": [
+        {
+          "label": "판매처 부품표 · CPU",
+          "value": "AMD Ryzen 7 9800X3D · 국내 정품은 판매처 표기이며 독립 유통사 확인 전"
+        },
+        {
+          "label": "판매처 부품표 · 메인보드",
+          "value": "GIGABYTE X870 AORUS ELITE WIFI7"
+        },
+        {
+          "label": "판매처 부품표 · 그래픽카드",
+          "value": "PALIT GeForce RTX 5080 GAMINGPRO D7 16GB"
+        },
+        {
+          "label": "판매처 부품표 · 메모리",
+          "value": "Micron Crucial DDR5 5600 CL46 Pro 히트싱크 32GB(16GB×2)"
+        },
+        {
+          "label": "판매처 부품표 · SSD",
+          "value": "ADATA LEGEND 960 M.2 NVMe 1TB"
+        },
+        {
+          "label": "판매처 부품표 · CPU쿨러",
+          "value": "Thermalright AQUA ELITE 360 ARGB V3 Black 벌크"
+        },
+        {
+          "label": "판매처 부품표 · 파워",
+          "value": "SuperFlower SF-850F14GE LEADEX III GOLD UP ATX3.1"
+        },
+        {
+          "label": "판매처 부품표 · 케이스",
+          "value": "DarkFlash DRX90 MESH RGB 강화유리"
+        }
+      ],
+      "unconfirmedFields": [
+        "판매 주체의 정확한 상호",
+        "OS 포함 범위·라이선스",
+        "시스템 및 부품별 국내 보증",
+        "독립 사양·리비전 대조",
+        "동일 조건의 개별 부품 구매가"
+      ]
+    }
+  ]
+}
