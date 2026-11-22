@@ -20,7 +20,7 @@ export const CATEGORY_FACETS: Record<ProductCategory, Facet[]> = {
   hdd: [capacity("HDD 용량"), formFactor, { key: "rpm", label: "회전 속도", unit: "rpm" }, { key: "recording", label: "기록 방식" }],
   psu: [{ key: "wattage", label: "정격·목록 출력", unit: "W" }, formFactor, { key: "efficiency", label: "효율 인증" }, { key: "modular", label: "케이블 방식" }, { key: "atx", label: "ATX 전원 규격" }],
   case: [{ key: "caseType", label: "케이스 종류" }, { key: "boardSupport", label: "지원 메인보드" }, { key: "gpuLength", label: "GPU 장착 길이", unit: "mm" }],
-  cooler: [{ key: "coolerType", label: "쿨러 종류", labels: { "cpu-air-cooler": "CPU 공랭", "cpu-liquid-cooler": "CPU 수랭", "case-fan": "시스템 팬", "ssd-heatsink": "SSD 방열판", "ram-cooler": "RAM 쿨러" } }, { key: "socket", label: "지원 소켓" }, { key: "height", label: "공랭 높이", unit: "mm" }, { key: "radiator", label: "라디에이터", unit: "mm" }, { key: "led", label: "조명", labels: { present: "RGB·ARGB 표기", absent: "없음 표기" } }],
+  cooler: [{ key: "coolerType", label: "쿨러 종류", labels: { "cpu-air-cooler": "CPU 공랭", "cpu-liquid-cooler": "CPU 수랭", "case-fan": "시스템 팬", "ssd-heatsink": "SSD 방열판", "ram-cooler": "RAM 쿨러" } }, { key: "socket", label: "지원 소켓" }, { key: "radiator", label: "라디에이터", unit: "mm" }, { key: "height", label: "공랭 장착 높이", unit: "mm" }, { key: "heatsinkHeight", label: "방열판 높이", unit: "mm" }, { key: "led", label: "조명", labels: { present: "RGB·ARGB 표기", absent: "없음 표기" } }],
   fullpc: [{ key: "os", label: "OS 판매 표기", labels: { "not-included": "미포함·프리도스", "windows-listed": "Windows 표기·라이선스 별도 확인" } }, { key: "components", label: "부품 구성 확인", labels: { table: "부품표 있음", partial: "일부 선택 확인", unconfirmed: "구성표 확인 전" } }],
   halfpc: [{ key: "os", label: "OS 판매 표기", labels: { "not-included": "미포함·프리도스", "windows-listed": "Windows 표기·라이선스 별도 확인" } }, { key: "components", label: "부품 구성 확인", labels: { table: "부품표 있음", partial: "일부 선택 확인", unconfirmed: "구성표 확인 전" } }],
   bundle: [{ key: "components", label: "포함 구성 확인", labels: { table: "부품표 있음", partial: "일부 선택 확인", unconfirmed: "구성표 확인 전" } }],
@@ -111,7 +111,7 @@ export function productFacetValues(product: CatalogProduct, offers: readonly Pri
   if (product.category === "cooler") {
     add("coolerType", product.subtype);
     for (const value of labeled("목록 LED")) {
-      if (/^(없음|NO|NONE|NON.?RGB)$/i.test(value)) add("led", "absent");
+      if (/^(없음|NO|NONE|NON[- ]?(?:RGB|LED))$/i.test(value)) add("led", "absent");
       else if (/RGB/i.test(value)) add("led", "present");
     }
   }

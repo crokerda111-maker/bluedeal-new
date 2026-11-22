@@ -49,6 +49,17 @@ for (const product of base.products) {
     product.sources = [...new Map(product.sources.map(source => [source.url, source])).values()];
   }
 }
+for (const filename of ['component-specifications-reviewed.json', 'component-specifications-manufacturer.json']) {
+  const doc = JSON.parse(await fs.readFile(path.join(root, 'src/content/products', filename), 'utf8'));
+  const additions = reviewModelSpecifications(doc);
+  base.products = applyDistributorReview(base.products, { schemaVersion: 1, enrichments: additions, additions: [] });
+  const updated = new Set(additions.map(row => row.id));
+  for (const product of base.products) {
+    if (updated.has(product.id)) {
+      product.sources = [...new Map(product.sources.map(source => [source.url, source])).values()];
+    }
+  }
+}
 const retailPrices = await Promise.all(['ram','cpu','ssd','motherboard','gpu','cooler','psu','case','hdd','halfpc','fullpc','bundle'].map(key => fs.readFile(path.join(root,'src/content/prices',key+'.json'),'utf8').then(JSON.parse)));
 base.products = linkDistributorOffers(base.products, retail.links, retailPrices);
 base.products.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name, 'ko'));

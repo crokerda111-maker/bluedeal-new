@@ -36,6 +36,21 @@ test('all registered CPUs and boards have model-specific socket and memory detai
   assert.deepEqual(productFacetValues(kf).graphics,['absent']);
   assert.ok(matchesProduct(kf,[],readProductFilters({cores:'14'},'cpu')));
 });
+test('documented case clearances and exact PSU wattage appear in catalog filters',()=>{
+  const get=id=>products.find(product=>product.id===id);
+  const whiteG10=get('distributor-seorin-1000009068');
+  assert.deepEqual(productFacetValues(whiteG10).gpuLength,['420']);
+  assert.ok(productFacetValues(whiteG10).boardSupport.includes('ATX'));
+  assert.ok(whiteG10.specifications.some(s=>s.label==='최대 CPU 쿨러 높이'&&s.value==='182 mm'));
+  const b12=get('maker-seasonic-psu-bf40f678a1b53ee6');
+  const facts=productFacetValues(b12);
+  assert.deepEqual(facts.wattage,['550']);
+  assert.deepEqual(facts.modular,['고정 케이블']);
+  assert.deepEqual(facts.efficiency,['BRONZE']);
+  const bare=get('maker-thermalright-cooler-9f1852598c610728');
+  assert.deepEqual(productFacetValues(bare).heatsinkHeight,['32']);
+  assert.equal(productFacetValues(bare).height,undefined);
+});
 test('a name alone cannot establish sockets, memory, capacities or compatibility',()=>{
   assert.deepEqual(productFacetValues(base),{});
   assert.ok(matchesProduct(base,[],readProductFilters({socket:'__unknown'},'motherboard')));

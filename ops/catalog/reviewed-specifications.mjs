@@ -73,8 +73,9 @@ export function reviewBoardSpecifications({ checkedOn, models }, products) {
 }
 
 export function reviewModelSpecifications({ checkedOn, models }) {
-  return models.flatMap(({ ids, url, label, sourceKind, specifications, facts, notes }) => {
+  return models.flatMap(({ ids, url, label, sourceKind, observedAt, specifications, facts, notes }) => {
     const source = sourceFor(label ?? '해당 모델 제조사 공식 사양', url, checkedOn);
+    if (observedAt) source.observedAt = observedAt;
     if (sourceKind === 'retailer-listing') source.kind = sourceKind;
     return ids.map(id => ({
       id,
