@@ -99,7 +99,10 @@ async function mockKv() {
     switch (String(name).toUpperCase()) {
       case 'GET': return values.get(key) ?? null;
       case 'MGET': return args.map(item => values.get(item) ?? null);
-      case 'SET': values.set(key, value); expires.delete(key); return 'OK';
+      case 'SET': {
+        if (args.includes('NX', 2) && values.has(key)) return null;
+        values.set(key, value); expires.delete(key); return 'OK';
+      }
       case 'SETNX': if (values.has(key)) return 0; values.set(key, value); return 1;
       case 'MSETNX': {
         const keys = args.filter((_, i) => i % 2 === 0);
@@ -118,8 +121,11 @@ async function mockKv() {
       case 'TTL': return !values.has(key) && !sorted.has(key) ? -2 : expires.has(key) ? Math.max(0, Math.ceil((expires.get(key) - controls.nowMs) / 1000)) : -1;
       case 'ZADD': {
         const entries = sorted.get(key) ?? new Map();
-        const exists = entries.has(args[2]);
-        entries.set(args[2], Number(value)); sorted.set(key, entries); return Number(!exists);
+        const nx = value === 'NX';
+        const [score, id] = args.slice(nx ? 2 : 1);
+        const exists = entries.has(id);
+        if (!nx || !exists) entries.set(id, Number(score));
+        sorted.set(key, entries); return Number(!exists);
       }
       case 'ZREM': return Number(sorted.get(key)?.delete(value) ?? false);
       case 'ZREVRANGE': {
@@ -339,6 +345,44 @@ try {
   kv.values.set('bd:post:'+mixedPost.id,JSON.stringify(mixedPost));
   const disclosureApp = await startApp({ADMIN_PASSWORD:password,KV_REST_API_URL:kv.url,KV_REST_API_TOKEN:kv.token,AFFILIATE_LINKS_JSON:JSON.stringify(fakeMappings)});
   try {
+    await check('verified hotdeals require a registered link, a fresh option and an administrator; retries keep one post', async () => {
+      const route = '/api/internal/hotdeal';
+      const login = await request(disclosureApp.base, 'POST', '/api/admin/login', { password });
+      assert.equal(login.status, 200);
+      const session = login.headers.get('set-cookie').split(';')[0];
+      const now = Date.now();
+      const deal = {
+        title: 'LOCAL 검증 핫딜', option: '검정 1개', category: 'pc', productUrl: gm.originalUrl,
+        availability: 'in-stock', checkedAt: new Date(now - 60_000).toISOString(),
+        validUntil: new Date(now + 180_000).toISOString(), price: 45000, shipping: 3000,
+        conditions: '공개 행사 가격', review: '제조사 공식 옵션 확인', issue: '동일 옵션을 선택하세요.',
+        notesSource: 'https://example.invalid/verified-option',
+      };
+      assert.equal((await request(disclosureApp.base, 'POST', route, deal)).status, 401);
+      assert.equal((await request(disclosureApp.base, 'POST', route, { ...deal, availability: 'out-of-stock' }, session)).status, 422);
+      assert.equal((await request(disclosureApp.base, 'POST', route, { ...deal, checkedAt: new Date(now - 7 * 3600000).toISOString() }, session)).status, 422);
+      assert.equal((await request(disclosureApp.base, 'POST', route, { ...deal, productUrl: 'https://item.gmarket.co.kr/Item?goodscode=000001' }, session)).status, 422);
+      assert.equal((await request(disclosureApp.base, 'POST', '/api/posts', {
+        boardKey: 'hotdeal', type: 'general', title: 'LOCAL', content: 'fake', authorName: '블루딜  ＡＩ',
+      })).status, 400);
+      const results = await Promise.all([request(disclosureApp.base, 'POST', route, deal, session), request(disclosureApp.base, 'POST', route, deal, session)]);
+      assert.deepEqual(results.map(result => result.status).sort(), [200, 201]);
+      const id = results[0].data.id;
+      assert.equal(results[1].data.id, id);
+      const detail = await request(disclosureApp.base, 'GET', '/api/posts/' + id);
+      const post = detail.data.post;
+      assert.equal(post.authorName, '블루딜 AI');
+      assert.equal(post.hotdeal.price + post.hotdeal.shipping, 48000);
+      assert.match(post.extra.dealLink, /^\/go\/hd-v1-/);
+      assert.ok(post.linkInfo.affiliateHrefs.includes(post.extra.dealLink));
+      const list = await request(disclosureApp.base,'GET','/api/posts?boardKey=hotdeal&limit=100');
+      assert.equal(list.data.posts.filter(row => row.id === id).length, 1);
+      const followed = await fetch(disclosureApp.base + post.extra.dealLink, { redirect: 'manual' });
+      assert.equal(followed.headers.get('location'), fakeMappings[0].affiliateUrl);
+      const missingMapping = await fetch(app.base + post.extra.dealLink, { redirect: 'manual' });
+      assert.equal(missingMapping.status, 404);
+      assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + id, undefined, session)).status, 200);
+    });
     await check('manual product cards require the matching registered source and keep prices and issued targets private', async () => {
       const name='MCHOSE V9 Pro2 게이밍 헤드셋';
       const html=await(await fetch(disclosureApp.base+'/about')).text();

@@ -31,6 +31,8 @@ function maskPrivateInList(posts: Post[]): Post[] {
       ...(rest as Post),
       content: "",
       extra: undefined,
+      hotdeal: undefined,
+      hotdealClicks: undefined,
     };
   });
 }

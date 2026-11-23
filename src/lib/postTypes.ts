@@ -1,3 +1,5 @@
+import type { VerifiedHotdeal } from "./hotdeal";
+
 export type PostType =
   | "general"
   | "question"
@@ -66,4 +68,6 @@ export type Post = {
   /** 게시판별 추가 필드 */
   extra?: PostExtra;
   linkInfo?: PostLinkInfo;
+  hotdeal?: VerifiedHotdeal;
+  hotdealClicks?: number;
 };

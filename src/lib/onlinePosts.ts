@@ -2,6 +2,7 @@ import "server-only";
 
 import crypto from "crypto";
 import type { BoardKey, Post, PostExtra, PostType } from "./postTypes";
+import { isHotdealAuthor, type VerifiedHotdeal } from "./hotdeal";
 import { getBoardByKey, getAllowedTypes } from "./boardConfig";
 import { getAdminPassword } from "./adminAuth";
 import { kvCommand, kvMultiExec, kvPipeline } from "./kvRest";
@@ -152,12 +153,17 @@ function assertBoardAndType(boardKey: BoardKey, type: PostType) {
   if (!allowed.includes(type)) throw new PostValidationError("이 게시판에서 사용할 수 없는 말머리입니다.");
 }
 
-export async function createOnlinePost(input: CreateOnlinePostInput): Promise<Post> {
+export function createOnlinePost(input: CreateOnlinePostInput): Promise<Post>;
+export function createOnlinePost(input: CreateOnlinePostInput, verified: { id: string; hotdeal: VerifiedHotdeal }): Promise<{ post: Post; created: boolean }>;
+export async function createOnlinePost(input: CreateOnlinePostInput, verified?: { id: string; hotdeal: VerifiedHotdeal }) {
   assertBoardAndType(input.boardKey, input.type);
   validatePostFields(input);
 
+  if (input.boardKey === "hotdeal" && isHotdealAuthor(input.authorName) && !verified) {
+    throw new PostValidationError("블루딜 AI는 운영 게시 전용 작성자입니다.");
+  }
   const nowIso = new Date().toISOString();
-  const id = randomId();
+  const id = verified?.id ?? randomId();
   const score = Date.now();
 
   const post: Post = {
@@ -170,6 +176,7 @@ export async function createOnlinePost(input: CreateOnlinePostInput): Promise<Po
     authorName: input.authorName?.trim() || undefined,
     isPrivate: input.isPrivate,
     extra: input.extra,
+    hotdeal: verified?.hotdeal,
   };
 
   if (input.isPrivate) {
@@ -190,6 +197,13 @@ export async function createOnlinePost(input: CreateOnlinePostInput): Promise<Po
   if (post.boardKey === "issue" && !post.isPrivate) post.title = issuePostTitle(post.content);
 
   // Atomic: store post JSON + add to board index.
+  if (verified) {
+    const [created] = await kvMultiExec([
+      ["SET", postKey(id), JSON.stringify(post), "NX"],
+      ["ZADD", boardZsetKey(input.boardKey), "NX", score, id],
+    ]);
+    return { post, created: created === "OK" };
+  }
   await kvMultiExec([
     ["SET", postKey(id), JSON.stringify(post)],
     ["ZADD", boardZsetKey(input.boardKey), score, id],
@@ -227,6 +241,23 @@ export async function listOnlinePostsByBoard(boardKey: BoardKey, limit = 50): Pr
       posts.push(p);
     } catch {
       // ignore
+    }
+  }
+
+  if (boardKey === "hotdeal") {
+    const verifiedPosts = posts.flatMap(post => {
+      const href = post.extra?.dealLink;
+      const code = typeof href === "string" ? href.match(/^\/go\/([a-zA-Z0-9_-]{2,64})$/)?.[1] : undefined;
+      return !post.isPrivate && post.hotdeal && code ? [{ post, code }] : [];
+    });
+    if (verifiedPosts.length) {
+      try {
+        const clicks = await kvCommand<unknown[]>("MGET", ...verifiedPosts.map(item => "bd:out:click:" + item.code));
+        verifiedPosts.forEach(({ post }, index) => {
+          const count = Number(clicks[index]);
+          if (Number.isSafeInteger(count) && count > 0) post.hotdealClicks = count;
+        });
+      } catch { /* The hotdeal list is still available if click counts fail. */ }
     }
   }
 
@@ -274,6 +305,16 @@ export async function updateOnlinePost(id: string, patch: UpdateOnlinePostInput)
     isPrivate: patch.isPrivate === undefined ? current.isPrivate : Boolean(patch.isPrivate),
     updatedAt: new Date().toISOString(),
   };
+
+  if (next.boardKey === "hotdeal" && !current.hotdeal && isHotdealAuthor(next.authorName) && next.authorName !== current.authorName) {
+    throw new PostValidationError("블루딜 AI는 운영 게시 전용 작성자입니다.");
+  }
+  if (current.hotdeal && (next.title !== current.title || next.content !== current.content ||
+      next.authorName !== current.authorName || next.isPrivate ||
+      (patch.extra !== undefined && JSON.stringify(next.extra) !== JSON.stringify(current.extra)))) {
+    delete next.hotdeal;
+    if (isHotdealAuthor(next.authorName)) next.authorName = "블루딜 운영팀";
+  }
 
   // Validate board/type constraint
   assertBoardAndType(next.boardKey, next.type);

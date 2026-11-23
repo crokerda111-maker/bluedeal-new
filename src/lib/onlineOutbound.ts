@@ -64,7 +64,7 @@ function clickKey(code: string): string {
  * Create or reuse an outbound code for a URL.
  * - Returns null when URL is invalid or not allowed (whitelist 밖)
  */
-export async function createOrReuseOutboundCode(originalUrl: string): Promise<string | null> {
+export async function createOrReuseOutboundCode(originalUrl: string, affiliateRequired = false): Promise<string | null> {
   if (!isHttpUrlString(originalUrl)) return null;
 
   const normalized = normalizeOutboundUrl(originalUrl);
@@ -73,6 +73,13 @@ export async function createOrReuseOutboundCode(originalUrl: string): Promise<st
   const u = new URL(normalized);
   const merchant = detectMerchant(u.hostname);
   if (!merchant) return null;
+
+  if (affiliateRequired) {
+    const code = "hd-v1-" + sha256B64Url(normalized).slice(0, 32);
+    const row: OutboundRow = { code, merchant, originalUrl: normalized, createdAt: nowIso() };
+    await kvCommand("SETNX", codeKey(code), JSON.stringify(row));
+    return code;
+  }
 
   const hHex = sha256Hex(normalized);
   const existing = (await kvCommand<string | null>("GET", urlKey(hHex))) ?? null;

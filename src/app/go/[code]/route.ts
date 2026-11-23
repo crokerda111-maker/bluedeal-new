@@ -37,7 +37,11 @@ export async function GET(req: Request, ctx: { params: Promise<{ code: string }>
 
   const original = normalizeOutboundUrl(row.originalUrl);
   const stored = alias ?? (original ? (await getStoredAffiliateMappings([original])).get(original) : undefined);
-  const target = resolveAffiliateUrl({ ...row, code }, stored)?.url;
+  const resolved = resolveAffiliateUrl({ ...row, code }, stored);
+  if (code.startsWith("hd-v1-") && resolved?.mode !== "registered-affiliate") {
+    return NextResponse.json({ error: "제휴 링크를 다시 확인 중입니다." }, { status: 404 });
+  }
+  const target = resolved?.url;
 
   if (!target) {
     // whitelist 밖이면 차단

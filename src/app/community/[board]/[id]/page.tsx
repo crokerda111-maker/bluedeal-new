@@ -12,6 +12,8 @@ import PostContentLink from "../../../../components/PostContentLink";
 import PostAffiliateNotice from "../../../../components/PostAffiliateNotice";
 import LinkifiedText from "../../../../components/LinkifiedText";
 import PostDetailError from "../../../../components/PostDetailError";
+import HotdealTerms from "../../../../components/HotdealTerms";
+import { HOTDEAL_CATEGORIES, hotdealCategory, isHotdealAuthor } from "../../../../lib/hotdeal";
 
 function ExtraRow({ label, value, linkInfo }: { label: string; value: any; linkInfo: Post["linkInfo"] }) {
   if (value === undefined || value === null || value === "") return null;
@@ -85,11 +87,19 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
     for (const f of board?.extraFields ?? []) m.set(f.key, f.label);
     // 자주 보이는 키는 보정
     m.set("rating", "만족도");
+    m.set("notesSource", "후기·상품 출처");
+    m.set("comparisonSource", "비교 가격 출처");
     return m;
   }, [board]);
 
   const extraEntries = useMemo(() => {
-    return Object.entries(post?.extra ?? {});
+    return Object.entries(post?.extra ?? {}).flatMap(([key, value]) => {
+      if (post?.hotdeal && key === "dealLink") return [];
+      if (post?.boardKey === "hotdeal" && key === "category" && value) {
+        return [[key, HOTDEAL_CATEGORIES.find(item => item.value === hotdealCategory(value))?.label] as const];
+      }
+      return [[key, value] as const];
+    });
   }, [post]);
 
   if (!board) {
@@ -128,7 +138,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
 
         <div className="flex flex-wrap items-center gap-2">
           <div className="min-w-0 [overflow-wrap:anywhere] text-[12px] text-white/70">
-            {POST_TYPE_LABEL[post.type]} · {post.authorName ?? "익명"} · {formatKoreanDate(post.createdAt)}
+            {post.hotdeal ? "블루딜 검증 딜" : POST_TYPE_LABEL[post.type]} · {board.key === "hotdeal" && !post.hotdeal && isHotdealAuthor(post.authorName) ? "커뮤니티 회원" : post.authorName ?? "익명"} · {formatKoreanDate(post.createdAt)}
           </div>
           {isAdmin ? (
             <Link
@@ -144,6 +154,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
       <section className="bd-surface-md p-6">
         <h1 className="[overflow-wrap:anywhere] text-2xl font-semibold tracking-tight">{board.key === "issue" && post.title === issuePostTitle(post.content) ? "한 줄 이슈" : post.title}</h1>
         <PostAffiliateNotice info={post.linkInfo} />
+        <HotdealTerms post={post} />
         <LinkifiedText text={post.content} linkInfo={post.linkInfo} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
       </section>
 

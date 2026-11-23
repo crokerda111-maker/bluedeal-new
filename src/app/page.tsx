@@ -5,6 +5,7 @@ import { getMeta, getPrices } from "../lib/prices";
 import { PRICE_CATEGORIES } from "../lib/priceCategories";
 import { listOnlinePostsByBoard } from "../lib/onlinePosts";
 import type { Post } from "../lib/postTypes";
+import { HOTDEAL_CATEGORIES, hotdealCategory, hotdealPrice, isActiveHotdeal } from "../lib/hotdeal";
 import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from "../lib/site";
 import { CATALOG_SUMMARY } from "../lib/catalogData";
 
@@ -86,14 +87,20 @@ function SectionTitle({
   );
 }
 
+async function getHomeHotdeals() {
+  const now = Date.now();
+  const posts = await listOnlinePostsByBoard("hotdeal", 30);
+  return posts.filter(post => !post.isPrivate && (!post.hotdeal || isActiveHotdeal(post.hotdeal, now))).slice(0, 4);
+}
+
 export default async function HomePage() {
   const [meta, priceResults, hotDeals] = await Promise.all([
     getMeta(),
     Promise.all(PRICE_CATEGORIES.map((category) => getPrices(category.key))),
-    listOnlinePostsByBoard("hotdeal", 4).catch(() => null as Post[] | null),
+    getHomeHotdeals().catch(() => null as Post[] | null),
   ]);
   const itemCount = priceResults.reduce((sum, result) => sum + result.items.length, 0);
-  const deals = (hotDeals ?? []).filter((post) => !post.isPrivate).slice(0, 4);
+  const deals = hotDeals ?? [];
 
   return (
     <div className="space-y-16 pb-6">
@@ -133,7 +140,7 @@ export default async function HomePage() {
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2 text-xs text-white/70">
-                    {deal.extra?.category ? <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-white/70">{String(deal.extra.category).toUpperCase()}</span> : null}
+                    {deal.extra?.category ? <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-white/70">{HOTDEAL_CATEGORIES.find(item => item.value === hotdealCategory(deal.extra?.category))?.label}</span> : null}
                     <span>{String(deal.extra?.store ?? "판매처 미표시")}</span>
                     <span>·</span>
                     <span>{formatDate(deal.createdAt)}</span>
@@ -142,7 +149,7 @@ export default async function HomePage() {
                   <div className="mt-1 line-clamp-1 text-xs text-white/70">{deal.content}</div>
                 </div>
                 <div className="shrink-0 md:text-right">
-                  <div className="text-lg font-semibold">{String(deal.extra?.price ?? "가격 확인")}</div>
+                  <div className="text-lg font-semibold">{hotdealPrice(deal) || "가격 확인"}</div>
                   <div className="mt-1 text-xs text-white/70">상세 보기 →</div>
                 </div>
               </div>

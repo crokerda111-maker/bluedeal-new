@@ -1,3 +1,4 @@
+import { HOTDEAL_CATEGORIES } from "./hotdeal";
 import type { BoardGroup, BoardKey, CommunityBoardKey, PostType } from "./postTypes";
 
 export const POST_TYPE_OPTIONS: Array<{ value: PostType; label: string; hint?: string }> = [
@@ -209,7 +210,7 @@ export const COMMUNITY_BOARDS: BoardDef[] = [
     group: "community",
     slug: "hotdeal",
     title: "핫딜",
-    description: "유저 핫딜 공유 게시판",
+    description: "식품부터 PC·가전까지, 할인 소식과 구매 조건을 공유합니다.",
     writeHint: "가격/구성/조건을 함께 적고, 원문/구매 링크를 꼭 남겨주세요.",
     allowedTypes: ["general"],
     extraFields: [
@@ -217,15 +218,7 @@ export const COMMUNITY_BOARDS: BoardDef[] = [
         key: "category",
         label: "카테고리(선택)",
         type: "select",
-        options: [
-          { value: "cpu", label: "CPU" },
-          { value: "gpu", label: "GPU" },
-          { value: "ssd", label: "SSD" },
-          { value: "ram", label: "RAM" },
-          { value: "monitor", label: "모니터" },
-          { value: "peripheral", label: "주변기기" },
-          { value: "etc", label: "기타" },
-        ],
+        options: [...HOTDEAL_CATEGORIES],
       },
       { key: "store", label: "스토어(선택)", type: "select", options: [...STORE_OPTIONS] },
       { key: "price", label: "가격(선택)", type: "text", placeholder: "예: 199,000원" },
