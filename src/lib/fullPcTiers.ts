@@ -58,10 +58,15 @@ export function fullPcComparisonKey(cpuLabel: string, gpuLabel: string, osLabel:
   return [cpu, gpu === "내장그래픽" ? gpu : `${gpu} ${memory}GB`, os].join(" · ");
 }
 
-export function rankComparableFullPcs<T extends { id: string; score: number; total: number }>(candidates: readonly T[]) {
+export function fullPcPricePoints(total: number, lowest: number) {
+  return lowest / total * 40;
+}
+
+export function rankComparableFullPcs<T extends { id: string; score: number; total: number }>(
+  candidates: readonly T[], lowest = Math.min(...candidates.map(candidate => candidate.total)),
+) {
   if (candidates.length < 2) return [];
-  const lowest = Math.min(...candidates.map(candidate => candidate.total));
-  return candidates.map(candidate => ({ candidate, points: candidate.score * 0.6 + lowest / candidate.total * 40 }))
+  return candidates.map(candidate => ({ candidate, points: candidate.score * 0.6 + fullPcPricePoints(candidate.total, lowest) }))
     .sort((a, b) => b.points - a.points || b.candidate.score - a.candidate.score ||
       a.candidate.total - b.candidate.total || a.candidate.id.localeCompare(b.candidate.id));
 }

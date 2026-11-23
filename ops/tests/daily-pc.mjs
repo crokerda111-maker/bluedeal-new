@@ -9,7 +9,7 @@ registerHooks({ resolve(specifier, context, next) {
 } });
 const { parseCompuzonePc, discoverCompuzonePcs, compuzonePcUrl } = await import("../../src/lib/pcCompuzone.ts");
 const { matchFullPcObservation, scoreFullPcParts, separatePcTotal } = await import("../../src/lib/fullPcReview.ts");
-const { fullPcGpuChip, fullPcTier, fullPcComparisonKey, rankComparableFullPcs } = await import("../../src/lib/fullPcTiers.ts");
+const { fullPcGpuChip, fullPcTier, fullPcComparisonKey, fullPcPricePoints, rankComparableFullPcs } = await import("../../src/lib/fullPcTiers.ts");
 const { default: fullPcReviews } = await import("../../src/content/fullPcReviews.json", { with: { type: "json" } });
 const { default: fullPcSnapshot } = await import("../../src/content/fullPcVerifiedSnapshot.json", { with: { type: "json" } });
 
@@ -35,6 +35,9 @@ test("같은 CPU·GPU·VRAM·OS 안에서 배송 포함 가격 변동을 순위�
   assert.equal(rankComparableFullPcs([a, b])[0].candidate.id, a.id);
   assert.equal(rankComparableFullPcs([a, { ...b, total: 1500000 }])[0].candidate.id, b.id);
   assert.equal(rankComparableFullPcs([b]).length, 0);
+  assert.equal(fullPcPricePoints(1960000, 1960000), 40);
+  assert.equal(fullPcPricePoints(2000000, 1960000), 39.2);
+  assert.equal(rankComparableFullPcs([a, b], 1600000)[0].points, 86);
 });
 
 test("개별 견적은 8종 동일 모델·수량과 당일 배송비, 조립 및 동일 구매조건이 있어야 계산한다", () => {

@@ -4,7 +4,7 @@ import { normalizeOutboundUrl } from "./affiliate";
 import { CATALOG_PRODUCTS, getCatalogProduct } from "./catalogData";
 import { isPcToday, kstDay } from "./dailyPc";
 import { scoreFullPcParts, separatePcTotal, type FullPcReview } from "./fullPcReview";
-import { FULL_PC_TIERS, fullPcComparisonKey, fullPcGpuChip, fullPcTier, rankComparableFullPcs } from "./fullPcTiers";
+import { FULL_PC_TIERS, fullPcComparisonKey, fullPcGpuChip, fullPcPricePoints, fullPcTier, rankComparableFullPcs } from "./fullPcTiers";
 import { type PriceItem } from "./mockPrices";
 import { OUTBOUND_LINKS } from "./outbound";
 import { pcCatalogConfiguration } from "./pcCatalogConfiguration";
@@ -75,6 +75,7 @@ export type FullPcBoardRow = {
   tier: keyof typeof FULL_PC_TIERS;
   score: number | null;
   range?: readonly [number, number];
+  priceScore?: number;
   total: number | null;
   checkedToday: boolean;
   unavailable: boolean;
@@ -120,13 +121,19 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
   });
 
   for (const group of groupComparableFullPcs(rows).values()) {
-    const ranked = rankComparableFullPcs(group.flatMap(row => row.score === null || row.total === null ? [] :
-      [{ id: row.product.id, row, score: row.score, total: row.total }]));
+    const priced = group.flatMap(row => row.total === null ? [] : [{ row, total: row.total }]);
+    if (priced.length < 2) continue;
+
+    const lowest = Math.min(...priced.map(entry => entry.total));
+    for (const { row, total } of priced) row.priceScore = fullPcPricePoints(total, lowest);
+
+    const ranked = rankComparableFullPcs(priced.flatMap(({ row, total }) => row.score === null ? [] :
+      [{ id: row.product.id, row, score: row.score, total }]), lowest);
     if (ranked.length) {
       ranked.forEach(({ candidate, points }, index) => { candidate.row.placement = { rank: index + 1, mode: "score", points }; });
-    } else if (group.length > 1) {
-      group.sort((a, b) => (a.total ?? Infinity) - (b.total ?? Infinity) || a.product.id.localeCompare(b.product.id));
-      group.forEach((row, index) => { row.placement = { rank: index + 1, mode: "price" }; });
+    } else {
+      priced.sort((a, b) => a.total - b.total || a.row.product.id.localeCompare(b.row.product.id));
+      priced.forEach(({ row }, index) => { row.placement = { rank: index + 1, mode: "price" }; });
     }
   }
   return rows;

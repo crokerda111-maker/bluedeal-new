@@ -80,25 +80,25 @@ export default async function HomePage() {
   const { data, now } = await getPriceView("fullpc");
 
   return (
-    <div className="space-y-16 pb-6">
+    <div className="space-y-10 pb-6 sm:space-y-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "블루딜", alternateName: "BLUEDEAL", url: SITE_URL, inLanguage: "ko-KR" }).replace(/</g, "\\u003c") }} />
-      <MarketplaceFullPcPicks items={data.items} now={now} home />
-
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <nav id="home-primary-links" aria-label="주요 메뉴" className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         {PRIMARY_ROUTES.map((item) => (
           <Link
             key={item.href}
             href={item.href}
             prefetch={false}
-            className="group bd-surface-md p-6 transition hover:-translate-y-0.5 hover:border-cyan-200/25 hover:bg-white/10"
+            className="group bd-surface-md flex min-w-0 flex-col p-3 transition hover:-translate-y-0.5 hover:border-cyan-200/25 hover:bg-white/10 sm:p-6"
           >
-            <div className="text-[11px] font-semibold tracking-[0.2em] text-cyan-200/70">{item.eyebrow}</div>
-            <h2 className="mt-3 text-xl font-semibold tracking-tight group-hover:text-cyan-100">{item.title}</h2>
-            <p className="mt-3 min-h-12 text-sm leading-6 text-white/60">{item.desc}</p>
-            <div className="mt-5 text-sm font-medium text-white/85">{item.action} →</div>
+            <span aria-hidden="true" className="text-[11px] font-semibold tracking-[0.2em] text-cyan-200/70">{item.eyebrow}</span>
+            <span className="mt-1 font-semibold tracking-tight group-hover:text-cyan-100 sm:mt-3 sm:text-xl">{item.title}</span>
+            <span className="mt-3 hidden text-sm leading-6 text-white/75 sm:block">{item.desc}</span>
+            <span aria-hidden="true" className="mt-auto pt-1 text-xs font-medium text-white/85 sm:pt-5 sm:text-sm">{item.action} →</span>
           </Link>
         ))}
-      </section>
+      </nav>
+
+      <MarketplaceFullPcPicks items={data.items} now={now} home />
 
       <HomeFeed
         hotdealHeading={<SectionTitle
