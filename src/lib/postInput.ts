@@ -4,6 +4,7 @@ export const POST_LIMITS = {
   bodyBytes: 128 * 1024,
   title: 200,
   content: 30_000,
+  issueLine: 280,
   authorName: 20,
   password: 256,
   extraKeys: 32,
@@ -13,6 +14,19 @@ export const POST_LIMITS = {
 
 export class PostValidationError extends Error {
   constructor(message: string) { super(message); this.name = "PostValidationError"; }
+}
+
+export function issuePostTitle(content: string): string {
+  if (content.length <= POST_LIMITS.title) return content;
+  return content.slice(0, POST_LIMITS.title - 1).replace(/[\uD800-\uDBFF]$/u, "") + "…";
+}
+
+export function validateIssueLine(value: unknown): string {
+  if (typeof value !== "string" || !value.trim()) throw new PostValidationError("이슈 내용을 입력하세요.");
+  if (/[\r\n\u0085\u2028\u2029]/u.test(value)) throw new PostValidationError("이슈는 한 줄로 입력하세요.");
+  const content = value.trim();
+  if (content.length > POST_LIMITS.issueLine) throw new PostValidationError("이슈는 " + POST_LIMITS.issueLine + "자 이내로 입력하세요.");
+  return content;
 }
 
 type EditableFields = {

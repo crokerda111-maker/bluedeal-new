@@ -294,7 +294,7 @@ try {
   await check('price pages disclose configured affiliate links and label ordinary links without exposing private targets', async () => {
     const ordinary = await (await fetch(app.base + '/prices/ram')).text();
     const disclosure = '이 포스팅은 제휴마케팅이 포함된 광고로 커미션을 지급 받습니다.';
-    assert.ok(ordinary.includes('이 페이지의 판매처 링크는 일반 링크입니다.'));
+    assert.ok(ordinary.includes('아래 가격 기록의 판매처 링크는 일반 링크입니다.'));
     assert.equal(ordinary.includes(disclosure), false);
     assert.equal(ordinary.includes('rel="sponsored noopener noreferrer"'), false);
     const price = JSON.parse(await readFile(path.join(root, 'src/content/prices/ram.json'), 'utf8')).items[0];
@@ -313,7 +313,7 @@ try {
       assert.equal(redirect.status, 302);
       assert.equal(redirect.headers.get('location'), affiliateUrl);
       const cpu = await (await fetch(testApp.base + '/prices/cpu')).text();
-      assert.ok(cpu.includes('이 페이지의 판매처 링크는 일반 링크입니다.'));
+      assert.ok(cpu.includes('아래 가격 기록의 판매처 링크는 일반 링크입니다.'));
       assert.equal(cpu.includes(disclosure), false);
       } finally { await stopChild(testApp.child); }
     }
@@ -670,6 +670,44 @@ try {
       assert.equal((await api('GET', `/api/posts/${post.id}`)).data.post.title, post.title);
     }
   });
+  await check('issue feed accepts a single line and keeps legacy details reachable', async () => {
+    const board = await fetch(app.base + '/community/issue');
+    const html = await board.text();
+    assert.equal(board.status, 200);
+    assertPublicMetadata(html, '/community/issue');
+    assert.match(html, /id="issue-line"[^>]*type="text"/);
+    assert.match(html, /aria-label="이슈 검색"/);
+    const redirect = await fetch(app.base + '/community/issue/write', { redirect: 'manual' });
+    assert.equal(redirect.status, 307);
+    assert.equal(redirect.headers.get('location'), '/community/issue');
+
+    const id = 'legacy-issue';
+    const legacy = {
+      id, boardKey: 'issue', type: 'general', title: '기존 이슈 제목', content: '기존 본문\n두 번째 줄',
+      extra: { env: 'Windows 11', ref: 'https://example.com/' }, createdAt: '2026-11-01T10:00:00Z',
+    };
+    kv.values.set('bd:post:' + id, JSON.stringify(legacy));
+    kv.sorted.set('bd:board:issue:posts', new Map([[id, Date.parse(legacy.createdAt)]]));
+
+    const payload = { boardKey: 'issue', type: 'general', authorName: '로컬 검증' };
+    for (const content of ['', '   ', '첫 줄\n다음 줄', '한'.repeat(281)]) {
+      assert.equal((await api('POST', '/api/posts', { ...payload, content })).status, 400);
+    }
+    assert.equal((await api('POST', '/api/posts', { ...payload, content: '비공개 내용', isPrivate: true, password: 'test' })).status, 400);
+    const line = '가'.repeat(198) + '🚀' + '나'.repeat(80);
+    const response = await api('POST', '/api/posts', { ...payload, content: line });
+    assert.equal(response.status, 201);
+    const post = response.data.post;
+    assert.equal(post.title, '가'.repeat(198) + '…');
+    assert.equal(post.content, line);
+    const list = (await api('GET', '/api/posts?boardKey=issue')).data.posts;
+    assert.equal(list[0].id, post.id);
+    assert.deepEqual(list.find(row => row.id === legacy.id), legacy);
+    assert.equal((await api('GET', '/api/posts/' + post.id)).data.post.content, line);
+    assert.equal((await fetch(app.base + '/community/issue/' + legacy.id)).status, 200);
+    assert.equal((await fetch(app.base + '/community/issue/' + post.id)).status, 200);
+  });
+
   await check('storage failure in a detail layout is a server error, never a false missing-post response', async () => {
     kv.controls.unavailable = true;
     try {

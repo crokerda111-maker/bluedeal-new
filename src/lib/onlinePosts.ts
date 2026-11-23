@@ -6,7 +6,7 @@ import { getBoardByKey, getAllowedTypes } from "./boardConfig";
 import { getAdminPassword } from "./adminAuth";
 import { kvCommand, kvMultiExec, kvPipeline } from "./kvRest";
 import { createOrReuseOutboundCode, isHttpUrlString } from "./onlineOutbound";
-import { PostValidationError, validatePostFields } from "./postInput";
+import { issuePostTitle, PostValidationError, validatePostFields } from "./postInput";
 export { PostValidationError } from "./postInput";
 
 const POST_KEY_PREFIX = "bd:post:";
@@ -186,6 +186,8 @@ export async function createOnlinePost(input: CreateOnlinePostInput): Promise<Po
   } catch {
     // ignore conversion errors (posting should still work)
   }
+
+  if (post.boardKey === "issue" && !post.isPrivate) post.title = issuePostTitle(post.content);
 
   // Atomic: store post JSON + add to board index.
   await kvMultiExec([

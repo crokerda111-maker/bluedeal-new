@@ -5,6 +5,7 @@ import { use, useEffect, useMemo, useState } from "react";
 import { getCommunityBoard, POST_TYPE_LABEL } from "../../../../lib/boardConfig";
 import type { Post } from "../../../../lib/postTypes";
 import { ApiError, apiAdminStatus, apiGetPost } from "../../../../lib/postsClient";
+import { issuePostTitle } from "../../../../lib/postInput";
 import { formatKoreanDate } from "../../../../lib/postStorage";
 import { isHttpUrl } from "../../../../components/SmartLink";
 import PostContentLink from "../../../../components/PostContentLink";
@@ -141,7 +142,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
       </div>
 
       <section className="bd-surface-md p-6">
-        <h1 className="[overflow-wrap:anywhere] text-2xl font-semibold tracking-tight">{post.title}</h1>
+        <h1 className="[overflow-wrap:anywhere] text-2xl font-semibold tracking-tight">{board.key === "issue" && post.title === issuePostTitle(post.content) ? "한 줄 이슈" : post.title}</h1>
         <PostAffiliateNotice info={post.linkInfo} />
         <LinkifiedText text={post.content} linkInfo={post.linkInfo} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
       </section>

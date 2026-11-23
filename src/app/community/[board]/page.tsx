@@ -11,6 +11,7 @@ import type { Post, PostType } from "../../../lib/postTypes";
 import { apiListPosts } from "../../../lib/postsClient";
 import { formatKoreanDate } from "../../../lib/postStorage";
 import MobilePostList from "../../../components/MobilePostList";
+import IssueFeed from "../../../components/IssueFeed";
 import PostLoadError from "../../../components/PostLoadError";
 
 function includesQuery(p: Post, query: string): boolean {
@@ -29,6 +30,8 @@ function includesQuery(p: Post, query: string): boolean {
 
 export default function CommunityBoardPage({ params }: { params: Promise<{ board: string }> }) {
   const { board: boardSlug } = use(params);
+  const board = getCommunityBoard(boardSlug);
+  if (board?.key === "issue") return <IssueFeed title={board.title} description={board.description} />;
   return <CommunityBoard key={boardSlug} boardSlug={boardSlug} />;
 }
 

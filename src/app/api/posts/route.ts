@@ -5,7 +5,7 @@ import { getBoardByKey, getAllowedTypes, POST_TYPE_OPTIONS } from "../../../lib/
 import { isAdminRequest } from "../../../lib/adminAuth";
 import { KvNotConfiguredError } from "../../../lib/kvRest";
 import { createOnlinePost, listOnlinePostsByBoard, PostValidationError } from "../../../lib/onlinePosts";
-import { POST_LIMITS, validatePostFields } from "../../../lib/postInput";
+import { issuePostTitle, POST_LIMITS, validateIssueLine, validatePostFields } from "../../../lib/postInput";
 import { readJsonObject, RequestInputError } from "../../../lib/requestGuard";
 
 export const runtime = "nodejs";
@@ -78,6 +78,11 @@ export async function POST(req: NextRequest) {
   let body: any = null;
   try {
     body = await readJsonObject(req, POST_LIMITS.bodyBytes);
+    if (body.boardKey === "issue") {
+      if (body.isPrivate === true) throw new PostValidationError("이슈공유에는 공개 이슈를 등록할 수 있습니다.");
+      const content = validateIssueLine(body.content);
+      body = { ...body, content, title: issuePostTitle(content) };
+    }
     validatePostFields(body);
   } catch (error) {
     if (error instanceof RequestInputError) return json({ errorCode: error.code, error: error.message }, { status: error.status });

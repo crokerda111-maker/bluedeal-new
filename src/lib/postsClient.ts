@@ -17,10 +17,8 @@ export function postErrorMessage(error: unknown, fallback = "저장하지 못했
   return fallback;
 }
 
-export type CreatePostPayload = {
-  boardKey: BoardKey;
+type PostDraft = {
   type: PostType;
-  title: string;
   content: string;
   authorName?: string;
   extra?: PostExtra;
@@ -29,6 +27,11 @@ export type CreatePostPayload = {
   /** 문의(가격현황 제보 등)에서: 운영자 비번으로 자동 잠금 */
   lockToAdminPassword?: boolean;
 };
+
+export type CreatePostPayload = PostDraft & (
+  | { boardKey: "issue"; title?: string }
+  | { boardKey: Exclude<BoardKey, "issue">; title: string }
+);
 
 export type UpdatePostPayload = Partial<{
   type: PostType;

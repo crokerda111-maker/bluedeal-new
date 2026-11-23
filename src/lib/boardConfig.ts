@@ -173,7 +173,7 @@ export const COMMUNITY_BOARDS: BoardDef[] = [
     group: "community",
     slug: "issue",
     title: "이슈공유",
-    description: "업데이트/드라이버/불량/사건 이슈 공유",
+    description: "업데이트, 드라이버, 부품 문제와 해결 방법을 한 줄로 공유하세요.",
     writeHint: "환경(OS/버전/드라이버) + 증상 + 해결 여부를 같이 적어주세요.",
     allowedTypes: ["general"],
     extraFields: [
