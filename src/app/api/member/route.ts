@@ -34,7 +34,8 @@ export async function POST(req: NextRequest) {
     if (!validWriterNickname(nickname)) return postJson({ error: "사용 가능한 닉네임을 1~20자로 입력해 주세요." }, { status: 400 });
     const saved = await chooseWriterNickname(identity, nickname.trim());
     if (!saved) return postJson({ error: "계정 상태가 바뀌었습니다. 새로고침 후 다시 시도해 주세요." }, { status: 409 });
-    return postJson({ state: "ready", nickname: saved, admin: isAdminRequest(req) });
+    if (saved.state === "taken") return postJson({ errorCode: "NICKNAME_TAKEN", error: "이미 사용 중인 닉네임입니다. 다른 이름을 입력해 주세요." }, { status: 409 });
+    return postJson({ state: "ready", nickname: saved.nickname, admin: isAdminRequest(req) });
   } catch (error) {
     if (error instanceof RequestInputError) return postJson({ error: error.message }, { status: error.status });
     return unavailable(req);

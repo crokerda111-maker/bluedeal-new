@@ -11,7 +11,7 @@ export default function PrivacyPage() {
     </header>
     <section>
       <h2 className="font-semibold text-white">회원가입과 글쓰기</h2>
-      <p>Google 로그인으로 계정을 확인합니다. Google의 계정 식별값을 블루딜 내부 식별값으로 변환하고, 사용자가 입력한 닉네임과 연결합니다. 게시글 작성 시 닉네임이 공개됩니다. Google 이메일과 비밀번호는 블루딜 회원 정보로 저장하지 않습니다. 블루딜 로그인 쿠키는 최대 7일간 유효합니다.</p>
+      <p>Google 로그인으로 계정을 확인합니다. Google의 계정 식별값을 블루딜 내부 식별값으로 변환하고, 사용자가 입력한 닉네임과 연결합니다. 닉네임 중복을 막기 위해 비교용 표기를 계정과 함께 관리합니다. 게시글 작성 시 닉네임이 공개됩니다. Google 이메일과 비밀번호는 블루딜 회원 정보로 저장하지 않습니다. 블루딜 로그인 쿠키는 최대 7일간 유효합니다.</p>
     </section>
     <section>
       <h2 className="font-semibold text-white">탈퇴와 제재 기록</h2>

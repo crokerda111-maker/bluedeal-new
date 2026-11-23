@@ -88,6 +88,7 @@ async function mockKv() {
   const controls = { unavailable: false, partial: false, malformed: false, truncated: false, slowHardware: false, invalidAuthCounter: false, nowMs: Date.now() };
   const requests = [];
   const values = new Map();
+  const hashes = new Map();
   const sorted = new Map();
   const expires = new Map();
   const token = randomBytes(24).toString('hex');
@@ -99,6 +100,18 @@ async function mockKv() {
     switch (String(name).toUpperCase()) {
       case 'GET': return values.get(key) ?? null;
       case 'MGET': return args.map(item => values.get(item) ?? null);
+      case 'SCAN': return ['0', [...values.keys()].filter(item => item.startsWith(args[2].slice(0, -1)))];
+      case 'HGET': return hashes.get(key)?.get(value) ?? null;
+      case 'HSET':
+      case 'HSETNX': {
+        const fields = hashes.get(key) ?? new Map();
+        const exists = fields.has(value);
+        if (name === 'HSET') fields.set(value, args[2]);
+        else if (!exists) fields.set(value, args[2]);
+        hashes.set(key, fields);
+        return Number(!exists);
+      }
+      case 'HDEL': return Number(hashes.get(key)?.delete(value) ?? false);
       case 'SET': {
         if (args.includes('NX', 2) && values.has(key)) return null;
         values.set(key, value);
@@ -120,21 +133,42 @@ async function mockKv() {
       }, 0);
       case 'EVAL': {
         const keyCount = Number(value);
-        const [sessionKey, revokedKey, profileKey, authorKey, suspensionKey] = args.slice(2, 2 + keyCount);
-        const [issuedAt, rawOrRevokedAt, accountOrSeconds, alias] = args.slice(2 + keyCount);
+        const keys = args.slice(2, 2 + keyCount);
+        const argv = args.slice(2 + keyCount);
+        if (key.includes('HSETNX')) {
+          const [readyKey, indexKey, ...records] = keys;
+          if (command(['GET', readyKey])) return 0;
+          records.forEach((profile, i) => {
+            const [field, owner, expected] = argv.slice(i * 3, i * 3 + 3);
+            if (command(['GET', profile]) === expected) command(['HSETNX', indexKey, field, owner]);
+          });
+          return 1;
+        }
+        const [sessionKey, revokedKey, profileKey, authorKey, suspensionKey, nicknameIndex] = keys;
+        const [issuedAt, rawOrRevokedAt, accountOrSeconds] = argv;
         const revokedAt = command(['GET', revokedKey]);
         if (!command(['GET', sessionKey]) || (revokedAt !== null && Number(revokedAt) >= Number(issuedAt))) return null;
         const profile = command(['GET', profileKey]);
-        if (keyCount === 5) {
+        if (keyCount === 6) {
           if (command(['GET', suspensionKey])) return null;
-          if (profile) return profile;
+          const [, , account, field, previous, previousField, alias, nickname] = argv;
+          if (profile) {
+            const saved = JSON.parse(profile);
+            if (saved.nickname !== previous || saved.alias !== alias) return null;
+            if (command(['HGET', nicknameIndex, previousField]) === account) return ['saved', previous];
+          } else if (previous) return null;
+          const owner = command(['HGET', nicknameIndex, field]);
+          if (owner && owner !== account) return ['taken'];
+          command(['HSET', nicknameIndex, field, account]);
           command(['SET', authorKey, accountOrSeconds]);
           command(['SET', profileKey, rawOrRevokedAt]);
-          return rawOrRevokedAt;
+          return ['saved', nickname];
         }
-        if (keyCount !== 4 || !profile || JSON.parse(profile).alias !== alias) return null;
+        const [, , , alias, previous, field, account] = argv;
+        if (keyCount !== 5 || !profile || JSON.parse(profile).alias !== alias || JSON.parse(profile).nickname !== previous) return null;
         command(['SET', revokedKey, rawOrRevokedAt, 'EX', accountOrSeconds]);
         command(['DEL', sessionKey, profileKey, authorKey]);
+        if (command(['HGET', suspensionKey, field]) === account) command(['HDEL', suspensionKey, field]);
         return 1;
       }
       case 'EXISTS': return Number(values.has(key));
@@ -409,6 +443,29 @@ try {
       const missingMapping = await fetch(app.base + post.extra.dealLink, { redirect: 'manual' });
       assert.equal(missingMapping.status, 404);
       assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + id, undefined, session)).status, 200);
+    });
+    await check('reviewed news publish once and price observations expose only public quotes', async () => {
+      const route = '/api/internal/editorial-news';
+      const sourceUrl = 'https://nvidianews.nvidia.com/news/local-fixture';
+      const draft = { sourceUrl, title: '테스트 뉴스', content: '로컬 검증 전용 기사입니다.',
+        publishedAt: new Date(Date.now()-60_000).toISOString(), reviewed: true, translation: true, koreanEditing: true,
+        proofreading: true, sensitiveContext: true };
+      assert.equal((await request(disclosureApp.base,'POST',route,draft)).status,401);
+      const login = await request(disclosureApp.base,'POST','/api/admin/login',{password});
+      const cookie = login.headers.get('set-cookie').split(';')[0];
+      assert.equal((await request(disclosureApp.base,'POST',route,{...draft,sensitiveContext:false},cookie)).status,422);
+      assert.equal((await request(disclosureApp.base,'POST',route,{...draft,sourceUrl:'https://untrusted.example/fake'},cookie)).status,422);
+      const created = await request(disclosureApp.base,'POST',route,draft,cookie);
+      assert.equal(created.status,201);
+      const repeat = await request(disclosureApp.base,'POST',route,{...draft,sourceUrl:sourceUrl+'/?utm=test'},cookie);
+      assert.equal(repeat.status,200);
+      assert.equal(repeat.data.id,created.data.id);
+      assert.equal((await request(disclosureApp.base,'GET','/api/posts/'+created.data.id)).data.post.content.includes(sourceUrl),true);
+      assert.equal((await request(disclosureApp.base,'DELETE','/api/posts/'+created.data.id,undefined,cookie)).status,200);
+      const prices = await request(disclosureApp.base,'GET','/api/prices/observations');
+      assert.equal(prices.data.service,'BLUEDEAL');
+      assert(prices.data.observations.some(row=>row.category==='fullpc'&&Number.isInteger(row.price)));
+      assert.doesNotMatch(JSON.stringify(prices.data.observations.map(row=>Object.keys(row))),/goCode|originalUrl|affiliate|token/i);
     });
     await check('manual product cards require the matching registered source and keep prices and issued targets private', async () => {
       const name='MCHOSE V9 Pro2 게이밍 헤드셋';
@@ -1175,9 +1232,9 @@ try {
     const write = '/api/posts';
     const create = { boardKey: 'hardware', type: 'general', title: 'Writer test', content: 'Local test only', authorName: '변조 이름' };
     const issue = { boardKey: 'issue', type: 'general', content: '이슈 작성 테스트' };
-    const session = (issuedAt = Date.now()) => {
+    const session = (issuedAt = Date.now(), account = member) => {
       const token = randomBytes(32).toString('hex');
-      kv.values.set('bd:member:session:' + createHash('sha256').update(token).digest('hex'), JSON.stringify({ id: member, issuedAt }));
+      kv.values.set('bd:member:session:' + createHash('sha256').update(token).digest('hex'), JSON.stringify({ id: account, issuedAt }));
       return '__Host-bd-writer=' + token;
     };
     try {
@@ -1200,9 +1257,26 @@ try {
       assert.equal((await request(app.base, 'POST', write, inquiry)).status, 201);
 
       const cookie = session();
+      const legacyId = '0'.repeat(64);
+      const legacyOther = 'f'.repeat(64);
+      const legacyName = 'Early.Member';
+      for (const id of [legacyId, legacyOther]) {
+        const alias = randomBytes(32).toString('hex');
+        kv.values.set('bd:member:profile:' + id, JSON.stringify({ alias, nickname: legacyName }));
+        kv.values.set('bd:member:author:' + alias, id);
+      }
       assert.equal((await request(app.base, 'GET', path, undefined, cookie)).data.state, 'nickname');
       assert.equal((await request(app.base, 'POST', write, create, cookie)).status, 401);
       assert.equal((await request(app.base, 'POST', path, { nickname: '블루딜 AI' }, cookie)).status, 400);
+      assert.equal((await request(app.base, 'POST', path, { nickname: 'Ｅａｒｌｙ-member' }, cookie)).data.errorCode, 'NICKNAME_TAKEN');
+      assert.equal((await request(app.base, 'GET', path, undefined, session(Date.now(), legacyId))).data.nickname, legacyName);
+      const conflictSession = session(Date.now(), legacyOther);
+      assert.equal((await request(app.base, 'GET', path, undefined, conflictSession)).data.conflict, true);
+      assert.equal((await request(app.base, 'POST', path, { nickname: '다시 고른 이름' }, conflictSession)).data.nickname, '다시 고른 이름');
+      const competing = await Promise.all(['Signal Relay', 'signal.relay'].map((nickname,index) =>
+        request(app.base, 'POST', path, { nickname }, session(Date.now(), String(index+1).repeat(64)))));
+      assert.deepEqual(competing.map(row=>row.status).sort(), [200,409]);
+      assert.equal(competing.find(row=>row.status===409).data.errorCode, 'NICKNAME_TAKEN');
       assert.equal((await request(app.base, 'POST', path, { nickname: '검증 닉네임' }, cookie)).data.nickname, '검증 닉네임');
       assert.equal((await request(app.base, 'POST', path, { nickname: '다른 이름' }, cookie)).data.nickname, '검증 닉네임');
 

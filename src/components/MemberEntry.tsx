@@ -56,10 +56,11 @@ export default function MemberEntry({ nextPath, mode, callbackFailed = false }: 
       {callbackFailed && <p role="alert" className="text-sm text-red-200">Google 로그인을 완료하지 못했습니다. 다시 시도해 주세요.</p>}
     </>}
     {status?.state === "nickname" && <form className="space-y-3" onSubmit={signup}>
+      {status.conflict ? <p className="text-sm text-amber-100">기존 닉네임이 다른 회원과 겹칩니다. 앞으로 사용할 새 닉네임을 정해 주세요.</p> : null}
       <label htmlFor={fieldId} className="block text-sm font-semibold">게시글에 표시할 닉네임</label>
       <input id={fieldId} className={field + " w-full"} value={nickname} maxLength={POST_LIMITS.authorName}
         onChange={event => setNickname(event.target.value)} required autoComplete="nickname" />
-      <p className="text-xs leading-5 text-white/70">한글·영문·숫자 등을 사용해 20자 이내로 입력해 주세요. 닉네임은 공개됩니다.</p>
+      <p className="text-xs leading-5 text-white/70">닉네임은 공개됩니다. 20자 이내로 입력해 주세요. 대소문자·공백·일부 구분 기호만 다른 이름도 같은 닉네임으로 처리합니다.</p>
       <div className="flex flex-wrap gap-3">
         <button type="submit" className={primary} disabled={busy || !nickname.trim()}>가입 완료</button>
         <button type="button" className={link} disabled={busy} onClick={() => void mutate("DELETE")}>다른 Google 계정 사용</button>

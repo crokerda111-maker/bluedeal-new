@@ -27,9 +27,12 @@ export function WriterNicknameEditor() {
 export default function MemberWriteGate({ nextPath, enabled, children }: { nextPath: string; enabled?: boolean; children: ReactNode }) {
   const inherited = useContext(WriterLoginEnabled);
   const { status } = useMemberSession();
-  if (!(enabled ?? inherited) || status?.state === "disabled") return children;
+  if (status?.state === "disabled") return children;
   if (status?.admin || status?.state === "ready") {
     return <WriterName.Provider value={status.state === "ready" ? status.nickname : null}>{children}</WriterName.Provider>;
+  }
+  if (!(enabled ?? inherited) && status?.state !== "nickname" && status?.state !== "suspended") {
+    return <WriterName.Provider value="비회원">{children}</WriterName.Provider>;
   }
   return <div className="bd-surface-md p-4 sm:p-6"><MemberEntry nextPath={nextPath} mode="write" /></div>;
 }

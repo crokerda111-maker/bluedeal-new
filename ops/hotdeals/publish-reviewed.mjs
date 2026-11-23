@@ -5,12 +5,13 @@ import { spawn } from "node:child_process";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const privateDir = join(root, "ops", "private");
-const dir = join(privateDir, "hotdeal-publisher");
+const news = process.argv.includes("--news");
+const dir = join(privateDir, news ? "news-publisher" : "hotdeal-publisher");
 const reviewedDir = join(dir, "reviewed");
 const resultDir = join(dir, "results");
 const base = "https://bluedeal.co.kr";
 const publishing = process.argv.includes("--publish");
-const collecting = process.argv.includes("--collect");
+const collecting = !news && process.argv.includes("--collect");
 
 async function save(path, payload) {
   await mkdir(dirname(path), { recursive: true });
@@ -75,6 +76,18 @@ async function publishReviewed() {
     catch { stats.rejected++; continue; }
 
     if (!body || typeof body !== "object" || Array.isArray(body) || body.reviewed !== true) continue;
+    if (news) {
+      if (["translation", "koreanEditing", "proofreading", "sensitiveContext"].some(key => body[key] !== true)) continue;
+      const published = Date.parse(body.publishedAt);
+      if (published > now || !Number.isFinite(published)) { stats.rejected++; continue; }
+      if (published < now - 20 * 86_400_000) {
+        stats.expired++;
+        if (publishing) await save(output, { status: "expired", at: new Date().toISOString() });
+        continue;
+      }
+      pending.push({ body, output });
+      continue;
+    }
     const checked = Date.parse(body.checkedAt);
     const end = Date.parse(body.validUntil);
     if (!Number.isFinite(checked) || !Number.isFinite(end) || end <= checked || end - checked > 86_400_000) {
@@ -96,12 +109,12 @@ async function publishReviewed() {
   const cookie = await adminLogin();
   for (const { body, output } of pending.slice(0, 12)) {
     try {
-      const response = await request("/api/internal/hotdeal", { body, cookie });
+      const response = await request(news ? "/api/internal/editorial-news" : "/api/internal/hotdeal", { body, cookie });
       const data = await response.json().catch(() => null);
       if (response.status === 422) {
         stats.rejected++;
         await save(output, { status: "rejected", code: response.status, at: new Date().toISOString() });
-      } else if ((response.status === 200 || response.status === 201) && /^deal-[a-f0-9]{32}$/.test(data?.id ?? "")) {
+      } else if ((response.status === 200 || response.status === 201) && (news ? /^news-[a-f0-9]{32}$/ : /^deal-[a-f0-9]{32}$/).test(data?.id ?? "")) {
         const status = response.status === 201 ? "posted" : "existing";
         stats[status]++;
         await save(output, { status, id: data.id, at: new Date().toISOString() });

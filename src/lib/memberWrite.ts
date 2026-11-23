@@ -13,7 +13,8 @@ const SESSION_SECONDS = 7 * 24 * 3600;
 const TOKEN = /^[a-f0-9]{64}$/;
 
 export type WriterStatus =
-  | { state: "disabled" | "login" | "nickname" | "unavailable" }
+  | { state: "disabled" | "login" | "unavailable" }
+  | { state: "nickname"; conflict?: boolean }
   | { state: "ready"; nickname: string }
   | { state: "suspended"; until: string; registered: boolean; nickname: string | null };
 
@@ -84,8 +85,68 @@ export async function createWriterSession(res: NextResponse, subject: string) {
 export const writerPostKey = (id: string) => "bd:member:post:" + id;
 export const writerSuspensionKey = (id: string) => "bd:member:suspension:" + id;
 export const writerAuthorKey = (alias: string) => "bd:member:author:" + alias;
-const profileKey = (id: string) => "bd:member:profile:" + id;
+const PROFILE_PREFIX = "bd:member:profile:";
+const profileKey = (id: string) => PROFILE_PREFIX + id;
 const revocationKey = (id: string) => "bd:member:revoked:" + id;
+const NICKNAME_INDEX = "bd:member:nickname:v1";
+const NICKNAME_READY = NICKNAME_INDEX + ":ready";
+const NICKNAME_BATCH = 50;
+
+function nicknameKey(nickname: string) {
+  return nickname.normalize("NFKC").toLowerCase().replace(/[\s_.-]/gu, "");
+}
+
+const INDEX_LEGACY_NICKNAMES = `
+if redis.call('GET', KEYS[1]) then return 0 end
+for index = 3, #KEYS do
+  local pos = (index - 3) * 3
+  if redis.call('GET', KEYS[index]) == ARGV[pos + 3] then
+    redis.call('HSETNX', KEYS[2], ARGV[pos + 1], ARGV[pos + 2])
+  end
+end
+return 1
+`;
+
+let indexingNicknames: Promise<void> | undefined;
+
+async function indexLegacyNicknames() {
+  // Registration waits for all preexisting profiles to be considered before claiming any name.
+  const keys = new Set<string>();
+  let cursor = "0";
+  do {
+    const result = await kvCommand<[string | number, string[]]>("SCAN", cursor, "MATCH", PROFILE_PREFIX + "*", "COUNT", 200);
+    if (!Array.isArray(result) || !Array.isArray(result[1]) || !/^\d+$/.test(String(result[0]))) {
+      throw new Error("Invalid nickname index scan.");
+    }
+    cursor = String(result[0]);
+    for (const key of result[1]) {
+      if (typeof key === "string" && key.startsWith(PROFILE_PREFIX) && TOKEN.test(key.slice(PROFILE_PREFIX.length))) keys.add(key);
+    }
+  } while (cursor !== "0");
+
+  const ordered = [...keys].sort();
+  for (let offset = 0; offset < ordered.length; offset += NICKNAME_BATCH) {
+    const batch = ordered.slice(offset, offset + NICKNAME_BATCH);
+    const values = await kvCommand<(string | null)[]>("MGET", ...batch);
+    if (!Array.isArray(values) || values.length !== batch.length) throw new Error("Invalid nickname index batch.");
+    const profiles = batch.flatMap((key, index) => {
+      const raw = values[index];
+      if (!raw) return [];
+      const profile = JSON.parse(raw) as WriterProfile;
+      const normalized = nicknameKey(profile.nickname);
+      return normalized ? [{ key, args: [normalized, key.slice(PROFILE_PREFIX.length), raw] }] : [];
+    });
+    if (profiles.length) await kvCommand("EVAL", INDEX_LEGACY_NICKNAMES, profiles.length + 2,
+      NICKNAME_READY, NICKNAME_INDEX, ...profiles.map(profile => profile.key), ...profiles.flatMap(profile => profile.args));
+  }
+  await kvCommand("SET", NICKNAME_READY, "1");
+}
+
+async function ensureNicknameIndex() {
+  if (await kvCommand("GET", NICKNAME_READY) === "1") return;
+  indexingNicknames ??= indexLegacyNicknames().finally(() => { indexingNicknames = undefined; });
+  await indexingNicknames;
+}
 
 export async function readWriter(req: NextRequest): Promise<{ identity: WriterIdentity | null; status: WriterStatus }> {
   if (!memberLoginEnabled()) return { identity: null, status: { state: "disabled" } };
@@ -110,14 +171,17 @@ export async function readWriter(req: NextRequest): Promise<{ identity: WriterId
   const profile = profileRaw ? JSON.parse(profileRaw) as WriterProfile : null;
   const identity: WriterIdentity = { id, issuedAt, sessionKey, profile };
   if (until) return { identity, status: { state: "suspended", until, registered: Boolean(profile), nickname: profile?.nickname ?? null } };
-  return { identity, status: profile ? { state: "ready", nickname: profile.nickname } : { state: "nickname" } };
+  if (!profile) return { identity, status: { state: "nickname" } };
+  await ensureNicknameIndex();
+  const owner = await kvCommand<string | null>("HGET", NICKNAME_INDEX, nicknameKey(profile.nickname));
+  return { identity, status: owner === id ? { state: "ready", nickname: profile.nickname } : { state: "nickname", conflict: true } };
 }
 
 export function validWriterNickname(value: unknown): value is string {
   if (typeof value !== "string") return false;
   const name = value.trim();
   return name.length <= POST_LIMITS.authorName && /^[\p{L}\p{N} _.-]+$/u.test(name) && /[\p{L}\p{N}]/u.test(name) &&
-    !/^(?:블루딜(?:ai|운영자)?|bluedeal(?:ai|admin)?|관리자|운영자|곰선생)$/i.test(name.normalize("NFKC").replace(/[\s_.-]/g, ""));
+    !/^(?:블루딜(?:ai|운영자)?|bluedeal(?:ai|admin)?|관리자|운영자|곰선생|비회원|익명)$/u.test(nicknameKey(name));
 }
 
 const CHECK_SESSION = `
@@ -127,29 +191,43 @@ if not redis.call('GET', KEYS[1]) or (revoked and tonumber(revoked) >= tonumber(
 end
 `;
 
-export async function chooseWriterNickname(identity: WriterIdentity, nickname: string): Promise<string | null> {
-  const alias = writerToken();
-  const result = await kvCommand<string | null>("EVAL", CHECK_SESSION + `
+export async function chooseWriterNickname(identity: WriterIdentity, nickname: string) {
+  await ensureNicknameIndex();
+  const alias = identity.profile?.alias ?? writerToken();
+  const previous = identity.profile?.nickname;
+  const result = await kvCommand<string[] | null>("EVAL", CHECK_SESSION + `
 if redis.call('GET', KEYS[5]) then return false end
 local profile = redis.call('GET', KEYS[3])
-if profile then return profile end
+if profile then
+  local saved = cjson.decode(profile)
+  if saved.nickname ~= ARGV[5] or saved.alias ~= ARGV[7] then return false end
+  if redis.call('HGET', KEYS[6], ARGV[6]) == ARGV[3] then return {'saved', saved.nickname} end
+elseif ARGV[5] ~= '' then return false end
+local owner = redis.call('HGET', KEYS[6], ARGV[4])
+if owner and owner ~= ARGV[3] then return {'taken'} end
+redis.call('HSET', KEYS[6], ARGV[4], ARGV[3])
 redis.call('SET', KEYS[4], ARGV[3])
 redis.call('SET', KEYS[3], ARGV[2])
-return ARGV[2]
-`, 5, identity.sessionKey, revocationKey(identity.id), profileKey(identity.id), writerAuthorKey(alias),
-    writerSuspensionKey(identity.id), identity.issuedAt, JSON.stringify({ alias, nickname }), identity.id);
-  return result ? (JSON.parse(result) as WriterProfile).nickname : null;
+return {'saved', ARGV[8]}
+`, 6, identity.sessionKey, revocationKey(identity.id), profileKey(identity.id), writerAuthorKey(alias),
+    writerSuspensionKey(identity.id), NICKNAME_INDEX, identity.issuedAt, JSON.stringify({ alias, nickname }), identity.id,
+    nicknameKey(nickname), previous ?? "", previous ? nicknameKey(previous) : "", alias, nickname);
+  return result?.[0] === "taken" ? { state: "taken" } as const
+    : result?.[0] === "saved" && result[1] ? { state: "saved", nickname: result[1] } as const : null;
 }
 
 export async function withdrawWriter(identity: WriterIdentity): Promise<boolean> {
   if (!identity.profile) return false;
   const removed = await kvCommand<number | null>("EVAL", CHECK_SESSION + `
 local profile = redis.call('GET', KEYS[3])
-if not profile or cjson.decode(profile).alias ~= ARGV[4] then return false end
+if not profile then return false end
+local saved = cjson.decode(profile)
+if saved.alias ~= ARGV[4] or saved.nickname ~= ARGV[5] then return false end
 redis.call('SET', KEYS[2], ARGV[2], 'EX', ARGV[3])
 redis.call('DEL', KEYS[1], KEYS[3], KEYS[4])
+if redis.call('HGET', KEYS[5], ARGV[6]) == ARGV[7] then redis.call('HDEL', KEYS[5], ARGV[6]) end
 return 1
-`, 4, identity.sessionKey, revocationKey(identity.id), profileKey(identity.id), writerAuthorKey(identity.profile.alias),
-    identity.issuedAt, Date.now(), SESSION_SECONDS, identity.profile.alias);
+`, 5, identity.sessionKey, revocationKey(identity.id), profileKey(identity.id), writerAuthorKey(identity.profile.alias), NICKNAME_INDEX,
+    identity.issuedAt, Date.now(), SESSION_SECONDS, identity.profile.alias, identity.profile.nickname, nicknameKey(identity.profile.nickname), identity.id);
   return removed === 1;
 }

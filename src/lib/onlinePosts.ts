@@ -156,12 +156,12 @@ function assertBoardAndType(boardKey: BoardKey, type: PostType) {
 }
 
 export function createOnlinePost(input: CreateOnlinePostInput): Promise<Post>;
-export function createOnlinePost(input: CreateOnlinePostInput, verified: { id: string; hotdeal: VerifiedHotdeal }): Promise<{ post: Post; created: boolean }>;
-export async function createOnlinePost(input: CreateOnlinePostInput, verified?: { id: string; hotdeal: VerifiedHotdeal }) {
+export function createOnlinePost(input: CreateOnlinePostInput, verified: { id: string; hotdeal?: VerifiedHotdeal }): Promise<{ post: Post; created: boolean }>;
+export async function createOnlinePost(input: CreateOnlinePostInput, verified?: { id: string; hotdeal?: VerifiedHotdeal }) {
   assertBoardAndType(input.boardKey, input.type);
   validatePostFields(input);
 
-  if (input.boardKey === "hotdeal" && isHotdealAuthor(input.authorName) && !verified) {
+  if (input.boardKey === "hotdeal" && isHotdealAuthor(input.authorName) && !verified?.hotdeal) {
     throw new PostValidationError("블루딜 AI는 운영 게시 전용 작성자입니다.");
   }
   const nowIso = new Date().toISOString();

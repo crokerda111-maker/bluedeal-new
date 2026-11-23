@@ -2,12 +2,27 @@
 
 Python 3.13과 기존 핫딜 수집기의 Beautiful Soup 설치가 필요합니다. 웹사이트의 Node 프로세스와 독립적으로 실행합니다.
 
+## 뉴스와 가격 변동 검토
+
+`python -m ops.maintenance.review_inbox`는 뉴스 공식 RSS, 기존 핫딜·완본체 후보, 공개 가격 관측을 `ops/private/review-inbox/inbox.local.json`에 정리합니다. 같은 판매자와 옵션의 실제 관측 시각이 새로 생겼을 때만 배송비 포함 가격 변동을 기록합니다. 기록을 처음 읽은 시각은 새 상품 관측으로 계산하지 않습니다.
+
+`register_review_inbox.ps1 -Install`은 Windows 로그인 중 5분마다 실행합니다. 공식 출처의 주요 뉴스와 직전에 관측한 큰 가격 변화만 최대 4건씩 기존 Codex CLI에서 초안을 검토하며, 같은 사건을 다시 호출하지 않습니다. RSS 본문은 보관하지 않습니다. 허용된 RSS에 직접 접속할 수 없으면 해당 수집 상태를 기록합니다.
+
+검토 결과는 로컬에 저장됩니다. 뉴스는 번역·자연스러운 한국어 편집·오탈자·민감 표현 검토를 완료한 JSON만 `ops/private/news-publisher/reviewed`에 넣고 `node ops/hotdeals/publish-reviewed.mjs --news --publish`로 즉시 게시합니다. 핫딜은 기존 검증 입력과 게시 경로를 사용합니다. 판매처 피드의 새 가격은 기존 전체 스냅샷 검증과 배포 경로를 사용합니다. 커뮤니티 후보 가격만으로는 상품 가격을 바꾸지 않습니다.
+
 ```powershell
 python ops/maintenance/run.py
 python ops/maintenance/run.py --collect
+python ops/maintenance/run.py --market-access
 ```
 
 첫 명령은 공개 홈페이지·가격표·핫딜 게시판·버전·가격표 상태 API를 읽습니다. 배포된 커밋의 가격 파일과 운영 API의 해시가 일치할 때만 개별 가격의 실제 확인 시각을 계산합니다. 로컬 개발 파일을 운영 자료로 잘못 판단하지 않습니다. 실행 결과는 `ops/private/maintenance/report.html`, `last-health.local.json`, `history.jsonl`에 저장합니다. 원격 응답 본문이나 쿠키·자격 증명은 기록하지 않습니다. 종료 코드 0은 정상, 1은 재확인 사항, 2는 오류, 3은 다른 점검 실행 중입니다.
+
+`--market-access`는 카탈로그에 연결된 판매처와 알리·쿠팡의 공개 표본을 주소별로 확인합니다. 기존 `--collect` 예약에도 포함됩니다. 같은 주소를 하루에 한 번 확인하며 일시 연결 오류는 6시간 후 재확인할 수 있습니다. 차단·요청 제한·robots 상태는 정지된 시각과 함께 보존합니다. 운영자가 공식 이용 조건의 변경을 확인한 주소는 `--recheck-market https://표본주소`로 다시 검사할 수 있습니다. 판매처 연결 보고서는 상품가의 근거로 사용하지 않습니다.
+
+G마켓·11번가 공개 표본의 접근이 불안정하면 기존에 설정한 링크프라이스 공식 API로 행사 후보를 조회합니다. 등록 판매주소 일치 건수만 운영 점검에 표시합니다. 배송비·할인 조건과 정확한 선택 옵션까지 대조된 가격은 기존 검증 입력 경로에서 처리합니다.
+
+로그인한 브라우저가 필요한 판매처는 [공식 ChatGPT 브라우저 확장](https://learn.chatgpt.com/docs/chrome-extension)을 해당 Chrome 프로필에 연결합니다. 데스크톱 앱의 **설정 → 컴퓨터 사용**에서 Chrome의 연결을 확인하고 사이트별 접근을 허용합니다. 정기 무인 수집은 판매처가 승인한 API·피드를 사용합니다.
 
 `--collect`는 퀘이사존의 허용된 공개 목록 최근 7일을 `ops/private/hotdeal-watch/`에 별도 보관합니다. 6개월 백필 저장소 `ops/private/hotdeal-research/`를 덮어쓰거나 확인 시각을 바꾸지 않습니다. 실행당 최대 20페이지, 요청 간 최소 3초이며 기존 robots 지침·정지 조건을 따릅니다. 페이지 예산만 소진한 경우 다음 실행에서 재개합니다. 차단·파서 오류는 다음 예약 실행에서도 자동 재시도하지 않고 검토 대기로 둡니다. 완료 후 6시간 이내의 중복 실행은 새 수집을 시작하지 않습니다. 장기간 미실행 시 최근 7일 밖의 공백을 모두 메웠다고 주장하지 않습니다.
 
