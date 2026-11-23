@@ -70,7 +70,7 @@ export default function HotdealTerms({ post }: { post: Post }) {
             <dt className={"flex items-center gap-0.5 " + label}>
               <span className="whitespace-nowrap">상품 링크</span><AffiliateLinkInfo />
             </dt>
-            <dd className="break-keep"><PostContentLink href={affiliateHref} info={post.linkInfo}>판매처에서 상품 보기</PostContentLink></dd>
+            <dd className="break-keep"><PostContentLink href={affiliateHref} info={post.linkInfo} showAffiliateBadge={false}>판매처에서 상품 보기</PostContentLink></dd>
           </div>
         ) : null}
         <div className={row}><dt className={label}>옵션</dt><dd className="[overflow-wrap:anywhere]">{deal.option}</dd></div>
