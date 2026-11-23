@@ -13,6 +13,7 @@ const MERCHANT_RULES: MerchantRule[] = [
   { merchant: "lotteon", hosts: [/(^|\.)lotteon\.com$/i] },
   { merchant: "icoda", hosts: [/(^|\.)icoda\.co\.kr$/i] },
   { merchant: "ssg", hosts: [/(^|\.)ssg\.com$/i] },
+  { merchant: "auction", hosts: [/^itempage3\.auction\.co\.kr$/i] },
   { merchant: "compuzone", hosts: [/(^|\.)compuzone\.co\.kr$/i] },
   { merchant: "seorinexpress", hosts: [/(^|\.)seorinexpress\.com$/i] },
   {
@@ -66,6 +67,7 @@ export type AffiliateMapping = {
 
 const LINKPRICE_ADVERTISERS: Partial<Record<Merchant, string>> = {
   gmarket: "gmarket",
+  auction: "auction",
   "11st": "11st",
   lotteon: "lotteon",
   ssg: "emart",

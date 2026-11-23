@@ -30,8 +30,11 @@ function productAddress(raw: string) {
   let match: string | null | undefined;
   let merchant: Merchant;
   if (u.hostname === "item.gmarket.co.kr" && u.pathname.toLowerCase() === "/item") {
-    match = u.searchParams.get("goodsCode");
+    match = u.searchParams.get("goodsCode") ?? u.searchParams.get("goodscode");
     merchant = "gmarket";
+  } else if (u.hostname === "itempage3.auction.co.kr" && u.pathname.toLowerCase() === "/detailview.aspx") {
+    match = u.searchParams.get("itemno") ?? u.searchParams.get("ItemNo");
+    merchant = "auction";
   } else if (u.hostname === "www.11st.co.kr") {
     match = u.pathname.match(/^\/products\/(\d+)\/?$/)?.[1];
     merchant = "11st";
@@ -44,7 +47,8 @@ function productAddress(raw: string) {
   } else {
     return;
   }
-  if (!match || !/^\d{6,18}$/.test(match)) return;
+  const itemIdPattern = merchant === "auction" ? /^[A-Z]\d{7,12}$/ : /^\d{6,18}$/;
+  if (!match || !itemIdPattern.test(match)) return;
   return { code: `market-${merchant}-${match}`, merchant, url };
 }
 
@@ -116,7 +120,7 @@ export function productMarketplaceLinks(productId: string, offers: readonly Pric
 }
 
 export const MARKETPLACE_NAMES: Record<Merchant, string> = {
-  gmarket: "G마켓", "11st": "11번가", ssg: "SSG.COM", lotteon: "롯데온",
+  gmarket: "G마켓", "11st": "11번가", ssg: "SSG.COM", lotteon: "롯데온", auction: "옥션",
   coupang: "쿠팡", aliexpress: "AliExpress", naver: "네이버", compuzone: "컴퓨존",
   seorinexpress: "서린 공식몰", darkflash: "다크플래쉬", icoda: "아이코다",
   redbitmall: "레드빗몰", ohou: "오늘의집",

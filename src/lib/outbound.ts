@@ -1,7 +1,7 @@
 import generatedOutbound from "../content/outbound.generated.json";
 import { MARKETPLACE_OUTBOUND_LINKS } from "./productMarketplace";
 
-export type Merchant = "coupang" | "aliexpress" | "naver" | "11st" | "gmarket" | "compuzone" | "seorinexpress" | "ssg" | "darkflash" | "lotteon" | "icoda" | "redbitmall" | "ohou";
+export type Merchant = "coupang" | "aliexpress" | "naver" | "11st" | "gmarket" | "auction" | "compuzone" | "seorinexpress" | "ssg" | "darkflash" | "lotteon" | "icoda" | "redbitmall" | "ohou";
 
 export type OutboundLink = {
   code: string;

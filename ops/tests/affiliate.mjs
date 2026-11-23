@@ -77,6 +77,7 @@ test('official LinkPrice long links preserve issued tracking and require the exa
   for(const [merchant,advertiser,originalUrl] of [
     ['gmarket','gmarket',source],
     ['11st','11st','https://www.11st.co.kr/products/FIXTURE001'],
+    ['auction','auction','https://itempage3.auction.co.kr/DetailView.aspx?itemno=F123456789'],
     ['lotteon','lotteon','https://www.lotteon.com/p/product/FIXTURE001'],
     ['ssg','emart','https://www.ssg.com/item/itemView.ssg?itemId=123&siteNo=6004'],
   ]){
