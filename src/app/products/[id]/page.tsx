@@ -39,7 +39,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const componentSpecs = product.specifications.filter(spec => /^판매처 (부품표|기본사양) · /.test(spec.label));
   const configurationReview = fullPcReviews.find(review => review.productId === product.id && !review.configuration);
   const editorial = getProductEditorial(product.id);
-  const buyingNotes = editorial ? undefined : getProductBuyingNotes(product);
+  const buyingNotes = getProductBuyingNotes(product);
   const documentedIssue = editorial?.issue ?? buyingNotes?.issue;
   const advantage = editorial?.advantage ?? buyingNotes?.advantage;
   const caution = editorial?.caution ?? buyingNotes?.caution;
