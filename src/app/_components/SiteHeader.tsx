@@ -57,6 +57,7 @@ function Dropdown({
       }}
     >
       <Link
+        prefetch={false}
         ref={trigger}
         aria-expanded={open}
         aria-controls={menuId}
@@ -99,6 +100,7 @@ function DropItem({ href, children }: { href: string; children: React.ReactNode 
   return (
     <Link
       href={href}
+      prefetch={false}
       className="flex items-center rounded-xl px-4 py-2 text-sm text-white/80 hover:bg-white/8 hover:text-white"
     >
       <span className="w-full text-left">{children}</span>
@@ -115,13 +117,13 @@ export default function SiteHeader() {
   const priceItems = useMemo(() => PRICE_CATEGORIES, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#060B1A]/70 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#080e20] md:bg-[#060B1A]/70 md:backdrop-blur">
       <div className="mx-auto max-w-6xl px-4 py-4">
         <div className="flex items-center justify-between gap-3">
-          <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="블루딜 홈">
+          <Link href="/" prefetch={false} className="flex min-w-0 items-center gap-3" aria-label="블루딜 홈">
             <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-cyan-200/90 to-blue-500/90 shadow-[0_12px_30px_-14px_rgba(59,130,246,0.7)]">
               <div
-                className="absolute inset-0 bg-white/20 motion-safe:animate-[sheen_2.8s_ease-in-out_infinite]"
+                className="absolute inset-0 bg-white/20 md:motion-safe:animate-[sheen_2.8s_ease-in-out_infinite]"
               />
             </div>
             <div className="min-w-0 leading-tight">
@@ -150,7 +152,7 @@ export default function SiteHeader() {
               ))}
             </Dropdown>
 
-            <Link className="hover:text-white" href="/community/hotdeal">
+            <Link className="hover:text-white" href="/community/hotdeal" prefetch={false}>
               핫딜
             </Link>
 
@@ -165,20 +167,20 @@ export default function SiteHeader() {
               ))}
             </Dropdown>
 
-            <Link className="hover:text-white" href="/contact">
+            <Link className="hover:text-white" href="/contact" prefetch={false}>
               문의
             </Link>
           </nav>
 
           <nav aria-label="회원 메뉴" className="flex shrink-0 items-center gap-1.5 text-xs sm:gap-2 sm:text-sm">
             {hasSession ? (
-              <Link href="/account" className="flex min-h-11 max-w-36 items-center rounded-xl border border-white/15 bg-white/5 px-3 font-medium text-white/90 hover:bg-white/10 sm:max-w-48">
+              <Link href="/account" prefetch={false} className="flex min-h-11 max-w-36 items-center rounded-xl border border-white/15 bg-white/5 px-3 font-medium text-white/90 hover:bg-white/10 sm:max-w-48">
                 <span className="truncate">{status.state === "ready" ? status.nickname : "내 계정"}</span>
               </Link>
             ) : (
               <>
-                <Link href="/login" className="inline-flex min-h-11 items-center rounded-xl px-2 text-white/85 hover:bg-white/10 sm:px-3">로그인</Link>
-                <Link href="/signup" className="inline-flex min-h-11 items-center rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-2.5 font-semibold text-cyan-100 hover:bg-cyan-300/20 sm:px-3">회원가입</Link>
+                <Link href="/login" prefetch={false} className="inline-flex min-h-11 items-center rounded-xl px-2 text-white/85 hover:bg-white/10 sm:px-3">로그인</Link>
+                <Link href="/signup" prefetch={false} className="inline-flex min-h-11 items-center rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-2.5 font-semibold text-cyan-100 hover:bg-cyan-300/20 sm:px-3">회원가입</Link>
               </>
             )}
           </nav>
@@ -186,7 +188,7 @@ export default function SiteHeader() {
 
         <nav aria-label="모바일 주요 메뉴" className="mt-3 grid grid-cols-3 gap-1.5 sm:grid-cols-5 lg:hidden">
           {mobileLinks.map(({ href, label }) => (
-            <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}
+            <Link key={href} href={href} prefetch={false} aria-current={pathname === href ? "page" : undefined}
               className={cn("inline-flex min-h-11 min-w-0 items-center justify-center whitespace-nowrap rounded-xl border px-1 text-[11px] min-[360px]:text-xs",
                 sectionActive(pathname, href) ? "border-cyan-300/40 bg-cyan-300/15 font-semibold text-cyan-100" : "border-white/10 bg-white/5 text-white/80 hover:bg-white/10")}>
               {label}

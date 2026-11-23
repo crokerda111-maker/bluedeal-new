@@ -1,22 +1,12 @@
 import Link from "next/link";
 import HomeHero from "./_components/HomeHero";
-import RealtimePosts from "./_components/RealtimePosts";
+import HomeFeed from "./_components/HomeFeed";
 import { getMeta, getPrices } from "../lib/prices";
 import { PRICE_CATEGORIES } from "../lib/priceCategories";
-import { listOnlinePostsByBoard } from "../lib/onlinePosts";
-import type { Post } from "../lib/postTypes";
-import { HOTDEAL_CATEGORIES, hotdealCategory, hotdealPrice, isActiveHotdeal } from "../lib/hotdeal";
 import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from "../lib/site";
 import { CATALOG_SUMMARY } from "../lib/catalogData";
 
 export const metadata = pageMetadata("블루딜 | PC 부품 가격·핫딜·IT 커뮤니티", SITE_DESCRIPTION, "/");
-export const dynamic = "force-dynamic";
-
-function formatDate(value: string) {
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-  return date.toLocaleDateString("ko-KR", { timeZone: "Asia/Seoul", month: "short", day: "numeric" });
-}
 
 const PRIMARY_ROUTES = [
   {
@@ -79,7 +69,7 @@ function SectionTitle({
         <p className="mt-2 text-sm text-white/55">{desc}</p>
       </div>
       {href && action ? (
-        <Link href={href} className="text-sm text-cyan-200 hover:text-cyan-100 hover:underline">
+        <Link href={href} prefetch={false} className="text-sm text-cyan-200 hover:text-cyan-100 hover:underline">
           {action} →
         </Link>
       ) : null}
@@ -87,20 +77,12 @@ function SectionTitle({
   );
 }
 
-async function getHomeHotdeals() {
-  const now = Date.now();
-  const posts = await listOnlinePostsByBoard("hotdeal", 30);
-  return posts.filter(post => !post.isPrivate && (!post.hotdeal || isActiveHotdeal(post.hotdeal, now))).slice(0, 4);
-}
-
 export default async function HomePage() {
-  const [meta, priceResults, hotDeals] = await Promise.all([
+  const [meta, priceResults] = await Promise.all([
     getMeta(),
     Promise.all(PRICE_CATEGORIES.map((category) => getPrices(category.key))),
-    getHomeHotdeals().catch(() => null as Post[] | null),
   ]);
   const itemCount = priceResults.reduce((sum, result) => sum + result.items.length, 0);
-  const deals = hotDeals ?? [];
 
   return (
     <div className="space-y-16 pb-6">
@@ -112,6 +94,7 @@ export default async function HomePage() {
           <Link
             key={item.href}
             href={item.href}
+            prefetch={false}
             className="group bd-surface-md p-6 transition hover:-translate-y-0.5 hover:border-cyan-200/25 hover:bg-white/10"
           >
             <div className="text-[11px] font-semibold tracking-[0.2em] text-cyan-200/70">{item.eyebrow}</div>
@@ -122,60 +105,28 @@ export default async function HomePage() {
         ))}
       </section>
 
-      <section>
-        <SectionTitle
+      <HomeFeed
+        hotdealHeading={<SectionTitle
           eyebrow="HOT DEAL"
           title="실시간 핫딜"
           desc="카테고리별 할인 상품과 구매처 정보를 모아봅니다."
           href="/community/hotdeal"
           action="핫딜 게시판"
-        />
-        <div className="mt-5 grid gap-3">
-          {hotDeals === null ? <p role="status" className="bd-surface-md p-5 text-sm text-amber-200">핫딜을 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.</p> : null}
-          {hotDeals !== null && deals.length === 0 ? (
-            <div className="bd-surface-md p-5 text-sm text-white/70">아직 등록된 핫딜이 없습니다.</div>
-          ) : null}
-          {deals.map((deal) => (
-            <Link key={deal.id} href={`/community/hotdeal/${deal.id}`} className="group bd-surface-md p-4 hover:bg-white/10">
-              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-2 text-xs text-white/70">
-                    {deal.extra?.category ? <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-white/70">{HOTDEAL_CATEGORIES.find(item => item.value === hotdealCategory(deal.extra?.category))?.label}</span> : null}
-                    <span>{String(deal.extra?.store ?? "판매처 미표시")}</span>
-                    <span>·</span>
-                    <span>{formatDate(deal.createdAt)}</span>
-                  </div>
-                  <div className="mt-2 truncate font-semibold tracking-tight group-hover:text-cyan-100">{deal.title}</div>
-                  <div className="mt-1 line-clamp-1 text-xs text-white/70">{deal.content}</div>
-                </div>
-                <div className="shrink-0 md:text-right">
-                  <div className="text-lg font-semibold">{hotdealPrice(deal) || "가격 확인"}</div>
-                  <div className="mt-1 text-xs text-white/70">상세 보기 →</div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <SectionTitle
+        />}
+        recentHeading={<SectionTitle
           eyebrow="COMMUNITY"
           title="최신 게시글"
           desc="IT 소식과 사용자 경험을 빠르게 확인합니다."
           href="/community"
           action="커뮤니티 전체"
-        />
-        <div className="mt-5">
-          <RealtimePosts limit={3} showHeader={false} />
-        </div>
-      </section>
+        />}
+      />
 
       <section>
         <SectionTitle eyebrow="EXPLORE" title="주제별로 둘러보기" desc="관심 있는 게시판으로 바로 이동합니다." />
         <div className="mt-5 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
           {COMMUNITY_LINKS.map((item) => (
-            <Link key={item.href} href={item.href} className="group bd-surface-md p-4 hover:bg-white/10">
+            <Link key={item.href} href={item.href} prefetch={false} className="group bd-surface-md p-4 hover:bg-white/10">
               <div className="flex items-center justify-between">
                 <div className="text-sm font-semibold">{item.title}</div>
                 <div className="text-white/35 group-hover:text-white/70">→</div>

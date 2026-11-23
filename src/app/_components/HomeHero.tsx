@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useMemo } from "react";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
 
 function cn(...v: Array<string | false | null | undefined>) {
@@ -56,7 +53,7 @@ function ButtonLink({
       : "bg-transparent hover:bg-white/8 border border-white/10 text-white/90";
 
   return (
-    <Link href={href} className={cn(base, style, className)}>
+    <Link href={href} prefetch={false} className={cn(base, style, className)}>
       {children}
     </Link>
   );
@@ -73,7 +70,7 @@ function Stat({ k, v, d }: { k: string; v: string; d: string }) {
 }
 
 export default function HomeHero({ updatedAt, schedule, itemCount, catalogCount }: { updatedAt: string; schedule: string; itemCount: number; catalogCount: number }) {
-  const chips = useMemo(() => PRICE_CATEGORIES.slice(0, 8), []);
+  const chips = PRICE_CATEGORIES.slice(0, 8);
 
   return (
     <section className="pt-6 md:pt-8">
@@ -119,7 +116,7 @@ export default function HomeHero({ updatedAt, schedule, itemCount, catalogCount 
         <aside className="bd-surface p-6 md:p-7">
           <div className="flex items-center justify-between">
             <div className="text-sm font-semibold">오늘의 현황</div>
-            <Link href="/prices" className="text-xs text-cyan-200 hover:underline">
+            <Link href="/prices" prefetch={false} className="text-xs text-cyan-200 hover:underline">
               더보기
             </Link>
           </div>
@@ -129,6 +126,7 @@ export default function HomeHero({ updatedAt, schedule, itemCount, catalogCount 
               <Link
                 key={c.key}
                 href={`/prices/${c.key}`}
+                prefetch={false}
                 className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/75 hover:bg-white/10"
               >
                 {c.shortTitle}

@@ -638,18 +638,58 @@ try {
     } finally { kv.controls.unavailable = false; }
   });
 
-  await check('home distinguishes a storage outage from an empty hotdeal board', async () => {
+  await check('home is independent of board storage and feed distinguishes outages from empty boards', async () => {
     kv.controls.unavailable = true;
     try {
+      const before = kv.requests.length;
       const response = await fetch(app.base);
       assert.equal(response.status, 200);
       const html = await response.text();
-      assert.match(html, /핫딜을 불러오지 못했습니다/);
-      assert.doesNotMatch(html, /아직 등록된 핫딜이 없습니다/);
+      assert.match(html, /핫딜을 불러오는 중입니다/);
       assert.match(html, /최근 가격 확인/);
+      const boardReads = kv.requests.slice(before).flatMap(entry => entry.commands).filter(([command, key]) => command === 'ZREVRANGE' && String(key).startsWith('bd:board:'));
+      assert.deepEqual(boardReads, [], 'the initial home document must not query boards');
+      const feed = await api('GET', '/api/home-feed');
+      assert.equal(feed.status, 200);
+      assert.equal(feed.data.deals, null);
+      assert.ok(feed.data.failedCount > 0);
+      assert.match(feed.headers.get('cache-control'), /no-store/);
     } finally { kv.controls.unavailable = false; }
-    const response = await fetch(app.base);
-    assert.match(await response.text(), /아직 등록된 핫딜이 없습니다/);
+    const feed = await api('GET', '/api/home-feed');
+    assert.deepEqual(feed.data.deals, []);
+    assert.equal(feed.data.failedCount, 0);
+  });
+
+  await check('home feed returns compact public summaries and retains healthy boards during a partial outage', async () => {
+    const fixtures = [
+      { id: 'home-feed-public-deal', boardKey: 'hotdeal', title: 'Public deal fixture', content: 'Public preview. '.repeat(50), extra: { store: 'Test store' } },
+      { id: 'home-feed-public-post', boardKey: 'hardware', title: 'Newest public post fixture', content: 'Do not transfer the whole post body' },
+      { id: 'home-feed-private', boardKey: 'hotdeal', title: 'PRIVATE_HOTDEAL_TITLE', content: 'PRIVATE_HOTDEAL_BODY', isPrivate: true, passwordHash: 'PRIVATE_HASH' },
+      { id: 'home-feed-inquiry', boardKey: 'inquiry', title: 'EXCLUDED_INQUIRY_TITLE', content: 'EXCLUDED_INQUIRY_BODY' },
+    ];
+    fixtures.forEach((post, index) => {
+      const key = 'bd:board:' + post.boardKey + ':posts';
+      const entries = kv.sorted.get(key) ?? new Map();
+      const score = Date.now() + 1000 + index;
+      entries.set(post.id, score);
+      kv.sorted.set(key, entries);
+      kv.values.set('bd:post:' + post.id, JSON.stringify({ ...post, createdAt: new Date(score).toISOString() }));
+    });
+    kv.controls.partial = true;
+    try {
+      const { status, data } = await api('GET', '/api/home-feed');
+      assert.equal(status, 200);
+      assert.equal(data.failedCount, 1);
+      assert.ok(data.deals.some(deal => deal.title === 'Public deal fixture' && deal.excerpt.length <= 140));
+      assert.equal(data.posts[0].title, 'Newest public post fixture');
+      assert.doesNotMatch(JSON.stringify(data), /PRIVATE_HOTDEAL|PRIVATE_HASH|EXCLUDED_INQUIRY|Do not transfer the whole post body/);
+    } finally {
+      kv.controls.partial = false;
+      for (const post of fixtures) {
+        kv.values.delete('bd:post:' + post.id);
+        kv.sorted.get('bd:board:' + post.boardKey + ':posts')?.delete(post.id);
+      }
+    }
   });
 
   await check('deployment version exposes only public release metadata without caching', async () => {

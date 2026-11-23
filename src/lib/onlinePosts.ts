@@ -225,7 +225,7 @@ export async function getOnlinePostById(id: string): Promise<Post | null> {
   }
 }
 
-export async function listOnlinePostsByBoard(boardKey: BoardKey, limit = 50): Promise<Post[]> {
+export async function listOnlinePostsByBoard(boardKey: BoardKey, limit = 50, { includeHotdealClicks = true } = {}): Promise<Post[]> {
   const b = getBoardByKey(boardKey);
   if (!b) throw new Error("Invalid boardKey");
 
@@ -247,7 +247,7 @@ export async function listOnlinePostsByBoard(boardKey: BoardKey, limit = 50): Pr
     }
   }
 
-  if (boardKey === "hotdeal") {
+  if (boardKey === "hotdeal" && includeHotdealClicks) {
     const verifiedPosts = posts.flatMap(post => {
       const href = post.extra?.dealLink;
       const code = typeof href === "string" ? href.match(/^\/go\/([a-zA-Z0-9_-]{2,64})$/)?.[1] : undefined;

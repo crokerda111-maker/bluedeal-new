@@ -4,25 +4,25 @@ export default function SiteFooter() {
   return (
     <footer className="border-t border-white/10 py-8">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
-        <div>© {new Date().getFullYear()} BLUEDEAL <span aria-hidden="true">·</span> <Link href="/" className="inline-flex min-h-11 items-center hover:text-white">bluedeal.co.kr</Link></div>
+        <div>© {new Date().getFullYear()} BLUEDEAL <span aria-hidden="true">·</span> <Link href="/" prefetch={false} className="inline-flex min-h-11 items-center hover:text-white">bluedeal.co.kr</Link></div>
 
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 [&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center">
-          <Link className="hover:text-white" href="/about">소개·가격 안내</Link>
-          <Link className="hover:text-white" href="/privacy">개인정보처리방침</Link>
-          <Link className="hover:text-white" href="/about#affiliate">제휴 안내</Link>
-          <Link className="hover:text-white" href="/it">
+          <Link prefetch={false} className="hover:text-white" href="/about">소개·가격 안내</Link>
+          <Link prefetch={false} className="hover:text-white" href="/privacy">개인정보처리방침</Link>
+          <Link prefetch={false} className="hover:text-white" href="/about#affiliate">제휴 안내</Link>
+          <Link prefetch={false} className="hover:text-white" href="/it">
             IT 소식
           </Link>
-          <Link className="hover:text-white" href="/community">
+          <Link prefetch={false} className="hover:text-white" href="/community">
             커뮤니티
           </Link>
-          <Link className="hover:text-white" href="/prices">
+          <Link prefetch={false} className="hover:text-white" href="/prices">
             상품·가격비교
           </Link>
-          <Link className="hover:text-white" href="/community/hotdeal">
+          <Link prefetch={false} className="hover:text-white" href="/community/hotdeal">
             핫딜
           </Link>
-          <Link className="hover:text-white" href="/contact">
+          <Link prefetch={false} className="hover:text-white" href="/contact">
             문의
           </Link>
         </div>

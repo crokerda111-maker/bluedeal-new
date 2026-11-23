@@ -97,6 +97,14 @@ html, body {
     opacity: 0.85;
   }
 
+  @media (max-width: 767px) {
+    .bd-surface,
+    .bd-surface-md {
+      backdrop-filter: none;
+      filter: none;
+    }
+  }
+
   /* Ensure content stays above the mask */
   .bd-surface > *,
   .bd-surface-md > * {
