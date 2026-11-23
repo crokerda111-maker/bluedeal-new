@@ -11,7 +11,7 @@ import { PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
 import { productHighlights } from "../../../lib/productFilters";
 import FullPcConfiguration from "../../../components/FullPcConfiguration";
 import fullPcReviews from "../../../content/fullPcReviews.json";
-import { getPartEditorial, getProductEditorial, productEditorialCheckedOn } from "../../../lib/productEditorial";
+import { getPartEditorial, getProductEditorial, getProductPhoto, productEditorialCheckedOn } from "../../../lib/productEditorial";
 import ProductPhoto from "../../../components/ProductPhoto";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const configurationReview = fullPcReviews.find(review => review.productId === product.id && !review.configuration);
   const editorial = getProductEditorial(product.id);
   const casePhoto = configurationReview ? getPartEditorial(configurationReview.parts.case)?.photo : undefined;
-  const photo = editorial?.photo ?? casePhoto;
+  const photo = getProductPhoto(product.id) ?? casePhoto;
   const affiliateCodes = await getOfferAffiliateCodes(offers);
   const informationCheckedAt = [product.listObservedAt, ...product.sources.map(source => source.observedAt)].filter((value): value is string => Boolean(value)).sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? null;
   return <article className="space-y-6">

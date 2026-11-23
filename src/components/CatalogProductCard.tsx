@@ -4,12 +4,12 @@ import { catalogDate, PRODUCT_KIND_LABELS, productCategoryLabel } from "../lib/p
 import type { PriceItem } from "../lib/mockPrices";
 import { priceFreshness } from "../lib/priceFilters";
 import { productHighlights } from "../lib/productFilters";
-import { getProductEditorial } from "../lib/productEditorial";
+import { getProductPhoto } from "../lib/productEditorial";
 import ProductPhoto from "./ProductPhoto";
 
 export default function CatalogProductCard({ product, offers, now }: { product: CatalogProduct; offers?: readonly PriceItem[]; now: number }) {
   const offer = offers?.[0];
-  const photo = product.category === "case" ? getProductEditorial(product.id)?.photo : undefined;
+  const photo = product.category === "case" ? getProductPhoto(product.id) : undefined;
   const highlights = productHighlights(product, offers);
   const observed = offer?.checkedAt || offer?.updatedAt || "";
   const observedLabel = Number.isFinite(Date.parse(observed)) ? new Date(observed).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST" : "시각 미확인";

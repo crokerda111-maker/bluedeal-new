@@ -28,6 +28,15 @@ test('case photos use exact catalog options and reviewed default components',()=
   assert.notEqual(black.src,white.src);
   assert.match(black.alt,/블랙/);
   assert.match(white.alt,/화이트/);
+  const shopPhotos=JSON.parse(fs.readFileSync(new URL('../../src/content/products/casePhotos.json',import.meta.url),'utf8'));
+  const detailedPhotos=new Set(cases.flatMap(entry=>entry.catalogIds??[]));
+  assert.ok(Object.keys(shopPhotos).every(id=>products.some(p=>p.id===id&&p.category==='case')&&!detailedPhotos.has(id)));
+  for(const [id,photo] of Object.entries(shopPhotos)){
+    const product=products.find(p=>p.id===id);
+    assert.equal(photo.alt,product.name+' 케이스 외관');
+    assert.equal(photo.source,product.sources[0].url);
+    assert.equal(new URL(photo.src).protocol,'https:');
+  }
   for(const entry of cases){
     assert.equal(new URL(entry.photo.src).protocol,'https:');
     assert.equal(new URL(entry.photo.source).protocol,'https:');

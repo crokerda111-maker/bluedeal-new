@@ -1,4 +1,5 @@
 import data from "../content/products/editorial.json";
+import catalogCasePhotos from "../content/products/casePhotos.json";
 
 export type ProductPhoto = {
   src: string;
@@ -29,6 +30,10 @@ export const productEditorialCheckedOn = data.checkedOn;
 
 export function getProductEditorial(id: string) {
   return byCatalogId.get(id);
+}
+
+export function getProductPhoto(id: string) {
+  return byCatalogId.get(id)?.photo ?? (catalogCasePhotos as Record<string, ProductPhoto>)[id];
 }
 
 export function getPartEditorial(name: string) {

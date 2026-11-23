@@ -652,6 +652,30 @@
       "advantage": "1,000W ATX 3.1 풀모듈러 구성으로 필요한 전원 케이블만 연결할 수 있고, with hub 옵션에는 USB 연결을 늘릴 RS Hub가 포함됩니다.",
       "caution": "RS1000 표준 옵션과 with hub 옵션은 구성품이 다릅니다. 파워 장착 방향과 커넥터·케이블이 꺾이는 공간을 케이스에서 확인하세요.",
       "source": "https://lian-li.com/product/rs/"
+    },
+    {
+      "catalogIds": [
+        "reviewed-antec-flux-pro-mesh-white-retailer"
+      ],
+      "advantage": "전면 140mm 팬 3개를 포함해 총 6개의 팬을 기본 제공합니다. 전면 우드와 메시를 조합한 화이트 케이스입니다.",
+      "caution": "상단과 전면에 420mm 라디에이터를 둘 다 달 수는 없습니다. 두 곳에 장착하려면 한쪽은 360mm로 구성하고, PSU와 HDD 장착 공간을 함께 확인하세요.",
+      "source": "https://www.antec.com/product/case/flux-pro-white"
+    },
+    {
+      "catalogIds": [
+        "reviewed-darkflash-floatron-f1-argb-black-retailer"
+      ],
+      "advantage": "측면 인피니티 미러와 ARGB 조명이 있는 케이스로 제조사 표기상 그래픽카드 최대 415mm, 공랭 쿨러 최대 180mm를 지원합니다.",
+      "caution": "360mm 수랭은 상단 위치를 확인하세요. 측면·하단 팬을 추가하려면 판매 옵션의 기본 팬과 연결 방식도 확인하세요.",
+      "source": "https://www.darkflash.com/product/floatron-f1-atx"
+    },
+    {
+      "catalogIds": [
+        "reviewed-phanteks-ex5-black-retailer"
+      ],
+      "advantage": "강화유리 창으로 그래픽카드가 보이고 기본 지지대가 카드를 받쳐주는 구조입니다.",
+      "caution": "그래픽카드 길이 한도는 358mm입니다. 허용 두께는 카드가 꽂히는 보드 슬롯 위치에 따라 달라져 보드와 카드 실측을 함께 확인하세요.",
+      "source": "https://phanteks.com/product/ex5-black/"
     }
   ]
 }
