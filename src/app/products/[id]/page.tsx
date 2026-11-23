@@ -7,7 +7,7 @@ import type { ProductSource } from "../../../lib/productCatalog";
 import { pageMetadata } from "../../../lib/site";
 import { getPriceView } from "../../../lib/prices";
 import { getOfferAffiliateCodes } from "../../../lib/affiliateStore";
-import { fmtWon, PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
+import { fmtWon, formatPriceTime, PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
 import { productHighlights } from "../../../lib/productFilters";
 import FullPcConfiguration from "../../../components/FullPcConfiguration";
 import PcSellerConfiguration from "../../../components/PcSellerConfiguration";
@@ -45,6 +45,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const savings = configurationReview ? selectMarketplaceFullPcs(offers, now).find(candidate => candidate.product.id === product.id)?.savings : null;
   const marketplaceNote = marketplaceNotes[product.id as keyof typeof marketplaceNotes];
   const purchaseNote = marketplaceNote && "kind" in marketplaceNote;
+  const comparison = marketplaceNote && "comparison" in marketplaceNote ? marketplaceNote.comparison : null;
   const editorial = getProductEditorial(product.id);
   const buyingNotes = getProductBuyingNotes(product);
   const documentedIssue = editorial?.issue ?? buyingNotes?.issue;
@@ -87,6 +88,17 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         <p className="mt-1 text-white/80">{marketplaceNote.note}</p>
         <a href={marketplaceNote.source} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-cyan-200 underline">{marketplaceNote.reviewedOn} KST · {purchaseNote ? "판매 페이지" : "판매처 후기"}<span className="sr-only"> (새 창)</span></a>
       </div> : null}
+      {comparison ? <section className="rounded-xl border border-white/15 p-4 text-sm leading-6" aria-labelledby="same-tier-title">
+        <h3 id="same-tier-title" className="font-semibold text-white">같은 CPU·GPU 급의 다른 구성</h3>
+        <p className="mt-2 text-white/80">{comparison.name}의 기본 배송 포함 할인 표시가는 {fmtWon(comparison.price)}였습니다. 같은 날 확인한 이 상품의 할인 표시가 {fmtWon(comparison.evaluatedPrice)}보다 {fmtWon(comparison.evaluatedPrice - comparison.price)} 낮았습니다. 가격 확인 {formatPriceTime(comparison.checkedAt)}.</p>
+        <p className="mt-2 text-white/80">다른 주요 부품은 {comparison.parts.join(" · ")}입니다.</p>
+        <p className="mt-2 text-amber-100">{comparison.finding}</p>
+        <div className="mt-2 flex flex-wrap gap-x-4 text-cyan-200 underline underline-offset-4">
+          <a className="inline-flex min-h-11 items-center" href={comparison.sellerUrl} target="_blank" rel="noopener noreferrer">가격 출처<span className="sr-only"> (새 창)</span></a>
+          <a className="inline-flex min-h-11 items-center" href={comparison.partsUrl} target="_blank" rel="noopener noreferrer">판매처 부품표<span className="sr-only"> (새 창)</span></a>
+          <a className="inline-flex min-h-11 items-center" href={comparison.gpuUrl} target="_blank" rel="noopener noreferrer">GPU 권장 파워<span className="sr-only"> (새 창)</span></a>
+        </div>
+      </section> : null}
     </section> : null}
     <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
       <div className="min-w-0 space-y-6">
