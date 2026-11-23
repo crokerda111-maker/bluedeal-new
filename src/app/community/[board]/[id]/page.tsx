@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { use, useEffect, useMemo, useState } from "react";
 import { getCommunityBoard, POST_TYPE_LABEL } from "../../../../lib/boardConfig";
@@ -157,6 +158,19 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
         <h1 className="[overflow-wrap:anywhere] text-2xl font-semibold tracking-tight">{board.key === "issue" && post.title === issuePostTitle(post.content) ? "한 줄 이슈" : post.title}</h1>
         <PostAffiliateNotice info={noticeInfo} compact={board.key === "hotdeal"} />
         <HotdealTerms post={post} />
+        {post.hotdeal?.image && /^\/hotdeals\/11st-\d+\.webp$/.test(post.hotdeal.image) ? (
+          <figure className="mt-5 w-full max-w-lg">
+            <Image
+              src={post.hotdeal.image}
+              alt={post.title + " 상품 대표 사진"}
+              width={600}
+              height={600}
+              unoptimized
+              className="h-auto w-full rounded-xl bg-white object-contain"
+            />
+            <figcaption className="mt-2 text-xs text-white/65">상품 대표 사진 · 11번가 판매 페이지</figcaption>
+          </figure>
+        ) : null}
         <LinkifiedText text={post.content} linkInfo={post.linkInfo} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
       </section>
 

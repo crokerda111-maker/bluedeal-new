@@ -24,6 +24,7 @@ export type VerifiedHotdeal = {
   price: number;
   shipping: number;
   conditions: string;
+  image?: string;
   lowestIn30Days?: { observations: number };
 };
 

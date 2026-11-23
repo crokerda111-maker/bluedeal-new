@@ -391,6 +391,7 @@ try {
       assert.equal((await request(disclosureApp.base, 'POST', '/api/posts', {
         boardKey: 'hotdeal', type: 'general', title: 'LOCAL', content: 'fake', authorName: '블루딜  ＡＩ',
       })).status, 400);
+      assert.equal((await request(disclosureApp.base, "POST", route, { ...deal, image: "/hotdeals/11st-1234.webp" }, session)).status, 422);
       const results = await Promise.all([request(disclosureApp.base, 'POST', route, deal, session), request(disclosureApp.base, 'POST', route, deal, session)]);
       assert.deepEqual(results.map(result => result.status).sort(), [200, 201]);
       const id = results[0].data.id;

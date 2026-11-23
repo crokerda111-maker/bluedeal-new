@@ -78,6 +78,16 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
       throw new PostValidationError("쿠팡 상품은 실제 확인한 옵션과 판매자 식별자가 포함된 주소가 필요합니다.");
     }
   }
+  let image: string | undefined;
+  if (input.image !== undefined) {
+    const url = new URL(originalUrl);
+    const productId = url.pathname.match(/^\/products\/(\d+)\/?$/)?.[1] ?? url.searchParams.get("prdNo");
+    if (merchant !== "11st" || !productId || !/^\d+$/.test(productId) ||
+        input.image !== `/hotdeals/11st-${productId}.webp`) {
+      throw new PostValidationError("판매 주소와 일치하는 검증 상품 사진을 확인해 주세요.");
+    }
+    image = input.image;
+  }
   const mapping = (await getStoredAffiliateMappings([originalUrl])).get(originalUrl);
   const target = resolveAffiliateUrl({ merchant, originalUrl, code: "" }, mapping);
   if (target?.mode !== "registered-affiliate") {
@@ -91,7 +101,7 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
 
   const hotdeal: VerifiedHotdeal = {
     checkedAt: new Date(checked).toISOString(), validUntil: new Date(until).toISOString(),
-    option, price, shipping, conditions,
+    option, price, shipping, conditions, image,
   };
 
   // Compare only earlier public prices for this exact option and purchase basis.
