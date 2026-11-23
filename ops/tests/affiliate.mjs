@@ -92,6 +92,17 @@ test('official LinkPrice long links preserve issued tracking and require the exa
   }
 });
 
+test('official 11st feed preserves its authorized source marker',()=>{
+  const originalUrl='https://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=123';
+  const affiliateUrl=directIssued(originalUrl.replace('https:', 'http:'),'11st')+'&s=mpage';
+  const mapping={merchant:'11st',provider:'linkprice',originalUrl,affiliateUrl};
+  withMappings([mapping],()=>assert.equal(resolve(originalUrl,'11st').url,affiliateUrl));
+  for(const s of ['&s=mpage','x','&redirect=https://example.invalid']){
+    withMappings([{...mapping,affiliateUrl:affiliateUrl+s}],()=>assert.equal(resolve(originalUrl,'11st').mode,'passthrough'));
+  }
+  withMappings([{...issued,affiliateUrl:directIssued()+'&s=mpage'}],()=>assert.equal(resolve().mode,'passthrough'));
+});
+
 test('long LinkPrice links reject substituted products, ambiguous parameters and unapproved endpoints',()=>{
   const valid=directIssued();
   const badTargets=[

@@ -163,6 +163,8 @@ export function parseAffiliateMapping(value: unknown): AffiliateMapping | null {
       && /^\/[a-zA-Z0-9_-]{6,64}$/.test(target.pathname);
     const keys = [...target.searchParams.keys()];
     const allowedKeys = new Set(["m", "a", "l", "l_cd1", "l_cd2", "tu"]);
+    // The official 11st hotdeal feed issues links with this source marker.
+    if (merchant === "11st" && target.searchParams.get("s") === "mpage") allowedKeys.add("s");
     // 공식 긴 주소도 등록한 원본 상품과 광고주가 정확히 일치할 때만 허용합니다.
     // 중복 매개변수는 제휴처와 URL 파서의 해석 차이를 막기 위해 거부합니다.
     const directLink = target.hostname === "click.linkprice.com" && target.pathname === "/click.php"
