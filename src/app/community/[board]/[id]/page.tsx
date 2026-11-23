@@ -129,6 +129,8 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
     return <PostDetailError missing={!loadError || loadError.status === 404} onRetry={() => { setLoadError(null); setLoading(true); setAttempt(value => value + 1); }} backHref={`/community/${board.slug}`} backLabel="목록으로" />;
   }
 
+  const noticeInfo = post.hotdeal && post.linkInfo ? { ...post.linkInfo, disclosures: [] } : post.linkInfo;
+
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -153,7 +155,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
 
       <section className="bd-surface-md p-6">
         <h1 className="[overflow-wrap:anywhere] text-2xl font-semibold tracking-tight">{board.key === "issue" && post.title === issuePostTitle(post.content) ? "한 줄 이슈" : post.title}</h1>
-        <PostAffiliateNotice info={post.linkInfo} compact={board.key === "hotdeal"} />
+        <PostAffiliateNotice info={noticeInfo} compact={board.key === "hotdeal"} />
         <HotdealTerms post={post} />
         <LinkifiedText text={post.content} linkInfo={post.linkInfo} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
       </section>

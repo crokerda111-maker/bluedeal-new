@@ -38,7 +38,7 @@ function AffiliateLinkInfo() {
         hidden={!open}
         className="absolute left-0 top-full z-10 w-[min(15rem,65vw)] rounded-lg border border-white/20 bg-slate-950 p-2.5 text-xs font-normal leading-relaxed text-slate-100 shadow-lg"
       >
-        제휴 수수료는 판매처의 정산 조건에 따라 지급됩니다. 최종 가격과 할인 조건은 결제 화면에서 확인해 주세요.
+        이 글의 구매 링크를 이용하시면, 제휴사 조건에 따라 블루딜이 수수료를 받아요.
       </span>
     </span>
   );
