@@ -32,6 +32,8 @@ export type FullPcReview = {
   parts: Record<PcSlot, string>;
   tested: Record<RatedSlot, ComponentCheck>;
   notes: string[];
+  purchaseTerms?: { os: string; warranty: string; source: string };
+  costComparison?: { checkedOn: string; separateTotal: number; source: string };
   configuration?: string;
   detailDigest?: string;
 };

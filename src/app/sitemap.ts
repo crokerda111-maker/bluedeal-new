@@ -3,6 +3,7 @@ import { SITE_URL } from "../lib/site";
 import { COMMUNITY_BOARDS } from "../lib/boardConfig";
 import { PRICE_CATEGORIES } from "../lib/priceCategories";
 import { getLocalPrices } from "../lib/localPrices";
+import { getReviewedMarketplaceFullPcs } from "../lib/marketFullPc";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = ["/", "/about", "/it", "/community", "/prices", ...COMMUNITY_BOARDS.map(board => `/community/${board.slug}`)];
@@ -13,5 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       if (!data.items.length) return [];
       return [{ url: `${SITE_URL}/prices/${category.key}`, ...(data.updatedAt ? { lastModified: data.updatedAt } : {}) }];
     }),
+    ...getReviewedMarketplaceFullPcs().map(({ product, review }) => ({
+      url: `${SITE_URL}/products/${product.id}`,
+      lastModified: review.checkedOn,
+    })),
   ];
 }

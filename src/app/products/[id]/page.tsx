@@ -7,10 +7,12 @@ import type { ProductSource } from "../../../lib/productCatalog";
 import { pageMetadata } from "../../../lib/site";
 import { getPriceView } from "../../../lib/prices";
 import { getOfferAffiliateCodes } from "../../../lib/affiliateStore";
-import { PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
+import { fmtWon, PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
 import { productHighlights } from "../../../lib/productFilters";
 import FullPcConfiguration from "../../../components/FullPcConfiguration";
-import fullPcReviews from "../../../content/fullPcReviews.json";
+import PcSellerConfiguration from "../../../components/PcSellerConfiguration";
+import { getMarketplaceFullPcReview, selectMarketplaceFullPcs } from "../../../lib/marketFullPc";
+import marketplaceNotes from "../../../content/products/pcMarketplaceNotes.json";
 import { getCaseOptionPhoto, getCaseOptions, getPartEditorial, getProductEditorial, getProductPhoto, productEditorialCheckedOn } from "../../../lib/productEditorial";
 import ProductPhoto from "../../../components/ProductPhoto";
 import CaseOptionGallery from "../../../components/CaseOptionGallery";
@@ -22,7 +24,7 @@ export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => 
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const product = getCatalogProduct((await params).id);
-  return product ? pageMetadata(`${product.name} 정보 | BLUEDEAL`, product.description, `/products/${product.id}`, true)
+  return product ? pageMetadata(`${product.name} 정보 | BLUEDEAL`, product.description, `/products/${product.id}`, !getMarketplaceFullPcReview(product.id))
     : pageMetadata("등록된 상품이 없습니다 | BLUEDEAL", "상품 목록에서 다른 제품을 확인해 주세요.", undefined, true);
 }
 
@@ -38,8 +40,11 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const listingIds = new Set(product.listings.map(listing => listing.id));
   const offers = data.items.filter(item => listingIds.has(item.id));
   const highlights = productHighlights(product, offers);
-  const componentSpecs = product.specifications.filter(spec => /^판매처 (부품표|기본사양) · /.test(spec.label));
-  const configurationReview = fullPcReviews.find(review => review.productId === product.id && !review.configuration);
+  const isSystem = product.category === "fullpc" || product.category === "halfpc";
+  const configurationReview = getMarketplaceFullPcReview(product.id);
+  const savings = configurationReview ? selectMarketplaceFullPcs(offers, now).find(candidate => candidate.product.id === product.id)?.savings : null;
+  const marketplaceNote = marketplaceNotes[product.id as keyof typeof marketplaceNotes];
+  const purchaseNote = marketplaceNote && "kind" in marketplaceNote;
   const editorial = getProductEditorial(product.id);
   const buyingNotes = getProductBuyingNotes(product);
   const documentedIssue = editorial?.issue ?? buyingNotes?.issue;
@@ -74,6 +79,15 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
       </div> : null}
     </header>
 
+    {isSystem ? <section id="fullpc-configuration" className="bd-surface-md scroll-mt-24 space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-configuration-title">
+      <h2 id="fullpc-configuration-title" className="text-xl font-semibold">{product.category === "fullpc" ? "완본체" : "반본체"} 기본 부품 구성</h2>
+      {configurationReview ? <FullPcConfiguration review={configurationReview} /> : <PcSellerConfiguration product={product} />}
+      {marketplaceNote ? <div className="rounded-xl border border-amber-200/25 bg-amber-200/5 p-4 text-sm leading-6">
+        <h3 className="font-semibold text-amber-100">{purchaseNote ? "판매 조건에서 확인할 점" : "구매 후기에서 확인할 점"}</h3>
+        <p className="mt-1 text-white/80">{marketplaceNote.note}</p>
+        <a href={marketplaceNote.source} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-cyan-200 underline">{marketplaceNote.reviewedOn} KST · {purchaseNote ? "판매 페이지" : "판매처 후기"}<span className="sr-only"> (새 창)</span></a>
+      </div> : null}
+    </section> : null}
     <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
       <div className="min-w-0 space-y-6">
         <section id="product-prices" className="bd-surface-md scroll-mt-24 p-5 sm:p-6" aria-labelledby="product-prices-title">
@@ -96,10 +110,6 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           </> : <p className="mt-4 text-sm leading-7 text-white/70">블루딜에 기록된 판매가는 아직 없습니다.</p>}
           <Link href={`/prices/${product.category}`} className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">같은 부품의 다른 상품 비교</Link>
         </section>
-        {configurationReview ? <section id="fullpc-configuration" className="bd-surface-md scroll-mt-24 space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-configuration-title">
-          <h2 id="fullpc-configuration-title" className="text-xl font-semibold">완본체 부품 구성</h2>
-          <FullPcConfiguration review={configurationReview} />
-        </section> : null}
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">특징·상세 정보</h2>{product.features.length ? <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-white/80">{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul> : <p className="mt-4 text-sm leading-7 text-white/70">추가 사양 자료를 확인하고 있습니다.</p>}
           {product.specifications.length ? <dl className="mt-5 divide-y divide-white/10 border-y border-white/10">{product.specifications.map(specification => <div key={`${specification.label}:${specification.value}`} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-4 py-3 text-sm"><dt className="text-white/60">{specification.label}</dt><dd className="break-words text-white/85">{specification.value}</dd></div>)}</dl> : null}
           {productNotes.length ? <div className="mt-5 rounded-xl border border-amber-200/25 bg-amber-200/5 p-4"><h3 className="text-sm font-semibold text-amber-100">옵션 확인사항</h3><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-7 text-white/75">{productNotes.map(note => <li key={note}>{note}</li>)}</ul></div> : null}
@@ -123,16 +133,16 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           </div> : null}
           {product.issues.map(issue => <div key={issue.title} className="mt-5 rounded-xl border border-amber-200/30 bg-amber-200/5 p-4"><h3 className="font-semibold text-amber-100">{issue.title}</h3><p className="mt-3 text-sm leading-7 text-white/80">{issue.summary}</p><p className="mt-2 text-sm leading-7 text-white/70">{issue.conditions}</p><p className="mt-2 text-sm leading-7 text-white/85">{issue.action}</p><div className="mt-4"><Sources items={issue.sources} /></div></div>)}
         </section>
-        <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">후기·사용기</h2><p className="mt-4 text-sm leading-7 text-white/75">{product.reviewSummary ?? "이 상품의 후기 경향은 아직 검토하지 않았습니다. 실제 구매자 후기와 독립 리뷰를 확인한 뒤 출처와 사용 조건을 함께 보완하겠습니다."}</p>{product.reviewSources.length ? <div className="mt-4"><Sources items={product.reviewSources} /></div> : null}<Link href="/community/review" className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">커뮤니티 사용기 보기</Link></section>
+        <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">후기·사용기</h2><p className="mt-4 text-sm leading-7 text-white/75">{product.reviewSummary ?? (marketplaceNote && !purchaseNote ? "구매자가 보고한 내용과 적용 범위를 위 부품 구성에 정리했습니다." : "이 상품과 동일한 모델·옵션의 구매 후기와 독립 리뷰는 추가 확인이 필요합니다.")}</p>{product.reviewSources.length ? <div className="mt-4"><Sources items={product.reviewSources} /></div> : null}<Link href="/community/review" className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">커뮤니티 사용기 보기</Link></section>
       </div>
 
       <aside className="min-w-0 space-y-6">
-        {product.category === "fullpc" || product.category === "halfpc" ? <section className="bd-surface-md p-5 sm:p-6" aria-labelledby="pc-savings-title">
+        {isSystem ? <section className="bd-surface-md p-5 sm:p-6" aria-labelledby="pc-savings-title">
           <h2 id="pc-savings-title" className="text-lg font-semibold">조립 대비 절약률</h2>
-          <p className="mt-3 font-semibold text-amber-100">동일 구성 가격 대조 중</p>
-          <p className="mt-3 text-sm leading-7 text-white/75">{configurationReview ? "판매처의 기본 부품 8종을 확인했습니다. " : componentSpecs.length ? `판매처 부품표 ${componentSpecs.length}개 항목을 상세 사양에 기록했습니다. ` : "정확한 전체 부품 구성을 확인하고 있습니다. "}각 부품의 동일 모델·옵션 가격과 배송비, 본체의 최종 결제금액·OS·보증 조건을 대조한 뒤 절약률을 제공합니다.</p>
+          {savings ? <p className="mt-3 text-sm leading-7 text-cyan-100">동일 조건 개별 구매 대비 {fmtWon(Math.abs(savings.amount))} ({Math.abs(savings.percent).toFixed(1)}%) {savings.amount >= 0 ? "절약" : "추가 비용"}</p> :
+            <p className="mt-3 text-sm leading-7 text-white/75">{configurationReview ? "판매처의 기본 부품 8종을 확인했습니다. " : "판매처가 공개한 구성은 위 표에서 확인할 수 있습니다. "}각 부품의 동일 모델 가격과 배송비, 본체의 최종 결제금액·Windows·보증 조건까지 대조하면 절약률을 계산할 수 있습니다.</p>}
           <Link href="/evaluate" className="mt-3 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">직접 확인한 구성 비용 계산하기</Link>
-          <Link href={`/prices/${product.category}#today-pc`} className="block text-sm text-cyan-200 underline py-3">오늘의 가격·부품 구성 비교</Link>
+          <Link href={`/prices/${product.category}#${product.category === "fullpc" ? "fullpc-picks" : "today-pc"}`} className="block text-sm text-cyan-200 underline py-3">오늘의 가격·부품 구성 비교</Link>
         </section> : null}
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-lg font-semibold">확인 상태</h2><dl className="mt-4 space-y-4 text-sm"><div><dt className="text-white/60">항목 기준</dt><dd className="mt-1">{PRODUCT_KIND_LABELS[product.kind]}</dd></div><div><dt className="text-white/60">국내 판매·보증</dt><dd className="mt-1">{product.domesticState === "listing-observed" ? "판매 표기 확인 · 보증 조건 별도 확인" : "확인 필요"}</dd></div><div><dt className="text-white/60">정확한 제조사 품번</dt><dd className="mt-1">{product.manufacturerPartNumber ?? "확인 필요"}</dd></div><div><dt className="text-white/60">현재 가격·할인·재고</dt><dd className="mt-1">판매처 재확인 필요</dd></div><div><dt className="text-white/60">자료 확인일</dt><dd className="mt-1">{catalogDate(informationCheckedAt)}</dd></div></dl>{product.lifecycle === "listed-current" ? <p className="mt-5 text-xs leading-6 text-white/65">제조사 현행 목록에 포함된 항목입니다. 국내 판매 또는 재고 보유를 뜻하지 않습니다.</p> : null}</section>
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-lg font-semibold">공식 자료·출처</h2><div className="mt-4"><Sources items={product.sources} /></div></section>

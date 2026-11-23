@@ -40,6 +40,18 @@ export function getProductBuyingNotes(product: CatalogProduct): BuyingNotes | un
   });
 
   switch (product.category) {
+    case "cpu": {
+      const socket = single("socket") ?? spec("소켓", "CPU 소켓");
+      const memory = spec("지원 메모리");
+      if (!socket || !memory) return;
+      const maxMemorySpeed = spec("제조사 표기 기본 메모리 속도 상한");
+      const graphics = spec("내장그래픽");
+      const advantage = `${socket} 보드와 ${memory} 메모리를 지원합니다.${maxMemorySpeed ? ` 제조사 기본 메모리 속도 기준은 ${maxMemorySpeed}입니다.` : ""}`;
+      const checkMemory = memory.includes("DDR4") && memory.includes("DDR5")
+        ? "메인보드에 맞춰 DDR4 또는 DDR5 중 하나를 선택하세요."
+        : "메인보드와 메모리 키트에 맞는 규격·속도를 확인하세요.";
+      return notes(advantage, `${checkMemory} 해당 메인보드의 CPU 지원 목록과 최소 BIOS 버전도 확인하세요.${graphics === "외장 그래픽카드 필요" ? " 화면을 연결하려면 외장 그래픽카드가 필요합니다." : ""}`);
+    }
     case "motherboard": {
       const socket = single("socket");
       const memory = single("memory");

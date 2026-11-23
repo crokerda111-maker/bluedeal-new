@@ -19,7 +19,8 @@ export default function PrivacyPage() {
     </section>
     <section>
       <h2 className="font-semibold text-white">문의와 개인정보 관련 요청</h2>
-      <p>문의 내용을 확인하고 필요한 경우 회신하기 위해 문의에 기재한 내용과 이메일을 처리합니다. 개인정보가 포함된 내용은 비공개 문의로 보내 주세요. 개인정보의 열람·정정·삭제·처리정지 요청과 개인정보 관련 문의는 <Link href="/contact/write?vis=private" className="text-cyan-200 underline underline-offset-4">블루딜 비공개 문의</Link>로 접수할 수 있습니다.</p>
+      <p>문의에 적은 내용과 이메일은 내용 확인과 회신에 사용합니다. 개인정보가 포함된 문의는 비공개로 접수해 주세요.</p>
+      <p className="mt-2">개인정보 보호 업무와 고충 처리는 블루딜 운영팀이 담당합니다. 열람·정정·삭제·처리정지를 요청하거나 개인정보 관련 문의를 남기려면 <Link href="/contact/write?vis=private" prefetch={false} className="text-cyan-200 underline underline-offset-4">운영팀 비공개 문의</Link>를 이용해 주세요.</p>
     </section>
   </article>;
 }

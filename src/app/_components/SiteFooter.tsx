@@ -7,7 +7,8 @@ export default function SiteFooter() {
         <div>© {new Date().getFullYear()} BLUEDEAL <span aria-hidden="true">·</span> <Link href="/" prefetch={false} className="inline-flex min-h-11 items-center hover:text-white">bluedeal.co.kr</Link></div>
 
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 [&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center">
-          <Link prefetch={false} className="hover:text-white" href="/about">소개·가격 안내</Link>
+          <Link prefetch={false} className="hover:text-white" href="/about">블루딜 소개</Link>
+          <Link prefetch={false} className="hover:text-white" href="/about#operation">운영 안내</Link>
           <Link prefetch={false} className="hover:text-white" href="/privacy">개인정보처리방침</Link>
           <Link prefetch={false} className="hover:text-white" href="/about#affiliate">제휴 안내</Link>
           <Link prefetch={false} className="hover:text-white" href="/it">
@@ -22,8 +23,8 @@ export default function SiteFooter() {
           <Link prefetch={false} className="hover:text-white" href="/community/hotdeal">
             핫딜
           </Link>
-          <Link prefetch={false} className="hover:text-white" href="/contact">
-            문의
+          <Link prefetch={false} className="hover:text-white" href="/contact/write?vis=private">
+            비공개 문의
           </Link>
         </div>
       </div>

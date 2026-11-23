@@ -647,7 +647,9 @@ try {
       assert.equal(response.status, 200);
       const html = await response.text();
       assert.match(html, /핫딜을 불러오는 중입니다/);
-      assert.match(html, /최근 가격 확인/);
+      assert.match(html, /<h1[^>]*>오늘의 완본체 베스트<\/h1>/);
+      assert.match(html, /<a[^>]+href="\/prices\/fullpc"/);
+      assert.match(html, /개별 구매 대비 절약을 모두 확인한 제휴 추천 상품이 없습니다/);
       const boardReads = kv.requests.slice(before).flatMap(entry => entry.commands).filter(([command, key]) => command === 'ZREVRANGE' && String(key).startsWith('bd:board:'));
       assert.deepEqual(boardReads, [], 'the initial home document must not query boards');
       const feed = await api('GET', '/api/home-feed');
@@ -731,6 +733,7 @@ try {
     assert.match(robots, /Sitemap: https:\/\/bluedeal\.co\.kr\/sitemap.xml/);
     const sitemap = await (await fetch(`${app.base}/sitemap.xml`)).text();
     assert.ok(sitemap.includes('https://bluedeal.co.kr/prices/ram'));
+    assert.ok(sitemap.includes('https://bluedeal.co.kr/products/reviewed-fullpc-gmarket-4355054602'));
     for (const excluded of ['/admin', '/contact', '/go/', '/api/']) assert.equal(sitemap.includes(excluded), false);
     for (const route of ['/admin', '/contact', '/prices/ram?capacity=48']) {
       const html = await (await fetch(app.base + route)).text();

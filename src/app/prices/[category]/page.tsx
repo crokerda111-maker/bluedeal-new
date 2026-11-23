@@ -6,6 +6,7 @@ import { getPriceView } from "../../../lib/prices";
 import SmartLink from "../../../components/SmartLink";
 import ProductSearchForm from "../../../components/ProductSearchForm";
 import DailyPcComparison from "../../../components/DailyPcComparison";
+import MarketplaceFullPcPicks from "../../../components/MarketplaceFullPcPicks";
 import CpuReferenceGuide from "../../../components/CpuReferenceGuide";
 import GpuReferenceGuide from "../../../components/GpuReferenceGuide";
 import { filterPrices, readPriceFilters } from "../../../lib/priceFilters";
@@ -28,8 +29,6 @@ import hddReviewSummary from "../../../content/hddReviewSummary.json";
 import pcOptionReviewSummary from "../../../content/pcOptionReviewSummary.json";
 import halfpcOptionReviewSummary from "../../../content/halfpcOptionReviewSummary.json";
 import pcFollowupReviewSummary from "../../../content/pcFollowupReviewSummary.json";
-import fullPcReviews from "../../../content/fullPcReviews.json";
-import { scoreFullPcParts } from "../../../lib/fullPcReview";
 import { indexProductOffers, matchesProduct, matchesProductSearch, readProductFilters, searchProducts } from "../../../lib/productFilters";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
@@ -40,7 +39,11 @@ export async function generateMetadata({ params, searchParams }: PricePageProps)
   const { data } = await getPriceView(category.key);
   const query = await searchParams;
   const filtered = Object.values(query).some(value => Array.isArray(value) ? value.some(Boolean) : Boolean(value));
-  return pageMetadata(`${category.title} | BLUEDEAL`, `${category.description} 상품가·배송비·판매자·확인 시각을 함께 비교하세요.`, `/prices/${category.key}`, filtered || !data.items.length);
+  const title = category.key === "fullpc" ? "완본체 추천·판매처 가격비교" : category.title;
+  const description = category.key === "fullpc"
+    ? "오픈마켓 완본체의 CPU·그래픽카드와 메인보드·파워를 확인하고, 배송비 포함 가격과 구매 조건을 비교하세요."
+    : `${category.description} 상품가·배송비·판매자·확인 시각을 함께 비교하세요.`;
+  return pageMetadata(`${title} | BLUEDEAL`, description, `/prices/${category.key}`, filtered || !data.items.length);
 }
 
 function pct(value?: number | null) {
@@ -105,24 +108,13 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
         </div>
       </div>
 
+      {category.key === "fullpc" ? <MarketplaceFullPcPicks items={data.items} now={now} /> : null}
       <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
         <p>등록 항목 <b className="text-cyan-200">{CATALOG_SUMMARY.categoryCounts[category.key]}개</b> · 판매처 가격 기록 <b className="text-cyan-200">{data.items.length}건</b></p>
         <nav aria-label="분류 내 바로가기" className="mt-2 flex flex-wrap gap-4 text-cyan-200"><a href="#registered-products" className="inline-flex min-h-11 items-center underline">등록 상품·특징</a><a href="#price-records" className="inline-flex min-h-11 items-center underline">판매처 가격 기록</a></nav>
       </div>
 
-      {category.key === "fullpc" ? <section className="bd-surface-md space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-reviewed-title">
-        <h2 id="fullpc-reviewed-title" className="text-xl font-semibold">판매처 부품표를 확인한 완본체</h2>
-        <div className="grid gap-3 sm:grid-cols-2">{fullPcReviews.filter(review => !review.configuration).map(review => {
-          const product = products.find(item => item.id === review.productId);
-          const { score } = scoreFullPcParts(review);
-          return product ? <Link key={review.productId} href={`/products/${product.id}#fullpc-configuration`} className="rounded-xl border border-white/15 bg-slate-950/30 p-4 hover:border-cyan-200/55 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300">
-            <p className="text-xs text-white/70">{product.listings[0]?.merchant} · {review.checkedOn} KST</p>
-            <p className="mt-1 break-words text-sm font-semibold text-white">{product.name}</p>
-            <p className="mt-2 text-sm text-cyan-200">{score === null ? "부품 점수 확인 중" : `부품 구성 ${score}/100`} · 8개 부품과 근거 보기</p>
-          </Link> : null;
-        })}</div>
-      </section> : null}
-      {category.key === "fullpc" || category.key === "halfpc" ? <DailyPcComparison kind={category.key} now={now} /> : null}
+      {category.key === "halfpc" ? <DailyPcComparison kind="halfpc" now={now} /> : null}
       <ProductSearchForm category={category.key} products={products} offersById={offersById} query={query} />
       <PriceCatalogSection category={category} query={canonicalQuery} results={results} offersById={matchedOffers} now={now} />
 
@@ -219,6 +211,10 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
 
       </section>
 
+      {category.key === "fullpc" ? (
+        query.reference === "compuzone" ? <DailyPcComparison kind="fullpc" now={now} />
+        : <Link prefetch={false} href="/prices/fullpc?reference=compuzone#today-pc" className="inline-flex min-h-11 items-center text-sm text-white/75 underline underline-offset-4 hover:text-white">컴퓨존 가격·구성 참고자료</Link>
+      ) : null}
       {category.key === "cpu" ? <CpuReferenceGuide /> : null}
       {category.key === "gpu" ? <GpuReferenceGuide /> : null}
 

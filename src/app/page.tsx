@@ -1,20 +1,19 @@
 import Link from "next/link";
-import HomeHero from "./_components/HomeHero";
 import HomeFeed from "./_components/HomeFeed";
-import { getMeta, getPrices } from "../lib/prices";
-import { PRICE_CATEGORIES } from "../lib/priceCategories";
+import MarketplaceFullPcPicks from "../components/MarketplaceFullPcPicks";
+import { getPriceView } from "../lib/prices";
 import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from "../lib/site";
-import { CATALOG_SUMMARY } from "../lib/catalogData";
 
-export const metadata = pageMetadata("블루딜 | PC 부품 가격·핫딜·IT 커뮤니티", SITE_DESCRIPTION, "/");
+export const metadata = pageMetadata("블루딜 | 오늘의 완본체 베스트·부품 구성 비교", SITE_DESCRIPTION, "/");
+export const revalidate = 300;
 
 const PRIMARY_ROUTES = [
   {
     eyebrow: "PRODUCTS",
-    title: "PC 상품 목록",
-    desc: "부품의 특징과 공식 자료, 확인 상태를 분류별로 살펴봅니다.",
-    href: "/products",
-    action: "전체 상품 보기",
+    title: "PC 상품·가격비교",
+    desc: "반본체와 개별 부품의 판매가, 배송비, 구성 차이를 확인합니다.",
+    href: "/prices",
+    action: "부품 가격 보기",
   },
   {
     eyebrow: "NEWS",
@@ -78,16 +77,12 @@ function SectionTitle({
 }
 
 export default async function HomePage() {
-  const [meta, priceResults] = await Promise.all([
-    getMeta(),
-    Promise.all(PRICE_CATEGORIES.map((category) => getPrices(category.key))),
-  ]);
-  const itemCount = priceResults.reduce((sum, result) => sum + result.items.length, 0);
+  const { data, now } = await getPriceView("fullpc");
 
   return (
     <div className="space-y-16 pb-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "블루딜", alternateName: "BLUEDEAL", url: SITE_URL, inLanguage: "ko-KR" }).replace(/</g, "\\u003c") }} />
-      <HomeHero updatedAt={meta.updatedAt} schedule={meta.schedule} itemCount={itemCount} catalogCount={CATALOG_SUMMARY.entries} />
+      <MarketplaceFullPcPicks items={data.items} now={now} home />
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {PRIMARY_ROUTES.map((item) => (
