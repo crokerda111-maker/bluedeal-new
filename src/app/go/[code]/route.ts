@@ -1,5 +1,6 @@
 import { after, NextResponse } from "next/server";
-import { convertToAffiliateUrl, getRegisteredOutboundLink } from "../../../lib/affiliate";
+import { getRegisteredOutboundLink, normalizeOutboundUrl, resolveAffiliateUrl } from "../../../lib/affiliate";
+import { getStoredAffiliateCodes, getStoredAffiliateMappings } from "../../../lib/affiliateStore";
 import { getOutboundRow, incrementOutboundClick } from "../../../lib/onlineOutbound";
 import { KvNotConfiguredError } from "../../../lib/kvRest";
 import { OUTBOUND_LINKS } from "../../../lib/outbound";
@@ -15,7 +16,9 @@ export async function GET(req: Request, ctx: { params: Promise<{ code: string }>
   }
 
   // 배포에 포함된 검증 주소는 온라인 저장소 장애와 무관하게 제공합니다.
-  let row: OutboundLink | null = OUTBOUND_LINKS[code] ?? getRegisteredOutboundLink(code);
+  let row: OutboundLink | null = Object.hasOwn(OUTBOUND_LINKS, code) ? OUTBOUND_LINKS[code] : getRegisteredOutboundLink(code);
+  const alias = !row ? (await getStoredAffiliateCodes([code])).get(code) : undefined;
+  if (alias) row = alias;
   if (!row) {
     try {
       row = await getOutboundRow(code);
@@ -32,11 +35,9 @@ export async function GET(req: Request, ctx: { params: Promise<{ code: string }>
     return NextResponse.redirect(new URL("/community/hotdeal", req.url), 302);
   }
 
-  const target = convertToAffiliateUrl({
-    merchant: row.merchant,
-    originalUrl: row.originalUrl,
-    code,
-  });
+  const original = normalizeOutboundUrl(row.originalUrl);
+  const stored = alias ?? (original ? (await getStoredAffiliateMappings([original])).get(original) : undefined);
+  const target = resolveAffiliateUrl({ ...row, code }, stored)?.url;
 
   if (!target) {
     // whitelist 밖이면 차단

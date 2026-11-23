@@ -56,6 +56,14 @@ export type AffiliateResolution = {
   mode: AffiliateResolutionMode;
 };
 
+export type AffiliateMapping = {
+  merchant: Merchant;
+  originalUrl: string;
+  provider: string;
+  affiliateUrl: string;
+  code?: string;
+};
+
 function matchesAny(hostname: string, patterns: RegExp[] | undefined): boolean {
   return Boolean(patterns?.some((pattern) => pattern.test(hostname)));
 }
@@ -117,7 +125,19 @@ function registeredAffiliateUrl(merchant: Merchant, originalUrl: string): string
   });
   // 중복·충돌한 설정은 선택하지 않고 원래 판매처 주소를 사용합니다.
   if (matches.length !== 1) return null;
-  const row = matches[0];
+  return parseAffiliateMapping(matches[0])?.affiliateUrl ?? null;
+}
+
+export function parseAffiliateMapping(value: unknown): AffiliateMapping | null {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const row = value as Record<string, unknown>;
+  if (typeof row.originalUrl !== "string" || typeof row.provider !== "string") return null;
+  const originalUrl = normalizeOutboundUrl(row.originalUrl);
+  if (!originalUrl) return null;
+  const merchant = detectMerchant(new URL(originalUrl).hostname);
+  if (!merchant || row.merchant !== merchant) return null;
+  const code = row.code;
+  if (code !== undefined && (typeof code !== "string" || !/^[a-zA-Z0-9_-]{2,64}$/.test(code))) return null;
   if (typeof row.affiliateUrl !== "string" || /[\u0000-\u0020\u007f]/.test(row.affiliateUrl)) return null;
   let target: URL;
   try { target = new URL(row.affiliateUrl); } catch { return null; }
@@ -141,7 +161,16 @@ function registeredAffiliateUrl(merchant: Merchant, originalUrl: string): string
   } else if (row.provider !== merchant || !isAffiliateHost(merchant, target.hostname)) {
     return null;
   }
-  return target.toString();
+  return { merchant, originalUrl, provider: row.provider, affiliateUrl: target.toString(), code };
+}
+
+export function legacyAffiliateMappings(): AffiliateMapping[] {
+  return registeredEntries().flatMap(row => {
+    const mapping = parseAffiliateMapping(row);
+    if (!mapping || !registeredAffiliateUrl(mapping.merchant, mapping.originalUrl)) return [];
+    if (mapping.code && !getRegisteredOutboundLink(mapping.code)) return [];
+    return [mapping];
+  });
 }
 
 /** 수동 발급 링크도 가격·상품 정보를 새로 만들지 않고 /go 주소로 등록합니다. */
@@ -169,7 +198,7 @@ export function resolveAffiliateUrl(opts: {
   merchant: Merchant;
   originalUrl: string;
   code: string;
-}): AffiliateResolution | null {
+}, stored?: AffiliateMapping): AffiliateResolution | null {
   const { merchant, originalUrl } = opts;
   const normalized = normalizeOutboundUrl(originalUrl);
   if (!normalized) return null;
@@ -178,7 +207,8 @@ export function resolveAffiliateUrl(opts: {
   const detected = detectMerchant(url.hostname);
   if (detected !== merchant) return null;
 
-  const registered = registeredAffiliateUrl(merchant, normalized);
+  const registered = stored?.merchant === merchant && stored.originalUrl === normalized
+    ? stored.affiliateUrl : registeredAffiliateUrl(merchant, normalized);
   if (registered) return { merchant, url: registered, mode: "registered-affiliate" };
 
   if (isAffiliateHost(merchant, url.hostname)) {

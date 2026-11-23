@@ -10,8 +10,7 @@ import CpuReferenceGuide from "../../../components/CpuReferenceGuide";
 import GpuReferenceGuide from "../../../components/GpuReferenceGuide";
 import { filterPrices, readPriceFilters } from "../../../lib/priceFilters";
 import { pageMetadata } from "../../../lib/site";
-import { OUTBOUND_LINKS } from "../../../lib/outbound";
-import { resolveAffiliateUrl } from "../../../lib/affiliate";
+import { getOfferAffiliateCodes } from "../../../lib/affiliateStore";
 import { CATALOG_SUMMARY, CATALOG_PRODUCTS } from "../../../lib/catalogData";
 import PriceCatalogSection from "../../../components/PriceCatalogSection";
 import { formatPriceTime as fmtKorean, PriceAmount, PurchaseLink, fmtWon } from "../../../components/PriceOffer";
@@ -82,13 +81,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
   const results = searchProducts(products, offersById, productFilters, items);
   const matchedOffers = indexProductOffers(products, items);
   const canonicalQuery = { ...query, q: productFilters.q, lifecycle: productFilters.lifecycle };
-  const affiliateCodes = new Set<string>();
-  for (const item of items) {
-    if (!item.goCode) continue;
-    const outbound = OUTBOUND_LINKS[item.goCode];
-    const resolution = outbound ? resolveAffiliateUrl(outbound) : null;
-    if (resolution && resolution.mode !== "passthrough") affiliateCodes.add(item.goCode);
-  }
+  const affiliateCodes = await getOfferAffiliateCodes(items);
   const retailCount = (distributorReview.retailCategoryCounts as Record<string, number>)[category.key] ?? 0;
   const hasPurchaseLinks = items.some(item => Boolean(item.goCode));
   const reportHref = `/contact/write?from=prices&cat=${encodeURIComponent(category.shortTitle)}`;

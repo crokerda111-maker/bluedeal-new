@@ -2,7 +2,8 @@ import "server-only";
 import type { Post, PostLinkInfo } from "./postTypes";
 import type { OutboundLink } from "./outbound";
 import { OUTBOUND_LINKS } from "./outbound";
-import { detectMerchant, getRegisteredOutboundLink, isAffiliateHost, resolveAffiliateUrl } from "./affiliate";
+import { detectMerchant, getRegisteredOutboundLink, isAffiliateHost, normalizeOutboundUrl, resolveAffiliateUrl } from "./affiliate";
+import { getStoredAffiliateCodes, getStoredAffiliateMappings } from "./affiliateStore";
 import { getOutboundRows } from "./onlineOutbound";
 import { textLinkParts } from "./textLinks";
 
@@ -26,10 +27,10 @@ export async function getPostLinkInfo(post: Post): Promise<PostLinkInfo> {
   const codes = new Map<string, string>();
   const rows = new Map<string, OutboundLink>();
   const pending = new Set<string>();
+  const rawHotdeals = new Map<string, string>();
   for (const href of hrefs) {
     const code = internalCode(href);
     if (!code) {
-      // Direct merchant URLs do not go through our affiliate resolver.
       try {
         const url = new URL(href);
         const merchant = detectMerchant(url.hostname);
@@ -37,12 +38,15 @@ export async function getPostLinkInfo(post: Post): Promise<PostLinkInfo> {
             ((merchant && isAffiliateHost(merchant, url.hostname)) || (url.hostname === "click.linkprice.com" && url.pathname === "/click.php"))) {
           info.affiliateHrefs.push(href);
           disclosures.add("external");
+        } else if (post.boardKey === "hotdeal" && rawHotdeals.size < 20 && (merchant === "gmarket" || merchant === "11st")) {
+          const original = normalizeOutboundUrl(href);
+          if (original) rawHotdeals.set(href, original);
         }
       } catch { /* Plain text is preserved. */ }
       continue;
     }
     codes.set(href, code);
-    const row = rows.get(code) ?? OUTBOUND_LINKS[code] ??
+    const row = rows.get(code) ?? (Object.hasOwn(OUTBOUND_LINKS, code) ? OUTBOUND_LINKS[code] : undefined) ??
       (!pending.has(code) && pending.size < 100 ? getRegisteredOutboundLink(code) : null);
     if (row) rows.set(code, row);
     else pending.add(code);
@@ -50,9 +54,22 @@ export async function getPostLinkInfo(post: Post): Promise<PostLinkInfo> {
   // User-supplied /go paths cannot create an unbounded storage fan-out.
   try { for (const [code, row] of await getOutboundRows([...pending].slice(0, 100))) rows.set(code, row); }
   catch { /* Unverified links remain readable but do not become clickable. */ }
+  for (const [code, row] of await getStoredAffiliateCodes([...pending].filter(code => !rows.has(code)).slice(0, 100))) rows.set(code, row);
+  const stored = await getStoredAffiliateMappings([...rows.values()].map(row => row.originalUrl).concat([...rawHotdeals.values()]));
+  const rawAliases = await getStoredAffiliateCodes([...rawHotdeals.values()].flatMap(original => {
+    const mapping = stored.get(original);
+    return mapping ? [mapping.code] : [];
+  }));
+  for (const [href, original] of rawHotdeals) {
+    const mapping = stored.get(original);
+    if (!mapping || rawAliases.get(mapping.code)?.originalUrl !== original) continue;
+    (info.linkReplacements ??= {})[href] = `/go/${mapping.code}`;
+    info.affiliateHrefs.push(href);
+    disclosures.add("linkprice");
+  }
   for (const [href, code] of codes) {
     const row = rows.get(code);
-    const resolved = row ? resolveAffiliateUrl({ ...row, code }) : null;
+    const resolved = row ? resolveAffiliateUrl({ ...row, code }, stored.get(normalizeOutboundUrl(row.originalUrl) ?? "")) : null;
     if (!resolved) { info.unavailableHrefs.push(href); continue; }
     if (resolved.mode === "passthrough") continue;
     info.affiliateHrefs.push(href);

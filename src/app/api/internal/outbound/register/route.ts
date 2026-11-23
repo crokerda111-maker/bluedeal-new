@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { detectMerchant, normalizeOutboundUrl, resolveAffiliateUrl } from "../../../../../lib/affiliate";
+import { getStoredAffiliateMappings } from "../../../../../lib/affiliateStore";
 import { verifyInternalBearer } from "../../../../../lib/internalAuth";
 import { KvNotConfiguredError } from "../../../../../lib/kvRest";
 import { createOrReuseOutboundCode } from "../../../../../lib/onlineOutbound";
@@ -55,7 +56,8 @@ export async function POST(req: NextRequest) {
       return json({ error: "Could not register outbound URL." }, { status: 400 });
     }
 
-    const resolution = resolveAffiliateUrl({ merchant, originalUrl: normalizedUrl, code });
+    const stored = await getStoredAffiliateMappings([normalizedUrl]);
+    const resolution = resolveAffiliateUrl({ merchant, originalUrl: normalizedUrl, code }, stored.get(normalizedUrl));
     return json(
       {
         code,

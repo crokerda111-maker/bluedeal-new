@@ -2,6 +2,7 @@ import Link from "next/link";
 import { pageMetadata } from "../../lib/site";
 import { getMeta } from "../../lib/prices";
 import { getRegisteredOutboundLink } from "../../lib/affiliate";
+import { getStoredAffiliateCodes } from "../../lib/affiliateStore";
 import affiliateProducts from "../../content/affiliate-products.json";
 
 export const dynamic = "force-dynamic";
@@ -9,9 +10,9 @@ export const dynamic = "force-dynamic";
 export const metadata = pageMetadata("블루딜 소개·가격 안내 | BLUEDEAL", "블루딜의 가격 확인 방식, 정보 출처와 제휴 링크 운영 원칙을 안내합니다.", "/about");
 
 export default async function AboutPage() {
-  const meta = await getMeta();
-  const coupang = getRegisteredOutboundLink("coupang-shop");
-  const aliexpress = getRegisteredOutboundLink("aliexpress-offer");
+  const [meta, stored] = await Promise.all([getMeta(), getStoredAffiliateCodes(["coupang-shop", "aliexpress-offer"])]);
+  const coupang = stored.get("coupang-shop") ?? getRegisteredOutboundLink("coupang-shop");
+  const aliexpress = stored.get("aliexpress-offer") ?? getRegisteredOutboundLink("aliexpress-offer");
   const aliProduct = aliexpress && affiliateProducts.find(product => product.originalUrl === aliexpress.originalUrl);
   return (
     <div className="space-y-6">

@@ -102,10 +102,12 @@ export async function apiGetPost(id: string, opts?: { password?: string }): Prom
   if (!res.ok) throwApiError(res, data);
   const post = readPost(res, data, id);
   const info = post.linkInfo;
-  if (!isRecord(info) || Object.keys(info).sort().join(",") !== "affiliateHrefs,disclosures,unavailableHrefs" ||
+  if (!isRecord(info) || Object.keys(info).some(key => !["affiliateHrefs", "disclosures", "linkReplacements", "unavailableHrefs"].includes(key)) ||
       !Array.isArray(info.affiliateHrefs) || !info.affiliateHrefs.every(value => typeof value === "string") ||
       !Array.isArray(info.unavailableHrefs) || !info.unavailableHrefs.every(value => typeof value === "string") ||
-      !Array.isArray(info.disclosures) || !info.disclosures.every(value => ["linkprice", "coupang", "bluedeal", "external"].includes(value))) return invalidResponse(res);
+      !Array.isArray(info.disclosures) || !info.disclosures.every(value => ["linkprice", "coupang", "bluedeal", "external"].includes(value)) ||
+      (info.linkReplacements !== undefined && (!isRecord(info.linkReplacements) || Object.values(info.linkReplacements).some(value =>
+        typeof value !== "string" || !/^\/go\/[a-zA-Z0-9_-]{2,64}$/.test(value))))) return invalidResponse(res);
   return post;
 }
 

@@ -98,8 +98,15 @@ async function mockKv() {
     }
     switch (String(name).toUpperCase()) {
       case 'GET': return values.get(key) ?? null;
+      case 'MGET': return args.map(item => values.get(item) ?? null);
       case 'SET': values.set(key, value); expires.delete(key); return 'OK';
       case 'SETNX': if (values.has(key)) return 0; values.set(key, value); return 1;
+      case 'MSETNX': {
+        const keys = args.filter((_, i) => i % 2 === 0);
+        if (keys.some(item => values.has(item))) return 0;
+        keys.forEach((item, i) => values.set(item, args[i * 2 + 1]));
+        return 1;
+      }
       case 'DEL': expires.delete(key); return Number(values.delete(key));
       case 'EXISTS': return Number(values.has(key));
       case 'INCR': { const n = Number(values.get(key) ?? 0) + 1; values.set(key, n); return n; }
@@ -406,6 +413,69 @@ try {
       const reads=kv.requests.slice(before).filter(item=>item.commands.some(command=>String(command[1]).startsWith('bd:out:code:')));
       assert.equal(reads.length,1);assert.equal(reads[0].commands.length,100);
     });
+    await check('issued mappings migrate idempotently and drive prices, product details and existing hotdeal links without an environment mapping', async () => {
+      const route = '/api/internal/affiliate/import';
+      const login = await request(disclosureApp.base, 'POST', '/api/admin/login', { password });
+      const cookie = login.headers.get('set-cookie')?.split(';')[0];
+      assert.equal(login.status, 200);
+      assert.ok(cookie);
+      assert.equal((await request(disclosureApp.base, 'POST', route, { source: 'legacy' })).status, 401);
+      const ram = JSON.parse(await readFile(path.join(root, 'src/content/prices/ram.json'), 'utf8')).items;
+      const offer = ram.find(item => generatedLinks[item.goCode]?.merchant === '11st');
+      const originalUrl = generatedLinks[offer.goCode].originalUrl;
+      const issued = { merchant: '11st', provider: 'linkprice', originalUrl, affiliateUrl: 'https://app.ac/testOnly11stMigration' };
+      const hotdealId = 'local-affiliate-migration';
+      const postKey = 'bd:post:' + hotdealId;
+      let newPostId;
+      try {
+        const first = await request(disclosureApp.base, 'POST', route, { source: 'legacy' }, cookie);
+        assert.equal(first.status, 200);
+        assert.deepEqual(first.data, { imported: fakeMappings.length, present: 0, conflicts: 0 });
+        const again = await request(disclosureApp.base, 'POST', route, { source: 'legacy' }, cookie);
+        assert.deepEqual(again.data, { imported: 0, present: fakeMappings.length, conflicts: 0 });
+        const registered = await request(disclosureApp.base, 'POST', route, { mappings: [issued] }, cookie);
+        assert.equal(registered.status, 200);
+        const conflicting = await request(disclosureApp.base, 'POST', route, { mappings: [{ ...issued, affiliateUrl: 'https://app.ac/testOnlyOtherTarget' }] }, cookie);
+        assert.equal(conflicting.status, 409);
+        const catalog = JSON.parse(await readFile(path.join(root, 'src/content/products/catalog.json'), 'utf8'));
+        const product = catalog.products.find(product => product.listings.some(listing => listing.id === offer.id));
+        assert.ok(product);
+        for (const path of ['/prices/ram', `/products/${product.id}`]) {
+          const html = await (await fetch(app.base + path)).text();
+          assert.match(html, /rel="sponsored noopener noreferrer"/);
+          assert.equal(html.includes(issued.affiliateUrl), false);
+        }
+        const priceClick = await fetch(app.base + '/go/' + offer.goCode, { redirect: 'manual' });
+        assert.equal(priceClick.headers.get('location'), issued.affiliateUrl);
+        const previousAlias = await fetch(app.base + '/go/local-ali', { redirect: 'manual' });
+        assert.equal(previousAlias.headers.get('location'), fakeMappings[2].affiliateUrl);
+        kv.values.set(postKey, JSON.stringify({ ...mixedPost, id: hotdealId, boardKey: 'hotdeal', content: `판매 ${originalUrl}` }));
+        const hotdeal = await request(app.base, 'GET', '/api/posts/' + hotdealId);
+        assert.equal(hotdeal.status, 200);
+        assert.deepEqual(hotdeal.data.post.linkInfo.disclosures, ['linkprice']);
+        const go = hotdeal.data.post.linkInfo.linkReplacements[originalUrl];
+        assert.match(go, /^\/go\/af-[a-f0-9]+$/);
+        assert.equal((await fetch(app.base + go, { redirect: 'manual' })).headers.get('location'), issued.affiliateUrl);
+        assert.equal(JSON.stringify(hotdeal.data).includes(issued.affiliateUrl), false);
+        const created = await request(app.base, 'POST', '/api/posts', {
+          boardKey: 'hotdeal', type: 'general', title: 'LOCAL QA affiliate hotdeal',
+          content: `판매처 ${originalUrl}`, extra: { dealLink: originalUrl },
+        });
+        assert.equal(created.status, 201);
+        newPostId = created.data.post.id;
+        const newHotdeal = await request(app.base, 'GET', '/api/posts/' + newPostId);
+        const generatedGo = newHotdeal.data.post.extra.dealLink;
+        assert.ok(newHotdeal.data.post.linkInfo.affiliateHrefs.includes(generatedGo));
+        assert.equal((await fetch(app.base + generatedGo, { redirect: 'manual' })).headers.get('location'), issued.affiliateUrl);
+      } finally {
+        kv.values.delete(postKey);
+        if (newPostId) {
+          kv.values.delete('bd:post:' + newPostId);
+          kv.sorted.get('bd:board:hotdeal:posts')?.delete(newPostId);
+        }
+        for (const key of kv.values.keys()) if (key.startsWith('bd:affiliate:')) kv.values.delete(key);
+      }
+    });
   } finally {if(affiliatePreview)affiliatePreviewBase=disclosureApp.base;else await stopChild(disclosureApp.child);}
 
   await check('browser security headers cover pages, administrator, API, static content and errors', async () => {
@@ -556,7 +626,7 @@ try {
       assert.match(html, /name="robots" content="noindex, nofollow"/);
     }
     const prices = await (await fetch(`${app.base}/prices/ram`)).text();
-    assert.match(prices, /<title>RAM 가격현황 \| BLUEDEAL<\/title>/);
+    assert.match(prices, /<title>RAM 상품·가격비교 \| BLUEDEAL<\/title>/);
     assert.match(prices, /rel="canonical" href="https:\/\/bluedeal\.co\.kr\/prices\/ram"/);
     assert.match(prices, /property="og:image" content="https:\/\/bluedeal\.co\.kr\/opengraph-image"/);
     assert.equal((await fetch(`${app.base}/community/not-a-board`)).status, 404);

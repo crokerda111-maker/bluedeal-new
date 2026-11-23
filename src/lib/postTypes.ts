@@ -37,6 +37,7 @@ export type PostLinkInfo = {
   affiliateHrefs: string[];
   unavailableHrefs: string[];
   disclosures: Array<"linkprice" | "coupang" | "bluedeal" | "external">;
+  linkReplacements?: Record<string, string>;
 };
 
 /**

@@ -6,8 +6,7 @@ import { catalogDate, PRODUCT_KIND_LABELS, productCategoryLabel } from "../../..
 import type { ProductSource } from "../../../lib/productCatalog";
 import { pageMetadata } from "../../../lib/site";
 import { getPriceView } from "../../../lib/prices";
-import { OUTBOUND_LINKS } from "../../../lib/outbound";
-import { resolveAffiliateUrl } from "../../../lib/affiliate";
+import { getOfferAffiliateCodes } from "../../../lib/affiliateStore";
 import { PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
 import { productHighlights } from "../../../lib/productFilters";
 
@@ -32,11 +31,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const offers = data.items.filter(item => listingIds.has(item.id));
   const highlights = productHighlights(product, offers);
   const componentSpecs = product.specifications.filter(spec => /^판매처 (부품표|기본사양) · /.test(spec.label));
-  const affiliateCodes = new Set(offers.filter(item => {
-    const outbound = item.goCode ? OUTBOUND_LINKS[item.goCode] : undefined;
-    const resolution = outbound ? resolveAffiliateUrl(outbound) : null;
-    return resolution && resolution.mode !== "passthrough";
-  }).map(item => item.goCode));
+  const affiliateCodes = await getOfferAffiliateCodes(offers);
   const informationCheckedAt = [product.listObservedAt, ...product.sources.map(source => source.observedAt)].filter((value): value is string => Boolean(value)).sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? null;
   return <article className="space-y-6">
     <nav aria-label="상품 경로" className="flex flex-wrap gap-2 text-sm text-white/65"><Link href="/prices" className="text-cyan-200 hover:underline">상품·가격비교</Link><span aria-hidden="true">/</span><Link href={`/prices/${product.category}`} className="hover:underline">{productCategoryLabel(product.category)}</Link></nav>
@@ -61,7 +56,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
               <p className="mt-2 break-words text-sm text-white/65">{[item.source, item.seller].filter(Boolean).join(" · ")}</p>
               {item.spec ? <p className="mt-2 text-sm leading-7 text-white/80">{item.spec}</p> : null}
               <div className="mt-4"><PriceAmount item={item} now={now} /></div>
-              <div className="mt-4"><PurchaseLink item={item} affiliate={affiliateCodes.has(item.goCode)} /></div>
+              <div className="mt-4"><PurchaseLink item={item} affiliate={affiliateCodes.has(item.goCode ?? "")} /></div>
             </li>)}</ul>
           </> : <p className="mt-4 text-sm leading-7 text-white/70">이 모델의 등록된 판매처 가격이 없습니다.</p>}
           <Link href={`/prices/${product.category}`} className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">같은 부품의 다른 상품 비교</Link>
