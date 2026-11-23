@@ -10,7 +10,7 @@ function AffiliateLinkInfo() {
 
   return (
     <span
-      className="relative"
+      className="relative shrink-0"
       onPointerEnter={event => { if (event.pointerType === "mouse") setOpen(true); }}
       onPointerLeave={event => { if (event.pointerType === "mouse") setOpen(false); }}
     >
@@ -58,7 +58,7 @@ export default function HotdealTerms({ post }: { post: Post }) {
   const affiliateHref = href && post.linkInfo?.affiliateHrefs.includes(href) ? href : null;
   const store = typeof post.extra?.store === "string" ? post.extra.store : null;
   const active = isActiveHotdeal(deal, now);
-  const row = "grid min-w-0 grid-cols-[5.5rem_minmax(0,1fr)] items-baseline gap-x-3 px-3 py-2.5 sm:grid-cols-[7rem_minmax(0,1fr)] sm:px-4";
+  const row = "grid min-w-0 grid-cols-[6rem_minmax(0,1fr)] items-baseline gap-x-3 px-3 py-2.5 sm:grid-cols-[7rem_minmax(0,1fr)] sm:px-4";
   const label = "font-medium text-slate-300";
 
   return (
@@ -68,9 +68,9 @@ export default function HotdealTerms({ post }: { post: Post }) {
         {affiliateHref ? (
           <div className={row}>
             <dt className={"flex items-center gap-0.5 " + label}>
-              상품 링크 <AffiliateLinkInfo />
+              <span className="whitespace-nowrap">상품 링크</span><AffiliateLinkInfo />
             </dt>
-            <dd><PostContentLink href={affiliateHref} info={post.linkInfo}>판매처에서 상품 보기</PostContentLink></dd>
+            <dd className="break-keep"><PostContentLink href={affiliateHref} info={post.linkInfo}>판매처에서 상품 보기</PostContentLink></dd>
           </div>
         ) : null}
         <div className={row}><dt className={label}>옵션</dt><dd className="[overflow-wrap:anywhere]">{deal.option}</dd></div>
