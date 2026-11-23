@@ -15,6 +15,8 @@ import { getCaseOptionPhoto, getCaseOptions, getPartEditorial, getProductEditori
 import ProductPhoto from "../../../components/ProductPhoto";
 import CaseOptionGallery from "../../../components/CaseOptionGallery";
 import { getProductBuyingNotes } from "../../../lib/productBuyingNotes";
+import { productMarketplaceLinks } from "../../../lib/productMarketplace";
+import MarketplacePriceLinks from "../../../components/MarketplacePriceLinks";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
@@ -31,7 +33,7 @@ function Sources({ items }: { items: ProductSource[] }) {
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const product = getCatalogProduct((await params).id);
   if (!product) notFound();
-  if (product.listings.length) await connection();
+  if (product.listings.length || productMarketplaceLinks(product.id, []).length) await connection();
   const { data, now } = await getPriceView(product.category);
   const listingIds = new Set(product.listings.map(listing => listing.id));
   const offers = data.items.filter(item => listingIds.has(item.id));
@@ -51,7 +53,9 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
       ? "제조사에서 확인한 색상·패널 사진을 위에서 선택할 수 있습니다. 팬 구성과 국내 구매 가능 옵션은 판매처에서 확인하세요."
       : note)
     : product.notes;
-  const affiliateCodes = await getOfferAffiliateCodes(offers);
+  const marketLinks = productMarketplaceLinks(product.id, offers);
+  const affiliateCodes = await getOfferAffiliateCodes([...offers, ...marketLinks]);
+  const sponsoredMarketLinks = marketLinks.filter(link => affiliateCodes.has(link.goCode));
   const informationCheckedAt = [product.listObservedAt, ...product.sources.map(source => source.observedAt)].filter((value): value is string => Boolean(value)).sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? null;
   return <article className="space-y-6">
     <nav aria-label="상품 경로" className="flex flex-wrap gap-2 text-sm text-white/65"><Link href="/prices" className="text-cyan-200 hover:underline">상품·가격비교</Link><span aria-hidden="true">/</span><Link href={`/prices/${product.category}`} className="hover:underline">{productCategoryLabel(product.category)}</Link></nav>
@@ -75,8 +79,13 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         <section id="product-prices" className="bd-surface-md scroll-mt-24 p-5 sm:p-6" aria-labelledby="product-prices-title">
           <h2 id="product-prices-title" className="text-xl font-semibold">판매처별 가격·할인</h2>
           <p className="mt-3 text-sm leading-7 text-white/75">확인 시점의 가격입니다. 같은 모델·용량·옵션과 보증 조건인지 확인해 주세요. 전체 판매처의 최저가를 보장하지 않습니다.</p>
+          {affiliateCodes.size ? <p className="mt-3 text-sm leading-7 text-white" role="note">이 페이지에는 제휴 링크가 포함되어 있습니다. 링크를 통해 구매가 이루어지면 블루딜이 일정 수수료를 받을 수 있습니다.</p> : null}
+          {sponsoredMarketLinks.length ? <div className="mt-4 space-y-2">
+            <MarketplacePriceLinks links={sponsoredMarketLinks} />
+            <p className="text-xs leading-6 text-white/65">현재 판매가·배송비·할인 조건은 각 판매처에서 확인할 수 있습니다.</p>
+          </div> : null}
           {offers.length ? <>
-            <p className="mt-3 text-sm leading-7 text-white" role="note">{affiliateCodes.size ? "이 포스팅은 제휴마케팅이 포함된 광고로 커미션을 지급 받습니다." : "이 상품의 판매처 링크는 일반 링크입니다."}</p>
+            {!affiliateCodes.size ? <p className="mt-3 text-sm leading-7 text-white" role="note">이 상품의 판매처 링크는 일반 링크입니다.</p> : null}
             <ul className="mt-5 space-y-5">{offers.map(item => <li key={item.id} className="rounded-xl border border-white/15 p-4">
               <h3 className="break-words font-semibold">{item.name}</h3>
               <p className="mt-2 break-words text-sm text-white/65">{[item.source, item.seller].filter(Boolean).join(" · ")}</p>
@@ -84,7 +93,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
               <div className="mt-4"><PriceAmount item={item} now={now} /></div>
               <div className="mt-4"><PurchaseLink item={item} affiliate={affiliateCodes.has(item.goCode ?? "")} /></div>
             </li>)}</ul>
-          </> : <p className="mt-4 text-sm leading-7 text-white/70">이 모델의 등록된 판매처 가격이 없습니다.</p>}
+          </> : <p className="mt-4 text-sm leading-7 text-white/70">블루딜에 기록된 판매가는 아직 없습니다.</p>}
           <Link href={`/prices/${product.category}`} className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">같은 부품의 다른 상품 비교</Link>
         </section>
         {configurationReview ? <section id="fullpc-configuration" className="bd-surface-md scroll-mt-24 space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-configuration-title">

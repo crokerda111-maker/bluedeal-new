@@ -6,8 +6,10 @@ import { priceFreshness } from "../lib/priceFilters";
 import { productHighlights } from "../lib/productFilters";
 import { getCaseOptions, getProductPhoto } from "../lib/productEditorial";
 import ProductPhoto from "./ProductPhoto";
+import MarketplacePriceLinks from "./MarketplacePriceLinks";
+import type { MarketPriceLink } from "../lib/productMarketplace";
 
-export default function CatalogProductCard({ product, offers, now }: { product: CatalogProduct; offers?: readonly PriceItem[]; now: number }) {
+export default function CatalogProductCard({ product, offers, marketLinks = [], now }: { product: CatalogProduct; offers?: readonly PriceItem[]; marketLinks?: readonly MarketPriceLink[]; now: number }) {
   const offer = offers?.[0];
   const photo = product.category === "case" ? getProductPhoto(product.id) : undefined;
   const options = product.category === "case" ? getCaseOptions(product.id) : undefined;
@@ -42,6 +44,7 @@ export default function CatalogProductCard({ product, offers, now }: { product: 
       </div> : offers ? <p className="mb-3 text-sm text-white/70">{product.listings.length ? "현재 조건에 맞는 가격 기록 없음" : "등록된 판매처 가격 없음"}</p> : null}
       {product.listObservedAt ? <p className="text-xs leading-6 text-white/60">공식 목록 확인 {catalogDate(product.listObservedAt)}</p> : null}
       {product.listings.length > 0 ? <p className="mt-1 text-xs leading-6 text-white/65">판매처 가격 기록 {product.listings.length}건</p> : null}
+      {marketLinks.length ? <div className="mt-3"><MarketplacePriceLinks links={marketLinks} compact /></div> : null}
       <Link href={`/products/${product.id}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-medium text-cyan-200 hover:underline">가격·특징·출처 보기 <span aria-hidden="true" className="ml-2">→</span></Link>
     </div>
   </article>;

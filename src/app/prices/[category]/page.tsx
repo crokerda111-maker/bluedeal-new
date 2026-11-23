@@ -138,7 +138,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
         <p className="mt-2">상품별 배송비·할인 조건·확인 시각을 확인해 주세요.</p>
         <p className="mt-2 text-white" role="note">{affiliateCodes.size > 0
           ? "이 포스팅은 제휴마케팅이 포함된 광고로 커미션을 지급 받습니다."
-          : hasPurchaseLinks ? "이 페이지의 판매처 링크는 일반 링크입니다."
+          : hasPurchaseLinks ? "아래 가격 기록의 판매처 링크는 일반 링크입니다."
             : "상품별 판매 조건과 링크는 확인된 정보가 있을 때 표시합니다."}</p>
       </div>
 
