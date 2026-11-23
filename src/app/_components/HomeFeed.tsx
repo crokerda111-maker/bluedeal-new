@@ -7,13 +7,15 @@ import type { HomeFeedData } from "../../lib/homeFeed";
 const failed: HomeFeedData = { deals: null, posts: [], failedCount: 1 };
 
 export default function HomeFeed({ hotdealHeading, recentHeading }: { hotdealHeading: ReactNode; recentHeading: ReactNode }) {
-  const area = useRef<HTMLElement>(null);
+  const dealsArea = useRef<HTMLElement>(null);
+  const recentArea = useRef<HTMLElement>(null);
   const [data, setData] = useState<HomeFeedData | null>(null);
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
-    const element = area.current;
-    if (!element) return;
+    const dealsElement = dealsArea.current;
+    const recentElement = recentArea.current;
+    if (!dealsElement || !recentElement) return;
     const request = new AbortController();
 
     function load() {
@@ -36,7 +38,8 @@ export default function HomeFeed({ hotdealHeading, recentHeading }: { hotdealHea
       observer.disconnect();
       load();
     }, { rootMargin: "320px 0px" });
-    observer.observe(element);
+    observer.observe(dealsElement);
+    observer.observe(recentElement);
     return () => {
       observer.disconnect();
       request.abort();
@@ -52,7 +55,7 @@ export default function HomeFeed({ hotdealHeading, recentHeading }: { hotdealHea
 
   return (
     <>
-      <section ref={area}>
+      <section ref={dealsArea}>
         {hotdealHeading}
         <div className="mt-5 grid grid-cols-1 gap-3">
           {!data && <p role="status" className="bd-surface-md p-5 text-sm text-white/70">핫딜을 불러오는 중입니다.</p>}
@@ -83,7 +86,7 @@ export default function HomeFeed({ hotdealHeading, recentHeading }: { hotdealHea
           ))}
         </div>
       </section>
-      <section>
+      <section ref={recentArea}>
         {recentHeading}
         <div className="bd-surface-md mt-5 space-y-3 p-6">
           {!data && <p role="status" className="text-sm text-white/65">최신 게시글을 불러오는 중입니다.</p>}
