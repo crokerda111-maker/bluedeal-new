@@ -54,7 +54,7 @@ export default function HomeFeed({ hotdealHeading, recentHeading }: { hotdealHea
     <>
       <section ref={area}>
         {hotdealHeading}
-        <div className="mt-5 grid gap-3">
+        <div className="mt-5 grid grid-cols-1 gap-3">
           {!data && <p role="status" className="bd-surface-md p-5 text-sm text-white/70">핫딜을 불러오는 중입니다.</p>}
           {data?.deals === null && <div className="bd-surface-md p-5 text-sm text-amber-200">
             <p role="status">핫딜을 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.</p>
@@ -62,7 +62,7 @@ export default function HomeFeed({ hotdealHeading, recentHeading }: { hotdealHea
           </div>}
           {data?.deals?.length === 0 && <p className="bd-surface-md p-5 text-sm text-white/70">아직 등록된 핫딜이 없습니다.</p>}
           {data?.deals?.map(deal => (
-            <Link key={deal.href} href={deal.href} prefetch={false} className="group bd-surface-md p-4 hover:bg-white/10">
+            <Link key={deal.href} href={deal.href} prefetch={false} className="group bd-surface-md min-w-0 p-4 hover:bg-white/10">
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2 text-xs text-white/70">
