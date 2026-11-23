@@ -734,6 +734,7 @@ try {
     const sitemap = await (await fetch(`${app.base}/sitemap.xml`)).text();
     assert.ok(sitemap.includes('https://bluedeal.co.kr/prices/ram'));
     assert.ok(sitemap.includes('https://bluedeal.co.kr/products/reviewed-fullpc-gmarket-4355054602'));
+    assert.ok(sitemap.includes('https://bluedeal.co.kr/community-policy'));
     for (const excluded of ['/admin', '/contact', '/go/', '/api/']) assert.equal(sitemap.includes(excluded), false);
     for (const route of ['/admin', '/contact', '/prices/ram?capacity=48']) {
       const html = await (await fetch(app.base + route)).text();
@@ -744,6 +745,21 @@ try {
     assert.match(prices, /rel="canonical" href="https:\/\/bluedeal\.co\.kr\/prices\/ram"/);
     assert.match(prices, /property="og:image" content="https:\/\/bluedeal\.co\.kr\/opengraph-image"/);
     assert.equal((await fetch(`${app.base}/community/not-a-board`)).status, 404);
+  });
+
+  await check('community policy is public and visible before posting, with a private report link', async () => {
+    const response = await fetch(`${app.base}/community-policy`);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, /<h1[^>]*>커뮤니티 운영정책<\/h1>/);
+    assert.match(html, /href="\/contact\/write\?vis=private"[^>]*>비공개로 신고·이의 제기/);
+    assert.match(html, /광고·홍보와 도배 금지/);
+    const pages = ['/community/hotdeal/write', '/it/write', '/community/issue'];
+    await Promise.all(pages.map(async pathname => {
+      const page = await fetch(app.base + pathname);
+      assert.equal(page.status, 200, pathname);
+      assert.match(await page.text(), /광고성 게시글·개인 제휴 링크·도배를 금지합니다/, pathname);
+    }));
   });
 
   await check('board sharing metadata matches each public page without leaking list canonicals into write or private pages', async () => {

@@ -28,6 +28,7 @@ export default async function AboutPage() {
           <p>상품 주문·결제·배송·교환은 구매하신 판매처의 안내를 따라주세요. 블루딜에 표시된 구성이나 가격의 정정 요청은 판매처 주소와 선택 옵션을 함께 보내주시면 확인하는 데 도움이 됩니다.</p>
         </div>
         <div className="mt-3 flex flex-wrap gap-x-4 text-sm text-cyan-200">
+          <Link prefetch={false} className="inline-flex min-h-11 items-center underline" href="/community-policy">커뮤니티 운영정책</Link>
           <Link prefetch={false} className="inline-flex min-h-11 items-center underline" href="/contact/write?vis=private">운영팀에 비공개 문의</Link>
           <Link prefetch={false} className="inline-flex min-h-11 items-center underline" href="/privacy">개인정보처리방침</Link>
         </div>

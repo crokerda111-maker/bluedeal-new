@@ -9,6 +9,7 @@ export default function SiteFooter() {
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 [&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center">
           <Link prefetch={false} className="hover:text-white" href="/about">블루딜 소개</Link>
           <Link prefetch={false} className="hover:text-white" href="/about#operation">운영 안내</Link>
+          <Link prefetch={false} className="hover:text-white" href="/community-policy">커뮤니티 운영정책</Link>
           <Link prefetch={false} className="hover:text-white" href="/privacy">개인정보처리방침</Link>
           <Link prefetch={false} className="hover:text-white" href="/about#affiliate">제휴 안내</Link>
           <Link prefetch={false} className="hover:text-white" href="/it">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import CommunityPolicyNotice from "./CommunityPolicyNotice";
 import MemberWriteGate, { useWriterNickname, WriterNicknameEditor } from "./MemberWriteGate";
 import PostLoadError from "./PostLoadError";
 import { issuePostTitle, POST_LIMITS } from "../lib/postInput";
@@ -76,7 +77,8 @@ export default function IssueFeed({ title, description }: { title: string; descr
       <section className="bd-surface-md p-4 sm:p-6" aria-labelledby="issue-title">
         <h1 id="issue-title" className="text-2xl font-semibold tracking-tight">{title}</h1>
         <p className="mt-1 text-sm text-white/75">{description}</p>
-        <div className="mt-4">
+        <div className="mt-2 space-y-2">
+          <CommunityPolicyNotice />
           <MemberWriteGate nextPath="/community/issue">
             <form aria-busy={saving} onSubmit={submit}>
               <IssueWriterIdentity />

@@ -17,6 +17,7 @@ export default async function MemberPage({ mode, searchParams }: {
       <div className="mt-6 flex flex-wrap items-center gap-x-4 border-t border-white/10 pt-2 text-sm">
         {mode !== "login" && <Link className="inline-flex min-h-11 items-center text-cyan-200 hover:underline" href="/login">로그인</Link>}
         {mode !== "signup" && <Link className="inline-flex min-h-11 items-center text-cyan-200 hover:underline" href="/signup">회원가입</Link>}
+        {mode === "signup" && <Link prefetch={false} className="inline-flex min-h-11 items-center text-white/75 hover:underline" href="/community-policy">커뮤니티 운영정책</Link>}
         <Link className="inline-flex min-h-11 items-center text-white/75 hover:underline" href="/privacy">개인정보처리방침</Link>
       </div>
     </section>

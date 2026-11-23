@@ -6,7 +6,7 @@ import { getLocalPrices } from "../lib/localPrices";
 import { getReviewedMarketplaceFullPcs } from "../lib/marketFullPc";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["/", "/about", "/it", "/community", "/prices", ...COMMUNITY_BOARDS.map(board => `/community/${board.slug}`)];
+  const paths = ["/", "/about", "/community-policy", "/it", "/community", "/prices", ...COMMUNITY_BOARDS.map(board => `/community/${board.slug}`)];
   return [
     ...paths.map(path => ({ url: `${SITE_URL}${path}` })),
     ...PRICE_CATEGORIES.flatMap(category => {
