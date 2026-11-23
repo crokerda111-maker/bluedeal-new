@@ -47,5 +47,18 @@
         "url": "https://www.pc4all.co.kr/shop/product_detail.html?pd_no=180858"
       }
     ]
+  },
+  "reviewed-fullpc-11st-8564936297": {
+    "reviewedOn": "2026-11-24",
+    "kind": "purchase",
+    "saleStatus": "not-for-sale",
+    "source": "https://www.11st.co.kr/products/8564936297",
+    "note": "11번가 판매 화면에서 현재 판매 중인 상품이 아니라는 표시를 확인했습니다. 판매 재개 시 기본 부품표와 옵션을 다시 대조합니다."
+  },
+  "reviewed-fullpc-11st-8675735260": {
+    "reviewedOn": "2026-11-24",
+    "kind": "purchase",
+    "source": "https://www.11st.co.kr/products/8675735260",
+    "note": "판매 페이지의 SRC0004_261120 2TB 구성과 1년 하드웨어 무상 A/S 안내를 확인했습니다. 후기에는 전면 USB 접촉 문제 보고와 팬 소음 교체 사례가 각각 있으나 동일 원인이 반복됐다고 확인되지는 않았습니다. 출고 후 앞쪽 USB와 팬 작동을 확인하세요."
   }
 }

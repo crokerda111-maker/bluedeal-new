@@ -9,11 +9,33 @@ registerHooks({ resolve(specifier, context, next) {
 } });
 const { parseCompuzonePc, discoverCompuzonePcs, compuzonePcUrl } = await import("../../src/lib/pcCompuzone.ts");
 const { matchFullPcObservation, scoreFullPcParts, separatePcTotal } = await import("../../src/lib/fullPcReview.ts");
+const { fullPcGpuChip, fullPcTier, fullPcComparisonKey, rankComparableFullPcs } = await import("../../src/lib/fullPcTiers.ts");
 const { default: fullPcReviews } = await import("../../src/content/fullPcReviews.json", { with: { type: "json" } });
 const { default: fullPcSnapshot } = await import("../../src/content/fullPcVerifiedSnapshot.json", { with: { type: "json" } });
 
 const at = "2026-11-22T00:03:00Z";
 const now = Date.parse("2026-11-22T01:00:00Z");
+
+test("급수 분류는 RTX·RX 모델을 식별하고 복수 선택형 제목은 사용하지 않는다", () => {
+  assert.equal(fullPcTier(fullPcGpuChip("서린 V100 7500F/5060/32G", true)), "entry");
+  assert.equal(fullPcTier(fullPcGpuChip("AMD 9800X3D_RX9070_GRE 12GB")), "balanced");
+  assert.equal(fullPcTier(fullPcGpuChip("GeForce RTX 5080 D7 16GB")), "high");
+  assert.equal(fullPcTier(fullPcGpuChip("내장 그래픽 사용")), "office");
+  assert.equal(fullPcTier(fullPcGpuChip("RTX 5060 / RTX 5080 선택")), "unknown");
+});
+
+test("같은 CPU·GPU·VRAM·OS 안에서 배송 포함 가격 변동을 순위에 반영한다", () => {
+  assert.equal(fullPcComparisonKey("AMD Ryzen 7 9800X3D", "ASUS PRIME RX 9070 XT 16GB", "Free DOS"),
+    fullPcComparisonKey("AMD Ryzen 9800X3D", "SAPPHIRE RX9070XT OC 16GB", "Windows 미포함"));
+  assert.notEqual(fullPcComparisonKey("AMD Ryzen 9800X3D", "RX 9070 XT 16GB", "Windows 11 Home DSP"),
+    fullPcComparisonKey("AMD Ryzen 9800X3D", "RX 9070 XT 16GB", "Windows 미포함"));
+  assert.equal(fullPcComparisonKey("AMD Ryzen 9800X3D", "RX 9070 XT", "Windows 미포함"), null);
+  const a = { id: "better-parts", score: 90, total: 2000000 };
+  const b = { id: "cheaper", score: 85, total: 1960000 };
+  assert.equal(rankComparableFullPcs([a, b])[0].candidate.id, a.id);
+  assert.equal(rankComparableFullPcs([a, { ...b, total: 1500000 }])[0].candidate.id, b.id);
+  assert.equal(rankComparableFullPcs([b]).length, 0);
+});
 
 test("개별 견적은 8종 동일 모델·수량과 당일 배송비, 조립 및 동일 구매조건이 있어야 계산한다", () => {
   const review = structuredClone(fullPcReviews.find(row => row.productId === "reviewed-fullpc-11st-9423305936"));

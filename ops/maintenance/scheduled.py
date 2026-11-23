@@ -93,8 +93,9 @@ def execute(mode, *, root=ROOT, health_runner=None, now=None):
             if mode == 'collect':
                 record['collection_state'] = report['recent']['state']
                 from candidate_index import build_index
-                index = build_index(root)
+                index = build_index(root, refresh_fullpc_links=True)
                 record['catalog_review'] = {key: index[key] for key in ('state', 'baseline_listings', 'internal_models', 'unique_pc_posts', 'duplicate_post_rows_removed')}
+                record['catalog_review']['fullpc_discovery'] = index['fullpc_discovery']
         else: record.update(state='failed', reason='maintenance program failed')
     record['completed_at'] = datetime.now(KST).isoformat()
     return record

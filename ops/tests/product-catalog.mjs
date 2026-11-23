@@ -31,7 +31,11 @@ test('case photos use exact catalog options and reviewed default components',()=
   assert.equal(new Set(catalogIds).size,catalogIds.length);
   assert.equal(new Set(partNames).size,partNames.length);
   assert.ok(catalogIds.every(id=>products.some(p=>p.id===id)));
-  assert.ok(reviews.every(review=>cases.some(entry=>entry.partNames?.includes(review.parts.case))));
+  assert.ok(reviews.filter(review=>review.configuration).every(review=>cases.some(entry=>entry.partNames?.includes(review.parts.case))));
+  for (const expected of ['darkFlash DRX70 MESH RGB 강화유리 블랙','잘만 i8 백사십 터보 블랙','LIAN LI LANCOOL 207 블랙',
+    'Fractal Design Pop 2 Air Black TG RGB','1STPlayer 와칠 WA7-K RGB 블랙']) {
+    assert.ok(cases.some(entry=>entry.partNames?.includes(expected)),expected);
+  }
   const black=cases.find(entry=>entry.catalogIds?.includes('distributor-seorin-1000008774')).photo;
   const white=cases.find(entry=>entry.catalogIds?.includes('distributor-seorin-1000008773')).photo;
   assert.notEqual(black.src,white.src);

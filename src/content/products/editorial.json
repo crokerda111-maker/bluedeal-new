@@ -233,7 +233,8 @@
         "reviewed-1stplayer-wa7-k-rgb-black-retailer"
       ],
       "partNames": [
-        "[1STPlayer] 와칠 WA7-K RGB [미들타워] [블랙] ★컴퓨존 단독 25%★"
+        "[1STPlayer] 와칠 WA7-K RGB [미들타워] [블랙] ★컴퓨존 단독 25%★",
+        "1STPlayer 와칠 WA7-K RGB 블랙"
       ],
       "photo": {
         "src": "https://image3.compuzone.co.kr/img/product_img/2026/0826/1377849/1377849_5_600.jpg",
@@ -1170,6 +1171,34 @@
         "text": "GIGABYTE는 DDR4 GEN5용 BIOS F2에 Vmin Shift 완화용 0x12F를 포함했습니다. 관련 13·14세대 CPU를 사용한다면 보드의 최신 BIOS와 Intel Default Settings를 확인하세요.",
         "source": "https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-GEN5/Support/support"
       }
+    },
+    {
+      "partNames": [
+        "LIAN LI LANCOOL 207 블랙"
+      ],
+      "photo": {
+        "src": "https://godomall-storage.cdn-nhncommerce.com/2180f373ee6eede9bbd7a8f1988d2d96/goods/1000006831/image/main/1000006831_main_017.jpg",
+        "alt": "LIAN LI LANCOOL 207 (블랙) 케이스 외관",
+        "source": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000006831",
+        "sourceLabel": "서린씨앤아이"
+      },
+      "advantage": "전면 메시와 전면·하단 기본 팬 4개가 들어갑니다.",
+      "caution": "파워 케이블 공간과 전면 단자 구성은 선택한 케이스를 확인하세요.",
+      "source": "https://lian-li.com/product/lancool-207/"
+    },
+    {
+      "partNames": [
+        "Fractal Design Pop 2 Air Black TG RGB"
+      ],
+      "photo": {
+        "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/bc5e7f3ca5b94ea212a31de9f2af9b41a9c2cbe3-2560x3200.png?w=900&auto=format&q=80",
+        "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-air/pop-2-air-black-tg-rgb/",
+        "alt": "Fractal Design Pop 2 Air RGB 블랙 케이스 외관",
+        "sourceLabel": "Fractal Design"
+      },
+      "advantage": "메시 전면과 RGB 팬 3개를 기본으로 탑재합니다.",
+      "caution": "같은 Pop 2 Air 제품군 안에서 RGB와 패널 옵션을 구분하세요.",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-air/pop-2-air-black-tg-rgb/"
     }
   ]
 }

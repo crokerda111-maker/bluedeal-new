@@ -77,7 +77,8 @@
     "quantities": {
       "ram": 2
     },
-    "comparisonStatus": "G마켓 판매번호의 무상 보증과 동일 부품 개별 구매 비용 확인 필요"
+    "comparisonStatus": "G마켓 판매번호의 무상 보증과 동일 부품 개별 구매 비용 확인 필요",
+    "priceOption": "기본 메모리 KLEVV DDR5-5600 CL46 32GB(16GB × 2) · CN700 Pro 1TB · DRX70 MESH 블랙 · CPS RT620 PRO ARGB · MWE Gold 850 V3 ATX 3.1"
   },
   {
     "productId": "reviewed-fullpc-11st-9423305936",
@@ -162,12 +163,13 @@
       "warranty": "판매자 1년 무상 A/S · 이후 유상",
       "source": "https://www.11st.co.kr/products/9423305936"
     },
-    "comparisonStatus": "동일 DLI DDR5-5600 CL46 16GB 단품 판매처 2곳 품절 확인 · 동일 구성 개별 구매 총액 미확정"
+    "comparisonStatus": "동일 DLI DDR5-5600 CL46 16GB 단품 판매처 2곳 품절 확인 · 동일 구성 개별 구매 총액 미확정",
+    "priceOption": "아싸컴 EV_A78D-A97T-C1T · 7800X3D · ASRock RX 9070 XT Challenger · DLI DDR5-5600 32GB · Kingston NV3 1TB · Windows 미포함"
   },
   {
     "productId": "reviewed-fullpc-ohou-4100098",
     "condition": "서린컴퓨터 SRCO0039 · 판매처 사양표의 화이트 기본 구성",
-    "checkedOn": "2026-11-23",
+    "checkedOn": "2026-11-24",
     "sellerUrl": "https://store.ohou.se/goods/4100098",
     "partsUrl": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRCO0039.jpg",
     "gpuSource": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
@@ -239,7 +241,8 @@
       "케이스는 측면 흡기 설계입니다. 전면 메시 가점과 실제 냉각 성능은 별개입니다.",
       "같은 부품의 개별 구매가와 본체 보증을 확인한 뒤 절약률을 비교할 수 있습니다.",
       "B650M K의 국내 판매 보드 리비전은 주문 전 확인하세요. 기가바이트 Rev. 1.0과 1.1의 메모리 슬롯·M.2·유선랜 표기는 같습니다."
-    ]
+    ],
+    "priceOption": "서린 V100 ARGB 화이트 SRCO0039 · 7500F RTX 5060 · 기본 32GB/1TB · 선택 수량 1"
   },
   {
     "productId": "compuzone-pc-1388408",
@@ -1481,5 +1484,418 @@
     ],
     "configuration": "cf5492e69782eab882ed4f1087f8bf9126832555c4e93c75be6bfc8d092ed11b",
     "detailDigest": "673b2425e3f832d31bf072fced6bdfa54231c0c75439b136f6ee3b4854aaaeae"
+  },
+  {
+    "productId": "reviewed-fullpc-gmarket-3951478263",
+    "checkedOn": "2026-11-24",
+    "sellerUrl": "https://item.gmarket.co.kr/Item?goodscode=3951478263",
+    "partsUrl": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A98D-A97T-C1T_11181124.jpg",
+    "gpuSource": "https://www.sapphiretech.com/en/consumer/nitro-radeon-rx-9070-xt-16g-gddr6",
+    "condition": "아싸컴 EV_A98D-A97T-C1T · RAM·보드·파워 변경 없음",
+    "parts": {
+      "cpu": "AMD Ryzen 7 9800X3D (국내 정품 표기)",
+      "gpu": "SAPPHIRE NITRO+ Radeon RX 9070 XT OC 16GB",
+      "board": "GIGABYTE B850 AORUS ELITE X3D",
+      "ram": "CORSAIR VENGEANCE DDR5-5600 CL40 32GB (16GB × 2)",
+      "storage": "KIOXIA EXCERIA PRO G2 PCIe 5.0 NVMe 1TB",
+      "psu": "Cooler Master MWE Gold 850 V3 ATX 3.1",
+      "cooler": "CORSAIR NAUTILUS 1.5 360 RS",
+      "case": "NZXT H6 Flow 블랙"
+    },
+    "tested": {
+      "board": {
+        "results": [
+          true,
+          true,
+          true
+        ],
+        "fact": "DDR5 슬롯 4개 · M.2 4개 · 5GbE",
+        "url": "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-X3D/sp"
+      },
+      "ram": {
+        "results": [
+          true,
+          true,
+          false
+        ],
+        "fact": "16GB 두 개 · DDR5-5600 CL40",
+        "url": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A98D-A97T-C1T_11181124.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "1TB · PCIe 5.0 NVMe",
+        "url": "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+      },
+      "psu": {
+        "results": [
+          true,
+          true,
+          true
+        ],
+        "fact": "GPU 제조사 최소 850W · 기본 파워 850W Gold · ATX 3.1",
+        "url": "https://legacy.coolermaster.com/en-global/products/mwe-gold-850-v3-atx-3-1/"
+      },
+      "cooler": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "7800X3D·9800X3D는 AM5 소켓이며 판매처가 360mm 수랭 모델을 기본 적용",
+        "url": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A98D-A97T-C1T_11181124.jpg"
+      },
+      "case": {
+        "results": [
+          true,
+          false
+        ],
+        "fact": "기본 팬 3개 · 전면 유리와 측면 모서리 흡기 구조",
+        "url": "https://support.nzxt.com/hc/en-us/articles/40183529624347-H6-Flow-2023-Specs"
+      }
+    },
+    "notes": [
+      "기본 사양표가 바뀔 수 있습니다. SAPPHIRE NITRO+는 16핀 전원 연결과 케이블 여유를 확인하세요.",
+      "같은 사양군 서린 SRC0004의 SSD는 2TB, 이 제품은 1TB입니다. 케이스 구조와 보드 확장성도 확인하세요."
+    ],
+    "comparisonStatus": "동일 부품의 배송 포함 개별 구매가와 동일 보증 조립비 확인 필요",
+    "quantities": {
+      "ram": 2
+    },
+    "purchaseTerms": {
+      "os": "Windows 미포함",
+      "warranty": "판매자 1년 무상 A/S",
+      "source": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A98D-A97T-C1T_11181124.jpg"
+    },
+    "priceOption": "EV_A98D-A97T-C1T · RAM·메인보드·파워 변경 없음 · 수량 1 · Windows 미포함"
+  },
+  {
+    "productId": "reviewed-fullpc-11st-8675735260",
+    "checkedOn": "2026-11-24",
+    "sellerUrl": "https://www.11st.co.kr/products/8675735260",
+    "partsUrl": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg",
+    "gpuSource": "https://www.asus.com/us/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g/techspec/",
+    "condition": "서린 SRC0004_261120 · 11번가 2TB 블랙 기본 구성",
+    "parts": {
+      "cpu": "AMD Ryzen 7 9800X3D 멀티팩(정품)",
+      "gpu": "ASUS PRIME Radeon RX 9070 XT OC 16GB 대원씨티에스",
+      "board": "ASUS TUF GAMING B850-PLUS WIFI 대원씨티에스",
+      "ram": "GeIL PRISTINE V DDR5-5200 CL42 32GB (16GB × 2)",
+      "storage": "Apacer AS2280Q4X PCIe 4.0 NVMe 2TB",
+      "psu": "ASUS PRIME 850W Gold V2 대원씨티에스",
+      "cooler": "Thermalright Peerless Assassin 120 SE ARGB 서린",
+      "case": "LIAN LI LANCOOL 207 블랙"
+    },
+    "tested": {
+      "board": {
+        "results": [
+          true,
+          true,
+          true
+        ],
+        "fact": "DDR5 슬롯 4개 · M.2 3개 · 2.5GbE",
+        "url": "https://www.asus.com/uk/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/"
+      },
+      "ram": {
+        "results": [
+          true,
+          true,
+          false
+        ],
+        "fact": "16GB 두 개 · DDR5-5200 CL42",
+        "url": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "2TB · PCIe 4.0 NVMe",
+        "url": "https://www.apacer.com/en/product/personal-product/detail/personal_ssd/as2280q4x"
+      },
+      "psu": {
+        "results": [
+          true,
+          null,
+          true
+        ],
+        "fact": "그래픽카드 권장 750W · 850W Gold 표기 · V2 파워의 정확한 ATX 규격 확인 필요",
+        "url": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
+      },
+      "cooler": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "AM5 장착 구성 · 듀얼 타워 공랭",
+        "url": "https://www.thermalright.com/product/peerless-assassin-120-se/"
+      },
+      "case": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "전면 메시 · 전면 140mm 2개와 하단 120mm 2개 기본",
+        "url": "https://lian-li.com/product/lancool-207/"
+      }
+    },
+    "notes": [
+      "PCIe 슬롯과 M.2 일부가 대역폭을 공유합니다. SSD를 추가할 때 제조사 장착 안내를 확인하세요.",
+      "확인한 판매번호의 기본 사양은 2TB입니다. 같은 이름으로 판매하는 1TB 구성이 있어 상품코드를 확인하세요."
+    ],
+    "comparisonStatus": "동일 부품의 배송 포함 개별 구매가와 동일 보증 조립비 확인 필요",
+    "quantities": {
+      "ram": 2
+    },
+    "purchaseTerms": {
+      "os": "Windows 미포함",
+      "warranty": "구매일부터 1년간 하드웨어 무상 A/S · 사용 과실·소프트웨어 제외",
+      "source": "https://seorincni.hgodo.com/SRC/Detail/common_after-service_m.jpg"
+    },
+    "priceOption": "SRC0004_261120 · 2TB 블랙 · Free DOS 기본 구성 · 수량 1"
+  },
+  {
+    "productId": "reviewed-fullpc-11st-8675734943",
+    "checkedOn": "2026-11-24",
+    "sellerUrl": "https://www.11st.co.kr/products/8675734943",
+    "partsUrl": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0005_261029_components_m.jpg",
+    "gpuSource": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/",
+    "condition": "서린 SRC0005_261029 · POP 2 AIR RGB 블랙",
+    "parts": {
+      "cpu": "AMD Ryzen 7 9800X3D 멀티팩(정품)",
+      "gpu": "Leadtek WinFast RTX 5080 Hurricane 16GB",
+      "board": "GIGABYTE B850M AORUS ELITE WIFI6E 피씨디렉트",
+      "ram": "ESSENCORE KLEVV FIT V BLACK AMD DDR5-6000 CL28 32GB (16GB × 2 키트)",
+      "storage": "AGI AI838 NVMe 1TB 서린",
+      "psu": "NEWZEN SKULL 850XM 풀모듈러 ATX 3.1 80 PLUS Gold 블랙",
+      "cooler": "Thermalright AQUA ELITE 360 ARGB V3 벌크 서린 블랙",
+      "case": "Fractal Design Pop 2 Air Black TG RGB"
+    },
+    "tested": {
+      "board": {
+        "results": [
+          true,
+          false,
+          true
+        ],
+        "fact": "DDR5 슬롯 4개 · NVMe M.2 2개 · 2.5GbE",
+        "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-rev-1x/sp"
+      },
+      "ram": {
+        "results": [
+          true,
+          true,
+          true
+        ],
+        "fact": "DDR5-6000 CL28 · 16GB 두 개",
+        "url": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0005_261029_components_m.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "1TB · PCIe 4.0 NVMe",
+        "url": "https://agi-gear.com/wp-content/uploads/2026/05/Datasheet_AI838_0128-1.pdf"
+      },
+      "psu": {
+        "results": [
+          null,
+          true,
+          true
+        ],
+        "fact": "기본 파워 850W · ATX 3.1 · Gold · NVIDIA 기준 850W, 장착 GPU 제조사의 개별 권장치 확인 필요",
+        "url": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0005_261029_components_m.jpg"
+      },
+      "cooler": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "AM5 장착 구성 · 360mm 수랭",
+        "url": "https://www.thermalright.com/product/aqua-elite-360-v3/"
+      },
+      "case": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "전면 메시 · 기본 RGB 팬 3개",
+        "url": "https://www.fractal-design.com/products/cases/pop-series/pop-2-air/pop-2-air-black-tg-rgb/"
+      }
+    },
+    "notes": [
+      "11번가에서 현재 판매 중인 상품이 아니라는 문구를 확인했습니다. 공개 부품표는 출고 이력 확인에 사용할 수 있습니다."
+    ],
+    "comparisonStatus": "현재 판매 중단 · 재판매 여부 확인 필요",
+    "notForSale": true,
+    "purchaseTerms": {
+      "os": "Windows 미포함",
+      "warranty": "구매일부터 1년간 하드웨어 무상 A/S · 사용 과실·소프트웨어 제외",
+      "source": "https://seorincni.hgodo.com/SRC/Detail/common_after-service_m.jpg"
+    }
+  },
+  {
+    "productId": "reviewed-fullpc-gmarket-4864796475",
+    "checkedOn": "2026-11-24",
+    "sellerUrl": "https://item.gmarket.co.kr/Item?goodscode=4864796475",
+    "partsUrl": "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg",
+    "gpuSource": "https://www.msi.com/Graphics-Card/GeForce-RTX-5060-8G-VENTUS-2X-OC/Specification",
+    "condition": "씨넥스 CY146KF5616G1000G_261102 · 기본 16GB 구성",
+    "parts": {
+      "cpu": "Intel Core i5-14600KF 정품 벌크",
+      "gpu": "MSI GeForce RTX 5060 VENTUS 2X OC 8GB",
+      "board": "GIGABYTE B760M D2HX LITE SI GEN5 Bulk",
+      "ram": "Lexar DDR5-5600 16GB",
+      "storage": "FASTRO MS150 M.2 NVMe 1000GB",
+      "psu": "맥스엘리트 STARS GEMINI 750W 80 PLUS Bronze ATX 3.1",
+      "cooler": "PCCOOLER CPS RT620 PRO 카본스틸 블랙",
+      "case": "1STPlayer 와칠 WA7-K RGB 블랙"
+    },
+    "tested": {
+      "board": {
+        "results": [
+          false,
+          false,
+          true
+        ],
+        "fact": "DDR5 슬롯 2개 · M.2 3개 미만 · 2.5GbE",
+        "url": "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5/sp"
+      },
+      "ram": {
+        "results": [
+          false,
+          false,
+          false
+        ],
+        "fact": "기본 16GB 한 모듈 · DDR5-5600",
+        "url": "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          null
+        ],
+        "fact": "1000GB NVMe 표기 · 동일 판매품의 PCIe 세대 제조사 근거 확인 필요",
+        "url": "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+      },
+      "psu": {
+        "results": [
+          true,
+          true,
+          false
+        ],
+        "fact": "750W · MSI RTX 5060 해당 카드 권장 550W · ATX 3.1 · 80 PLUS Bronze",
+        "url": "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+      },
+      "cooler": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "LGA1700에서 사용하는 듀얼 타워 공랭",
+        "url": "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+      },
+      "case": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "RGB 블랙 옵션 · 메시 흡기와 전면 3개·후면 1개 팬",
+        "url": "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+      }
+    },
+    "notes": [
+      "메모리는 16GB 한 장입니다. 게임에 따라 16GB 두 장 구성과 총비용을 비교하세요.",
+      "14600KF 벌크의 부품 보증과 인텔 안정화 BIOS 적용 여부는 판매처 안내에서 확인하세요."
+    ],
+    "comparisonStatus": "동일 부품의 배송 포함 개별 구매가와 동일 보증 조립비 확인 필요",
+    "purchaseTerms": {
+      "os": "Windows 미포함",
+      "warranty": "구매일 기준 1년 무상·2년 유상 서비스 · 초기 불량 기간 이후 부품 유통사 정책 적용",
+      "source": "https://cynex.hgodo.com/cynexpc/etc/as.jpg"
+    },
+    "priceOption": "CY146KF5616G1000G_261102 · Lexar DDR5-5600 16GB · FASTRO MS150 1000GB · Windows 미포함"
+  },
+  {
+    "productId": "reviewed-fullpc-11st-9450696630",
+    "checkedOn": "2026-11-24",
+    "sellerUrl": "https://www.11st.co.kr/products/9450696630",
+    "partsUrl": "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg",
+    "gpuSource": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/",
+    "condition": "파이온 AXIS DX98D-NX580H · 판매처 사양표 기준",
+    "parts": {
+      "cpu": "AMD Ryzen 7 9800X3D",
+      "gpu": "GeForce RTX 5080 OC 16GB (제조사 미표기)",
+      "board": "ASUS TUF GAMING B850M-PLUS II (공통 상세 이미지와 상이)",
+      "ram": "Lexar DDR5-5600 32GB (16GB × 2)",
+      "storage": "Samsung 990 PRO PCIe 4.0 NVMe 2TB",
+      "psu": "MSI MAG A850GN 850W Gold ATX 3.1",
+      "cooler": "3RSYS Socoool RC1400N Quiet 쌍철봉 블랙",
+      "case": "잘만 N30 백사십 PLUS 블랙"
+    },
+    "tested": {
+      "board": {
+        "results": [
+          null,
+          null,
+          null
+        ],
+        "fact": "기본 사양표 B850M-PLUS II · 별도 상세 이미지는 B650EM-E WIFI로 상이",
+        "url": "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+      },
+      "ram": {
+        "results": [
+          true,
+          true,
+          false
+        ],
+        "fact": "16GB 두 개 · DDR5-5600",
+        "url": "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "2TB · PCIe 4.0 NVMe",
+        "url": "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+      },
+      "psu": {
+        "results": [
+          null,
+          true,
+          true
+        ],
+        "fact": "기본 850W · Gold · ATX 3.1 · 교체 가능한 GPU의 모델별 권장 출력 미확정",
+        "url": "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+      },
+      "cooler": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "AM5 장착 구성 · 쌍철봉 듀얼 타워 공랭",
+        "url": "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+      },
+      "case": {
+        "results": [
+          null,
+          null
+        ],
+        "fact": "N30 백사십 PLUS 블랙 표기 · 행사 이미지와 실제 출고 팬 구성 확인 필요",
+        "url": "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+      }
+    },
+    "notes": [
+      "판매자가 그래픽카드와 다른 부품의 제조사 변경 가능성을 안내합니다. 판매번호의 주문 견적에서 보드와 그래픽카드 품번을 먼저 확인하세요."
+    ],
+    "comparisonStatus": "동일 부품의 배송 포함 개별 구매가와 동일 보증 조립비 확인 필요",
+    "quantities": {
+      "ram": 2
+    },
+    "configurationConflict": "메인보드 사양표와 상세 이미지가 다르고 GPU 제조사가 고정 표기되지 않습니다. 판매처 출고 구성 확인 후 점수·순위를 확정합니다.",
+    "priceOption": "AXIS DX98D-NX580H · 9800X3D RTX 5080 16GB 32GB/삼성 990 PRO 2TB · Windows 미포함 · 그래픽카드 브랜드·보드 출고 모델 확인 필요"
   }
 ]

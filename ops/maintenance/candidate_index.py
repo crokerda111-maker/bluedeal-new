@@ -114,7 +114,7 @@ def csv_cell(value):
     return "'" + text if text.lstrip().startswith(('=', '+', '-', '@')) or text.startswith(('\t', '\r', '\n')) else text
 
 
-def build_index(root=ROOT):
+def build_index(root=ROOT, *, refresh_fullpc_links=False):
     listings, models = baseline_models(root)
     rows = []; coverage = []
     for label in ('hotdeal-research', 'hotdeal-watch'):
@@ -136,11 +136,17 @@ def build_index(root=ROOT):
         for row in entries: writer.writerow({key: csv_cell(row.get(key)) for key in columns})
     e = html.escape
     table = ''.join(f"<tr><td>{e(row['category'])}</td><td>{e(row['title'])}</td><td>{e(row['reported_observed_at'] or '미확인')}</td><td>모델·판매처 검증 전</td></tr>" for row in entries[:100])
-    page = f'''<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>블루딜 통합 상품 검토</title><style>body{{background:#060b1a;color:#edf2fa;font:16px/1.8 system-ui;margin:24px}}a{{color:#9dedff}}table{{border-collapse:collapse;width:100%}}td,th{{padding:12px;border-bottom:1px solid #354057;text-align:left}}.scroll{{overflow:auto}}</style><h1>통합 상품 검토</h1><p>기존 판매 상품 {len(listings)}개 → 내부 모델 {len(models)}개. 제조사 SKU 확인과는 구분합니다.</p><p>PC 게시글 {len(rows)}행 중 동일 출처·글 번호 중복 {len(rows)-len(entries)}행을 제거해 {len(entries)}건을 정리했습니다.</p><p>현재 판매가와 후보 상품 SKU는 아직 확인하지 않았습니다. 같은 제목을 동일 제품이라고 자동 확정하지 않습니다.</p><p><a href="candidate-queue.generated.csv">자동생성 후보 목록 CSV</a> · <a href="../maintenance/dashboard.html">자동 관리 현황</a></p><p>목록은 수집 후 다시 생성됩니다. 검증 결과는 이 파일을 덮어쓰지 말고 별도 검증 기록에 보관해야 합니다.</p><p>아래는 첫 {min(100,len(entries))}건입니다. 과거 글·최근 글의 원래 관측 시각을 보존합니다.</p><div class="scroll"><table><thead><tr><th>분류</th><th>원문 제목</th><th>목록 관측 시각</th><th>검토 상태</th></tr></thead><tbody>{table}</tbody></table></div></html>'''
+    page = f'''<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>블루딜 통합 상품 검토</title><style>body{{background:#060b1a;color:#edf2fa;font:16px/1.8 system-ui;margin:24px}}a{{color:#9dedff}}table{{border-collapse:collapse;width:100%}}td,th{{padding:12px;border-bottom:1px solid #354057;text-align:left}}.scroll{{overflow:auto}}</style><h1>통합 상품 검토</h1><p>기존 판매 상품 {len(listings)}개 → 내부 모델 {len(models)}개. 제조사 SKU 확인과는 구분합니다.</p><p>PC 게시글 {len(rows)}행 중 동일 출처·글 번호 중복 {len(rows)-len(entries)}행을 제거해 {len(entries)}건을 정리했습니다.</p><p>현재 판매가와 후보 상품 SKU는 아직 확인하지 않았습니다. 같은 제목을 동일 제품이라고 자동 확정하지 않습니다.</p><p><a href="candidate-queue.generated.csv">자동생성 후보 목록 CSV</a> · <a href="fullpc-discovery.html">완본체 누락 후보</a> · <a href="../maintenance/dashboard.html">자동 관리 현황</a></p><p>목록은 수집 후 다시 생성됩니다. 검증 결과는 이 파일을 덮어쓰지 말고 별도 검증 기록에 보관해야 합니다.</p><p>아래는 첫 {min(100,len(entries))}건입니다. 과거 글·최근 글의 원래 관측 시각을 보존합니다.</p><div class="scroll"><table><thead><tr><th>분류</th><th>원문 제목</th><th>목록 관측 시각</th><th>검토 상태</th></tr></thead><tbody>{table}</tbody></table></div></html>'''
     (output / 'report.html').write_text(page, encoding='utf-8')
+    from ops.maintenance.fullpc_discovery import write_fullpc_discovery
+    summary['fullpc_discovery'] = write_fullpc_discovery(root, entries, datetime.now(KST), refresh_links=refresh_fullpc_links)
+    (output / 'summary.local.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return summary
 
 
 if __name__ == '__main__':
-    value = build_index()
-    print(json.dumps({key: value[key] for key in ('state','baseline_listings','internal_models','unique_pc_posts','duplicate_post_rows_removed')}, ensure_ascii=False))
+    import argparse
+    parser = argparse.ArgumentParser(description='블루딜 상품 후보 검토')
+    parser.add_argument('--refresh-fullpc-links', action='store_true')
+    value = build_index(refresh_fullpc_links=parser.parse_args().refresh_fullpc_links)
+    print(json.dumps({key: value[key] for key in ('state','baseline_listings','internal_models','unique_pc_posts','duplicate_post_rows_removed','fullpc_discovery')}, ensure_ascii=False))

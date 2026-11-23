@@ -27,6 +27,8 @@ export default function FullPcConfiguration({ review }: { review: FullPcReview }
       <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. 16GB 메모리와 500GB SSD부터 평가합니다." : "CPU와 GPU·VRAM은 비교할 성능 급을 정합니다. 부품 구성 점수는 확장성·용량·전원·냉각 사양의 충족도를 표시합니다."} 결제금액, 보증, 실측 발열·소음은 별도로 확인하세요.</p>
       {review.purchaseTerms ? <p className="mt-1 text-white/75">{review.purchaseTerms.os} · {review.purchaseTerms.warranty} <a className={sourceStyle} href={review.purchaseTerms.source} target="_blank" rel="noopener noreferrer">조건 출처<span className="sr-only"> (새 창)</span></a></p> : null}
       {review.comparisonStatus ? <p className="mt-1 text-amber-100">{review.comparisonStatus}</p> : null}
+      {review.configurationConflict ? <p className="mt-1 text-amber-100">{review.configurationConflict}</p> : null}
+      {review.notForSale ? <p className="mt-1 text-amber-100">확인 시점에 이 판매번호의 주문이 중단돼 있습니다.</p> : null}
     </div>
     {review.costComparison && separateTotal !== null ? <details className="rounded-xl border border-white/15 p-4 text-white/80">
       <summary className="cursor-pointer font-medium text-cyan-100">개별 구매 확인 기록 {fmtWon(separateTotal)} · 부품 8종, 배송, 조립, 동일 보증·OS 조건</summary>

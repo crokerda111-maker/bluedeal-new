@@ -63,3 +63,5 @@ Windows 작업 스케줄러에 현재 사용자·일반 권한·로그인 상태
 ## 웹 빌드 검증
 
 Windows에서 재현된 Turbopack PostCSS 하위 프로세스 연결 문제를 분리하기 위해 프로젝트의 기본 `npm run build`를 Next.js가 지원하는 `next build --webpack`으로 설정했습니다. 버전 API 두 곳의 package.json 가져오기도 기본 가져오기로 맞춰 webpack 경고를 없앴습니다. 2026-11-20 기본 빌드·TypeScript·린트와 계산/스냅샷 테스트20개, 로컬 HTTP5흐름 및 버전 API2개 검증을 통과했습니다. 브라우저의 로컬 접속 실패·오류 페이지 정책 차단으로 실제 모바일 화면은 아직 검증하지 못했습니다. 운영 배포는 하지 않았습니다.
+
+완본체 누락 검토는 같은 수집 예약에서 최근 7일 후보를 카탈로그 판매번호와 대조합니다. 공개 원문은 실행당 최대 4건만 기존 접근 정책으로 확인합니다. ops/private/catalog-review/fullpc-discovery.html에서 미등록 판매번호와 미확인 링크를 확인할 수 있습니다.

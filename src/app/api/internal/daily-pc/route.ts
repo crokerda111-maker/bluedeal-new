@@ -2,6 +2,7 @@ import { timingSafeEqual } from "node:crypto";
 import { collectDailyPc } from "../../../../lib/collectDailyPc";
 import { kstDay } from "../../../../lib/dailyPc";
 import { dailyPcKey, readDailyPc } from "../../../../lib/dailyPcStore";
+import { saveFullPcRanks } from "../../../../lib/fullPcRankStore";
 import { kvCommand } from "../../../../lib/kvRest";
 
 export const runtime = "nodejs";
@@ -19,7 +20,13 @@ function authorized(request: Request) {
 export async function GET(request: Request) {
   const headers = { "Cache-Control": "no-store" };
   if (!authorized(request)) return Response.json({ state: "unauthorized" }, { status: 401, headers });
-  const day = kstDay(Date.now());
+  const now = Date.now();
+  const day = kstDay(now);
+  try {
+    await saveFullPcRanks(now);
+  } catch (error) {
+    console.error("Marketplace PC ranks could not be stored", error instanceof Error ? error.name : "Error");
+  }
   try {
     if (await readDailyPc(day)) return Response.json({ state: "already-observed", day }, { headers });
     const lease = await kvCommand<string | null>("SET", dailyPcKey(day) + ":collect", "running", "NX", "EX", 310);

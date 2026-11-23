@@ -39,6 +39,9 @@ export type FullPcReview = {
   purchaseTerms?: { os: string; warranty: string; source: string };
   costComparison?: { parts: Record<PcSlot, SeparatePart>; assembly: SeparateAssembly };
   comparisonStatus?: string;
+  notForSale?: boolean;
+  configurationConflict?: string;
+  priceOption?: string;
   configuration?: string;
   detailDigest?: string;
 };
