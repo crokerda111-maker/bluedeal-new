@@ -1,4 +1,5 @@
 import reviews from "../content/fullPcReviews.json";
+import fullPcPhotos from "../content/products/fullPcPhotos.json";
 import marketplaceNotes from "../content/products/pcMarketplaceNotes.json";
 import { normalizeOutboundUrl } from "./affiliate";
 import { CATALOG_PRODUCTS, getCatalogProduct } from "./catalogData";
@@ -9,6 +10,7 @@ import { type PriceItem } from "./mockPrices";
 import { OUTBOUND_LINKS } from "./outbound";
 import { pcCatalogConfiguration } from "./pcCatalogConfiguration";
 import type { CatalogProduct } from "./productCatalog";
+import type { ProductPhoto } from "./productEditorial";
 
 const marketplaceReviews: readonly FullPcReview[] = reviews.filter(review => !review.configuration);
 const catalogFullPcs = CATALOG_PRODUCTS.filter(product => product.category === "fullpc");
@@ -23,6 +25,10 @@ export function getMarketplaceFullPcReview(productId: string) {
   return marketplaceReviews.find(review => review.productId === productId);
 }
 
+export function getFullPcPhoto(productId: string): ProductPhoto | undefined {
+  return fullPcPhotos[productId as keyof typeof fullPcPhotos];
+}
+
 export function getReviewedMarketplaceFullPcs() {
   return marketplaceReviews.flatMap(review => {
     const product = getCatalogProduct(review.productId);
@@ -30,9 +36,25 @@ export function getReviewedMarketplaceFullPcs() {
   });
 }
 
-export function selectMarketplaceFullPcs(items: readonly PriceItem[], now: number) {
+function comparisonHold(review: FullPcReview, offer: PriceItem, total: number | null, now: number) {
+  if (review.notForSale || offer.availability === "out-of-stock") return "현재 판매 중 아님";
+  if (review.configurationConflict) return review.configurationConflict;
+  if (offer.condition === "refurbished") return "리퍼·벌크 상품입니다. 신품 순위에서는 제외됩니다.";
+  if (review.checkedOn !== kstDay(now) || !offer.checkedAt || !isPcToday(offer.checkedAt, now) ||
+      !offer.availabilityCheckedAt || !isPcToday(offer.availabilityCheckedAt, now) || offer.availability !== "in-stock") {
+    return "당일 부품 구성·판매가·재고 재확인 필요";
+  }
+  if (!review.priceOption || review.priceOption !== offer.spec) return "판매 가격에 적용되는 기본 부품 옵션 확인 필요";
+  if (total === null) return "배송 포함 기본 가격 확인 필요";
+  if (!review.purchaseTerms?.os.trim() || !review.purchaseTerms.warranty.trim()) return "Windows·보증 조건 확인 필요";
+  const power = review.tested.psu?.results[0];
+  if (power === false) return "기본 파워가 그래픽카드 제조사의 권장 출력을 충족하지 않습니다.";
+  if (power !== true) return "기본 파워의 그래픽카드 권장 출력 충족 여부 확인 필요";
+  return null;
+}
+
+function selectMarketplaceFullPcs(items: readonly PriceItem[], now: number) {
   const offers = new Map(items.map(item => [item.id, item]));
-  const day = kstDay(now);
 
   return getReviewedMarketplaceFullPcs().flatMap(({ product, review }) => {
     const source = normalizeOutboundUrl(review.sellerUrl);
@@ -49,19 +71,13 @@ export function selectMarketplaceFullPcs(items: readonly PriceItem[], now: numbe
     const { offer, merchant } = entry;
     const { score, range } = scoreFullPcParts(review);
     const total = deliveredTotal(offer);
-    const checkedToday = !!offer.checkedAt && isPcToday(offer.checkedAt, now);
-    const matchedToday = review.checkedOn === day && checkedToday && !!offer.availabilityCheckedAt &&
-      isPcToday(offer.availabilityCheckedAt, now) && review.tested.psu?.results[0] === true &&
-      offer.availability === "in-stock" && offer.condition !== "refurbished" && total !== null &&
-      !review.configurationConflict && !review.notForSale && !!review.priceOption && review.priceOption === offer.spec &&
-      !!review.purchaseTerms?.os.trim() && !!review.purchaseTerms.warranty.trim();
-    const current = matchedToday && score !== null;
-    const separateTotal = current ? separatePcTotal(review, now) : null;
+    const hold = comparisonHold(review, offer, total, now);
+    const separateTotal = hold === null && score !== null ? separatePcTotal(review, now) : null;
     const savings = separateTotal && total !== null
       ? { amount: separateTotal - total, percent: (separateTotal - total) / separateTotal * 100 }
       : null;
 
-    return [{ product, review, offer, merchant, score, range, total, current, matchedToday, checkedToday, savings }];
+    return [{ product, offer, merchant, score, range, hold, savings }];
   });
 }
 
@@ -75,12 +91,14 @@ export type FullPcBoardRow = {
   tier: keyof typeof FULL_PC_TIERS;
   score: number | null;
   range?: readonly [number, number];
-  priceScore?: number;
+  priceComparison?: { points: number; lowest: number; count: number };
+  priceHold: string | null;
   total: number | null;
   checkedToday: boolean;
   unavailable: boolean;
   comparison: string | null;
   placement?: RankedPick;
+  savings?: { amount: number; percent: number };
   recommendation?: { amount: number; percent: number };
   merchant?: string;
 };
@@ -108,16 +126,22 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
     const tier = fullPcTier(fullPcGpuChip(gpu ?? product.name, !review));
     const offer = verifiedOffer?.offer ?? product.listings.map(listing => prices.get(listing.id))
       .filter(row => row !== undefined).sort((a, b) => (Date.parse(b.checkedAt ?? "") || 0) - (Date.parse(a.checkedAt ?? "") || 0))[0];
-    const assessment = review ? scoreFullPcParts(review) : null;
+    const assessment = verifiedOffer ?? (review ? scoreFullPcParts(review) : null);
     const note = marketplaceNotes[product.id as keyof typeof marketplaceNotes];
     const notForSale = (note && "saleStatus" in note && note.saleStatus === "not-for-sale") || review?.notForSale;
-    const comparison = verifiedOffer?.matchedToday && review?.purchaseTerms
+    const unavailable = !!notForSale || offer?.availability === "out-of-stock";
+    const comparison = !unavailable && verifiedOffer?.hold === null && review?.purchaseTerms
       ? fullPcComparisonKey(review.parts.cpu, review.parts.gpu, review.purchaseTerms.os) : null;
-    const recommendation = comparison && verifiedOffer?.savings && verifiedOffer.savings.amount > 0 ? verifiedOffer.savings : undefined;
+    const priceHold = unavailable ? "현재 판매 중 아님" : review?.configurationConflict ?? (
+      !review ? "기본 부품 모델과 판매 조건 확인 필요"
+        : !verifiedOffer ? "검토한 옵션과 연결된 판매가 확인 필요"
+        : verifiedOffer.hold ?? (comparison ? null : "CPU·GPU·VRAM·운영체제 확인 필요")
+    );
+    const savings = verifiedOffer?.savings ?? undefined;
+    const recommendation = comparison && savings && savings.amount > 0 ? savings : undefined;
     return { product, review, offer, cpu, gpu, tier, score: assessment?.score ?? null, range: assessment?.range,
       total: deliveredTotal(offer), checkedToday: !!offer?.checkedAt && isPcToday(offer.checkedAt, now),
-      unavailable: !!notForSale || offer?.availability === "out-of-stock",
-      comparison, recommendation, merchant: verifiedOffer?.merchant };
+      unavailable, comparison, priceHold, savings, recommendation, merchant: verifiedOffer?.merchant };
   });
 
   for (const group of groupComparableFullPcs(rows).values()) {
@@ -125,7 +149,9 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
     if (priced.length < 2) continue;
 
     const lowest = Math.min(...priced.map(entry => entry.total));
-    for (const { row, total } of priced) row.priceScore = fullPcPricePoints(total, lowest);
+    for (const { row, total } of priced) {
+      row.priceComparison = { points: fullPcPricePoints(total, lowest), lowest, count: priced.length };
+    }
 
     const ranked = rankComparableFullPcs(priced.flatMap(({ row, total }) => row.score === null ? [] :
       [{ id: row.product.id, row, score: row.score, total }]), lowest);

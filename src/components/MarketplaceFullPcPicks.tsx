@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { connection } from "next/server";
-import fullPcPhotos from "../content/products/fullPcPhotos.json";
 import { getOfferAffiliateCodes } from "../lib/affiliateStore";
 import { FULL_PC_TIERS, GAMING_TIERS, type FullPcTier } from "../lib/fullPcTiers";
 import { previousFullPcRanks } from "../lib/fullPcRankStore";
-import { buildFullPcBoard, groupComparableFullPcs, homeFullPcCandidates, orderFullPcBoard, type FullPcBoardRow } from "../lib/marketFullPc";
+import { buildFullPcBoard, getFullPcPhoto, groupComparableFullPcs, homeFullPcCandidates, orderFullPcBoard, type FullPcBoardRow } from "../lib/marketFullPc";
 import type { PriceItem } from "../lib/mockPrices";
 import { priceBenefits } from "../lib/priceBenefits";
 import FullPcSpotlights from "./FullPcSpotlights";
@@ -16,17 +15,10 @@ const fullBoard = "/prices/fullpc";
 const tierHref = (tier?: FullPcTier) => `${fullBoard}${tier ? `?pcTier=${tier}` : ""}#fullpc-picks`;
 
 function PcCard({ row, now, affiliate, home, movement }: { row: FullPcBoardRow; now: number; affiliate: boolean; home: boolean; movement?: number }) {
-  const { product, review, offer, total, checkedToday, score, range, priceScore, comparison, placement, recommendation } = row;
+  const { product, review, offer, total, checkedToday, score, range, priceComparison, priceHold, placement, recommendation } = row;
   const Heading = home ? "h3" : "h4";
-  const photo = home ? fullPcPhotos[product.id as keyof typeof fullPcPhotos] : undefined;
-  const pending = row.unavailable ? "현재 판매 중 아님" : review?.configurationConflict ?? (
-    comparison ? (placement ? undefined : "같은 CPU·GPU·운영체제의 비교 상대 확인 중")
-      : !review ? "정확한 부품 모델·보증 검토 대기"
-      : !checkedToday ? "당일 가격·재고 재확인 필요"
-      : !review.purchaseTerms ? "보증·Windows 구매 조건 확인 필요"
-      : score === null ? "일부 부품 점수 확인 필요"
-      : "구성·재고를 다시 대조한 뒤 순위에 반영합니다."
-  );
+  const photo = home ? getFullPcPhoto(product.id) : undefined;
+  const pending = priceHold ?? (priceComparison ? null : "같은 CPU·GPU·운영체제의 당일 비교 상품 확인 중");
   const priceLabel = total !== null ? fmtWon(total) : offer ? fmtWon(offer.price) : null;
 
   return <li data-fullpc-product={product.id} data-pc-tier={row.tier} className={home
@@ -58,7 +50,7 @@ function PcCard({ row, now, affiliate, home, movement }: { row: FullPcBoardRow; 
         <div className="min-w-0 rounded-lg border border-white/10 bg-white/5 px-2 py-2 sm:px-3">
           <dt className="text-xs text-white/75">가격 점수</dt>
           <dd data-fullpc-price-score className="mt-1 font-semibold tabular-nums text-cyan-100">
-            {priceScore !== undefined ? `${priceScore.toFixed(1)}/40점` : "비교 대기"}
+            {priceComparison ? `${priceComparison.points.toFixed(1)}/40점` : "비교 대기"}
           </dd>
         </div>
       </dl>

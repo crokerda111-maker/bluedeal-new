@@ -10,8 +10,9 @@ import { getOfferAffiliateCodes } from "../../../lib/affiliateStore";
 import { fmtWon, formatPriceTime, PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
 import { productHighlights } from "../../../lib/productFilters";
 import FullPcConfiguration from "../../../components/FullPcConfiguration";
+import FullPcPriceAssessment from "../../../components/FullPcPriceAssessment";
 import PcSellerConfiguration from "../../../components/PcSellerConfiguration";
-import { getMarketplaceFullPcReview, selectMarketplaceFullPcs } from "../../../lib/marketFullPc";
+import { buildFullPcBoard, getFullPcPhoto, getMarketplaceFullPcReview } from "../../../lib/marketFullPc";
 import marketplaceNotes from "../../../content/products/pcMarketplaceNotes.json";
 import { getCaseOptionPhoto, getCaseOptions, getPartEditorial, getProductEditorial, getProductPhoto, productEditorialCheckedOn } from "../../../lib/productEditorial";
 import ProductPhoto from "../../../components/ProductPhoto";
@@ -41,8 +42,13 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const offers = data.items.filter(item => listingIds.has(item.id));
   const highlights = productHighlights(product, offers);
   const isSystem = product.category === "fullpc" || product.category === "halfpc";
-  const configurationReview = getMarketplaceFullPcReview(product.id);
-  const savings = configurationReview ? selectMarketplaceFullPcs(offers, now).find(candidate => candidate.product.id === product.id)?.savings : null;
+  const board = product.category === "fullpc" ? buildFullPcBoard(data.items, now) : [];
+  const fullPc = board.find(row => row.product.id === product.id);
+  const configurationReview = fullPc?.review;
+  const peers = fullPc?.priceComparison ? board.filter(row =>
+    row.product.id !== product.id && row.priceComparison && row.comparison === fullPc.comparison
+  ).sort((a, b) => (a.total ?? Infinity) - (b.total ?? Infinity)) : [];
+  const savings = fullPc?.savings;
   const marketplaceNote = marketplaceNotes[product.id as keyof typeof marketplaceNotes];
   const purchaseNote = marketplaceNote && "kind" in marketplaceNote;
   const comparison = marketplaceNote && "comparison" in marketplaceNote ? marketplaceNote.comparison : null;
@@ -51,8 +57,9 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const documentedIssue = editorial?.issue ?? buyingNotes?.issue;
   const advantage = editorial?.advantage ?? buyingNotes?.advantage;
   const caution = editorial?.caution ?? buyingNotes?.caution;
-  const casePhoto = configurationReview ? getPartEditorial(configurationReview.parts.case)?.photo : undefined;
-  const photo = getProductPhoto(product.id) ?? casePhoto;
+  const fullPcPhoto = fullPc ? getFullPcPhoto(product.id) : undefined;
+  const casePhoto = !fullPcPhoto && configurationReview ? getPartEditorial(configurationReview.parts.case)?.photo : undefined;
+  const photo = fullPcPhoto ?? getProductPhoto(product.id) ?? casePhoto;
   const caseOptions = getCaseOptions(product.id);
   const productNotes = caseOptions
     ? product.notes.map(note => note === "제품군 기준입니다. 색상·패널·팬 구성에 따른 정확한 옵션은 확인 중입니다."
@@ -82,6 +89,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
     {isSystem ? <section id="fullpc-configuration" className="bd-surface-md scroll-mt-24 space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-configuration-title">
       <h2 id="fullpc-configuration-title" className="text-xl font-semibold">{product.category === "fullpc" ? "완본체" : "반본체"} 기본 부품 구성</h2>
+      {fullPc ? <FullPcPriceAssessment row={fullPc} peers={peers} /> : null}
       {configurationReview ? <FullPcConfiguration review={configurationReview} /> : <PcSellerConfiguration product={product} />}
       {marketplaceNote ? <div className="rounded-xl border border-amber-200/25 bg-amber-200/5 p-4 text-sm leading-6">
         <h3 className="font-semibold text-amber-100">{purchaseNote ? "판매 조건에서 확인할 점" : "구매 후기에서 확인할 점"}</h3>
@@ -156,7 +164,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         {isSystem ? <section className="bd-surface-md p-5 sm:p-6" aria-labelledby="pc-savings-title">
           <h2 id="pc-savings-title" className="text-lg font-semibold">조립 대비 절약률</h2>
           {savings ? <p className="mt-3 text-sm leading-7 text-cyan-100">동일 조건 개별 구매 대비 {fmtWon(Math.abs(savings.amount))} ({Math.abs(savings.percent).toFixed(1)}%) {savings.amount >= 0 ? "절약" : "추가 비용"}</p> :
-            <p className="mt-3 text-sm leading-7 text-white/75">{configurationReview ? "판매처의 기본 부품 8종을 확인했습니다. " : "판매처가 공개한 구성은 위 표에서 확인할 수 있습니다. "}각 부품의 동일 모델 가격과 배송비, 본체의 최종 결제금액·Windows·보증 조건까지 대조하면 절약률을 계산할 수 있습니다.</p>}
+            <p className="mt-3 text-sm leading-7 text-white/75">절약률 검증 대기. 동일 부품 8종의 당일 가격·배송비와 조립비, Windows·보증 조건이 확인되면 절약률을 계산합니다.</p>}
           <Link href="/evaluate" className="mt-3 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">직접 확인한 구성 비용 계산하기</Link>
           <Link href={`/prices/${product.category}#${product.category === "fullpc" ? "fullpc-picks" : "today-pc"}`} className="block text-sm text-cyan-200 underline py-3">오늘의 가격·부품 구성 비교</Link>
         </section> : null}
