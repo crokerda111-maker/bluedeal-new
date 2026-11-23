@@ -14,6 +14,7 @@ import fullPcReviews from "../../../content/fullPcReviews.json";
 import { getCaseOptionPhoto, getCaseOptions, getPartEditorial, getProductEditorial, getProductPhoto, productEditorialCheckedOn } from "../../../lib/productEditorial";
 import ProductPhoto from "../../../components/ProductPhoto";
 import CaseOptionGallery from "../../../components/CaseOptionGallery";
+import { getProductBuyingNotes } from "../../../lib/productBuyingNotes";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
@@ -38,9 +39,18 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const componentSpecs = product.specifications.filter(spec => /^판매처 (부품표|기본사양) · /.test(spec.label));
   const configurationReview = fullPcReviews.find(review => review.productId === product.id && !review.configuration);
   const editorial = getProductEditorial(product.id);
+  const buyingNotes = editorial ? undefined : getProductBuyingNotes(product);
+  const documentedIssue = editorial?.issue ?? buyingNotes?.issue;
+  const advantage = editorial?.advantage ?? buyingNotes?.advantage;
+  const caution = editorial?.caution ?? buyingNotes?.caution;
   const casePhoto = configurationReview ? getPartEditorial(configurationReview.parts.case)?.photo : undefined;
   const photo = getProductPhoto(product.id) ?? casePhoto;
   const caseOptions = getCaseOptions(product.id);
+  const productNotes = caseOptions
+    ? product.notes.map(note => note === "제품군 기준입니다. 색상·패널·팬 구성에 따른 정확한 옵션은 확인 중입니다."
+      ? "제조사에서 확인한 색상·패널 사진을 위에서 선택할 수 있습니다. 팬 구성과 국내 구매 가능 옵션은 판매처에서 확인하세요."
+      : note)
+    : product.notes;
   const affiliateCodes = await getOfferAffiliateCodes(offers);
   const informationCheckedAt = [product.listObservedAt, ...product.sources.map(source => source.observedAt)].filter((value): value is string => Boolean(value)).sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? null;
   return <article className="space-y-6">
@@ -83,18 +93,25 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         </section> : null}
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">특징·상세 정보</h2>{product.features.length ? <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-white/80">{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul> : <p className="mt-4 text-sm leading-7 text-white/70">추가 사양 자료를 확인하고 있습니다.</p>}
           {product.specifications.length ? <dl className="mt-5 divide-y divide-white/10 border-y border-white/10">{product.specifications.map(specification => <div key={`${specification.label}:${specification.value}`} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-4 py-3 text-sm"><dt className="text-white/60">{specification.label}</dt><dd className="break-words text-white/85">{specification.value}</dd></div>)}</dl> : null}
-          {product.notes.length ? <div className="mt-5 rounded-xl border border-amber-200/25 bg-amber-200/5 p-4"><h3 className="text-sm font-semibold text-amber-100">옵션 확인사항</h3><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-7 text-white/75">{product.notes.map(note => <li key={note}>{note}</li>)}</ul></div> : null}
+          {productNotes.length ? <div className="mt-5 rounded-xl border border-amber-200/25 bg-amber-200/5 p-4"><h3 className="text-sm font-semibold text-amber-100">옵션 확인사항</h3><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-7 text-white/75">{productNotes.map(note => <li key={note}>{note}</li>)}</ul></div> : null}
         </section>
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">장점·구매 전 확인</h2>
-          {editorial ? <>
+          {advantage && caution ? <>
             <dl className="mt-4 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-cyan-200/20 p-4"><dt className="font-semibold text-cyan-100">장점</dt><dd className="mt-2 text-sm leading-7 text-white/80">{editorial.advantage}</dd></div>
-              <div className="rounded-xl border border-amber-200/20 p-4"><dt className="font-semibold text-amber-100">구매 전 확인</dt><dd className="mt-2 text-sm leading-7 text-white/80">{editorial.caution}</dd></div>
+              <div className="rounded-xl border border-cyan-200/20 p-4"><dt className="font-semibold text-cyan-100">장점</dt><dd className="mt-2 text-sm leading-7 text-white/80">{advantage}</dd></div>
+              <div className="rounded-xl border border-amber-200/20 p-4"><dt className="font-semibold text-amber-100">구매 전 확인</dt><dd className="mt-2 text-sm leading-7 text-white/80">{caution}</dd></div>
             </dl>
-            {editorial.issue ? <p className="mt-4 text-sm leading-7 text-amber-100">{editorial.issue.text} <a className="text-cyan-200 underline" href={editorial.issue.source} target="_blank" rel="noopener noreferrer">이슈 출처<span className="sr-only"> (새 창)</span></a></p> : null}
-            <p className="mt-3 text-xs leading-6 text-white/70">{productEditorialCheckedOn} KST 확인 · <a className="text-cyan-200 underline" href={editorial.source} target="_blank" rel="noopener noreferrer">사양 근거<span className="sr-only"> (새 창)</span></a></p>
+            {editorial ? <p className="mt-3 text-xs leading-6 text-white/70">{productEditorialCheckedOn} KST 확인 · <a className="text-cyan-200 underline" href={editorial.source} target="_blank" rel="noopener noreferrer">사양 근거<span className="sr-only"> (새 창)</span></a></p> : buyingNotes ? <details className="mt-3">
+              <summary className="cursor-pointer text-sm text-cyan-200">사양 근거와 확인 날짜</summary>
+              <div className="mt-3"><Sources items={buyingNotes.sources} /></div>
+            </details> : null}
           </> : null}
-          {product.strengths.length ? <div className="mt-5 space-y-5">{product.strengths.map(strength => <div key={strength.title}><h3 className="font-semibold text-cyan-100">{strength.title}</h3><p className="mt-2 text-sm leading-7 text-white/80">{strength.detail}</p><p className="mt-2 text-sm leading-7 text-white/65">{strength.conditions}</p><div className="mt-3"><Sources items={strength.sources} /></div></div>)}</div> : !editorial ? <p className="mt-4 text-sm leading-7 text-white/70">장점과 사용 조건은 추가 조사 중입니다.</p> : null}
+          {product.strengths.length ? <div className="mt-5 space-y-5">{product.strengths.map(strength => <div key={strength.title}><h3 className="font-semibold text-cyan-100">{strength.title}</h3><p className="mt-2 text-sm leading-7 text-white/80">{strength.detail}</p><p className="mt-2 text-sm leading-7 text-white/65">{strength.conditions}</p><div className="mt-3"><Sources items={strength.sources} /></div></div>)}</div> : !advantage ? <p className="mt-4 text-sm leading-7 text-white/70">장점과 사용 조건은 추가 조사 중입니다.</p> : null}
+          {documentedIssue ? <div className="mt-5 rounded-xl border border-amber-200/30 bg-amber-200/5 p-4">
+            <h3 className="font-semibold text-amber-100">공식 공지로 확인한 이슈</h3>
+            <p className="mt-2 text-sm leading-7 text-white/80">{documentedIssue.text}</p>
+            <a className="mt-2 inline-block text-sm text-cyan-200 underline" href={documentedIssue.source} target="_blank" rel="noopener noreferrer">이슈 출처<span className="sr-only"> (새 창)</span></a>
+          </div> : null}
           {product.issues.map(issue => <div key={issue.title} className="mt-5 rounded-xl border border-amber-200/30 bg-amber-200/5 p-4"><h3 className="font-semibold text-amber-100">{issue.title}</h3><p className="mt-3 text-sm leading-7 text-white/80">{issue.summary}</p><p className="mt-2 text-sm leading-7 text-white/70">{issue.conditions}</p><p className="mt-2 text-sm leading-7 text-white/85">{issue.action}</p><div className="mt-4"><Sources items={issue.sources} /></div></div>)}
         </section>
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">후기·사용기</h2><p className="mt-4 text-sm leading-7 text-white/75">{product.reviewSummary ?? "이 상품의 후기 경향은 아직 검토하지 않았습니다. 실제 구매자 후기와 독립 리뷰를 확인한 뒤 출처와 사용 조건을 함께 보완하겠습니다."}</p>{product.reviewSources.length ? <div className="mt-4"><Sources items={product.reviewSources} /></div> : null}<Link href="/community/review" className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">커뮤니티 사용기 보기</Link></section>

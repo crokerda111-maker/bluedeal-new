@@ -1,7 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { registerHooks } from 'node:module';
 import { searchCatalog, summarizeCatalog, catalogHref } from '../../src/lib/productCatalog.ts';
+
+const hooks = registerHooks({
+  resolve(specifier, context, nextResolve) {
+    return nextResolve(specifier === './productFilters' ? './productFilters.ts' : specifier, context);
+  },
+});
+const { getProductBuyingNotes } = await import('../../src/lib/productBuyingNotes.ts');
+hooks.deregister();
 
 const catalog=JSON.parse(fs.readFileSync(new URL('../../src/content/products/catalog.json',import.meta.url),'utf8'));
 const products=catalog.products;
@@ -59,6 +68,35 @@ test('manufacturer case families expose exact option photos without altering ret
   const terra=map['maker-fractal-case-9a12830c6b1dbfab'];
   assert.deepEqual(terra.map(v=>v.label).sort(),['Terra Graphite','Terra Jade','Terra Silver']);
   assert.equal(new Set(terra.map(v=>v.src)).size,3);
+});
+
+test('each single-part detail has usable buying notes with a source', () => {
+  const entries = JSON.parse(fs.readFileSync(new URL('../../src/content/products/editorial.json', import.meta.url), 'utf8')).entries;
+  const editorial = new Map(entries.flatMap(entry => (entry.catalogIds ?? []).map(id => [id, entry])));
+  const standalone = products.filter(product => !['fullpc', 'halfpc', 'bundle'].includes(product.category));
+  for (const product of standalone) {
+    const published = editorial.get(product.id);
+    if (published) {
+      assert.equal(new URL(published.source).protocol, 'https:');
+      assert.ok(published.advantage && published.caution, product.id);
+      continue;
+    }
+    const notes = getProductBuyingNotes(product);
+    assert.ok(notes?.advantage && notes.caution && notes.sources.length, product.id);
+  }
+});
+
+test('specification notes preserve option uncertainty and scope GPU notices to supported chips', () => {
+  const product = products.find(row => row.category === 'gpu' && row.facts?.some(fact => fact.key === 'chip' && fact.value === 'RTX 5060 Ti'));
+  const capacity = product.facts.find(fact => fact.key === 'capacity');
+  const conflicting = { ...product, facts: [...product.facts, { ...capacity, value: capacity.value === '8' ? '16' : '8' }] };
+  const notes = getProductBuyingNotes(conflicting);
+  assert.match(notes.advantage, /판매 옵션의 용량/);
+  assert.doesNotMatch(notes.advantage, /(?:8|16)GB/);
+  assert.match(notes.issue.source, /5665$/);
+  assert.ok(!getProductBuyingNotes(products.find(row => row.facts?.some(fact => fact.key === 'chip' && fact.value === 'RTX 5080'))).issue);
+  const invalid = { ...product, sources: [], facts: product.facts.map(fact => ({ ...fact, source: { ...fact.source, observedAt: null } })) };
+  assert.equal(getProductBuyingNotes(invalid), undefined);
 });
 
 test('models, wattage options and families are counted separately',()=>{
