@@ -1,19 +1,44 @@
 import assert from "node:assert/strict";
 import { registerHooks } from "node:module";
 import test from "node:test";
-import { kstDay, PC_SCORE_RULES, rankDailyPcs, pcPartReview } from "../../src/lib/dailyPc.ts";
+import { kstDay, PC_PARTS, PC_SCORE_RULES, rankDailyPcs, pcPartReview } from "../../src/lib/dailyPc.ts";
 
 registerHooks({ resolve(specifier, context, next) {
   if (specifier === "./pcModelNames" || specifier === "./dailyPc") return next(`${specifier}.ts`, context);
   return next(specifier, context);
 } });
 const { parseCompuzonePc, discoverCompuzonePcs, compuzonePcUrl } = await import("../../src/lib/pcCompuzone.ts");
-const { matchFullPcObservation, scoreFullPcParts } = await import("../../src/lib/fullPcReview.ts");
+const { matchFullPcObservation, scoreFullPcParts, separatePcTotal } = await import("../../src/lib/fullPcReview.ts");
 const { default: fullPcReviews } = await import("../../src/content/fullPcReviews.json", { with: { type: "json" } });
 const { default: fullPcSnapshot } = await import("../../src/content/fullPcVerifiedSnapshot.json", { with: { type: "json" } });
 
 const at = "2026-11-22T00:03:00Z";
 const now = Date.parse("2026-11-22T01:00:00Z");
+
+test("개별 견적은 8종 동일 모델·수량과 당일 배송비, 조립 및 동일 구매조건이 있어야 계산한다", () => {
+  const review = structuredClone(fullPcReviews.find(row => row.productId === "reviewed-fullpc-11st-9423305936"));
+  const source = "https://store.example/price";
+  const parts = Object.fromEntries(Object.keys(PC_PARTS).map(slot => [slot, {
+    model: review.parts[slot], quantity: review.quantities?.[slot] ?? 1,
+    price: 100_000, shipping: 3_000, checkedAt: at, source,
+  }]));
+  const assembly = { ...review.purchaseTerms, price: 40_000, shipping: 6_000, checkedAt: at, source };
+  review.costComparison = { parts, assembly };
+  assert.equal(separatePcTotal(review, now), 970_000);
+  assert.equal(separatePcTotal(review, now + 86_400_000), null);
+  assert.equal(separatePcTotal({ ...review, costComparison: { parts, assembly: { ...assembly, warranty: "조립 보증 없음" } } }, now), null);
+  assert.equal(separatePcTotal({ ...review, costComparison: { parts, assembly: { ...assembly, os: "Windows 11 Home" } } }, now), null);
+  parts.ram.quantity = 1;
+  assert.equal(separatePcTotal(review, now), null);
+  parts.ram.quantity = 2;
+  parts.ram.model = "다른 브랜드의 DDR5-5600";
+  assert.equal(separatePcTotal(review, now), null);
+  parts.ram.model = review.parts.ram;
+  parts.ram.shipping = null;
+  assert.equal(separatePcTotal(review, now), null);
+  delete parts.ram;
+  assert.equal(separatePcTotal(review, now), null);
+});
 const target = { sourceId: "1234567", productId: "pc-a", kind: "fullpc", merchantUrl: compuzonePcUrl("1234567") };
 const title = "[컴퓨존] 추천 조립PC";
 function parts(label, name, id) {

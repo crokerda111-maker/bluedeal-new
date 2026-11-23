@@ -2,7 +2,7 @@
   {
     "productId": "reviewed-fullpc-gmarket-4355054602",
     "condition": "퍼플랩 AX78-R97XTA · 판매처 부품표와 수량 1 기본 부품 선택 기준",
-    "checkedOn": "2026-11-23",
+    "checkedOn": "2026-11-24",
     "sellerUrl": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
     "partsUrl": "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XTA/AX78-R97XTA_04.jpg",
     "gpuSource": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070XT.html",
@@ -73,7 +73,96 @@
       "세 번째 M.2에 SSD를 장착하면 보드의 두 번째 PCIe 슬롯이 비활성화됩니다.",
       "판매처 이미지에 수급 상황에 따른 구성 변경 가능성이 표시됩니다. 주문 시 GPU·보드 품번을 다시 확인하세요.",
       "Windows 라이선스, 본체 보증 기간 및 동일 부품 개별 구매 총액은 추가 확인이 필요합니다."
-    ]
+    ],
+    "quantities": {
+      "ram": 2
+    },
+    "comparisonStatus": "G마켓 판매번호의 무상 보증과 동일 부품 개별 구매 비용 확인 필요"
+  },
+  {
+    "productId": "reviewed-fullpc-11st-9423305936",
+    "condition": "아싸컴 EV_A78D-A97T-C1T · 11번가 수량 1 기본 구성",
+    "checkedOn": "2026-11-24",
+    "sellerUrl": "https://www.11st.co.kr/products/9423305936",
+    "partsUrl": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T-S_11171110.jpg",
+    "gpuSource": "https://www.asrock.com/Graphics-Card/AMD/Radeon%20RX%209070%20XT%20Challenger%2016GB/index.asp",
+    "parts": {
+      "cpu": "AMD Ryzen 7 7800X3D (국내 정품 표기)",
+      "gpu": "ASRock Radeon RX 9070 XT Challenger 16GB",
+      "board": "GIGABYTE B650M K",
+      "ram": "DLI DDR5-5600 CL46 32GB (16GB × 2)",
+      "storage": "Kingston NV3 PCIe 4.0 NVMe 1TB",
+      "psu": "Cooler Master MWE Gold 850 V3 ATX 3.1",
+      "cooler": "3RSYS RC1500 ARGB 쌍철봉 LITE",
+      "case": "잘만 i8 백사십 터보 블랙"
+    },
+    "quantities": {
+      "ram": 2
+    },
+    "tested": {
+      "board": {
+        "results": [
+          true,
+          false,
+          true
+        ],
+        "fact": "DDR5 슬롯 4개 · NVMe M.2 2개 · 유선 2.5GbE (Rev. 1.0 공식 사양)",
+        "url": "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp"
+      },
+      "ram": {
+        "results": [
+          true,
+          true,
+          false
+        ],
+        "fact": "16GB 두 개 · DDR5-5600 CL46",
+        "url": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T-S_11171110.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "1TB · PCIe 4.0 NVMe",
+        "url": "https://www.kingston.com/en/ssd/nv3-nvme-pcie-ssd?partnum=snv3s%2F1000g"
+      },
+      "psu": {
+        "results": [
+          true,
+          true,
+          true
+        ],
+        "fact": "850W · ASRock 해당 GPU 최소 750W와 8핀 2개 · ATX 3.1 · 80 PLUS Gold",
+        "url": "https://legacy.coolermaster.com/en-global/products/mwe-gold-850-v3-atx-3-1/"
+      },
+      "cooler": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "AM5 지원 · 듀얼 타워 공랭 · 높이 158mm",
+        "url": "https://3rsys.com/shop/item.php?it_id=1781068291"
+      },
+      "case": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "140mm 기본 팬 4개(전면 3·후면 1) · 전면 메시",
+        "url": "https://brand.danawa.com/brand.php?id=zalman&listSeq=5921444&menu_seq=52105&method=boardView"
+      }
+    },
+    "notes": [
+      "퍼플랩 AX78-R97XTA의 보드는 NVMe M.2 3개, 이 구성은 2개입니다. SSD를 여러 개 달 계획이라면 차이를 확인하세요.",
+      "판매처 사양표의 조립 서비스 40,000원은 상품가에 포함됩니다. 개별 부품 구매 뒤 같은 보증을 받는 조립 비용은 별도 확인이 필요합니다.",
+      "판매자가 수급에 따른 구성 변경을 예고합니다. 주문 시 그래픽카드 모델과 메인보드·RAM을 다시 확인하세요."
+    ],
+    "purchaseTerms": {
+      "os": "Windows 미포함",
+      "warranty": "판매자 1년 무상 A/S · 이후 유상",
+      "source": "https://www.11st.co.kr/products/9423305936"
+    },
+    "comparisonStatus": "동일 DLI DDR5-5600 CL46 16GB 단품 판매처 2곳 품절 확인 · 동일 구성 개별 구매 총액 미확정"
   },
   {
     "productId": "reviewed-fullpc-ohou-4100098",

@@ -376,6 +376,20 @@
       "source": "https://darkflash.co.kr/article/%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C/2/26741/"
     },
     {
+      "partNames": [
+        "잘만 i8 백사십 터보 블랙"
+      ],
+      "photo": {
+        "src": "https://img.danuri.io/catalog-image/753/328/100/16a293113e784dd3b644e47ebffa17b4.jpg?_v=20261118085029&shrink=330%3A%2A",
+        "alt": "잘만 i8 백사십 터보 블랙 케이스 외관",
+        "source": "https://prod.danawa.com/info/?pcode=100328753",
+        "sourceLabel": "다나와 상품 이미지"
+      },
+      "advantage": "전면 메시와 140mm 팬 4개가 기본 구성입니다. 기본 팬을 그대로 쓰면서 팬 속도와 조명을 조절할 수 있습니다.",
+      "caution": "잘만이 표기한 CPU 쿨러 최대 높이는 180mm입니다. 넓거나 높은 부품을 바꿀 때는 팬·라디에이터 장착 후 공간을 확인하세요.",
+      "source": "https://brand.danawa.com/brand.php?id=zalman&listSeq=5921444&menu_seq=52105&method=boardView"
+    },
+    {
       "catalogIds": [
         "curated-amd-ryzen-7-7800x3d-multipack"
       ],

@@ -1,6 +1,7 @@
 import { PC_PARTS, type PcSlot } from "../lib/dailyPc";
-import { scoreFullPcParts, type FullPcReview } from "../lib/fullPcReview";
+import { scoreFullPcParts, separatePcTotal, type FullPcReview } from "../lib/fullPcReview";
 import { getPartEditorial } from "../lib/productEditorial";
+import { fmtWon, formatPriceTime } from "./PriceOffer";
 
 const sourceStyle = "text-cyan-200 underline underline-offset-4";
 
@@ -17,6 +18,7 @@ const purchaseChecks: Record<PcSlot, string> = {
 
 export default function FullPcConfiguration({ review }: { review: FullPcReview }) {
   const { score, range, slots } = scoreFullPcParts(review);
+  const separateTotal = separatePcTotal(review);
   return <div className="space-y-4 text-sm leading-6">
     <div>
       <p className="font-semibold text-cyan-100">{score === null ? "부품 구성 점수 확인 중" : `부품 구성 점수 ${score}/100`}</p>
@@ -24,8 +26,23 @@ export default function FullPcConfiguration({ review }: { review: FullPcReview }
       <p className="mt-1 text-white/75">{review.condition} · {review.checkedOn} KST</p>
       <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. 16GB 메모리와 500GB SSD부터 평가합니다." : "CPU와 GPU·VRAM은 비교할 성능 급을 정합니다. 부품 구성 점수는 확장성·용량·전원·냉각 사양의 충족도를 표시합니다."} 결제금액, 보증, 실측 발열·소음은 별도로 확인하세요.</p>
       {review.purchaseTerms ? <p className="mt-1 text-white/75">{review.purchaseTerms.os} · {review.purchaseTerms.warranty} <a className={sourceStyle} href={review.purchaseTerms.source} target="_blank" rel="noopener noreferrer">조건 출처<span className="sr-only"> (새 창)</span></a></p> : null}
-      {review.costComparison ? <p className="mt-1 text-white/75">동일 조건 개별 구매 합계 {review.costComparison.separateTotal.toLocaleString("ko-KR")}원 · {review.costComparison.checkedOn} KST <a className={sourceStyle} href={review.costComparison.source} target="_blank" rel="noopener noreferrer">비용 근거<span className="sr-only"> (새 창)</span></a></p> : null}
+      {review.comparisonStatus ? <p className="mt-1 text-amber-100">{review.comparisonStatus}</p> : null}
     </div>
+    {review.costComparison && separateTotal !== null ? <details className="rounded-xl border border-white/15 p-4 text-white/80">
+      <summary className="cursor-pointer font-medium text-cyan-100">개별 구매 확인 기록 {fmtWon(separateTotal)} · 부품 8종, 배송, 조립, 동일 보증·OS 조건</summary>
+      <dl className="mt-2 divide-y divide-white/10">
+        {Object.entries(review.costComparison.parts).map(([slot, part]) => (
+          <div key={slot} className="py-2">
+            <dt className="font-medium text-white">{PC_PARTS[slot as PcSlot]} · {part.model}</dt>
+            <dd>{fmtWon(part.price)} × {part.quantity} · 배송 {fmtWon(part.shipping)} · {formatPriceTime(part.checkedAt)} · <a className={sourceStyle} href={part.source} target="_blank" rel="noopener noreferrer">판매처 확인</a></dd>
+          </div>
+        ))}
+        <div className="py-2">
+          <dt className="font-medium text-white">조립·보증·OS</dt>
+          <dd>{fmtWon(review.costComparison.assembly.price)} · 배송 {fmtWon(review.costComparison.assembly.shipping)} · {formatPriceTime(review.costComparison.assembly.checkedAt)} · <a className={sourceStyle} href={review.costComparison.assembly.source} target="_blank" rel="noopener noreferrer">서비스 확인</a></dd>
+        </div>
+      </dl>
+    </details> : null}
     <dl className="divide-y divide-white/10 border-y border-white/10">
       {Object.entries(PC_PARTS).map(([slot, label]) => {
         const part = slot as keyof typeof PC_PARTS;

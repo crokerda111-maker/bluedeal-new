@@ -3,6 +3,7 @@ import { connection } from "next/server";
 import { getOfferAffiliateCodes } from "../lib/affiliateStore";
 import { selectMarketplaceFullPcs } from "../lib/marketFullPc";
 import type { PriceItem } from "../lib/mockPrices";
+import { priceBenefits } from "../lib/priceBenefits";
 import { fmtWon, formatPriceTime } from "./PriceOffer";
 
 export default async function MarketplaceFullPcPicks({
@@ -15,7 +16,8 @@ export default async function MarketplaceFullPcPicks({
   const today = eligible.filter(candidate => affiliateCodes.has(candidate.offer.goCode ?? ""))
     .sort((a, b) => (a.total ?? Infinity) - (b.total ?? Infinity) || (b.score ?? 0) - (a.score ?? 0))
     .slice(0, 3);
-  const picks = today.length ? today : candidates.sort((a, b) => Number(b.checkedToday) - Number(a.checkedToday)).slice(0, 3);
+  const picks = today.length ? today : candidates.sort((a, b) => Number(b.checkedToday) - Number(a.checkedToday) ||
+    Number(b.current) - Number(a.current)).slice(0, 3);
   const Heading = home ? "h1" : "h2";
   const productHref = (id: string) => `/products/${id}#fullpc-configuration`;
 
@@ -58,9 +60,16 @@ export default async function MarketplaceFullPcPicks({
             {total !== null ? <p className="mt-3 text-lg font-semibold leading-6 text-white">
               {fmtWon(total)} <span className="text-xs font-normal text-white/75">{checkedToday ? "기본 배송 포함 · 할인 전" : "이전 관측가 · 기본 배송 포함"}</span>
             </p> : null}
-            {checkedToday && offer.instantPrice && typeof offer.shippingFee === "number" ? <p className="mt-1 text-xs leading-5 text-white/80">추가할인 표시가 {fmtWon(offer.instantPrice + offer.shippingFee)} · 적용 조건 판매처 확인</p> : null}
+            {checkedToday ? priceBenefits(offer, now).filter(benefit => benefit.kind !== "card" &&
+              benefit.state !== "expired" && benefit.state !== "upcoming").map(benefit => (
+              <p key={benefit.kind} className="mt-1 text-xs leading-5 text-white/80">
+                {benefit.kind === "instant" ? "추가할인" : "쿠폰"} 표시가 {fmtWon(benefit.amount)} · 적용 조건 판매처 확인
+                {offer.shippingFee ? " · 배송비 별도" : ""}
+              </p>
+            )) : null}
             {checkedToday && !review.purchaseTerms ? <p className="mt-1 text-xs leading-5 text-amber-100">이 판매번호의 보증 조건 확인 필요</p> : null}
-            {today.length && review.purchaseTerms ? <p className="mt-1 text-xs leading-5 text-white/80">{review.purchaseTerms.os} · {review.purchaseTerms.warranty}</p> : null}
+            {review.purchaseTerms ? <p className="mt-1 text-xs leading-5 text-white/80">{review.purchaseTerms.os} · {review.purchaseTerms.warranty}</p> : null}
+            {checkedToday && review.comparisonStatus ? <p className="mt-1 text-xs leading-5 text-amber-100">{review.comparisonStatus}</p> : null}
             {today.length && savings ? <p className="mt-1 text-xs leading-5 text-white/80">같은 조건 개별 구매 대비 {fmtWon(Math.abs(savings.amount))} ({Math.abs(savings.percent).toFixed(1)}%) {savings.amount >= 0 ? "절약" : "추가 비용"}</p> : null}
             <p className="mt-1 text-xs leading-5 text-white/65">가격 {formatPriceTime(offer.checkedAt)} 확인 · 구성 {review.checkedOn} 확인</p>
             {review.notes[0] ? <p className="mt-2 text-xs leading-5 text-white/80">{review.notes[0]}</p> : null}

@@ -1,4 +1,4 @@
-import { PC_SCORE_RULES, type PcObservation, type PcSlot } from "./dailyPc";
+import { isPcToday, PC_PARTS, PC_SCORE_RULES, type PcObservation, type PcSlot } from "./dailyPc";
 
 const checks = {
   board: ["메모리 슬롯 4개 이상", "NVMe M.2 3개 이상", "2.5GbE 이상 유선랜"],
@@ -20,6 +20,9 @@ const integratedOfficeChecks: Record<RatedSlot, readonly string[]> = {
 };
 
 type ComponentCheck = { results: (boolean | null)[]; fact: string; url: string };
+type CostEvidence = { price: number; shipping: number; checkedAt: string; source: string };
+type SeparatePart = CostEvidence & { model: string; quantity: number };
+type SeparateAssembly = CostEvidence & { os: string; warranty: string };
 
 export type FullPcReview = {
   productId: string;
@@ -30,13 +33,39 @@ export type FullPcReview = {
   gpuSource?: string;
   integratedOffice?: boolean;
   parts: Record<PcSlot, string>;
+  quantities?: Partial<Record<PcSlot, number>>;
   tested: Record<RatedSlot, ComponentCheck>;
   notes: string[];
   purchaseTerms?: { os: string; warranty: string; source: string };
-  costComparison?: { checkedOn: string; separateTotal: number; source: string };
+  costComparison?: { parts: Record<PcSlot, SeparatePart>; assembly: SeparateAssembly };
+  comparisonStatus?: string;
   configuration?: string;
   detailDigest?: string;
 };
+
+export function separatePcTotal(review: FullPcReview, now?: number) {
+  const comparison = review.costComparison;
+  const terms = review.purchaseTerms;
+  if (!comparison?.assembly || !comparison.parts || !terms?.os.trim() || !terms.warranty.trim() ||
+      comparison.assembly.os !== terms.os || comparison.assembly.warranty !== terms.warranty) return null;
+
+  function valid(evidence: CostEvidence) {
+    return /^https:\/\/[^\s/]+(?:\/|$)/.test(evidence.source) && Number.isFinite(Date.parse(evidence.checkedAt)) &&
+      (now === undefined || isPcToday(evidence.checkedAt, now)) && Number.isSafeInteger(evidence.price) &&
+      evidence.price >= 0 && Number.isSafeInteger(evidence.shipping) && evidence.shipping >= 0;
+  }
+
+  if (!valid(comparison.assembly) || comparison.assembly.price === 0) return null;
+  let total = comparison.assembly.price + comparison.assembly.shipping;
+  for (const slot of Object.keys(PC_PARTS) as PcSlot[]) {
+    const part = comparison.parts[slot];
+    if (!part || !part.model.trim() || part.model !== review.parts[slot] ||
+        part.quantity !== (review.quantities?.[slot] ?? 1) || !Number.isSafeInteger(part.quantity) ||
+        part.quantity < 1 || !valid(part) || part.price === 0) return null;
+    total += part.price * part.quantity + part.shipping;
+  }
+  return Number.isSafeInteger(total) ? total : null;
+}
 
 export function scoreFullPcParts(review: FullPcReview) {
   const rules = review.integratedOffice ? integratedOfficeChecks : checks;

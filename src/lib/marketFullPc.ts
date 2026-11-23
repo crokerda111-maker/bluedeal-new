@@ -2,7 +2,7 @@ import reviews from "../content/fullPcReviews.json";
 import { normalizeOutboundUrl } from "./affiliate";
 import { getCatalogProduct } from "./catalogData";
 import { isPcToday, kstDay } from "./dailyPc";
-import { scoreFullPcParts, type FullPcReview } from "./fullPcReview";
+import { scoreFullPcParts, separatePcTotal, type FullPcReview } from "./fullPcReview";
 import { type PriceItem } from "./mockPrices";
 import { OUTBOUND_LINKS } from "./outbound";
 
@@ -40,13 +40,13 @@ export function selectMarketplaceFullPcs(items: readonly PriceItem[], now: numbe
     const total = Number.isSafeInteger(offer.price) && offer.price > 0 && typeof offer.shippingFee === "number" &&
       Number.isSafeInteger(offer.shippingFee) && offer.shippingFee >= 0 ? offer.price + offer.shippingFee : null;
     const checkedToday = !!offer.checkedAt && isPcToday(offer.checkedAt, now);
-    const current = review.checkedOn === day && checkedToday &&
+    const current = review.checkedOn === day && checkedToday && !!offer.availabilityCheckedAt &&
+      isPcToday(offer.availabilityCheckedAt, now) && review.tested.psu?.results[0] === true &&
       offer.availability === "in-stock" && offer.condition !== "refurbished" && total !== null && score !== null &&
       !!review.purchaseTerms?.os.trim() && !!review.purchaseTerms.warranty.trim();
-    const comparison = review.costComparison;
-    const savings = comparison?.checkedOn === day && Number.isSafeInteger(comparison.separateTotal) &&
-      comparison.separateTotal > 0 && current && total !== null
-      ? { amount: comparison.separateTotal - total, percent: (comparison.separateTotal - total) / comparison.separateTotal * 100, source: comparison.source }
+    const separateTotal = current ? separatePcTotal(review, now) : null;
+    const savings = separateTotal && total !== null
+      ? { amount: separateTotal - total, percent: (separateTotal - total) / separateTotal * 100 }
       : null;
 
     return [{ product, review, offer, merchant, score, range, total, current, checkedToday, savings }];
