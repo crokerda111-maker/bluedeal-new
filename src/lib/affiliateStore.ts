@@ -1,7 +1,7 @@
 import "server-only";
 
 import { createHash } from "node:crypto";
-import { detectMerchant, normalizeOutboundUrl, parseAffiliateMapping, resolveAffiliateUrl } from "./affiliate";
+import { detectMerchant, normalizeOutboundUrl, parseAffiliateMapping, resolveAffiliateUrl, supportsLinkPrice } from "./affiliate";
 import type { AffiliateMapping } from "./affiliate";
 import { kvCommand, kvPipeline } from "./kvRest";
 import { OUTBOUND_LINKS } from "./outbound";
@@ -46,7 +46,7 @@ export async function getStoredAffiliateMappings(urls: Iterable<string>): Promis
     const normalized = normalizeOutboundUrl(url);
     if (!normalized) continue;
     const merchant = detectMerchant(new URL(normalized).hostname);
-    if (merchant === "gmarket" || merchant === "11st" || merchant === "coupang" || merchant === "aliexpress") originals.add(normalized);
+    if (supportsLinkPrice(merchant) || merchant === "coupang" || merchant === "aliexpress") originals.add(normalized);
   }
   const list = [...originals];
   const result = new Map<string, StoredAffiliate>();

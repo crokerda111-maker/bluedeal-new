@@ -2,7 +2,7 @@ import "server-only";
 import type { Post, PostLinkInfo } from "./postTypes";
 import type { OutboundLink } from "./outbound";
 import { OUTBOUND_LINKS } from "./outbound";
-import { detectMerchant, getRegisteredOutboundLink, isAffiliateHost, normalizeOutboundUrl, resolveAffiliateUrl } from "./affiliate";
+import { detectMerchant, getRegisteredOutboundLink, isAffiliateHost, normalizeOutboundUrl, resolveAffiliateUrl, supportsLinkPrice } from "./affiliate";
 import { getStoredAffiliateCodes, getStoredAffiliateMappings } from "./affiliateStore";
 import { getOutboundRows } from "./onlineOutbound";
 import { textLinkParts } from "./textLinks";
@@ -38,7 +38,7 @@ export async function getPostLinkInfo(post: Post): Promise<PostLinkInfo> {
             ((merchant && isAffiliateHost(merchant, url.hostname)) || (url.hostname === "click.linkprice.com" && url.pathname === "/click.php"))) {
           info.affiliateHrefs.push(href);
           disclosures.add("external");
-        } else if (post.boardKey === "hotdeal" && rawHotdeals.size < 20 && (merchant === "gmarket" || merchant === "11st")) {
+        } else if (post.boardKey === "hotdeal" && rawHotdeals.size < 20 && supportsLinkPrice(merchant)) {
           const original = normalizeOutboundUrl(href);
           if (original) rawHotdeals.set(href, original);
         }

@@ -64,6 +64,17 @@ export type AffiliateMapping = {
   code?: string;
 };
 
+const LINKPRICE_ADVERTISERS: Partial<Record<Merchant, string>> = {
+  gmarket: "gmarket",
+  "11st": "11st",
+  lotteon: "lotteon",
+  ssg: "emart",
+};
+
+export function supportsLinkPrice(merchant: Merchant | null): boolean {
+  return merchant !== null && Object.hasOwn(LINKPRICE_ADVERTISERS, merchant);
+}
+
 function matchesAny(hostname: string, patterns: RegExp[] | undefined): boolean {
   return Boolean(patterns?.some((pattern) => pattern.test(hostname)));
 }
@@ -143,10 +154,10 @@ export function parseAffiliateMapping(value: unknown): AffiliateMapping | null {
   try { target = new URL(row.affiliateUrl); } catch { return null; }
   if (target.protocol !== "https:" || target.username || target.password || target.port || target.hash) return null;
 
-  if (row.provider === "linkprice" && (merchant === "gmarket" || merchant === "11st")) {
+  if (row.provider === "linkprice" && supportsLinkPrice(merchant)) {
     // 공유 단축 호스트를 일반 입력 허용 목록에 넣으면 판매처를 판별할 수 없습니다.
     // 정확한 원본 상품과 매칭한 서버 설정에서만 이 호스트를 허용합니다.
-    const shortLink = target.hostname === "app.ac" && !target.search
+    const shortLink = (merchant === "gmarket" || merchant === "11st") && target.hostname === "app.ac" && !target.search
       && /^\/[a-zA-Z0-9_-]{6,64}$/.test(target.pathname);
     const keys = [...target.searchParams.keys()];
     const allowedKeys = new Set(["m", "a", "l", "l_cd1", "l_cd2", "tu"]);
@@ -154,7 +165,7 @@ export function parseAffiliateMapping(value: unknown): AffiliateMapping | null {
     // 중복 매개변수는 제휴처와 URL 파서의 해석 차이를 막기 위해 거부합니다.
     const directLink = target.hostname === "click.linkprice.com" && target.pathname === "/click.php"
       && keys.length === new Set(keys).size && keys.every(key => allowedKeys.has(key))
-      && target.searchParams.get("m") === merchant
+      && target.searchParams.get("m") === LINKPRICE_ADVERTISERS[merchant]
       && /^[a-zA-Z0-9_-]{1,64}$/.test(target.searchParams.get("a") ?? "")
       && normalizeOutboundUrl(target.searchParams.get("tu") ?? "") === originalUrl;
     if (!shortLink && !directLink) return null;

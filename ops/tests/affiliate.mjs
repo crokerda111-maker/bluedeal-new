@@ -74,11 +74,19 @@ test('verified mappings change only the destination, preserving canonical produc
 const directIssued=(originalUrl=source,merchant='gmarket')=>'https://click.linkprice.com/click.php?m='+merchant+'&a=A000000000&l=9999&l_cd1=TEST_ONLY&l_cd2=0&tu='+encodeURIComponent(originalUrl);
 
 test('official LinkPrice long links preserve issued tracking and require the exact registered product and merchant',()=>{
-  for(const [merchant,originalUrl] of [['gmarket',source],['11st','https://www.11st.co.kr/products/FIXTURE001']]){
-    const affiliateUrl=directIssued(originalUrl,merchant);
+  for(const [merchant,advertiser,originalUrl] of [
+    ['gmarket','gmarket',source],
+    ['11st','11st','https://www.11st.co.kr/products/FIXTURE001'],
+    ['lotteon','lotteon','https://www.lotteon.com/p/product/FIXTURE001'],
+    ['ssg','emart','https://www.ssg.com/item/itemView.ssg?itemId=123&siteNo=6004'],
+  ]){
+    const affiliateUrl=directIssued(originalUrl,advertiser);
     withMappings([{merchant,provider:'linkprice',originalUrl,affiliateUrl}],()=>{
       assert.deepEqual(resolve(originalUrl,merchant),{merchant,url:affiliateUrl,mode:'registered-affiliate'});
       assert.equal(normalizeOutboundUrl(affiliateUrl),null);
+    });
+    withMappings([{merchant,provider:'linkprice',originalUrl,affiliateUrl:directIssued(originalUrl,'ssglive')}],()=>{
+      assert.equal(resolve(originalUrl,merchant).mode,'passthrough');
     });
   }
 });
