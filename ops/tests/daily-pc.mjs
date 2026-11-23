@@ -4,10 +4,13 @@ import test from "node:test";
 import { kstDay, PC_SCORE_RULES, rankDailyPcs, pcPartReview } from "../../src/lib/dailyPc.ts";
 
 registerHooks({ resolve(specifier, context, next) {
-  if (specifier === "./pcModelNames") return next("./pcModelNames.ts", context);
+  if (specifier === "./pcModelNames" || specifier === "./dailyPc") return next(`${specifier}.ts`, context);
   return next(specifier, context);
 } });
 const { parseCompuzonePc, discoverCompuzonePcs, compuzonePcUrl } = await import("../../src/lib/pcCompuzone.ts");
+const { matchFullPcObservation, scoreFullPcParts } = await import("../../src/lib/fullPcReview.ts");
+const { default: fullPcReviews } = await import("../../src/content/fullPcReviews.json", { with: { type: "json" } });
+const { default: fullPcSnapshot } = await import("../../src/content/fullPcVerifiedSnapshot.json", { with: { type: "json" } });
 
 const at = "2026-11-22T00:03:00Z";
 const now = Date.parse("2026-11-22T01:00:00Z");
@@ -38,6 +41,18 @@ test("가격 변경은 가격만 갱신하고, 같은 URL의 부품 교체는 �
   const changed = parseCompuzonePc(listing("다른 쿨러"), target, at);
   assert.notEqual(changed.configuration, original.configuration);
   assert.equal(pcPartReview("cooler", changed.parts.cooler), null);
+});
+
+test("완본체 점수는 근거가 모두 있는 경우에 표시되며 현재 확인한 부품 목록과 일치해야 한다", () => {
+  const row = fullPcSnapshot.rows.find(item => item.sourceId === "1388408");
+  const review = matchFullPcObservation(row, fullPcReviews);
+  assert.ok(review);
+  assert.equal(scoreFullPcParts(review).score, 61);
+  assert.equal(matchFullPcObservation({ ...row, price: row.price - 1000 }, fullPcReviews), review);
+  assert.equal(matchFullPcObservation({ ...row, detailDigest: "다른 부품표" }, fullPcReviews), undefined);
+  assert.equal(matchFullPcObservation({ ...row, state: "sold-out" }, fullPcReviews), undefined);
+  const pending = { ...review, tested: { ...review.tested, psu: { ...review.tested.psu, results: [true, true, null] } } };
+  assert.equal(scoreFullPcParts(pending).score, null);
 });
 
 test("판매 종료, 가격 불일치와 다른 판매 상품은 순위에 들어가지 않는다", () => {

@@ -9,6 +9,8 @@ import { getPriceView } from "../../../lib/prices";
 import { getOfferAffiliateCodes } from "../../../lib/affiliateStore";
 import { PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
 import { productHighlights } from "../../../lib/productFilters";
+import FullPcConfiguration from "../../../components/FullPcConfiguration";
+import fullPcReviews from "../../../content/fullPcReviews.json";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
@@ -31,6 +33,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const offers = data.items.filter(item => listingIds.has(item.id));
   const highlights = productHighlights(product, offers);
   const componentSpecs = product.specifications.filter(spec => /^판매처 (부품표|기본사양) · /.test(spec.label));
+  const configurationReview = fullPcReviews.find(review => review.productId === product.id && !review.configuration);
   const affiliateCodes = await getOfferAffiliateCodes(offers);
   const informationCheckedAt = [product.listObservedAt, ...product.sources.map(source => source.observedAt)].filter((value): value is string => Boolean(value)).sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? null;
   return <article className="space-y-6">
@@ -61,6 +64,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           </> : <p className="mt-4 text-sm leading-7 text-white/70">이 모델의 등록된 판매처 가격이 없습니다.</p>}
           <Link href={`/prices/${product.category}`} className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">같은 부품의 다른 상품 비교</Link>
         </section>
+        {configurationReview ? <section id="fullpc-configuration" className="bd-surface-md scroll-mt-24 space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-configuration-title">
+          <h2 id="fullpc-configuration-title" className="text-xl font-semibold">완본체 부품 구성</h2>
+          <FullPcConfiguration review={configurationReview} />
+        </section> : null}
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">특징·상세 정보</h2>{product.features.length ? <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-white/80">{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul> : <p className="mt-4 text-sm leading-7 text-white/70">추가 사양 자료를 확인하고 있습니다.</p>}
           {product.specifications.length ? <dl className="mt-5 divide-y divide-white/10 border-y border-white/10">{product.specifications.map(specification => <div key={`${specification.label}:${specification.value}`} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-4 py-3 text-sm"><dt className="text-white/60">{specification.label}</dt><dd className="break-words text-white/85">{specification.value}</dd></div>)}</dl> : null}
           {product.notes.length ? <div className="mt-5 rounded-xl border border-amber-200/25 bg-amber-200/5 p-4"><h3 className="text-sm font-semibold text-amber-100">옵션 확인사항</h3><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-7 text-white/75">{product.notes.map(note => <li key={note}>{note}</li>)}</ul></div> : null}
@@ -75,7 +82,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         {product.category === "fullpc" || product.category === "halfpc" ? <section className="bd-surface-md p-5 sm:p-6" aria-labelledby="pc-savings-title">
           <h2 id="pc-savings-title" className="text-lg font-semibold">조립 대비 절약률</h2>
           <p className="mt-3 font-semibold text-amber-100">동일 구성 가격 대조 중</p>
-          <p className="mt-3 text-sm leading-7 text-white/75">{componentSpecs.length ? `판매처 부품표 ${componentSpecs.length}개 항목을 아래 상세 사양에 기록했습니다. ` : "정확한 전체 부품 구성을 확인하고 있습니다. "}각 부품의 동일 모델·옵션 가격과 배송비, 본체의 최종 결제금액·OS·보증 조건을 대조한 뒤 절약률을 제공합니다.</p>
+          <p className="mt-3 text-sm leading-7 text-white/75">{configurationReview ? "판매처의 기본 부품 8종을 확인했습니다. " : componentSpecs.length ? `판매처 부품표 ${componentSpecs.length}개 항목을 상세 사양에 기록했습니다. ` : "정확한 전체 부품 구성을 확인하고 있습니다. "}각 부품의 동일 모델·옵션 가격과 배송비, 본체의 최종 결제금액·OS·보증 조건을 대조한 뒤 절약률을 제공합니다.</p>
           <Link href="/evaluate" className="mt-3 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">직접 확인한 구성 비용 계산하기</Link>
           <Link href={`/prices/${product.category}#today-pc`} className="block text-sm text-cyan-200 underline py-3">오늘의 가격·부품 구성 비교</Link>
         </section> : null}

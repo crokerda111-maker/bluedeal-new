@@ -28,6 +28,8 @@ import hddReviewSummary from "../../../content/hddReviewSummary.json";
 import pcOptionReviewSummary from "../../../content/pcOptionReviewSummary.json";
 import halfpcOptionReviewSummary from "../../../content/halfpcOptionReviewSummary.json";
 import pcFollowupReviewSummary from "../../../content/pcFollowupReviewSummary.json";
+import fullPcReviews from "../../../content/fullPcReviews.json";
+import { scoreFullPcParts } from "../../../lib/fullPcReview";
 import { indexProductOffers, matchesProduct, matchesProductSearch, readProductFilters, searchProducts } from "../../../lib/productFilters";
 
 type PricePageProps = { params: Promise<{ category: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
@@ -108,6 +110,18 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
         <nav aria-label="분류 내 바로가기" className="mt-2 flex flex-wrap gap-4 text-cyan-200"><a href="#registered-products" className="inline-flex min-h-11 items-center underline">등록 상품·특징</a><a href="#price-records" className="inline-flex min-h-11 items-center underline">판매처 가격 기록</a></nav>
       </div>
 
+      {category.key === "fullpc" ? <section className="bd-surface-md space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-reviewed-title">
+        <h2 id="fullpc-reviewed-title" className="text-xl font-semibold">판매처 부품표를 확인한 완본체</h2>
+        <div className="grid gap-3 sm:grid-cols-2">{fullPcReviews.filter(review => !review.configuration).map(review => {
+          const product = products.find(item => item.id === review.productId);
+          const { score } = scoreFullPcParts(review);
+          return product ? <Link key={review.productId} href={`/products/${product.id}#fullpc-configuration`} className="rounded-xl border border-white/15 bg-slate-950/30 p-4 hover:border-cyan-200/55 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300">
+            <p className="text-xs text-white/70">{product.listings[0]?.merchant} · {review.checkedOn} KST</p>
+            <p className="mt-1 break-words text-sm font-semibold text-white">{product.name}</p>
+            <p className="mt-2 text-sm text-cyan-200">{score === null ? "부품 점수 확인 중" : `부품 구성 ${score}/100`} · 8개 부품과 근거 보기</p>
+          </Link> : null;
+        })}</div>
+      </section> : null}
       {category.key === "fullpc" || category.key === "halfpc" ? <DailyPcComparison kind={category.key} now={now} /> : null}
       <ProductSearchForm category={category.key} products={products} offersById={offersById} query={query} />
       <PriceCatalogSection category={category} query={canonicalQuery} results={results} offersById={matchedOffers} now={now} />
@@ -138,7 +152,7 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
             수량1 금액·배송 안내가 확인된 {data.items.length}건을 가격표에 연결했습니다. 부품 묶음 후보에서 확인한 추가 판매 기록 {mixedReviewSummary.priceRecords.fullpc}건을 포함합니다. 자동 쿠폰·카드 금액은 대상·기간·중복조건을 추가 확인해야 하는 조건부 표시입니다.{" "}
             {systemsReviewSummary.remainingPosts.fullpc > 0 ? <>남은 {systemsReviewSummary.remainingPosts.fullpc}건은 아직 판매처 검토가 필요합니다.</> : <>후보 글의 첫 분류를 마쳤으며, 기존 접근 제한 {systemsReviewSummary.restrictedPosts.fullpc}건은 재시도하지 않았습니다. 품절·판매 종료·구성 식별 불가·옵션 미확인 항목을 현재 구매가로 등록하지 않았습니다.</>}
           </>}{" "}
-          메인보드·SSD·파워 등 정확한 전체 부품 목록과 개별 구매가를 모두 확인하기 전에는 부품 등급·조립 대비 절약률·품질 점수를 산정하지 않습니다.
+          조립 대비 절약률은 부품별 구매 총액, 배송, 조립, OS, 보증 조건을 맞춰 비교합니다.
         </p>
       ) : null}
       {category.key === "bundle" ? <p className="rounded-xl border border-cyan-200/20 bg-cyan-200/5 p-4 text-sm leading-relaxed text-white/75">{mixedReviewSummary.reviewedOn} KST 기준, 부품 묶음 후보 {mixedReviewSummary.candidatePosts}건을 완본체·단일 부품·일부 부품 패키지로 구분했습니다. 실제 패키지 {mixedReviewSummary.packageModels}개는 확인 시점 품절 상태여서 현재 구매가를 등록하지 않았습니다. 제목에 없는 부품의 포함·미포함을 추정하지 않았고, 묶음 금액을 개별 부품 가격으로 나누지 않았습니다. 정확한 포함 구성·호환성·보증·부품별 구매가를 추가 확인해야 합니다.</p> : null}
