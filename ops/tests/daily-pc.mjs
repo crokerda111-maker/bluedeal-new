@@ -53,6 +53,20 @@ test("완본체 점수는 근거가 모두 있는 경우에 표시되며 현재 
   assert.equal(matchFullPcObservation({ ...row, state: "sold-out" }, fullPcReviews), undefined);
   const pending = { ...review, tested: { ...review.tested, psu: { ...review.tested.psu, results: [true, true, null] } } };
   assert.equal(scoreFullPcParts(pending).score, null);
+  assert.deepEqual(scoreFullPcParts(pending).range, [61, 69]);
+});
+
+test("확인한 완본체마다 구성 평가가 연결되고 내장그래픽은 사무용 기준을 쓴다", () => {
+  const passing = fullPcSnapshot.rows.map(row => matchFullPcObservation(row, fullPcReviews));
+  assert.equal(passing.length, 16);
+  assert.ok(passing.every(review => review && Object.values(review.parts).every(Boolean)));
+  const office = passing.find(review => review.integratedOffice);
+  assert.ok(office);
+  const ram = scoreFullPcParts(office).slots.find(slot => slot.slot === "ram");
+  assert.equal(ram.earned, 15);
+  assert.equal(ram.criteria[0].label, "총 16GB 이상");
+  const twoModuleKit = passing.find(review => review.productId === "compuzone-pc-1389996");
+  assert.equal(scoreFullPcParts(twoModuleKit).slots.find(slot => slot.slot === "ram").earned, 15);
 });
 
 test("판매 종료, 가격 불일치와 다른 판매 상품은 순위에 들어가지 않는다", () => {

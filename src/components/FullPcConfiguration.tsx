@@ -4,12 +4,13 @@ import { scoreFullPcParts, type FullPcReview } from "../lib/fullPcReview";
 const sourceStyle = "text-cyan-200 underline underline-offset-4";
 
 export default function FullPcConfiguration({ review }: { review: FullPcReview }) {
-  const { score, slots } = scoreFullPcParts(review);
+  const { score, range, slots } = scoreFullPcParts(review);
   return <div className="space-y-4 text-sm leading-6">
     <div>
       <p className="font-semibold text-cyan-100">{score === null ? "부품 구성 점수 확인 중" : `부품 구성 점수 ${score}/100`}</p>
+      {score === null ? <p className="mt-1 text-white/75">확인된 사양으로 계산한 범위 {range[0]}–{range[1]}/100 · 미확인 항목에 따라 달라집니다.</p> : null}
       <p className="mt-1 text-white/75">{review.condition} · {review.checkedOn} KST</p>
-      <p className="mt-1 text-white/70">CPU와 GPU·VRAM은 비교할 성능 급을 정합니다. 부품 구성 점수는 확장성·용량·전원·냉각 사양의 충족도를 표시합니다. 결제금액, 보증, 실측 발열·소음은 별도로 확인하세요.</p>
+      <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. 16GB 메모리와 500GB SSD부터 평가합니다." : "CPU와 GPU·VRAM은 비교할 성능 급을 정합니다. 부품 구성 점수는 확장성·용량·전원·냉각 사양의 충족도를 표시합니다."} 결제금액, 보증, 실측 발열·소음은 별도로 확인하세요.</p>
     </div>
     <dl className="divide-y divide-white/10 border-y border-white/10">
       {Object.entries(PC_PARTS).map(([slot, label]) => {
@@ -37,7 +38,7 @@ export default function FullPcConfiguration({ review }: { review: FullPcReview }
     <div className="flex flex-wrap gap-x-4">
       <a className={sourceStyle} href={review.sellerUrl} target="_blank" rel="noopener noreferrer">판매 페이지 <span className="sr-only">(새 창)</span></a>
       <a className={sourceStyle} href={review.partsUrl} target="_blank" rel="noopener noreferrer">판매처 부품표 <span className="sr-only">(새 창)</span></a>
-      <a className={sourceStyle} href={review.gpuSource} target="_blank" rel="noopener noreferrer">GPU 권장 전원 <span className="sr-only">(새 창)</span></a>
+      {review.gpuSource ? <a className={sourceStyle} href={review.gpuSource} target="_blank" rel="noopener noreferrer">GPU 권장 전원 <span className="sr-only">(새 창)</span></a> : null}
     </div>
   </div>;
 }

@@ -25,7 +25,7 @@ function Observation({ row, priceBadge, bestQuality, rank, score }: { row: PcObs
       {rank ? <span>종합 {rank}위 · {score}점</span> : null}
       {priceBadge ? <span>{priceBadge}</span> : null}
       {bestQuality ? <span>비교군 부품 평가 최고</span> : null}
-      {configurationScore !== null ? <span>부품 구성 {configurationScore}/100</span> : null}
+      {configurationReview ? <span>{configurationScore === null ? "부품 점수 일부 확인" : `${configurationReview.integratedOffice ? "사무용 구성" : "부품 구성"} ${configurationScore}/100`}</span> : null}
     </div>
     <h4 className="break-words font-semibold text-white">{row.merchantUrl ? <a className="hover:underline focus-visible:underline" href={row.merchantUrl} target="_blank" rel="noopener noreferrer">{row.title || "판매처에서 보기"} <span className="sr-only">새 창</span></a>
       : <Link className="hover:underline focus-visible:underline" href={`/products/${row.productId}`}>{row.title || "기존 상품 정보"}</Link>}</h4>
