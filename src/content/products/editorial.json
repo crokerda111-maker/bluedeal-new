@@ -676,6 +676,334 @@
       "advantage": "강화유리 창으로 그래픽카드가 보이고 기본 지지대가 카드를 받쳐주는 구조입니다.",
       "caution": "그래픽카드 길이 한도는 358mm입니다. 허용 두께는 카드가 꽂히는 보드 슬롯 위치에 따라 달라져 보드와 카드 실측을 함께 확인하세요.",
       "source": "https://phanteks.com/product/ex5-black/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-b32459749f216e6e"
+      ],
+      "advantage": "전면 메시와 기본 120mm 팬을 갖춘 작은 케이스입니다. USB 3.0 전면 포트를 쓰는 구성을 찾을 때 비교할 만합니다.",
+      "caution": "긴 그래픽카드를 달면 저장장치 브래킷과 장착 공간이 겹칠 수 있습니다. 카드·드라이브 배치를 함께 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/core-series/core-1000/core-1000-usb-3-0/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-0ffaaca466e8084d"
+      ],
+      "advantage": "작은 microATX 섀시에 전면 120mm 팬이 기본이라 책상 옆의 공간을 적게 차지합니다.",
+      "caution": "파워 길이와 드라이브 브래킷, 공랭 쿨러 높이를 구매 전에 같이 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/core-series/core-1100/core-1100/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-8910e101a659fbf8"
+      ],
+      "advantage": "상단 전체를 분리할 수 있고 통풍 패널을 골라 장착할 수 있어 조립과 상단 팬 배치가 편합니다.",
+      "caution": "저장장치 배치를 변경하면 그래픽카드·라디에이터 공간이 달라집니다. 필요한 드라이브 수부터 정하세요.",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7/black/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-499add4130a935ed"
+      ],
+      "advantage": "표준 Define 7보다 작은 섀시에 분리형 상단과 알루미늄 전면을 적용했습니다.",
+      "caution": "전면 라디에이터와 긴 그래픽카드를 동시에 쓰려면 두 부품이 차지하는 공간을 합산하세요.",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-compact/define-7-compact-black-solid/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-a369d3ec72e1a790"
+      ],
+      "advantage": "작은 보드에 맞는 본체에서 상단 브래킷을 빼고 냉각 부품을 달 수 있습니다.",
+      "caution": "강판 상단과 통풍 상단에서 가능한 냉각 배치가 다릅니다. 라디에이터 위치와 두께를 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-mini/define-7-mini-black-solid/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-b00b1b382714f61e"
+      ],
+      "advantage": "ITX 보드용이고 상단 브래킷을 분리할 수 있어 작은 공간에서 부품에 접근하기 쉽습니다.",
+      "caution": "Mini와 Nano는 보드 지원 범위가 다릅니다. 그래픽카드 두께와 높이, 케이블의 여유도 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-nano/define-7-nano-black-solid/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-97b05fe561a894bd"
+      ],
+      "advantage": "내부를 저장장치 중심이나 개방형으로 구성할 수 있어 대형 보드와 여러 드라이브를 검토하기 좋습니다.",
+      "caution": "저장장치 모드에서 라디에이터와 긴 그래픽카드를 함께 달 때는 장착 제약을 다시 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-xl/define-7-xl-black-light-tg/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-b6cc73815967d6b0"
+      ],
+      "advantage": "전면과 측면 흡음 패널, 측면 흡기, 기본 Momentum 팬 3개를 조합한 제품입니다.",
+      "caution": "닫힌 전면 디자인은 측면 흡기 공간 확보가 중요합니다. 패널 선택과 팬 속도에 따른 실제 소음은 조립 구성에 따라 달라집니다.",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-one/define-one-light-solid/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-5f2bbb98fc092298"
+      ],
+      "advantage": "흡음재와 전면 필터, 분리 가능한 드라이브 베이가 있어 저장장치 중심 구성을 꾸리기 좋습니다.",
+      "caution": "드라이브 베이를 유지한 상태에서는 그래픽카드와 수랭 배치 공간을 매뉴얼에서 따로 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-r5/define-r5-black/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-61534d1200a24803"
+      ],
+      "advantage": "전면 메시와 기본 Momentum 팬 3개로 별도의 전면 팬 구매 없이 기본 냉각 구성을 시작할 수 있습니다.",
+      "caution": "RGB 모델과 일반 모델은 팬·조명 구성이 다를 수 있습니다. 전면 장착을 바꾸면 카드에 남는 길이를 다시 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch/epoch-white-tg-clear-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-f3ff160d67b49091"
+      ],
+      "advantage": "여유 있는 섀시와 기본 Momentum 14 계열 팬 3개, 메시 흡기를 갖춥니다.",
+      "caution": "후면 커넥터 보드는 지원 폼팩터를 확인하세요. RGB와 일반 옵션의 동봉 팬도 따로 비교하세요.",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch-xl/epoch-xl-white-tg-clear-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-4c45e6d487a8268c"
+      ],
+      "advantage": "원목 상단과 알루미늄 외관, 내부 메인보드 위치 조절을 지원하는 소형 케이스입니다.",
+      "caution": "메인보드 위치를 옮기면 공랭 쿨러 높이와 그래픽카드 두께 한도가 서로 달라집니다. 두 부품 조합을 제조사 표에서 확인하세요.",
+      "source": "https://support.fractal-design.com/support/solutions/articles/4000210379-era-2-cpu-cooler-gpu-support"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-914f13eba705348f"
+      ],
+      "advantage": "메시 전면을 통해 기본 Aspect 팬으로 흡기를 구성할 수 있습니다.",
+      "caution": "RGB·강화유리 옵션을 구분하고, 전면 USB-C가 필요하면 액세서리 포함 여부를 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/focus-series/focus-2/focus-2-rgb-black-tg-clear-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-18b630a94fe37104"
+      ],
+      "advantage": "내부가 보이는 측면 창 옵션이며 제조사 안내 기준으로 팬 위치가 6곳입니다.",
+      "caution": "이 제품군의 창 소재와 전면 USB 구성은 다른 Focus 모델과 다를 수 있습니다. 드라이브를 설치한 상태의 카드 공간을 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/focus-series/focus-g/focus-g-black-window/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-1cf408eac2959e9c"
+      ],
+      "advantage": "힌지형 메시 전면에서 나일론 필터를 분리해 청소하거나 사용 조건에 맞게 조정할 수 있습니다.",
+      "caution": "저장장치 배치를 바꾸면 그래픽카드와 라디에이터에 남는 공간이 달라집니다.",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2/meshify-2-black-light-tg/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-68d76be492d21e67"
+      ],
+      "advantage": "작은 미들타워 크기에서 필터가 있는 메시 전면과 분리되는 상단 구조를 갖춥니다.",
+      "caution": "전면 라디에이터를 달면 기본 카드 길이 수치만큼 여유가 남지 않을 수 있습니다. 팬 두께까지 합산하세요.",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2-compact/meshify-2-compact-black-dark-tg/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-d64b85ff5a6b8c1f"
+      ],
+      "advantage": "ITX 시스템에서 측면 패널을 열고 내부 부품에 접근하기 쉬운 메시 전면 케이스입니다.",
+      "caution": "그래픽카드 길이와 두께뿐 아니라 카드 전원 케이블이 패널과 간섭하는지 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2-nano/meshify-2-nano-black-tg-dark-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-7c493f6b435f19c4"
+      ],
+      "advantage": "분리형 전면 필터와 내부 배치를 바꿀 수 있는 대형 섀시가 있어 저장장치와 냉각 구성을 선택하기 쉽습니다.",
+      "caution": "저장장치 모드와 개방형 모드에서 지원 부품 크기가 다릅니다. 외형 크기와 설치 공간도 함께 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2-xl/meshify-2-xl-black-light-tg/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-0fabe6b26ef36622"
+      ],
+      "advantage": "전면 메시와 내부 냉각 구조를 갖추고 기본형, RGB, Ambience Pro RGB 옵션을 비교할 수 있습니다.",
+      "caution": "RGB 제어 기능이나 동봉 팬을 보고 고른다면 선택한 색상뿐 아니라 RGB 등급까지 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3/meshify-3-ambience-pro-rgb-black-tg-light-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-54b9771d0994ff1f"
+      ],
+      "advantage": "Meshify 3의 메시 흡기와 조명 옵션을 대형 섀시에서 선택할 수 있습니다.",
+      "caution": "라디에이터 위치마다 지원 규격이 다릅니다. 한 곳의 최대 규격을 모든 위치에 적용하지 않도록 매뉴얼을 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3-xl/meshify-3-xl-ambience-pro-rgb-black-tg-light-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-c934b4ef2c8956b2"
+      ],
+      "advantage": "각진 메시 전면과 전면·상단·하단 필터가 있어 먼지 관리가 편합니다.",
+      "caution": "기본 팬을 유지할 때와 전면 수랭을 장착할 때 그래픽카드 장착 여유가 다릅니다.",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-c/meshify-c/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-4d18706255fa8091"
+      ],
+      "advantage": "패브릭 외관의 세로형 케이스로 책상에 놓는 면적을 줄일 수 있습니다.",
+      "caution": "SFF 부품을 골라야 합니다. 그래픽카드 두께와 전원 케이블 공간, 쿨러 규격을 함께 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/mood-series/mood/mood-light-gray/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-2161fc046ef51e29"
+      ],
+      "advantage": "드라이브 최대 6개를 장착할 수 있고 사용하지 않는 브래킷을 빼 공간을 확보할 수 있습니다.",
+      "caution": "긴 그래픽카드가 드라이브 브래킷이나 모듈러 파워 케이블과 간섭할 수 있습니다. NAS 겸용이면 드라이브 수를 먼저 정하세요.",
+      "source": "https://www.fractal-design.com/products/cases/node-series/node-304/node-304-black/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-bf1b7ca7e19f6345"
+      ],
+      "advantage": "microATX 보드와 저장장치, 팬을 나눠 배치하기 좋은 듀얼 챔버 구조입니다. 기본 팬은 3개입니다.",
+      "caution": "여러 라디에이터나 드라이브를 함께 쓰면 각 챔버에서 차지하는 위치를 따로 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/node-series/node-804/node-804/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-2aa68f2814989fd6"
+      ],
+      "advantage": "우드 슬랫 전면과 선택형 메시·강화유리 측판으로 외관과 냉각 배치를 고를 수 있습니다.",
+      "caution": "측면 팬 브래킷과 패널 구성이 옵션에 따라 다릅니다. North XL과도 크기와 장착 규격을 구분하세요.",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north/north-chalk-white/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-48f463aae0411ba2"
+      ],
+      "advantage": "어두운 참나무 전면과 기본 Momentum 12 팬 3개를 함께 쓸 수 있는 옵션입니다.",
+      "caution": "기본 North와 동봉 팬과 외장 마감이 다릅니다. 판매명에서 Momentum Edition을 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-momentum-edition/north-momentum-edition/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-996a02305af5068c"
+      ],
+      "advantage": "North 외관에 넉넉한 섀시를 조합해 긴 그래픽카드와 큰 수랭 부품을 검토하기 좋습니다.",
+      "caution": "Mesh, TG, 후면 커넥터 대응 RC가 서로 다른 옵션입니다. 케이스와 메인보드 규격을 같이 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-xl/north-xl-chalk-white-mesh/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-025aa909e98ddb1a"
+      ],
+      "advantage": "어두운 참나무 전면과 기본 Momentum 14 팬 3개를 갖춘 큰 섀시입니다.",
+      "caution": "전면 라디에이터를 달면 그래픽카드에 남는 길이가 달라집니다. North의 일반형과 XL은 크기도 다릅니다.",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-xl-momentum-edition/north-xl-momentum-edition/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-8786341709c3fbc9"
+      ],
+      "advantage": "전면·상단 메시와 기본 팬 3개를 갖추고 상단에 360mm 수랭을 검토할 수 있습니다.",
+      "caution": "RGB와 일반 버전은 같은 외형이라도 동봉 팬이 다를 수 있습니다. 상단 라디에이터와 보드 방열판 간섭도 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-air/pop-2-air-black-tg-rgb/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-a3abcef02a2bf892"
+      ],
+      "advantage": "전면과 측면 유리의 파노라마 구조에 기본 리버스 블레이드 팬 4개가 포함됩니다.",
+      "caution": "유리 전면이라 측면과 하단의 흡기 공간을 확보하세요. 긴 카드와 전원 케이블 여유는 따로 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-vision/pop-2-vision-black-rgb/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-d14a83543e186753"
+      ],
+      "advantage": "전면 메시로 흡기하고 하단 수납 공간을 활용할 수 있습니다. 패널과 RGB 옵션을 고를 수 있습니다.",
+      "caution": "블랙 솔리드와 TG 강화유리는 다른 옵션입니다. 전면 USB-C가 필요하면 케이블 포함 여부를 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-air/pop-air-rgb-orange-core-tg-clear-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-b40b2228dcf37583"
+      ],
+      "advantage": "작은 케이스에서 메시 전면과 하단 수납 공간을 함께 쓸 수 있습니다.",
+      "caution": "큰 그래픽카드와 수랭을 동시에 쓰면 배치가 달라집니다. USB-C 사용에 필요한 케이블도 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-mini-air/pop-mini-air-rgb-black-tg-clear-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-e0e6f06fcfa56b65"
+      ],
+      "advantage": "작은 섀시와 흡음 구조를 갖춰 외관과 소음을 함께 고려하는 구성에 맞출 수 있습니다.",
+      "caution": "작은 부피에 고부하 부품을 넣을 때는 흡기와 배기 경로, 실제 소음 자료를 비교하세요.",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-mini-silent/pop-mini-silent-black-solid/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-43a5da5a3e41eb1b"
+      ],
+      "advantage": "닫힌 전면과 흡음 구조, 숨겨진 수납 공간을 갖춘 형태입니다.",
+      "caution": "고부하에서 필요한 냉각량을 먼저 확인하고, TG 여부와 전면 RGB 표기를 구분하세요.",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-silent/pop-silent-black-solid/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-8d5766fb72677674"
+      ],
+      "advantage": "메시 전면과 큰 섀시로 많은 저장장치 또는 큰 냉각 부품을 배치하기 좋습니다.",
+      "caution": "라디에이터를 달 위치와 그래픽카드가 겹치는지 확인하세요. XL용 장착 규격과 일반 Pop Air 규격도 구분하세요.",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-xl-air/pop-xl-air-rgb-black-tg-clear-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-424650a3ac96045e"
+      ],
+      "advantage": "큰 섀시와 흡음 구조를 갖춰 저장장치와 케이블 배치에 공간을 확보할 수 있습니다.",
+      "caution": "닫힌 전면의 흡기 구조를 고려해 고발열 GPU와 CPU 조합의 냉각 구성을 함께 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-xl-silent/pop-xl-silent-black-solid/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-48c5f91df93b3ce6"
+      ],
+      "advantage": "얇은 Mini-ITX 케이스라 세워 놓거나 눕혀 놓는 구성을 비교할 수 있습니다.",
+      "caution": "중고나 구형 재고는 라이저 규격을 확인하세요. 제조사 표기상 업데이트된 PCIe 4.0 모델은 블랙 FD-C-RID1N-11, 화이트 FD-C-RID1N-12입니다.",
+      "source": "https://www.fractal-design.com/products/cases/ridge-series/ridge/ridge-pcie-4-0-white/",
+      "issue": {
+        "text": "초기 라이저는 일부 하드웨어에서 PCIe 4.0 모드 호환 문제가 있었습니다. 해당 제품의 라이저 교체 이력과 제조사 지원 절차를 확인하세요.",
+        "source": "https://www.fractal-design.com/news/ridge-riser-card-pcie-4-0/"
+      }
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-3665460c5809892c"
+      ],
+      "advantage": "곡선형 우드와 전면 메시를 조합해 외관과 전면 흡기를 같이 고려할 수 있습니다.",
+      "caution": "패널 틴트와 RGB 옵션의 팬 구성이 다를 수 있습니다. 정확한 옵션의 구성품 표에서 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/summit-series/summit/summit-chalk-white-tg-clear-tint/"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-9a12830c6b1dbfab"
+      ],
+      "advantage": "원목과 알루미늄을 사용한 소형 케이스로 내부 메인보드 위치를 조절할 수 있습니다.",
+      "caution": "그래픽카드가 두꺼워지면 공랭 쿨러에 남는 높이가 줄어듭니다. GPU 두께와 쿨러 높이를 같은 단계에서 확인하세요.",
+      "source": "https://support.fractal-design.com/support/solutions/articles/4000194849"
+    },
+    {
+      "catalogIds": [
+        "maker-fractal-case-86a846438cf1a76e"
+      ],
+      "advantage": "전면 180mm 팬 2개와 하단 흡기를 활용하는 큰 공랭형 구성입니다.",
+      "caution": "기본 180mm 팬과 다른 규격으로 바꾸거나 전면 수랭을 달 때는 브래킷과 카드에 남는 길이를 확인하세요.",
+      "source": "https://www.fractal-design.com/products/cases/torrent-series/torrent/torrent-rgb-black-tg-light-tint/",
+      "issue": {
+        "text": "출시 초기의 기존형 팬 허브는 제조 중 손상으로 단락이 생길 수 있다는 공지가 있었습니다. 중고·초기 재고에서 기존형이 확인되면 허브 전원을 분리하고 제조사 지원에 교체를 문의하세요.",
+        "source": "https://support.fractal-design.com/support/solutions/articles/4000187186-torrent-fan-hub-information"
+      }
     }
   ]
 }

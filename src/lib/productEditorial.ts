@@ -1,11 +1,19 @@
 import data from "../content/products/editorial.json";
 import catalogCasePhotos from "../content/products/casePhotos.json";
+import manufacturerCaseOptions from "../content/products/caseOptions.json";
 
 export type ProductPhoto = {
   src: string;
   alt: string;
   source: string;
   sourceLabel: string;
+};
+
+export type CaseOption = {
+  label: string;
+  src: string;
+  source: string;
+  credit?: { source: string; label: string };
 };
 
 type ProductEditorial = {
@@ -33,7 +41,21 @@ export function getProductEditorial(id: string) {
 }
 
 export function getProductPhoto(id: string) {
-  return byCatalogId.get(id)?.photo ?? (catalogCasePhotos as Record<string, ProductPhoto>)[id];
+  const firstOption = getCaseOptions(id)?.[0];
+  return firstOption ? getCaseOptionPhoto(firstOption) : byCatalogId.get(id)?.photo ?? (catalogCasePhotos as Record<string, ProductPhoto>)[id];
+}
+
+export function getCaseOptions(id: string) {
+  return (manufacturerCaseOptions as Partial<Record<string, CaseOption[]>>)[id];
+}
+
+export function getCaseOptionPhoto(option: CaseOption): ProductPhoto {
+  return {
+    src: option.src,
+    alt: `${option.label} 케이스 외관`,
+    source: option.credit?.source ?? option.source,
+    sourceLabel: option.credit?.label ?? "Fractal Design",
+  };
 }
 
 export function getPartEditorial(name: string) {

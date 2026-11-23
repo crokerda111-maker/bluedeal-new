@@ -11,8 +11,9 @@ import { PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
 import { productHighlights } from "../../../lib/productFilters";
 import FullPcConfiguration from "../../../components/FullPcConfiguration";
 import fullPcReviews from "../../../content/fullPcReviews.json";
-import { getPartEditorial, getProductEditorial, getProductPhoto, productEditorialCheckedOn } from "../../../lib/productEditorial";
+import { getCaseOptionPhoto, getCaseOptions, getPartEditorial, getProductEditorial, getProductPhoto, productEditorialCheckedOn } from "../../../lib/productEditorial";
 import ProductPhoto from "../../../components/ProductPhoto";
+import CaseOptionGallery from "../../../components/CaseOptionGallery";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
@@ -39,6 +40,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const editorial = getProductEditorial(product.id);
   const casePhoto = configurationReview ? getPartEditorial(configurationReview.parts.case)?.photo : undefined;
   const photo = getProductPhoto(product.id) ?? casePhoto;
+  const caseOptions = getCaseOptions(product.id);
   const affiliateCodes = await getOfferAffiliateCodes(offers);
   const informationCheckedAt = [product.listObservedAt, ...product.sources.map(source => source.observedAt)].filter((value): value is string => Boolean(value)).sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? null;
   return <article className="space-y-6">
@@ -54,7 +56,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
       </div>
       {photo ? <div id="product-photo" className="min-w-0 scroll-mt-24">
         {casePhoto ? <p className="mb-2 text-sm text-white/75">기본 케이스 외관</p> : null}
-        <ProductPhoto photo={photo} />
+        {caseOptions?.length ? <CaseOptionGallery key={product.id} options={caseOptions.map(option => ({ label: option.label, photo: getCaseOptionPhoto(option) }))} /> : <ProductPhoto photo={photo} />}
       </div> : null}
     </header>
 

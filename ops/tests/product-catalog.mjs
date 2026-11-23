@@ -44,6 +44,23 @@ test('case photos use exact catalog options and reviewed default components',()=
   }
 });
 
+test('manufacturer case families expose exact option photos without altering retail variants',()=>{
+  const map=JSON.parse(fs.readFileSync(new URL('../../src/content/products/caseOptions.json',import.meta.url),'utf8'));
+  const families=products.filter(p=>p.category==='case'&&p.kind==='product-family');
+  assert.deepEqual(Object.keys(map).sort(),families.map(p=>p.id).sort());
+  for(const options of Object.values(map)){
+    assert.ok(options.length);
+    assert.equal(new Set(options.map(v=>v.label)).size,options.length);
+    for(const option of options){
+      assert.equal(new URL(option.src).protocol,'https:');
+      assert.equal(new URL(option.source).hostname,'www.fractal-design.com');
+    }
+  }
+  const terra=map['maker-fractal-case-9a12830c6b1dbfab'];
+  assert.deepEqual(terra.map(v=>v.label).sort(),['Terra Graphite','Terra Jade','Terra Silver']);
+  assert.equal(new Set(terra.map(v=>v.src)).size,3);
+});
+
 test('models, wattage options and families are counted separately',()=>{
   const summary=summarizeCatalog(products);
   assert.equal(summary.models+summary.outputOptions+summary.families,summary.entries);

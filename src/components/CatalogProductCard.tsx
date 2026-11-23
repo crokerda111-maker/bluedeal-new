@@ -4,12 +4,13 @@ import { catalogDate, PRODUCT_KIND_LABELS, productCategoryLabel } from "../lib/p
 import type { PriceItem } from "../lib/mockPrices";
 import { priceFreshness } from "../lib/priceFilters";
 import { productHighlights } from "../lib/productFilters";
-import { getProductPhoto } from "../lib/productEditorial";
+import { getCaseOptions, getProductPhoto } from "../lib/productEditorial";
 import ProductPhoto from "./ProductPhoto";
 
 export default function CatalogProductCard({ product, offers, now }: { product: CatalogProduct; offers?: readonly PriceItem[]; now: number }) {
   const offer = offers?.[0];
   const photo = product.category === "case" ? getProductPhoto(product.id) : undefined;
+  const options = product.category === "case" ? getCaseOptions(product.id) : undefined;
   const highlights = productHighlights(product, offers);
   const observed = offer?.checkedAt || offer?.updatedAt || "";
   const observedLabel = Number.isFinite(Date.parse(observed)) ? new Date(observed).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST" : "시각 미확인";
@@ -21,6 +22,7 @@ export default function CatalogProductCard({ product, offers, now }: { product: 
     </div>
     {photo ? <Link href={`/products/${product.id}#product-photo`} aria-label={`${product.name} 사진과 상세 정보 보기`} className="mt-4 block rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300">
       <ProductPhoto photo={photo} compact credit={false} />
+      {options && options.length > 1 ? <span className="mt-2 block text-xs text-cyan-200">제조사 옵션 {options.length}개 · 사진 보기</span> : null}
     </Link> : null}
     <p className="mt-4 text-xs text-white/60">{product.brand}</p>
     <h3 className="mt-2 break-words text-base font-semibold leading-7"><Link href={`/products/${product.id}`} className="hover:text-cyan-100">{product.name}</Link></h3>

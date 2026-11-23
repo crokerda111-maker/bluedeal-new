@@ -1,0 +1,646 @@
+{
+  "maker-fractal-case-b32459749f216e6e": [
+    {
+      "label": "Core 1000 USB 3.0",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/47f4b0eaf27c5d916102459d234f2af86a1e8926-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/core-series/core-1000/core-1000-usb-3-0/"
+    }
+  ],
+  "maker-fractal-case-0ffaaca466e8084d": [
+    {
+      "label": "Core 1100",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/c16d5a71b368ddebb215797577ce0999f8afebbc-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/core-series/core-1100/core-1100/"
+    }
+  ],
+  "maker-fractal-case-8910e101a659fbf8": [
+    {
+      "label": "Define 7 Black",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/eaeb57e7dd0f664f876327756230bda728ec87ff-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7/black/"
+    },
+    {
+      "label": "Define 7 Black - Dark TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/bfe821e163dd21af823ee6ffef86d5377c811463-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7/define-7-black-dark-tg/"
+    }
+  ],
+  "maker-fractal-case-499add4130a935ed": [
+    {
+      "label": "Define 7 Compact Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/1b6df90b6fc0bdd8f0513342056079bf304546fd-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-compact/define-7-compact-black-solid/"
+    }
+  ],
+  "maker-fractal-case-a369d3ec72e1a790": [
+    {
+      "label": "Define 7 Mini Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/e904fd4b392b9ec4e6c9e4437383501c6503b420-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-mini/define-7-mini-black-solid/"
+    }
+  ],
+  "maker-fractal-case-b00b1b382714f61e": [
+    {
+      "label": "Define 7 Nano Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/98028c6b55e14f666fc14b6f72e4fc9b509f60ef-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-nano/define-7-nano-black-solid/"
+    },
+    {
+      "label": "Define 7 Nano Black TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/2d0b01ddb2e49f6074036bb730a826d191bc82c3-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-nano/define-7-nano-black-tg-light-tint/"
+    }
+  ],
+  "maker-fractal-case-97b05fe561a894bd": [
+    {
+      "label": "Define 7 XL Black - Light TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/60f502101380e4740c0f4d1abb9b10afac32eac3-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-xl/define-7-xl-black-light-tg/"
+    },
+    {
+      "label": "Define 7 XL Black – Dark TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/485084dfe4045a094e9e095ecbce34c8e266e06c-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-xl/define-7-xl-black-dark-tg/"
+    },
+    {
+      "label": "Define 7 XL Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/1f0d579dd0cb41f39b184efc782d4cff3eeef12c-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-7-xl/define-7-xl-black-solid/"
+    }
+  ],
+  "maker-fractal-case-b6cc73815967d6b0": [
+    {
+      "label": "Define One Light Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/afd35731fad1fd8d58c510ab03a99c05210ae0b6-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-one/define-one-light-solid/"
+    },
+    {
+      "label": "Define One Dark Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/28071e0a62306909a7e945e647f38ed09456ce98-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-one/define-one-dark-solid/"
+    },
+    {
+      "label": "Define One Dark TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/b1ca21f9b8c65c771434ebb94e34f4f2f51ea359-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-one/define-one-dark-tg-light-tint/"
+    },
+    {
+      "label": "Define One Light TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/464922359a6896d7248ab65e44ae525c4e4b6ccb-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-one/define-one-light-tg-clear-tint/"
+    }
+  ],
+  "maker-fractal-case-5f2bbb98fc092298": [
+    {
+      "label": "Define R5 Black",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/ff94da590414d120228d88243f5e83ef6589023c-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/define-series/define-r5/define-r5-black/"
+    }
+  ],
+  "maker-fractal-case-61534d1200a24803": [
+    {
+      "label": "Epoch White TG Clear tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/fee82a6682ad045d19c4e3324f3388d635dc2558-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch/epoch-white-tg-clear-tint/"
+    },
+    {
+      "label": "Epoch White TG RGB Clear tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/bf551134e66103ab716df64ee944a9a255abea6a-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch/epoch-white-tg-rgb-clear-tint/"
+    },
+    {
+      "label": "Epoch Black TG Light tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/91605f9dc000dd61a23a9abac0d78379f61c1047-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch/epoch-black-tg-light-tint/"
+    },
+    {
+      "label": "Epoch Black TG RGB Light tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/ae7476aa26552fc8c57d09d1267a5f049dc9cbd2-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch/epoch-black-tg-rgb-light-tint/"
+    },
+    {
+      "label": "Epoch Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/34d21f110460906425afb59a55579241dc82e6fe-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch/epoch-black-solid/"
+    }
+  ],
+  "maker-fractal-case-f3ff160d67b49091": [
+    {
+      "label": "Epoch XL White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/392f3e8ee84dc8241e7e4e474f79f1f831af584f-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch-xl/epoch-xl-white-tg-clear-tint/"
+    },
+    {
+      "label": "Epoch XL White TG RGB Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/0f1ebf0b0110898de5cbde71caf7b59bfdb48197-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch-xl/epoch-xl-white-tg-rgb-clear-tint/"
+    },
+    {
+      "label": "Epoch XL Black TG RGB Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a469ba09608a51b658c5eb6fd0d499c9a0c97584-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch-xl/epoch-xl-black-tg-rgb-light-tint/"
+    },
+    {
+      "label": "Epoch XL Black TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a6396a51db775f5dc16c5e9931886e83ed0ba87f-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch-xl/epoch-xl-black-tg-light-tint/"
+    },
+    {
+      "label": "Epoch XL Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/1bbed1558bebc299940464cbe187caebb5a44817-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/epoch-series/epoch-xl/epoch-xl-black-solid/"
+    }
+  ],
+  "maker-fractal-case-4c45e6d487a8268c": [
+    {
+      "label": "Era 2 Charcoal Gray",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/46222968c19b0520daf6fbee38aee49fd4e492e6-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/era-series/era-2/era-2-charcoal-gray/"
+    },
+    {
+      "label": "Era 2 Midnight Blue",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/92b0404e7a9509f1b6770da8e7f5b0e455ea3d80-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/era-series/era-2/era-2-midnight-blue/"
+    },
+    {
+      "label": "Era 2 Silver",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/ba1481ab594ea5b1e0108100e205e37f391cbb09-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/era-series/era-2/era-2-silver/"
+    }
+  ],
+  "maker-fractal-case-914f13eba705348f": [
+    {
+      "label": "Focus 2 RGB Black TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/e906af2d54f89f8e9961af77d04e6b1ba89cfab0-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/focus-series/focus-2/focus-2-rgb-black-tg-clear-tint/"
+    },
+    {
+      "label": "Focus 2 RGB White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/dffd913268ebf009cbcbcd1189966df8910fbd28-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/focus-series/focus-2/focus-2-rgb-white-tg-clear-tint/"
+    },
+    {
+      "label": "Focus 2 Black TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/838cda22aa4ce9fcbea2e07c5a363f048a0c82f3-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/focus-series/focus-2/focus-2-black-tg-clear-tint/"
+    },
+    {
+      "label": "Focus 2 White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/2057cd662eeba12e20f85783ceabdf75ce636181-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/focus-series/focus-2/focus-2-white-tg-clear-tint/"
+    },
+    {
+      "label": "Focus 2 Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/4ac5ff094622c2aac4d34154ef0b41b7ede5ec23-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/focus-series/focus-2/focus-2-black-solid/"
+    }
+  ],
+  "maker-fractal-case-18b630a94fe37104": [
+    {
+      "label": "Focus G Black - Window",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/f5601c22ed33ab341666c586c0cb18868c9cd809-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/focus-series/focus-g/focus-g-black-window/"
+    }
+  ],
+  "maker-fractal-case-1cf408eac2959e9c": [
+    {
+      "label": "Meshify 2 Black - Light TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/2893b7bfc72665ef1baaf455a036e8562a81b164-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2/meshify-2-black-light-tg/"
+    },
+    {
+      "label": "Meshify 2 Black",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/6614d135b307164c359007dacf0a38d2823bc22b-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2/meshify-2-black/"
+    }
+  ],
+  "maker-fractal-case-68d76be492d21e67": [
+    {
+      "label": "Meshify 2 Compact Black - Dark TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a7afa973def1999486b5dc177b076ca1993422bd-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2-compact/meshify-2-compact-black-dark-tg/"
+    },
+    {
+      "label": "Meshify 2 Compact Black - TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/dec4f7fe3774935dd6d8de9af60975434844fad4-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2-compact/meshify-2-compact-black-tg/"
+    },
+    {
+      "label": "Meshify 2 Compact Black",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/7cab789b86023dad70a70174253a2023beb0ab3f-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2-compact/meshify-2-compact-black/"
+    }
+  ],
+  "maker-fractal-case-d64b85ff5a6b8c1f": [
+    {
+      "label": "Meshify 2 Nano Black TG Dark Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/d89fa02e2edb5f222f15d0f9702f66e7327df8c9-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2-nano/meshify-2-nano-black-tg-dark-tint/"
+    },
+    {
+      "label": "Meshify 2 Nano White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/77cab36db8fbf70498dc03e85c190937a7c65de1-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2-nano/meshify-2-nano-white-tg-clear-tint/"
+    }
+  ],
+  "maker-fractal-case-7c493f6b435f19c4": [
+    {
+      "label": "Meshify 2 XL Black - Light TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/e3ee57d28eb3c53ec8e42ebc10a055ac75f07988-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-2-xl/meshify-2-xl-black-light-tg/"
+    }
+  ],
+  "maker-fractal-case-0fabe6b26ef36622": [
+    {
+      "label": "Meshify 3 Ambience Pro RGB Black TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/52ac9a9ed6d5a0b4e2e79812d99e8c76d9378570-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3/meshify-3-ambience-pro-rgb-black-tg-light-tint/"
+    },
+    {
+      "label": "Meshify 3 Ambience Pro RGB White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/9b580bc17362f10159ef0711b1afa510f6e01783-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3/meshify-3-ambience-pro-rgb-white-tg-clear-tint/"
+    },
+    {
+      "label": "Meshify 3 Black RGB TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a6342a95f7f00bf7a7355b003bdb0a2255876a29-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3/meshify-3-black-rgb-tg-light-tint/"
+    },
+    {
+      "label": "Meshify 3 White RGB TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/548110201f7e4360ac20cb634ee2b1c688246472-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3/meshify-3-white-rgb-tg-clear-tint/"
+    },
+    {
+      "label": "Meshify 3 Black TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/fd518c6f33bc31ea1b2637d980602b67234aad9f-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3/meshify-3-black-tg-light-tint/"
+    },
+    {
+      "label": "Meshify 3 White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/b68361fe7b38a3f4100bad4345ce64ca7ef97d9c-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3/meshify-3-white-tg-clear-tint/"
+    },
+    {
+      "label": "Meshify 3 Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/e6d84323b5eaeebf1800c0690d5fc1d54ca2d358-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3/meshify-3-black-solid/"
+    }
+  ],
+  "maker-fractal-case-54b9771d0994ff1f": [
+    {
+      "label": "Meshify 3 XL Ambience Pro RGB Black TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/082802fc2ca98b4aa14b7cf051173e3881561368-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3-xl/meshify-3-xl-ambience-pro-rgb-black-tg-light-tint/"
+    },
+    {
+      "label": "Meshify 3 XL Ambience Pro RGB White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/0ada33a50ce9863fe6903343a2a763e98474d183-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3-xl/meshify-3-xl-ambience-pro-rgb-white-tg-clear-tint/"
+    },
+    {
+      "label": "Meshify 3 XL Black RGB TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/d2c788541cee702ecb926a0a9d5b31c2b249037c-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3-xl/meshify-3-xl-black-rgb-tg-light-tint/"
+    },
+    {
+      "label": "Meshify 3 XL White RGB TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/09f408faf3b28e0c199c6006866b99d40eb74c47-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3-xl/meshify-3-xl-white-rgb-tg-clear-tint/"
+    },
+    {
+      "label": "Meshify 3 XL Black TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/07ab3f779c9ac8f623ac13ca85a4c3712452cd92-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3-xl/meshify-3-xl-black-tg-light-tint/"
+    },
+    {
+      "label": "Meshify 3 XL Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/5219809a5a17f50d3893340951c2af25dda0118d-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-3-xl/meshify-3-xl-black-solid/"
+    }
+  ],
+  "maker-fractal-case-c934b4ef2c8956b2": [
+    {
+      "label": "Meshify C",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a1e1ba70f824cab581e28ccc99d92d3fe7dbf93c-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-c/meshify-c/"
+    },
+    {
+      "label": "Meshify C - Dark TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/4725560d2ddc9a25058c5d315bf6f73e00936426-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/meshify-series/meshify-c/meshify-c-dark-tg/"
+    }
+  ],
+  "maker-fractal-case-4d18706255fa8091": [
+    {
+      "label": "Mood Light Gray",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/c0481ed01854cbf1c62d2170a161e31bb8cac6fa-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/mood-series/mood/mood-light-gray/"
+    },
+    {
+      "label": "Mood Black",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a2f36ddfe6cb5e91621fda0cf79d1bd036bb7f53-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/mood-series/mood/mood-black/"
+    }
+  ],
+  "maker-fractal-case-2161fc046ef51e29": [
+    {
+      "label": "Node 304 Black",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/e3c63d62c92e87042a1eed611699d3fdcbca2d94-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/node-series/node-304/node-304-black/"
+    }
+  ],
+  "maker-fractal-case-bf1b7ca7e19f6345": [
+    {
+      "label": "Node 804",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/e3af71d8fd1b7e7812024189c059a2e82b2dbd9b-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/node-series/node-804/node-804/"
+    }
+  ],
+  "maker-fractal-case-2aa68f2814989fd6": [
+    {
+      "label": "North Chalk White",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/1b97e24bef6749691603d959fd9951c7ca6f0d9f-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north/north-chalk-white/"
+    },
+    {
+      "label": "North Chalk White TG Clear",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a28074827d076ca8340fd9b0361386253606da41-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north/north-chalk-white-tg-clear/"
+    },
+    {
+      "label": "North Charcoal Black",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a31378f20e4b244ff9cfab9084f01d824e09ccbd-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north/north-charcoal-black/"
+    },
+    {
+      "label": "North Charcoal Black TG Light",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/7212fb5e68924af41cfb8b76064bab5b3b125ecc-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north/north-charcoal-black-tg-light/"
+    }
+  ],
+  "maker-fractal-case-48f463aae0411ba2": [
+    {
+      "label": "North Momentum Edition",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a0dd0d7adb245cc3cc6fd1ce210a979be91e29b1-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-momentum-edition/north-momentum-edition/"
+    }
+  ],
+  "maker-fractal-case-996a02305af5068c": [
+    {
+      "label": "North XL Chalk White Mesh",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/2d56a563d2c177262a36fcf53d4471bdaf953b5e-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-xl/north-xl-chalk-white-mesh/"
+    },
+    {
+      "label": "North XL Chalk White TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/8e16eabea70fc626181c740b5d0c1c92bbd7ae57-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-xl/north-xl-chalk-white-tg/"
+    },
+    {
+      "label": "North XL Charcoal Black Mesh",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/fdcd418da7f7a4913e0f57199488c3f4588cf76e-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-xl/north-xl-charcoal-black-mesh/"
+    },
+    {
+      "label": "North XL Charcoal Black TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/f1e7b939866cee50773fa9a87a8f693c13e7d8ae-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-xl/north-xl-charcoal-black-tg/"
+    },
+    {
+      "label": "North XL RC Chalk White TG Clear",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/19e057b3b3a58e41aac300aa680a263ff1e0d46c-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-xl/north-xl-rc-chalk-white-tg-clear/"
+    },
+    {
+      "label": "North XL RC Charcoal Black TG Dark",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/5832975dfbabc18abc0fdb1b8a8cd0ce2eea0f98-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-xl/north-xl-rc-charcoal-black-tg-dark/"
+    }
+  ],
+  "maker-fractal-case-025aa909e98ddb1a": [
+    {
+      "label": "North XL Momentum Edition",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/d973388c68389168e59f18cb1df3cf6f6cdb352e-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/north-series/north-xl-momentum-edition/north-xl-momentum-edition/"
+    }
+  ],
+  "maker-fractal-case-8786341709c3fbc9": [
+    {
+      "label": "Pop 2 Air Black TG RGB",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/bc5e7f3ca5b94ea212a31de9f2af9b41a9c2cbe3-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-air/pop-2-air-black-tg-rgb/"
+    },
+    {
+      "label": "Pop 2 Air White TG RGB",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/802d5da1680a754769596b9be74e444af96d73b7-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-air/pop-2-air-white-tg-rgb-2/"
+    },
+    {
+      "label": "Pop 2 Air Black TG",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/735eea582bf19a2735bfadc44fec3b44dc79d916-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-air/pop-2-air-black-tg/"
+    },
+    {
+      "label": "Pop 2 Air Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/b0efbc643b9c4b7202c3cacb31a012d95c880dd1-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-air/pop-2-air-black-solid/"
+    }
+  ],
+  "maker-fractal-case-a3abcef02a2bf892": [
+    {
+      "label": "Pop 2 Vision Black RGB",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/460150e1f198ab2fe33e941a396bfab401241124-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-vision/pop-2-vision-black-rgb/"
+    },
+    {
+      "label": "Pop 2 Vision White RGB",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/112257045a864d59e70b45909f7fd8347e4b81d3-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-vision/pop-2-vision-white-rgb/"
+    },
+    {
+      "label": "Pop 2 Vision Black",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/1678ffc9e72680d1ac8589f9152e320af76d22ba-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-vision/pop-2-vision-black/"
+    }
+  ],
+  "maker-fractal-case-d14a83543e186753": [
+    {
+      "label": "Pop Air RGB Orange Core TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/0e2296bcb6811aa9dca1252334c95e5759ce5ce2-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-air/pop-air-rgb-orange-core-tg-clear-tint/"
+    },
+    {
+      "label": "Pop Air RGB Black TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/9f331fa03e1780a4a5cdb81371848adfef9a299a-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-air/pop-air-rgb-black-tg-clear-tint/"
+    },
+    {
+      "label": "Pop Air RGB Cyan Core TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/d45ae269ea9344a7728a1da913ad4b9b4fee0a4b-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-air/pop-air-rgb-cyan-core-tg-clear-tint/"
+    },
+    {
+      "label": "Pop Air RGB Magenta Core TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/69c3822ba5d2b7c4f238c228a1da1a5765f00e26-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-air/pop-air-rgb-magenta-core-tg-clear-tint/"
+    },
+    {
+      "label": "Pop Air RGB White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/adb8124dae8e6b78e7158d897d25943959c3d40a-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-air/pop-air-rgb-white-tg-clear-tint/"
+    },
+    {
+      "label": "Pop Air Black TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/85a769e3f3f9854a6e5b3f7a5155336a546dfea4-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-air/pop-air-black-tg-clear-tint/"
+    },
+    {
+      "label": "Pop Air Black Solid",
+      "src": "https://media.ldlc.com/r1600/ld/products/00/05/98/26/LD0005982681.jpg",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-air/pop-air-black-solid/",
+      "credit": {
+        "source": "https://www.ldlc.com/fiche/PB00519438.html",
+        "label": "LDLC"
+      }
+    }
+  ],
+  "maker-fractal-case-b40b2228dcf37583": [
+    {
+      "label": "Pop Mini Air RGB Black TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/034a6c9f4867f95ec231907e10e56c70252050d5-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-mini-air/pop-mini-air-rgb-black-tg-clear-tint/"
+    },
+    {
+      "label": "Pop Mini Air RGB White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/b0a1a05852849dc2945d3ef3a549020e12fbc835-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-mini-air/pop-mini-air-rgb-white-tg-clear-tint/"
+    }
+  ],
+  "maker-fractal-case-e0e6f06fcfa56b65": [
+    {
+      "label": "Pop Mini Silent Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/88257a6016d9e467cfa8000179b4402ee6145d49-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-mini-silent/pop-mini-silent-black-solid/"
+    }
+  ],
+  "maker-fractal-case-43a5da5a3e41eb1b": [
+    {
+      "label": "Pop Silent Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/c18abbcd78457308e68383105468c4706b23a75f-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-silent/pop-silent-black-solid/"
+    },
+    {
+      "label": "Pop Silent Black TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/21bf91cb953bd9ca94a4858f50c14ba6a9af8cd8-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-silent/pop-silent-black-tg-clear-tint/"
+    }
+  ],
+  "maker-fractal-case-8d5766fb72677674": [
+    {
+      "label": "Pop XL Air RGB Black TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/ef7aea387de18a22c37e2a597978601950d5fdd5-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-xl-air/pop-xl-air-rgb-black-tg-clear-tint/"
+    },
+    {
+      "label": "Pop XL Air RGB White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/8a8fbf6c36f515ec1cbfb7d9d8d4deb7f81202c0-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-xl-air/pop-xl-air-rgb-white-tg-clear-tint/"
+    }
+  ],
+  "maker-fractal-case-424650a3ac96045e": [
+    {
+      "label": "Pop XL Silent Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/a060d408fdc397dfe4aba81778b43320816f4e9e-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/pop-series/pop-xl-silent/pop-xl-silent-black-solid/"
+    }
+  ],
+  "maker-fractal-case-48c5f91df93b3ce6": [
+    {
+      "label": "Ridge PCIe 4.0 White",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/4fdafb31b9542d3821e91334447f4d5801dc51e1-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/ridge-series/ridge/ridge-pcie-4-0-white/"
+    },
+    {
+      "label": "Ridge PCIe 4.0 Black",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/59242a88c63c25b51554a480ddfb555a6ebff8b5-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/ridge-series/ridge/ridge-pcie-4-0-black/"
+    }
+  ],
+  "maker-fractal-case-3665460c5809892c": [
+    {
+      "label": "Summit Chalk White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/b5d53e0004fc15db206d7c00f028865e75623c8d-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/summit-series/summit/summit-chalk-white-tg-clear-tint/"
+    },
+    {
+      "label": "Summit Ambience Blackout TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/07c7f6878a08080fad66928d59fdb32b8b78ef67-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/summit-series/summit/summit-ambience-blackout-tg-light-tint/"
+    },
+    {
+      "label": "Summit Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/00b9568b3c5e3bda965aa9b57423a28a3a2865f5-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/summit-series/summit/summit-black-solid/"
+    },
+    {
+      "label": "Summit Black TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/c62597fff04750e6b5a4fb24f29b6dc607deb21a-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/summit-series/summit/summit-black-tg-light-tint/"
+    },
+    {
+      "label": "Summit Blackout TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/c2ff93dde3317f581d7fd7013000e3b2d3868e09-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/summit-series/summit/summit-blackout-tg-light-tint/"
+    },
+    {
+      "label": "Summit Chalk White Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/db8c8d7fb1bf64cbdefd6ad6d4d4b60057f3cfe2-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/summit-series/summit/summit-chalk-white-solid/"
+    }
+  ],
+  "maker-fractal-case-9a12830c6b1dbfab": [
+    {
+      "label": "Terra Jade",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/fd0c75de13fed920595c342ca70ce655dd67e05d-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/terra-series/terra/terra-jade/"
+    },
+    {
+      "label": "Terra Graphite",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/817f505ee5343f0ca2ff434b04257cc5c66542dc-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/terra-series/terra/terra-graphite/"
+    },
+    {
+      "label": "Terra Silver",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/eb591d42ffcf3c810be0d5f06c96f2e132cee548-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/terra-series/terra/terra-silver/"
+    }
+  ],
+  "maker-fractal-case-86a846438cf1a76e": [
+    {
+      "label": "Torrent RGB Black TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/27cf993652b08493f9c3196f71cad2d598225537-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/torrent-series/torrent/torrent-rgb-black-tg-light-tint/"
+    },
+    {
+      "label": "Torrent Black TG Light Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/174462e7a7706566194f81f4fa365465035c5a3a-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/torrent-series/torrent/torrent-black-tg-light-tint/"
+    },
+    {
+      "label": "Torrent White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/24e6ada04ef726925fabfb6971923f06a13f4713-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/torrent-series/torrent/torrent-white-tg-clear-tint/"
+    },
+    {
+      "label": "Torrent Black Solid",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/2b4066467e000cf33f6ffbc38231f3166d858979-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/torrent-series/torrent/torrent-black-solid/"
+    },
+    {
+      "label": "Torrent RGB White TG Clear Tint",
+      "src": "https://assets.fractal-design.com/images/uxzbxy2o/production/d1707205727622bcfbfa09c7dc93ae3099720e91-2560x3200.png?w=900&auto=format&q=80",
+      "source": "https://www.fractal-design.com/products/cases/torrent-series/torrent/torrent-rgb-white-tg-clear-tint/"
+    }
+  ]
+}
