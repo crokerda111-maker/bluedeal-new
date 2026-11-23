@@ -94,7 +94,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
 
   const extraEntries = useMemo(() => {
     return Object.entries(post?.extra ?? {}).flatMap(([key, value]) => {
-      if (post?.hotdeal && key === "dealLink") return [];
+      if (post?.hotdeal && (key === "dealLink" || key === "store")) return [];
       if (post?.boardKey === "hotdeal" && key === "category" && value) {
         return [[key, HOTDEAL_CATEGORIES.find(item => item.value === hotdealCategory(value))?.label] as const];
       }
@@ -153,7 +153,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
 
       <section className="bd-surface-md p-6">
         <h1 className="[overflow-wrap:anywhere] text-2xl font-semibold tracking-tight">{board.key === "issue" && post.title === issuePostTitle(post.content) ? "한 줄 이슈" : post.title}</h1>
-        <PostAffiliateNotice info={post.linkInfo} />
+        <PostAffiliateNotice info={post.linkInfo} compact={board.key === "hotdeal"} />
         <HotdealTerms post={post} />
         <LinkifiedText text={post.content} linkInfo={post.linkInfo} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
       </section>
