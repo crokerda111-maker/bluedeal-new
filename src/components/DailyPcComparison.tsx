@@ -5,7 +5,9 @@ import buildReviews from "../content/pcBuildReviews.json";
 import fullPcReviews from "../content/fullPcReviews.json";
 import verifiedFullPcSnapshot from "../content/fullPcVerifiedSnapshot.json";
 import { matchFullPcObservation, scoreFullPcParts } from "../lib/fullPcReview";
+import { getPartEditorial } from "../lib/productEditorial";
 import FullPcConfiguration from "./FullPcConfiguration";
+import ProductPhoto from "./ProductPhoto";
 import { fmtWon, formatPriceTime } from "./PriceOffer";
 
 const qualityReviews = buildReviews.parts as QualityReview[];
@@ -14,6 +16,7 @@ function Observation({ row, priceBadge, bestQuality, rank, score }: { row: PcObs
   const total = row.price !== null && row.shipping !== null ? row.price + row.shipping : null;
   const configurationReview = matchFullPcObservation(row, fullPcReviews);
   const configurationScore = configurationReview ? scoreFullPcParts(configurationReview).score : null;
+  const casePhoto = configurationReview ? getPartEditorial(configurationReview.parts.case)?.photo : undefined;
   const budgetNotes = [
     row.quantities?.ram === 1 && /\[\s*\d+GB\s*\]/i.test(row.parts.ram ?? "") ? "RAM 모듈 1개. 추가 장착 비용 확인" : null,
     /\[500GB\]|\[512GB\]/i.test(row.parts.storage ?? "") ? "SSD 500GB급 구성. 설치할 게임과 작업 파일 용량 확인" : null,
@@ -33,6 +36,10 @@ function Observation({ row, priceBadge, bestQuality, rank, score }: { row: PcObs
     {total !== null ? <p className="mt-2 text-lg font-semibold text-cyan-100">{fmtWon(total)} <span className="text-sm font-normal text-white/70">기본 배송 포함</span></p>
       : <p className="mt-2 text-sm text-amber-100">{row.note}</p>}
     {total !== null ? <p className="mt-1 text-xs leading-5 text-white/65">{row.note}</p> : null}
+    {casePhoto ? <div className="mt-3">
+      <p className="mb-2 text-xs text-white/75">기본 케이스 외관</p>
+      <ProductPhoto photo={casePhoto} compact />
+    </div> : null}
     {budgetNotes.length ? <p className="mt-2 text-xs leading-6 text-amber-100">{budgetNotes.join(" · ")}</p> : null}
     {row.state === "observed" ? <details className="mt-3">
       <summary className="min-h-11 cursor-pointer py-3 text-sm text-cyan-200">{configurationReview ? "부품별 점수·감점 사유 보기" : "선택 부품·사양 확인"}</summary>

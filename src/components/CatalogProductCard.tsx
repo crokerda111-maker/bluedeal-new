@@ -4,9 +4,12 @@ import { catalogDate, PRODUCT_KIND_LABELS, productCategoryLabel } from "../lib/p
 import type { PriceItem } from "../lib/mockPrices";
 import { priceFreshness } from "../lib/priceFilters";
 import { productHighlights } from "../lib/productFilters";
+import { getProductEditorial } from "../lib/productEditorial";
+import ProductPhoto from "./ProductPhoto";
 
 export default function CatalogProductCard({ product, offers, now }: { product: CatalogProduct; offers?: readonly PriceItem[]; now: number }) {
   const offer = offers?.[0];
+  const photo = product.category === "case" ? getProductEditorial(product.id)?.photo : undefined;
   const highlights = productHighlights(product, offers);
   const observed = offer?.checkedAt || offer?.updatedAt || "";
   const observedLabel = Number.isFinite(Date.parse(observed)) ? new Date(observed).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST" : "시각 미확인";
@@ -16,6 +19,9 @@ export default function CatalogProductCard({ product, offers, now }: { product: 
       <span className="text-white/60">{PRODUCT_KIND_LABELS[product.kind]}</span>
       {product.lifecycle === "listed-discontinued" ? <span className="rounded-md bg-amber-200/10 px-2 py-1 text-amber-100">제조사 단종 목록</span> : null}
     </div>
+    {photo ? <Link href={`/products/${product.id}#product-photo`} aria-label={`${product.name} 사진과 상세 정보 보기`} className="mt-4 block rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300">
+      <ProductPhoto photo={photo} compact credit={false} />
+    </Link> : null}
     <p className="mt-4 text-xs text-white/60">{product.brand}</p>
     <h3 className="mt-2 break-words text-base font-semibold leading-7"><Link href={`/products/${product.id}`} className="hover:text-cyan-100">{product.name}</Link></h3>
     {highlights.length ? <dl className="mt-3 flex flex-wrap gap-2">{highlights.map(({ key, label, value }) => <div key={key} className="rounded-lg bg-white/5 px-2.5 py-1.5 text-xs">

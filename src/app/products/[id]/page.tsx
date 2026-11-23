@@ -11,6 +11,8 @@ import { PriceAmount, PurchaseLink } from "../../../components/PriceOffer";
 import { productHighlights } from "../../../lib/productFilters";
 import FullPcConfiguration from "../../../components/FullPcConfiguration";
 import fullPcReviews from "../../../content/fullPcReviews.json";
+import { getPartEditorial, getProductEditorial, productEditorialCheckedOn } from "../../../lib/productEditorial";
+import ProductPhoto from "../../../components/ProductPhoto";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
@@ -34,17 +36,26 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const highlights = productHighlights(product, offers);
   const componentSpecs = product.specifications.filter(spec => /^판매처 (부품표|기본사양) · /.test(spec.label));
   const configurationReview = fullPcReviews.find(review => review.productId === product.id && !review.configuration);
+  const editorial = getProductEditorial(product.id);
+  const casePhoto = configurationReview ? getPartEditorial(configurationReview.parts.case)?.photo : undefined;
+  const photo = editorial?.photo ?? casePhoto;
   const affiliateCodes = await getOfferAffiliateCodes(offers);
   const informationCheckedAt = [product.listObservedAt, ...product.sources.map(source => source.observedAt)].filter((value): value is string => Boolean(value)).sort((a, b) => Date.parse(b) - Date.parse(a))[0] ?? null;
   return <article className="space-y-6">
     <nav aria-label="상품 경로" className="flex flex-wrap gap-2 text-sm text-white/65"><Link href="/prices" className="text-cyan-200 hover:underline">상품·가격비교</Link><span aria-hidden="true">/</span><Link href={`/prices/${product.category}`} className="hover:underline">{productCategoryLabel(product.category)}</Link></nav>
-    <header className="bd-surface p-5 sm:p-7">
+    <header className={`bd-surface p-5 sm:p-7 ${photo ? "grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(17rem,0.7fr)]" : ""}`}>
+      <div className="min-w-0">
       <div className="flex flex-wrap gap-2 text-xs"><span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-cyan-100">{productCategoryLabel(product.category)}</span><span className="rounded-full border border-white/15 px-3 py-1 text-white/75">{PRODUCT_KIND_LABELS[product.kind]}</span>{product.lifecycle === "listed-discontinued" ? <span className="rounded-full border border-amber-200/30 bg-amber-200/10 px-3 py-1 text-amber-100">제조사 단종 목록</span> : null}</div>
       <p className="mt-5 text-sm text-white/65">{product.brand}</p><h1 className="mt-2 break-words text-2xl font-semibold leading-relaxed tracking-tight sm:text-3xl">{product.name}</h1><p className="mt-4 max-w-3xl text-sm leading-7 text-white/75">{product.description}</p><p className="mt-3 text-xs text-white/55">상품 관리번호 {product.referenceCode}</p>
       {highlights.length ? <dl className="mt-5 grid max-w-3xl gap-2 sm:grid-cols-3">{highlights.map(({ key, label, value }) => <div key={key} className="rounded-xl border border-white/15 bg-slate-950/25 p-3" data-spec-summary={key}>
         <dt className="text-xs text-white/70">{label}</dt><dd className="mt-1 break-words font-semibold text-cyan-100">{value}</dd>
       </div>)}</dl> : null}
       <div className="mt-5 flex flex-wrap gap-3"><Link href={`/contact/write?from=products&product=${product.id}`} className="inline-flex min-h-11 items-center rounded-xl bg-cyan-200 px-4 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-100">상품 정보 수정·추가 요청</Link><Link href="/community/review" className="inline-flex min-h-11 items-center rounded-xl border border-white/20 px-4 py-3 text-sm text-white/80 hover:bg-white/10">사용기 게시판</Link></div>
+      </div>
+      {photo ? <div id="product-photo" className="min-w-0 scroll-mt-24">
+        {casePhoto ? <p className="mb-2 text-sm text-white/75">기본 케이스 외관</p> : null}
+        <ProductPhoto photo={photo} />
+      </div> : null}
     </header>
 
     <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
@@ -72,7 +83,16 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           {product.specifications.length ? <dl className="mt-5 divide-y divide-white/10 border-y border-white/10">{product.specifications.map(specification => <div key={`${specification.label}:${specification.value}`} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-4 py-3 text-sm"><dt className="text-white/60">{specification.label}</dt><dd className="break-words text-white/85">{specification.value}</dd></div>)}</dl> : null}
           {product.notes.length ? <div className="mt-5 rounded-xl border border-amber-200/25 bg-amber-200/5 p-4"><h3 className="text-sm font-semibold text-amber-100">옵션 확인사항</h3><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-7 text-white/75">{product.notes.map(note => <li key={note}>{note}</li>)}</ul></div> : null}
         </section>
-        <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">장점·구매 전 확인</h2>{product.strengths.length ? <div className="mt-5 space-y-5">{product.strengths.map(strength => <div key={strength.title}><h3 className="font-semibold text-cyan-100">{strength.title}</h3><p className="mt-2 text-sm leading-7 text-white/80">{strength.detail}</p><p className="mt-2 text-sm leading-7 text-white/65">{strength.conditions}</p><div className="mt-3"><Sources items={strength.sources} /></div></div>)}</div> : <p className="mt-4 text-sm leading-7 text-white/70">장점과 사용 조건은 추가 조사 중입니다. 제품명이나 제조사 소개만으로 성능·품질 점수를 부여하지 않습니다.</p>}
+        <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">장점·구매 전 확인</h2>
+          {editorial ? <>
+            <dl className="mt-4 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl border border-cyan-200/20 p-4"><dt className="font-semibold text-cyan-100">장점</dt><dd className="mt-2 text-sm leading-7 text-white/80">{editorial.advantage}</dd></div>
+              <div className="rounded-xl border border-amber-200/20 p-4"><dt className="font-semibold text-amber-100">구매 전 확인</dt><dd className="mt-2 text-sm leading-7 text-white/80">{editorial.caution}</dd></div>
+            </dl>
+            {editorial.issue ? <p className="mt-4 text-sm leading-7 text-amber-100">{editorial.issue.text} <a className="text-cyan-200 underline" href={editorial.issue.source} target="_blank" rel="noopener noreferrer">이슈 출처<span className="sr-only"> (새 창)</span></a></p> : null}
+            <p className="mt-3 text-xs leading-6 text-white/70">{productEditorialCheckedOn} KST 확인 · <a className="text-cyan-200 underline" href={editorial.source} target="_blank" rel="noopener noreferrer">사양 근거<span className="sr-only"> (새 창)</span></a></p>
+          </> : null}
+          {product.strengths.length ? <div className="mt-5 space-y-5">{product.strengths.map(strength => <div key={strength.title}><h3 className="font-semibold text-cyan-100">{strength.title}</h3><p className="mt-2 text-sm leading-7 text-white/80">{strength.detail}</p><p className="mt-2 text-sm leading-7 text-white/65">{strength.conditions}</p><div className="mt-3"><Sources items={strength.sources} /></div></div>)}</div> : !editorial ? <p className="mt-4 text-sm leading-7 text-white/70">장점과 사용 조건은 추가 조사 중입니다.</p> : null}
           {product.issues.map(issue => <div key={issue.title} className="mt-5 rounded-xl border border-amber-200/30 bg-amber-200/5 p-4"><h3 className="font-semibold text-amber-100">{issue.title}</h3><p className="mt-3 text-sm leading-7 text-white/80">{issue.summary}</p><p className="mt-2 text-sm leading-7 text-white/70">{issue.conditions}</p><p className="mt-2 text-sm leading-7 text-white/85">{issue.action}</p><div className="mt-4"><Sources items={issue.sources} /></div></div>)}
         </section>
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">후기·사용기</h2><p className="mt-4 text-sm leading-7 text-white/75">{product.reviewSummary ?? "이 상품의 후기 경향은 아직 검토하지 않았습니다. 실제 구매자 후기와 독립 리뷰를 확인한 뒤 출처와 사용 조건을 함께 보완하겠습니다."}</p>{product.reviewSources.length ? <div className="mt-4"><Sources items={product.reviewSources} /></div> : null}<Link href="/community/review" className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">커뮤니티 사용기 보기</Link></section>

@@ -13,6 +13,28 @@ test('every exported entry has stable unique page and management identifiers',()
   assert.ok(products.every(p=>/^[a-z0-9-]+$/.test(p.id)&&/^BD-[A-F0-9]{10}$/.test(p.referenceCode)));
 });
 
+test('case photos use exact catalog options and reviewed default components',()=>{
+  const editorial=JSON.parse(fs.readFileSync(new URL('../../src/content/products/editorial.json',import.meta.url),'utf8')).entries;
+  const reviews=JSON.parse(fs.readFileSync(new URL('../../src/content/fullPcReviews.json',import.meta.url),'utf8'));
+  const cases=editorial.filter(entry=>entry.photo);
+  const catalogIds=editorial.flatMap(entry=>entry.catalogIds??[]);
+  const partNames=editorial.flatMap(entry=>entry.partNames??[]);
+  assert.equal(new Set(catalogIds).size,catalogIds.length);
+  assert.equal(new Set(partNames).size,partNames.length);
+  assert.ok(catalogIds.every(id=>products.some(p=>p.id===id)));
+  assert.ok(reviews.every(review=>cases.some(entry=>entry.partNames?.includes(review.parts.case))));
+  const black=cases.find(entry=>entry.catalogIds?.includes('distributor-seorin-1000008774')).photo;
+  const white=cases.find(entry=>entry.catalogIds?.includes('distributor-seorin-1000008773')).photo;
+  assert.notEqual(black.src,white.src);
+  assert.match(black.alt,/블랙/);
+  assert.match(white.alt,/화이트/);
+  for(const entry of cases){
+    assert.equal(new URL(entry.photo.src).protocol,'https:');
+    assert.equal(new URL(entry.photo.source).protocol,'https:');
+    assert.ok(entry.advantage&&entry.caution);
+  }
+});
+
 test('models, wattage options and families are counted separately',()=>{
   const summary=summarizeCatalog(products);
   assert.equal(summary.models+summary.outputOptions+summary.families,summary.entries);

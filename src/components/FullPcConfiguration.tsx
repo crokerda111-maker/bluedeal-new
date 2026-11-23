@@ -1,7 +1,19 @@
-import { PC_PARTS } from "../lib/dailyPc";
+import { PC_PARTS, type PcSlot } from "../lib/dailyPc";
 import { scoreFullPcParts, type FullPcReview } from "../lib/fullPcReview";
+import { getPartEditorial } from "../lib/productEditorial";
 
 const sourceStyle = "text-cyan-200 underline underline-offset-4";
+
+const purchaseChecks: Record<PcSlot, string> = {
+  cpu: "CPU를 교체할 계획이면 보드의 지원 목록과 필요한 BIOS 버전을 확인하세요.",
+  gpu: "그래픽카드를 교체할 계획이면 장착 길이, 두께, 파워의 보조전원 커넥터를 확인하세요.",
+  board: "SSD나 메모리를 더 꽂을 계획이면 기본 부품이 사용하고 남은 슬롯과 슬롯 간 대역폭 공유 조건을 확인하세요.",
+  ram: "증설할 때는 빈 슬롯과 메모리의 용량·속도·프로필 호환을 확인하세요.",
+  storage: "설치할 게임·작업 파일 용량을 합산하고, SSD를 추가할 수 있는 슬롯이 남는지 확인하세요.",
+  psu: "그래픽카드를 바꿀 때는 카드 제조사의 권장 출력과 실제 보조전원 커넥터를 함께 확인하세요.",
+  cooler: "쿨러·RAM을 교체할 때는 케이스 높이 한도와 RAM 방열판 간섭을 확인하세요.",
+  case: "그래픽카드 길이와 쿨러 높이, 수랭 라디에이터 장착 위치를 주문 전 확인하세요.",
+};
 
 export default function FullPcConfiguration({ review }: { review: FullPcReview }) {
   const { score, range, slots } = scoreFullPcParts(review);
@@ -16,10 +28,18 @@ export default function FullPcConfiguration({ review }: { review: FullPcReview }
       {Object.entries(PC_PARTS).map(([slot, label]) => {
         const part = slot as keyof typeof PC_PARTS;
         const assessment = slots.find(item => item.slot === part);
+        const editorial = getPartEditorial(review.parts[part]);
+        const singleModule = part === "ram" && assessment?.criteria[1]?.met === false;
+        const caution = editorial?.caution ?? (singleModule
+          ? "메모리 모듈이 한 개입니다. 두 모듈 구성이 필요하면 같은 규격의 모듈과 추가 장착 비용을 확인하세요."
+          : purchaseChecks[part]);
         return <div key={slot} className="grid grid-cols-[5rem_minmax(0,1fr)] gap-3 py-3">
           <dt className="text-white/70">{label}</dt>
           <dd className="min-w-0 break-words">
             <p className="font-medium text-white">{review.parts[part]}</p>
+            {editorial ? <p className="mt-2 text-white/80"><span className="font-semibold text-cyan-100">장점</span> · {editorial.advantage} <a className={sourceStyle} href={editorial.source} target="_blank" rel="noopener noreferrer">근거<span className="sr-only"> (새 창)</span></a></p> : null}
+            <p className="mt-1 text-white/75"><span className="font-medium text-amber-100">구매 전 확인</span> · {caution}</p>
+            {editorial?.issue ? <p className="mt-1 text-amber-100">{editorial.issue.text} <a className={sourceStyle} href={editorial.issue.source} target="_blank" rel="noopener noreferrer">이슈 출처<span className="sr-only"> (새 창)</span></a></p> : null}
             {assessment ? <>
               <p className="mt-1 text-white/75">{assessment.fact}</p>
               <p className="text-xs font-semibold text-cyan-100">{Number(assessment.earned.toFixed(1))}/{assessment.weight}점 충족{assessment.pending ? " · 일부 사양 확인 필요" : ""}</p>
