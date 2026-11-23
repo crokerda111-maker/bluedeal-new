@@ -1,9 +1,11 @@
 import catalog from "../content/products/catalog.json";
+import caseMarketOptions from "../content/products/caseMarketplaceOptions.json";
 import reviewed from "../content/products/marketplaceListings.json";
 import originalOutbound from "../content/outbound.generated.json";
 import { normalizeOutboundUrl } from "./affiliate";
 import type { PriceItem } from "./mockPrices";
 import type { Merchant, OutboundLink } from "./outbound";
+import { getCaseOptions } from "./productEditorial";
 
 type ReviewedListing = {
   productId: string;
@@ -90,6 +92,7 @@ for (const product of catalog.products) {
 }
 
 const linksByProduct = new Map<string, MarketPriceLink[]>();
+const reviewedLinksByUrl = new Map<string, { productId: string; link: MarketPriceLink }>();
 export const MARKETPLACE_OUTBOUND_LINKS: Record<string, OutboundLink> = {};
 for (const [code, { productIds, rows }] of byAddress) {
   if (productIds.size !== 1) continue;
@@ -102,8 +105,19 @@ for (const [code, { productIds, rows }] of byAddress) {
   if (existing.length && !same) continue;
   if (!same) MARKETPLACE_OUTBOUND_LINKS[code] = { code, merchant: address.merchant, originalUrl: address.url };
   const productLinks = linksByProduct.get(preferred.productId) ?? [];
-  productLinks.push({ goCode: same?.code ?? code, merchant: address.merchant, seller: preferred.seller || undefined, option: preferred.option, checkedOn: preferred.checkedOn });
+  const link = { goCode: same?.code ?? code, merchant: address.merchant, seller: preferred.seller || undefined, option: preferred.option, checkedOn: preferred.checkedOn };
+  productLinks.push(link);
   linksByProduct.set(preferred.productId, productLinks);
+  reviewedLinksByUrl.set(address.url, { productId: preferred.productId, link });
+}
+
+// A family can display an existing offer for an explicitly matched case option.
+for (const { familyId, productId, option, url, checkedOn } of caseMarketOptions) {
+  const variant = reviewedLinksByUrl.get(url);
+  if (variant?.productId !== productId || !getCaseOptions(familyId)?.some(entry => entry.label === option)) continue;
+  const familyLinks = linksByProduct.get(familyId) ?? [];
+  familyLinks.push({ ...variant.link, option, checkedOn });
+  linksByProduct.set(familyId, familyLinks);
 }
 
 export function productMarketplaceLinks(productId: string, offers: readonly PriceItem[], includeReviewed = true): MarketPriceLink[] {
