@@ -62,7 +62,7 @@ async function startApp(env = {}) {
       UPSTASH_REDIS_REST_URL: '', UPSTASH_REDIS_REST_TOKEN: '',
       VERCEL_GIT_COMMIT_SHA: '',
       AFFILIATE_LINKS_JSON: '',
-      VERCEL: '',
+      VERCEL: '', BLUEDEAL_GOOGLE_WRITE_LOGIN: '0', BLUEDEAL_GOOGLE_MEMBER_LOGIN: '0',
       ...env,
     },
     stdio: ['ignore', 'pipe', 'pipe'],
@@ -101,7 +101,11 @@ async function mockKv() {
       case 'MGET': return args.map(item => values.get(item) ?? null);
       case 'SET': {
         if (args.includes('NX', 2) && values.has(key)) return null;
-        values.set(key, value); expires.delete(key); return 'OK';
+        values.set(key, value);
+        expires.delete(key);
+        const ex = args.indexOf('EX', 2);
+        if (ex >= 0) expires.set(key, controls.nowMs + Number(args[ex + 1]) * 1000);
+        return 'OK';
       }
       case 'SETNX': if (values.has(key)) return 0; values.set(key, value); return 1;
       case 'MSETNX': {
@@ -110,7 +114,29 @@ async function mockKv() {
         keys.forEach((item, i) => values.set(item, args[i * 2 + 1]));
         return 1;
       }
-      case 'DEL': expires.delete(key); return Number(values.delete(key));
+      case 'DEL': return args.reduce((count, item) => {
+        expires.delete(item);
+        return count + Number(values.delete(item));
+      }, 0);
+      case 'EVAL': {
+        const keyCount = Number(value);
+        const [sessionKey, revokedKey, profileKey, authorKey, suspensionKey] = args.slice(2, 2 + keyCount);
+        const [issuedAt, rawOrRevokedAt, accountOrSeconds, alias] = args.slice(2 + keyCount);
+        const revokedAt = command(['GET', revokedKey]);
+        if (!command(['GET', sessionKey]) || (revokedAt !== null && Number(revokedAt) >= Number(issuedAt))) return null;
+        const profile = command(['GET', profileKey]);
+        if (keyCount === 5) {
+          if (command(['GET', suspensionKey])) return null;
+          if (profile) return profile;
+          command(['SET', authorKey, accountOrSeconds]);
+          command(['SET', profileKey, rawOrRevokedAt]);
+          return rawOrRevokedAt;
+        }
+        if (keyCount !== 4 || !profile || JSON.parse(profile).alias !== alias) return null;
+        command(['SET', revokedKey, rawOrRevokedAt, 'EX', accountOrSeconds]);
+        command(['DEL', sessionKey, profileKey, authorKey]);
+        return 1;
+      }
       case 'EXISTS': return Number(values.has(key));
       case 'INCR': { const n = Number(values.get(key) ?? 0) + 1; values.set(key, n); return n; }
       case 'EXPIRE': {
@@ -1074,6 +1100,103 @@ try {
       const response = await fixture.call('/api/admin/login', { password: fixture.password }, { ip: '198.51.100.200', forwardedFor: '203.0.113.200' });
       assert.equal(response.status, 429);
     } finally { await fixture.stop(); }
+  });
+  await check('Google membership signup, account withdrawal and suspension across sessions', async () => {
+    const kv = await mockKv();
+    const password = randomBytes(24).toString('hex');
+    const memberKey = randomBytes(32).toString('hex');
+    const member = createHmac('sha256', Buffer.from(memberKey, 'hex')).update('google:fixture-subject').digest('hex');
+    const app = await startApp({
+      ADMIN_PASSWORD: password, KV_REST_API_URL: kv.url, KV_REST_API_TOKEN: kv.token,
+      BLUEDEAL_GOOGLE_WRITE_LOGIN: '1', BLUEDEAL_GOOGLE_CLIENT_ID: 'fixture-client', BLUEDEAL_GOOGLE_CLIENT_SECRET: 'fixture-only',
+      BLUEDEAL_MEMBER_KEY: memberKey,
+    });
+    const path = '/api/member';
+    const write = '/api/posts';
+    const create = { boardKey: 'hardware', type: 'general', title: 'Writer test', content: 'Local test only', authorName: '변조 이름' };
+    const issue = { boardKey: 'issue', type: 'general', content: '이슈 작성 테스트' };
+    const session = (issuedAt = Date.now()) => {
+      const token = randomBytes(32).toString('hex');
+      kv.values.set('bd:member:session:' + createHash('sha256').update(token).digest('hex'), JSON.stringify({ id: member, issuedAt }));
+      return '__Host-bd-writer=' + token;
+    };
+    try {
+      const home = await (await fetch(app.base + '/')).text();
+      assert.match(home, /회원가입/);
+      assert.ok(home.includes('href="/signup"'));
+      assert.ok(home.includes('href="/login"'));
+      for (const [page, title] of [['login', '로그인'], ['signup', '회원가입'], ['account', '내 계정']]) {
+        const html = await (await fetch(app.base + '/' + page)).text();
+        assert.match(html, new RegExp('>' + title + '</h1>'));
+        assert.match(html, /noindex/);
+      }
+      assert.equal((await request(app.base, 'GET', path)).data.state, 'login');
+      assert.equal((await request(app.base, 'GET', write + '?boardKey=hardware')).status, 200);
+      assert.equal((await request(app.base, 'POST', write, create)).status, 401);
+      assert.equal((await request(app.base, 'POST', write, issue)).status, 401);
+      assert.equal((await request(app.base, 'POST', write, { ...create, boardKey: 'it', type: 'news' })).status, 401);
+      assert.equal((await request(app.base, 'POST', write, { ...create, boardKey: 'inquiry' })).status, 401);
+      const inquiry = { ...create, boardKey: 'inquiry', isPrivate: true, password: 'private-test' };
+      assert.equal((await request(app.base, 'POST', write, inquiry)).status, 201);
+
+      const cookie = session();
+      assert.equal((await request(app.base, 'GET', path, undefined, cookie)).data.state, 'nickname');
+      assert.equal((await request(app.base, 'POST', write, create, cookie)).status, 401);
+      assert.equal((await request(app.base, 'POST', path, { nickname: '블루딜 AI' }, cookie)).status, 400);
+      assert.equal((await request(app.base, 'POST', path, { nickname: '검증 닉네임' }, cookie)).data.nickname, '검증 닉네임');
+      assert.equal((await request(app.base, 'POST', path, { nickname: '다른 이름' }, cookie)).data.nickname, '검증 닉네임');
+
+      const posted = await request(app.base, 'POST', write, create, cookie);
+      assert.equal(posted.status, 201);
+      assert.equal(posted.data.post.authorName, '검증 닉네임');
+      assert.doesNotMatch(JSON.stringify(posted.data), /writerId|fixture-subject/);
+      assert.ok(!JSON.stringify(posted.data).includes(member));
+      const id = posted.data.post.id;
+      const postPath = write + '/' + id;
+      const moderation = '/api/admin/member-suspension/' + id;
+      const alias = kv.values.get('bd:member:post:' + id);
+      assert.notEqual(alias, member);
+      assert.equal(kv.values.get('bd:member:author:' + alias), member);
+      assert.equal((await request(app.base, 'PUT', moderation, { days: 7 }, cookie)).status, 403);
+      const login = await request(app.base, 'POST', '/api/admin/login', { password });
+      assert.equal(login.status, 200);
+      const admin = login.headers.get('set-cookie').split(';')[0];
+      assert.equal((await request(app.base, 'PUT', moderation, { days: 0 }, admin)).status, 400);
+      assert.equal((await request(app.base, 'PUT', moderation, { days: 1 }, admin)).status, 200);
+      assert.equal((await request(app.base, 'GET', postPath)).status, 200);
+      assert.equal((await request(app.base, 'POST', write, create, cookie)).data.errorCode, 'WRITER_SUSPENDED');
+      assert.equal((await request(app.base, 'DELETE', path, undefined, cookie)).status, 200);
+      assert.equal((await request(app.base, 'GET', path, undefined, cookie)).data.state, 'login');
+
+      const newSession = session();
+      assert.equal((await request(app.base, 'GET', path, undefined, newSession)).data.state, 'suspended');
+      assert.equal((await request(app.base, 'POST', path, { nickname: '다른 이름' }, newSession)).status, 403);
+      assert.equal((await request(app.base, 'POST', write, issue, newSession)).status, 403);
+      assert.equal((await request(app.base, 'POST', write, inquiry, newSession)).status, 201);
+      assert.equal((await request(app.base, 'POST', write, create, admin)).status, 201);
+
+      assert.equal((await request(app.base, 'DELETE', moderation, undefined, admin)).data.until, null);
+      assert.equal((await request(app.base, 'GET', path, undefined, newSession)).data.state, 'ready');
+      assert.equal((await request(app.base, 'PUT', moderation, { days: 1 }, admin)).status, 200);
+      const otherDevice = session();
+      assert.equal((await request(app.base, 'POST', path, { action: 'withdraw' }, newSession)).status, 200);
+      assert.equal((await request(app.base, 'GET', path, undefined, otherDevice)).data.state, 'login');
+      assert.equal(kv.values.has('bd:member:profile:' + member), false);
+      assert.equal(kv.values.has('bd:member:author:' + alias), false);
+      assert.equal((await request(app.base, 'GET', postPath)).data.post.authorName, '검증 닉네임');
+
+      const rejoinedSession = session(Date.now() + 5_000);
+      const restricted = await request(app.base, 'GET', path, undefined, rejoinedSession);
+      assert.equal(restricted.data.state, 'suspended');
+      assert.equal(restricted.data.registered, false);
+      assert.equal((await request(app.base, 'POST', path, { nickname: '재가입 닉네임' }, rejoinedSession)).status, 403);
+      kv.controls.nowMs += 86_400_001;
+      assert.equal((await request(app.base, 'GET', path, undefined, rejoinedSession)).data.state, 'nickname');
+      assert.equal((await request(app.base, 'POST', path, { nickname: '재가입 닉네임' }, rejoinedSession)).status, 200);
+      assert.equal((await request(app.base, 'POST', write, issue, rejoinedSession)).status, 201);
+      assert.equal((await request(app.base, 'DELETE', postPath, undefined, admin)).status, 200);
+      assert.equal(kv.values.has('bd:member:post:' + id), false);
+    } finally { await stopChild(app.child); }
   });
   const failures = results.filter(result => !result.passed).length;
   console.log(`\n${results.length - failures}/${results.length} checks passed.`);

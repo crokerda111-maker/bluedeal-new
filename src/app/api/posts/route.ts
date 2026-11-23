@@ -3,6 +3,7 @@ import { postJson } from "../../../lib/postAccess";
 import type { BoardKey, Post, PostType } from "../../../lib/postTypes";
 import { getBoardByKey, getAllowedTypes, POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
 import { isAdminRequest } from "../../../lib/adminAuth";
+import { memberWritingEnabled, readWriter } from "../../../lib/memberWrite";
 import { KvNotConfiguredError } from "../../../lib/kvRest";
 import { createOnlinePost, listOnlinePostsByBoard, PostValidationError } from "../../../lib/onlinePosts";
 import { issuePostTitle, POST_LIMITS, validateIssueLine, validatePostFields } from "../../../lib/postInput";
@@ -96,7 +97,7 @@ export async function POST(req: NextRequest) {
   const type = body?.type as PostType | undefined;
   const title = String(body?.title ?? "");
   const content = String(body?.content ?? "");
-  const authorName = typeof body?.authorName === "string" ? body.authorName : undefined;
+  let authorName = typeof body?.authorName === "string" ? body.authorName : undefined;
   const extra = body?.extra;
 
   const board = boardKey ? getBoardByKey(boardKey as any) : undefined;
@@ -134,6 +135,23 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  let writerId: string | undefined;
+  if (memberWritingEnabled() && !isAdminRequest(req) && (boardKey !== "inquiry" || !isPrivate)) {
+    try {
+      const writer = await readWriter(req);
+      if (writer.status.state === "suspended") {
+        return json({ errorCode: "WRITER_SUSPENDED", error: "글쓰기 제재 기간입니다." }, { status: 403 });
+      }
+      if (!writer.identity?.profile || writer.status.state !== "ready") {
+        return json({ errorCode: "WRITER_REQUIRED", error: "구글로 로그인한 뒤 닉네임을 등록해 주세요." }, { status: 401 });
+      }
+      writerId = writer.identity.profile.alias;
+      authorName = writer.status.nickname;
+    } catch {
+      return json({ errorCode: "WRITER_UNAVAILABLE", error: "글쓰기 계정을 확인하지 못했습니다. 잠시 후 다시 시도해 주세요." }, { status: 503 });
+    }
+  }
+
   try {
     const post = await createOnlinePost({
       boardKey,
@@ -141,6 +159,7 @@ export async function POST(req: NextRequest) {
       title,
       content,
       authorName,
+      writerId,
       extra,
       isPrivate,
       password,

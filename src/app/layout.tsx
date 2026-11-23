@@ -1,6 +1,8 @@
 import "./globals.css";
 import SiteHeader from "./_components/SiteHeader";
 import SiteFooter from "./_components/SiteFooter";
+import { MemberSession } from "../components/MemberSession";
+import { memberLoginEnabled } from "../lib/memberWrite";
 import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from "../lib/site";
 
 export const metadata = {
@@ -24,9 +26,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
 
         <div className="relative flex min-h-screen flex-col">
-          <SiteHeader />
-          <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-6xl flex-1 scroll-mt-32 px-4 py-8 md:scroll-mt-24">{children}</main>
-          <SiteFooter />
+          <MemberSession enabled={memberLoginEnabled()}>
+            <SiteHeader />
+            <main id="main-content" tabIndex={-1} className="mx-auto w-full max-w-6xl flex-1 scroll-mt-32 px-4 py-8 md:scroll-mt-24">{children}</main>
+            <SiteFooter />
+          </MemberSession>
         </div>
       </body>
     </html>

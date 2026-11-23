@@ -6,6 +6,7 @@ import { isHotdealAuthor, type VerifiedHotdeal } from "./hotdeal";
 import { getBoardByKey, getAllowedTypes } from "./boardConfig";
 import { getAdminPassword } from "./adminAuth";
 import { kvCommand, kvMultiExec, kvPipeline } from "./kvRest";
+import { writerPostKey } from "./memberWrite";
 import { createOrReuseOutboundCode, isHttpUrlString } from "./onlineOutbound";
 import { issuePostTitle, PostValidationError, validatePostFields } from "./postInput";
 export { PostValidationError } from "./postInput";
@@ -136,6 +137,7 @@ export type CreateOnlinePostInput = {
   title: string;
   content: string;
   authorName?: string;
+  writerId?: string;
   isPrivate?: boolean;
   password?: string | null;
   /**
@@ -207,6 +209,7 @@ export async function createOnlinePost(input: CreateOnlinePostInput, verified?: 
   await kvMultiExec([
     ["SET", postKey(id), JSON.stringify(post)],
     ["ZADD", boardZsetKey(input.boardKey), score, id],
+    ...(input.writerId ? [["SET", writerPostKey(id), input.writerId]] : []),
   ]);
 
   return post;
@@ -351,7 +354,7 @@ export async function deleteOnlinePost(id: string): Promise<boolean> {
   if (!current) return false;
 
   await kvMultiExec([
-    ["DEL", postKey(id)],
+    ["DEL", postKey(id), writerPostKey(id)],
     ["ZREM", boardZsetKey(current.boardKey), id],
   ]);
 

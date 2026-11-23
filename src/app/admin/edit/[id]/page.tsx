@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import MemberSuspension from "../../../../components/MemberSuspension";
 import { useRouter } from "next/navigation";
 import { use, useEffect, useMemo, useRef, useState } from "react";
 import { getBoardByKey, getTypeOptionsForBoard, POST_TYPE_LABEL, boardKeyToPath } from "../../../../lib/boardConfig";
@@ -417,6 +418,7 @@ function AdminEdit({ id }: { id: string }) {
           </div>
         </fieldset>
       </form>
+      <MemberSuspension postId={post.id} />
     </div>
   );
 }

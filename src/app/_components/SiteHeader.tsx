@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useId, useMemo, useRef, useState } from "react";
 import { COMMUNITY_BOARDS } from "../../lib/boardConfig";
 import { PRICE_CATEGORIES } from "../../lib/priceCategories";
-import NicknameEditor from "../../components/NicknameEditor";
+import { useMemberSession } from "../../components/MemberSession";
 
 function cn(...v: Array<string | false | null | undefined>) {
   return v.filter(Boolean).join(" ");
@@ -108,6 +108,8 @@ function DropItem({ href, children }: { href: string; children: React.ReactNode 
 
 export default function SiteHeader() {
   const pathname = usePathname();
+  const { status } = useMemberSession();
+  const hasSession = status?.state === "ready" || status?.state === "nickname" || status?.state === "suspended";
 
   const communityItems = useMemo(() => COMMUNITY_BOARDS, []);
   const priceItems = useMemo(() => PRICE_CATEGORIES, []);
@@ -168,9 +170,18 @@ export default function SiteHeader() {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-2">
-            <NicknameEditor header />
-          </div>
+          <nav aria-label="회원 메뉴" className="flex shrink-0 items-center gap-1.5 text-xs sm:gap-2 sm:text-sm">
+            {hasSession ? (
+              <Link href="/account" className="flex min-h-11 max-w-36 items-center rounded-xl border border-white/15 bg-white/5 px-3 font-medium text-white/90 hover:bg-white/10 sm:max-w-48">
+                <span className="truncate">{status.state === "ready" ? status.nickname : "내 계정"}</span>
+              </Link>
+            ) : (
+              <>
+                <Link href="/login" className="inline-flex min-h-11 items-center rounded-xl px-2 text-white/85 hover:bg-white/10 sm:px-3">로그인</Link>
+                <Link href="/signup" className="inline-flex min-h-11 items-center rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-2.5 font-semibold text-cyan-100 hover:bg-cyan-300/20 sm:px-3">회원가입</Link>
+              </>
+            )}
+          </nav>
         </div>
 
         <nav aria-label="모바일 주요 메뉴" className="mt-3 grid grid-cols-3 gap-1.5 sm:grid-cols-5 lg:hidden">

@@ -7,9 +7,8 @@ import { POST_TYPE_OPTIONS } from "../../../lib/boardConfig";
 import type { InquiryVisibility, PostType } from "../../../lib/postTypes";
 import { apiCreatePost, postErrorMessage } from "../../../lib/postsClient";
 import { POST_LIMITS } from "../../../lib/postInput";
-import NicknameEditor from "../../../components/NicknameEditor";
+import MemberWriteGate, { useWriterNickname, WriterNicknameEditor } from "../../../components/MemberWriteGate";
 import PostCreatedNotice from "../../../components/PostCreatedNotice";
-import { useNickname } from "../../../lib/useNickname";
 
 function cn(...v: Array<string | false | null | undefined>) {
   return v.filter(Boolean).join(" ");
@@ -17,7 +16,7 @@ function cn(...v: Array<string | false | null | undefined>) {
 
 type ProductContext = { id: string; name: string; referenceCode: string };
 
-export default function ContactWritePage({ productContext }: { productContext?: ProductContext }) {
+export default function ContactWritePage({ productContext, loginEnabled }: { productContext?: ProductContext; loginEnabled: boolean }) {
   const sp = useSearchParams();
   const from = (sp.get("from") ?? "").toLowerCase();
   const fromPrices = from === "prices";
@@ -25,10 +24,15 @@ export default function ContactWritePage({ productContext }: { productContext?: 
   const initialVis: InquiryVisibility = sp.get("vis") === "private" ? "private" : "public";
 
   const product = from === "products" ? productContext : undefined;
-  return <ContactForm key={`${fromPrices}:${category}:${initialVis}:${product?.id ?? ""}`} fromPrices={fromPrices} product={product} category={category} initialVis={initialVis} />;
+  const privateOnly = loginEnabled && initialVis === "private";
+  const needsLogin = loginEnabled && !privateOnly && !fromPrices && !product;
+  return <MemberWriteGate enabled={needsLogin} nextPath="/contact/write">
+    <ContactForm key={`${fromPrices}:${category}:${initialVis}:${product?.id ?? ""}`} fromPrices={fromPrices}
+      product={product} category={category} initialVis={initialVis} privateOnly={privateOnly} />
+  </MemberWriteGate>;
 }
 
-function ContactForm({ fromPrices, product, category, initialVis }: { fromPrices: boolean; product?: ProductContext; category: string; initialVis: InquiryVisibility }) {
+function ContactForm({ fromPrices, product, category, initialVis, privateOnly }: { fromPrices: boolean; product?: ProductContext; category: string; initialVis: InquiryVisibility; privateOnly: boolean }) {
   const adminOnly = fromPrices || Boolean(product);
   const router = useRouter();
   const [visibility, setVisibility] = useState<InquiryVisibility>(adminOnly ? "private" : initialVis);
@@ -39,7 +43,7 @@ function ContactForm({ fromPrices, product, category, initialVis }: { fromPrices
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const authorName = useNickname();
+  const authorName = useWriterNickname();
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [createdHref, setCreatedHref] = useState<string | null>(null);
@@ -148,7 +152,7 @@ function ContactForm({ fromPrices, product, category, initialVis }: { fromPrices
                 className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 outline-none"
               />
             </label>
-            <NicknameEditor />
+            <WriterNicknameEditor />
           </div>
 
           {/* 공개/비공개 */}
@@ -157,8 +161,8 @@ function ContactForm({ fromPrices, product, category, initialVis }: { fromPrices
             <div className="mt-2 flex gap-2">
               <button
                 type="button"
-                onClick={() => !adminOnly && setVisibility("public")}
-                disabled={adminOnly}
+                onClick={() => !adminOnly && !privateOnly && setVisibility("public")}
+                disabled={adminOnly || privateOnly}
                 aria-pressed={effectiveVis === "public"}
                 className={cn(
                   "rounded-xl border px-3 py-2 text-sm disabled:opacity-60",

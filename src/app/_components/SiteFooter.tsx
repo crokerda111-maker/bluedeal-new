@@ -8,6 +8,7 @@ export default function SiteFooter() {
 
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 [&_a]:inline-flex [&_a]:min-h-11 [&_a]:items-center">
           <Link className="hover:text-white" href="/about">소개·가격 안내</Link>
+          <Link className="hover:text-white" href="/privacy">개인정보처리방침</Link>
           <Link className="hover:text-white" href="/about#affiliate">제휴 안내</Link>
           <Link className="hover:text-white" href="/it">
             IT 소식

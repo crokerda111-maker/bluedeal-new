@@ -2,18 +2,25 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import NicknameEditor from "./NicknameEditor";
+import MemberWriteGate, { useWriterNickname, WriterNicknameEditor } from "./MemberWriteGate";
 import PostLoadError from "./PostLoadError";
 import { issuePostTitle, POST_LIMITS } from "../lib/postInput";
 import { formatKoreanDate } from "../lib/postStorage";
 import type { Post } from "../lib/postTypes";
 import { apiCreatePost, apiListPosts, postErrorMessage } from "../lib/postsClient";
-import { useNickname } from "../lib/useNickname";
+
+function IssueWriterIdentity() {
+  const name = useWriterNickname();
+  return <div className="mb-3 flex items-center justify-between gap-3">
+    <input type="hidden" name="authorName" value={name} />
+    <span className="min-w-0 text-sm text-white/80 [overflow-wrap:anywhere]">{name}</span>
+    <WriterNicknameEditor />
+  </div>;
+}
 
 const fieldClass = "min-w-0 rounded-xl border border-white/20 bg-white/5 px-3 py-2 text-base text-white placeholder:text-white/60 focus-visible:outline-2 focus-visible:outline-cyan-300";
 
 export default function IssueFeed({ title, description }: { title: string; description: string }) {
-  const authorName = useNickname();
   const [draft, setDraft] = useState("");
   const [query, setQuery] = useState("");
   const [posts, setPosts] = useState<Post[] | null>(null);
@@ -42,6 +49,7 @@ export default function IssueFeed({ title, description }: { title: string; descr
     setSaving(true);
     setFeedback({});
     try {
+      const authorName = new FormData(event.currentTarget).get("authorName")?.toString();
       const post = await apiCreatePost({ boardKey: "issue", type: "general", content, authorName });
       setRecentPosts(current => [post, ...current]);
       setDraft("");
@@ -68,43 +76,44 @@ export default function IssueFeed({ title, description }: { title: string; descr
       <section className="bd-surface-md p-4 sm:p-6" aria-labelledby="issue-title">
         <h1 id="issue-title" className="text-2xl font-semibold tracking-tight">{title}</h1>
         <p className="mt-1 text-sm text-white/75">{description}</p>
-        <div className="mt-4 flex items-center justify-between gap-3">
-          <span className="min-w-0 text-sm text-white/80 [overflow-wrap:anywhere]">{authorName}</span>
-          <NicknameEditor />
+        <div className="mt-4">
+          <MemberWriteGate nextPath="/community/issue">
+            <form aria-busy={saving} onSubmit={submit}>
+              <IssueWriterIdentity />
+              <label htmlFor="issue-line" className="sr-only">한 줄 이슈</label>
+              <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2">
+                <input
+                  ref={input}
+                  id="issue-line"
+                  className={fieldClass}
+                  type="text"
+                  value={draft}
+                  onChange={event => setDraft(event.target.value)}
+                  maxLength={POST_LIMITS.issueLine}
+                  required
+                  readOnly={saving}
+                  enterKeyHint="send"
+                  placeholder="제품·버전, 증상 또는 해결 방법"
+                  aria-describedby="issue-line-limit"
+                />
+                <button
+                  type="submit"
+                  disabled={saving || !draft.trim()}
+                  className="min-h-11 rounded-xl bg-cyan-300 px-4 text-sm font-semibold text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 disabled:opacity-60"
+                >
+                  {saving ? "등록 중" : "등록"}
+                </button>
+              </div>
+              <div className="mt-2 flex items-start justify-between gap-2 text-xs">
+                <div>
+                  {feedback.error ? <p role="alert" className="text-red-200">{feedback.error}</p> : null}
+                  <p role="status" className="text-cyan-200">{feedback.status}</p>
+                </div>
+                <p id="issue-line-limit" className="shrink-0 text-white/70">{draft.length}/{POST_LIMITS.issueLine}자</p>
+              </div>
+            </form>
+          </MemberWriteGate>
         </div>
-        <form className="mt-3" aria-busy={saving} onSubmit={submit}>
-          <label htmlFor="issue-line" className="sr-only">한 줄 이슈</label>
-          <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2">
-            <input
-              ref={input}
-              id="issue-line"
-              className={fieldClass}
-              type="text"
-              value={draft}
-              onChange={event => setDraft(event.target.value)}
-              maxLength={POST_LIMITS.issueLine}
-              required
-              readOnly={saving}
-              enterKeyHint="send"
-              placeholder="제품·버전, 증상 또는 해결 방법"
-              aria-describedby="issue-line-limit"
-            />
-            <button
-              type="submit"
-              disabled={saving || !draft.trim()}
-              className="min-h-11 rounded-xl bg-cyan-300 px-4 text-sm font-semibold text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 disabled:opacity-60"
-            >
-              {saving ? "등록 중" : "등록"}
-            </button>
-          </div>
-          <div className="mt-2 flex items-start justify-between gap-2 text-xs">
-            <div>
-              {feedback.error ? <p role="alert" className="text-red-200">{feedback.error}</p> : null}
-              <p role="status" className="text-cyan-200">{feedback.status}</p>
-            </div>
-            <p id="issue-line-limit" className="shrink-0 text-white/70">{draft.length}/{POST_LIMITS.issueLine}자</p>
-          </div>
-        </form>
       </section>
 
       <section className="bd-surface-md" aria-labelledby="issue-list">

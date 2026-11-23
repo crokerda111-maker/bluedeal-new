@@ -7,9 +7,8 @@ import { IT_BOARD, type FieldDef } from "../../../lib/boardConfig";
 import type { PostExtra, PostType } from "../../../lib/postTypes";
 import { apiAdminStatus, apiCreatePost, postErrorMessage } from "../../../lib/postsClient";
 import { POST_LIMITS } from "../../../lib/postInput";
-import NicknameEditor from "../../../components/NicknameEditor";
+import { useWriterNickname, WriterNicknameEditor } from "../../../components/MemberWriteGate";
 import PostCreatedNotice from "../../../components/PostCreatedNotice";
-import { useNickname } from "../../../lib/useNickname";
 
 function Field({ def, value, onChange }: { def: FieldDef; value: string; onChange: (v: string) => void }) {
   const base =
@@ -74,7 +73,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
   const [isAdmin, setIsAdmin] = useState(false);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const authorName = useNickname();
+  const authorName = useWriterNickname();
   const [extra, setExtra] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
@@ -167,7 +166,7 @@ export default function ITWritePage({ searchParams }: { searchParams: Promise<{ 
                 className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 outline-none"
               />
             </label>
-            <NicknameEditor />
+            <WriterNicknameEditor />
           </div>
 
           <fieldset>

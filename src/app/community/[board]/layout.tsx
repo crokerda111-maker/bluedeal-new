@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import { MemberWritingAvailability } from "../../../components/MemberWriteGate";
+import { memberWritingEnabled } from "../../../lib/memberWrite";
 import { getCommunityBoard } from "../../../lib/boardConfig";
 import { pageMetadata } from "../../../lib/site";
 
@@ -8,6 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ board: st
 }
 
 export default async function BoardLayout({ children, params }: { children: React.ReactNode; params: Promise<{ board: string }> }) {
-  if (!getCommunityBoard((await params).board)) notFound();
-  return children;
+  const board = getCommunityBoard((await params).board);
+  if (!board) notFound();
+  if (board.key !== "issue") return children;
+  return <MemberWritingAvailability enabled={memberWritingEnabled()}>{children}</MemberWritingAvailability>;
 }
