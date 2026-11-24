@@ -28,6 +28,7 @@ export default function FullPcPriceAssessment({ row, peers }: { row: FullPcBoard
     </dl>
     {priceComparison && total !== null ? <div className="space-y-2 text-sm leading-6 text-white/80">
       <p>{row.comparison}</p>
+      <p className="text-xs text-white/70">같은 CPU·GPU·운영체제라도 SSD 용량, 메인보드, 파워, 보증 조건이 다를 수 있습니다. 각 상품의 부품 평가와 함께 비교하세요.</p>
       <p>비교군의 최저 배송 포함 가격은 <strong className="text-cyan-100">{fmtWon(priceComparison.lowest)}</strong>입니다. {total > priceComparison.lowest ? `이 상품은 ${fmtWon(total - priceComparison.lowest)} 더 비쌉니다.` : "이 상품이 비교군 최저가입니다."}</p>
       <p className="text-xs text-white/70">가격 점수는 당일 비교군 최저가 ÷ 이 상품의 배송 포함 기본가 × 40입니다. 쿠폰·카드 할인과 적립은 점수 계산에서 제외합니다.</p>
       <ul className="divide-y divide-white/10 rounded-lg border border-white/10 px-3">

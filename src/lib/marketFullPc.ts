@@ -177,6 +177,9 @@ export function orderFullPcBoard(a: FullPcBoardRow, b: FullPcBoardRow) {
 export function homeFullPcCandidates(rows: readonly FullPcBoardRow[], tier: FullPcBoardRow["tier"]) {
   const candidates = rows.filter(row => row.tier === tier && !row.unavailable && row.offer).sort(orderFullPcBoard);
   const recommended = candidates.filter(row => row.recommendation);
+  if (recommended.length) return recommended.slice(0, 4);
   const observed = candidates.filter(row => row.checkedToday && row.review && row.offer?.availability === "in-stock");
-  return (recommended.length ? recommended : observed.length ? observed : candidates).slice(0, 4);
+  const compared = observed.filter(row => row.priceComparison);
+  if (compared.length) return compared.slice(0, 4);
+  return (observed.length ? observed : candidates).slice(0, 4);
 }
