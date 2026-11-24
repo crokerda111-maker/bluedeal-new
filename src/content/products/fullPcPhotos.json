@@ -4,6 +4,13 @@
     "alt": "서린컴퓨터 V100 ARGB 화이트 완본체",
     "source": "https://store.ohou.se/goods/4100098",
     "sourceLabel": "오늘의집",
+    "crop": {
+      "x": 5,
+      "y": 6,
+      "size": 90,
+      "background": "#e8edf4",
+      "mask": "polygon(12% 10.5%, 18% 9.6%, 83% 12.3%, 87.1% 13.4%, 84.9% 82.7%, 72.5% 93.7%, 13.4% 82%, 12% 76.5%)"
+    },
     "imageSource": "https://prs.ohousecdn.com/apne2/any/uploads/productions/v1-510227154726912.jpg?c=c&h=640&w=640"
   },
   "reviewed-fullpc-11st-8675735260": {
@@ -11,6 +18,7 @@
     "alt": "서린컴퓨터 SRC0004_261120 블랙 완본체",
     "source": "https://www.11st.co.kr/products/8675735260",
     "sourceLabel": "11번가",
+    "crop": { "x": 11.5, "y": 14, "size": 78 },
     "imageSource": "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/pd/v2/7/3/5/2/6/0/MgaIu/8675735260_B.webp"
   },
   "reviewed-fullpc-11st-9450696630": {
@@ -18,6 +26,7 @@
     "alt": "파이온PC DX98D-NX580H 완본체",
     "source": "https://www.11st.co.kr/products/9450696630",
     "sourceLabel": "11번가",
+    "crop": { "x": 14.7, "y": 11.4, "size": 69 },
     "imageSource": "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/9450696630/B.webp?921226712"
   },
   "reviewed-fullpc-11st-9423305936": {
@@ -25,6 +34,7 @@
     "alt": "아싸컴 EV_A78D-A97T-C1T 완본체",
     "source": "https://www.11st.co.kr/products/9423305936",
     "sourceLabel": "11번가",
+    "crop": { "x": 11.7, "y": 15, "size": 78 },
     "imageSource": "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/9423305936/B.webp?74250394"
   },
   "reviewed-fullpc-gmarket-3951478263": {
@@ -32,6 +42,7 @@
     "alt": "아싸컴 EV_A98D-A97T-C1T 완본체",
     "source": "https://item.gmarket.co.kr/Item?goodscode=3951478263",
     "sourceLabel": "G마켓",
+    "crop": { "x": 12.1, "y": 14, "size": 80 },
     "imageSource": "https://gdimg.gmarket.co.kr/3951478263/still/280?ver=1795417138"
   },
   "reviewed-fullpc-gmarket-4355054602": {
@@ -39,6 +50,13 @@
     "alt": "퍼플랩 어드레날린 AX78-R97XTA 완본체",
     "source": "https://item.gmarket.co.kr/Item?goodscode=4355054602",
     "sourceLabel": "G마켓",
+    "crop": {
+      "x": 0,
+      "y": 12.1,
+      "size": 72,
+      "background": "#151925",
+      "mask": "polygon(8.4% 27%, 28% 17.2%, 34.3% 16%, 55.9% 19.7%, 58% 79.5%, 56.6% 81%, 8.4% 81%, 7% 79%)"
+    },
     "imageSource": "https://gdimg.gmarket.co.kr/4355054602/still/280?ver=1795407473"
   },
   "reviewed-fullpc-gmarket-4864796475": {
@@ -46,6 +64,7 @@
     "alt": "씨넥스 CY146KF5616G1000G_261102 완본체",
     "source": "https://item.gmarket.co.kr/Item?goodscode=4864796475",
     "sourceLabel": "G마켓",
+    "crop": { "x": 20.8, "y": 20.4, "size": 56.1 },
     "imageSource": "https://gdimg.gmarket.co.kr/4864796475/still/280?ver=1795078670"
   }
 }

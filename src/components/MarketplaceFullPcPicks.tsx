@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { connection } from "next/server";
 import { getOfferAffiliateCodes } from "../lib/affiliateStore";
@@ -9,6 +8,7 @@ import type { PriceItem } from "../lib/mockPrices";
 import { priceBenefits } from "../lib/priceBenefits";
 import FullPcSpotlights from "./FullPcSpotlights";
 import { fmtWon, formatPriceTime } from "./PriceOffer";
+import ProductPhoto from "./ProductPhoto";
 
 const allTiers = Object.keys(FULL_PC_TIERS) as FullPcTier[];
 const fullBoard = "/prices/fullpc";
@@ -26,15 +26,7 @@ function PcCard({ row, now, affiliate, home, movement }: { row: FullPcBoardRow; 
     : "grid min-w-0 gap-3 px-3 py-4 sm:grid-cols-[minmax(0,1fr)_minmax(11rem,0.42fr)] sm:px-4"}>
     <div className="min-w-0">
       {home ? <p className="mb-2 text-sm font-semibold text-cyan-200">{FULL_PC_TIERS[row.tier].label}</p> : null}
-      {photo ? <figure className="mb-3">
-        <div className="h-40 overflow-hidden rounded-lg bg-slate-100 sm:h-44">
-          <Image data-fullpc-photo src={photo.src} alt={photo.alt} width={480} height={480} unoptimized className="h-full w-full object-contain" />
-        </div>
-        <figcaption className="mt-1 text-xs leading-5 text-white/70">
-          <a href={photo.source} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">사진 출처 · {photo.sourceLabel}<span className="sr-only"> (새 창)</span></a>
-          {" · 실제 출고 구성은 옵션 확인"}
-        </figcaption>
-      </figure> : null}
+      {photo ? <div className="mb-3"><ProductPhoto photo={photo} /></div> : null}
       <p className="break-words text-xs leading-5 text-white/70">{[offer?.source, offer?.seller].filter(Boolean).join(" · ") || product.brand}</p>
       <Heading className="mt-1 break-words font-semibold leading-6 text-white">
         <Link prefetch={false} href={`/products/${product.id}#fullpc-configuration`} className="hover:underline focus-visible:underline">{product.name}</Link>

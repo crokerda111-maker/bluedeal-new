@@ -7,6 +7,7 @@ export type ProductPhoto = {
   alt: string;
   source: string;
   sourceLabel: string;
+  crop?: { x: number; y: number; size: number; mask?: string; background?: string };
 };
 
 export type CaseOption = {
