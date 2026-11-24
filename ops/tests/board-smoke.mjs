@@ -9,6 +9,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
+import { load } from 'cheerio';
 import reservedPorts from 'next/dist/lib/helpers/get-reserved-port.js';
 import { assertBrowserHeaders } from './browser-headers.mjs';
 import { assertPublicMetadata, assertExcludedMetadata } from './page-metadata.mjs';
@@ -418,10 +419,29 @@ try {
         conditions: '공개 행사 가격', review: '제조사 공식 옵션 확인', issue: '동일 옵션을 선택하세요.',
         notesSource: 'https://example.invalid/verified-option',
       };
+      const history = [1, 2, 3].map((days, index) => ({
+        productUrl: deal.productUrl, option: deal.option, conditions: deal.conditions,
+        availability: deal.availability, at: new Date(now - days * 86400000).toISOString(),
+        price: 44000 + index * 2000, shipping: 3000,
+      }));
+      deal.priceHistory = history;
       assert.equal((await request(disclosureApp.base, 'POST', route, deal)).status, 401);
       assert.equal((await request(disclosureApp.base, 'POST', route, { ...deal, availability: 'out-of-stock' }, session)).status, 422);
       assert.equal((await request(disclosureApp.base, 'POST', route, { ...deal, checkedAt: new Date(now - 7 * 3600000).toISOString() }, session)).status, 422);
-      assert.equal((await request(disclosureApp.base, 'POST', route, { ...deal, productUrl: 'https://item.gmarket.co.kr/Item?goodscode=000001' }, session)).status, 422);
+      const unregistered = 'https://item.gmarket.co.kr/Item?goodscode=000001';
+      const missingAffiliate = await request(disclosureApp.base, 'POST', route, {
+        ...deal, productUrl: unregistered, priceHistory: history.map(row => ({ ...row, productUrl: unregistered })),
+      }, session);
+      assert.equal(missingAffiliate.status, 422);
+      assert.match(missingAffiliate.data.error, /공식 제휴 링크/);
+      for (const priceHistory of [undefined, history.slice(0, 2), history.map(row => ({ ...row, conditions: '특정 카드' })), history.map(row => ({ ...row, option: '다른 옵션' }))]) {
+        const response = await request(disclosureApp.base, 'POST', route, { ...deal, priceHistory }, session);
+        assert.equal(response.status, 422);
+        assert.match(response.data.error, /가격 기록 3일/);
+      }
+      const tooHigh = await request(disclosureApp.base, 'POST', route, { ...deal, shipping: 5000 }, session);
+      assert.equal(tooHigh.status, 422);
+      assert.match(tooHigh.data.error, /3% 넘게/);
       assert.equal((await request(disclosureApp.base, 'POST', '/api/posts', {
         boardKey: 'hotdeal', type: 'general', title: 'LOCAL', content: 'fake', authorName: '블루딜  ＡＩ',
       })).status, 400);
@@ -434,6 +454,7 @@ try {
       const post = detail.data.post;
       assert.equal(post.authorName, '블루딜 AI');
       assert.equal(post.hotdeal.price + post.hotdeal.shipping, 48000);
+      assert.deepEqual(post.hotdeal.priceEvidence, { low: 47000, count: 3, basis: 'history' });
       assert.match(post.extra.dealLink, /^\/go\/hd-v1-/);
       assert.ok(post.linkInfo.affiliateHrefs.includes(post.extra.dealLink));
       const list = await request(disclosureApp.base,'GET','/api/posts?boardKey=hotdeal&limit=100');
@@ -443,6 +464,20 @@ try {
       const missingMapping = await fetch(app.base + post.extra.dealLink, { redirect: 'manual' });
       assert.equal(missingMapping.status, 404);
       assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + id, undefined, session)).status, 200);
+      const checkedAt = Date.parse(deal.checkedAt);
+      const market = [
+        'https://www.11st.co.kr/products/99887766',
+        'https://itempage3.auction.co.kr/DetailView.aspx?itemno=A123456789',
+      ].map(url => ({ ...history[0], at: new Date(checkedAt - 120_000).toISOString(), productUrl: url, publicPrice: true }));
+      const marketInput = { ...deal, shipping: 3410, publicPrice: true, priceHistory: market };
+      assert.equal((await request(disclosureApp.base, 'POST', route, { ...marketInput, priceHistory: [market[0], market[0]] }, session)).status, 422);
+      assert.equal((await request(disclosureApp.base, 'POST', route, { ...marketInput, publicPrice: false }, session)).status, 422);
+      assert.equal((await request(disclosureApp.base, 'POST', route, { ...marketInput, shipping: 3411 }, session)).status, 422);
+      const published = await request(disclosureApp.base, 'POST', route, marketInput, session);
+      assert.equal(published.status, 201);
+      const marketPost = await request(disclosureApp.base, 'GET', '/api/posts/' + published.data.id);
+      assert.deepEqual(marketPost.data.post.hotdeal.priceEvidence, { low: 47000, count: 2, basis: 'market' });
+      assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + published.data.id, undefined, session)).status, 200);
     });
     await check('reviewed news publish once and price observations expose only public quotes', async () => {
       const route = '/api/internal/editorial-news';
@@ -706,7 +741,7 @@ try {
       assert.match(html, /핫딜을 불러오는 중입니다/);
       assert.match(html, /<h1[^>]*>오늘의 완본체 베스트<\/h1>/);
       assert.match(html, /<a[^>]+href="\/prices\/fullpc"/);
-      assert.match(html, /개별 구매 대비 절약을 모두 확인한 제휴 추천 상품이 없습니다/);
+      assert.match(html, /부품 평가와 동일 구성 개별 구매 비용을 모두 검증한 추천 상품이 없어/);
       const boardReads = kv.requests.slice(before).flatMap(entry => entry.commands).filter(([command, key]) => command === 'ZREVRANGE' && String(key).startsWith('bd:board:'));
       assert.deepEqual(boardReads, [], 'the initial home document must not query boards');
       const feed = await api('GET', '/api/home-feed');
@@ -721,8 +756,15 @@ try {
   });
 
   await check('home feed returns compact public summaries and retains healthy boards during a partial outage', async () => {
+    const now = Date.now();
+    const deal = {
+      option: 'Test model', conditions: '공개가', price: 48000, shipping: 0,
+      checkedAt: new Date(now - 60_000).toISOString(), validUntil: new Date(now + 120_000).toISOString(),
+    };
     const fixtures = [
-      { id: 'home-feed-public-deal', boardKey: 'hotdeal', title: 'Public deal fixture', content: 'Public preview. '.repeat(50), extra: { store: 'Test store' } },
+      { id: 'home-feed-public-deal', boardKey: 'hotdeal', title: 'Public deal fixture', content: 'Public preview. '.repeat(50), extra: { store: 'Test store' }, hotdeal: { ...deal, priceEvidence: { low: 47000, count: 3, basis: 'history' } } },
+      { id: 'home-feed-old-deal', boardKey: 'hotdeal', title: 'UNVERIFIED_DEAL_FIXTURE', hotdeal: deal },
+      { id: 'home-feed-expensive-deal', boardKey: 'hotdeal', title: 'EXPENSIVE_DEAL_FIXTURE', hotdeal: { ...deal, priceEvidence: { low: 45000, count: 3, basis: 'history' } } },
       { id: 'home-feed-public-post', boardKey: 'hardware', title: 'Newest public post fixture', content: 'Do not transfer the whole post body' },
       { id: 'home-feed-private', boardKey: 'hotdeal', title: 'PRIVATE_HOTDEAL_TITLE', content: 'PRIVATE_HOTDEAL_BODY', isPrivate: true, passwordHash: 'PRIVATE_HASH' },
       { id: 'home-feed-inquiry', boardKey: 'inquiry', title: 'EXCLUDED_INQUIRY_TITLE', content: 'EXCLUDED_INQUIRY_BODY' },
@@ -742,7 +784,7 @@ try {
       assert.equal(data.failedCount, 1);
       assert.ok(data.deals.some(deal => deal.title === 'Public deal fixture' && deal.excerpt.length <= 140));
       assert.equal(data.posts[0].title, 'Newest public post fixture');
-      assert.doesNotMatch(JSON.stringify(data), /PRIVATE_HOTDEAL|PRIVATE_HASH|EXCLUDED_INQUIRY|Do not transfer the whole post body/);
+      assert.doesNotMatch(JSON.stringify(data), /PRIVATE_HOTDEAL|PRIVATE_HASH|EXCLUDED_INQUIRY|UNVERIFIED_DEAL_FIXTURE|EXPENSIVE_DEAL_FIXTURE|Do not transfer the whole post body/);
     } finally {
       kv.controls.partial = false;
       for (const post of fixtures) {
@@ -760,6 +802,33 @@ try {
     assert.equal(response.data.commit, fixtureCommit);
     assert.deepEqual(Object.keys(response.data).sort(), ['commit', 'service', 'version']);
     assert.match(response.headers.get('cache-control'), /no-store/);
+  });
+
+  await check('prebuilt analysis renders 8 independent ratings and distinguishes budget and unknown specs', async () => {
+    async function details(id) {
+      const response = await fetch(`${app.base}/products/${id}`);
+      assert.equal(response.status, 200);
+      const $ = load(await response.text());
+      const parts = $('[data-part-quality]');
+      assert.deepEqual(parts.toArray().map(part => $(part).attr('data-part-quality')),
+        ['cpu', 'gpu', 'board', 'ram', 'storage', 'psu', 'cooler', 'case']);
+      for (const part of parts.toArray()) {
+        assert.match($(part).find('summary').text(), /[0-5]\/5점/);
+        assert.equal($(part).find('ul li').length, 5);
+      }
+      return $;
+    }
+    const budget = await details('reviewed-fullpc-gmarket-4864796475');
+    assert.match(budget('[data-part-quality="ram"] summary').text(), /0\/5점.*절충 사양.*16GB 한 장/);
+    assert.match(budget('[data-part-quality="ram"]').text(), /IC·다이.*미확인/);
+    assert.match(budget('[data-part-quality="cpu"]').text(), /0x12F/);
+    const reviewed = await details('reviewed-fullpc-gmarket-3951478263');
+    assert.match(reviewed('[data-part-quality="psu"] summary').text(), /4\/5점.*검증 양호/);
+    assert.match(reviewed('[data-part-quality="board"]').text(), /16\+2\+2.*M2D_SB/);
+    assert.match(reviewed('[data-part-quality="ram"]').text(), /제한적 평생 보증.*같은 키트 품번에도 다른 IC/);
+    assert.match(reviewed('#fullpc-price-assessment').text(), /종합 순위 대기/);
+    const basicSsd = await details('reviewed-fullpc-11st-9423305936');
+    assert.match(basicSsd('[data-part-quality="storage"] summary').text(), /절충 사양.*DRAM 없음.*320TBW/);
   });
 
   await check('price snapshot status identifies its own release without URLs or private configuration', async () => {

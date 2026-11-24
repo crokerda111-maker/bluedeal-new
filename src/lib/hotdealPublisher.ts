@@ -3,7 +3,7 @@ import "server-only";
 import { createHash } from "node:crypto";
 import { detectMerchant, normalizeOutboundUrl, resolveAffiliateUrl } from "./affiliate";
 import { getStoredAffiliateMappings } from "./affiliateStore";
-import { HOTDEAL_AUTHOR, HOTDEAL_CATEGORIES, type VerifiedHotdeal } from "./hotdeal";
+import { HOTDEAL_AUTHOR, HOTDEAL_CATEGORIES, HOTDEAL_MAX_PREMIUM, type VerifiedHotdeal } from "./hotdeal";
 import { createOnlinePost } from "./onlinePosts";
 import { createOrReuseOutboundCode, getOutboundRow } from "./onlineOutbound";
 import { PostValidationError } from "./postInput";
@@ -47,6 +47,75 @@ function sourceLink(value: unknown): string {
   throw new PostValidationError("공개 HTTPS 출처를 입력해 주세요.");
 }
 
+function directListing(url: URL, merchant: Merchant) {
+  const path = url.pathname;
+  const query = url.searchParams;
+  switch (merchant) {
+    case "coupang": return url.hostname === "www.coupang.com" && /^\/vp\/products\/\d+$/.test(path) &&
+      /^\d+$/.test(query.get("itemId") ?? "") && /^\d+$/.test(query.get("vendorItemId") ?? "");
+    case "11st": return /^\/products\/\d+\/?$/.test(path) || /^\d+$/.test(query.get("prdNo") ?? "");
+    case "gmarket": return /^\/Item\/?$/i.test(path) &&
+      [...query].some(([key, value]) => key.toLowerCase() === "goodscode" && /^\d+$/.test(value));
+    case "auction": return /^\/DetailView\.aspx$/i.test(path) && /^[a-z]?\d+$/i.test(query.get("itemno") ?? "");
+    case "aliexpress": return /^\/item\/\d+\.html$/.test(path);
+    case "ssg": return /^\d+$/.test(query.get("itemId") ?? "");
+    case "lotteon": return /^\/p\/product\/\w+\/?$/.test(path);
+    case "ohou": return /^\/goods\/\d+\/?$/.test(path);
+    case "naver": return /^\/[^/]+\/products\/\d+\/?$/.test(path);
+    default: return false;
+  }
+}
+
+function comparePrices(input: Record<string, unknown>, deal: VerifiedHotdeal, originalUrl: string, merchant: Merchant, checked: number, now: number) {
+  const comparableDays = new Map<string, { total: number; url: string }>();
+  const otherStores = new Map<Merchant, { total: number; url: string }>();
+  const checkedDay = new Date(checked + 9 * HOUR).toISOString().slice(0, 10);
+  const observations: unknown[] = Array.isArray(input.priceHistory) ? input.priceHistory.slice(0, 45) : [];
+  for (const observation of observations) {
+    if (!observation || typeof observation !== "object") continue;
+    const above = observation as Record<string, unknown>;
+    if (above.option !== deal.option || above.conditions !== deal.conditions || above.availability !== "in-stock") continue;
+    const at = verifiedDate(above.at);
+    if (at > now || at < checked - 30 * DAY) continue;
+    const url = normalizeOutboundUrl(sourceLink(above.productUrl));
+    if (!url) continue;
+    const observedUrl = new URL(url);
+    const store = detectMerchant(observedUrl.hostname);
+    if (!store || !directListing(observedUrl, store)) continue;
+    const total = verifiedPrice(above.price, 1) + verifiedPrice(above.shipping, 0);
+    const day = new Date(at + 9 * HOUR).toISOString().slice(0, 10);
+    if (url === originalUrl && at < checked && day !== checkedDay) {
+      if (total < (comparableDays.get(day)?.total ?? Infinity)) comparableDays.set(day, { total, url });
+    } else if (store !== merchant && input.publicPrice === true && above.publicPrice === true && now - at <= 6 * HOUR) {
+      if (total < (otherStores.get(store)?.total ?? Infinity)) otherStores.set(store, { total, url });
+    }
+  }
+
+  const history = comparableDays.size >= 3;
+  const market = otherStores.size >= 2;
+  if (!history && !market) {
+    throw new PostValidationError("같은 모델·옵션·구매 조건의 최근 30일 가격 기록 3일 또는 6시간 이내 다른 판매처 2곳의 공개 가격이 필요합니다.");
+  }
+  const historyOffers = [...comparableDays.values()];
+  const marketOffers = [...otherStores.values()];
+  const total = deal.price + deal.shipping;
+  const strictLow = Math.min(...[...historyOffers, ...marketOffers].map(row => row.total));
+  if (total * 100 > strictLow * (100 + HOTDEAL_MAX_PREMIUM)) {
+    throw new PostValidationError(`배송비를 포함하면 확인한 최저가보다 ${HOTDEAL_MAX_PREMIUM}% 넘게 높습니다.`);
+  }
+  const eligible = [...(history ? historyOffers : []), ...(market ? marketOffers : [])];
+  const low = eligible.reduce((best, row) => row.total < best.total ? row : best);
+  deal.priceEvidence = {
+    low: low.total,
+    count: eligible.length,
+    basis: history && market ? "both" : history ? "history" : "market",
+  };
+  if (merchant === "coupang" && history && total <= Math.min(...historyOffers.map(row => row.total))) {
+    deal.lowestIn30Days = { observations: comparableDays.size + 1 };
+  }
+  return low.url;
+}
+
 export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   const now = Date.now();
   const checked = verifiedDate(input.checkedAt);
@@ -72,11 +141,11 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
     throw new PostValidationError("연결 가능한 공식 판매처의 상품 주소를 입력해 주세요.");
   }
   if (merchant === "coupang") {
-    const url = new URL(originalUrl);
-    if (url.hostname !== "www.coupang.com" || !/^\/vp\/products\/\d+$/.test(url.pathname) ||
-        !/^\d+$/.test(url.searchParams.get("itemId") ?? "") || !/^\d+$/.test(url.searchParams.get("vendorItemId") ?? "")) {
+    if (!directListing(new URL(originalUrl), merchant)) {
       throw new PostValidationError("쿠팡 상품은 실제 확인한 옵션과 판매자 식별자가 포함된 주소가 필요합니다.");
     }
+  } else if (!directListing(new URL(originalUrl), merchant)) {
+    throw new PostValidationError("검색 결과나 스토어 홈 대신 개별 상품 페이지 주소가 필요합니다.");
   }
   let image: string | undefined;
   if (input.image !== undefined) {
@@ -88,6 +157,12 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
     }
     image = input.image;
   }
+  const hotdeal: VerifiedHotdeal = {
+    checkedAt: new Date(checked).toISOString(), validUntil: new Date(until).toISOString(),
+    option, price, shipping, conditions, image,
+  };
+  const comparisonSource = comparePrices(input, hotdeal, originalUrl, merchant, checked, now);
+
   const mapping = (await getStoredAffiliateMappings([originalUrl])).get(originalUrl);
   const target = resolveAffiliateUrl({ merchant, originalUrl, code: "" }, mapping);
   if (target?.mode !== "registered-affiliate") {
@@ -97,30 +172,6 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   const row = code ? await getOutboundRow(code) : null;
   if (!code || row?.originalUrl !== originalUrl || row.merchant !== merchant) {
     throw new Error("Outbound product could not be verified");
-  }
-
-  const hotdeal: VerifiedHotdeal = {
-    checkedAt: new Date(checked).toISOString(), validUntil: new Date(until).toISOString(),
-    option, price, shipping, conditions, image,
-  };
-
-  // Compare only earlier public prices for this exact option and purchase basis.
-  if (merchant === "coupang" && input.comparisonSource !== undefined && Array.isArray(input.priceHistory)) {
-    const comparisonSource = sourceLink(input.comparisonSource);
-    const history = input.priceHistory.slice(0, 31);
-    const comparableDays = new Map<string, number>();
-    for (const observation of history) {
-      if (!observation || typeof observation !== "object" || observation.option !== option || observation.conditions !== conditions) continue;
-      const at = verifiedDate(observation.at);
-      if (at >= checked || at < checked - 30 * DAY) continue;
-      const day = new Date(at + 9 * HOUR).toISOString().slice(0, 10);
-      const total = verifiedPrice(observation.price, 1) + verifiedPrice(observation.shipping, 0);
-      comparableDays.set(day, Math.min(comparableDays.get(day) ?? total, total));
-    }
-    if (comparableDays.size >= 3 && price + shipping <= Math.min(...comparableDays.values())) {
-      hotdeal.lowestIn30Days = { observations: comparableDays.size + 1 };
-      input = { ...input, comparisonSource };
-    }
   }
 
   const dealIdentity = createHash("sha256").update(JSON.stringify([
@@ -138,7 +189,7 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
       store: STORE_LABELS[merchant],
       dealLink: "/go/" + code,
       notesSource,
-      comparisonSource: hotdeal.lowestIn30Days ? String(input.comparisonSource) : undefined,
+      comparisonSource,
     },
   }, { id: "deal-" + dealIdentity, hotdeal });
   return { id: post.id, created };

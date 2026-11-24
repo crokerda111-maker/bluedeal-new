@@ -1,0 +1,1219 @@
+{
+  "checkedOn": "2026-11-24",
+  "parts": [
+    {
+      "slot": "cpu",
+      "names": [
+        "AMD Ryzen 7 9800X3D (국내 정품 표기)",
+        "AMD Ryzen 7 9800X3D 멀티팩(정품)",
+        "AMD Ryzen 7 9800X3D"
+      ],
+      "facts": {
+        "게이밍 등급": [
+          "현세대 최상위권. 9850X3D 등과 순서는 게임에 따라 달라집니다.",
+          "https://gamersnexus.net/cpus/amd-ryzen-7-9850x3d-cpu-review-benchmarks-gaming-power-thermals-ft-ddr5-4800"
+        ],
+        "코어·캐시": [
+          "8코어 16스레드, L3 96MB, 화면 출력용 내장 그래픽",
+          "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html"
+        ],
+        "이슈·구매 확인": [
+          "완본체 업체 보증과 CPU 단품 국내 보증을 별도로 확인하세요.",
+          "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html"
+        ],
+        "1": [
+          true,
+          "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html"
+        ],
+        "2": [
+          true,
+          "https://gamersnexus.net/cpus/amd-ryzen-7-9850x3d-cpu-review-benchmarks-gaming-power-thermals-ft-ddr5-4800"
+        ],
+        "3": [
+          true,
+          "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html"
+        ]
+      }
+    },
+    {
+      "slot": "cpu",
+      "names": [
+        "AMD Ryzen 7 7800X3D (국내 정품 표기)"
+      ],
+      "facts": {
+        "게이밍 등급": [
+          "전세대 상급 X3D. 같은 실측에서 9800X3D·9850X3D와 차이는 게임별로 달라집니다.",
+          "https://gamersnexus.net/cpus/amd-ryzen-7-9850x3d-cpu-review-benchmarks-gaming-power-thermals-ft-ddr5-4800"
+        ],
+        "코어·캐시": [
+          "8코어 16스레드, L3 96MB, 화면 출력용 내장 그래픽",
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800X3D.html"
+        ],
+        "이슈·구매 확인": [
+          "구매하려는 제품의 국내 유통 스티커와 CPU 단품 보증을 확인하세요.",
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800X3D.html"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800X3D.html"
+        ],
+        "1": [
+          true,
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800X3D.html"
+        ],
+        "2": [
+          true,
+          "https://gamersnexus.net/cpus/amd-ryzen-7-9850x3d-cpu-review-benchmarks-gaming-power-thermals-ft-ddr5-4800"
+        ],
+        "3": [
+          true,
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800X3D.html"
+        ]
+      }
+    },
+    {
+      "slot": "cpu",
+      "names": [
+        "AMD Ryzen 5 7500F 멀티팩"
+      ],
+      "facts": {
+        "게이밍 등급": [
+          "가격 절감형 6코어 AM5. 높은 프레임을 노리는 CPU 병목 상황에서는 8코어 X3D와 차이가 날 수 있습니다.",
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7500f.html"
+        ],
+        "코어·캐시": [
+          "6코어 12스레드, L3 32MB, 내장 그래픽 없음",
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7500f.html"
+        ],
+        "이슈·구매 확인": [
+          "화면이 나오지 않을 때 외장 그래픽카드와 연결부터 확인해야 합니다.",
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7500f.html"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7500f.html"
+        ],
+        "1": [
+          false,
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7500f.html"
+        ],
+        "3": [
+          false,
+          "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7500f.html"
+        ]
+      },
+      "attention": "내장 그래픽이 없어 외장 GPU 없이는 화면 출력 불가"
+    },
+    {
+      "slot": "cpu",
+      "names": [
+        "Intel Core i5-14600KF 정품 벌크"
+      ],
+      "facts": {
+        "게이밍 등급": [
+          "LGA1700 중급. P코어 6개와 E코어 8개이며 화면 출력용 내장 그래픽이 없습니다.",
+          "https://www.intel.com/content/www/us/en/products/sku/236778/intel-core-i5-processor-14600kf-24m-cache-up-to-5-30-ghz/specifications.html"
+        ],
+        "코어·캐시": [
+          "P코어 6개·E코어 8개, 20스레드, L3 24MB",
+          "https://www.intel.com/content/www/us/en/products/sku/236778/intel-core-i5-processor-14600kf-24m-cache-up-to-5-30-ghz/specifications.html"
+        ],
+        "이슈·구매 확인": [
+          "인텔의 13·14세대 Vmin Shift 안내에 따라 0x12F 이상 마이크로코드 적용 BIOS와 Intel Default Settings를 판매자에게 확인하세요. 벌크의 보증 접수처도 확인이 필요합니다.",
+          "https://www.intel.com/content/www/us/en/support/articles/000102331/processors.html"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.intel.com/content/www/us/en/products/sku/236778/intel-core-i5-processor-14600kf-24m-cache-up-to-5-30-ghz/specifications.html"
+        ],
+        "1": [
+          false,
+          "https://www.intel.com/content/www/us/en/products/sku/236778/intel-core-i5-processor-14600kf-24m-cache-up-to-5-30-ghz/specifications.html"
+        ],
+        "3": [
+          false,
+          "https://www.intel.com/content/www/us/en/products/sku/236778/intel-core-i5-processor-14600kf-24m-cache-up-to-5-30-ghz/specifications.html"
+        ]
+      },
+      "attention": "13·14세대 안정성 공지 · 최신 BIOS 적용 여부 확인"
+    },
+    {
+      "slot": "gpu",
+      "names": [
+        "ASRock Radeon RX 9070 XT Challenger 16GB",
+        "ASRock Radeon RX 9070 XT Challenger OC 16GB"
+      ],
+      "facts": {
+        "칩 성능급": [
+          "중상급 RX 9070 XT · 16GB GDDR6. QHD 고사양과 4K의 실사용 결과는 게임·설정에 따라 달라집니다.",
+          "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html"
+        ],
+        "제조사 라인업": [
+          "Challenger는 ASRock의 기본형 라인. 같은 GPU라도 상위 라인과 쿨러·전력 설정이 다를 수 있습니다.",
+          "https://www.asrock.com/Graphics-Card/AMD/Radeon%20RX%209070%20XT%20Challenger%2016GB/"
+        ],
+        "냉각·전원": [
+          "Challenger 공식 사양은 3팬, 8핀 두 개, 권장 750W입니다. OC 표기 상품은 제품 번호를 확인하세요.",
+          "https://www.asrock.com/Graphics-Card/AMD/Radeon%20RX%209070%20XT%20Challenger%2016GB/"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.asrock.com/Graphics-Card/AMD/Radeon%20RX%209070%20XT%20Challenger%2016GB/"
+        ],
+        "1": [
+          true,
+          "https://www.asrock.com/Graphics-Card/AMD/Radeon%20RX%209070%20XT%20Challenger%2016GB/"
+        ]
+      }
+    },
+    {
+      "slot": "gpu",
+      "names": [
+        "SAPPHIRE NITRO+ Radeon RX 9070 XT OC 16GB"
+      ],
+      "facts": {
+        "칩 성능급": [
+          "중상급 RX 9070 XT · 16GB GDDR6. QHD 고사양과 4K의 실사용 결과는 게임·설정에 따라 달라집니다.",
+          "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html"
+        ],
+        "제조사 라인업": [
+          "SAPPHIRE 상급 NITRO+ OC. 같은 RX 9070 XT의 기본형과 전원·쿨러 사양이 다릅니다.",
+          "https://www.sapphiretech.com/en/consumer/nitro-radeon-rx-9070-xt-16g-gddr6"
+        ],
+        "냉각·전원": [
+          "3팬, 권장 파워 850W. 판매 구성의 850W는 제조사 권장선입니다.",
+          "https://www.sapphiretech.com/en/consumer/nitro-radeon-rx-9070-xt-16g-gddr6"
+        ],
+        "이슈·구매 확인": [
+          "12V-2x6 연결 방식, 동봉 어댑터와 PSU 전용 케이블 사용 조건을 구매 전에 확인하세요.",
+          "https://www.sapphiretech.com/en/consumer/nitro-radeon-rx-9070-xt-16g-gddr6"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.sapphiretech.com/en/consumer/nitro-radeon-rx-9070-xt-16g-gddr6"
+        ],
+        "1": [
+          true,
+          "https://www.sapphiretech.com/en/consumer/nitro-radeon-rx-9070-xt-16g-gddr6"
+        ]
+      }
+    },
+    {
+      "slot": "gpu",
+      "names": [
+        "ASUS PRIME Radeon RX 9070 XT OC 16GB 대원씨티에스"
+      ],
+      "facts": {
+        "칩 성능급": [
+          "중상급 RX 9070 XT · 16GB GDDR6. QHD 고사양과 4K의 실사용 결과는 게임·설정에 따라 달라집니다.",
+          "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html"
+        ],
+        "제조사 라인업": [
+          "ASUS PRIME 기본형 OC. 같은 GPU 칩의 제조사 상급 라인과 냉각 설계는 구분해서 봐야 합니다.",
+          "https://www.asus.com/uk/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g/techspec/"
+        ],
+        "냉각·전원": [
+          "3팬 계열, 제조사 권장 750W, 8핀 3개. 파워의 커넥터 구성 확인.",
+          "https://www.asus.com/uk/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g/techspec/"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.asus.com/uk/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g/techspec/"
+        ],
+        "1": [
+          true,
+          "https://www.asus.com/uk/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g/techspec/"
+        ]
+      }
+    },
+    {
+      "slot": "gpu",
+      "names": [
+        "Leadtek WinFast RTX 5060 Hurricane White 8GB"
+      ],
+      "facts": {
+        "칩 성능급": [
+          "보급형 RTX 5060 · 8GB GDDR7. FHD 위주. 높은 해상도·텍스처 프리셋에서는 8GB가 제한이 될 수 있습니다.",
+          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/"
+        ],
+        "제조사 라인업": [
+          "판매처 표기는 WinFast Hurricane White. 이 모델의 실측 냉각·소음 자료 확인 필요.",
+          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/"
+        ],
+        "1": [
+          false,
+          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/"
+        ]
+      },
+      "attention": "VRAM 8GB · 고해상도·고화질 텍스처 여유 작음"
+    },
+    {
+      "slot": "gpu",
+      "names": [
+        "MSI GeForce RTX 5060 VENTUS 2X OC 8GB"
+      ],
+      "facts": {
+        "칩 성능급": [
+          "보급형 RTX 5060 · 8GB. FHD 위주이며 VRAM 사용량이 큰 설정은 여유가 작습니다.",
+          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/"
+        ],
+        "제조사 라인업": [
+          "MSI 기본형 VENTUS 2X OC.",
+          "https://www.msi.com/Graphics-Card/GeForce-RTX-5060-8G-VENTUS-2X-OC/Specification"
+        ],
+        "냉각·전원": [
+          "2팬, 8핀 1개, 권장 파워 550W.",
+          "https://www.msi.com/Graphics-Card/GeForce-RTX-5060-8G-VENTUS-2X-OC/Specification"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.msi.com/Graphics-Card/GeForce-RTX-5060-8G-VENTUS-2X-OC/Specification"
+        ],
+        "1": [
+          false,
+          "https://www.msi.com/Graphics-Card/GeForce-RTX-5060-8G-VENTUS-2X-OC/Specification"
+        ]
+      },
+      "attention": "VRAM 8GB · 고해상도·고화질 텍스처 여유 작음"
+    },
+    {
+      "slot": "gpu",
+      "names": [
+        "GeForce RTX 5080 OC 16GB (제조사 미표기)"
+      ],
+      "facts": {
+        "칩 성능급": [
+          "상급 RTX 5080 · 16GB GDDR7. 4K 게이밍 지향.",
+          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/"
+        ],
+        "제조사 라인업": [
+          "판매 옵션에 제조사·카드 모델이 고정돼 있지 않습니다. 상·중·하급 제품을 구분할 수 없습니다.",
+          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/"
+        ],
+        "냉각·전원": [
+          "NVIDIA 레퍼런스 권장 850W. 출고되는 카드 모델에 따라 요구 출력·커넥터가 달라질 수 있습니다.",
+          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/"
+        ]
+      },
+      "attention": "출고 그래픽카드 제조사·모델 미표기"
+    },
+    {
+      "slot": "board",
+      "names": [
+        "GIGABYTE B650M K",
+        "GIGABYTE B650M K 피씨디렉트"
+      ],
+      "facts": {
+        "전원부": [
+          "Rev. 1.0 기준 8+2+1페이즈 보급형. CPU 장시간 부하 온도 실측은 별도 확인.",
+          "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp"
+        ],
+        "PCIe·레인 공유": [
+          "Ryzen 7000 기준 CPU 연결 M.2 두 곳과 그래픽 슬롯 제공. NVMe 두 곳을 모두 쓰면 추가 NVMe 장착 공간이 없습니다.",
+          "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp"
+        ],
+        "BIOS·이슈": [
+          "보드 리비전별 BIOS 파일과 CPU 지원 목록을 확인하세요.",
+          "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp"
+        ]
+      },
+      "verified": {
+        "3": [
+          true,
+          "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp"
+        ]
+      },
+      "attention": "M.2 두 곳 · 세 번째 SSD 직결 슬롯 없음"
+    },
+    {
+      "slot": "board",
+      "names": [
+        "GIGABYTE B850 AORUS ELITE X3D"
+      ],
+      "facts": {
+        "전원부": [
+          "16+2+2 전원부 표기. Vcore는 8+8 병렬 구성과 60A DrMOS를 사용합니다. 동일 CPU 장시간 부하 온도는 확인 필요.",
+          "https://www.aorus.com/motherboards/b850-aorus-elite-x3d/Key-Features"
+        ],
+        "PCIe·레인 공유": [
+          "M2D_SB에 장치를 꽂으면 보조 PCIEX4 슬롯이 비활성화됩니다. 그래픽카드용 주 슬롯과 구분하세요.",
+          "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-X3D/sp"
+        ],
+        "BIOS·이슈": [
+          "스토리지 증설과 PCIe 추가 카드 사용 계획이 겹치면 슬롯 배치를 먼저 확인하세요.",
+          "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-X3D/sp"
+        ]
+      },
+      "verified": {
+        "3": [
+          true,
+          "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-X3D/sp"
+        ]
+      },
+      "attention": "네 번째 M.2 사용 시 보조 PCIEX4 비활성화"
+    },
+    {
+      "slot": "board",
+      "names": [
+        "ASRock B850M Pro-A WiFi"
+      ],
+      "facts": {
+        "전원부": [
+          "8+2+1 페이즈 Dr.MOS 표기. CPU 부하 온도 실측은 확인 필요.",
+          "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification"
+        ],
+        "PCIe·레인 공유": [
+          "판매 구성은 NVMe M.2 3개 지원. 확장카드와 동시 사용 시 슬롯 조합과 CPU별 속도는 공식 매뉴얼 확인.",
+          "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification"
+        ],
+        "BIOS·이슈": [
+          "정확한 출고 BIOS 버전은 판매처 확인이 필요합니다.",
+          "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification"
+        ]
+      }
+    },
+    {
+      "slot": "board",
+      "names": [
+        "ASUS TUF GAMING B850-PLUS WIFI 대원씨티에스"
+      ],
+      "facts": {
+        "전원부": [
+          "14+2+1, 80A 전력 스테이지 표기. 동일 CPU의 부하 온도는 확인 필요.",
+          "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/"
+        ],
+        "PCIe·레인 공유": [
+          "M.2_3 사용 시 보조 PCIEX16(G4)이 꺼집니다. CPU 직결 M.2_1·M.2_2를 우선 사용하면 됩니다.",
+          "https://www.asus.com/uk/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/"
+        ],
+        "BIOS·이슈": [
+          "SSD 두 개와 확장카드를 같이 쓸 경우 장착 슬롯을 확인하세요.",
+          "https://www.asus.com/uk/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/"
+        ]
+      },
+      "verified": {
+        "3": [
+          true,
+          "https://www.asus.com/uk/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/"
+        ]
+      },
+      "attention": "세 번째 M.2 사용 시 보조 PCIe 슬롯 비활성화"
+    },
+    {
+      "slot": "board",
+      "names": [
+        "GIGABYTE B760M D2HX LITE SI GEN5 Bulk"
+      ],
+      "facts": {
+        "전원부": [
+          "유통되는 SI 벌크 보드. 이 리비전의 전원부 발열 실측 확인 필요.",
+          "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5/sp"
+        ],
+        "PCIe·레인 공유": [
+          "메모리 슬롯 2개. NVMe 슬롯과 그래픽 슬롯의 CPU·칩셋 연결은 리비전별 사양표를 확인하세요.",
+          "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5/sp"
+        ],
+        "BIOS·이슈": [
+          "14600KF 판매 구성은 최신 마이크로코드가 포함된 출고 BIOS 버전을 확인하세요.",
+          "https://www.intel.com/content/www/us/en/support/articles/000102331/processors.html"
+        ]
+      },
+      "attention": "램 슬롯 두 곳 · 장착 상태와 이후 증설 방법 확인"
+    },
+    {
+      "slot": "ram",
+      "names": [
+        "ESSENCORE KLEVV DDR5-5600 CL46 32GB (16GB × 2)"
+      ],
+      "facts": {
+        "A/S": [
+          "제조사는 제한적 평생 보증을 표기합니다. 조립PC 구입 시 국내 접수 창구는 판매처 확인.",
+          "https://www.klevv.com/ken/products_details/memory/D5_UDIMM"
+        ],
+        "메모리 프로필": [
+          "표준 DDR5-5600 CL46 사양. 출고 IC와 다이 고정 여부는 확인 필요.",
+          "https://www.klevv.com/ken/products_details/memory/D5_UDIMM"
+        ]
+      },
+      "verified": {
+        "4": [
+          true,
+          "https://www.klevv.com/ken/products_details/memory/D5_UDIMM"
+        ]
+      }
+    },
+    {
+      "slot": "ram",
+      "names": [
+        "TeamGroup DDR5-4800 CL40 Elite 32GB (16GB × 2)"
+      ],
+      "facts": {
+        "A/S": [
+          "제조사 표기 평생 보증. 국내 접수에 필요한 유통 라벨과 구매 내역을 확인하세요.",
+          "https://www.teamgroupinc.com/en/product-detail/memory/TEAMGROUP/elite-u-dimm-ddr5/elite-u-dimm-ddr5-TED516G4800C4001/"
+        ],
+        "메모리 프로필": [
+          "16GB 모듈 두 개. 제품 표기 DDR5-4800 CL40으로 고클럭 구성은 아닙니다.",
+          "https://www.teamgroupinc.com/en/product-detail/memory/TEAMGROUP/elite-u-dimm-ddr5/elite-u-dimm-ddr5-TED516G4800C4001/"
+        ]
+      },
+      "verified": {
+        "4": [
+          true,
+          "https://www.teamgroupinc.com/en/product-detail/memory/TEAMGROUP/elite-u-dimm-ddr5/elite-u-dimm-ddr5-TED516G4800C4001/"
+        ]
+      },
+      "attention": "DDR5-4800 CL40 기본형"
+    },
+    {
+      "slot": "ram",
+      "names": [
+        "DLI DDR5-5600 CL46 32GB (16GB × 2)"
+      ],
+      "facts": {
+        "IC·다이": [
+          "판매 부품표에 IC 제조사·다이 리비전 미표기. 칩 벤더를 특정할 수 없습니다.",
+          "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T-S_11171110.jpg"
+        ],
+        "메모리 프로필": [
+          "16GB 두 개, DDR5-5600 CL46. 별도 프로필 및 부품 A/S 기간은 확인 필요.",
+          "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T-S_11171110.jpg"
+        ]
+      }
+    },
+    {
+      "slot": "ram",
+      "names": [
+        "CORSAIR VENGEANCE DDR5-5600 CL40 32GB (16GB × 2)"
+      ],
+      "facts": {
+        "A/S": [
+          "CORSAIR DRAM 제한적 평생 보증. 조립PC 공급 모듈의 국내 접수처와 구매 증빙은 확인 필요.",
+          "https://help.corsair.com/hc/en-us/articles/360033067832-Warranty-Corsair-Limited-Warranty"
+        ],
+        "IC·다이": [
+          "CORSAIR는 같은 키트 품번에도 다른 IC가 들어갈 수 있다고 안내합니다. 실제 모듈 라벨의 버전과 다이 리비전을 판매자에게 확인하세요.",
+          "https://help.corsair.com/hc/en-us/articles/34383413781777-RAM-FAQ"
+        ],
+        "메모리 프로필": [
+          "16GB 두 개, DDR5-5600 CL40. 정확한 키트 품번을 확인한 뒤 XMP/EXPO를 대조하세요.",
+          "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A98D-A97T-C1T_11181124.jpg"
+        ]
+      },
+      "verified": {
+        "4": [
+          true,
+          "https://help.corsair.com/hc/en-us/articles/360033067832-Warranty-Corsair-Limited-Warranty"
+        ]
+      }
+    },
+    {
+      "slot": "ram",
+      "names": [
+        "GeIL PRISTINE V DDR5-5200 CL42 32GB (16GB × 2)"
+      ],
+      "facts": {
+        "IC·다이": [
+          "다이와 IC 제조사는 판매 자료로 확인되지 않습니다.",
+          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
+        ],
+        "메모리 프로필": [
+          "16GB 두 개, DDR5-5200 CL42. 키트의 유통 보증 기간 확인 필요.",
+          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
+        ]
+      },
+      "attention": "DDR5-5200 CL42 · 메모리 속도 기준 미달"
+    },
+    {
+      "slot": "ram",
+      "names": [
+        "Lexar DDR5-5600 16GB"
+      ],
+      "facts": {
+        "IC·다이": [
+          "상품 부품표에서 실제 모듈 품번·IC·다이 리비전을 확인할 수 없습니다.",
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ],
+        "메모리 프로필": [
+          "16GB 한 장. 두 모듈 구성이 필요하면 빈 슬롯과 추가 비용을 확인하세요.",
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ]
+      },
+      "attention": "16GB 한 장 · 용량과 2모듈 기준 모두 미달"
+    },
+    {
+      "slot": "ram",
+      "names": [
+        "Lexar DDR5-5600 32GB (16GB × 2)"
+      ],
+      "facts": {
+        "IC·다이": [
+          "판매표에 실제 모듈 품번과 리비전 미표기.",
+          "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+        ],
+        "메모리 프로필": [
+          "16GB 두 장, DDR5-5600. 타이밍·프로필과 국내 A/S 접수처 확인 필요.",
+          "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+        ]
+      }
+    },
+    {
+      "slot": "storage",
+      "names": [
+        "COLORFUL CN700 Pro PCIe 4.0 NVMe 1TB"
+      ],
+      "facts": {
+        "DRAM·낸드": [
+          "이 판매 옵션의 낸드·DRAM 탑재 여부를 원문에서 확인할 수 없습니다.",
+          "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XTA/AX78-R97XTA_04.jpg"
+        ],
+        "펌웨어·이슈": [
+          "판매처에서 모델 코드와 보증 증빙을 받아 확인하세요.",
+          "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XTA/AX78-R97XTA_04.jpg"
+        ]
+      }
+    },
+    {
+      "slot": "storage",
+      "names": [
+        "Kingston NV3 PCIe 4.0 NVMe 1TB"
+      ],
+      "facts": {
+        "DRAM·낸드": [
+          "전용 DRAM 없이 HMB 사용. 같은 모델 내 낸드를 단일 종류로 단정하기 어렵습니다.",
+          "https://www.tomshardware.com/pc-components/ssds/kingston-nv3-ssd-review"
+        ],
+        "순차 읽기·쓰기": [
+          "제조사 최대 6,000 / 4,000MB/s (1TB).",
+          "https://www.kingston.com/datasheets/SNV3S_us.pdf"
+        ],
+        "내구성·보증": [
+          "1TB 320TBW, 제한 보증 최대 5년. 보증 조건은 데이터시트 각주 참고.",
+          "https://www.kingston.com/datasheets/SNV3S_us.pdf"
+        ],
+        "펌웨어·이슈": [
+          "Kingston SSD Manager에서 펌웨어와 상태를 확인할 수 있습니다.",
+          "https://www.kingston.com/unitedkingdom/en/support/technical/products/snv3s"
+        ]
+      },
+      "verified": {
+        "2": [
+          false,
+          "https://www.tomshardware.com/pc-components/ssds/kingston-nv3-ssd-review"
+        ],
+        "3": [
+          true,
+          "https://www.kingston.com/datasheets/SNV3S_us.pdf"
+        ],
+        "4": [
+          false,
+          "https://www.kingston.com/datasheets/SNV3S_us.pdf"
+        ]
+      },
+      "attention": "DRAM 없음 · 1TB 내구성 320TBW"
+    },
+    {
+      "slot": "storage",
+      "names": [
+        "Apacer AS2280Q4X PCIe 4.0 NVMe 1TB"
+      ],
+      "facts": {
+        "DRAM·낸드": [
+          "확인한 정확한 모델 데이터시트에서 외장 DRAM·낸드 타입은 확정되지 않습니다.",
+          "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
+        ],
+        "순차 읽기·쓰기": [
+          "제조사 최대 5,000 / 4,400MB/s (1TB).",
+          "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
+        ],
+        "내구성·보증": [
+          "600TBW · 제조사 글로벌 보증 3년. 국내 접수 조건은 별도 확인.",
+          "https://www.apacer.com/en/product/personal-product/detail/personal_ssd/as2280q4x"
+        ]
+      },
+      "verified": {
+        "3": [
+          true,
+          "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
+        ],
+        "4": [
+          false,
+          "https://www.apacer.com/en/product/personal-product/detail/personal_ssd/as2280q4x"
+        ]
+      },
+      "attention": "제조사 3년 보증 · 5년 기준 미달"
+    },
+    {
+      "slot": "storage",
+      "names": [
+        "Apacer AS2280Q4X PCIe 4.0 NVMe 2TB"
+      ],
+      "facts": {
+        "DRAM·낸드": [
+          "확인한 정확한 모델 데이터시트에서 외장 DRAM·낸드 타입은 확정되지 않습니다.",
+          "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
+        ],
+        "순차 읽기·쓰기": [
+          "제조사 최대 5,000 / 4,400MB/s (2TB).",
+          "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
+        ],
+        "내구성·보증": [
+          "1200TBW · 제조사 글로벌 보증 3년. 국내 접수 조건은 별도 확인.",
+          "https://www.apacer.com/en/product/personal-product/detail/personal_ssd/as2280q4x"
+        ]
+      },
+      "verified": {
+        "3": [
+          true,
+          "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
+        ],
+        "4": [
+          false,
+          "https://www.apacer.com/en/product/personal-product/detail/personal_ssd/as2280q4x"
+        ]
+      },
+      "attention": "제조사 3년 보증 · 5년 기준 미달"
+    },
+    {
+      "slot": "storage",
+      "names": [
+        "KIOXIA EXCERIA PRO G2 PCIe 5.0 NVMe 1TB"
+      ],
+      "facts": {
+        "DRAM·낸드": [
+          "BiCS FLASH TLC 확인. 전용 DRAM의 용량과 구성은 인용한 공식 사양에서 확인되지 않습니다.",
+          "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+        ],
+        "순차 읽기·쓰기": [
+          "1,024GB 기준 순차 최대 14,400 / 12,700MB/s. PCIe 5.0 ×4 환경 기준.",
+          "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+        ],
+        "내구성·보증": [
+          "1,024GB 600TBW, 제조사 최대 5년.",
+          "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+        ],
+        "펌웨어·이슈": [
+          "Gen5 작동 시 메인보드 M.2 방열판 사용 여부와 발열 관리를 확인하세요.",
+          "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+        ],
+        "3": [
+          true,
+          "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+        ],
+        "4": [
+          true,
+          "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+        ]
+      }
+    },
+    {
+      "slot": "storage",
+      "names": [
+        "Samsung 990 PRO PCIe 4.0 NVMe 2TB"
+      ],
+      "facts": {
+        "DRAM·낸드": [
+          "TLC 계열 V-NAND, 전용 DRAM 2GB 탑재.",
+          "https://www.samsung.com/nl/memory-storage/nvme-ssd/990-pro-2tb-nvme-pcie-gen-4-mz-v9p2t0bw/"
+        ],
+        "순차 읽기·쓰기": [
+          "제조사 순차 최대 7,450 / 6,900MB/s.",
+          "https://www.samsung.com/nl/memory-storage/nvme-ssd/990-pro-2tb-nvme-pcie-gen-4-mz-v9p2t0bw/"
+        ],
+        "내구성·보증": [
+          "제한 보증 5년 또는 1,200TBW 중 먼저 도달하는 기준.",
+          "https://semiconductor.samsung.com/kr/consumer-storage/support/warranty/"
+        ],
+        "펌웨어·이슈": [
+          "초기 생산분 등 사용 중인 제품은 Samsung Magician에서 정확한 펌웨어와 SMART 상태를 확인하세요. 판매 구성의 출고 버전은 미확인.",
+          "https://semiconductor.samsung.com/consumer-storage/support/tools/"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://www.samsung.com/nl/memory-storage/nvme-ssd/990-pro-2tb-nvme-pcie-gen-4-mz-v9p2t0bw/"
+        ],
+        "2": [
+          true,
+          "https://www.samsung.com/nl/memory-storage/nvme-ssd/990-pro-2tb-nvme-pcie-gen-4-mz-v9p2t0bw/"
+        ],
+        "3": [
+          true,
+          "https://www.samsung.com/nl/memory-storage/nvme-ssd/990-pro-2tb-nvme-pcie-gen-4-mz-v9p2t0bw/"
+        ],
+        "4": [
+          true,
+          "https://semiconductor.samsung.com/kr/consumer-storage/support/warranty/"
+        ]
+      }
+    },
+    {
+      "slot": "storage",
+      "names": [
+        "FASTRO MS150 M.2 NVMe 1000GB"
+      ],
+      "facts": {
+        "DRAM·낸드": [
+          "판매표에는 모델·용량만 확인됩니다. DRAM과 낸드 유형은 미확인.",
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ],
+        "순차 읽기·쓰기": [
+          "같은 출고형의 제조사 속도·PCIe 세대 미확인.",
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ],
+        "내구성·보증": [
+          "해당 출고 모델의 TBW와 단품 보증은 판매처 확인.",
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ]
+      },
+      "attention": "순차 속도·DRAM·내구성 자료 부족"
+    },
+    {
+      "slot": "psu",
+      "names": [
+        "Cooler Master MWE Gold 850 V3 ATX 3.1"
+      ],
+      "facts": {
+        "모듈러": [
+          "풀모듈러. 교체 시 다른 파워의 모듈러 케이블을 섞지 마세요.",
+          "https://legacy.coolermaster.com/en-global/products/mwe-gold-850-v3-atx-3-1/"
+        ],
+        "캐패시터": [
+          "제조사가 일본산 메인 캐패시터를 표기합니다. 보조 캐패시터의 제조사나 등급은 확인되지 않습니다.",
+          "https://legacy.coolermaster.com/en-global/products/mwe-gold-850-v3-atx-3-1/"
+        ],
+        "소음": [
+          "정확히 일치하는 모델의 독립 실측은 확인 필요.",
+          "https://legacy.coolermaster.com/en-global/products/mwe-gold-850-v3-atx-3-1/"
+        ],
+        "보증·이슈": [
+          "제조사 표기 10년. 완본체 판매처의 접수 기간과 별도 부품 보증은 확인하세요.",
+          "https://legacy.coolermaster.com/en-global/products/mwe-gold-850-v3-atx-3-1/"
+        ]
+      },
+      "verified": {
+        "3": [
+          true,
+          "https://legacy.coolermaster.com/en-global/products/mwe-gold-850-v3-atx-3-1/"
+        ]
+      }
+    },
+    {
+      "slot": "psu",
+      "names": [
+        "ASUS PRIME 850W Gold V2 대원씨티에스"
+      ],
+      "facts": {
+        "모듈러": [
+          "부품표에 PRIME V2 표기. 정확한 PSU 모델 번호와 케이블 방식은 판매처 확인.",
+          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
+        ],
+        "캐패시터": [
+          "V2에서 사용한 메인·보조 캐패시터 모델 확인 필요.",
+          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
+        ],
+        "보증·이슈": [
+          "동일 이름의 다른 세대 파워를 혼용하지 말고 ATX 세대와 국내 보증 조건을 확인하세요.",
+          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
+        ]
+      }
+    },
+    {
+      "slot": "psu",
+      "names": [
+        "NEWZEN SKULL 650EM 80PLUS Bronze ATX 3.1 화이트"
+      ],
+      "facts": {
+        "모듈러": [
+          "이 출고 옵션의 케이블 탈착 방식은 판매처 확인 필요.",
+          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRCO0039.jpg"
+        ],
+        "캐패시터": [
+          "메인과 보조 캐패시터 제조사·온도 등급 미확인.",
+          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRCO0039.jpg"
+        ],
+        "보증·이슈": [
+          "판매표 기준 650W Bronze. 출력은 충족하지만 Gold 효율 점수는 받지 못합니다.",
+          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRCO0039.jpg"
+        ]
+      },
+      "attention": "Bronze 효율 · Gold 기준 미달"
+    },
+    {
+      "slot": "psu",
+      "names": [
+        "맥스엘리트 STARS GEMINI 750W 80 PLUS Bronze ATX 3.1"
+      ],
+      "facts": {
+        "모듈러": [
+          "750W 리뷰와 판매 구성의 동일 모델 번호를 확인하세요.",
+          "https://quasarzone.com/bbs/qn_report/views/524546?page=6"
+        ],
+        "캐패시터": [
+          "공개 제품 리포트는 GEMINI의 TK(Toshin Kogyo) 메인 콘덴서를 표기합니다. 보조부품은 별도 확인.",
+          "https://quasarzone.com/bbs/qn_report/views/524546?page=6"
+        ],
+        "보증·이슈": [
+          "브론즈 라인. 실제 보증기간과 교환 정책은 구입한 조립PC 판매처 확인.",
+          "https://quasarzone.com/bbs/qn_report/views/524546?page=6"
+        ]
+      },
+      "attention": "Bronze 효율 · Gold 기준 미달"
+    },
+    {
+      "slot": "psu",
+      "names": [
+        "MSI MAG A850GN 850W Gold ATX 3.1"
+      ],
+      "facts": {
+        "모듈러": [
+          "MAG A850GN PCIE5 공식 사양은 고정 케이블입니다. 판매품의 PCIE5 모델 라벨을 확인하세요.",
+          "https://www.msi.com/Power-Supply/MAG-A850GN-PCIE5/Specification"
+        ],
+        "캐패시터": [
+          "PCIE5 제조사 표기 105°C 메인 캐패시터. 납품품의 제조사 표기 및 보조 캐패시터는 미확인.",
+          "https://www.msi.com/Power-Supply/MAG-A850GN-PCIE5"
+        ],
+        "소음": [
+          "PCIE5 제조사 표기는 부하 70% 기준 20dBA 미만. 독립 실측 및 동일 모델 확인 필요.",
+          "https://www.msi.com/Power-Supply/MAG-A850GN-PCIE5"
+        ],
+        "보증·이슈": [
+          "실제 출고 GPU가 확정돼야 파워 권장 출력과 커넥터 충족 여부를 판단할 수 있습니다.",
+          "https://www.msi.com/Power-Supply/MAG-A850GN-PCIE5/Specification"
+        ]
+      },
+      "attention": "출고 GPU에 맞는 출력·커넥터 확인 필요"
+    },
+    {
+      "slot": "cooler",
+      "names": [
+        "PCCOOLER CPS RT620 PRO ARGB 카본스틸"
+      ],
+      "facts": {
+        "방열·팬": [
+          "듀얼 타워와 히트파이프 6개. 기존 부품표는 AM5 장착형으로 확인했습니다.",
+          "https://cpspccooler.com/product/rt620pro-argb/"
+        ],
+        "장착·간섭": [
+          "RAM 방열판이 높은 경우 앞쪽 팬을 위로 이동할 여유가 있는지 확인하세요.",
+          "https://cpspccooler.com/product/rt620pro-argb/"
+        ]
+      }
+    },
+    {
+      "slot": "cooler",
+      "names": [
+        "PCCOOLER CPS RT620 PRO 카본스틸 블랙"
+      ],
+      "facts": {
+        "방열·팬": [
+          "판매표의 듀얼타워 공랭 구성. LGA1700 방식으로 장착.",
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ],
+        "장착·간섭": [
+          "메모리·옆판과 앞쪽 팬 간섭, 부하 시 팬 곡선을 확인하세요.",
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ]
+      }
+    },
+    {
+      "slot": "cooler",
+      "names": [
+        "3RSYS RC1500 ARGB 쌍철봉 LITE"
+      ],
+      "facts": {
+        "방열·팬": [
+          "AM5 지원 듀얼타워 공랭.",
+          "https://3rsys.com/shop/item.php?it_id=1781068291"
+        ],
+        "장착·간섭": [
+          "쿨러 높이 158mm. 메모리 간섭 때문에 팬을 올리면 높이가 달라집니다.",
+          "https://3rsys.com/shop/item.php?it_id=1781068291"
+        ]
+      }
+    },
+    {
+      "slot": "cooler",
+      "names": [
+        "Thermalright Assassin X 120 R Digital ARGB 화이트"
+      ],
+      "facts": {
+        "방열·팬": [
+          "120mm 팬 한 개를 쓰는 단일 타워 공랭. 듀얼타워보다 방열 면적이 작습니다.",
+          "https://www.thermalright.com/product/assassin-x-120-r-digital-argb-white/"
+        ],
+        "보증·이슈": [
+          "디지털 표시부 연결과 국내 보증, 해당 CPU의 부하 소음은 별도 확인.",
+          "https://www.thermalright.com/product/assassin-x-120-r-digital-argb-white/"
+        ]
+      },
+      "attention": "단일 타워 · 듀얼타워 기준 미달"
+    },
+    {
+      "slot": "cooler",
+      "names": [
+        "CORSAIR NAUTILUS 1.5 360 RS"
+      ],
+      "facts": {
+        "방열·팬": [
+          "부품표 기준 360mm 수랭. 상단 장착 시 팬을 포함한 전체 두께를 확인해야 합니다.",
+          "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A98D-A97T-C1T_11181124.jpg"
+        ],
+        "장착·간섭": [
+          "H6 Flow는 상단 360mm 규격을 지원하지만 팬·라디에이터 합계 두께가 약 60mm를 넘으면 전원부·I/O와 간섭할 수 있습니다.",
+          "https://support.nzxt.com/hc/en-us/articles/40183529624347-H6-Flow-2023-Specs"
+        ],
+        "보증·이슈": [
+          "판매처 표기 ‘1.5’ 리비전의 정확한 품번과 펌프 보증을 확인하세요.",
+          "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A98D-A97T-C1T_11181124.jpg"
+        ]
+      }
+    },
+    {
+      "slot": "cooler",
+      "names": [
+        "Thermalright Peerless Assassin 120 SE ARGB 서린"
+      ],
+      "facts": {
+        "방열·팬": [
+          "듀얼타워 공랭 설계. 부품표는 120 SE ARGB로 표기합니다.",
+          "https://www.thermalright.com/product/peerless-assassin-120-se/"
+        ],
+        "장착·간섭": [
+          "앞쪽 팬과 높은 RAM 사이 여유를 확인하세요.",
+          "https://www.thermalright.com/product/peerless-assassin-120-se/"
+        ]
+      }
+    },
+    {
+      "slot": "cooler",
+      "names": [
+        "3RSYS Socoool RC1400N Quiet 쌍철봉 블랙"
+      ],
+      "facts": {
+        "방열·팬": [
+          "판매 사양표에서 확인된 AM5 듀얼타워 공랭.",
+          "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+        ],
+        "장착·간섭": [
+          "출고 보드와 RAM이 정해져야 팬 및 방열판 간섭을 확인할 수 있습니다.",
+          "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+        ]
+      }
+    },
+    {
+      "slot": "case",
+      "names": [
+        "Lian Li Vector V100 ARGB 화이트"
+      ],
+      "facts": {
+        "흡기·팬": [
+          "전면 유리, 측면 흡기. ARGB 모델은 판매표의 기본 4팬 구성입니다.",
+          "https://lian-li.com/product/vector-v100/"
+        ],
+        "조립·이슈": [
+          "책상 옆면을 벽에 밀착시키면 측면 흡기 공간이 줄 수 있습니다.",
+          "https://lian-li.com/product/vector-v100/"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://lian-li.com/product/vector-v100/"
+        ]
+      }
+    },
+    {
+      "slot": "case",
+      "names": [
+        "NZXT H6 Flow 블랙"
+      ],
+      "facts": {
+        "흡기·팬": [
+          "전면 유리, 비스듬한 측면 멀티 팬 흡기. 기본 팬 3개.",
+          "https://support.nzxt.com/hc/en-us/articles/40183529624347-H6-Flow-2023-Specs"
+        ],
+        "장착 한도": [
+          "GPU 길이 365mm, CPU 공랭 높이 163mm.",
+          "https://support.nzxt.com/hc/en-us/articles/40183529624347-H6-Flow-2023-Specs"
+        ],
+        "조립·이슈": [
+          "상단 360mm 라디에이터 사용 시 라디에이터와 팬의 전체 두께를 확인하세요.",
+          "https://support.nzxt.com/hc/en-us/articles/40183529624347-H6-Flow-2023-Specs"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://support.nzxt.com/hc/en-us/articles/40183529624347-H6-Flow-2023-Specs"
+        ],
+        "2": [
+          true,
+          "https://support.nzxt.com/hc/en-us/articles/40183529624347-H6-Flow-2023-Specs"
+        ],
+        "3": [
+          false,
+          "https://support.nzxt.com/hc/en-us/articles/40183529624347-H6-Flow-2023-Specs"
+        ]
+      },
+      "attention": "공랭 높이 163mm · 대형 타워 호환 확인"
+    },
+    {
+      "slot": "case",
+      "names": [
+        "LIAN LI LANCOOL 207 블랙"
+      ],
+      "facts": {
+        "흡기·팬": [
+          "전면 메시, 전면 140mm 두 개와 하단 120mm 두 개가 기본.",
+          "https://lian-li.com/product/lancool-207/"
+        ],
+        "장착 한도": [
+          "GPU 375mm, CPU 공랭 높이 180mm.",
+          "https://lian-li.com/product/lancool-207/"
+        ],
+        "조립·이슈": [
+          "제조사는 ATX 파워 길이 160mm 미만을 안내합니다. 파워 크기와 단자 위치를 확인하세요.",
+          "https://lian-li.com/product/lancool-207/"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://lian-li.com/product/lancool-207/"
+        ],
+        "2": [
+          true,
+          "https://lian-li.com/product/lancool-207/"
+        ],
+        "3": [
+          true,
+          "https://lian-li.com/product/lancool-207/"
+        ]
+      }
+    },
+    {
+      "slot": "case",
+      "names": [
+        "darkFlash DRX70 MESH RGB 강화유리 블랙"
+      ],
+      "facts": {
+        "흡기·팬": [
+          "전면 메시와 기본 팬 4개. 막힌 전면 유리 구조와 구분됩니다.",
+          "https://darkflash.co.kr/article/%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C/2/26741/"
+        ],
+        "조립·이슈": [
+          "긴 GPU나 두꺼운 수랭 라디에이터가 필요하면 실제 옵션 한도를 확인하세요.",
+          "https://darkflash.co.kr/article/%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C/2/26741/"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://darkflash.co.kr/article/%EB%B3%B4%EB%8F%84%EC%9E%90%EB%A3%8C/2/26741/"
+        ]
+      }
+    },
+    {
+      "slot": "case",
+      "names": [
+        "잘만 i8 백사십 터보 블랙"
+      ],
+      "facts": {
+        "흡기·팬": [
+          "전면 메시, 전면 140mm 3개와 후면 140mm 1개.",
+          "https://brand.danawa.com/brand.php?id=zalman&listSeq=5921444&menu_seq=52105&method=boardView"
+        ],
+        "조립·이슈": [
+          "전면 라디에이터를 추가하면 GPU 쪽 장착 여유를 다시 확인하세요.",
+          "https://brand.danawa.com/brand.php?id=zalman&listSeq=5921444&menu_seq=52105&method=boardView"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://brand.danawa.com/brand.php?id=zalman&listSeq=5921444&menu_seq=52105&method=boardView"
+        ]
+      }
+    },
+    {
+      "slot": "case",
+      "names": [
+        "1STPlayer 와칠 WA7-K RGB 블랙"
+      ],
+      "facts": {
+        "흡기·팬": [
+          "판매표에 전면 메시와 전면 3개·후면 1개 기본팬이 표기됩니다.",
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ],
+        "장착 한도": [
+          "정확한 출고 케이스의 쿨러 높이와 긴 GPU 한도 확인 필요.",
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ]
+      }
+    },
+    {
+      "slot": "case",
+      "names": [
+        "잘만 N30 백사십 PLUS 블랙"
+      ],
+      "facts": {
+        "흡기·팬": [
+          "N30 백사십 PLUS 블랙 표기. 판매 상세 이미지와 실제 출고 팬 구성은 확인이 필요합니다.",
+          "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+        ],
+        "조립·이슈": [
+          "팬 개수, 라디에이터 호환, GPU 길이 한도를 판매자에게 확인하세요.",
+          "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+        ]
+      },
+      "attention": "출고 팬 구성 확인 필요"
+    }
+  ]
+}

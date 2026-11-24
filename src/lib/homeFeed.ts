@@ -1,7 +1,7 @@
 import "server-only";
 
 import { ALL_BOARDS, boardKeyToPath } from "./boardConfig";
-import { HOTDEAL_CATEGORIES, hotdealCategory, hotdealPrice, isActiveHotdeal } from "./hotdeal";
+import { HOTDEAL_CATEGORIES, hotdealCategory, hotdealPrice, isRecommendedHotdeal } from "./hotdeal";
 import { listOnlinePostsByBoard } from "./onlinePosts";
 import { formatKoreanDate } from "./postStorage";
 import type { Post } from "./postTypes";
@@ -37,10 +37,11 @@ export async function loadHomeFeed(): Promise<HomeFeedData> {
     }
     const board = boards[index];
     const publicPosts = list.value.filter(post => !post.isPrivate);
-    recent.push(...list.value.slice(0, 3).filter(post => !post.isPrivate).map(post => ({ post, board: board.title })));
+    const featured = board.key === "hotdeal" ? publicPosts.filter(post => isRecommendedHotdeal(post.hotdeal, now)) : publicPosts;
+    recent.push(...featured.slice(0, 3).map(post => ({ post, board: board.title })));
     if (board.key !== "hotdeal") return;
 
-    deals = publicPosts.filter(post => !post.hotdeal || isActiveHotdeal(post.hotdeal, now)).slice(0, 4).map(post => ({
+    deals = featured.slice(0, 4).map(post => ({
       href: detailPath(post),
       title: post.title,
       category: post.extra?.category ? HOTDEAL_CATEGORIES.find(category => category.value === hotdealCategory(post.extra?.category))?.label : undefined,

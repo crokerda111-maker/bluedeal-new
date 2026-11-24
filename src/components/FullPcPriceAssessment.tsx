@@ -3,7 +3,7 @@ import type { FullPcBoardRow } from "../lib/marketFullPc";
 import { fmtWon, formatPriceTime } from "./PriceOffer";
 
 export default function FullPcPriceAssessment({ row, peers }: { row: FullPcBoardRow; peers: readonly FullPcBoardRow[] }) {
-  const { priceComparison, priceHold, score, range, total, offer } = row;
+  const { priceComparison, priceHold, quality, total, offer } = row;
   const price = total === null ? "확인 필요" : fmtWon(total);
   const previous = !row.checkedToday || row.unavailable;
 
@@ -11,9 +11,9 @@ export default function FullPcPriceAssessment({ row, peers }: { row: FullPcBoard
     <h3 id="fullpc-price-title" className="font-semibold text-white">완본체 점수와 비교 근거</h3>
     <dl className="grid gap-2 text-sm sm:grid-cols-3">
       <div className="rounded-lg bg-white/5 p-3">
-        <dt className="text-xs text-white/75">부품 점수</dt>
-        <dd className="mt-1 font-semibold tabular-nums text-cyan-100">{score !== null ? `${score}/100점` : range ? `${range.join("–")}/100점` : "확인 중"}</dd>
-        {score === null && range ? <dd className="mt-1 text-xs text-white/70">미확인 사양에 따라 달라지는 범위</dd> : null}
+        <dt className="text-xs text-white/75">부품 확인 점수</dt>
+        <dd className="mt-1 font-semibold tabular-nums text-cyan-100">{quality ? `${quality.confirmed}/40점` : "확인 중"}</dd>
+        {quality && quality.score === null ? <dd className="mt-1 text-xs text-white/70">{quality.checked}/40개 기준 확인 · 종합 순위 대기</dd> : null}
       </div>
       <div className="rounded-lg bg-white/5 p-3">
         <dt className="text-xs text-white/75">가격 점수</dt>

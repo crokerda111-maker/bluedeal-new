@@ -89,8 +89,8 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
     {isSystem ? <section id="fullpc-configuration" className="bd-surface-md scroll-mt-24 space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-configuration-title">
       <h2 id="fullpc-configuration-title" className="text-xl font-semibold">{product.category === "fullpc" ? "완본체" : "반본체"} 기본 부품 구성</h2>
+      {configurationReview && fullPc?.quality ? <FullPcConfiguration review={configurationReview} quality={fullPc.quality} /> : <PcSellerConfiguration product={product} />}
       {fullPc ? <FullPcPriceAssessment row={fullPc} peers={peers} /> : null}
-      {configurationReview ? <FullPcConfiguration review={configurationReview} /> : <PcSellerConfiguration product={product} />}
       {marketplaceNote ? <div className="rounded-xl border border-amber-200/25 bg-amber-200/5 p-4 text-sm leading-6">
         <h3 className="font-semibold text-amber-100">{purchaseNote ? "판매 조건에서 확인할 점" : "구매 후기에서 확인할 점"}</h3>
         <p className="mt-1 text-white/80">{marketplaceNote.note}</p>

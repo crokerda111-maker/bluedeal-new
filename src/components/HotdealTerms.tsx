@@ -1,6 +1,6 @@
 import { useEffect, useId, useState } from "react";
 import { formatKoreanDate } from "../lib/postStorage";
-import { hotdealPrice, isActiveHotdeal } from "../lib/hotdeal";
+import { hotdealPrice, isActiveHotdeal, isRecommendedHotdeal } from "../lib/hotdeal";
 import type { Post } from "../lib/postTypes";
 import PostContentLink from "./PostContentLink";
 
@@ -58,6 +58,8 @@ export default function HotdealTerms({ post }: { post: Post }) {
   const affiliateHref = href && post.linkInfo?.affiliateHrefs.includes(href) ? href : null;
   const store = typeof post.extra?.store === "string" ? post.extra.store : null;
   const active = isActiveHotdeal(deal, now);
+  const evidence = isRecommendedHotdeal(deal, now) ? deal.priceEvidence : undefined;
+  const evidenceLabel = evidence?.basis === "history" ? "최근 30일 가격 기록" : evidence?.basis === "market" ? "다른 판매처 공개 가격" : "기존 가격 기록·다른 판매처 공개 가격";
   const row = "grid min-w-0 grid-cols-[6rem_minmax(0,1fr)] items-baseline gap-x-3 px-3 py-2.5 sm:grid-cols-[7rem_minmax(0,1fr)] sm:px-4";
   const label = "font-medium text-slate-300";
 
@@ -87,9 +89,10 @@ export default function HotdealTerms({ post }: { post: Post }) {
         </div>
         {deal.shipping ? <div className={row}><dt className={label}>배송비 포함</dt><dd>{hotdealPrice(post)}</dd></div> : null}
         <div className={row}><dt className={label}>구매 조건</dt><dd className="[overflow-wrap:anywhere]">{deal.conditions}</dd></div>
+        {evidence ? <div className={row}><dt className={label}>가격 근거</dt><dd>배송비 포함 비교 최저가 {evidence.low.toLocaleString("ko-KR")}원 · {evidenceLabel} {evidence.count}건</dd></div> : null}
       </dl>
       <p className="mt-2 text-xs text-slate-300">판매처 확인 {formatKoreanDate(deal.checkedAt)} · 결제 화면에서 최종 가격을 확인하세요.</p>
-      {deal.lowestIn30Days ? <p className="mt-2 text-xs text-slate-300">쿠팡 동일 옵션 · 최근 30일간 비교한 {deal.lowestIn30Days.observations}개 가격 중 최저</p> : null}
+      {evidence && deal.lowestIn30Days ? <p className="mt-2 text-xs text-slate-300">쿠팡 동일 옵션 · 최근 30일간 비교한 {deal.lowestIn30Days.observations}개 가격 중 최저</p> : null}
     </div>
   );
 }

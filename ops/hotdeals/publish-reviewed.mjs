@@ -100,6 +100,10 @@ async function publishReviewed() {
       continue;
     }
     if (checked > now || body.availability !== "in-stock") continue;
+    if (!Array.isArray(body.priceHistory) || body.priceHistory.length < 2) {
+      stats.rejected++;
+      continue;
+    }
     pending.push({ body, output });
   }
 

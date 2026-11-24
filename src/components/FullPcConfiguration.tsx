@@ -1,5 +1,6 @@
 import { PC_PARTS, type PcSlot } from "../lib/dailyPc";
-import { scoreFullPcParts, separatePcTotal, type FullPcReview } from "../lib/fullPcReview";
+import { separatePcTotal, type FullPcReview } from "../lib/fullPcReview";
+import type { assessMarketplaceFullPc } from "../lib/marketplacePcQuality";
 import { getPartEditorial } from "../lib/productEditorial";
 import { fmtWon, formatPriceTime } from "./PriceOffer";
 
@@ -16,16 +17,55 @@ const purchaseChecks: Record<PcSlot, string> = {
   case: "그래픽카드 길이와 쿨러 높이, 수랭 라디에이터 장착 위치를 주문 전 확인하세요.",
 };
 
-export default function FullPcConfiguration({ review }: { review: FullPcReview }) {
-  const { slots } = scoreFullPcParts(review);
+export default function FullPcConfiguration({ review, quality }: { review: FullPcReview; quality: ReturnType<typeof assessMarketplaceFullPc> }) {
   const separateTotal = separatePcTotal(review);
   return <div className="space-y-4 text-sm leading-6">
     <div>
       <p className="mt-1 text-white/75">{review.condition} · {review.checkedOn} KST</p>
-      <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. 16GB 메모리와 500GB SSD부터 평가합니다." : "CPU와 GPU·VRAM은 비교할 성능 급을 정합니다. 부품 구성 점수는 확장성·용량·전원·냉각 사양의 충족도를 표시합니다."} 결제금액, 보증, 실측 발열·소음은 별도로 확인하세요.</p>
+      <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. " : ""}부품별 5개 기준에서 확인된 충족만 1점씩 계산합니다. 각 부품을 펼치면 미충족·미확인 항목과 출처를 볼 수 있습니다.</p>
       {review.purchaseTerms ? <p className="mt-1 text-white/75">{review.purchaseTerms.os} · {review.purchaseTerms.warranty} <a className={sourceStyle} href={review.purchaseTerms.source} target="_blank" rel="noopener noreferrer">조건 출처<span className="sr-only"> (새 창)</span></a></p> : null}
-      {review.comparisonStatus ? <p className="mt-1 text-amber-100">{review.comparisonStatus}</p> : null}
+      {review.configurationConflict ? <p className="mt-2 rounded-lg bg-amber-500/10 p-3 text-amber-100">{review.configurationConflict}</p> : null}
     </div>
+    <section aria-labelledby="fullpc-part-quality-title" className="space-y-2">
+      <h3 id="fullpc-part-quality-title" className="font-semibold text-white">부품별 5점 평가</h3>
+      <div className="divide-y divide-white/10 rounded-xl border border-white/15 bg-slate-950/25">
+        {quality.slots.map(({ slot, points, checked, failed, criteria, facts, attention }) => {
+          const editorial = getPartEditorial(review.parts[slot]);
+          const state = failed.length ? "절충 사양" : points >= 4 ? "검증 양호" : "근거 부족";
+          const stateColor = failed.length ? "text-amber-100" : points >= 4 ? "text-cyan-100" : "text-white/70";
+          const summary = attention ?? (failed.length ? `미충족 · ${failed.map(item => item.label).join(", ")}` :
+            facts.find(item => item.evidence && (item.label === "게이밍 등급" || item.label === "제조사 라인업"))?.evidence?.[0]);
+          return <details key={slot} data-part-quality={slot} className="group">
+            <summary className="grid min-w-0 cursor-pointer list-none grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-1 px-3 py-3 focus-visible:outline focus-visible:outline-cyan-200 sm:px-4">
+              <span className="min-w-0 break-words"><span className="mr-2 font-semibold text-cyan-100">{PC_PARTS[slot]}</span>{" "}{review.parts[slot]}</span>
+              <span className={`whitespace-nowrap text-right text-xs sm:text-sm ${stateColor}`}><strong className="tabular-nums">{points}/5점</strong> · {state} <span aria-hidden="true" className="inline-block group-open:rotate-180">▾</span></span>
+              {summary ? <span className={`col-span-2 break-words text-xs ${stateColor}`}>{summary}</span> : null}
+            </summary>
+            <div className="space-y-3 border-t border-white/10 px-3 py-3 sm:px-4">
+              {slot !== "cpu" && slot !== "gpu" && review.tested[slot]?.fact ? <p className="break-words text-white/75">{review.tested[slot].fact}</p> : null}
+              <dl className="grid gap-2 sm:grid-cols-2">
+                {facts.map(({ label, evidence }) => (
+                  <div key={label} className="min-w-0 rounded-lg bg-white/5 p-2.5">
+                    <dt className="font-medium text-cyan-100">{label}</dt>
+                    <dd className="break-words text-white/75">{evidence ? <>{evidence[0]} <a className={sourceStyle} href={evidence[1]} target="_blank" rel="noopener noreferrer">출처<span className="sr-only"> (새 창)</span></a></> : "정확한 출고 모델 기준 확인 필요"}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="font-medium text-white">채점 기준 {checked}/5개 확인</p>
+              <ul className="space-y-1 text-xs leading-5 text-white/80">
+                {criteria.map(({ label, met, source }) => <li key={label}>
+                  <span className={met === true ? "text-cyan-100" : met === false ? "text-amber-100" : "text-white/65"}>{met === true ? "충족" : met === false ? "미충족" : "미확인"}</span> · {label}
+                  {source ? <> <a className={sourceStyle} href={source} target="_blank" rel="noopener noreferrer">근거<span className="sr-only"> (새 창)</span></a></> : null}
+                </li>)}
+              </ul>
+              <p className="text-white/75"><span className="font-medium text-amber-100">구매 전 확인</span> · {editorial?.caution ?? purchaseChecks[slot]}</p>
+              {editorial?.issue ? <p className="text-amber-100">{editorial.issue.text} <a className={sourceStyle} href={editorial.issue.source} target="_blank" rel="noopener noreferrer">이슈 출처<span className="sr-only"> (새 창)</span></a></p> : null}
+            </div>
+          </details>;
+        })}
+      </div>
+      <p className="text-xs text-white/70">추가 사양·평가 근거 확인 {quality.checkedOn} KST</p>
+    </section>
     {review.costComparison && separateTotal !== null ? <details className="rounded-xl border border-white/15 p-4 text-white/80">
       <summary className="cursor-pointer font-medium text-cyan-100">개별 구매 확인 기록 {fmtWon(separateTotal)} · 부품 8종, 배송, 조립, 동일 보증·OS 조건</summary>
       <dl className="mt-2 divide-y divide-white/10">
@@ -41,34 +81,6 @@ export default function FullPcConfiguration({ review }: { review: FullPcReview }
         </div>
       </dl>
     </details> : null}
-    <dl className="divide-y divide-white/10 border-y border-white/10">
-      {Object.entries(PC_PARTS).map(([slot, label]) => {
-        const part = slot as keyof typeof PC_PARTS;
-        const assessment = slots.find(item => item.slot === part);
-        const editorial = getPartEditorial(review.parts[part]);
-        const singleModule = part === "ram" && assessment?.criteria[1]?.met === false;
-        const caution = editorial?.caution ?? (singleModule
-          ? "메모리 모듈이 한 개입니다. 두 모듈 구성이 필요하면 같은 규격의 모듈과 추가 장착 비용을 확인하세요."
-          : purchaseChecks[part]);
-        return <div key={slot} className="grid grid-cols-[5rem_minmax(0,1fr)] gap-3 py-3">
-          <dt className="text-white/70">{label}</dt>
-          <dd className="min-w-0 break-words">
-            <p className="font-medium text-white">{review.parts[part]}</p>
-            {editorial ? <p className="mt-2 text-white/80"><span className="font-semibold text-cyan-100">장점</span> · {editorial.advantage} <a className={sourceStyle} href={editorial.source} target="_blank" rel="noopener noreferrer">근거<span className="sr-only"> (새 창)</span></a></p> : null}
-            <p className="mt-1 text-white/75"><span className="font-medium text-amber-100">구매 전 확인</span> · {caution}</p>
-            {editorial?.issue ? <p className="mt-1 text-amber-100">{editorial.issue.text} <a className={sourceStyle} href={editorial.issue.source} target="_blank" rel="noopener noreferrer">이슈 출처<span className="sr-only"> (새 창)</span></a></p> : null}
-            {assessment ? <>
-              <p className="mt-1 text-white/75">{assessment.fact}</p>
-              <p className="text-xs font-semibold text-cyan-100">{Number(assessment.earned.toFixed(1))}/{assessment.weight}점 충족{assessment.pending ? " · 일부 사양 확인 필요" : ""}</p>
-              <ul className="mt-1 space-y-1 text-xs text-white/75">
-                {assessment.criteria.map(({ label, met }) => <li key={label}><span className={met === true ? "text-cyan-100" : "text-amber-100"}>{met === null ? "확인 필요" : met ? "충족" : "미충족"}</span> · {label}</li>)}
-              </ul>
-              {assessment.url ? <a className={sourceStyle} href={assessment.url} target="_blank" rel="noopener noreferrer">사양 근거 <span className="sr-only">(새 창)</span></a> : null}
-            </> : null}
-          </dd>
-        </div>;
-      })}
-    </dl>
     <ul className="list-disc space-y-1 pl-5 text-white/75">
       {review.notes.map(note => <li key={note}>{note}</li>)}
     </ul>

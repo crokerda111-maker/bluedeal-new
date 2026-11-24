@@ -17,6 +17,13 @@ export const HOTDEAL_CATEGORIES = [
 
 export type HotdealCategory = (typeof HOTDEAL_CATEGORIES)[number]["value"];
 
+export const HOTDEAL_MAX_PREMIUM = 3;
+export type HotdealPriceEvidence = {
+  low: number;
+  count: number;
+  basis: "history" | "market" | "both";
+};
+
 export type VerifiedHotdeal = {
   checkedAt: string;
   validUntil: string;
@@ -25,6 +32,7 @@ export type VerifiedHotdeal = {
   shipping: number;
   conditions: string;
   image?: string;
+  priceEvidence?: HotdealPriceEvidence;
   lowestIn30Days?: { observations: number };
 };
 
@@ -35,6 +43,14 @@ export function hotdealCategory(value: unknown): HotdealCategory {
 
 export function isActiveHotdeal(deal: VerifiedHotdeal, now: number): boolean {
   return Date.parse(deal.checkedAt) <= now && now < Date.parse(deal.validUntil);
+}
+
+export function isRecommendedHotdeal(deal: VerifiedHotdeal | undefined, now: number): deal is VerifiedHotdeal & { priceEvidence: HotdealPriceEvidence } {
+  if (!deal?.priceEvidence || !isActiveHotdeal(deal, now)) return false;
+  const { low, count, basis } = deal.priceEvidence;
+  return Number.isSafeInteger(low) && low > 0 && Number.isSafeInteger(count) &&
+    (basis === "market" ? count >= 2 : basis === "history" ? count >= 3 : basis === "both" && count >= 5) &&
+    (deal.price + deal.shipping) * 100 <= low * (100 + HOTDEAL_MAX_PREMIUM);
 }
 
 export function isHotdealAuthor(value: unknown): boolean {

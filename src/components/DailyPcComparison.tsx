@@ -4,7 +4,8 @@ import { readDailyPc } from "../lib/dailyPcStore";
 import buildReviews from "../content/pcBuildReviews.json";
 import fullPcReviews from "../content/fullPcReviews.json";
 import verifiedFullPcSnapshot from "../content/fullPcVerifiedSnapshot.json";
-import { matchFullPcObservation, scoreFullPcParts } from "../lib/fullPcReview";
+import { matchFullPcObservation } from "../lib/fullPcReview";
+import { assessMarketplaceFullPc } from "../lib/marketplacePcQuality";
 import { getPartEditorial } from "../lib/productEditorial";
 import FullPcConfiguration from "./FullPcConfiguration";
 import ProductPhoto from "./ProductPhoto";
@@ -15,7 +16,7 @@ const qualityReviews = buildReviews.parts as QualityReview[];
 function Observation({ row, priceBadge, bestQuality, rank, score }: { row: PcObservation; priceBadge?: string; bestQuality?: boolean; rank?: number; score?: number }) {
   const total = row.price !== null && row.shipping !== null ? row.price + row.shipping : null;
   const configurationReview = matchFullPcObservation(row, fullPcReviews);
-  const configurationScore = configurationReview ? scoreFullPcParts(configurationReview).score : null;
+  const assessment = configurationReview ? assessMarketplaceFullPc(configurationReview) : undefined;
   const casePhoto = configurationReview ? getPartEditorial(configurationReview.parts.case)?.photo : undefined;
   const budgetNotes = [
     row.quantities?.ram === 1 && /\[\s*\d+GB\s*\]/i.test(row.parts.ram ?? "") ? "RAM 모듈 1개. 추가 장착 비용 확인" : null,
@@ -28,7 +29,7 @@ function Observation({ row, priceBadge, bestQuality, rank, score }: { row: PcObs
       {rank ? <span>종합 {rank}위 · {score}점</span> : null}
       {priceBadge ? <span>{priceBadge}</span> : null}
       {bestQuality ? <span>비교군 부품 평가 최고</span> : null}
-      {configurationReview ? <span>{configurationScore === null ? "부품 점수 일부 확인" : `${configurationReview.integratedOffice ? "사무용 구성" : "부품 구성"} ${configurationScore}/100`}</span> : null}
+      {assessment ? <span>부품 확인 {assessment.confirmed}/40점 · {assessment.checked}/40개 기준 확인</span> : null}
     </div>
     <h4 className="break-words font-semibold text-white">{row.merchantUrl ? <a className="hover:underline focus-visible:underline" href={row.merchantUrl} target="_blank" rel="noopener noreferrer">{row.title || "판매처에서 보기"} <span className="sr-only">새 창</span></a>
       : <Link className="hover:underline focus-visible:underline" href={`/products/${row.productId}`}>{row.title || "기존 상품 정보"}</Link>}</h4>
@@ -43,7 +44,7 @@ function Observation({ row, priceBadge, bestQuality, rank, score }: { row: PcObs
     {budgetNotes.length ? <p className="mt-2 text-xs leading-6 text-amber-100">{budgetNotes.join(" · ")}</p> : null}
     {row.state === "observed" ? <details className="mt-3">
       <summary className="min-h-11 cursor-pointer py-3 text-sm text-cyan-200">{configurationReview ? "부품별 점수·감점 사유 보기" : "선택 부품·사양 확인"}</summary>
-      {configurationReview ? <FullPcConfiguration review={configurationReview} /> : <dl className="space-y-3 border-t border-white/10 pt-3 text-sm">
+      {configurationReview && assessment ? <FullPcConfiguration review={configurationReview} quality={assessment} /> : <dl className="space-y-3 border-t border-white/10 pt-3 text-sm">
         {Object.entries(PC_PARTS).map(([key, label]) => {
           const slot = key as PcSlot;
           const part = row.parts[slot];

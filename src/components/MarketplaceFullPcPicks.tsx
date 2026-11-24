@@ -15,7 +15,7 @@ const fullBoard = "/prices/fullpc";
 const tierHref = (tier?: FullPcTier) => `${fullBoard}${tier ? `?pcTier=${tier}` : ""}#fullpc-picks`;
 
 function PcCard({ row, now, affiliate, home, movement }: { row: FullPcBoardRow; now: number; affiliate: boolean; home: boolean; movement?: number }) {
-  const { product, review, offer, total, checkedToday, score, range, priceComparison, priceHold, placement, recommendation } = row;
+  const { product, review, offer, total, checkedToday, quality, priceComparison, priceHold, placement, recommendation } = row;
   const Heading = home ? "h3" : "h4";
   const photo = home ? getFullPcPhoto(product.id) : undefined;
   const pending = priceHold ?? (priceComparison ? null : "같은 CPU·GPU·운영체제의 당일 비교 상품 확인 중");
@@ -42,10 +42,11 @@ function PcCard({ row, now, affiliate, home, movement }: { row: FullPcBoardRow; 
       {row.cpu || row.gpu ? <p className="mt-1 break-words text-sm leading-6 text-white/80">{[row.cpu, row.gpu].filter(Boolean).join(" · ")}</p> : null}
       <dl className="mt-3 grid grid-cols-2 gap-2 text-sm">
         <div className="min-w-0 rounded-lg border border-white/10 bg-white/5 px-2 py-2 sm:px-3">
-          <dt className="text-xs text-white/75">부품 점수</dt>
+          <dt className="text-xs text-white/75">부품 확인 점수</dt>
           <dd data-fullpc-parts-score className="mt-1 font-semibold tabular-nums text-cyan-100">
-            {score !== null ? `${score}/100점` : range ? `${range.join("–")}/100점` : "확인 중"}
+            {quality ? `${quality.confirmed}/40점` : "확인 중"}
           </dd>
+          {quality && quality.score === null ? <dd className="mt-1 text-xs text-white/70">{quality.checked}/40개 기준 확인</dd> : null}
         </div>
         <div className="min-w-0 rounded-lg border border-white/10 bg-white/5 px-2 py-2 sm:px-3">
           <dt className="text-xs text-white/75">가격 점수</dt>
@@ -115,7 +116,7 @@ export default async function MarketplaceFullPcPicks({
         <div>
           <Heading id="fullpc-picks-title" className="text-3xl font-semibold tracking-tight sm:text-4xl">{home ? "오늘의 완본체 베스트" : "급수별 완본체 비교"}</Heading>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-white/80">
-            {home ? "실속형·균형형·상급형에서 한 대씩 확인하세요." : "급수는 그래픽카드 모델로 나눕니다. 같은 CPU·그래픽카드·VRAM·운영체제의 당일 확인 상품끼리 부품 60점, 배송 포함 가격 40점으로 비교합니다."}
+            {home ? "실속형·균형형·상급형에서 한 대씩 확인하세요." : "같은 CPU·GPU·VRAM·운영체제의 당일 확인 상품을 비교합니다. 부품 8종을 각 5점으로 평가하며, 기준을 모두 확인한 상품은 부품 60점 환산과 가격 40점을 합산합니다."}
           </p>
         </div>
         {home ? <Link prefetch={false} href={tierHref()} className="inline-flex min-h-11 shrink-0 items-center self-start rounded-xl bg-cyan-200 px-4 text-sm font-semibold text-slate-950 hover:bg-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200">
@@ -127,7 +128,7 @@ export default async function MarketplaceFullPcPicks({
         이 섹션의 일부 구매 링크를 통해 구매가 이루어지면 블루딜이 일정 수수료를 받을 수 있습니다.
       </p> : null}
       {!recommendable.length && home ? <p className="text-sm leading-6 text-white/75">
-        오늘은 동일 부품 개별 구매 총액까지 검증한 추천 상품이 없어 확인 중인 후보를 표시합니다.
+        오늘은 부품 평가와 동일 구성 개별 구매 비용을 모두 검증한 추천 상품이 없어 확인 중인 후보를 표시합니다.
       </p> : null}
 
       {home ? <FullPcSpotlights groups={GAMING_TIERS.map((tier, index) => {

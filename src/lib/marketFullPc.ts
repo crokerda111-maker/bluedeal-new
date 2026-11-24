@@ -4,9 +4,10 @@ import marketplaceNotes from "../content/products/pcMarketplaceNotes.json";
 import { normalizeOutboundUrl } from "./affiliate";
 import { CATALOG_PRODUCTS, getCatalogProduct } from "./catalogData";
 import { isPcToday, kstDay } from "./dailyPc";
-import { scoreFullPcParts, separatePcTotal, type FullPcReview } from "./fullPcReview";
+import { separatePcTotal, type FullPcReview } from "./fullPcReview";
 import { FULL_PC_TIERS, fullPcComparisonKey, fullPcGpuChip, fullPcPricePoints, fullPcTier, rankComparableFullPcs } from "./fullPcTiers";
 import { type PriceItem } from "./mockPrices";
+import { assessMarketplaceFullPc } from "./marketplacePcQuality";
 import { OUTBOUND_LINKS } from "./outbound";
 import { pcCatalogConfiguration } from "./pcCatalogConfiguration";
 import type { CatalogProduct } from "./productCatalog";
@@ -69,15 +70,14 @@ function selectMarketplaceFullPcs(items: readonly PriceItem[], now: number) {
     if (!entry) return [];
 
     const { offer, merchant } = entry;
-    const { score, range } = scoreFullPcParts(review);
     const total = deliveredTotal(offer);
     const hold = comparisonHold(review, offer, total, now);
-    const separateTotal = hold === null && score !== null ? separatePcTotal(review, now) : null;
+    const separateTotal = hold === null ? separatePcTotal(review, now) : null;
     const savings = separateTotal && total !== null
       ? { amount: separateTotal - total, percent: (separateTotal - total) / separateTotal * 100 }
       : null;
 
-    return [{ product, offer, merchant, score, range, hold, savings }];
+    return [{ product, offer, merchant, hold, savings }];
   });
 }
 
@@ -89,8 +89,7 @@ export type FullPcBoardRow = {
   cpu?: string;
   gpu?: string;
   tier: keyof typeof FULL_PC_TIERS;
-  score: number | null;
-  range?: readonly [number, number];
+  quality?: ReturnType<typeof assessMarketplaceFullPc>;
   priceComparison?: { points: number; lowest: number; count: number };
   priceHold: string | null;
   total: number | null;
@@ -126,7 +125,7 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
     const tier = fullPcTier(fullPcGpuChip(gpu ?? product.name, !review));
     const offer = verifiedOffer?.offer ?? product.listings.map(listing => prices.get(listing.id))
       .filter(row => row !== undefined).sort((a, b) => (Date.parse(b.checkedAt ?? "") || 0) - (Date.parse(a.checkedAt ?? "") || 0))[0];
-    const assessment = verifiedOffer ?? (review ? scoreFullPcParts(review) : null);
+    const quality = review ? assessMarketplaceFullPc(review) : undefined;
     const note = marketplaceNotes[product.id as keyof typeof marketplaceNotes];
     const notForSale = (note && "saleStatus" in note && note.saleStatus === "not-for-sale") || review?.notForSale;
     const unavailable = !!notForSale || offer?.availability === "out-of-stock";
@@ -138,8 +137,8 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
         : verifiedOffer.hold ?? (comparison ? null : "CPU·GPU·VRAM·운영체제 확인 필요")
     );
     const savings = verifiedOffer?.savings ?? undefined;
-    const recommendation = comparison && savings && savings.amount > 0 ? savings : undefined;
-    return { product, review, offer, cpu, gpu, tier, score: assessment?.score ?? null, range: assessment?.range,
+    const recommendation = comparison && quality?.score != null && savings && savings.amount > 0 ? savings : undefined;
+    return { product, review, offer, cpu, gpu, tier, quality,
       total: deliveredTotal(offer), checkedToday: !!offer?.checkedAt && isPcToday(offer.checkedAt, now),
       unavailable, comparison, priceHold, savings, recommendation, merchant: verifiedOffer?.merchant };
   });
@@ -153,8 +152,8 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
       row.priceComparison = { points: fullPcPricePoints(total, lowest), lowest, count: priced.length };
     }
 
-    const ranked = rankComparableFullPcs(priced.flatMap(({ row, total }) => row.score === null ? [] :
-      [{ id: row.product.id, row, score: row.score, total }]), lowest);
+    const ranked = rankComparableFullPcs(priced.flatMap(({ row, total }) => row.quality?.score == null ? [] :
+      [{ id: row.product.id, row, score: row.quality.score / 40 * 100, total }]), lowest);
     if (ranked.length) {
       ranked.forEach(({ candidate, points }, index) => { candidate.row.placement = { rank: index + 1, mode: "score", points }; });
     } else {
@@ -172,7 +171,7 @@ export function orderFullPcBoard(a: FullPcBoardRow, b: FullPcBoardRow) {
     Number(b.checkedToday) - Number(a.checkedToday) ||
     Number(Boolean(b.review)) - Number(Boolean(a.review)) ||
     Number(Boolean(b.offer)) - Number(Boolean(a.offer)) ||
-    (b.score ?? -1) - (a.score ?? -1) || a.product.name.localeCompare(b.product.name, "ko");
+    (b.quality?.confirmed ?? -1) - (a.quality?.confirmed ?? -1) || a.product.name.localeCompare(b.product.name, "ko");
 }
 
 export function homeFullPcCandidates(rows: readonly FullPcBoardRow[], tier: FullPcBoardRow["tier"]) {

@@ -63,7 +63,7 @@ export default function HomeFeed({ hotdealHeading, recentHeading }: { hotdealHea
             <p role="status">핫딜을 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.</p>
             {retryButton}
           </div>}
-          {data?.deals?.length === 0 && <p className="bd-surface-md p-5 text-sm text-white/70">아직 등록된 핫딜이 없습니다.</p>}
+          {data?.deals?.length === 0 && <p className="bd-surface-md p-5 text-sm text-white/70">현재 가격 기준을 충족한 핫딜이 없습니다.</p>}
           {data?.deals?.map(deal => (
             <Link key={deal.href} href={deal.href} prefetch={false} className="group bd-surface-md min-w-0 p-4 hover:bg-white/10">
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
