@@ -1,7 +1,7 @@
 {
   "category": "psu",
-  "updatedAt": "2026-11-22T03:11:57.480290Z",
-  "generatedAt": "2026-11-22T03:26:44.675313Z",
+  "updatedAt": "2026-11-24T09:02:47.673Z",
+  "generatedAt": "2026-11-24T09:05:23.967Z",
   "items": [
     {
       "id": "reviewed-nzxt-c650-bulk-retailer-gmarket-4717840102",
@@ -18,12 +18,13 @@
       "shippingNote": "기본 배송비 · 도서산간·묶음 수량에 따른 추가비 판매처 확인",
       "priceNote": "확인 시점 판매가. 80PLUS·ATX·PCIe 버전은 판매 표기이며 인증과 성능 시험을 독립 확인한 결과가 아닙니다. 적립·후기 보상은 차감하지 않음. 판매 제목에 세대·색상·품번이 없어 이전 컴퓨존 C650 블랙 벌크와 동일한 상품으로 합치지 않았습니다. 케이블 구성·국내 보증 확인 필요.",
       "officialUrl": null,
-      "checkedAt": "2026-11-21T05:44:26.371000Z",
-      "updatedAt": "2026-11-21T05:44:26.371000Z",
-      "availability": "unknown",
+      "checkedAt": "2026-11-24T09:02:47.560Z",
+      "updatedAt": "2026-11-24T09:02:47.560Z",
+      "availability": "in-stock",
       "cardPrice": 54500,
       "cardNote": "하나카드 1,500원 할인. 쿠폰·옵션 적용 후 실구매금액 50,000원 이상, 최대 1,500원. 다른 카드 할인과 합산하지 않으며 대상 카드·예산·결제창 적용 확인 필요.",
-      "cardEndsOn": "2026-11-30"
+      "cardEndsOn": "2026-11-30",
+      "availabilityCheckedAt": "2026-11-24T09:02:47.560Z"
     },
     {
       "id": "reviewed-aone-signature-850-black-gmarket-4654061660",
@@ -40,9 +41,9 @@
       "shippingNote": "기본 배송비 · 도서산간·묶음 수량에 따른 추가비 판매처 확인",
       "priceNote": "확인 시점 판매가. 80PLUS·ATX·PCIe 버전은 판매 표기이며 인증과 성능 시험을 독립 확인한 결과가 아닙니다. 적립·후기 보상은 차감하지 않음.",
       "officialUrl": null,
-      "checkedAt": "2026-11-21T05:41:45.166000Z",
-      "updatedAt": "2026-11-21T05:41:45.166000Z",
-      "availability": "unknown",
+      "checkedAt": "2026-11-24T09:02:47.673Z",
+      "updatedAt": "2026-11-24T09:02:47.673Z",
+      "availability": "in-stock",
       "couponPrice": 89300,
       "couponNote": "[누구나] 디지털/가전 6% 쿠폰. 1만원 이상 구매, 최대40만원. ID당 수량 제한 없음. 발급기간2026-11-20~2026-11-25, 발급 당일만 사용. 조기소진·판매자 동의·개인별 적용 주문 전 확인.",
       "couponStartsOn": "2026-11-20",
@@ -50,7 +51,8 @@
       "cardPrice": 87800,
       "cardNote": "하나카드 1,500원 할인. 쿠폰·옵션 적용 후 실구매금액 50,000원 이상, 최대 1,500원. 다른 카드 할인과 합산하지 않으며 대상 카드·예산·결제창 적용 확인 필요.",
       "cardEndsOn": "2026-11-30",
-      "cardRequiresCoupon": true
+      "cardRequiresCoupon": true,
+      "availabilityCheckedAt": "2026-11-24T09:02:47.673Z"
     },
     {
       "id": "reviewed-micronics-classic-ii-ev-750-gold-gmarket-4886048782",

@@ -1,7 +1,7 @@
 {
   "category": "motherboard",
-  "updatedAt": "2026-11-21T05:06:02.638000Z",
-  "generatedAt": "2026-11-22T03:26:44.675313Z",
+  "updatedAt": "2026-11-24T09:02:47.838Z",
+  "generatedAt": "2026-11-24T09:05:23.967Z",
   "items": [
     {
       "id": "colorful-a520m-k-v14-gm4697504736",
@@ -18,12 +18,12 @@
       "shippingNote": "기본 무료배송 표시 · 도서산간 추가비 확인 필요",
       "priceNote": "G마켓 할인가 표시 · 개인별 쿠폰·카드·회원 혜택 제외",
       "officialUrl": null,
-      "checkedAt": "2026-11-21T02:56:58.867000Z",
-      "updatedAt": "2026-11-21T02:56:58.867000Z",
-      "availability": "unknown",
+      "checkedAt": "2026-11-24T09:02:47.379Z",
+      "updatedAt": "2026-11-24T09:02:47.379Z",
+      "availability": "in-stock",
       "cardPrice": 49690,
-      "cardNote": "하나카드 1500원 할인, 실구매금액 5만원 이상·최대 1500원. 일일 한도·횟수·최종 주문서 적용 확인 필요.",
-      "cardEndsOn": "2026-11-30"
+      "cardNote": "하나카드 결제 시 상품 페이지 표시가. 대상 카드·할인 예산·결제창 적용 여부는 판매처 확인.",
+      "availabilityCheckedAt": "2026-11-24T09:02:47.379Z"
     },
     {
       "id": "gigabyte-b850m-force-v2-gm4768647010",
@@ -40,12 +40,12 @@
       "shippingNote": "기본 배송비 3000원 · 도서산간 추가비 확인 필요",
       "priceNote": "G마켓 할인가 표시 · 쿠폰·카드·회원 혜택 제외",
       "officialUrl": null,
-      "checkedAt": "2026-11-21T03:06:05.410000Z",
-      "updatedAt": "2026-11-21T03:06:05.410000Z",
-      "availability": "unknown",
+      "checkedAt": "2026-11-24T09:02:47.838Z",
+      "updatedAt": "2026-11-24T09:02:47.838Z",
+      "availability": "in-stock",
       "cardPrice": 142500,
-      "cardNote": "하나카드 2000원 할인. 실구매금액 10만원 이상·최대 2000원, 일일 한도·횟수·최종 주문서 적용 확인 필요. 배송비 별도.",
-      "cardEndsOn": "2026-11-30"
+      "cardNote": "NH농협카드 결제 시 상품 페이지 표시가. 대상 카드·할인 예산·결제창 적용 여부는 판매처 확인.",
+      "availabilityCheckedAt": "2026-11-24T09:02:47.838Z"
     },
     {
       "id": "gigabyte-b760m-aorus-d4-gen5-gm4671937228",

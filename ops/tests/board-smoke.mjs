@@ -13,6 +13,7 @@ import { load } from 'cheerio';
 import reservedPorts from 'next/dist/lib/helpers/get-reserved-port.js';
 import { assertBrowserHeaders } from './browser-headers.mjs';
 import { assertPublicMetadata, assertExcludedMetadata } from './page-metadata.mjs';
+import { getPublicPriceSnapshot } from '../../src/lib/priceSnapshot.ts';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const generatedLinks = JSON.parse(await readFile(new URL('../../src/content/outbound.generated.json', import.meta.url), 'utf8'));
@@ -873,13 +874,16 @@ try {
     assert.match(response.headers.get('x-robots-tag'), /noindex/);
     assert.deepEqual(Object.keys(response.data).sort(), ['categories', 'commit', 'generatedAt', 'itemCount', 'schedule', 'schemaVersion', 'service', 'snapshotHash', 'updatedAt', 'version']);
     const contract = JSON.parse(await readFile(path.join(root, 'src/content/priceSnapshot.schema.json'), 'utf8'));
-    let count = 0;
+    const meta = JSON.parse(await readFile(path.join(root, 'src/content/prices/meta.json'), 'utf8'));
+    const categories = [];
     for (const [index, category] of contract.categories.entries()) {
       const expected = JSON.parse(await readFile(path.join(root, `src/content/prices/${category}.json`), 'utf8'));
       assert.deepEqual(response.data.categories[index], { category, itemCount: expected.items.length, updatedAt: expected.updatedAt });
-      count += expected.items.length;
+      categories.push(expected);
     }
-    assert.equal(response.data.itemCount, count);
+    const expected = getPublicPriceSnapshot(meta, categories, generatedLinks, contract);
+    assert.equal(response.data.itemCount, expected.itemCount);
+    assert.equal(response.data.snapshotHash, expected.snapshotHash);
     assert.doesNotMatch(JSON.stringify(response.data), /https?:|originalUrl|seller|token|password|secret/i);
   });
 
