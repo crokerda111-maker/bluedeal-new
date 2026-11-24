@@ -103,7 +103,8 @@ for (const [code, { productIds, rows }] of byAddress) {
   // A recorded sale keeps its original /go code and the exact registered URL.
   const same = existing.find(link => normalizeOutboundUrl(link.originalUrl) === address.url);
   if (existing.length && !same) continue;
-  if (!same) MARKETPLACE_OUTBOUND_LINKS[code] = { code, merchant: address.merchant, originalUrl: address.url };
+  // Keep the earlier marketplace button URL after the same listing gains a recorded price.
+  if (same?.code !== code) MARKETPLACE_OUTBOUND_LINKS[code] = { code, merchant: address.merchant, originalUrl: address.url };
   const productLinks = linksByProduct.get(preferred.productId) ?? [];
   const link = { goCode: same?.code ?? code, merchant: address.merchant, seller: preferred.seller || undefined, option: preferred.option, checkedOn: preferred.checkedOn };
   productLinks.push(link);

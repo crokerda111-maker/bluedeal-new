@@ -190,6 +190,10 @@ async function mockKv() {
         sorted.set(key, entries); return Number(!exists);
       }
       case 'ZREM': return Number(sorted.get(key)?.delete(value) ?? false);
+      case 'ZREVRANK': {
+        const rank = [...(sorted.get(key) ?? new Map())].sort((a, b) => b[1] - a[1]).findIndex(([id]) => id === value);
+        return rank < 0 ? null : rank;
+      }
       case 'ZREVRANGE': {
         if (!Number.isInteger(Number(value)) || !Number.isInteger(Number(args[2]))) throw new Error('Redis range indexes must be integers');
         return [...(sorted.get(key) ?? new Map())].sort((a, b) => b[1] - a[1]).slice(Number(value), Number(args[2]) + 1).map(([id]) => id);
@@ -510,6 +514,15 @@ try {
       const homepage = await request(disclosureApp.base, 'GET', '/api/home-feed');
       assert.ok(homepage.data.deals.some(item => item.priceSource === '핫딜모음' && item.href.endsWith(id)));
       assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + id, undefined, session)).status, 200);
+
+      const compuzone = 'https://m.compuzone.co.kr/product/product_detail.htm?ProductNo=1252712';
+      const invalid = await request(disclosureApp.base, 'POST', route, { ...draft, productUrl: compuzone + '&ProductNo=1252713' }, session);
+      assert.equal(invalid.status, 422);
+      const cooler = await request(disclosureApp.base, 'POST', route, { ...draft, title: 'LOCAL 시스템 팬', productUrl: compuzone }, session);
+      assert.equal(cooler.status, 201);
+      const coolerPost = (await request(disclosureApp.base, 'GET', '/api/posts/' + cooler.data.id)).data.post;
+      assert.equal(coolerPost.extra.store, '컴퓨존');
+      assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + cooler.data.id, undefined, session)).status, 200);
     });
     await check('reviewed news publish once and price observations expose only public quotes', async () => {
       const route = '/api/internal/editorial-news';
@@ -1019,6 +1032,43 @@ try {
       const range = kv.requests.slice(before).flatMap(item => item.commands).find(command => command[0] === 'ZREVRANGE');
       assert.equal(range[2], 0);
       assert.equal(range[3], expectedEnd);
+    }
+  });
+  await check('hotdeal archive loads more than 200 posts and resumes after new arrivals', async () => {
+    const index = 'bd:board:hotdeal:posts';
+    const saved = kv.sorted.get(index);
+    const entries = new Map();
+    const ids = Array.from({ length: 206 }, (_, i) => `local-archive-${i}`);
+    try {
+      for (const [i, id] of ids.entries()) {
+        const time = 1650000000000 + i * 1000;
+        const post = { id, boardKey: 'hotdeal', type: 'general', title: id, content: '보존 기록', createdAt: new Date(time).toISOString() };
+        entries.set(id, time);
+        kv.values.set('bd:post:' + id, JSON.stringify(post));
+      }
+      entries.delete(ids.at(-1));
+      kv.sorted.set(index, entries);
+      const route = '/api/posts?boardKey=hotdeal&paged=1';
+      const first = await api('GET', route);
+      assert.equal(first.status, 200);
+      assert.equal(first.data.posts.length, 48);
+      entries.set(ids.at(-1), 1650001000000);
+      const collected = first.data.posts.map(post => post.id);
+      let cursor = first.data.nextCursor;
+      for (let page = 0; page < 5 && cursor; page++) {
+        const result = await api('GET', route + '&after=' + cursor);
+        assert.equal(result.status, 200);
+        collected.push(...result.data.posts.map(post => post.id));
+        cursor = result.data.nextCursor;
+      }
+      assert.equal(cursor, null);
+      assert.deepEqual(collected, ids.slice(0, -1).reverse());
+      entries.delete(first.data.nextCursor);
+      assert.equal((await api('GET', route + '&after=' + first.data.nextCursor)).status, 409);
+    } finally {
+      for (const id of ids) kv.values.delete('bd:post:' + id);
+      if (saved) kv.sorted.set(index, saved);
+      else kv.sorted.delete(index);
     }
   });
   await check('dynamic page parameters resolve and invalid categories return 404', async () => {

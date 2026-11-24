@@ -10,7 +10,7 @@ import type { Merchant } from "./outbound";
 
 const STORE_LABELS: Partial<Record<Merchant, string>> = {
   coupang: "쿠팡", aliexpress: "알리익스프레스", "11st": "11번가", gmarket: "G마켓",
-  auction: "옥션", ssg: "SSG", lotteon: "롯데온", ohou: "오늘의집", naver: "네이버쇼핑",
+  auction: "옥션", ssg: "SSG", lotteon: "롯데온", ohou: "오늘의집", naver: "네이버쇼핑", compuzone: "컴퓨존",
 };
 const HOUR = 60 * 60 * 1000;
 const DAY = 24 * HOUR;
@@ -85,6 +85,9 @@ function directListing(url: URL, merchant: Merchant) {
     case "lotteon": return /^\/p\/product\/\w+\/?$/.test(path);
     case "ohou": return /^\/goods\/\d+\/?$/.test(path);
     case "naver": return /^\/[^/]+\/products\/\d+\/?$/.test(path);
+    case "compuzone": return ["www.compuzone.co.kr", "m.compuzone.co.kr"].includes(url.hostname) &&
+      path.toLowerCase() === "/product/product_detail.htm" &&
+      query.getAll("ProductNo").length === 1 && /^\d+$/.test(query.get("ProductNo") ?? "");
     default: return false;
   }
 }

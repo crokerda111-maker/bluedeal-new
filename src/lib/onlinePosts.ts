@@ -232,6 +232,26 @@ export async function listOnlinePostsByBoard(boardKey: BoardKey, limit = 50, { i
   const safeLimit = Math.max(1, Math.min(200, Number.isFinite(limit) ? Math.floor(limit) : 50));
 
   const ids = await kvCommand<string[]>("ZREVRANGE", boardZsetKey(boardKey), 0, safeLimit - 1);
+  return readBoardPosts(boardKey, ids, includeHotdealClicks);
+}
+
+export async function listHotdealPage(after: string | null) {
+  const index = boardZsetKey("hotdeal");
+  const size = 48;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const rank = after ? await kvCommand<number | null>("ZREVRANK", index, after) : 0;
+    if (rank === null) return null;
+    const window = await kvCommand<string[]>("ZREVRANGE", index, rank, rank + size + (after ? 1 : 0));
+    // Confirm the anchor when a newer post is added or removed between the two reads.
+    if (after && window[0] !== after) continue;
+    const ids = after ? window.slice(1) : window;
+    const posts = await readBoardPosts("hotdeal", ids.slice(0, size), true);
+    return { posts, nextCursor: ids[size] ? ids[size - 1] : null };
+  }
+  return null;
+}
+
+async function readBoardPosts(boardKey: BoardKey, ids: string[], includeHotdealClicks: boolean): Promise<Post[]> {
   if (!Array.isArray(ids) || ids.length === 0) return [];
 
   const results = await kvPipeline(ids.map((id) => ["GET", postKey(id)]));

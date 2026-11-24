@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { HOTDEAL_CATEGORIES, hotdealCategory, hotdealPrice, isActiveHotdeal, isFeaturedHotdeal, isHotdealAuthor, isRecommendedHotdeal } from "../lib/hotdeal";
 import type { HotdealCategory } from "../lib/hotdeal";
 import type { Post } from "../lib/postTypes";
-import { apiListPosts } from "../lib/postsClient";
+import { ApiError, apiListHotdealPage } from "../lib/postsClient";
 import { formatKoreanDate } from "../lib/postStorage";
 import PostLoadError from "./PostLoadError";
 
@@ -27,6 +27,7 @@ function tabClass(selected: boolean) {
 function DealCard({ post, now }: { post: Post; now: number }) {
   const deal = post.hotdeal;
   const active = deal && isActiveHotdeal(deal, now);
+  const ended = deal && now >= Date.parse(deal.validUntil);
   const recommended = isRecommendedHotdeal(deal, now);
   const curated = !recommended && isFeaturedHotdeal(deal, now) ? deal.sourceReview : undefined;
   const category = HOTDEAL_CATEGORIES.find(item => item.value === hotdealCategory(post.extra?.category))?.label;
@@ -39,7 +40,7 @@ function DealCard({ post, now }: { post: Post; now: number }) {
         <span className="rounded-md bg-white/10 px-2 py-1 text-white/90">{category}</span>
         {typeof post.extra?.store === "string" ? <span>{post.extra.store}</span> : null}
         <span className={recommended ? "font-medium text-emerald-200" : ""}>
-          {recommended ? "최저가 근처 확인" : curated ? `${curated.name} 소개가` : active ? "비교 근거 미확인" : deal ? "가격 재확인 필요" : "커뮤니티 제보"}
+          {recommended ? "최저가 근처 확인" : curated ? `${curated.name} 소개가` : ended ? "종료" : active ? "비교 근거 미확인" : deal ? "가격 재확인 필요" : "커뮤니티 제보"}
         </span>
       </div>
       <h2 className="text-lg font-semibold [overflow-wrap:anywhere]">
@@ -65,15 +66,18 @@ export default function HotdealBoard() {
   const [tab, setTab] = useState<Tab>("all");
   const [query, setQuery] = useState("");
   const [posts, setPosts] = useState<Post[]>([]);
+  const [nextCursor, setNextCursor] = useState<string | null>(null);
+  const [historyState, setHistoryState] = useState<"idle" | "loading" | "error" | "stale">("idle");
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
   const [attempt, setAttempt] = useState(0);
   const [now, setNow] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
-    apiListPosts("hotdeal", 200).then(data => {
+    apiListHotdealPage().then(({ posts, nextCursor }) => {
       if (cancelled) return;
-      setPosts(data.filter(post => !post.isPrivate));
+      setPosts(posts.filter(post => !post.isPrivate));
+      setNextCursor(nextCursor);
       setNow(Date.now());
       setStatus("ready");
     }).catch(() => { if (!cancelled) setStatus("error"); });
@@ -81,11 +85,27 @@ export default function HotdealBoard() {
     return () => { cancelled = true; window.clearInterval(clock); };
   }, [attempt]);
 
+  async function loadOlder() {
+    if (!nextCursor || historyState === "loading") return;
+    setHistoryState("loading");
+    try {
+      const page = await apiListHotdealPage(nextCursor);
+      setPosts(current => {
+        const known = new Set(current.map(post => post.id));
+        return [...current, ...page.posts.filter(post => !post.isPrivate && !known.has(post.id))];
+      });
+      setNextCursor(page.nextCursor);
+      setHistoryState("idle");
+    } catch (error) {
+      setHistoryState(error instanceof ApiError && error.status === 409 ? "stale" : "error");
+    }
+  }
+
   const term = query.trim().toLowerCase();
   const filtered = posts.filter(post => {
     const featured = isFeaturedHotdeal(post.hotdeal, now);
-    if (tab === "records" ? featured : !featured) return false;
-    if (tab === "popular" && !post.hotdealClicks) return false;
+    if (tab === "records" && featured) return false;
+    if (tab === "popular" && !(featured && post.hotdealClicks)) return false;
     if (tab === "coupang-low" && !(post.extra?.store === "쿠팡" && isRecommendedHotdeal(post.hotdeal, now) && post.hotdeal.lowestIn30Days)) return false;
     if (tab !== "all" && tab !== "popular" && tab !== "coupang-low" && tab !== "records" && hotdealCategory(post.extra?.category) !== tab) return false;
     return !term || [post.title, post.extra?.store, post.hotdeal?.option, post.content].join(" ").toLowerCase().includes(term);
@@ -98,7 +118,7 @@ export default function HotdealBoard() {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h1 className="text-3xl font-semibold tracking-tight">핫딜</h1>
-            <p className="mt-2 text-sm text-white/75">블루딜에서 비교한 딜과 외부에 공개된 할인·가격 비교 정보를 모았습니다. 각 글에서 가격 출처와 적용 조건을 확인하세요.</p>
+            <p className="mt-2 text-sm text-white/75">진행 중인 핫딜과 종료된 가격 기록을 함께 볼 수 있습니다.</p>
           </div>
           <Link href="/community/hotdeal/write" className="rounded-xl bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-cyan-200">
             핫딜 제보
@@ -135,6 +155,18 @@ export default function HotdealBoard() {
       ) : (
         <p className="bd-surface-md p-6 text-sm text-white/75" role="status">{tab === "records" ? "표시할 제보·이전 기록이 없습니다." : "조건을 충족한 핫딜이 없습니다."}</p>
       )}
+      {status === "ready" && nextCursor && tab !== "popular" && tab !== "coupang-low" ? (
+        <div className="text-center">
+          {historyState === "error" ? <p role="status" className="mb-2 text-sm">이전 글을 불러오지 못했습니다.</p> : null}
+          <button type="button" disabled={historyState === "loading"} onClick={historyState === "stale" ? () => {
+            setHistoryState("idle");
+            setStatus("loading");
+            setAttempt(value => value + 1);
+          } : loadOlder} className="min-h-11 rounded-xl border border-white/20 px-4 text-sm text-white/85 hover:bg-white/10">
+            {historyState === "loading" ? "불러오는 중" : historyState === "stale" ? "목록 새로 불러오기" : "이전 글 더 보기"}
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }

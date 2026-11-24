@@ -5,7 +5,7 @@ import { getBoardByKey, getAllowedTypes, POST_TYPE_OPTIONS } from "../../../lib/
 import { isAdminRequest } from "../../../lib/adminAuth";
 import { memberLoginEnabled, memberWritingEnabled, readWriter } from "../../../lib/memberWrite";
 import { KvNotConfiguredError } from "../../../lib/kvRest";
-import { createOnlinePost, listOnlinePostsByBoard, PostValidationError } from "../../../lib/onlinePosts";
+import { createOnlinePost, listHotdealPage, listOnlinePostsByBoard, PostValidationError } from "../../../lib/onlinePosts";
 import { issuePostTitle, POST_LIMITS, validateIssueLine, validatePostFields } from "../../../lib/postInput";
 import { readJsonObject, RequestInputError } from "../../../lib/requestGuard";
 
@@ -50,11 +50,18 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const posts = await listOnlinePostsByBoard(boardKey, limit);
+    const paging = boardKey === "hotdeal" && sp.get("paged") === "1";
+    const after = sp.get("after");
+    if (paging && after !== null && !/^[a-zA-Z0-9_-]{1,100}$/.test(after)) {
+      return json({ error: "이전 글 위치를 확인해 주세요." }, { status: 400 });
+    }
+    const page = paging ? await listHotdealPage(after) : { posts: await listOnlinePostsByBoard(boardKey, limit) };
+    if (!page) return json({ error: "목록이 바뀌었습니다. 처음부터 다시 불러와 주세요." }, { status: 409 });
+    const { posts } = page;
 
     // Non-admin: never expose private content in list.
     if (!isAdminRequest(req)) {
-      return json({ posts: maskPrivateInList(posts) });
+      return json({ ...page, posts: maskPrivateInList(posts) });
     }
 
     // Admin: still remove passwordHash
@@ -62,7 +69,7 @@ export async function GET(req: NextRequest) {
       const { passwordHash, ...rest } = p as any;
       return rest as Post;
     });
-    return json({ posts: safe });
+    return json({ ...page, posts: safe });
   } catch (e: any) {
     if (e instanceof KvNotConfiguredError) {
       return json(

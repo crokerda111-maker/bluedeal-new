@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "20481b41e55848d6ce69669db00daadf67f91d68c2b514749e4f3a4eb4da496d",
+  "catalogHash": "63850461a51ce58d5fff839ed6961c8775c8db447b7cab98a2dc9f435d26032d",
   "entries": 815,
   "products": [
     {
@@ -94786,6 +94786,12 @@
           "url": "https://www.samsung.com/sec/memory-storage/9100-pro-nvme-ssd/MZ-VAP1T0BW/",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "11번가 실제 판매 구성·상태",
+          "url": "https://www.11st.co.kr/products/8125841945",
+          "observedAt": "2026-11-24T11:28:59.393Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -94799,6 +94805,12 @@
           "merchant": "G마켓",
           "seller": "삼성온라인공식파트너",
           "pricePage": "/prices/ssd#reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-gmarket-4392204970"
+        },
+        {
+          "id": "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-11st-8125841945",
+          "merchant": "11번가",
+          "seller": "삼성전자온라인파트너",
+          "pricePage": "/prices/ssd#reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-11st-8125841945"
         }
       ],
       "facts": [

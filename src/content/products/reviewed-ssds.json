@@ -640,6 +640,12 @@
         "url": "https://item.gmarket.co.kr/Item?goodsCode=4392204970",
         "observedAt": "2026-11-21T06:41:54.256Z",
         "kind": "retailer-listing"
+      },
+      {
+        "label": "11번가 실제 판매 구성·상태",
+        "url": "https://www.11st.co.kr/products/8125841945",
+        "observedAt": "2026-11-24T11:28:59.393Z",
+        "kind": "retailer-listing"
       }
     ],
     "listObservedAt": null,
@@ -653,6 +659,12 @@
         "merchant": "G마켓",
         "seller": "삼성온라인공식파트너",
         "pricePage": "/prices/ssd#reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-gmarket-4392204970"
+      },
+      {
+        "id": "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-11st-8125841945",
+        "merchant": "11번가",
+        "seller": "삼성전자온라인파트너",
+        "pricePage": "/prices/ssd#reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-11st-8125841945"
       }
     ]
   }

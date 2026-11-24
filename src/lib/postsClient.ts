@@ -96,6 +96,19 @@ export async function apiListPosts(boardKey: BoardKey, limit = 50): Promise<Post
   return data.posts as Post[];
 }
 
+export async function apiListHotdealPage(after?: string): Promise<{ posts: Post[]; nextCursor: string | null }> {
+  const params = new URLSearchParams({ boardKey: "hotdeal", paged: "1" });
+  if (after) params.set("after", after);
+  const res = await fetch(`/api/posts?${params}`, { method: "GET", cache: "no-store" });
+  const data = await parseJsonSafe(res);
+  if (!res.ok) throwApiError(res, data);
+  if (!isRecord(data) || !Array.isArray(data.posts) || !data.posts.every(post => isPost(post) && post.boardKey === "hotdeal") ||
+      (data.nextCursor !== null && (typeof data.nextCursor !== "string" || !/^[a-zA-Z0-9_-]{1,100}$/.test(data.nextCursor)))) {
+    return invalidResponse(res);
+  }
+  return { posts: data.posts as Post[], nextCursor: data.nextCursor };
+}
+
 export async function apiGetPost(id: string, opts?: { password?: string }): Promise<Post> {
   const password = opts?.password;
   const res = await fetch(`/api/posts/${encodeURIComponent(id)}${password === undefined ? "" : "/unlock"}`, password === undefined ? { method: "GET", cache: "no-store" } : {
