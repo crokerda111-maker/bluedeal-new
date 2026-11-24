@@ -1,13 +1,13 @@
 import "server-only";
 
 import { ALL_BOARDS, boardKeyToPath } from "./boardConfig";
-import { HOTDEAL_CATEGORIES, hotdealCategory, hotdealPrice, isRecommendedHotdeal } from "./hotdeal";
+import { HOTDEAL_CATEGORIES, hotdealCategory, hotdealPrice, isFeaturedHotdeal } from "./hotdeal";
 import { listOnlinePostsByBoard } from "./onlinePosts";
 import { formatKoreanDate } from "./postStorage";
 import type { Post } from "./postTypes";
 
 export type HomeFeedData = {
-  deals: Array<{ href: string; title: string; category?: string; store: string; date: string; excerpt: string; price: string }> | null;
+  deals: Array<{ href: string; title: string; category?: string; store: string; date: string; excerpt: string; price: string; priceSource?: string }> | null;
   posts: Array<{ href: string; title: string; author: string; date: string; board: string }>;
   failedCount: number;
 };
@@ -37,7 +37,7 @@ export async function loadHomeFeed(): Promise<HomeFeedData> {
     }
     const board = boards[index];
     const publicPosts = list.value.filter(post => !post.isPrivate);
-    const featured = board.key === "hotdeal" ? publicPosts.filter(post => isRecommendedHotdeal(post.hotdeal, now)) : publicPosts;
+    const featured = board.key === "hotdeal" ? publicPosts.filter(post => isFeaturedHotdeal(post.hotdeal, now)) : publicPosts;
     recent.push(...featured.slice(0, 3).map(post => ({ post, board: board.title })));
     if (board.key !== "hotdeal") return;
 
@@ -49,6 +49,7 @@ export async function loadHomeFeed(): Promise<HomeFeedData> {
       date: formatDealDate(post.createdAt),
       excerpt: (post.content ?? "").trim().replace(/\s+/g, " ").slice(0, 140),
       price: hotdealPrice(post) || "가격 확인",
+      priceSource: post.hotdeal?.sourceReview?.name,
     }));
   });
 

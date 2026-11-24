@@ -96,6 +96,7 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
   const extraEntries = useMemo(() => {
     return Object.entries(post?.extra ?? {}).flatMap(([key, value]) => {
       if (post?.hotdeal && (key === "dealLink" || key === "store")) return [];
+      if (post?.hotdeal?.sourceReview && key === "notesSource") return [];
       if (post?.boardKey === "hotdeal" && key === "category" && value) {
         return [[key, HOTDEAL_CATEGORIES.find(item => item.value === hotdealCategory(value))?.label] as const];
       }

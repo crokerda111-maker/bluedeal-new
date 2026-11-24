@@ -99,8 +99,16 @@ async function publishReviewed() {
       if (publishing) await save(output, { status: "expired", at: new Date().toISOString() });
       continue;
     }
-    if (checked > now || body.availability !== "in-stock") continue;
-    if (!Array.isArray(body.priceHistory) || body.priceHistory.length < 2) {
+    if (checked > now) continue;
+    const source = body.sourceReview;
+    if (source) {
+      const published = Date.parse(source.publishedAt);
+      if (body.availability !== "source-listed" || source.status !== "listed" ||
+          !Number.isFinite(published) || published > checked || end > published + 86_400_000) {
+        stats.rejected++;
+        continue;
+      }
+    } else if (body.availability !== "in-stock" || !Array.isArray(body.priceHistory) || body.priceHistory.length < 2) {
       stats.rejected++;
       continue;
     }
@@ -117,7 +125,7 @@ async function publishReviewed() {
       const data = await response.json().catch(() => null);
       if (response.status === 422) {
         stats.rejected++;
-        await save(output, { status: "rejected", code: response.status, at: new Date().toISOString() });
+        await save(output, { status: "rejected", code: response.status, reason: typeof data?.error === "string" ? data.error : undefined, at: new Date().toISOString() });
       } else if ((response.status === 200 || response.status === 201) && (news ? /^news-[a-f0-9]{32}$/ : /^deal-[a-f0-9]{32}$/).test(data?.id ?? "")) {
         const status = response.status === 201 ? "posted" : "existing";
         stats[status]++;

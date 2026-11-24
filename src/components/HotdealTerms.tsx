@@ -54,8 +54,8 @@ export default function HotdealTerms({ post }: { post: Post }) {
   }, []);
   const deal = post.hotdeal;
   if (!deal) return null;
-  const href = typeof post.extra?.dealLink === "string" ? post.extra.dealLink : "";
-  const affiliateHref = href && post.linkInfo?.affiliateHrefs.includes(href) ? href : null;
+  const href = typeof post.extra?.dealLink === "string" && /^\/go\/[\w-]{2,64}$/.test(post.extra.dealLink) ? post.extra.dealLink : "";
+  const affiliate = href && post.linkInfo?.affiliateHrefs.includes(href);
   const store = typeof post.extra?.store === "string" ? post.extra.store : null;
   const active = isActiveHotdeal(deal, now);
   const evidence = isRecommendedHotdeal(deal, now) ? deal.priceEvidence : undefined;
@@ -67,17 +67,17 @@ export default function HotdealTerms({ post }: { post: Post }) {
     <div className="mt-4 text-sm text-slate-200">
       <dl aria-label="핫딜 구매 정보" className="divide-y divide-white/10 rounded-xl border border-white/10 bg-white/5">
         {store ? <div className={row}><dt className={label}>판매처</dt><dd>{store}</dd></div> : null}
-        {affiliateHref ? (
+        {href ? (
           <div className={row}>
             <dt className={"flex items-center gap-0.5 " + label}>
-              <span className="whitespace-nowrap">상품 링크</span><AffiliateLinkInfo />
+              <span className="whitespace-nowrap">상품 링크</span>{affiliate ? <AffiliateLinkInfo /> : null}
             </dt>
-            <dd className="break-keep"><PostContentLink href={affiliateHref} info={post.linkInfo} showAffiliateBadge={false}>판매처에서 상품 보기</PostContentLink></dd>
+            <dd className="break-keep"><PostContentLink href={href} info={post.linkInfo} showAffiliateBadge={false}>판매처에서 상품 보기</PostContentLink></dd>
           </div>
         ) : null}
         <div className={row}><dt className={label}>옵션</dt><dd className="[overflow-wrap:anywhere]">{deal.option}</dd></div>
         <div className={row}>
-          <dt className={label}>{active ? "확인 가격" : "이전 확인가"}</dt>
+          <dt className={label}>{deal.sourceReview ? active ? "외부 소개가" : "이전 소개가" : active ? "확인 가격" : "이전 확인가"}</dt>
           <dd>
             <strong className="text-base text-cyan-100">{deal.price.toLocaleString("ko-KR")}원</strong>
             {!active ? <span className="ml-2 text-xs text-slate-300">가격 재확인 필요</span> : null}
@@ -91,7 +91,10 @@ export default function HotdealTerms({ post }: { post: Post }) {
         <div className={row}><dt className={label}>구매 조건</dt><dd className="[overflow-wrap:anywhere]">{deal.conditions}</dd></div>
         {evidence ? <div className={row}><dt className={label}>가격 근거</dt><dd>배송비 포함 비교 최저가 {evidence.low.toLocaleString("ko-KR")}원 · {evidenceLabel} {evidence.count}건</dd></div> : null}
       </dl>
-      <p className="mt-2 text-xs text-slate-300">판매처 확인 {formatKoreanDate(deal.checkedAt)} · 결제 화면에서 최종 가격을 확인하세요.</p>
+      {deal.sourceReview ? <p className="mt-2 text-xs text-slate-300">
+        <PostContentLink href={deal.sourceReview.url} info={post.linkInfo}>{deal.sourceReview.name} 원글</PostContentLink>
+        {" · "}{formatKoreanDate(deal.sourceReview.publishedAt)} 게시 · 적용 가격과 재고는 판매처에서 확인하세요.
+      </p> : <p className="mt-2 text-xs text-slate-300">판매처 확인 {formatKoreanDate(deal.checkedAt)} · 결제 화면에서 최종 가격을 확인하세요.</p>}
       {evidence && deal.lowestIn30Days ? <p className="mt-2 text-xs text-slate-300">쿠팡 동일 옵션 · 최근 30일간 비교한 {deal.lowestIn30Days.observations}개 가격 중 최저</p> : null}
     </div>
   );

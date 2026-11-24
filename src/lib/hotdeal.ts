@@ -24,6 +24,13 @@ export type HotdealPriceEvidence = {
   basis: "history" | "market" | "both";
 };
 
+export type HotdealSourceReview = {
+  name: string;
+  url: string;
+  publishedAt: string;
+  basis: "price-comparison" | "published-discount";
+};
+
 export type VerifiedHotdeal = {
   checkedAt: string;
   validUntil: string;
@@ -32,6 +39,7 @@ export type VerifiedHotdeal = {
   shipping: number;
   conditions: string;
   image?: string;
+  sourceReview?: HotdealSourceReview;
   priceEvidence?: HotdealPriceEvidence;
   lowestIn30Days?: { observations: number };
 };
@@ -51,6 +59,13 @@ export function isRecommendedHotdeal(deal: VerifiedHotdeal | undefined, now: num
   return Number.isSafeInteger(low) && low > 0 && Number.isSafeInteger(count) &&
     (basis === "market" ? count >= 2 : basis === "history" ? count >= 3 : basis === "both" && count >= 5) &&
     (deal.price + deal.shipping) * 100 <= low * (100 + HOTDEAL_MAX_PREMIUM);
+}
+
+export function isFeaturedHotdeal(deal: VerifiedHotdeal | undefined, now: number): deal is VerifiedHotdeal {
+  if (isRecommendedHotdeal(deal, now)) return true;
+  if (!deal?.sourceReview || !isActiveHotdeal(deal, now)) return false;
+  const published = Date.parse(deal.sourceReview.publishedAt);
+  return published <= now && now - published < 86_400_000;
 }
 
 export function isHotdealAuthor(value: unknown): boolean {

@@ -79,6 +79,7 @@ export default function HomeFeed({ hotdealHeading, recentHeading }: { hotdealHea
                 </div>
                 <div className="shrink-0 md:text-right">
                   <div className="text-lg font-semibold">{deal.price}</div>
+                  {deal.priceSource ? <div className="text-xs text-white/70">{deal.priceSource} 소개가</div> : null}
                   <div className="mt-1 text-xs text-white/70">상세 보기 →</div>
                 </div>
               </div>

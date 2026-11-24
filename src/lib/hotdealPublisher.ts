@@ -1,9 +1,8 @@
 import "server-only";
 
 import { createHash } from "node:crypto";
-import { detectMerchant, normalizeOutboundUrl, resolveAffiliateUrl } from "./affiliate";
-import { getStoredAffiliateMappings } from "./affiliateStore";
-import { HOTDEAL_AUTHOR, HOTDEAL_CATEGORIES, HOTDEAL_MAX_PREMIUM, type VerifiedHotdeal } from "./hotdeal";
+import { detectMerchant, normalizeOutboundUrl } from "./affiliate";
+import { HOTDEAL_AUTHOR, HOTDEAL_CATEGORIES, HOTDEAL_MAX_PREMIUM, type HotdealSourceReview, type VerifiedHotdeal } from "./hotdeal";
 import { createOnlinePost } from "./onlinePosts";
 import { createOrReuseOutboundCode, getOutboundRow } from "./onlineOutbound";
 import { PostValidationError } from "./postInput";
@@ -45,6 +44,30 @@ function sourceLink(value: unknown): string {
     if (url.protocol === "https:" && !url.username && !url.password && !url.port && !/\s/.test(href)) return href;
   } catch { /* Invalid URLs are rejected below. */ }
   throw new PostValidationError("공개 HTTPS 출처를 입력해 주세요.");
+}
+
+function reviewedSource(input: unknown, checked: number, until: number): HotdealSourceReview {
+  if (!input || typeof input !== "object" || Array.isArray(input)) throw new PostValidationError("외부 핫딜의 출처와 조건을 확인해 주세요.");
+  const record = input as Record<string, unknown>;
+  const url = new URL(sourceLink(record.url));
+  const { basis } = record;
+  const published = verifiedDate(record.publishedAt);
+  if (record.status !== "listed" || (basis !== "price-comparison" && basis !== "published-discount") ||
+      published > checked || until > published + DAY) {
+    throw new PostValidationError("종료되지 않은 최근 24시간 내 원글에 가격 비교 또는 할인 근거가 필요합니다.");
+  }
+  const path = url.pathname;
+  let name: string | undefined;
+  if (url.hostname === "hotdeal.zip" && /^\/[^/]+-[a-z\d]{4,8}\/?$/i.test(path)) name = "핫딜모음";
+  if (url.hostname === "quasarzone.com" && /^\/bbs\/qb_saleinfo\/views\/\d+\/?$/.test(path)) name = "퀘이사존";
+  if (url.hostname === "www.ppomppu.co.kr" && path === "/zboard/view.php" &&
+      url.searchParams.get("id") === "ppomppu" && /^\d+$/.test(url.searchParams.get("no") ?? "")) name = "뽐뿌";
+  if (url.hostname === "gall.dcinside.com" && path === "/mgallery/board/view/" &&
+      ["desktopcomputer", "hotdeal1"].includes(url.searchParams.get("id") ?? "") &&
+      /^\d+$/.test(url.searchParams.get("no") ?? "")) name = "디시인사이드";
+  if (!name) throw new PostValidationError("지원하는 공개 핫딜 원글의 상세 주소를 입력해 주세요.");
+  url.hash = "";
+  return { name, url: url.href, publishedAt: new Date(published).toISOString(), basis };
 }
 
 function directListing(url: URL, merchant: Merchant) {
@@ -120,16 +143,18 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   const now = Date.now();
   const checked = verifiedDate(input.checkedAt);
   const until = verifiedDate(input.validUntil);
-  if (input.availability !== "in-stock" || now - checked > 6 * HOUR || checked > now ||
+  const curated = input.sourceReview !== undefined;
+  if (input.availability !== (curated ? "source-listed" : "in-stock") || now - checked > 6 * HOUR || checked > now ||
       until <= now || until > checked + DAY) {
     throw new PostValidationError("최근 6시간 이내 판매 확인과 최대 24시간의 유효 기간이 필요합니다.");
   }
   const title = requiredText(input.title, "상품명", 140);
   const option = requiredText(input.option, "상품 옵션", 150);
   const conditions = requiredText(input.conditions, "할인 조건", 600);
-  const review = requiredText(input.review, "후기 또는 확인된 장점", 600);
+  const review = requiredText(input.review, curated ? "구성·행사 요약" : "후기 또는 확인된 장점", 600);
   const issue = requiredText(input.issue, "구매 전 확인 사항", 600);
-  const notesSource = sourceLink(input.notesSource);
+  const sourceReview = curated ? reviewedSource(input.sourceReview, checked, until) : undefined;
+  const notesSource = sourceReview?.url ?? sourceLink(input.notesSource);
   const category = HOTDEAL_CATEGORIES.find(item => item.value === input.category)?.value;
   if (!category) throw new PostValidationError("상품 분류를 선택해 주세요.");
 
@@ -159,16 +184,10 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   }
   const hotdeal: VerifiedHotdeal = {
     checkedAt: new Date(checked).toISOString(), validUntil: new Date(until).toISOString(),
-    option, price, shipping, conditions, image,
+    option, price, shipping, conditions, image, sourceReview,
   };
-  const comparisonSource = comparePrices(input, hotdeal, originalUrl, merchant, checked, now);
-
-  const mapping = (await getStoredAffiliateMappings([originalUrl])).get(originalUrl);
-  const target = resolveAffiliateUrl({ merchant, originalUrl, code: "" }, mapping);
-  if (target?.mode !== "registered-affiliate") {
-    throw new PostValidationError("동일 상품·옵션에 등록된 블루딜 공식 제휴 링크가 필요합니다.");
-  }
-  const code = await createOrReuseOutboundCode(originalUrl, true);
+  const comparisonSource = sourceReview ? undefined : comparePrices(input, hotdeal, originalUrl, merchant, checked, now);
+  const code = await createOrReuseOutboundCode(originalUrl);
   const row = code ? await getOutboundRow(code) : null;
   if (!code || row?.originalUrl !== originalUrl || row.merchant !== merchant) {
     throw new Error("Outbound product could not be verified");
@@ -183,7 +202,7 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
     type: "general",
     title,
     authorName: HOTDEAL_AUTHOR,
-    content: "후기·확인된 장점\n" + review + "\n\n구매 전 확인사항\n" + issue,
+    content: (sourceReview ? "구성·행사 요약\n" : "후기·확인된 장점\n") + review + "\n\n구매 전 확인사항\n" + issue,
     extra: {
       category,
       store: STORE_LABELS[merchant],

@@ -406,7 +406,7 @@ try {
   kv.values.set('bd:post:'+mixedPost.id,JSON.stringify(mixedPost));
   const disclosureApp = await startApp({ADMIN_PASSWORD:password,KV_REST_API_URL:kv.url,KV_REST_API_TOKEN:kv.token,AFFILIATE_LINKS_JSON:JSON.stringify(fakeMappings)});
   try {
-    await check('verified hotdeals require a registered link, a fresh option and an administrator; retries keep one post', async () => {
+    await check('verified hotdeals require a fresh option and an administrator; retries keep one post and links resolve', async () => {
       const route = '/api/internal/hotdeal';
       const login = await request(disclosureApp.base, 'POST', '/api/admin/login', { password });
       assert.equal(login.status, 200);
@@ -428,12 +428,6 @@ try {
       assert.equal((await request(disclosureApp.base, 'POST', route, deal)).status, 401);
       assert.equal((await request(disclosureApp.base, 'POST', route, { ...deal, availability: 'out-of-stock' }, session)).status, 422);
       assert.equal((await request(disclosureApp.base, 'POST', route, { ...deal, checkedAt: new Date(now - 7 * 3600000).toISOString() }, session)).status, 422);
-      const unregistered = 'https://item.gmarket.co.kr/Item?goodscode=000001';
-      const missingAffiliate = await request(disclosureApp.base, 'POST', route, {
-        ...deal, productUrl: unregistered, priceHistory: history.map(row => ({ ...row, productUrl: unregistered })),
-      }, session);
-      assert.equal(missingAffiliate.status, 422);
-      assert.match(missingAffiliate.data.error, /공식 제휴 링크/);
       for (const priceHistory of [undefined, history.slice(0, 2), history.map(row => ({ ...row, conditions: '특정 카드' })), history.map(row => ({ ...row, option: '다른 옵션' }))]) {
         const response = await request(disclosureApp.base, 'POST', route, { ...deal, priceHistory }, session);
         assert.equal(response.status, 422);
@@ -455,14 +449,15 @@ try {
       assert.equal(post.authorName, '블루딜 AI');
       assert.equal(post.hotdeal.price + post.hotdeal.shipping, 48000);
       assert.deepEqual(post.hotdeal.priceEvidence, { low: 47000, count: 3, basis: 'history' });
-      assert.match(post.extra.dealLink, /^\/go\/hd-v1-/);
+      assert.match(post.extra.dealLink, /^\/go\/[a-z0-9_-]+$/i);
       assert.ok(post.linkInfo.affiliateHrefs.includes(post.extra.dealLink));
       const list = await request(disclosureApp.base,'GET','/api/posts?boardKey=hotdeal&limit=100');
       assert.equal(list.data.posts.filter(row => row.id === id).length, 1);
       const followed = await fetch(disclosureApp.base + post.extra.dealLink, { redirect: 'manual' });
       assert.equal(followed.headers.get('location'), fakeMappings[0].affiliateUrl);
       const missingMapping = await fetch(app.base + post.extra.dealLink, { redirect: 'manual' });
-      assert.equal(missingMapping.status, 404);
+      assert.equal(missingMapping.status, 302);
+      assert.equal(missingMapping.headers.get('location'), gm.originalUrl);
       assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + id, undefined, session)).status, 200);
       const checkedAt = Date.parse(deal.checkedAt);
       const market = [
@@ -478,6 +473,42 @@ try {
       const marketPost = await request(disclosureApp.base, 'GET', '/api/posts/' + published.data.id);
       assert.deepEqual(marketPost.data.post.hotdeal.priceEvidence, { low: 47000, count: 2, basis: 'market' });
       assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + published.data.id, undefined, session)).status, 200);
+    });
+    await check('external deal reports need a recent public permalink and can use a normal purchase link', async () => {
+      const route = '/api/internal/hotdeal';
+      const login = await request(disclosureApp.base, 'POST', '/api/admin/login', { password });
+      const session = login.headers.get('set-cookie').split(';')[0];
+      const now = Date.now();
+      const productUrl = 'https://item.gmarket.co.kr/Item?goodscode=990101966';
+      const sourceUrl = 'https://hotdeal.zip/example-discount-ab19';
+      const sourceReview = { url: sourceUrl, publishedAt: new Date(now - 8 * 3600000).toISOString(), basis: 'published-discount', status: 'listed' };
+      const draft = {
+        title: 'LOCAL 출처 소개 핫딜', category: 'food', productUrl, option: '500g 한 팩',
+        price: 9900, shipping: 0, conditions: '제시가 기준 할인 쿠폰 적용', review: '구성은 한 팩입니다.',
+        issue: '결제 전 쿠폰 적용을 확인하세요.', checkedAt: new Date(now - 60000).toISOString(),
+        validUntil: new Date(now + 3600000).toISOString(), availability: 'source-listed', sourceReview,
+      };
+      for (const source of [
+        { ...sourceReview, url: 'https://hotdeal.zip/인기' },
+        { ...sourceReview, url: 'https://example.invalid/example-ab19' },
+        { ...sourceReview, status: 'ended' }, { ...sourceReview, basis: 'popular' },
+        { ...sourceReview, publishedAt: new Date(now - 25 * 3600000).toISOString() },
+      ]) assert.equal((await request(disclosureApp.base, 'POST', route, { ...draft, sourceReview: source }, session)).status, 422);
+      const published = await request(disclosureApp.base, 'POST', route, draft, session);
+      assert.equal(published.status, 201);
+      const id = published.data.id;
+      const disclosure = await request(disclosureApp.base, 'GET', '/api/posts/' + id);
+      const post = disclosure.data.post;
+      assert.equal(post.hotdeal.sourceReview.name, '핫딜모음');
+      assert.equal(post.hotdeal.sourceReview.url, sourceUrl);
+      assert.equal(post.hotdeal.priceEvidence, undefined);
+      assert.equal(post.hotdeal.lowestIn30Days, undefined);
+      assert.equal(post.linkInfo?.affiliateHrefs?.includes(post.extra.dealLink) ?? false, false);
+      const target = await fetch(disclosureApp.base + post.extra.dealLink, { redirect: 'manual' });
+      assert.equal(target.headers.get('location'), productUrl);
+      const homepage = await request(disclosureApp.base, 'GET', '/api/home-feed');
+      assert.ok(homepage.data.deals.some(item => item.priceSource === '핫딜모음' && item.href.endsWith(id)));
+      assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + id, undefined, session)).status, 200);
     });
     await check('reviewed news publish once and price observations expose only public quotes', async () => {
       const route = '/api/internal/editorial-news';
