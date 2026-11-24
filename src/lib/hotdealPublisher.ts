@@ -2,7 +2,7 @@ import "server-only";
 
 import { createHash } from "node:crypto";
 import { detectMerchant, normalizeOutboundUrl } from "./affiliate";
-import { HOTDEAL_AUTHOR, HOTDEAL_CATEGORIES, HOTDEAL_MAX_PREMIUM, type HotdealSourceReview, type VerifiedHotdeal } from "./hotdeal";
+import { HOTDEAL_AUTHOR, HOTDEAL_CATEGORIES, HOTDEAL_MAX_PREMIUM, type CoupangTrackedLow, type HotdealSourceReview, type VerifiedHotdeal } from "./hotdeal";
 import { createOnlinePost } from "./onlinePosts";
 import { createOrReuseOutboundCode, getOutboundRow } from "./onlineOutbound";
 import { PostValidationError } from "./postInput";
@@ -92,6 +92,20 @@ function directListing(url: URL, merchant: Merchant) {
   }
 }
 
+function reviewedCoupangTracker(value: unknown, product: URL, price: number, checked: number, until: number): CoupangTrackedLow {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw new PostValidationError("쿠팡 가격 관측 근거를 확인해 주세요.");
+  const input = value as Record<string, unknown>;
+  const url = new URL(sourceLink(input.url));
+  const trackedAt = verifiedDate(input.checkedAt);
+  const productId = product.pathname.split("/").at(-1);
+  if (product.searchParams.getAll("itemId").length !== 1 || product.searchParams.getAll("vendorItemId").length !== 1 ||
+      url.hostname !== "www.lowchart.com" || url.pathname !== `/${productId}-${product.searchParams.get("itemId")}` ||
+      url.search || url.hash || input.observedLow !== price || trackedAt > checked || checked - trackedAt > 2 * HOUR || until - checked > 6 * HOUR) {
+    throw new PostValidationError("같은 쿠팡 상품·옵션의 관측 최저가와 실제 상품가가 일치해야 합니다.");
+  }
+  return { url: url.href, checkedAt: new Date(trackedAt).toISOString() };
+}
+
 function comparePrices(input: Record<string, unknown>, deal: VerifiedHotdeal, originalUrl: string, merchant: Merchant, checked: number, now: number) {
   const comparableDays = new Map<string, { total: number; url: string }>();
   const otherStores = new Map<Merchant, { total: number; url: string }>();
@@ -147,6 +161,7 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   const checked = verifiedDate(input.checkedAt);
   const until = verifiedDate(input.validUntil);
   const curated = input.sourceReview !== undefined;
+  const tracked = input.coupangTrackedLow !== undefined;
   if (input.availability !== (curated ? "source-listed" : "in-stock") || now - checked > 6 * HOUR || checked > now ||
       until <= now || until > checked + DAY) {
     throw new PostValidationError("최근 6시간 이내 판매 확인과 최대 24시간의 유효 기간이 필요합니다.");
@@ -157,7 +172,6 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   const review = requiredText(input.review, curated ? "구성·행사 요약" : "후기 또는 확인된 장점", 600);
   const issue = requiredText(input.issue, "구매 전 확인 사항", 600);
   const sourceReview = curated ? reviewedSource(input.sourceReview, checked, until) : undefined;
-  const notesSource = sourceReview?.url ?? sourceLink(input.notesSource);
   const category = HOTDEAL_CATEGORIES.find(item => item.value === input.category)?.value;
   if (!category) throw new PostValidationError("상품 분류를 선택해 주세요.");
 
@@ -175,6 +189,11 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   } else if (!directListing(new URL(originalUrl), merchant)) {
     throw new PostValidationError("검색 결과나 스토어 홈 대신 개별 상품 페이지 주소가 필요합니다.");
   }
+  if (tracked && (curated || merchant !== "coupang" || input.publicPrice !== true)) {
+    throw new PostValidationError("쿠팡 가격 관측 근거는 일반 판매가와 직접 대조한 경우에만 등록할 수 있습니다.");
+  }
+  const coupangTrackedLow = tracked ? reviewedCoupangTracker(input.coupangTrackedLow, new URL(originalUrl), price, checked, until) : undefined;
+  const notesSource = sourceReview?.url ?? coupangTrackedLow?.url ?? sourceLink(input.notesSource);
   let image: string | undefined;
   if (input.image !== undefined) {
     const url = new URL(originalUrl);
@@ -187,9 +206,9 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   }
   const hotdeal: VerifiedHotdeal = {
     checkedAt: new Date(checked).toISOString(), validUntil: new Date(until).toISOString(),
-    option, price, shipping, conditions, image, sourceReview,
+    option, price, shipping, conditions, image, sourceReview, coupangTrackedLow,
   };
-  const comparisonSource = sourceReview ? undefined : comparePrices(input, hotdeal, originalUrl, merchant, checked, now);
+  const comparisonSource = sourceReview || coupangTrackedLow ? undefined : comparePrices(input, hotdeal, originalUrl, merchant, checked, now);
   const code = await createOrReuseOutboundCode(originalUrl);
   const row = code ? await getOutboundRow(code) : null;
   if (!code || row?.originalUrl !== originalUrl || row.merchant !== merchant) {

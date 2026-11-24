@@ -31,6 +31,11 @@ export type HotdealSourceReview = {
   basis: "price-comparison" | "published-discount";
 };
 
+export type CoupangTrackedLow = {
+  url: string;
+  checkedAt: string;
+};
+
 export type VerifiedHotdeal = {
   checkedAt: string;
   validUntil: string;
@@ -40,6 +45,7 @@ export type VerifiedHotdeal = {
   conditions: string;
   image?: string;
   sourceReview?: HotdealSourceReview;
+  coupangTrackedLow?: CoupangTrackedLow;
   priceEvidence?: HotdealPriceEvidence;
   lowestIn30Days?: { observations: number };
 };
@@ -63,9 +69,19 @@ export function isRecommendedHotdeal(deal: VerifiedHotdeal | undefined, now: num
 
 export function isFeaturedHotdeal(deal: VerifiedHotdeal | undefined, now: number): deal is VerifiedHotdeal {
   if (isRecommendedHotdeal(deal, now)) return true;
-  if (!deal?.sourceReview || !isActiveHotdeal(deal, now)) return false;
+  if (!deal || !isActiveHotdeal(deal, now)) return false;
+  if (deal.coupangTrackedLow) return true;
+  if (!deal.sourceReview) return false;
   const published = Date.parse(deal.sourceReview.publishedAt);
   return published <= now && now - published < 86_400_000;
+}
+
+export function coupangDealGroup(post: Post, now: number): "lowest" | "current" | "archive" | null {
+  const deal = post.hotdeal;
+  if (post.isPrivate || post.extra?.store !== "쿠팡" || !deal) return null;
+  if (now >= Date.parse(deal.validUntil)) return "archive";
+  if (!isFeaturedHotdeal(deal, now)) return null;
+  return deal.coupangTrackedLow || (deal.lowestIn30Days && isRecommendedHotdeal(deal, now)) ? "lowest" : "current";
 }
 
 export function isHotdealAuthor(value: unknown): boolean {

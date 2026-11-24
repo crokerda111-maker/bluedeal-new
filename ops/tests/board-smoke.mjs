@@ -524,6 +524,34 @@ try {
       assert.equal(coolerPost.extra.store, '컴퓨존');
       assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + cooler.data.id, undefined, session)).status, 200);
     });
+    await check('tracked Coupang lows require the exact option and a matching current public price', async () => {
+      const route = '/api/internal/hotdeal';
+      const login = await request(disclosureApp.base, 'POST', '/api/admin/login', { password });
+      const session = login.headers.get('set-cookie').split(';')[0];
+      const now = Date.now();
+      const productUrl = 'https://www.coupang.com/vp/products/651655?itemId=743512&vendorItemId=876215';
+      const tracker = { url: 'https://www.lowchart.com/651655-743512', checkedAt: new Date(now - 120_000).toISOString(), observedLow: 9900 };
+      const draft = {
+        title: 'LOCAL 쿠팡 관측 최저', category: 'pc', productUrl, option: '블랙 1개',
+        price: 9900, shipping: 2500, conditions: '일반 판매가', review: '한 개 구성입니다.', issue: '규격을 확인하세요.',
+        checkedAt: new Date(now - 60_000).toISOString(), validUntil: new Date(now + 3_600_000).toISOString(),
+        availability: 'in-stock', publicPrice: true, coupangTrackedLow: tracker,
+      };
+      for (const changes of [
+        { publicPrice: false }, { price: 11900 },
+        { coupangTrackedLow: { ...tracker, url: 'https://www.lowchart.com/651655-743513' } },
+        { coupangTrackedLow: { ...tracker, checkedAt: new Date(now - 9_000_000).toISOString() } },
+        { validUntil: new Date(now + 25_200_000).toISOString() },
+      ]) assert.equal((await request(disclosureApp.base, 'POST', route, { ...draft, ...changes }, session)).status, 422);
+      const result = await request(disclosureApp.base, 'POST', route, draft, session);
+      assert.equal(result.status, 201);
+      const id = result.data.id;
+      const detail = (await request(disclosureApp.base, 'GET', '/api/posts/' + id)).data.post;
+      assert.equal(detail.hotdeal.coupangTrackedLow.url, tracker.url);
+      assert.equal(detail.hotdeal.lowestIn30Days, undefined);
+      assert.equal(detail.hotdeal.shipping, 2500);
+      assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + id, undefined, session)).status, 200);
+    });
     await check('reviewed news publish once and price observations expose only public quotes', async () => {
       const route = '/api/internal/editorial-news';
       const sourceUrl = 'https://nvidianews.nvidia.com/news/local-fixture';

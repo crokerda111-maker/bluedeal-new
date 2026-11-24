@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { HOTDEAL_CATEGORIES, hotdealCategory, hotdealPrice, isActiveHotdeal, isFeaturedHotdeal, isHotdealAuthor, isRecommendedHotdeal } from "../lib/hotdeal";
+import { HOTDEAL_CATEGORIES, coupangDealGroup, hotdealCategory, hotdealPrice, isActiveHotdeal, isFeaturedHotdeal, isHotdealAuthor, isRecommendedHotdeal } from "../lib/hotdeal";
 import type { HotdealCategory } from "../lib/hotdeal";
 import type { Post } from "../lib/postTypes";
 import { ApiError, apiListHotdealPage } from "../lib/postsClient";
@@ -17,6 +17,12 @@ const FILTERS = [
   { value: "coupang-low", label: "쿠팡최저가" },
   ...HOTDEAL_CATEGORIES.slice(0, 6),
   { value: "records", label: "제보·이전 기록" },
+] as const;
+
+const COUPANG_SECTIONS = [
+  { group: "lowest", label: "관측 최저가" },
+  { group: "current", label: "현재 확인한 쿠팡 특가" },
+  { group: "archive", label: "이전 쿠팡 특가 기록" },
 ] as const;
 
 function tabClass(selected: boolean) {
@@ -40,7 +46,8 @@ function DealCard({ post, now }: { post: Post; now: number }) {
         <span className="rounded-md bg-white/10 px-2 py-1 text-white/90">{category}</span>
         {typeof post.extra?.store === "string" ? <span>{post.extra.store}</span> : null}
         <span className={recommended ? "font-medium text-emerald-200" : ""}>
-          {recommended ? "최저가 근처 확인" : curated ? `${curated.name} 소개가` : ended ? "종료" : active ? "비교 근거 미확인" : deal ? "가격 재확인 필요" : "커뮤니티 제보"}
+          {recommended ? deal.lowestIn30Days ? "30일 관측 최저" : "최저가 근처 확인" :
+            active && deal.coupangTrackedLow ? "로우차트 관측 최저" : curated ? `${curated.name} 소개가` : ended ? "종료" : active ? "비교 근거 미확인" : deal ? "가격 재확인 필요" : "커뮤니티 제보"}
         </span>
       </div>
       <h2 className="text-lg font-semibold [overflow-wrap:anywhere]">
@@ -71,6 +78,10 @@ export default function HotdealBoard() {
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
   const [attempt, setAttempt] = useState(0);
   const [now, setNow] = useState(0);
+
+  useEffect(() => {
+    if (window.location.hash === "#coupang-low") setTab("coupang-low");
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -106,7 +117,7 @@ export default function HotdealBoard() {
     const featured = isFeaturedHotdeal(post.hotdeal, now);
     if (tab === "records" && featured) return false;
     if (tab === "popular" && !(featured && post.hotdealClicks)) return false;
-    if (tab === "coupang-low" && !(post.extra?.store === "쿠팡" && isRecommendedHotdeal(post.hotdeal, now) && post.hotdeal.lowestIn30Days)) return false;
+    if (tab === "coupang-low" && !coupangDealGroup(post, now)) return false;
     if (tab !== "all" && tab !== "popular" && tab !== "coupang-low" && tab !== "records" && hotdealCategory(post.extra?.category) !== tab) return false;
     return !term || [post.title, post.extra?.store, post.hotdeal?.option, post.content].join(" ").toLowerCase().includes(term);
   });
@@ -126,7 +137,7 @@ export default function HotdealBoard() {
         </div>
         <div className="mt-5 flex flex-wrap items-center gap-1 border-t border-white/10 pt-4" role="group" aria-label="핫딜 분류">
           {FILTERS.map(({ value, label }) => (
-            <button key={value} type="button" aria-pressed={tab === value} onClick={() => setTab(value)} className={tabClass(tab === value)}>{label}</button>
+            <button key={value} id={value === "coupang-low" ? value : undefined} type="button" aria-pressed={tab === value} onClick={() => setTab(value)} className={tabClass(tab === value)}>{label}</button>
           ))}
           <select
             aria-label="더보기 분류"
@@ -142,7 +153,7 @@ export default function HotdealBoard() {
           onChange={event => setQuery(event.target.value)} placeholder="상품명, 판매처, 옵션 검색"
           className="mt-4 w-full max-w-md rounded-xl border border-white/15 bg-slate-950/70 px-4 py-2.5 text-sm text-white placeholder:text-white/60 focus:border-cyan-300 focus:outline-none"
         />
-        {tab === "coupang-low" ? <p className="mt-3 text-sm text-white/75">최근 30일간 확인한 동일 옵션의 쿠팡 배송비 포함 가격을 비교합니다.</p> : null}
+        {tab === "coupang-low" ? <p className="mt-3 text-sm text-white/75">같은 옵션의 가격 이력과 쿠팡 판매가를 대조합니다. 카드에 표시된 관측 출처와 배송비를 확인하세요.</p> : null}
         {tab === "popular" ? <p className="mt-3 text-sm text-white/75">진행 중인 딜을 상품 링크 클릭이 많은 순으로 보여줍니다.</p> : null}
       </section>
 
@@ -150,12 +161,22 @@ export default function HotdealBoard() {
         <PostLoadError onRetry={() => { setStatus("loading"); setAttempt(value => value + 1); }} />
       ) : status === "loading" ? (
         <p className="bd-surface-md p-6 text-sm text-white/75" role="status">핫딜을 불러오고 있습니다.</p>
+      ) : filtered.length && tab === "coupang-low" ? (
+        COUPANG_SECTIONS.map(({ group, label }) => {
+          const entries = filtered.filter(post => coupangDealGroup(post, now) === group);
+          return entries.length ? (
+            <section key={group} aria-label={label} className="space-y-3">
+              <h2 className="text-xl font-semibold">{label}</h2>
+              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{entries.map(post => <DealCard key={post.id} post={post} now={now} />)}</ul>
+            </section>
+          ) : null;
+        })
       ) : filtered.length ? (
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{filtered.map(post => <DealCard key={post.id} post={post} now={now} />)}</ul>
       ) : (
         <p className="bd-surface-md p-6 text-sm text-white/75" role="status">{tab === "records" ? "표시할 제보·이전 기록이 없습니다." : "조건을 충족한 핫딜이 없습니다."}</p>
       )}
-      {status === "ready" && nextCursor && tab !== "popular" && tab !== "coupang-low" ? (
+      {status === "ready" && nextCursor && tab !== "popular" ? (
         <div className="text-center">
           {historyState === "error" ? <p role="status" className="mb-2 text-sm">이전 글을 불러오지 못했습니다.</p> : null}
           <button type="button" disabled={historyState === "loading"} onClick={historyState === "stale" ? () => {

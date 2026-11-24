@@ -112,7 +112,7 @@ async function publishReviewed() {
         stats.rejected++;
         continue;
       }
-    } else if (body.availability !== "in-stock" || !Array.isArray(body.priceHistory) || body.priceHistory.length < 2) {
+    } else if (body.availability !== "in-stock" || (!body.coupangTrackedLow && (!Array.isArray(body.priceHistory) || body.priceHistory.length < 2))) {
       stats.rejected++;
       continue;
     }
