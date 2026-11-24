@@ -144,7 +144,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
               <div className="rounded-xl border border-cyan-200/20 p-4"><dt className="font-semibold text-cyan-100">장점</dt><dd className="mt-2 text-sm leading-7 text-white/80">{advantage}</dd></div>
               <div className="rounded-xl border border-amber-200/20 p-4"><dt className="font-semibold text-amber-100">구매 전 확인</dt><dd className="mt-2 text-sm leading-7 text-white/80">{caution}</dd></div>
             </dl>
-            {editorial ? <p className="mt-3 text-xs leading-6 text-white/70">{productEditorialCheckedOn} KST 확인 · <a className="text-cyan-200 underline" href={editorial.source} target="_blank" rel="noopener noreferrer">사양 근거<span className="sr-only"> (새 창)</span></a></p> : buyingNotes ? <details className="mt-3">
+            {editorial ? <p className="mt-3 text-xs leading-6 text-white/70">{editorial.checkedOn ?? productEditorialCheckedOn} KST 확인 · <a className="text-cyan-200 underline" href={editorial.source} target="_blank" rel="noopener noreferrer">사양 근거<span className="sr-only"> (새 창)</span></a></p> : buyingNotes ? <details className="mt-3">
               <summary className="cursor-pointer text-sm text-cyan-200">사양 근거와 확인 날짜</summary>
               <div className="mt-3"><Sources items={buyingNotes.sources} /></div>
             </details> : null}

@@ -1199,6 +1199,60 @@
       "advantage": "메시 전면과 RGB 팬 3개를 기본으로 탑재합니다.",
       "caution": "같은 Pop 2 Air 제품군 안에서 RGB와 패널 옵션을 구분하세요.",
       "source": "https://www.fractal-design.com/products/cases/pop-series/pop-2-air/pop-2-air-black-tg-rgb/"
+    },
+    {
+      "catalogIds": [
+        "reviewed-gigabyte-b850m-force-v2"
+      ],
+      "checkedOn": "2026-11-24",
+      "advantage": "AM5용 B850 보드로 DDR5 슬롯 2개, NVMe M.2 슬롯 3개를 제공합니다. 라이젠 7000·9000 기준 첫 M.2 슬롯은 PCIe 5.0 x4, 두 번째는 PCIe 4.0 x4를 지원합니다.",
+      "caution": "2슬롯이 모두 차면 메모리 증설 시 기존 모듈을 교체해야 합니다. 라이젠 8000은 그래픽 슬롯이 모델에 따라 PCIe 4.0 x8 또는 x4로 동작하며, 두 번째 M.2도 일부 CPU에서 x2로 제한됩니다. 세 번째 M.2는 CPU와 관계없이 PCIe 4.0 x2입니다.",
+      "source": "https://www.gigabyte.com/Motherboard/B850M-FORCE-V2/sp"
+    },
+    {
+      "catalogIds": [
+        "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw"
+      ],
+      "checkedOn": "2026-11-24",
+      "advantage": "TLC 낸드와 1GB LPDDR4X DRAM 캐시를 탑재한 PCIe 5.0 x4 SSD입니다. 1TB 모델의 제조사 최대 순차 속도는 읽기 14,700MB/s, 쓰기 13,300MB/s입니다.",
+      "caution": "이 품번에는 방열판이 없으므로 메인보드의 M.2 방열판과 장착 공간을 확인하세요. 최대 속도에는 PCIe 5.0 x4 슬롯이 필요합니다. 제한 보증은 5년 또는 600TBW 중 먼저 도달하는 조건까지입니다.",
+      "source": "https://www.samsung.com/sec/support/model/MZ-VAP1T0BW/"
+    },
+    {
+      "catalogIds": [
+        "reviewed-powercolor-rx9060xt-reaper-8gb-daewon"
+      ],
+      "checkedOn": "2026-11-24",
+      "advantage": "듀얼 팬의 8GB GDDR6 모델입니다. 제조사 기준 브래킷 제외 본체 길이는 200mm, 두께는 39mm여서 작은 케이스를 검토할 때 참고할 수 있습니다.",
+      "caution": "같은 Reaper 이름의 16GB 모델도 있습니다. 고해상도 텍스처를 자주 쓰면 8GB와 16GB 옵션의 가격을 비교하세요. 소형 케이스에서는 브래킷과 전원 커넥터 여유를 확인하고, 제조사 권장 파워 500W도 확인하세요.",
+      "source": "https://www.powercolor.com/product-detail250.htm"
+    },
+    {
+      "catalogIds": [
+        "curated-pny-rtx-5050-dual-fan-8gb"
+      ],
+      "checkedOn": "2026-11-24",
+      "advantage": "8GB GDDR6를 갖춘 2슬롯 듀얼 팬 모델입니다. PNY 자료의 카드 크기는 200 × 120 × 39.8mm입니다.",
+      "caution": "길이뿐 아니라 카드 높이와 전원 케이블 여유를 확인하세요. 같은 영문 모델명으로 해외 판매 상품도 검색됩니다. 국내 STCOM 보증을 원하면 주문할 판매번호에 유통사 표기가 있는지 확인하세요.",
+      "source": "https://www.pny.com/file%20library/company/support/product%20brochures/geforce%20graphics/english/rtx-5050-8gb-dual-fan-brochure.pdf"
+    },
+    {
+      "catalogIds": [
+        "reviewed-apacer-nox-black-6000-cl38-32gb"
+      ],
+      "checkedOn": "2026-11-24",
+      "advantage": "DDR5 16GB 두 개 구성입니다. 제조사 명세서의 해당 블랙 32GB 키트는 DDR5-6000, 38-48-48-96, 1.35V로 표기돼 있습니다.",
+      "caution": "6000MT/s 적용은 메인보드, CPU 메모리 컨트롤러, 프로필 설정에 따라 달라집니다. DRAM 다이 제조사·리비전은 확인되지 않았습니다. 국내 A/S 기간은 서린 정품 품번과 구매처 보증 조건을 확인하세요.",
+      "source": "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Gaming/Data%20Sheet_NOX%20DDR5.pdf"
+    },
+    {
+      "catalogIds": [
+        "reviewed-aone-signature-850-black"
+      ],
+      "checkedOn": "2026-11-24",
+      "advantage": "850W 골드 블랙 모델은 ATX 3.1, 12V-2x6, 풀모듈러를 지원합니다. 유통사는 135mm FDB 팬, ECO 모드에서 약 40% 부하까지 팬 정지, 무상 보증 10년을 안내합니다.",
+      "caution": "팬이 정지하는 부하 표기는 실사용 소음 측정치와 별개입니다. 캐패시터 제조사·등급은 이 제품 자료에서 확인되지 않았습니다. 같은 이름의 브론즈 제품은 구매 옵션에서 구분하세요.",
+      "source": "https://w.aoneint.com/default/community/sub4.php?com_board_basic=read_form&com_board_id=33&com_board_idx=394&com_board_page=2&com_board_search_code=&com_board_search_value1=&com_board_search_value2="
     }
   ]
 }

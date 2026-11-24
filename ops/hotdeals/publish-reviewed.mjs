@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir, rename, readdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const privateDir = join(root, "ops", "private");
@@ -59,16 +60,17 @@ async function collectCandidates() {
 async function publishReviewed() {
   await mkdir(reviewedDir, { recursive: true });
   const pending = [];
-  const stats = { pending: 0, expired: 0, posted: 0, existing: 0, rejected: 0, error: 0 };
+  const stats = { pending: 0, expired: 0, posted: 0, existing: 0, rejected: 0, unchangedRejected: 0, error: 0 };
   const now = Date.now();
   const names = (await readdir(reviewedDir, { withFileTypes: true }))
     .filter(entry => entry.isFile() && /^[a-zA-Z0-9_-]{1,100}\.json$/.test(entry.name))
     .map(entry => entry.name);
   for (const name of names) {
     const output = join(resultDir, name);
+    let receipt;
     try {
-      const receipt = JSON.parse(await readFile(output, "utf8"));
-      if (["posted", "existing", "expired"].includes(receipt.status)) continue;
+      receipt = JSON.parse(await readFile(output, "utf8"));
+      if (["posted", "existing", "expired"].includes(receipt?.status)) continue;
     } catch (error) { if (error.code !== "ENOENT") throw error; }
 
     let body;
@@ -76,6 +78,8 @@ async function publishReviewed() {
     catch { stats.rejected++; continue; }
 
     if (!body || typeof body !== "object" || Array.isArray(body) || body.reviewed !== true) continue;
+    const fingerprint = createHash("sha256").update(JSON.stringify(body)).digest("hex");
+    if (receipt?.status === "rejected" && receipt.fingerprint === fingerprint) { stats.unchangedRejected++; continue; }
     if (news) {
       if (["translation", "koreanEditing", "proofreading", "sensitiveContext"].some(key => body[key] !== true)) continue;
       const published = Date.parse(body.publishedAt);
@@ -85,7 +89,7 @@ async function publishReviewed() {
         if (publishing) await save(output, { status: "expired", at: new Date().toISOString() });
         continue;
       }
-      pending.push({ body, output });
+      pending.push({ body, output, fingerprint, priority: -published });
       continue;
     }
     const checked = Date.parse(body.checkedAt);
@@ -112,20 +116,21 @@ async function publishReviewed() {
       stats.rejected++;
       continue;
     }
-    pending.push({ body, output });
+    pending.push({ body, output, fingerprint, priority: end });
   }
 
   stats.pending = pending.length;
   if (!publishing || !pending.length) return stats;
 
   const cookie = await adminLogin();
-  for (const { body, output } of pending.slice(0, 12)) {
+  pending.sort((a, b) => a.priority - b.priority);
+  for (const { body, output, fingerprint } of pending.slice(0, 12)) {
     try {
       const response = await request(news ? "/api/internal/editorial-news" : "/api/internal/hotdeal", { body, cookie });
       const data = await response.json().catch(() => null);
       if (response.status === 422) {
         stats.rejected++;
-        await save(output, { status: "rejected", code: response.status, reason: typeof data?.error === "string" ? data.error : undefined, at: new Date().toISOString() });
+        await save(output, { status: "rejected", code: response.status, fingerprint, reason: typeof data?.error === "string" ? data.error : undefined, at: new Date().toISOString() });
       } else if ((response.status === 200 || response.status === 201) && (news ? /^news-[a-f0-9]{32}$/ : /^deal-[a-f0-9]{32}$/).test(data?.id ?? "")) {
         const status = response.status === 201 ? "posted" : "existing";
         stats[status]++;

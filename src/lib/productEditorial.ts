@@ -18,6 +18,7 @@ export type CaseOption = {
 };
 
 type ProductEditorial = {
+  checkedOn?: string;
   catalogIds?: string[];
   partNames?: string[];
   photo?: ProductPhoto;
