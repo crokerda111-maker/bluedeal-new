@@ -1,7 +1,7 @@
 {
   "category": "ram",
-  "updatedAt": "2026-11-24T09:02:47.031Z",
-  "generatedAt": "2026-11-24T09:05:23.967Z",
+  "updatedAt": "2026-11-25T08:19:40.819Z",
+  "generatedAt": "2026-11-25T08:21:40.432Z",
   "items": [
     {
       "id": "reviewed-samsung-ddr5-5600-24gb-retailer-gmarket-4763093282",
@@ -674,7 +674,7 @@
       "id": "biwin-dw100-rgb-black-6000-cl28-48gb",
       "name": "BIWIN DW100 RGB 블랙 DDR5-6000 CL28 48GB(24GB×2)",
       "spec": "48GB (24GB×2) · DDR5 UDIMM · 6000MT/s · CL28 · 블랙 RGB",
-      "price": 1186960,
+      "price": 1261150,
       "low7d": null,
       "low30d": null,
       "change24hPct": null,
@@ -683,18 +683,18 @@
       "seller": "여운스토어G",
       "shippingFee": 3000,
       "shippingNote": "기본 배송비 · 제주·도서산간·수량에 따른 추가비 판매처 확인",
-      "priceNote": "확인 시점 상품가. 쿠폰·카드 적용 금액은 별도 조건부 표시이며 적립·경유·리뷰 보상·BTC는 상품가에서 차감하지 않았습니다.",
+      "priceNote": "G마켓 추가할인과 판매자할인이 반영된 공개 상품가입니다. 카드 결제 할인과 적립은 별도입니다.",
       "officialUrl": "https://www.biwintech.com/product/black-opal-dw100-ddr5-rgb-memory/",
-      "checkedAt": "2026-11-21T06:04:18.032000Z",
-      "updatedAt": "2026-11-21T06:04:18.032000Z",
+      "checkedAt": "2026-11-25T08:19:40.819Z",
+      "updatedAt": "2026-11-25T08:19:40.819Z",
       "capacityGB": 48,
       "moduleCapacityGB": 24,
       "moduleCount": 2,
       "memoryType": "DDR5",
-      "availability": "unknown",
-      "cardPrice": 1176960,
-      "cardNote": "G마켓 삼성카드 10,000원 할인. 쿠폰·옵션 적용 후 실구매금액 300,000원 이상, 최대 10,000원. 다른 카드 할인과 합산하지 않음. 해당 카드·예산·결제창 적용 확인 필요.",
-      "cardEndsOn": "2026-11-30"
+      "availability": "in-stock",
+      "cardPrice": 1259650,
+      "cardNote": "NH농협카드로 결제하면 최대 1,500원 할인이 표시됩니다. 대상 카드와 최종 적용 여부는 주문서에서 확인하세요.",
+      "availabilityCheckedAt": "2026-11-25T08:19:40.819Z"
     },
     {
       "id": "biwin-dw100-rgb-white-6000-cl28-48gb",
@@ -836,17 +836,18 @@
       "seller": "린드스토어",
       "shippingFee": 2500,
       "shippingNote": "기본2500원. 제주3000원·도서산간7000원 안내. 주문서 최종 운임 확인.",
-      "priceNote": "확인 시점 상품가. 쿠폰·카드 적용 금액은 별도 조건부 표시이며 적립·경유·리뷰 보상·BTC는 상품가에서 차감하지 않았습니다.",
+      "priceNote": "쿠폰 적용 전 기본 상품가입니다. 11번가 주문 영역의 자동 적용 쿠폰가는 별도이며, 11월 쿠폰 배너·적립 혜택은 합산하지 않았습니다.",
       "officialUrl": "https://www.biwintech.com/product/black-opal-dw100-ddr5-rgb-memory/",
-      "checkedAt": "2026-11-21T06:05:53.080000Z",
-      "updatedAt": "2026-11-21T06:05:53.080000Z",
+      "checkedAt": "2026-11-25T08:19:40.819Z",
+      "updatedAt": "2026-11-25T08:19:40.819Z",
       "capacityGB": 48,
       "moduleCapacityGB": 24,
       "moduleCount": 2,
       "memoryType": "DDR5",
-      "availability": "unknown",
+      "availability": "in-stock",
       "couponPrice": 1210000,
-      "couponNote": "수량1 화면에 63,680원 쿠폰 자동 적용 표시. 대상·최소금액·한도·기간은 확인되지 않아 결제 전에 재확인. 1,210,000원을 일반 판매가로 사용하지 않음."
+      "couponNote": "수량 1개에서 63,680원 쿠폰이 자동 적용된 표시가입니다. 발급 자격과 기간, 최종 적용 여부는 주문서에서 확인하세요.",
+      "availabilityCheckedAt": "2026-11-25T08:19:40.819Z"
     },
     {
       "id": "reviewed-klevv-cras-v-rgb-black-6000-cl30-64gb-gmarket-3517254698",
