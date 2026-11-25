@@ -1,7 +1,7 @@
 {
   "category": "ssd",
-  "updatedAt": "2026-11-24T11:29:31.271Z",
-  "generatedAt": "2026-11-24T11:32:00.153Z",
+  "updatedAt": "2026-11-25T12:26:12.779Z",
+  "generatedAt": "2026-11-25T12:26:54.298Z",
   "items": [
     {
       "id": "retail-seorin-1000001188",
@@ -435,19 +435,22 @@
       "seller": "삼성온라인공식파트너",
       "shippingFee": 0,
       "shippingNote": "기본 배송 무료 · 배송지별 보장일·추가비와 재고 판매처 확인",
-      "priceNote": "선택한 1개 옵션의 기본 상품가. 상품 상단에 개인 보유 쿠폰·카드 혜택이 표시될 수 있으며 기본가에는 포함하지 않았습니다.",
+      "priceNote": "수량 1개의 공개 상품가입니다. NH농협카드 결제 할인과 적립은 별도입니다.",
       "officialUrl": "https://image-us.samsung.com/SamsungUS/home/pdf/2025_9100PRO_Memory_SpecSheet_022025_FINAL.pdf",
-      "checkedAt": "2026-11-24T11:29:31.271Z",
-      "updatedAt": "2026-11-24T11:29:31.271Z",
+      "checkedAt": "2026-11-25T12:26:12.779Z",
+      "updatedAt": "2026-11-25T12:26:12.779Z",
       "capacityGB": 1000,
       "ssdDram": "present",
       "availability": "in-stock",
-      "availabilityCheckedAt": "2026-11-24T11:29:31.271Z"
+      "availabilityCheckedAt": "2026-11-25T12:26:12.779Z",
+      "cardPrice": 497500,
+      "cardNote": "NH농협카드로 50,000원 이상 결제 시 최대 1,500원 할인입니다. 대상 카드와 최종 적용은 주문서에서 확인하세요.",
+      "cardEndsOn": "2026-11-30"
     },
     {
       "id": "reviewed-samsung-9100-pro-1tb-mz-vap1t0bw-11st-8125841945",
       "name": "Samsung 9100 PRO 1TB MZ-VAP1T0BW",
-      "spec": "MZ-VAP1T0BW 1TB · 상품 04 · 파우치 포함 · 수량 1",
+      "spec": "MZ-VAP1T0BW 1TB · 파우치 포함 · 수량 1",
       "price": 499000,
       "low7d": null,
       "low30d": null,
@@ -457,14 +460,14 @@
       "seller": "삼성전자온라인파트너",
       "shippingFee": 0,
       "shippingNote": "기본 무료배송 · 배송지별 추가비는 판매처 확인",
-      "priceNote": "파우치 포함 상품 04를 수량 1로 선택한 결제 전 표시가. 적용 가능 쿠폰 없음. 사후 적립은 합산하지 않았습니다.",
+      "priceNote": "파우치가 포함된 본상품 수량 1개의 공개 상품가입니다. 11월 쿠폰 배너와 구매 후 적립은 차감하지 않았습니다.",
       "officialUrl": "https://image-us.samsung.com/SamsungUS/home/pdf/2025_9100PRO_Memory_SpecSheet_022025_FINAL.pdf",
-      "checkedAt": "2026-11-24T11:28:59.393Z",
-      "updatedAt": "2026-11-24T11:28:59.393Z",
+      "checkedAt": "2026-11-25T12:26:11.806Z",
+      "updatedAt": "2026-11-25T12:26:11.806Z",
       "capacityGB": 1000,
       "ssdDram": "present",
       "availability": "in-stock",
-      "availabilityCheckedAt": "2026-11-24T11:28:59.393Z"
+      "availabilityCheckedAt": "2026-11-25T12:26:11.806Z"
     },
     {
       "id": "reviewed-kioxia-exceria-plus-g3-2tb-retailer-gmarket-4764168146",
