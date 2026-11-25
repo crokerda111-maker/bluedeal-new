@@ -67,7 +67,7 @@ export default async function GmarketBlackFridayPage() {
         <p className="text-sm font-semibold text-amber-200">{event.dates} · 한국시간 · {ended ? "행사 종료" : now < event.startsAt ? "행사 예고" : "행사 기간"}</p>
         <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-4xl">{event.title}</h1>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-200 sm:text-base">
-          G마켓이 공식 행사관에 중복 쿠폰, 카드 할인, G라이브 특가를 예고했습니다. PC 부품과 완본체, 주변기기, 식품은 상품별 쿠폰 자격, 결제 카드, 배송비를 함께 확인하세요.
+          G마켓 공식 행사관에서 중복 쿠폰, 카드 할인과 시간대별 특가를 확인할 수 있습니다. 상품별 쿠폰 자격, 결제 카드, 배송비를 함께 확인하세요.
         </p>
         {!ended ? (
           <div className="mt-5">
@@ -75,7 +75,7 @@ export default async function GmarketBlackFridayPage() {
             <a href={affiliate ? "/go/" + affiliate.code : event.officialUrl} rel={affiliate ? "sponsored" : undefined} className="inline-flex min-h-11 items-center rounded-xl bg-amber-200 px-4 py-2 text-sm font-bold text-slate-950 hover:bg-amber-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">G마켓 공식 행사관 보기 →</a>
           </div>
         ) : null}
-        <p className="mt-4 text-xs leading-5 text-slate-300">일정 출처 <a className="underline underline-offset-4" href={event.officialUrl}>G마켓 공식 행사관</a> · 2026년 11월 25일 확인</p>
+        <p className="mt-4 text-xs leading-5 text-slate-300">일정 출처 <a className="underline underline-offset-4" href={event.officialUrl}>G마켓 공식 행사관</a> · 2026년 11월 26일 확인</p>
       </header>
 
       {!ended ? (
