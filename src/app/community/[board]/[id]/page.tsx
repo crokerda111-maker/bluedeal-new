@@ -131,7 +131,10 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
     return <PostDetailError missing={!loadError || loadError.status === 404} onRetry={() => { setLoadError(null); setLoading(true); setAttempt(value => value + 1); }} backHref={`/community/${board.slug}`} backLabel="목록으로" />;
   }
 
-  const noticeInfo = post.hotdeal && post.linkInfo ? { ...post.linkInfo, disclosures: [] } : post.linkInfo;
+  const noticeInfo = post.hotdeal && post.linkInfo ? {
+    ...post.linkInfo,
+    disclosures: post.linkInfo.disclosures.filter(kind => kind === "coupang" || kind === "linkprice"),
+  } : post.linkInfo;
 
   return (
     <div className="space-y-6">
