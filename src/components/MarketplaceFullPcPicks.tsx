@@ -87,7 +87,9 @@ export default async function MarketplaceFullPcPicks({
   const rows = buildFullPcBoard(items, now);
   const activeTier = allTiers.find(tier => tier === selectedTier);
   const visibleTiers = activeTier ? [activeTier] : allTiers;
-  const recommendable = rows.flatMap(row => row.recommendation && row.offer ? [row.offer] : []);
+  const homeGroups = home ? GAMING_TIERS.map(tier => ({ tier, candidates: homeFullPcCandidates(rows, tier) })) : [];
+  const displayedRows = home ? homeGroups.flatMap(group => group.candidates) : rows;
+  const recommendable = displayedRows.flatMap(row => row.recommendation && row.offer ? [row.offer] : []);
   const hasRanks = !home && rows.some(row => row.placement && visibleTiers.includes(row.tier));
   if (recommendable.length || hasRanks) await connection();
   const [affiliateCodes, previousRanks] = await Promise.all([
@@ -123,8 +125,7 @@ export default async function MarketplaceFullPcPicks({
         오늘은 부품 평가와 동일 구성 개별 구매 비용을 모두 검증한 추천 상품이 없어 확인 중인 후보를 표시합니다.
       </p> : null}
 
-      {home ? <FullPcSpotlights groups={GAMING_TIERS.map((tier, index) => {
-        const candidates = homeFullPcCandidates(rows, tier);
+      {home ? <FullPcSpotlights groups={homeGroups.map(({ tier, candidates }, index) => {
         const seed = Math.imul(Math.floor(now / 300_000) + index, 2654435761) >>> 0;
         const start = candidates.length ? seed % candidates.length : 0;
         return { tier, cards: candidates.length ? [...candidates.slice(start), ...candidates.slice(0, start)].map(card) : [

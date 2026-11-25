@@ -9,7 +9,7 @@ registerHooks({ resolve(specifier, context, next) {
 } });
 const { parseCompuzonePc, discoverCompuzonePcs, compuzonePcUrl } = await import("../../src/lib/pcCompuzone.ts");
 const { matchFullPcObservation, scoreFullPcParts, separatePcTotal } = await import("../../src/lib/fullPcReview.ts");
-const { fullPcGpuChip, fullPcTier, fullPcComparisonKey, fullPcPricePoints, rankComparableFullPcs } = await import("../../src/lib/fullPcTiers.ts");
+const { fullPcBestCpu, fullPcGpuChip, fullPcTier, fullPcComparisonKey, fullPcPricePoints, rankComparableFullPcs } = await import("../../src/lib/fullPcTiers.ts");
 const { default: fullPcReviews } = await import("../../src/content/fullPcReviews.json", { with: { type: "json" } });
 const { default: fullPcSnapshot } = await import("../../src/content/fullPcVerifiedSnapshot.json", { with: { type: "json" } });
 
@@ -22,6 +22,19 @@ test("급수 분류는 RTX·RX 모델을 식별하고 복수 선택형 제목은
   assert.equal(fullPcTier(fullPcGpuChip("GeForce RTX 5080 D7 16GB")), "high");
   assert.equal(fullPcTier(fullPcGpuChip("내장 그래픽 사용")), "office");
   assert.equal(fullPcTier(fullPcGpuChip("RTX 5060 / RTX 5080 선택")), "unknown");
+});
+
+test("메인 베스트는 인텔 14세대를 제외하고 실속형 우선 CPU를 식별한다", () => {
+  for (const cpu of ["Intel Core i5-14600KF", "14400", "인텔 코어 i7-14700K", "Intel i9-14900KS"]) {
+    assert.deepEqual(fullPcBestCpu(cpu, "게이밍 완본체"), { excluded: true, preferred: false });
+  }
+  assert.equal(fullPcBestCpu(undefined, "컴집 i5-14400F RTX 5060 Ti").excluded, true);
+  for (const cpu of ["AMD Ryzen 5 9600X", "AMD 라이젠 5 7500F", "Core Ultra 5 250K Plus", "인텔 울트라5 250KF Plus"]) {
+    assert.deepEqual(fullPcBestCpu(cpu, "게이밍 완본체"), { excluded: false, preferred: true });
+  }
+  for (const cpu of ["AMD Ryzen 7 9800X3D", "Intel Core i5-13400F"]) {
+    assert.deepEqual(fullPcBestCpu(cpu, "게이밍 완본체"), { excluded: false, preferred: false });
+  }
 });
 
 test("같은 CPU·GPU·VRAM·OS 안에서 배송 포함 가격 변동을 순위에 반영한다", () => {

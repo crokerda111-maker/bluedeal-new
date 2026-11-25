@@ -5,7 +5,7 @@ import { normalizeOutboundUrl } from "./affiliate";
 import { CATALOG_PRODUCTS, getCatalogProduct } from "./catalogData";
 import { isPcToday, kstDay } from "./dailyPc";
 import { separatePcTotal, type FullPcReview } from "./fullPcReview";
-import { FULL_PC_TIERS, fullPcComparisonKey, fullPcGpuChip, fullPcPricePoints, fullPcTier, rankComparableFullPcs } from "./fullPcTiers";
+import { FULL_PC_TIERS, fullPcBestCpu, fullPcComparisonKey, fullPcGpuChip, fullPcPricePoints, fullPcTier, rankComparableFullPcs } from "./fullPcTiers";
 import { type PriceItem } from "./mockPrices";
 import { assessMarketplaceFullPc } from "./marketplacePcQuality";
 import { OUTBOUND_LINKS } from "./outbound";
@@ -175,11 +175,16 @@ export function orderFullPcBoard(a: FullPcBoardRow, b: FullPcBoardRow) {
 }
 
 export function homeFullPcCandidates(rows: readonly FullPcBoardRow[], tier: FullPcBoardRow["tier"]) {
-  const candidates = rows.filter(row => row.tier === tier && !row.unavailable && row.offer).sort(orderFullPcBoard);
-  const recommended = candidates.filter(row => row.recommendation);
+  const candidates = rows.flatMap(row => {
+    if (row.tier !== tier || row.unavailable || !row.offer) return [];
+    const { excluded, preferred } = fullPcBestCpu(row.cpu, row.product.name);
+    return excluded ? [] : [{ row, preferred }];
+  });
+  const recommended = candidates.map(candidate => candidate.row).filter(row => row.recommendation).sort(orderFullPcBoard);
   if (recommended.length) return recommended.slice(0, 4);
-  const observed = candidates.filter(row => row.checkedToday && row.review && row.offer?.availability === "in-stock");
-  const compared = observed.filter(row => row.priceComparison);
-  if (compared.length) return compared.slice(0, 4);
-  return (observed.length ? observed : candidates).slice(0, 4);
+  const observed = candidates.filter(({ row }) => row.checkedToday && row.review && row.offer?.availability === "in-stock");
+  const compared = observed.filter(({ row }) => row.priceComparison);
+  const fallback = compared.length ? compared : observed.length ? observed : candidates;
+  const preferred = tier === "entry" ? fallback.filter(candidate => candidate.preferred) : [];
+  return (preferred.length ? preferred : fallback).map(candidate => candidate.row).sort(orderFullPcBoard).slice(0, 4);
 }

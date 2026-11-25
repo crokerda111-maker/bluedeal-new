@@ -48,6 +48,17 @@ export function fullPcTier(chip: string | null): FullPcTier {
   return chip && Object.hasOwn(gpuTiers, chip) ? gpuTiers[chip] : "unknown";
 }
 
+export function fullPcBestCpu(cpu: string | undefined, name: string) {
+  const label = cpu?.normalize("NFKC").trim();
+  const title = name.normalize("NFKC");
+  const model = (label ? cpuModel(label) : null) ?? cpuModel(title);
+  const excluded = model ? /^Intel 14\d{3}/.test(model) :
+    /\b(?:i[3579][\s-]*|intel\s+)14\d{3}(?:KS|KF|K|F|T)?\b/i.test(label ?? title) ||
+    /^14\d{3}(?:KS|KF|K|F|T)?$/i.test(label ?? "");
+  const preferred = /^(?:Ryzen (?:7500F|9600X)|Core Ultra 250K(?:F)?(?: PLUS)?)$/.test(model ?? "");
+  return { excluded, preferred };
+}
+
 export function fullPcComparisonKey(cpuLabel: string, gpuLabel: string, osLabel: string) {
   const cpu = cpuModel(cpuLabel);
   const gpu = fullPcGpuChip(gpuLabel);
