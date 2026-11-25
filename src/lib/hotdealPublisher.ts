@@ -2,6 +2,7 @@ import "server-only";
 
 import { createHash } from "node:crypto";
 import { detectMerchant, normalizeOutboundUrl } from "./affiliate";
+import { GMARKET_BLACK_FRIDAY } from "./gmarketBlackFriday";
 import { HOTDEAL_AUTHOR, HOTDEAL_CATEGORIES, HOTDEAL_MAX_PREMIUM, type CoupangTrackedLow, type HotdealSourceReview, type VerifiedHotdeal } from "./hotdeal";
 import { createOnlinePost } from "./onlinePosts";
 import { createOrReuseOutboundCode, getOutboundRow } from "./onlineOutbound";
@@ -46,7 +47,7 @@ function sourceLink(value: unknown): string {
   throw new PostValidationError("공개 HTTPS 출처를 입력해 주세요.");
 }
 
-function reviewedSource(input: unknown, checked: number, until: number): HotdealSourceReview {
+function reviewedSource(input: unknown, checked: number, until: number, merchant: Merchant): HotdealSourceReview {
   if (!input || typeof input !== "object" || Array.isArray(input)) throw new PostValidationError("외부 핫딜의 출처와 조건을 확인해 주세요.");
   const record = input as Record<string, unknown>;
   const url = new URL(sourceLink(record.url));
@@ -65,6 +66,8 @@ function reviewedSource(input: unknown, checked: number, until: number): Hotdeal
   if (url.hostname === "gall.dcinside.com" && path === "/mgallery/board/view/" &&
       ["desktopcomputer", "hotdeal1"].includes(url.searchParams.get("id") ?? "") &&
       /^\d+$/.test(url.searchParams.get("no") ?? "")) name = "디시인사이드";
+  if (merchant === "gmarket" && url.href === GMARKET_BLACK_FRIDAY.officialUrl && basis === "published-discount" &&
+      published >= GMARKET_BLACK_FRIDAY.startsAt && until <= GMARKET_BLACK_FRIDAY.endsAt) name = "G마켓 공식 행사관";
   if (!name) throw new PostValidationError("지원하는 공개 핫딜 원글의 상세 주소를 입력해 주세요.");
   url.hash = "";
   return { name, url: url.href, publishedAt: new Date(published).toISOString(), basis };
@@ -171,7 +174,6 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   const conditions = requiredText(input.conditions, "할인 조건", 600);
   const review = requiredText(input.review, curated ? "구성·행사 요약" : "후기 또는 확인된 장점", 600);
   const issue = requiredText(input.issue, "구매 전 확인 사항", 600);
-  const sourceReview = curated ? reviewedSource(input.sourceReview, checked, until) : undefined;
   const category = HOTDEAL_CATEGORIES.find(item => item.value === input.category)?.value;
   if (!category) throw new PostValidationError("상품 분류를 선택해 주세요.");
 
@@ -182,6 +184,7 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   if (!originalUrl || !merchant || !STORE_LABELS[merchant]) {
     throw new PostValidationError("연결 가능한 공식 판매처의 상품 주소를 입력해 주세요.");
   }
+  const sourceReview = curated ? reviewedSource(input.sourceReview, checked, until, merchant) : undefined;
   if (merchant === "coupang") {
     if (!directListing(new URL(originalUrl), merchant)) {
       throw new PostValidationError("쿠팡 상품은 실제 확인한 옵션과 판매자 식별자가 포함된 주소가 필요합니다.");
