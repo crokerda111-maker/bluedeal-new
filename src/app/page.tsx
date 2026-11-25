@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HomeFeed from "./_components/HomeFeed";
 import MarketplaceFullPcPicks from "../components/MarketplaceFullPcPicks";
+import MonthlyEvents from "./_components/MonthlyEvents";
 import { getPriceView } from "../lib/prices";
 import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from "../lib/site";
 
@@ -99,6 +100,8 @@ export default async function HomePage() {
       </nav>
 
       <MarketplaceFullPcPicks items={data.items} now={now} home />
+
+      <MonthlyEvents now={now} />
 
       <HomeFeed
         hotdealHeading={<SectionTitle

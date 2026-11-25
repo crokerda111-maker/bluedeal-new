@@ -225,13 +225,20 @@ export async function getOnlinePostById(id: string): Promise<Post | null> {
   }
 }
 
-export async function listOnlinePostsByBoard(boardKey: BoardKey, limit = 50, { includeHotdealClicks = true } = {}): Promise<Post[]> {
+export async function listOnlinePostsByBoard(
+  boardKey: BoardKey,
+  limit = 50,
+  { includeHotdealClicks = true, createdBetween }: { includeHotdealClicks?: boolean; createdBetween?: { from: number; until: number } } = {},
+): Promise<Post[]> {
   const b = getBoardByKey(boardKey);
   if (!b) throw new Error("Invalid boardKey");
 
   const safeLimit = Math.max(1, Math.min(200, Number.isFinite(limit) ? Math.floor(limit) : 50));
 
-  const ids = await kvCommand<string[]>("ZREVRANGE", boardZsetKey(boardKey), 0, safeLimit - 1);
+  const key = boardZsetKey(boardKey);
+  const ids = createdBetween
+    ? await kvCommand<string[]>("ZREVRANGEBYSCORE", key, "(" + createdBetween.until, createdBetween.from, "LIMIT", 0, safeLimit)
+    : await kvCommand<string[]>("ZREVRANGE", key, 0, safeLimit - 1);
   return readBoardPosts(boardKey, ids, includeHotdealClicks);
 }
 
