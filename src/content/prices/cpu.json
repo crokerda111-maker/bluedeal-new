@@ -1,7 +1,7 @@
 {
   "category": "cpu",
-  "updatedAt": "2026-11-26T00:15:00.000Z",
-  "generatedAt": "2026-11-26T00:19:00.000Z",
+  "updatedAt": "2026-11-26T04:22:00.000Z",
+  "generatedAt": "2026-11-26T04:23:44.640Z",
   "items": [
     {
       "id": "amd-ryzen-5-9600x-multipack",
@@ -136,7 +136,7 @@
       "id": "amd-ryzen-7-7800x3d-multipack",
       "name": "AMD Ryzen 7 7800X3D 멀티팩 정품",
       "spec": "7800X3D 멀티팩 정품 · 유통사·보증·쿨러 구성 판매처 확인",
-      "price": 356660,
+      "price": 368830,
       "low7d": null,
       "low30d": null,
       "change24hPct": null,
@@ -145,14 +145,15 @@
       "seller": "여운스토어G",
       "shippingFee": 3000,
       "shippingNote": "기본 배송비 · 도서산간·묶음 수량에 따른 추가비는 판매처 확인",
-      "priceNote": "G마켓과 판매자 할인이 판매 페이지에 반영된 상품가입니다. 카드 할인과 포인트 적립은 별도입니다.",
+      "priceNote": "G마켓 추가 할인이 반영된 상품가입니다. 수량 1 기준이며 배송비, 대상 카드 할인과 적립은 별도입니다.",
       "officialUrl": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800X3d.html",
-      "checkedAt": "2026-11-25T04:21:20.000Z",
-      "updatedAt": "2026-11-25T04:21:20.000Z",
+      "checkedAt": "2026-11-26T04:22:00.000Z",
+      "updatedAt": "2026-11-26T04:22:00.000Z",
       "availability": "in-stock",
-      "cardPrice": 355160,
-      "cardNote": "NH농협카드로 결제하면 최대 1,500원 할인이 표시됩니다. 카드 대상과 최종 적용 여부는 주문서에서 확인하세요.",
-      "availabilityCheckedAt": "2026-11-25T04:21:20.000Z"
+      "cardPrice": 335640,
+      "cardNote": "대상 3대 카드사 또는 IBK나라사랑카드로 스마일페이 결제 시 9% 할인가 335,640원입니다. 7만원 이상, 최대 20만원, 11월 30일까지 표시됩니다. 배송비 3,000원을 포함하면 338,640원입니다. 카드 대상과 잔여 한도는 결제 화면에서 확인하세요.",
+      "availabilityCheckedAt": "2026-11-26T04:22:00.000Z",
+      "cardEndsOn": "2026-11-30"
     },
     {
       "id": "amd-ryzen-7-7800x3d-multipack-gmarket-3272124970",
@@ -189,14 +190,15 @@
       "seller": "메이드시스템",
       "shippingFee": 2500,
       "shippingNote": "기본2500원 · 제주3000원·도서산간5000원 추가 안내",
-      "priceNote": "판매가 405,380원. 일부 회원에게 표시되는 즉시할인과 적립은 기본 상품가와 따로 표시합니다.",
+      "priceNote": "멀티팩 정품 수량 1 판매가입니다. 일부 회원에게 표시되는 즉시할인과 적립은 기본 상품가와 구분합니다.",
       "officialUrl": null,
-      "checkedAt": "2026-11-25T04:21:20.000Z",
-      "updatedAt": "2026-11-25T04:21:20.000Z",
+      "checkedAt": "2026-11-26T04:22:00.000Z",
+      "updatedAt": "2026-11-26T04:22:00.000Z",
       "availability": "in-stock",
       "instantPrice": 397830,
-      "instantNote": "즉시할인 7,550원 적용 시 397,830원. 행사는 일부 회원에게만 적용될 수 있습니다. 최종 혜택은 주문서에서 확인하세요.",
-      "availabilityCheckedAt": "2026-11-25T04:21:20.000Z"
+      "instantNote": "즉시할인 7,550원은 12월 3일까지 일부 회원에게 적용될 수 있습니다. 적용 상품가는 397,830원, 기본 배송비 2,500원 포함 400,330원입니다. 주문서에서 적용 여부를 확인하세요.",
+      "availabilityCheckedAt": "2026-11-26T04:22:00.000Z",
+      "instantEndsOn": "2026-12-03"
     },
     {
       "id": "amd-ryzen-7-7800x3d-multipack-gmarket-4771604104",
