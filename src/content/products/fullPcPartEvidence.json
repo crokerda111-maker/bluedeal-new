@@ -253,10 +253,6 @@
         "칩 성능급": [
           "보급형 RTX 5060 · 8GB GDDR7. FHD 위주. 높은 해상도·텍스처 프리셋에서는 8GB가 제한이 될 수 있습니다.",
           "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/"
-        ],
-        "제조사 라인업": [
-          "판매처 표기는 WinFast Hurricane White. 이 모델의 실측 냉각·소음 자료 확인 필요.",
-          "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/"
         ]
       },
       "verified": {
@@ -364,7 +360,7 @@
       ],
       "facts": {
         "전원부": [
-          "16+2+2 전원부 표기. Vcore는 8+8 병렬 구성과 60A DrMOS를 사용합니다. 동일 CPU 장시간 부하 온도는 확인 필요.",
+          "16+2+2 전원부 표기. Vcore는 8+8 병렬 구성이며 전력 스테이지는 60A입니다.",
           "https://www.aorus.com/motherboards/b850-aorus-elite-x3d/Key-Features"
         ],
         "PCIe·레인 공유": [
@@ -391,15 +387,11 @@
       ],
       "facts": {
         "전원부": [
-          "8+2+1 페이즈 Dr.MOS 표기. CPU 부하 온도 실측은 확인 필요.",
+          "제조사 표기 8+2+1 페이즈 Dr.MOS 구성입니다.",
           "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification"
         ],
         "PCIe·레인 공유": [
           "판매 구성은 NVMe M.2 3개 지원. 확장카드와 동시 사용 시 슬롯 조합과 CPU별 속도는 공식 매뉴얼 확인.",
-          "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification"
-        ],
-        "BIOS·이슈": [
-          "정확한 출고 BIOS 버전은 판매처 확인이 필요합니다.",
           "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification"
         ]
       }
@@ -411,7 +403,7 @@
       ],
       "facts": {
         "전원부": [
-          "14+2+1, 80A 전력 스테이지 표기. 동일 CPU의 부하 온도는 확인 필요.",
+          "제조사 표기 14+2+1 전원부와 80A 전력 스테이지입니다.",
           "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/"
         ],
         "PCIe·레인 공유": [
@@ -438,8 +430,8 @@
       ],
       "facts": {
         "전원부": [
-          "유통되는 SI 벌크 보드. 이 리비전의 전원부 발열 실측 확인 필요.",
-          "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5/sp"
+          "6+2+1페이즈 하이브리드 전원부와 메모리 슬롯 2개를 갖춘 SI 보드입니다.",
+          "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5"
         ],
         "PCIe·레인 공유": [
           "메모리 슬롯 2개. NVMe 슬롯과 그래픽 슬롯의 CPU·칩셋 연결은 리비전별 사양표를 확인하세요.",
@@ -463,8 +455,8 @@
           "https://www.klevv.com/ken/products_details/memory/D5_UDIMM"
         ],
         "메모리 프로필": [
-          "표준 DDR5-5600 CL46 사양. 출고 IC와 다이 고정 여부는 확인 필요.",
-          "https://www.klevv.com/ken/products_details/memory/D5_UDIMM"
+          "제조사 데스크톱 표준 제품은 JEDEC DDR5-5600 CL46-46-46, 1.1V 사양입니다.",
+          "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_DRAM_Standard%20Memory_DDR5_U-DIMM_v4_EN.pdf"
         ]
       },
       "verified": {
@@ -508,7 +500,7 @@
           "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T-S_11171110.jpg"
         ],
         "메모리 프로필": [
-          "16GB 두 개, DDR5-5600 CL46. 별도 프로필 및 부품 A/S 기간은 확인 필요.",
+          "판매처 부품표 기준 DDR5-5600 CL46, 16GB 모듈 두 개 구성입니다.",
           "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T-S_11171110.jpg"
         ]
       }
@@ -520,7 +512,7 @@
       ],
       "facts": {
         "A/S": [
-          "CORSAIR DRAM 제한적 평생 보증. 조립PC 공급 모듈의 국내 접수처와 구매 증빙은 확인 필요.",
+          "CORSAIR DRAM은 제조사 제한적 평생 보증입니다. 국내 접수 시 유통사와 구매 증빙을 대조하세요.",
           "https://help.corsair.com/hc/en-us/articles/360033067832-Warranty-Corsair-Limited-Warranty"
         ],
         "IC·다이": [
@@ -545,12 +537,8 @@
         "GeIL PRISTINE V DDR5-5200 CL42 32GB (16GB × 2)"
       ],
       "facts": {
-        "IC·다이": [
-          "다이와 IC 제조사는 판매 자료로 확인되지 않습니다.",
-          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
-        ],
         "메모리 프로필": [
-          "16GB 두 개, DDR5-5200 CL42. 키트의 유통 보증 기간 확인 필요.",
+          "판매처 부품표 기준 DDR5-5200 CL42, 16GB 모듈 두 개 구성입니다.",
           "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
         ]
       },
@@ -567,7 +555,7 @@
           "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
         ],
         "메모리 프로필": [
-          "16GB 한 장. 두 모듈 구성이 필요하면 빈 슬롯과 추가 비용을 확인하세요.",
+          "판매처 부품표에 DDR5-5600 16GB 모듈 두 개로 표기돼 있습니다.",
           "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
         ]
       },
@@ -651,8 +639,8 @@
       ],
       "facts": {
         "DRAM·낸드": [
-          "확인한 정확한 모델 데이터시트에서 외장 DRAM·낸드 타입은 확정되지 않습니다.",
-          "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
+          "1TB 실측 시료에서 전용 DRAM 없이 HMB가 동작했고 QLC가 탑재됐습니다.",
+          "https://ssd-tester.com/apacer_as2280q4x_1tb.html"
         ],
         "순차 읽기·쓰기": [
           "제조사 최대 5,000 / 4,400MB/s (1TB).",
@@ -661,9 +649,17 @@
         "내구성·보증": [
           "600TBW · 제조사 글로벌 보증 3년. 국내 접수 조건은 별도 확인.",
           "https://www.apacer.com/en/product/personal-product/detail/personal_ssd/as2280q4x"
+        ],
+        "낸드 구성 차이": [
+          "같은 1TB 소매 품번의 다른 분해 시료에서는 YMTC TLC와 전용 DRAM 미탑재가 확인됐습니다. 생산분에 따라 낸드가 다를 수 있습니다.",
+          "https://club.dns-shop.ru/review/t-477-ssd-nakopiteli-m-2/189033-obzor-tverdotelnogo-nakopitelya-apacer-as2280q4x-obemom-1-tbait/"
         ]
       },
       "verified": {
+        "2": [
+          false,
+          "https://ssd-tester.com/apacer_as2280q4x_1tb.html"
+        ],
         "3": [
           true,
           "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
@@ -673,7 +669,7 @@
           "https://www.apacer.com/en/product/personal-product/detail/personal_ssd/as2280q4x"
         ]
       },
-      "attention": "제조사 3년 보증 · 5년 기준 미달"
+      "attention": "전용 DRAM 없는 실측 시료 · 제조사 제한 보증 3년"
     },
     {
       "slot": "storage",
@@ -682,8 +678,8 @@
       ],
       "facts": {
         "DRAM·낸드": [
-          "확인한 정확한 모델 데이터시트에서 외장 DRAM·낸드 타입은 확정되지 않습니다.",
-          "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
+          "퀘이사존의 2TB 분해·실측 시료는 전용 DRAM 없이 HMB를 사용했습니다. 리뷰가 인용한 Apacer 답변은 이 시료를 144단 QLC로 확인했습니다.",
+          "https://quasarzone.com/bbs/qc_qsz/views/2158550?page=2"
         ],
         "순차 읽기·쓰기": [
           "제조사 최대 5,000 / 4,400MB/s (2TB).",
@@ -692,9 +688,17 @@
         "내구성·보증": [
           "1200TBW · 제조사 글로벌 보증 3년. 국내 접수 조건은 별도 확인.",
           "https://www.apacer.com/en/product/personal-product/detail/personal_ssd/as2280q4x"
+        ],
+        "낸드 구성 차이": [
+          "다른 2TB 분해 시료에서는 YMTC 3D TLC가 확인됐습니다. 판매하는 제품이 어느 생산분인지에 따라 낸드와 지속 쓰기 성능이 달라질 수 있습니다.",
+          "https://www.enostech.com/apacer-as2280q4x-m-2-pcie-gen-ssd-review/"
         ]
       },
       "verified": {
+        "2": [
+          false,
+          "https://quasarzone.com/bbs/qc_qsz/views/2158550?page=2"
+        ],
         "3": [
           true,
           "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Apacer%20Consumer%20PCIe%20Gen4%20AS2280Q4X_APxxxXAS2280Q4X-1_Spec_v1.0.pdf"
@@ -704,7 +708,7 @@
           "https://www.apacer.com/en/product/personal-product/detail/personal_ssd/as2280q4x"
         ]
       },
-      "attention": "제조사 3년 보증 · 5년 기준 미달"
+      "attention": "전용 DRAM 없는 실측 시료 · 제조사 제한 보증 3년"
     },
     {
       "slot": "storage",
@@ -713,8 +717,8 @@
       ],
       "facts": {
         "DRAM·낸드": [
-          "BiCS FLASH TLC 확인. 전용 DRAM의 용량과 구성은 인용한 공식 사양에서 확인되지 않습니다.",
-          "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+          "BiCS FLASH TLC. ComputerBase 제품군 사양 표는 1TB에 전용 LPDDR4X DRAM 1GB를 안내합니다.",
+          "https://www.computerbase.de/artikel/storage/kioxia-exceria-pro-g2-ssd-test.97066/"
         ],
         "순차 읽기·쓰기": [
           "1,024GB 기준 순차 최대 14,400 / 12,700MB/s. PCIe 5.0 ×4 환경 기준.",
@@ -733,6 +737,10 @@
         "1": [
           true,
           "https://europe.kioxia.com/en-europe/personal/ssd/exceria-pro-g2.html"
+        ],
+        "2": [
+          true,
+          "https://www.computerbase.de/artikel/storage/kioxia-exceria-pro-g2-ssd-test.97066/"
         ],
         "3": [
           true,
@@ -763,8 +771,8 @@
           "https://semiconductor.samsung.com/kr/consumer-storage/support/warranty/"
         ],
         "펌웨어·이슈": [
-          "초기 생산분 등 사용 중인 제품은 Samsung Magician에서 정확한 펌웨어와 SMART 상태를 확인하세요. 판매 구성의 출고 버전은 미확인.",
-          "https://semiconductor.samsung.com/consumer-storage/support/tools/"
+          "삼성이 공개한 7B2QJXD7은 간헐 인식 실패와 블루스크린, 8B2QJXD7은 읽기 안정성을 개선합니다. 데이터 백업 후 Samsung Magician에서 업데이트를 확인하세요.",
+          "https://semiconductor.samsung.com/kr/consumer-storage/support/tools/"
         ]
       },
       "verified": {
@@ -792,17 +800,9 @@
         "FASTRO MS150 M.2 NVMe 1000GB"
       ],
       "facts": {
-        "DRAM·낸드": [
-          "판매표에는 모델·용량만 확인됩니다. DRAM과 낸드 유형은 미확인.",
-          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
-        ],
         "순차 읽기·쓰기": [
-          "같은 출고형의 제조사 속도·PCIe 세대 미확인.",
-          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
-        ],
-        "내구성·보증": [
-          "해당 출고 모델의 TBW와 단품 보증은 판매처 확인.",
-          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+          "동일 제품명인 MEGA FASTRO MS150 1TB 시험 자료의 표기 사양은 PCIe 3.0, 2,400/1,700MB/s입니다.",
+          "https://www.youtube.com/watch?v=CiRDPs8Kwck"
         ]
       },
       "attention": "순차 속도·DRAM·내구성 자료 부족"
@@ -843,10 +843,6 @@
           "부품표에 PRIME V2 표기. 정확한 PSU 모델 번호와 케이블 방식은 판매처 확인.",
           "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
         ],
-        "캐패시터": [
-          "V2에서 사용한 메인·보조 캐패시터 모델 확인 필요.",
-          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
-        ],
         "보증·이슈": [
           "동일 이름의 다른 세대 파워를 혼용하지 말고 ATX 세대와 국내 보증 조건을 확인하세요.",
           "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0004_261120_components_m.jpg"
@@ -860,19 +856,21 @@
       ],
       "facts": {
         "모듈러": [
-          "이 출고 옵션의 케이블 탈착 방식은 판매처 확인 필요.",
-          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRCO0039.jpg"
-        ],
-        "캐패시터": [
-          "메인과 보조 캐패시터 제조사·온도 등급 미확인.",
-          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRCO0039.jpg"
+          "케이블 일체형입니다. PCIe 6+2핀 2개와 SATA 8개를 제공합니다.",
+          "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1215615"
         ],
         "보증·이슈": [
-          "판매표 기준 650W Bronze. 출력은 충족하지만 Gold 효율 점수는 받지 못합니다.",
-          "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRCO0039.jpg"
+          "정격 650W, 80 PLUS Bronze, ATX 3.1이며 국내 판매처 표기는 무상 6년입니다.",
+          "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1215615"
         ]
       },
-      "attention": "Bronze 효율 · Gold 기준 미달"
+      "attention": "Bronze 효율 · Gold 기준 미달",
+      "verified": {
+        "3": [
+          false,
+          "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1215615"
+        ]
+      }
     },
     {
       "slot": "psu",
@@ -906,11 +904,11 @@
           "https://www.msi.com/Power-Supply/MAG-A850GN-PCIE5/Specification"
         ],
         "캐패시터": [
-          "PCIE5 제조사 표기 105°C 메인 캐패시터. 납품품의 제조사 표기 및 보조 캐패시터는 미확인.",
+          "MSI의 A850GN PCIE5 사양은 105°C 메인 캐패시터를 표기합니다. 판매 옵션의 PCIE5 품번을 먼저 대조하세요.",
           "https://www.msi.com/Power-Supply/MAG-A850GN-PCIE5"
         ],
         "소음": [
-          "PCIE5 제조사 표기는 부하 70% 기준 20dBA 미만. 독립 실측 및 동일 모델 확인 필요.",
+          "MSI의 PCIE5 모델 시험 표기는 부하 70%에서 20dBA 미만입니다.",
           "https://www.msi.com/Power-Supply/MAG-A850GN-PCIE5"
         ],
         "보증·이슈": [
@@ -1183,14 +1181,22 @@
           "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
         ],
         "장착 한도": [
-          "정확한 출고 케이스의 쿨러 높이와 긴 GPU 한도 확인 필요.",
-          "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+          "그래픽카드 길이 최대 310mm, 공랭 쿨러 높이 최대 170mm, 상단 라디에이터 최대 240mm입니다.",
+          "https://1stplayer.com/product/pc-case-wa7/"
         ]
       },
       "verified": {
         "1": [
           true,
           "https://cynex.hgodo.com/cynexpc/db/event/mos/CY146KF5616G1000G_261102.jpg"
+        ],
+        "2": [
+          false,
+          "https://1stplayer.com/product/pc-case-wa7/"
+        ],
+        "3": [
+          true,
+          "https://1stplayer.com/product/pc-case-wa7/"
         ]
       }
     },
@@ -1201,15 +1207,25 @@
       ],
       "facts": {
         "흡기·팬": [
-          "N30 백사십 PLUS 블랙 표기. 판매 상세 이미지와 실제 출고 팬 구성은 확인이 필요합니다.",
-          "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+          "PLUS 모델은 PWM·ARGB 기본 팬과 후면 140mm 팬을 제공합니다.",
+          "https://www.zalman.com/KO/Board/NewsDetail.do?seq=711"
         ],
-        "조립·이슈": [
-          "팬 개수, 라디에이터 호환, GPU 길이 한도를 판매자에게 확인하세요.",
-          "https://gi.esmplus.com/einscom/%ED%8C%8C%EC%9D%B4%EC%98%A8PC/9800X3D/AXIS_DX98D-NX580H_spec.jpg"
+        "장착 한도": [
+          "GPU 최대 430mm, 공랭 최대 180mm, 상단 라디에이터 최대 360mm를 지원합니다.",
+          "https://www.zalman.com/KO/Board/NewsDetail.do?seq=711"
         ]
       },
-      "attention": "출고 팬 구성 확인 필요"
+      "attention": "PWM·ARGB 팬 · 후면 140mm 배기",
+      "verified": {
+        "2": [
+          true,
+          "https://www.zalman.com/KO/Board/NewsDetail.do?seq=711"
+        ],
+        "3": [
+          true,
+          "https://www.zalman.com/KO/Board/NewsDetail.do?seq=711"
+        ]
+      }
     }
   ]
 }

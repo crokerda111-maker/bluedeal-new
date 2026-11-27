@@ -5,7 +5,7 @@ import { normalizeOutboundUrl } from "./affiliate";
 import { CATALOG_PRODUCTS, getCatalogProduct } from "./catalogData";
 import { isPcToday, kstDay } from "./dailyPc";
 import { separatePcTotal, type FullPcReview } from "./fullPcReview";
-import { FULL_PC_TIERS, fullPcBestCpu, fullPcComparisonKey, fullPcGpuChip, fullPcPricePoints, fullPcTier, rankComparableFullPcs } from "./fullPcTiers";
+import { FULL_PC_TIERS, fullPcComparisonKey, fullPcGpuChip, fullPcPricePoints, fullPcTier, rankComparableFullPcs } from "./fullPcTiers";
 import { type PriceItem } from "./mockPrices";
 import { assessMarketplaceFullPc } from "./marketplacePcQuality";
 import { OUTBOUND_LINKS } from "./outbound";
@@ -16,6 +16,7 @@ import { getBoardPartExpansion, hasAsrockRyzen9000Advisory } from "./motherboard
 
 const marketplaceReviews: readonly FullPcReview[] = reviews.filter(review => !review.configuration);
 const catalogFullPcs = CATALOG_PRODUCTS.filter(product => product.category === "fullpc");
+const catalogHalfPcs = CATALOG_PRODUCTS.filter(product => product.category === "halfpc");
 
 function deliveredTotal(offer?: PriceItem) {
   if (!offer || !Number.isSafeInteger(offer.price) || offer.price <= 0 ||
@@ -178,17 +179,23 @@ export function orderFullPcBoard(a: FullPcBoardRow, b: FullPcBoardRow) {
     (b.quality?.confirmed ?? -1) - (a.quality?.confirmed ?? -1) || a.product.name.localeCompare(b.product.name, "ko");
 }
 
-export function homeFullPcCandidates(rows: readonly FullPcBoardRow[], tier: FullPcBoardRow["tier"]) {
-  const candidates = rows.flatMap(row => {
-    if (row.tier !== tier || row.unavailable || row.boardPurchaseHold || !row.offer) return [];
-    const { excluded, preferred } = fullPcBestCpu(row.cpu, row.product.name);
-    return excluded ? [] : [{ row, preferred }];
+export function buildHalfPcBoard(items: readonly PriceItem[], now: number) {
+  const prices = new Map(items.map(item => [item.id, item]));
+  return catalogHalfPcs.map<FullPcBoardRow>(product => {
+    const specs = pcCatalogConfiguration(product);
+    const part = (key: string) => specs.find(field => field.key === key && field.values.length === 1)?.values[0];
+    const cpu = part("cpu");
+    const board = part("board");
+    const offer = product.listings.map(listing => prices.get(listing.id))
+      .filter(row => row !== undefined).sort((a, b) => (Date.parse(b.checkedAt ?? "") || 0) - (Date.parse(a.checkedAt ?? "") || 0))[0];
+    const checkedToday = Boolean(offer?.checkedAt && isPcToday(offer.checkedAt, now));
+    const unavailable = offer?.availability === "out-of-stock" || product.features.includes("판매처 일시 품절 표시");
+    const boardPurchaseHold = hasAsrockRyzen9000Advisory(board ? getBoardPartExpansion(board) : undefined, cpu);
+    const priceHold = unavailable ? "판매처 일시 품절" : !checkedToday ? "오늘 판매가·재고 재확인 필요" :
+      "출고 구성과 보증, 동일 조건 개별 구매가 확인 필요";
+    return {
+      product, cpu, gpu: part("gpu"), offer, total: deliveredTotal(offer),
+      checkedToday, unavailable, boardPurchaseHold, priceHold, tier: "unknown", comparison: null,
+    };
   });
-  const recommended = candidates.map(candidate => candidate.row).filter(row => row.recommendation).sort(orderFullPcBoard);
-  if (recommended.length) return recommended.slice(0, 4);
-  const observed = candidates.filter(({ row }) => row.checkedToday && row.review && row.offer?.availability === "in-stock");
-  const compared = observed.filter(({ row }) => row.priceComparison);
-  const fallback = compared.length ? compared : observed.length ? observed : candidates;
-  const preferred = tier === "entry" ? fallback.filter(candidate => candidate.preferred) : [];
-  return (preferred.length ? preferred : fallback).map(candidate => candidate.row).sort(orderFullPcBoard).slice(0, 4);
 }

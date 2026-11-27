@@ -5,6 +5,7 @@ import { getPartEditorial } from "../lib/productEditorial";
 import { asrockRyzen9000Advisory, getBoardPartExpansion, hasAsrockRyzen9000Advisory } from "../lib/motherboardExpansion";
 import { fmtWon, formatPriceTime } from "./PriceOffer";
 import MotherboardExpansion from "./MotherboardExpansion";
+import PcPartDetailsDrawer from "./PcPartDetailsDrawer";
 
 const sourceStyle = "text-cyan-200 underline underline-offset-4";
 
@@ -24,7 +25,7 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
   return <div className="space-y-4 text-sm leading-6">
     <div>
       <p className="mt-1 text-white/75">{review.condition} · {review.checkedOn} KST</p>
-      <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. " : ""}부품별 5개 기준으로 봅니다. 각 부품을 펼치면 확인한 사양과 충족·미충족 근거를 볼 수 있습니다.</p>
+      <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. " : ""}부품별 5개 기준으로 봅니다. 자세히를 누르면 확인한 사양과 채점 근거를 볼 수 있습니다.</p>
       {review.purchaseTerms ? <p className="mt-1 text-white/75">{review.purchaseTerms.os} · {review.purchaseTerms.warranty} <a className={sourceStyle} href={review.purchaseTerms.source} target="_blank" rel="noopener noreferrer">조건 출처<span className="sr-only"> (새 창)</span></a></p> : null}
       {review.configurationConflict ? <p className="mt-2 rounded-lg bg-amber-500/10 p-3 text-amber-100">{review.configurationConflict}</p> : null}
     </div>
@@ -38,16 +39,18 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
           const stateColor = failed.length ? "text-amber-100" : points >= 4 ? "text-cyan-100" : "text-white/70";
           const summary = hasAsrockRyzen9000Advisory(board, review.parts.cpu) ? asrockRyzen9000Advisory.title : board?.sharing ?? attention ?? (failed.length ? `미충족 · ${failed.map(item => item.label).join(", ")}` :
             facts.find(item => item.evidence && (item.label === "게이밍 등급" || item.label === "제조사 라인업"))?.evidence?.[0]);
-          return <details key={slot} data-part-quality={slot} className="group">
-            <summary className="grid min-w-0 cursor-pointer list-none grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-1 px-3 py-3 focus-visible:outline focus-visible:outline-cyan-200 sm:px-4">
+          return <div key={slot} data-part-quality={slot} className="px-3 pt-3 sm:px-4">
+            <div className="grid min-w-0 gap-x-3 gap-y-1 sm:grid-cols-[minmax(0,1fr)_auto]">
               <span className="min-w-0 break-words"><span className="mr-2 font-semibold text-cyan-100">{PC_PARTS[slot]}</span>{" "}{review.parts[slot]}</span>
-              <span className={`whitespace-nowrap text-right text-xs sm:text-sm ${stateColor}`}>
+              <span className={`text-xs sm:text-right sm:text-sm ${stateColor}`}>
                 <strong className="tabular-nums">{checked === 5 ? `${points}/5점` : checked > 0 ? `충족 ${points} · 확인 ${checked}/5` : "평가 보류"}</strong>
-                {failed.length || checked === 5 ? ` · ${state}` : ""} <span aria-hidden="true" className="inline-block group-open:rotate-180">▾</span>
+                {failed.length || checked === 5 ? ` · ${state}` : ""}
               </span>
-              {summary ? <span className={`col-span-2 break-words text-xs ${stateColor}`}>{summary}</span> : null}
-            </summary>
-            <div className="space-y-3 border-t border-white/10 px-3 py-3 sm:px-4">
+            </div>
+            <div className="flex flex-wrap items-center gap-x-1">
+              {summary ? <span className={`min-w-0 break-words text-xs ${stateColor}`}>{summary}</span> : null}
+              <PcPartDetailsDrawer part={PC_PARTS[slot]} model={review.parts[slot]}>
+              <div className="space-y-3">
               {slot !== "cpu" && slot !== "gpu" && review.tested[slot]?.fact ? <p className="break-words text-white/75">{review.tested[slot].fact}</p> : null}
               <dl className="grid gap-2 sm:grid-cols-2">
                 {facts.flatMap(({ label, evidence }) => !evidence || (board && (label === "PCIe·레인 공유" || (label === "전원부" && board.power))) ? [] : [
@@ -67,8 +70,10 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
               </ul>
               <p className="text-white/75"><span className="font-medium text-amber-100">구매 전 확인</span> · {editorial?.caution ?? purchaseChecks[slot]}</p>
               {editorial?.issue ? <p className="text-amber-100">{editorial.issue.text} <a className={sourceStyle} href={editorial.issue.source} target="_blank" rel="noopener noreferrer">이슈 출처<span className="sr-only"> (새 창)</span></a></p> : null}
+              </div>
+              </PcPartDetailsDrawer>
             </div>
-          </details>;
+          </div>;
         })}
       </div>
       <p className="text-xs text-white/70">추가 사양·평가 근거 확인 {quality.checkedOn} KST</p>

@@ -4,17 +4,50 @@ import test from "node:test";
 import { kstDay, PC_PARTS, PC_SCORE_RULES, rankDailyPcs, pcPartReview } from "../../src/lib/dailyPc.ts";
 
 registerHooks({ resolve(specifier, context, next) {
-  if (specifier === "./pcModelNames" || specifier === "./dailyPc") return next(`${specifier}.ts`, context);
+  if (["./pcModelNames", "./dailyPc", "./fullPcTiers"].includes(specifier)) return next(`${specifier}.ts`, context);
   return next(specifier, context);
 } });
 const { parseCompuzonePc, discoverCompuzonePcs, compuzonePcUrl } = await import("../../src/lib/pcCompuzone.ts");
 const { matchFullPcObservation, scoreFullPcParts, separatePcTotal } = await import("../../src/lib/fullPcReview.ts");
 const { fullPcBestCpu, fullPcGpuChip, fullPcTier, fullPcComparisonKey, fullPcPricePoints, rankComparableFullPcs } = await import("../../src/lib/fullPcTiers.ts");
+const { homeMarketPcs, marketPcsUnderBudget, parsePcBudget, pcMarketGroup } = await import("../../src/lib/pcMarketGroups.ts");
 const { default: fullPcReviews } = await import("../../src/content/fullPcReviews.json", { with: { type: "json" } });
 const { default: fullPcSnapshot } = await import("../../src/content/fullPcVerifiedSnapshot.json", { with: { type: "json" } });
 
 const at = "2026-11-22T00:03:00Z";
 const now = Date.parse("2026-11-22T01:00:00Z");
+
+test("메인 후보는 서로 다른 모델 조합으로 묶고 인텔 14세대는 제외한다", () => {
+  const candidate = (id, cpu, gpu) => ({
+    product: { id, category: "fullpc", name: cpu + " " + gpu }, cpu, gpu, total: 2000000, checkedToday: true,
+    offer: { source: "G마켓", availability: "in-stock", availabilityCheckedAt: at },
+  });
+  const a = candidate("a", "Ryzen 9600X", "GeForce RTX 5070 Ti 16GB");
+  assert.deepEqual(pcMarketGroup(a), { key: "ryzen-9600x-rtx-5070-ti", label: "Ryzen 9600X + RTX 5070 Ti", gpu: "RTX 5070 TI" });
+  assert.match(pcMarketGroup({ ...a, product: { ...a.product, category: "halfpc" } }).label, /외장 GPU 미포함/);
+  const list = homeMarketPcs([a, { ...a, product: { ...a.product, id: "duplicate" } },
+    candidate("b", "Ryzen 9800X3D", "RTX 5080"), candidate("c", "Ryzen 7500F", "RTX 5060"),
+    candidate("d", "Intel Core i5-14600KF", "GeForce RTX 5060")], now);
+  assert.deepEqual(list.map(row => row.product.id).sort(), ["a", "b", "c"]);
+});
+
+test("예산 결과는 배송 포함 금액으로 한정하고 이전 가격과 당일 게이밍 후보를 구분한다", () => {
+  for (const raw of ["200만원", "200만", "2,000,000", "2000000원"]) assert.equal(parsePcBudget(raw), 2_000_000);
+  for (const raw of ["", "-200만원", "200,00", "1e6", "900719925474099100만원"]) assert.equal(parsePcBudget(raw), null);
+  const candidate = (id, gpu, total) => ({
+    product: { id, category: "fullpc", name: "Ryzen 9600X " + gpu }, cpu: "Ryzen 9600X", gpu,
+    total, checkedToday: true, offer: { availability: "in-stock", availabilityCheckedAt: at },
+  });
+  const entry = candidate("entry", "RTX 5060", 1799000);
+  const faster = candidate("faster", "RTX 5070 Ti", 2000000);
+  const historic = { ...candidate("historic", "RTX 5090", 1200000), checkedToday: false };
+  const outside = candidate("outside", "RTX 5080", 2000001);
+  const unknownShipping = candidate("shipping", "RTX 5080", null);
+  const blocked = { ...candidate("blocked", "RTX 5080", 1800000), boardPurchaseHold: true };
+  const result = marketPcsUnderBudget([entry, faster, historic, outside, unknownShipping, blocked], 2000000, now);
+  assert.deepEqual(result.priced.map(row => row.product.id), ["entry", "faster", "historic", "blocked"]);
+  assert.deepEqual(result.gaming.map(row => row.product.id), ["faster", "entry"]);
+});
 
 test("급수 분류는 RTX·RX 모델을 식별하고 복수 선택형 제목은 사용하지 않는다", () => {
   assert.equal(fullPcTier(fullPcGpuChip("서린 V100 7500F/5060/32G", true)), "entry");

@@ -108,13 +108,16 @@ export default async function PricesCategoryPage({ params, searchParams }: Price
         </div>
       </div>
 
-      {category.key === "fullpc" ? <MarketplaceFullPcPicks items={data.items} now={now} selectedTier={typeof query.pcTier === "string" ? query.pcTier : undefined} /> : null}
+      {category.key === "fullpc" || category.key === "halfpc" ?
+        <MarketplaceFullPcPicks items={data.items} now={now} kind={category.key}
+          selectedGroup={typeof query.pc === "string" ? query.pc.slice(0, 80) : undefined}
+          selectedTier={category.key === "fullpc" && typeof query.pcTier === "string" ? query.pcTier : undefined}
+          budgetInput={typeof query.pcBudget === "string" ? query.pcBudget.slice(0, 24) : ""} /> : null}
       <div className="bd-surface-md p-4 text-sm leading-relaxed text-white/75">
         <p>등록 항목 <b className="text-cyan-200">{CATALOG_SUMMARY.categoryCounts[category.key]}개</b> · 판매처 가격 기록 <b className="text-cyan-200">{data.items.length}건</b></p>
         <nav aria-label="분류 내 바로가기" className="mt-2 flex flex-wrap gap-4 text-cyan-200"><a href="#registered-products" className="inline-flex min-h-11 items-center underline">등록 상품·특징</a><a href="#price-records" className="inline-flex min-h-11 items-center underline">판매처 가격 기록</a></nav>
       </div>
 
-      {category.key === "halfpc" ? <DailyPcComparison kind="halfpc" now={now} /> : null}
       <ProductSearchForm category={category.key} products={products} offersById={offersById} query={query} />
       <PriceCatalogSection category={category} query={canonicalQuery} results={results} offersById={matchedOffers} now={now} />
 

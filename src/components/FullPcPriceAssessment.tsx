@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { FullPcBoardRow } from "../lib/marketFullPc";
+import { pcMarketGroup } from "../lib/pcMarketGroups";
 import { fmtWon, formatPriceTime } from "./PriceOffer";
 
 export default function FullPcPriceAssessment({ row, peers }: { row: FullPcBoardRow; peers: readonly FullPcBoardRow[] }) {
@@ -12,7 +13,7 @@ export default function FullPcPriceAssessment({ row, peers }: { row: FullPcBoard
     <dl className="grid gap-2 text-sm sm:grid-cols-3">
       <div className="rounded-lg bg-white/5 p-3">
         <dt className="text-xs text-white/75">부품 확인 점수</dt>
-        <dd className="mt-1 font-semibold tabular-nums text-cyan-100">{quality ? `${quality.confirmed}/40점` : "확인 중"}</dd>
+        <dd className="mt-1 font-semibold tabular-nums text-cyan-100">{quality?.score != null ? `${quality.score}/40점` : quality ? `충족 ${quality.confirmed}개` : "확인 중"}</dd>
         {quality && quality.score === null ? <dd className="mt-1 text-xs text-white/70">{quality.checked}/40개 기준 확인 · 종합 순위 대기</dd> : null}
       </div>
       <div className="rounded-lg bg-white/5 p-3">
@@ -42,7 +43,7 @@ export default function FullPcPriceAssessment({ row, peers }: { row: FullPcBoard
     </div> : <p className="text-sm leading-6 text-amber-100">{priceHold ?? "같은 CPU·GPU·VRAM·운영체제로 당일 가격과 재고를 확인한 상품이 2대 이상이면 가격 점수를 계산합니다."}</p>}
     <div className="flex flex-wrap gap-x-5 text-sm text-cyan-200 underline underline-offset-4">
       <a href="#product-prices" className="inline-flex min-h-11 items-center">판매처 가격·할인 조건 보기</a>
-      <Link prefetch={false} href={`/prices/fullpc?pcTier=${row.tier}#fullpc-picks`} className="inline-flex min-h-11 items-center">같은 급수 전체 보기</Link>
+      <Link prefetch={false} href={`/prices/fullpc?pc=${pcMarketGroup(row).key}#fullpc-picks`} className="inline-flex min-h-11 items-center">같은 CPU·GPU 조합 보기</Link>
     </div>
   </section>;
 }

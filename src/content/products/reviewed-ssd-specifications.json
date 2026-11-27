@@ -2246,5 +2246,181 @@
         }
       }
     ]
+  },
+  {
+    "id": "reviewed-apacer-as2280q4x-1tb",
+    "name": "Apacer AS2280Q4X 1TB",
+    "category": "ssd",
+    "subtype": "ssd",
+    "brand": "Apacer",
+    "kind": "source-reviewed-model",
+    "features": [
+      "PCIe 4.0 ×4",
+      "M.2 2280",
+      "HMB 실측"
+    ],
+    "specifications": [
+      {
+        "label": "제조사 표기 용량",
+        "value": "1TB"
+      },
+      {
+        "label": "인터페이스",
+        "value": "PCIe 4.0 ×4 · NVMe"
+      },
+      {
+        "label": "제조사 표기 장착 규격",
+        "value": "M.2 2280"
+      },
+      {
+        "label": "제조사 최대 읽기·쓰기",
+        "value": "5,000 / 4,400 MB/s"
+      },
+      {
+        "label": "DRAM 캐시 (실측 시료)",
+        "value": "전용 DRAM 없음 · HMB"
+      },
+      {
+        "label": "낸드 (분해 시료)",
+        "value": "TLC와 QLC 시료가 각각 보고됨"
+      },
+      {
+        "label": "제조사 내구성·보증",
+        "value": "600TBW · 제한 보증 최대 3년"
+      }
+    ],
+    "description": "제조사 스펙과 같은 용량에서 측정된 시료를 대조한 M.2 NVMe SSD입니다.",
+    "notes": [
+      "제조사는 낸드를 3D NAND로 표기합니다. 실측 시료의 낸드 종류와 실제 구입하는 생산분은 다를 수 있습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "unverified",
+    "manufacturerPartNumber": "AP1TBAS2280Q4X-1",
+    "sources": [
+      {
+        "label": "Apacer 소매형 데이터시트",
+        "url": "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Data%20Sheet_AS2280Q4X.pdf",
+        "observedAt": "2026-11-27T13:03:50.041Z",
+        "kind": "manufacturer-datasheet"
+      },
+      {
+        "label": "용량과 제품명이 일치하는 실측",
+        "url": "https://ssd-tester.com/apacer_as2280q4x_1tb.html",
+        "observedAt": "2026-11-27T13:03:50.041Z",
+        "kind": "independent-review"
+      },
+      {
+        "label": "다른 시료의 분해 자료",
+        "url": "https://club.dns-shop.ru/review/t-477-ssd-nakopiteli-m-2/189033-obzor-tverdotelnogo-nakopitelya-apacer-as2280q4x-obemom-1-tbait/",
+        "observedAt": "2026-11-27T13:03:50.041Z",
+        "kind": "independent-review"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [],
+    "facts": [
+      {
+        "key": "dram",
+        "value": "absent",
+        "source": {
+          "label": "용량과 제품명이 일치하는 실측",
+          "url": "https://ssd-tester.com/apacer_as2280q4x_1tb.html",
+          "observedAt": "2026-11-27T13:03:50.041Z",
+          "kind": "independent-review"
+        }
+      }
+    ]
+  },
+  {
+    "id": "reviewed-apacer-as2280q4x-2tb",
+    "name": "Apacer AS2280Q4X 2TB",
+    "category": "ssd",
+    "subtype": "ssd",
+    "brand": "Apacer",
+    "kind": "source-reviewed-model",
+    "features": [
+      "PCIe 4.0 ×4",
+      "M.2 2280",
+      "HMB 실측"
+    ],
+    "specifications": [
+      {
+        "label": "제조사 표기 용량",
+        "value": "2TB"
+      },
+      {
+        "label": "인터페이스",
+        "value": "PCIe 4.0 ×4 · NVMe"
+      },
+      {
+        "label": "제조사 표기 장착 규격",
+        "value": "M.2 2280"
+      },
+      {
+        "label": "제조사 최대 읽기·쓰기",
+        "value": "5,000 / 4,400 MB/s"
+      },
+      {
+        "label": "DRAM 캐시 (실측 시료)",
+        "value": "전용 DRAM 없음 · HMB"
+      },
+      {
+        "label": "낸드 (분해 시료)",
+        "value": "TLC와 QLC 시료가 각각 보고됨"
+      },
+      {
+        "label": "제조사 내구성·보증",
+        "value": "1,200TBW · 제한 보증 최대 3년"
+      }
+    ],
+    "description": "제조사 스펙과 같은 용량에서 측정된 시료를 대조한 M.2 NVMe SSD입니다.",
+    "notes": [
+      "제조사는 낸드를 3D NAND로 표기합니다. 실측 시료의 낸드 종류와 실제 구입하는 생산분은 다를 수 있습니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "unverified",
+    "manufacturerPartNumber": "AP2TBAS2280Q4X-1",
+    "sources": [
+      {
+        "label": "Apacer 소매형 데이터시트",
+        "url": "https://www.apacer.com/upload/media/download/Personal-biz/Specification%20Sheet/Data%20Sheet_AS2280Q4X.pdf",
+        "observedAt": "2026-11-27T13:03:50.041Z",
+        "kind": "manufacturer-datasheet"
+      },
+      {
+        "label": "용량과 제품명이 일치하는 실측",
+        "url": "https://quasarzone.com/bbs/qc_qsz/views/2158550?page=2",
+        "observedAt": "2026-11-27T13:03:50.041Z",
+        "kind": "independent-review"
+      },
+      {
+        "label": "다른 시료의 분해 자료",
+        "url": "https://www.enostech.com/apacer-as2280q4x-m-2-pcie-gen-ssd-review/",
+        "observedAt": "2026-11-27T13:03:50.041Z",
+        "kind": "independent-review"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [],
+    "facts": [
+      {
+        "key": "dram",
+        "value": "absent",
+        "source": {
+          "label": "용량과 제품명이 일치하는 실측",
+          "url": "https://quasarzone.com/bbs/qc_qsz/views/2158550?page=2",
+          "observedAt": "2026-11-27T13:03:50.041Z",
+          "kind": "independent-review"
+        }
+      }
+    ]
   }
 ]

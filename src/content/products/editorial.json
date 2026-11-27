@@ -1405,6 +1405,30 @@
       "advantage": "메인보드 ASUS PRIME B860M-A-CSM과 Gold P31 1TB가 판매처 부품표에 있습니다.",
       "caution": "케이스 모델은 실제 주문 옵션에서 확인하세요. 판매 이미지의 그래픽카드는 연출이며 판매 구성에는 외장 그래픽이 없습니다.",
       "source": "https://item.gmarket.co.kr/Item?goodscode=4707868341"
+    },
+    {
+      "catalogIds": [
+        "reviewed-apacer-as2280q4x-1tb"
+      ],
+      "partNames": [
+        "Apacer AS2280Q4X PCIe 4.0 NVMe 1TB"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "PCIe 4.0 ×4 NVMe에 순차 최대 읽기 5,000MB/s·쓰기 4,400MB/s, 제조사 600TBW입니다.",
+      "caution": "실측 시료는 전용 DRAM 없이 HMB를 사용합니다. TLC와 QLC 시료가 보고돼 낸드가 중요한 분은 구매하려는 생산분을 확인하세요.",
+      "source": "https://ssd-tester.com/apacer_as2280q4x_1tb.html"
+    },
+    {
+      "catalogIds": [
+        "reviewed-apacer-as2280q4x-2tb"
+      ],
+      "partNames": [
+        "Apacer AS2280Q4X PCIe 4.0 NVMe 2TB"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "PCIe 4.0 ×4 NVMe에 순차 최대 읽기 5,000MB/s·쓰기 4,400MB/s, 제조사 1,200TBW입니다.",
+      "caution": "실측 시료는 전용 DRAM 없이 HMB를 사용합니다. TLC와 QLC 시료가 보고돼 낸드가 중요한 분은 구매하려는 생산분을 확인하세요.",
+      "source": "https://quasarzone.com/bbs/qc_qsz/views/2158550?page=2"
     }
   ]
 }
