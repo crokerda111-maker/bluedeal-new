@@ -217,9 +217,10 @@ test('public records do not invent current prices, stock, ratings or reviewed bu
 });
 
 test('the reviewed Intel issue belongs only to the exact Intel model',()=>{
-  const reviewed=products.filter(p=>p.issues.length);
-  assert.equal(reviewed.length,1);assert.equal(reviewed[0].id,'intel-core-i7-14700k');
-  assert.ok(reviewed[0].issues[0].conditions.includes('모든 개별 CPU'));
+  const reviewed=products.flatMap(product=>product.issues
+    .filter(issue=>/Vmin Shift/i.test(issue.title)).map(issue=>({productId:product.id,issue})));
+  assert.deepEqual(reviewed.map(entry=>entry.productId),['intel-core-i7-14700k']);
+  assert.ok(reviewed[0].issue.conditions.includes('모든 개별 CPU'));
 });
 
 test('case families and mismatched PSU labels retain visible uncertainty',()=>{

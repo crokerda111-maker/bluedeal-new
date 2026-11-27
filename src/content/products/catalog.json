@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "d1d0df2bb3d4accf09d6045d1e5877d0f9babeda7f9f0c8c53872559e57c502e",
-  "entries": 836,
+  "catalogHash": "e526302bdfc33f2950c36c5e114adae1c824d024546d7e735c75d7ff1cd29d31",
+  "entries": 837,
   "products": [
     {
       "id": "reviewed-mixed-bundle-etland-s6295842",
@@ -57182,6 +57182,190 @@
       "reviewSources": [],
       "listings": [],
       "referenceCode": "BD-90E18063B3"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4338417409",
+      "name": "퍼플랩 AX78-R97XT 라이젠 7 7800X3D · RX 9070 XT · 24GB · 1TB 완본체",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "퍼플랩",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "7800X3D · RX 9070 XT 조합",
+        "DDR5 24GB 단일 모듈",
+        "750W 기본 파워의 권장 출력 확인"
+      ],
+      "specifications": [
+        {
+          "label": "판매 제목 기준 구성",
+          "value": "AX78-R97XT · 7800X3D · RX 9070 XT 16GB · RAM 24GB · SSD 1TB"
+        },
+        {
+          "label": "판매처 부품표 · 프로세서",
+          "value": "AMD Ryzen 7 7800X3D (국내 정품 표기)"
+        },
+        {
+          "label": "판매처 부품표 · 그래픽[VGA]",
+          "value": "GIGABYTE Radeon RX 9070 XT GAMING OC 16GB"
+        },
+        {
+          "label": "판매처 부품표 · 메인보드",
+          "value": "MSI PRO B650M-P"
+        },
+        {
+          "label": "판매처 부품표 · 메모리[RAM]",
+          "value": "ESSENCORE KLEVV DDR5-5600 CL46 24GB (24GB × 1)"
+        },
+        {
+          "label": "판매처 부품표 · SSD",
+          "value": "COLORFUL CN700 Pro M.2 NVMe 1TB"
+        },
+        {
+          "label": "판매처 부품표 · 파워",
+          "value": "ASUS PRIME 750W BRONZE Black"
+        },
+        {
+          "label": "판매처 부품표 · 쿨러",
+          "value": "3RSYS Socoool RC1400 Quiet 쌍철봉 (블랙)"
+        },
+        {
+          "label": "판매처 부품표 · 케이스",
+          "value": "darkFlash DK900 Air MESH RGB 세븐팬"
+        }
+      ],
+      "description": "G마켓과 11번가 퍼플랩의 기본 사양표에서 같은 부품 구성을 확인한 게이밍 완본체입니다. 판매처별 가격과 혜택은 아래에서 확인할 수 있습니다.",
+      "notes": [
+        "부품 수급에 따라 출고 사양이 바뀔 수 있으므로 주문 전 메인보드·그래픽카드·파워 모델을 대조하세요.",
+        "Windows와 무상 보증 범위는 판매처별 주문 옵션에서 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": null,
+      "sources": [
+        {
+          "label": "G마켓 · 퍼플랩 기본 구성 주문 화면",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4338417409",
+          "observedAt": "2026-11-27T14:31:17.772Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "11번가 · 퍼플랩 기본 구성 주문 화면",
+          "url": "https://www.11st.co.kr/products/8097951804",
+          "observedAt": "2026-11-27T14:31:17.772Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "퍼플랩 기본 부품표 · 두 판매처 공통",
+          "url": "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XT/AX78-R97XT_04.jpg",
+          "observedAt": "2026-11-27T14:31:17.772Z",
+          "kind": "retailer-component-table"
+        },
+        {
+          "label": "MSI PRO B650M-P 공식 사양",
+          "url": "https://www.msi.com/Motherboard/PRO-B650M-P/Specification",
+          "observedAt": "2026-11-27T14:31:17.772Z",
+          "kind": "manufacturer-support"
+        },
+        {
+          "label": "GIGABYTE · 권장 파워 850W와 보조전원 8핀 3개",
+          "url": "https://www.gigabyte.com/Graphics-Card/GV-R9070XTGAMING-OC-16GD/sp",
+          "observedAt": "2026-11-27T14:31:17.772Z",
+          "kind": "manufacturer-support"
+        },
+        {
+          "label": "KLEVV · DDR5-5600 CL46 24GB 단일 모듈 사양",
+          "url": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_DRAM_Standard%20Memory_DDR5_U-DIMM_v4_EN.pdf",
+          "observedAt": "2026-11-27T14:31:17.772Z",
+          "kind": "manufacturer-support"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [
+        {
+          "title": "7800X3D와 RX 9070 XT 16GB 구성",
+          "detail": "GIGABYTE GAMING OC 16GB 모델과 1TB NVMe SSD를 기본 부품표에 명시합니다.",
+          "conditions": "판매처 기본 부품표 기준",
+          "sources": [
+            {
+              "label": "퍼플랩 기본 부품표 · 두 판매처 공통",
+              "url": "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XT/AX78-R97XT_04.jpg",
+              "observedAt": "2026-11-27T14:31:17.772Z",
+              "kind": "retailer-component-table"
+            },
+            {
+              "label": "GIGABYTE · 권장 파워 850W와 보조전원 8핀 3개",
+              "url": "https://www.gigabyte.com/Graphics-Card/GV-R9070XTGAMING-OC-16GD/sp",
+              "observedAt": "2026-11-27T14:31:17.772Z",
+              "kind": "manufacturer-support"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "title": "기본 파워가 그래픽카드 권장 출력을 밑돎",
+          "summary": "퍼플랩의 기본 부품표는 ASUS PRIME 750W Bronze입니다. GIGABYTE는 이 RX 9070 XT GAMING OC 모델에 850W와 8핀 보조전원 3개를 권장 사양으로 안내합니다.",
+          "conditions": "부품표에 명시된 그래픽카드와 기본 파워 조합",
+          "action": "주문 전 850W 이상 파워 변경 옵션과 해당 모델의 8핀 보조전원 연결 구성을 판매처에 확인하세요.",
+          "sources": [
+            {
+              "label": "퍼플랩 기본 부품표 · 두 판매처 공통",
+              "url": "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XT/AX78-R97XT_04.jpg",
+              "observedAt": "2026-11-27T14:31:17.772Z",
+              "kind": "retailer-component-table"
+            },
+            {
+              "label": "GIGABYTE · 권장 파워 850W와 보조전원 8핀 3개",
+              "url": "https://www.gigabyte.com/Graphics-Card/GV-R9070XTGAMING-OC-16GD/sp",
+              "observedAt": "2026-11-27T14:31:17.772Z",
+              "kind": "manufacturer-support"
+            }
+          ]
+        },
+        {
+          "title": "기본 메모리 24GB 한 장",
+          "summary": "기본 옵션에 KLEVV DDR5-5600 CL46 24GB 단일 모듈이 들어갑니다. 보드가 지원하는 두 메모리 채널을 각각 사용하는 구성에 비해 메모리 대역폭이 낮을 수 있습니다.",
+          "conditions": "기본 옵션 기준",
+          "action": "게임이나 작업에 메모리 대역폭이 중요하다면 2장 옵션과 추가 비용을 비교하세요.",
+          "sources": [
+            {
+              "label": "퍼플랩 기본 부품표 · 두 판매처 공통",
+              "url": "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XT/AX78-R97XT_04.jpg",
+              "observedAt": "2026-11-27T14:31:17.772Z",
+              "kind": "retailer-component-table"
+            },
+            {
+              "label": "KLEVV · DDR5-5600 CL46 24GB 단일 모듈 사양",
+              "url": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_DRAM_Standard%20Memory_DDR5_U-DIMM_v4_EN.pdf",
+              "observedAt": "2026-11-27T14:31:17.772Z",
+              "kind": "manufacturer-support"
+            },
+            {
+              "label": "MSI PRO B650M-P 공식 사양",
+              "url": "https://www.msi.com/Motherboard/PRO-B650M-P/Specification",
+              "observedAt": "2026-11-27T14:31:17.772Z",
+              "kind": "manufacturer-support"
+            }
+          ]
+        }
+      ],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4338417409-offer",
+          "merchant": "G마켓",
+          "seller": "퍼플랩",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4338417409-offer"
+        },
+        {
+          "id": "reviewed-fullpc-11st-8097951804-offer",
+          "merchant": "11번가",
+          "seller": "PERFLAB",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-11st-8097951804-offer"
+        }
+      ],
+      "referenceCode": "BD-6288C34B76"
     },
     {
       "id": "reviewed-fullpc-gmarket-4653892370",

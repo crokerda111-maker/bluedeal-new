@@ -2034,6 +2034,18 @@
       "category": "ssd",
       "seller": "삼성전자온라인파트너",
       "sourceUrl": "https://www.11st.co.kr/products/8125841945"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4338417409-offer",
+      "category": "fullpc",
+      "seller": "퍼플랩",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4338417409"
+    },
+    {
+      "id": "reviewed-fullpc-11st-8097951804-offer",
+      "category": "fullpc",
+      "seller": "PERFLAB",
+      "sourceUrl": "https://www.11st.co.kr/products/8097951804"
     }
   ]
 }

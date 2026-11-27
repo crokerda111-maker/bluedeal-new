@@ -1897,5 +1897,85 @@
     },
     "configurationConflict": "메인보드 사양표와 상세 이미지가 다르고 GPU 제조사가 고정 표기되지 않습니다. 판매처 출고 구성 확인 후 점수·순위를 확정합니다.",
     "priceOption": "AXIS DX98D-NX580H · 9800X3D RTX 5080 16GB 32GB/삼성 990 PRO 2TB · Windows 미포함 · 그래픽카드 브랜드·보드 출고 모델 확인 필요"
+  },
+  {
+    "productId": "reviewed-fullpc-gmarket-4338417409",
+    "condition": "퍼플랩 AX78-R97XT · G마켓 기본 메모리 24GB·SSD 1TB 구성",
+    "checkedOn": "2026-11-27",
+    "sellerUrl": "https://item.gmarket.co.kr/Item?goodscode=4338417409",
+    "partsUrl": "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XT/AX78-R97XT_04.jpg",
+    "gpuSource": "https://www.gigabyte.com/Graphics-Card/GV-R9070XTGAMING-OC-16GD/sp",
+    "parts": {
+      "cpu": "AMD Ryzen 7 7800X3D (국내 정품 표기)",
+      "gpu": "GIGABYTE Radeon RX 9070 XT GAMING OC 16GB",
+      "board": "MSI PRO B650M-P",
+      "ram": "ESSENCORE KLEVV DDR5-5600 CL46 24GB (24GB × 1)",
+      "storage": "COLORFUL CN700 Pro M.2 NVMe 1TB",
+      "psu": "ASUS PRIME 750W BRONZE Black",
+      "cooler": "3RSYS Socoool RC1400 Quiet 쌍철봉 (블랙)",
+      "case": "darkFlash DK900 Air MESH RGB 세븐팬"
+    },
+    "quantities": {
+      "ram": 1
+    },
+    "tested": {
+      "board": {
+        "results": [
+          true,
+          false,
+          true
+        ],
+        "fact": "AM5 · DDR5 슬롯 4개 · NVMe PCIe 4.0 M.2 2개 · MSI 공식 2.5GbE",
+        "url": "https://www.msi.com/Motherboard/PRO-B650M-P/Specification"
+      },
+      "ram": {
+        "results": [
+          false,
+          false,
+          false
+        ],
+        "fact": "KLEVV DDR5-5600 CL46 · 기본 24GB 단일 모듈",
+        "url": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_DRAM_Standard%20Memory_DDR5_U-DIMM_v4_EN.pdf"
+      },
+      "storage": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "COLORFUL CN700 Pro 1TB · PCIe 4.0 NVMe",
+        "url": "https://colorful.vn/san-pham/ssd-colorful-cn700-1tb-pro/"
+      },
+      "psu": {
+        "results": [
+          false,
+          null,
+          false
+        ],
+        "fact": "기본 ASUS 750W Bronze · 이 그래픽카드의 GIGABYTE 권장 850W 및 8핀 3개",
+        "url": "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XT/AX78-R97XT_04.jpg"
+      },
+      "cooler": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "RC1400 Quiet 쌍철봉 · AM5 지원 듀얼타워 공랭",
+        "url": "https://3rshop.co.kr/front/productdetail.php?code=028014000000&productcode=028014000000000093"
+      },
+      "case": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "전면 메시 · 전면·상단 각 3개와 후면 1개, 기본 팬 총 7개",
+        "url": "https://www.darkflash.co.kr/board/free/list_press.html?board_no=2"
+      }
+    },
+    "notes": [
+      "기본 파워 750W는 그래픽카드 제조사 권장 850W보다 낮습니다. 구매 전 850W 이상 변경 옵션과 8핀 보조전원 연결 구성을 확인하세요.",
+      "기본 메모리는 24GB 한 장입니다. 두 장이 필요한 경우 판매처 옵션의 추가 비용을 확인하세요."
+    ],
+    "comparisonStatus": "기본 파워가 그래픽카드 권장 출력을 충족하지 않아 구매 추천을 보류합니다.",
+    "priceOption": "AX78-R97XT · KLEVV DDR5-5600 CL46 24GB (24GB × 1) · MSI PRO B650M-P · CN700 Pro 1TB · ASUS PRIME 750W Bronze"
   }
 ]
