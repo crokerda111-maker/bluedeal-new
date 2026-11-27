@@ -91,10 +91,7 @@ export default function HotdealTerms({ post }: { post: Post }) {
         <div className={row}><dt className={label}>구매 조건</dt><dd className="[overflow-wrap:anywhere]">{deal.conditions}</dd></div>
         {evidence ? <div className={row}><dt className={label}>가격 근거</dt><dd>배송비 포함 비교 최저가 {evidence.low.toLocaleString("ko-KR")}원 · {evidenceLabel} {evidence.count}건</dd></div> : null}
       </dl>
-      {deal.sourceReview ? <p className="mt-2 text-xs text-slate-300">
-        <PostContentLink href={deal.sourceReview.url} info={post.linkInfo}>{deal.sourceReview.name} 원글</PostContentLink>
-        {" · "}{formatKoreanDate(deal.sourceReview.publishedAt)} 게시 · 적용 가격과 재고는 판매처에서 확인하세요.
-      </p> : <p className="mt-2 text-xs text-slate-300">판매처 확인 {formatKoreanDate(deal.checkedAt)} · 결제 화면에서 최종 가격을 확인하세요.</p>}
+      <p className="mt-2 text-xs text-slate-300">정보 확인 {formatKoreanDate(deal.checkedAt)} · 결제 화면에서 최종 가격과 재고를 확인하세요.</p>
       {evidence && deal.lowestIn30Days ? <p className="mt-2 text-xs text-slate-300">쿠팡 동일 옵션 · 최근 30일간 비교한 {deal.lowestIn30Days.observations}개 가격 중 최저</p> : null}
       {deal.coupangTrackedLow ? <p className="mt-2 text-xs text-slate-300">
         <PostContentLink href={deal.coupangTrackedLow.url} info={post.linkInfo}>로우차트 가격 이력</PostContentLink>
