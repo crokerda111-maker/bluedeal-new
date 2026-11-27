@@ -1,6 +1,39 @@
 {
   "category": "hdd",
-  "updatedAt": "",
-  "generatedAt": "2026-11-22T03:26:44.675313Z",
-  "items": []
+  "updatedAt": "2026-11-27T13:49:53.732Z",
+  "generatedAt": "2026-11-27T13:49:53.732Z",
+  "items": [
+    {
+      "id": "hdd-gmarket-4719836689",
+      "seller": "WD공식스토어",
+      "name": "WD Blue WD40EZZX 4TB",
+      "spec": "WD40EZZX · 4TB · CMR · 수량 1",
+      "price": 315000,
+      "shippingFee": 0,
+      "priceNote": "수량 1 기본가. 판매가에서 적립·무이자 혜택을 차감하지 않음.",
+      "source": "G마켓",
+      "shippingNote": "기본 배송 조건입니다. 도서산간 추가비는 판매처에서 확인하세요.",
+      "goCode": "RCmZ2MS-eGULiQ5c",
+      "checkedAt": "2026-11-27T13:49:53.732Z",
+      "updatedAt": "2026-11-27T13:49:53.732Z",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-27T13:49:53.732Z"
+    },
+    {
+      "id": "hdd-gmarket-2293235238",
+      "seller": "WD공식스토어",
+      "name": "WD Blue WD80EAAZ 8TB",
+      "spec": "WD80EAAZ · 8TB · CMR · 수량 1",
+      "price": 399000,
+      "shippingFee": 0,
+      "priceNote": "수량 1 기본가. 판매가에서 적립·무이자 혜택을 차감하지 않음.",
+      "source": "G마켓",
+      "shippingNote": "기본 배송 조건입니다. 도서산간 추가비는 판매처에서 확인하세요.",
+      "goCode": "e5eLrgNlhHwbovVt",
+      "checkedAt": "2026-11-27T13:49:53.732Z",
+      "updatedAt": "2026-11-27T13:49:53.732Z",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-27T13:49:53.732Z"
+    }
+  ]
 }

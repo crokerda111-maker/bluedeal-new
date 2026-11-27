@@ -1467,6 +1467,78 @@
       "caution": "공식 속도·TBW의 예시 값은 2TB 기준입니다. 1TB의 속도와 내구성 수치로 적용할 수 없습니다.",
       "source": "https://agi-gear.com/product/ai298-m-2-pcie-ssd/",
       "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-antec-hcg-pro-850-platinum"
+      ],
+      "advantage": "풀모듈러 ATX 3.1 파워이며 12V-2x6 케이블을 제공합니다. 제조사는 일본산 캐패시터와 10년 보증을 명시합니다.",
+      "caution": "본체 길이가 160mm입니다. 케이스의 파워 장착 길이와 케이블 굽힐 공간을 확인하세요. 국내 A/S 접수 조건은 구매처에 확인하세요.",
+      "source": "https://www.antec.com/product/power/hcg850-pro-platinum-atx31",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-antec-hcg-pro-1000-platinum"
+      ],
+      "advantage": "풀모듈러 ATX 3.1 파워이며 12V-2x6 케이블을 제공합니다. 제조사는 일본산 캐패시터와 10년 보증을 명시합니다.",
+      "caution": "본체 길이가 160mm입니다. 케이스의 파워 장착 길이와 케이블 굽힐 공간을 확인하세요. 국내 A/S 접수 조건은 구매처에 확인하세요.",
+      "source": "https://www.antec.com/product/power/hcg1000-pro-platinum-atx31",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-antec-neoeco-850-platinum"
+      ],
+      "advantage": "140mm 길이의 풀모듈러 ATX 3.1 모델입니다. 고정 케이블을 정리할 공간이 좁은 케이스에서 설치 길이를 확인하기 좋습니다.",
+      "caution": "120mm FDB와 제로 RPM은 제조사 사양입니다. 부하가 높은 경우의 소음은 같은 모델의 실측을 확인하세요.",
+      "source": "https://www.antec.com/product/power/ne850-platinum-atx3-1",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-asrock-sl-1200g"
+      ],
+      "advantage": "풀모듈러와 기본 12V-2x6을 제공하며 제조사가 Cybenetics LAMBDA A 인증을 표기합니다.",
+      "caution": "제조사 안내에 따르면 초기 포장에는 인증 로고가 없을 수 있습니다. 모델명 SL-1200G과 국내 A/S 접수 조건을 확인하세요.",
+      "source": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-asrock-sl-850gw"
+      ],
+      "advantage": "풀모듈러와 기본 12V-2x6을 제공하며 제조사가 Cybenetics LAMBDA A+ 인증을 표기합니다.",
+      "caution": "제조사 안내에 따르면 초기 포장에는 인증 로고가 없을 수 있습니다. 모델명 SL-850GW과 국내 A/S 접수 조건을 확인하세요.",
+      "source": "https://www.asrock.com/Power-Supply/SteelLegend/SL-850GW/",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-klevv-cras-v-rgb-black-6000-cl30-48gb"
+      ],
+      "advantage": "48GB 2모듈 구성입니다. XMP·EXPO로 DDR5-6000 CL30 프로필을 지원합니다.",
+      "caution": "제조사 주문표에서 색상·용량·타이밍이 일치하는 품번은 KD5KGUD80-60A300G입니다. 판매자가 실제 출고 라벨에 표시한 품번, 보드 QVL, 국내 보증 접수 조건을 확인하세요.",
+      "source": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-klevv-cras-v-rgb-black-6000-cl30-64gb"
+      ],
+      "advantage": "64GB 2모듈 구성입니다. XMP·EXPO로 DDR5-6000 CL30 프로필을 지원합니다.",
+      "caution": "제조사 주문표에서 색상·용량·타이밍이 일치하는 품번은 KD5BGUA80-60A300G입니다. 판매자가 실제 출고 라벨에 표시한 품번, 보드 QVL, 국내 보증 접수 조건을 확인하세요.",
+      "source": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-klevv-cras-v-rgb-white-6000-cl30-64gb"
+      ],
+      "advantage": "64GB 2모듈 구성입니다. XMP·EXPO로 DDR5-6000 CL30 프로필을 지원합니다.",
+      "caution": "제조사 주문표에서 색상·용량·타이밍이 일치하는 품번은 KD5BGUA80-60A300J입니다. 판매자가 실제 출고 라벨에 표시한 품번, 보드 QVL, 국내 보증 접수 조건을 확인하세요.",
+      "source": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
+      "checkedOn": "2026-11-27"
     }
   ]
 }

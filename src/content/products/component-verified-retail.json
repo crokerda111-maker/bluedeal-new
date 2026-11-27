@@ -1,0 +1,62 @@
+[
+  {
+    "productId": "reviewed-kioxia-exceria-g3-2tb",
+    "listingId": "ssd-gmarket-4764162825",
+    "checkedAt": "2026-11-27T13:44:09.787Z",
+    "seller": "여운스토어G",
+    "source": {
+      "label": "G마켓 여운스토어G EXCERIA G3 2TB 수량 1 판매 상세",
+      "url": "https://item.gmarket.co.kr/Item?goodscode=4764162825",
+      "observedAt": "2026-11-27T13:44:09.787Z",
+      "kind": "retailer-listing"
+    }
+  },
+  {
+    "productId": "intel-core-i7-14700k",
+    "listingId": "cpu-gmarket-4021269208",
+    "checkedAt": "2026-11-27T13:49:53.732Z",
+    "source": {
+      "label": "G마켓 공식판매점l 실판매 상세",
+      "url": "https://item.gmarket.co.kr/Item?goodscode=4021269208",
+      "observedAt": "2026-11-27T13:49:53.732Z",
+      "kind": "retailer-listing"
+    },
+    "seller": "공식판매점l"
+  },
+  {
+    "productId": "reviewed-asus-prime-b860m-a-csm",
+    "listingId": "motherboard-gmarket-4292987978",
+    "checkedAt": "2026-11-27T13:49:53.732Z",
+    "source": {
+      "label": "G마켓 은성이에스 실판매 상세",
+      "url": "https://item.gmarket.co.kr/Item?goodscode=4292987978",
+      "observedAt": "2026-11-27T13:49:53.732Z",
+      "kind": "retailer-listing"
+    },
+    "seller": "은성이에스"
+  },
+  {
+    "productId": "reviewed-wd-blue-wd40ezzx",
+    "listingId": "hdd-gmarket-4719836689",
+    "checkedAt": "2026-11-27T13:49:53.732Z",
+    "source": {
+      "label": "G마켓 WD공식스토어 실판매 상세",
+      "url": "https://item.gmarket.co.kr/Item?goodscode=4719836689",
+      "observedAt": "2026-11-27T13:49:53.732Z",
+      "kind": "retailer-listing"
+    },
+    "seller": "WD공식스토어"
+  },
+  {
+    "productId": "reviewed-wd-blue-wd80eaaz",
+    "listingId": "hdd-gmarket-2293235238",
+    "checkedAt": "2026-11-27T13:49:53.732Z",
+    "source": {
+      "label": "G마켓 WD공식스토어 실판매 상세",
+      "url": "https://item.gmarket.co.kr/Item?goodscode=2293235238",
+      "observedAt": "2026-11-27T13:49:53.732Z",
+      "kind": "retailer-listing"
+    },
+    "seller": "WD공식스토어"
+  }
+]

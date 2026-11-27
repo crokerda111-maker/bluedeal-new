@@ -95,6 +95,27 @@ for (const { ids, source: url, slots, newModel } of boards) {
 }
 const retailPrices = await Promise.all(['ram','cpu','ssd','motherboard','gpu','cooler','psu','case','hdd','halfpc','fullpc','bundle'].map(key => fs.readFile(path.join(root,'src/content/prices',key+'.json'),'utf8').then(JSON.parse)));
 base.products = linkDistributorOffers(base.products, retail.links, retailPrices);
+const componentOffers = JSON.parse(await fs.readFile(path.join(root, 'src/content/products/component-verified-retail.json'), 'utf8'));
+const outbound = JSON.parse(await fs.readFile(path.join(root, 'src/content/outbound.generated.json'), 'utf8'));
+const listingOwners = new Map(base.products.flatMap(product => product.listings.map(listing => [listing.id, product.id])));
+for (const { productId, listingId, checkedAt, source, seller } of componentOffers) {
+  const product = base.products.find(item => item.id === productId);
+  const offer = retailPrices.find(payload => payload.category === product?.category)?.items.find(item => item.id === listingId);
+  const merchantLink = outbound[offer?.goCode];
+  const owner = listingOwners.get(listingId);
+  if (!product || !offer || offer.seller !== seller || offer.source !== 'G마켓' ||
+      merchantLink?.merchant !== 'gmarket' || merchantLink.originalUrl !== source.url ||
+      !Number.isFinite(Date.parse(checkedAt)) || !(Date.parse(offer.checkedAt) >= Date.parse(checkedAt)) ||
+      (owner && owner !== productId)) {
+    throw new Error(`INVALID_COMPONENT_RETAIL_LINK ${listingId}`);
+  }
+  if (!owner) {
+    product.listings.push({ id: listingId, merchant: offer.source, seller, pricePage: `/prices/${product.category}#${listingId}` });
+    listingOwners.set(listingId, productId);
+  }
+  product.domesticState = 'listing-observed';
+  if (!product.sources.some(item => item.url === source.url)) product.sources.push(source);
+}
 base.products.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name, 'ko'));
 const ids = new Set();
 const referenceCodes = new Set();

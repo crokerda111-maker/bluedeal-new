@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "8aa2cfc4e6fca46119767097dbefc6daba6cd4efa8e8bf4f34886b7435c990c4",
+  "catalogHash": "8d73e4e3b11eafec403a3f713fd99c69299751233f0980b6fc4796588024904d",
   "entries": 836,
   "products": [
     {
@@ -54260,7 +54260,7 @@
         "메모리의 실제 동작 속도는 메인보드, 장착 개수와 메모리 구성에 따라 달라집니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -54274,6 +54274,12 @@
           "url": "https://community.intel.com/t/intel-core-13th-and-14th-gen-vmin-shift-instabilty-update-new-microcode-update-0x12f/132113/1",
           "observedAt": "2026-11-19T20:48:00+09:00",
           "kind": "manufacturer-support"
+        },
+        {
+          "label": "G마켓 공식판매점l 실판매 상세",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4021269208",
+          "observedAt": "2026-11-27T13:49:53.732Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -54336,7 +54342,14 @@
       ],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": [],
+      "listings": [
+        {
+          "id": "cpu-gmarket-4021269208",
+          "merchant": "G마켓",
+          "seller": "공식판매점l",
+          "pricePage": "/prices/cpu#cpu-gmarket-4021269208"
+        }
+      ],
       "facts": [
         {
           "key": "socket",
@@ -67185,7 +67198,7 @@
         "국내 현재 판매·배송비·할인·재고·유통사 보증을 확인한 가격 기록은 아직 없습니다. 과거 핫딜이나 검색 대표 상품의 금액을 현재 가격으로 사용하지 않았습니다. 독립 후기·실측 성능·품질 점수는 검토 전입니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": "WD40EZZX",
       "sources": [
         {
@@ -67193,6 +67206,12 @@
           "url": "https://documents.westerndigital.com/content/dam/doc-library/ko_kr/assets/public/western-digital/product/internal-drives/wd-blue-hdd/data-sheet-western-digital-wd-blue-pc-hdd.pdf",
           "observedAt": "2026-11-21T10:02:13.222781+00:00",
           "kind": "manufacturer-datasheet"
+        },
+        {
+          "label": "G마켓 WD공식스토어 실판매 상세",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4719836689",
+          "observedAt": "2026-11-27T13:49:53.732Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -67200,7 +67219,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": [],
+      "listings": [
+        {
+          "id": "hdd-gmarket-4719836689",
+          "merchant": "G마켓",
+          "seller": "WD공식스토어",
+          "pricePage": "/prices/hdd#hdd-gmarket-4719836689"
+        }
+      ],
       "referenceCode": "BD-35C70CDFCC"
     },
     {
@@ -67259,7 +67285,7 @@
         "국내 현재 판매·배송비·할인·재고·유통사 보증을 확인한 가격 기록은 아직 없습니다. 과거 핫딜이나 검색 대표 상품의 금액을 현재 가격으로 사용하지 않았습니다. 독립 후기·실측 성능·품질 점수는 검토 전입니다."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": "WD80EAAZ",
       "sources": [
         {
@@ -67267,6 +67293,12 @@
           "url": "https://documents.westerndigital.com/content/dam/doc-library/ko_kr/assets/public/western-digital/product/internal-drives/wd-blue-hdd/data-sheet-western-digital-wd-blue-pc-hdd.pdf",
           "observedAt": "2026-11-21T10:02:13.222781+00:00",
           "kind": "manufacturer-datasheet"
+        },
+        {
+          "label": "G마켓 WD공식스토어 실판매 상세",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=2293235238",
+          "observedAt": "2026-11-27T13:49:53.732Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -67274,7 +67306,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": [],
+      "listings": [
+        {
+          "id": "hdd-gmarket-2293235238",
+          "merchant": "G마켓",
+          "seller": "WD공식스토어",
+          "pricePage": "/prices/hdd#hdd-gmarket-2293235238"
+        }
+      ],
       "referenceCode": "BD-F73909B980"
     },
     {
@@ -67514,7 +67553,7 @@
         "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "listObservedAt": null,
       "sources": [
@@ -67523,13 +67562,26 @@
           "url": "https://www.asus.com/motherboards-components/motherboards/csm/prime-b860m-a-csm/techspec/",
           "observedAt": "2026-11-27T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "G마켓 은성이에스 실판매 상세",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4292987978",
+          "observedAt": "2026-11-27T13:49:53.732Z",
+          "kind": "retailer-listing"
         }
       ],
       "strengths": [],
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": [],
+      "listings": [
+        {
+          "id": "motherboard-gmarket-4292987978",
+          "merchant": "G마켓",
+          "seller": "은성이에스",
+          "pricePage": "/prices/motherboard#motherboard-gmarket-4292987978"
+        }
+      ],
       "facts": [
         {
           "key": "nvmeSlots",
@@ -74346,15 +74398,23 @@
       "specifications": [
         {
           "label": "판매 구성 표기",
-          "value": "안텍 HCG PRO 1000W 80PLUS 플래티넘 풀모듈러 ATX3.1 파워 · 수량1 · 정확한 품번·보증 확인 필요"
+          "value": "안텍 HCG PRO 1000W 80PLUS 플래티넘 풀모듈러 ATX3.1 파워 · 수량1"
+        },
+        {
+          "label": "전원 장착 규격",
+          "value": "ATX"
+        },
+        {
+          "label": "제조사 모델",
+          "value": "HCG1000 PRO Platinum ATX3.1"
         },
         {
           "label": "정격 출력",
           "value": "1000W"
         },
         {
-          "label": "전원 장착 규격",
-          "value": "ATX"
+          "label": "전원 설계 규격",
+          "value": "ATX 3.1"
         },
         {
           "label": "효율 인증",
@@ -74365,8 +74425,24 @@
           "value": "풀모듈러"
         },
         {
-          "label": "전원 설계 규격",
-          "value": "ATX 3.1"
+          "label": "커패시터",
+          "value": "제조사 표기 일본산 캐패시터"
+        },
+        {
+          "label": "팬",
+          "value": "135mm FDB · 제로 RPM 모드"
+        },
+        {
+          "label": "파워 본체 길이",
+          "value": "160mm"
+        },
+        {
+          "label": "제조사 표기 보증 기간",
+          "value": "10년"
+        },
+        {
+          "label": "GPU 전원 케이블",
+          "value": "12V-2x6 1개"
         }
       ],
       "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
@@ -74374,7 +74450,8 @@
         "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
         "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
         "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
-        "HCG PRO 850W와 1000W는 출력별 별도 상품입니다."
+        "HCG PRO 850W와 1000W는 출력별 별도 상품입니다.",
+        "제조사 표기 보증 기간은 본 모델 기준입니다. 국내 접수처 및 정품 보증 조건은 판매처에서 확인하세요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -74387,10 +74464,10 @@
           "kind": "retailer-listing"
         },
         {
-          "label": "해당 모델 제조사 공식 사양",
+          "label": "Antec HCG1000 PRO Platinum ATX3.1",
           "url": "https://www.antec.com/product/power/hcg1000-pro-platinum-atx31",
-          "observedAt": "2026-11-22T00:00:00+09:00",
-          "kind": "manufacturer-specifications"
+          "kind": "manufacturer-specifications",
+          "observedAt": "2026-11-27T13:49:53.732Z"
         }
       ],
       "listObservedAt": null,
@@ -74408,16 +74485,6 @@
       ],
       "facts": [
         {
-          "key": "wattage",
-          "value": "1000",
-          "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.antec.com/product/power/hcg1000-pro-platinum-atx31",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
-          }
-        },
-        {
           "key": "formFactor",
           "value": "ATX",
           "source": {
@@ -74428,33 +74495,53 @@
           }
         },
         {
-          "key": "efficiency",
-          "value": "PLATINUM",
+          "key": "wattage",
+          "value": "1000",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
+            "label": "Antec HCG1000 PRO Platinum ATX3.1",
             "url": "https://www.antec.com/product/power/hcg1000-pro-platinum-atx31",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
-          }
-        },
-        {
-          "key": "modular",
-          "value": "풀모듈러",
-          "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.antec.com/product/power/hcg1000-pro-platinum-atx31",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         },
         {
           "key": "atx",
           "value": "3.1",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
+            "label": "Antec HCG1000 PRO Platinum ATX3.1",
             "url": "https://www.antec.com/product/power/hcg1000-pro-platinum-atx31",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "Antec HCG1000 PRO Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/hcg1000-pro-platinum-atx31",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "modular",
+          "value": "풀모듈러",
+          "source": {
+            "label": "Antec HCG1000 PRO Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/hcg1000-pro-platinum-atx31",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "warrantyYears",
+          "value": "10",
+          "source": {
+            "label": "Antec HCG1000 PRO Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/hcg1000-pro-platinum-atx31",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         }
       ],
@@ -74473,15 +74560,23 @@
       "specifications": [
         {
           "label": "판매 구성 표기",
-          "value": "안텍 HCG PRO 850W 80PLUS 플래티넘 풀모듈러 ATX3.1 파워 · 수량1 · 정확한 품번·보증 확인 필요"
+          "value": "안텍 HCG PRO 850W 80PLUS 플래티넘 풀모듈러 ATX3.1 파워 · 수량1"
+        },
+        {
+          "label": "전원 장착 규격",
+          "value": "ATX"
+        },
+        {
+          "label": "제조사 모델",
+          "value": "HCG850 PRO Platinum ATX3.1"
         },
         {
           "label": "정격 출력",
           "value": "850W"
         },
         {
-          "label": "전원 장착 규격",
-          "value": "ATX"
+          "label": "전원 설계 규격",
+          "value": "ATX 3.1"
         },
         {
           "label": "효율 인증",
@@ -74492,8 +74587,24 @@
           "value": "풀모듈러"
         },
         {
-          "label": "전원 설계 규격",
-          "value": "ATX 3.1"
+          "label": "커패시터",
+          "value": "제조사 표기 일본산 캐패시터"
+        },
+        {
+          "label": "팬",
+          "value": "135mm FDB · 제로 RPM 모드"
+        },
+        {
+          "label": "파워 본체 길이",
+          "value": "160mm"
+        },
+        {
+          "label": "제조사 표기 보증 기간",
+          "value": "10년"
+        },
+        {
+          "label": "GPU 전원 케이블",
+          "value": "12V-2x6 1개"
         }
       ],
       "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
@@ -74501,7 +74612,8 @@
         "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
         "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
         "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
-        "HCG PRO 850W와 1000W는 출력별 별도 상품입니다."
+        "HCG PRO 850W와 1000W는 출력별 별도 상품입니다.",
+        "제조사 표기 보증 기간은 본 모델 기준입니다. 국내 접수처 및 정품 보증 조건은 판매처에서 확인하세요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -74514,10 +74626,10 @@
           "kind": "retailer-listing"
         },
         {
-          "label": "해당 모델 제조사 공식 사양",
+          "label": "Antec HCG850 PRO Platinum ATX3.1",
           "url": "https://www.antec.com/product/power/hcg850-pro-platinum-atx31",
-          "observedAt": "2026-11-22T00:00:00+09:00",
-          "kind": "manufacturer-specifications"
+          "kind": "manufacturer-specifications",
+          "observedAt": "2026-11-27T13:49:53.732Z"
         }
       ],
       "listObservedAt": null,
@@ -74535,16 +74647,6 @@
       ],
       "facts": [
         {
-          "key": "wattage",
-          "value": "850",
-          "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.antec.com/product/power/hcg850-pro-platinum-atx31",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
-          }
-        },
-        {
           "key": "formFactor",
           "value": "ATX",
           "source": {
@@ -74555,33 +74657,53 @@
           }
         },
         {
-          "key": "efficiency",
-          "value": "PLATINUM",
+          "key": "wattage",
+          "value": "850",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
+            "label": "Antec HCG850 PRO Platinum ATX3.1",
             "url": "https://www.antec.com/product/power/hcg850-pro-platinum-atx31",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
-          }
-        },
-        {
-          "key": "modular",
-          "value": "풀모듈러",
-          "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.antec.com/product/power/hcg850-pro-platinum-atx31",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         },
         {
           "key": "atx",
           "value": "3.1",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
+            "label": "Antec HCG850 PRO Platinum ATX3.1",
             "url": "https://www.antec.com/product/power/hcg850-pro-platinum-atx31",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "PLATINUM",
+          "source": {
+            "label": "Antec HCG850 PRO Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/hcg850-pro-platinum-atx31",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "modular",
+          "value": "풀모듈러",
+          "source": {
+            "label": "Antec HCG850 PRO Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/hcg850-pro-platinum-atx31",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "warrantyYears",
+          "value": "10",
+          "source": {
+            "label": "Antec HCG850 PRO Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/hcg850-pro-platinum-atx31",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         }
       ],
@@ -74600,15 +74722,23 @@
       "specifications": [
         {
           "label": "판매 구성 표기",
-          "value": "안텍 Antec NeoECO 850W 80PLUS플래티넘 풀모듈러 ATX 3.1 파워서플라이 · 수량1 · 정확한 품번·보증 확인 필요"
+          "value": "안텍 Antec NeoECO 850W 80PLUS플래티넘 풀모듈러 ATX 3.1 파워서플라이 · 수량1"
+        },
+        {
+          "label": "전원 장착 규격",
+          "value": "ATX"
+        },
+        {
+          "label": "제조사 모델",
+          "value": "NE850 PLATINUM ATX3.1 (Safe Model X8000A584EU-25)"
         },
         {
           "label": "정격 출력",
           "value": "850W"
         },
         {
-          "label": "전원 장착 규격",
-          "value": "ATX"
+          "label": "전원 설계 규격",
+          "value": "ATX 3.1"
         },
         {
           "label": "효율 인증",
@@ -74617,6 +74747,22 @@
         {
           "label": "케이블 방식",
           "value": "풀모듈러"
+        },
+        {
+          "label": "팬",
+          "value": "120mm FDB · 제로 RPM 모드"
+        },
+        {
+          "label": "파워 본체 길이",
+          "value": "140mm"
+        },
+        {
+          "label": "제조사 표기 보증 기간",
+          "value": "10년"
+        },
+        {
+          "label": "GPU 전원 케이블",
+          "value": "12V-2x6 1개"
         }
       ],
       "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
@@ -74624,7 +74770,8 @@
         "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
         "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
         "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
-        "외 할인행사 문구. 판매 옵션의 정확한 품번·리비전 추가 확인 필요"
+        "외 할인행사 문구. 판매 옵션의 정확한 품번·리비전 추가 확인 필요",
+        "제조사 표기 보증 기간은 본 모델 기준입니다. 국내 접수처 및 정품 보증 조건은 판매처에서 확인하세요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -74641,6 +74788,12 @@
           "url": "https://www.antec.com/product/power/ne850-platinum",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "Antec NE850 Platinum ATX3.1",
+          "url": "https://www.antec.com/product/power/ne850-platinum-atx3-1",
+          "kind": "manufacturer-specifications",
+          "observedAt": "2026-11-27T13:49:53.732Z"
         }
       ],
       "listObservedAt": null,
@@ -74658,16 +74811,6 @@
       ],
       "facts": [
         {
-          "key": "wattage",
-          "value": "850",
-          "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.antec.com/product/power/ne850-platinum",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
-          }
-        },
-        {
           "key": "formFactor",
           "value": "ATX",
           "source": {
@@ -74678,23 +74821,53 @@
           }
         },
         {
+          "key": "wattage",
+          "value": "850",
+          "source": {
+            "label": "Antec NE850 Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/ne850-platinum-atx3-1",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "atx",
+          "value": "3.1",
+          "source": {
+            "label": "Antec NE850 Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/ne850-platinum-atx3-1",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
           "key": "efficiency",
           "value": "PLATINUM",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.antec.com/product/power/ne850-platinum",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "label": "Antec NE850 Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/ne850-platinum-atx3-1",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         },
         {
           "key": "modular",
           "value": "풀모듈러",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.antec.com/product/power/ne850-platinum",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "label": "Antec NE850 Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/ne850-platinum-atx3-1",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "warrantyYears",
+          "value": "10",
+          "source": {
+            "label": "Antec NE850 Platinum ATX3.1",
+            "url": "https://www.antec.com/product/power/ne850-platinum-atx3-1",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         }
       ],
@@ -74833,15 +75006,23 @@
       "specifications": [
         {
           "label": "판매 구성 표기",
-          "value": "ASRock 스틸레전드 SL-1200G 80PLUS골드 풀모듈러 ATX3.1 (정격 컴퓨터 파워서플라이) · 수량1 · 정확한 품번·보증 확인 필요"
+          "value": "ASRock 스틸레전드 SL-1200G 80PLUS골드 풀모듈러 ATX3.1 (정격 컴퓨터 파워서플라이) · 수량1"
+        },
+        {
+          "label": "전원 장착 규격",
+          "value": "ATX"
+        },
+        {
+          "label": "제조사 모델",
+          "value": "SL-1200G"
         },
         {
           "label": "정격 출력",
           "value": "1200W"
         },
         {
-          "label": "전원 장착 규격",
-          "value": "ATX"
+          "label": "전원 설계 규격",
+          "value": "ATX 3.1"
         },
         {
           "label": "효율 인증",
@@ -74852,15 +75033,28 @@
           "value": "풀모듈러"
         },
         {
-          "label": "전원 설계 규격",
-          "value": "ATX 3.1"
+          "label": "커패시터",
+          "value": "제조사 표기 105°C 일본산 캐패시터 및 솔리드 캐패시터"
+        },
+        {
+          "label": "소음 인증",
+          "value": "Cybenetics LAMBDA A"
+        },
+        {
+          "label": "제조사 표기 보증 기간",
+          "value": "10년"
+        },
+        {
+          "label": "GPU 전원 케이블",
+          "value": "12V-2x6 1개"
         }
       ],
       "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
       "notes": [
         "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
         "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
-        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요."
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "제조사 표기 보증 기간은 본 모델 기준입니다. 국내 접수처 및 정품 보증 조건은 판매처에서 확인하세요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -74873,10 +75067,10 @@
           "kind": "retailer-listing"
         },
         {
-          "label": "해당 모델 제조사 공식 사양",
+          "label": "ASRock SL-1200G",
           "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
-          "observedAt": "2026-11-22T00:00:00+09:00",
-          "kind": "manufacturer-specifications"
+          "kind": "manufacturer-specifications",
+          "observedAt": "2026-11-27T13:49:53.732Z"
         }
       ],
       "listObservedAt": null,
@@ -74894,16 +75088,6 @@
       ],
       "facts": [
         {
-          "key": "wattage",
-          "value": "1200",
-          "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
-          }
-        },
-        {
           "key": "formFactor",
           "value": "ATX",
           "source": {
@@ -74914,33 +75098,63 @@
           }
         },
         {
-          "key": "efficiency",
-          "value": "GOLD",
+          "key": "wattage",
+          "value": "1200",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
+            "label": "ASRock SL-1200G",
             "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
-          }
-        },
-        {
-          "key": "modular",
-          "value": "풀모듈러",
-          "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         },
         {
           "key": "atx",
           "value": "3.1",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
+            "label": "ASRock SL-1200G",
             "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "efficiency",
+          "value": "GOLD",
+          "source": {
+            "label": "ASRock SL-1200G",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "modular",
+          "value": "풀모듈러",
+          "source": {
+            "label": "ASRock SL-1200G",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "warrantyYears",
+          "value": "10",
+          "source": {
+            "label": "ASRock SL-1200G",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "psuNoiseTest",
+          "value": "지원",
+          "source": {
+            "label": "ASRock SL-1200G",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-1200G/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         }
       ],
@@ -74959,15 +75173,19 @@
       "specifications": [
         {
           "label": "판매 구성 표기",
-          "value": "ASRock 스틸레전드 SL-850GW 80PLUS골드 풀모듈러 ATX3.1 화이트 (정격 컴퓨터 파워서플라이) · 수량1 · 정확한 품번·보증 확인 필요"
-        },
-        {
-          "label": "정격 출력",
-          "value": "850W"
+          "value": "ASRock 스틸레전드 SL-850GW 80PLUS골드 풀모듈러 ATX3.1 화이트 (정격 컴퓨터 파워서플라이) · 수량1"
         },
         {
           "label": "전원 장착 규격",
           "value": "ATX"
+        },
+        {
+          "label": "제조사 모델",
+          "value": "SL-850GW"
+        },
+        {
+          "label": "정격 출력",
+          "value": "850W"
         },
         {
           "label": "전원 설계 규격",
@@ -74976,13 +75194,34 @@
         {
           "label": "효율 인증",
           "value": "80 PLUS Gold"
+        },
+        {
+          "label": "케이블 방식",
+          "value": "풀모듈러"
+        },
+        {
+          "label": "커패시터",
+          "value": "제조사 표기 105°C 일본산 캐패시터 및 솔리드 캐패시터"
+        },
+        {
+          "label": "소음 인증",
+          "value": "Cybenetics LAMBDA A+"
+        },
+        {
+          "label": "제조사 표기 보증 기간",
+          "value": "10년"
+        },
+        {
+          "label": "GPU 전원 케이블",
+          "value": "12V-2x6 1개"
         }
       ],
       "description": "실제 판매 페이지의 모델 표기와 판매 상태·조건을 검토한 파워입니다. 확인된 상품가·배송비·조건부 할인은 가격표에서 구분합니다. 인증·보호회로·커넥터·품질 평가는 공식 자료와 독립 시험 자료를 추가 검토 중입니다.",
       "notes": [
         "80PLUS·ATX·PCIe 버전은 판매명 표기와 공식 인증·독립 시험 확인 여부를 구분해야 합니다.",
         "적립금·구매 후 보상·다른 상품이나 외부 광고의 쿠폰을 결제 할인으로 차감하지 않았습니다.",
-        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요."
+        "정확한 제조사 품번·세대·색상·국내 보증·케이블 구성과 시스템의 전력·커넥터를 구매 전에 확인하세요.",
+        "제조사 표기 보증 기간은 본 모델 기준입니다. 국내 접수처 및 정품 보증 조건은 판매처에서 확인하세요."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
@@ -74999,6 +75238,12 @@
           "url": "https://asrock.com/Power-Supply/SteelLegend/SL-850GW/",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "ASRock SL-850GW",
+          "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-850GW/",
+          "kind": "manufacturer-specifications",
+          "observedAt": "2026-11-27T13:49:53.732Z"
         }
       ],
       "listObservedAt": null,
@@ -75029,30 +75274,60 @@
           "key": "wattage",
           "value": "850",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://asrock.com/Power-Supply/SteelLegend/SL-850GW/",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "label": "ASRock SL-850GW",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-850GW/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         },
         {
           "key": "atx",
           "value": "3.1",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://asrock.com/Power-Supply/SteelLegend/SL-850GW/",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "label": "ASRock SL-850GW",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-850GW/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         },
         {
           "key": "efficiency",
           "value": "GOLD",
           "source": {
-            "label": "해당 모델 제조사 공식 사양",
-            "url": "https://asrock.com/Power-Supply/SteelLegend/SL-850GW/",
-            "observedAt": "2026-11-22T00:00:00+09:00",
-            "kind": "manufacturer-specifications"
+            "label": "ASRock SL-850GW",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-850GW/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "modular",
+          "value": "풀모듈러",
+          "source": {
+            "label": "ASRock SL-850GW",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-850GW/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "warrantyYears",
+          "value": "10",
+          "source": {
+            "label": "ASRock SL-850GW",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-850GW/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
+        },
+        {
+          "key": "psuNoiseTest",
+          "value": "지원",
+          "source": {
+            "label": "ASRock SL-850GW",
+            "url": "https://www.asrock.com/Power-Supply/SteelLegend/SL-850GW/",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         }
       ],
@@ -91075,6 +91350,26 @@
         {
           "label": "유통사 판매명 전송률·타이밍",
           "value": "6000MT/s · CL30"
+        },
+        {
+          "label": "제조사 후보 품번",
+          "value": "KD5KGUD80-60A300G"
+        },
+        {
+          "label": "제조사 보증",
+          "value": "제한적 평생 보증"
+        },
+        {
+          "label": "속도·타이밍",
+          "value": "DDR5-6000 CL30-36-36-76"
+        },
+        {
+          "label": "메모리 프로필",
+          "value": "Intel XMP 3.0 · AMD EXPO"
+        },
+        {
+          "label": "모듈 높이",
+          "value": "44mm"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -91099,6 +91394,12 @@
           "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005418",
           "observedAt": "2026-11-22T02:00:54.365070+00:00",
           "kind": "distributor-list"
+        },
+        {
+          "label": "KLEVV CRAS V RGB 공식 주문 품번표",
+          "url": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
+          "kind": "manufacturer-specifications",
+          "observedAt": "2026-11-27T13:49:53.732Z"
         }
       ],
       "listObservedAt": null,
@@ -91164,6 +91465,16 @@
             "observedAt": "2026-11-22T02:00:54.365070+00:00",
             "kind": "distributor-list"
           }
+        },
+        {
+          "key": "warrantyYears",
+          "value": "제한적 평생 보증",
+          "source": {
+            "label": "KLEVV CRAS V RGB 공식 주문 품번표",
+            "url": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
+          }
         }
       ],
       "referenceCode": "BD-7A2F3BDA22"
@@ -91216,6 +91527,26 @@
         {
           "label": "유통사 판매명 전송률·타이밍",
           "value": "6000MT/s · CL30"
+        },
+        {
+          "label": "제조사 후보 품번",
+          "value": "KD5BGUA80-60A300G"
+        },
+        {
+          "label": "제조사 보증",
+          "value": "제한적 평생 보증"
+        },
+        {
+          "label": "속도·타이밍",
+          "value": "DDR5-6000 CL30-36-36-76"
+        },
+        {
+          "label": "메모리 프로필",
+          "value": "Intel XMP 3.0 · AMD EXPO"
+        },
+        {
+          "label": "모듈 높이",
+          "value": "44mm"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -91248,6 +91579,12 @@
           "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005419",
           "observedAt": "2026-11-22T02:00:54.365070+00:00",
           "kind": "distributor-list"
+        },
+        {
+          "label": "KLEVV CRAS V RGB 공식 주문 품번표",
+          "url": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
+          "kind": "manufacturer-specifications",
+          "observedAt": "2026-11-27T13:49:53.732Z"
         }
       ],
       "listObservedAt": null,
@@ -91312,6 +91649,16 @@
             "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005419",
             "observedAt": "2026-11-22T02:00:54.365070+00:00",
             "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "warrantyYears",
+          "value": "제한적 평생 보증",
+          "source": {
+            "label": "KLEVV CRAS V RGB 공식 주문 품번표",
+            "url": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         }
       ],
@@ -91456,6 +91803,26 @@
         {
           "label": "유통사 판매명 전송률·타이밍",
           "value": "6000MT/s · CL30"
+        },
+        {
+          "label": "제조사 후보 품번",
+          "value": "KD5BGUA80-60A300J"
+        },
+        {
+          "label": "제조사 보증",
+          "value": "제한적 평생 보증"
+        },
+        {
+          "label": "속도·타이밍",
+          "value": "DDR5-6000 CL30-36-36-76"
+        },
+        {
+          "label": "메모리 프로필",
+          "value": "Intel XMP 3.0 · AMD EXPO"
+        },
+        {
+          "label": "모듈 높이",
+          "value": "44mm"
         }
       ],
       "description": "실제 판매 페이지에서 모델·용량·선택 구성을 대조한 RAM입니다. 상품가·배송비·조건부 쿠폰 및 카드가·확인 시각을 구분해 제공합니다. 별도 근거가 없는 품질·성능·후기 평점은 산정하지 않았습니다.",
@@ -91480,6 +91847,12 @@
           "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005674",
           "observedAt": "2026-11-22T02:00:51.412234+00:00",
           "kind": "distributor-list"
+        },
+        {
+          "label": "KLEVV CRAS V RGB 공식 주문 품번표",
+          "url": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
+          "kind": "manufacturer-specifications",
+          "observedAt": "2026-11-27T13:49:53.732Z"
         }
       ],
       "listObservedAt": null,
@@ -91544,6 +91917,16 @@
             "url": "https://www.seorinexpress.com/goods/goods_view.php?goodsNo=1000005674",
             "observedAt": "2026-11-22T02:00:51.412234+00:00",
             "kind": "distributor-list"
+          }
+        },
+        {
+          "key": "warrantyYears",
+          "value": "제한적 평생 보증",
+          "source": {
+            "label": "KLEVV CRAS V RGB 공식 주문 품번표",
+            "url": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
+            "kind": "manufacturer-specifications",
+            "observedAt": "2026-11-27T13:49:53.732Z"
           }
         }
       ],

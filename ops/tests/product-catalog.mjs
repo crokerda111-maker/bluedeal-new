@@ -119,6 +119,7 @@ test('each single-part detail has usable buying notes with a source', () => {
 test('board catalog facets use the manufacturer-verified NVMe slots and separate similarly named variants', () => {
   const { boards } = JSON.parse(fs.readFileSync(new URL('../../src/content/products/motherboard-expansion.json',import.meta.url),'utf8'));
   const media = JSON.parse(fs.readFileSync(new URL('../../src/content/products/motherboard-media.json',import.meta.url),'utf8'));
+  const verifiedOffers = JSON.parse(fs.readFileSync(new URL('../../src/content/products/component-verified-retail.json', import.meta.url), 'utf8'));
   const registered = products.filter(product => product.category === 'motherboard');
   assert.deepEqual(boards.flatMap(board => board.ids).sort(), registered.map(product => product.id).sort());
   assert.deepEqual(Object.keys(media).sort(), registered.map(product => product.id).sort());
@@ -135,7 +136,8 @@ test('board catalog facets use the manufacturer-verified NVMe slots and separate
       assert.deepEqual(productFacetValues(product).boardColor, media[id].white ? ['white'] : undefined, id);
       assert.notEqual(media[id].main, media[id].pcb, id);
       for (const url of [media[id].main, media[id].pcb]) assert.equal(new URL(url).protocol, 'https:', id);
-      if (board.newModel) assert.deepEqual(product.listings, [], id);
+      if (board.newModel) assert.deepEqual(product.listings.map(listing => listing.id),
+        verifiedOffers.filter(offer => offer.productId === id).map(offer => offer.listingId), id);
     }
   }
   const byId = id => boards.find(board => board.ids.includes(id));
