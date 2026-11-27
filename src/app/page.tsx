@@ -83,21 +83,20 @@ export default async function HomePage() {
   return (
     <div className="space-y-10 pb-6 sm:space-y-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "블루딜", alternateName: "BLUEDEAL", url: SITE_URL, inLanguage: "ko-KR" }).replace(/</g, "\\u003c") }} />
-      <nav id="home-primary-links" aria-label="주요 메뉴" className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-        {PRIMARY_ROUTES.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            prefetch={false}
-            className="group bd-surface-md flex min-w-0 flex-col p-3 transition hover:-translate-y-0.5 hover:border-cyan-200/25 hover:bg-white/10 sm:p-6"
-          >
-            <span aria-hidden="true" className="text-[11px] font-semibold tracking-[0.2em] text-cyan-200/70">{item.eyebrow}</span>
-            <span className="mt-1 font-semibold tracking-tight group-hover:text-cyan-100 sm:mt-3 sm:text-xl">{item.title}</span>
-            <span className="mt-3 hidden text-sm leading-6 text-white/75 sm:block">{item.desc}</span>
-            <span aria-hidden="true" className="mt-auto pt-1 text-xs font-medium text-white/85 sm:pt-5 sm:text-sm">{item.action} →</span>
-          </Link>
-        ))}
-      </nav>
+      <section>
+        <SectionTitle eyebrow="EXPLORE" title="주제별로 둘러보기" desc="관심 있는 게시판으로 바로 이동합니다." />
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+          {COMMUNITY_LINKS.map((item) => (
+            <Link key={item.href} href={item.href} prefetch={false} className="group bd-surface-md p-4 hover:bg-white/10">
+              <div className="flex items-center justify-between">
+                <div className="text-sm font-semibold">{item.title}</div>
+                <div className="text-white/35 group-hover:text-white/70">→</div>
+              </div>
+              <div className="mt-2 text-xs text-white/55">{item.desc}</div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <MarketplaceFullPcPicks items={data.items} now={now} home />
 
@@ -120,20 +119,21 @@ export default async function HomePage() {
         />}
       />
 
-      <section>
-        <SectionTitle eyebrow="EXPLORE" title="주제별로 둘러보기" desc="관심 있는 게시판으로 바로 이동합니다." />
-        <div className="mt-5 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
-          {COMMUNITY_LINKS.map((item) => (
-            <Link key={item.href} href={item.href} prefetch={false} className="group bd-surface-md p-4 hover:bg-white/10">
-              <div className="flex items-center justify-between">
-                <div className="text-sm font-semibold">{item.title}</div>
-                <div className="text-white/35 group-hover:text-white/70">→</div>
-              </div>
-              <div className="mt-2 text-xs text-white/55">{item.desc}</div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <nav id="home-primary-links" aria-label="주요 메뉴" className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        {PRIMARY_ROUTES.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            prefetch={false}
+            className="group bd-surface-md flex min-w-0 flex-col p-3 transition hover:-translate-y-0.5 hover:border-cyan-200/25 hover:bg-white/10 sm:p-6"
+          >
+            <span aria-hidden="true" className="text-[11px] font-semibold tracking-[0.2em] text-cyan-200/70">{item.eyebrow}</span>
+            <span className="mt-1 font-semibold tracking-tight group-hover:text-cyan-100 sm:mt-3 sm:text-xl">{item.title}</span>
+            <span className="mt-3 hidden text-sm leading-6 text-white/75 sm:block">{item.desc}</span>
+            <span aria-hidden="true" className="mt-auto pt-1 text-xs font-medium text-white/85 sm:pt-5 sm:text-sm">{item.action} →</span>
+          </Link>
+        ))}
+      </nav>
     </div>
   );
 }
