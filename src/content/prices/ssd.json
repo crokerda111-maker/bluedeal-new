@@ -1,7 +1,7 @@
 {
   "category": "ssd",
-  "updatedAt": "2026-11-25T12:26:12.779Z",
-  "generatedAt": "2026-11-25T12:26:54.298Z",
+  "updatedAt": "2026-11-27T08:14:00.000Z",
+  "generatedAt": "2026-11-27T08:16:14.066Z",
   "items": [
     {
       "id": "retail-seorin-1000001188",
@@ -381,7 +381,7 @@
       "id": "samsung-990-evo-plus-1tb",
       "name": "삼성전자 990 EVO Plus 1TB (MZ-V9S1T0BW)",
       "spec": "990 EVO PLUS 1TB · MZ-V9S1T0BW · 필수 옵션 990 EVO PLUS 1TB 선택",
-      "price": 419000,
+      "price": 381290,
       "low7d": null,
       "low30d": null,
       "change24hPct": null,
@@ -390,16 +390,16 @@
       "seller": "삼성전자SSD공식총판",
       "shippingFee": 0,
       "shippingNote": "기본 배송 무료 · 배송지별 보장일·추가비와 재고는 판매처 확인",
-      "priceNote": "확인 시점 기본 상품가. 쿠폰·카드 조건은 별도 표시하며 적립·경유·후기 보상은 차감하지 않았습니다.",
+      "priceNote": "판매 페이지에 표시된 일반 할인가 381,290원. 쿠폰·카드·적립은 상품가에서 차감하지 않았습니다.",
       "officialUrl": "https://download.semiconductor.samsung.com/resources/data-sheet/samsung_nvme_ssd_990_evo_plus_datasheet_rev.1.0.pdf",
-      "checkedAt": "2026-11-24T09:02:46.831Z",
-      "updatedAt": "2026-11-24T09:02:46.831Z",
+      "checkedAt": "2026-11-27T08:14:00.000Z",
+      "updatedAt": "2026-11-27T08:14:00.000Z",
       "capacityGB": 1000,
       "ssdDram": "unknown",
       "availability": "in-stock",
-      "cardPrice": 417000,
-      "cardNote": "NH농협카드 결제 시 상품 페이지 표시가. 대상 카드·할인 예산·결제창 적용 여부는 판매처 확인.",
-      "availabilityCheckedAt": "2026-11-24T09:02:46.831Z"
+      "cardPrice": 354600,
+      "cardNote": "대상 삼성카드로 스마일페이 결제 시 표시가. 7만원 이상 7% 할인, 최대 7만원. 결제 화면에서 적용 여부 확인.",
+      "availabilityCheckedAt": "2026-11-27T08:14:00.000Z"
     },
     {
       "id": "reviewed-kioxia-exceria-plus-g4-2tb-retailer-icoda-1601142",
