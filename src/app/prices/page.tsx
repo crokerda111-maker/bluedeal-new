@@ -70,7 +70,7 @@ export default async function PricesHubPage({ searchParams }: { searchParams: Pr
           <p className="mt-2">{distributorReview.limitation}</p>
         </details>
         <Link href="/prices?sort=total-asc#registered-products" className="mt-4 mr-4 inline-flex min-h-11 items-center rounded-xl border border-white/20 px-4 text-sm text-cyan-200 hover:bg-white/10">전체 등록 상품 보기 →</Link>
-        <Link href="/evaluate" className="mt-4 inline-flex min-h-11 items-center rounded-xl border border-cyan-300/25 bg-cyan-300/5 px-4 text-sm text-cyan-200 hover:bg-cyan-300/10">PC 구성 비용·부품 이슈 확인 →</Link>
+        <Link href="/evaluate" className="mt-4 inline-flex min-h-11 items-center rounded-xl border border-cyan-300/25 bg-cyan-300/5 px-4 text-sm text-cyan-200 hover:bg-cyan-300/10">완본체와 드래곤볼 비용 비교 →</Link>
       </section>
 
       <ProductSearchForm products={CATALOG_PRODUCTS} offersById={offersById} query={query} />

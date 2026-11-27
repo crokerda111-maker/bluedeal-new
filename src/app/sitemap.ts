@@ -7,7 +7,7 @@ import { getReviewedMarketplaceFullPcs } from "../lib/marketFullPc";
 import { GMARKET_BLACK_FRIDAY } from "../lib/gmarketBlackFriday";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["/", "/about", "/community-policy", "/it", "/community", "/prices", "/events", GMARKET_BLACK_FRIDAY.path, ...COMMUNITY_BOARDS.map(board => `/community/${board.slug}`)];
+  const paths = ["/", "/about", "/community-policy", "/it", "/community", "/prices", "/evaluate", "/events", GMARKET_BLACK_FRIDAY.path, ...COMMUNITY_BOARDS.map(board => `/community/${board.slug}`)];
   return [
     ...paths.map(path => ({ url: `${SITE_URL}${path}` })),
     ...PRICE_CATEGORIES.flatMap(category => {

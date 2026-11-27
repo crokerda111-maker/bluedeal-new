@@ -101,3 +101,16 @@ test('manual scenarios are strict arithmetic with explicit zeroes and conditions
   }
   assert.equal(readCostScenario({}).submitted,false);assert.equal(readCostScenario({}).result,null);
 });
+
+test('manual comparison includes verified-option upgrades as user costs and accepts a delivered DIY quote',()=>{
+  const query={calculate:'1',matched:'yes',pc:'2299000',referenceTotal:'2500000',ramUpgrade:'150000',ssdUpgrade:'30000',otherUpgrade:'50000'};
+  const result=readCostScenario(query);
+  assert.equal(result.upgradeKRW,230000);
+  assert.equal(result.result.deliveredPcTotalKRW,2529000);
+  assert.equal(result.result.savingsKRW,-29000);
+  assert.equal(result.result.savingsPct,-1.16);
+  assert.equal(readCostScenario({...query,cpu:'700000'}).result.referenceTotalKRW,2500000);
+  for(const invalid of [{ramUpgrade:'-100'},{ssdUpgrade:['100','200']},{otherUpgrade:'1.5'},{referenceTotal:'0'},{pc:'100000000'}]) {
+    assert.equal(readCostScenario({...query,...invalid}).result,null);
+  }
+});

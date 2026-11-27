@@ -143,7 +143,7 @@ export default function SiteHeader() {
             <Dropdown label="상품·가격비교" href="/prices">
               <div className="px-4 py-2 text-xs text-white/70">카테고리</div>
               <DropItem href="/prices">전체 보기</DropItem>
-              <DropItem href="/evaluate">PC 구매 판단 · 시험 운영</DropItem>
+              <DropItem href="/evaluate">완본체·드래곤볼 비용 계산기</DropItem>
               <div className="my-2 h-px bg-white/10" />
               {priceItems.map((c) => (
                 <DropItem key={c.key} href={`/prices/${c.key}`}>

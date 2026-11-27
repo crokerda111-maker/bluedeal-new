@@ -120,6 +120,12 @@ export const SCENARIO_FIELDS = [
   { key: "pc", label: "비교할 본체 최종 결제금액", zero: false },
 ] as const;
 
+export const PC_UPGRADE_FIELDS = [
+  { key: "ramUpgrade", label: "램 추가·교체비" },
+  { key: "ssdUpgrade", label: "SSD 추가·교체비" },
+  { key: "otherUpgrade", label: "파워·기타 보완비" },
+] as const;
+
 /** Strict manual arithmetic only. These inputs never become merchant evidence. */
 export function readCostScenario(search: Record<string, string | string[] | undefined>) {
   const submitted = search.calculate !== undefined;
@@ -127,21 +133,35 @@ export function readCostScenario(search: Record<string, string | string[] | unde
   const errors: string[] = [];
   const values: Record<string, string> = {};
   const numbers: Record<string, number> = {};
+  const estimateProvided = search.referenceTotal !== undefined && search.referenceTotal !== "";
   for (const field of SCENARIO_FIELDS) {
     const raw = search[field.key];
     const text = typeof raw === "string" && raw.length <= 12 ? raw.trim() : "";
     values[field.key] = /^\d{1,9}$/.test(text) ? text : "";
     const parsed = /^\d{1,9}$/.test(text) ? Number(text) : null;
-    if (!amount(parsed, field.zero)) { if (submitted) errors.push(`${field.label}: ${field.zero ? "0 이상" : "1 이상"}의 원 단위 금액을 입력해 주세요.`); }
+    if (!amount(parsed, field.zero)) { if (submitted && (!estimateProvided || field.key === "pc")) errors.push(`${field.label}에 ${field.zero ? "0 이상" : "1 이상"}의 원 단위 금액을 입력해 주세요.`); }
     else numbers[field.key] = parsed;
   }
-  if (submitted && mode === "fullpc-dedicated" && !numbers.gpu) errors.push("그래픽카드 포함 완본체는 그래픽카드 금액이 필요합니다.");
-  if (submitted && mode !== "fullpc-dedicated" && numbers.gpu !== 0) errors.push("내장그래픽 완본체·반본체 비교에서는 그래픽카드 금액에 0을 입력해 주세요.");
-  if (submitted && search.matched !== "yes") errors.push("동일한 부품·옵션과 OS·보증 조건을 확인해 주세요.");
+  const optionalFields = [{ key: "referenceTotal", label: "직접 구매 견적의 최종 총액" }, ...PC_UPGRADE_FIELDS];
+  for (const { key, label } of optionalFields) {
+    const raw = search[key];
+    const text = typeof raw === "string" && /^\d{1,9}$/.test(raw) ? raw : "";
+    values[key] = text;
+    if (raw === undefined || raw === "") continue;
+    const parsed = text ? Number(text) : null;
+    if (!amount(parsed, key !== "referenceTotal")) { if (submitted) errors.push(`${label}의 원 단위 금액을 확인해 주세요.`); }
+    else numbers[key] = parsed;
+  }
+  if (submitted && !estimateProvided && mode === "fullpc-dedicated" && !numbers.gpu) errors.push("그래픽카드 포함 완본체는 그래픽카드 금액이 필요합니다.");
+  if (submitted && !estimateProvided && mode !== "fullpc-dedicated" && numbers.gpu !== 0) errors.push("내장그래픽 완본체·반본체 비교에서는 그래픽카드 금액에 0을 입력해 주세요.");
+  if (submitted && search.matched !== "yes") errors.push("비교할 목표 구성과 OS·조립·보증 조건을 확인해 주세요.");
   const parts = SCENARIO_FIELDS.slice(0, 8).reduce((sum, field) => sum + (numbers[field.key] ?? 0), 0);
-  const result = submitted && !errors.length ? calculateSavings(parts + numbers.shipping + numbers.services, numbers.pc) : null;
+  const upgradeKRW = PC_UPGRADE_FIELDS.reduce((sum, field) => sum + (numbers[field.key] ?? 0), 0);
+  const referenceKRW = estimateProvided ? numbers.referenceTotal : parts + numbers.shipping + numbers.services;
+  const result = submitted && !errors.length ? calculateSavings(referenceKRW, numbers.pc + upgradeKRW) : null;
   if (submitted && !errors.length && !result) errors.push("합계가 계산 허용 범위를 넘었습니다. 금액을 다시 확인해 주세요.");
-  return { submitted, mode, values, matched: search.matched === "yes", errors, result, partsKRW: parts, shippingKRW: numbers.shipping ?? 0, servicesKRW: numbers.services ?? 0 };
+  return { submitted, mode, values, matched: search.matched === "yes", errors, result, estimateProvided,
+    basePcKRW: numbers.pc ?? 0, upgradeKRW, partsKRW: parts, shippingKRW: numbers.shipping ?? 0, servicesKRW: numbers.services ?? 0 };
 }
 
 export function assessPcBuild(build: PcBuild, now = Date.now(), policy: ScorePolicy = DRAFT_SCORE_POLICY) {

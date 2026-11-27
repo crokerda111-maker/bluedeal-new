@@ -140,7 +140,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
               <p className="mt-2 break-words text-sm text-white/65">{[item.source, item.seller].filter(Boolean).join(" · ")}</p>
               {item.spec ? <p className="mt-2 text-sm leading-7 text-white/80">{item.spec}</p> : null}
               <div className="mt-4"><PriceAmount item={item} now={now} /></div>
-              <div className="mt-4"><PurchaseLink item={item} affiliate={affiliateCodes.has(item.goCode ?? "")} /></div>
+              <div className="mt-4 flex flex-wrap items-start gap-3">
+                <PurchaseLink item={item} affiliate={affiliateCodes.has(item.goCode ?? "")} />
+                {isSystem ? <Link href={`/evaluate?${new URLSearchParams({ product: product.id, offer: item.id })}#calculator`} prefetch={false} className="inline-flex min-h-11 items-center rounded-lg border border-white/20 px-3 py-2 text-sm text-cyan-100 underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300">보완비 포함 비교</Link> : null}
+              </div>
             </li>)}</ul>
           </> : <p className="mt-4 text-sm leading-7 text-white/70">블루딜에 기록된 판매가는 아직 없습니다.</p>}
           <Link href={`/prices/${product.category}`} className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">같은 부품의 다른 상품 비교</Link>

@@ -426,7 +426,7 @@ try {
       };
       const history = [1, 2, 3].map((days, index) => ({
         productUrl: deal.productUrl, option: deal.option, conditions: deal.conditions,
-        availability: deal.availability, at: new Date(now - days * 86400000).toISOString(),
+        availability: deal.availability, at: new Date(Date.parse(deal.checkedAt) - days * 86400000).toISOString(),
         price: 44000 + index * 2000, shipping: 3000,
       }));
       deal.priceHistory = history;
@@ -818,7 +818,7 @@ try {
       assert.match(html, /핫딜을 불러오는 중입니다/);
       assert.match(html, /<h1[^>]*>오늘의 완본체 베스트<\/h1>/);
       assert.match(html, /<a[^>]+href="\/prices\/fullpc"/);
-      assert.match(html, /부품 평가와 동일 구성 개별 구매 비용을 모두 검증한 추천 상품이 없어/);
+      assert.match(html, /완본체 조합·예산 비교/);
       const boardReads = kv.requests.slice(before).flatMap(entry => entry.commands).filter(([command, key]) => command === 'ZREVRANGE' && String(key).startsWith('bd:board:'));
       assert.deepEqual(boardReads, [], 'the initial home document must not query boards');
       const feed = await api('GET', '/api/home-feed');
@@ -890,22 +890,25 @@ try {
       assert.deepEqual(parts.toArray().map(part => $(part).attr('data-part-quality')),
         ['cpu', 'gpu', 'board', 'ram', 'storage', 'psu', 'cooler', 'case']);
       for (const part of parts.toArray()) {
-        assert.match($(part).find('summary').text(), /[0-5]\/5점/);
-        assert.equal($(part).find('ul li').length, 5);
+        const dialog = $(part).find('dialog').first();
+        assert.equal($(part).find('button[aria-haspopup="dialog"]').attr('aria-controls'), dialog.attr('id'));
+        const checked = dialog.text().match(/채점 기준 ([0-5])\/5개 확인/);
+        assert.ok(checked);
+        assert.ok(dialog.find('ul li').length >= Number(checked[1]));
       }
       return $;
     }
     const budget = await details('reviewed-fullpc-gmarket-4864796475');
-    assert.match(budget('[data-part-quality="ram"] summary').text(), /0\/5점.*절충 사양.*16GB 한 장/);
-    assert.match(budget('[data-part-quality="ram"]').text(), /IC·다이.*미확인/);
+    assert.match(budget('[data-part-quality="ram"]').text(), /(?:0\/5점|충족 0 · 확인 [1-5]\/5).*절충 사양.*16GB 한 장/);
+    assert.match(budget('[data-part-quality="ram"] dialog').text(), /IC·다이.*확인할 수 없/);
     assert.match(budget('[data-part-quality="cpu"]').text(), /0x12F/);
     const reviewed = await details('reviewed-fullpc-gmarket-3951478263');
-    assert.match(reviewed('[data-part-quality="psu"] summary').text(), /4\/5점.*검증 양호/);
+    assert.match(reviewed('[data-part-quality="psu"]').text(), /충족 3 · 확인 3\/5/);
     assert.match(reviewed('[data-part-quality="board"]').text(), /16\+2\+2.*M2D_SB/);
     assert.match(reviewed('[data-part-quality="ram"]').text(), /제한적 평생 보증.*같은 키트 품번에도 다른 IC/);
     assert.match(reviewed('#fullpc-price-assessment').text(), /종합 순위 대기/);
     const basicSsd = await details('reviewed-fullpc-11st-9423305936');
-    assert.match(basicSsd('[data-part-quality="storage"] summary').text(), /절충 사양.*DRAM 없음.*320TBW/);
+    assert.match(basicSsd('[data-part-quality="storage"]').text(), /절충 사양.*DRAM 없음.*320TBW/);
   });
 
   await check('price snapshot status identifies its own release without URLs or private configuration', async () => {
@@ -941,8 +944,9 @@ try {
     assert.ok(sitemap.includes('https://bluedeal.co.kr/prices/ram'));
     assert.ok(sitemap.includes('https://bluedeal.co.kr/products/reviewed-fullpc-gmarket-4355054602'));
     assert.ok(sitemap.includes('https://bluedeal.co.kr/community-policy'));
+    assert.ok(sitemap.includes('https://bluedeal.co.kr/evaluate'));
     for (const excluded of ['/admin', '/contact', '/go/', '/api/']) assert.equal(sitemap.includes(excluded), false);
-    for (const route of ['/admin', '/contact', '/prices/ram?capacity=48']) {
+    for (const route of ['/admin', '/contact', '/prices/ram?capacity=48', '/evaluate?pc=2299000']) {
       const html = await (await fetch(app.base + route)).text();
       assert.match(html, /name="robots" content="noindex, nofollow"/);
     }
@@ -950,6 +954,9 @@ try {
     assert.match(prices, /<title>RAM 상품·가격비교 \| BLUEDEAL<\/title>/);
     assert.match(prices, /rel="canonical" href="https:\/\/bluedeal\.co\.kr\/prices\/ram"/);
     assert.match(prices, /property="og:image" content="https:\/\/bluedeal\.co\.kr\/opengraph-image"/);
+    const calculator = await (await fetch(`${app.base}/evaluate`)).text();
+    assert.match(calculator, /rel="canonical" href="https:\/\/bluedeal\.co\.kr\/evaluate"/);
+    assert.match(calculator, /name="robots" content="index, follow"/);
     assert.equal((await fetch(`${app.base}/community/not-a-board`)).status, 404);
   });
 
