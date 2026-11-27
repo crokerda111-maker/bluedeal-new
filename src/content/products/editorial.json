@@ -603,11 +603,15 @@
     {
       "partNames": [
         "Cooler Master MWE Gold 850 V3 ATX 3.1",
-        "[쿨러마스터] MWE GOLD V3 ATX3.1 블랙 [850W]"
+        "[쿨러마스터] MWE GOLD V3 ATX3.1 블랙 [850W]",
+        "쿨러마스터 MWE GOLD 850 V3 ATX3.1 블랙",
+        "쿨러마스터 MWE GOLD 850 V3 블랙 (판매처 표기)",
+        "쿨러마스터 MWE GOLD 750 V3 ATX3.1 블랙"
       ],
-      "advantage": "850W·80 PLUS Gold·ATX 3.1 모델입니다. 필요한 출력과 규격이 맞으면 노후 파워를 교체할 때 비교 기준으로 삼을 수 있습니다.",
-      "caution": "MWE Gold 세대와 출력이 여러 가지라 V3·850W·ATX 3.1 표기를 확인하세요. 그래픽카드에 필요한 전원 케이블 구성도 주문 전 대조하세요.",
-      "source": "https://legacy.coolermaster.com/en-global/products/mwe-gold-850-v3-atx-3-1/"
+      "advantage": "ATX 3.1·80 PLUS Gold 제품군입니다. 제조사의 국내 판매명과 유사한 일체형 750W·850W는 12V-2x6 케이블과 5년 제한 보증을 표기합니다.",
+      "caution": "10년 보증 풀모듈러 모델도 이름이 비슷합니다. 완제품 판매처에 출고 파워 품번, 모듈러 여부와 국내 보증 기간을 확인하세요.",
+      "source": "https://www.coolermaster.com/en-global/products/mwe-gold-v3-atx-3-1-non-modular-series.html",
+      "checkedOn": "2026-11-27"
     },
     {
       "catalogIds": [
@@ -634,35 +638,42 @@
         "reviewed-asus-prime-rx9070xt-oc-16gb-daewon"
       ],
       "partNames": [
-        "[ASUS] PRIME 라데온 RX 9070 XT OC D6 16GB 대원씨티에스"
+        "[ASUS] PRIME 라데온 RX 9070 XT OC D6 16GB 대원씨티에스",
+        "ASUS PRIME Radeon RX 9070 XT OC 16GB 대원씨티에스"
       ],
-      "advantage": "16GB GDDR6를 탑재한 ASUS PRIME RX 9070 XT OC 모델입니다. 게임에서 텍스처를 높이거나 GPU 작업을 할 때 메모리 여유를 비교할 수 있습니다.",
-      "caution": "그래픽카드 제조사가 제시한 권장 전력과 보조전원 커넥터를 확인하세요. 케이스 허용 길이뿐 아니라 카드 두께와 지지대 공간도 확인하는 게 좋습니다.",
-      "source": "https://www.asus.com/kr/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g/techspec/"
+      "advantage": "PRIME OC는 16GB GDDR6를 탑재합니다. ASUS 표기 길이 312mm, 두께 50mm, 2.5슬롯입니다.",
+      "caution": "제조사 권장 파워는 750W이며 PCIe 8핀 3개가 필요합니다. 케이스의 카드 길이와 전원 케이블 공간을 함께 대조하세요.",
+      "source": "https://www.asus.com/au/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g/techspec/",
+      "checkedOn": "2026-11-27"
     },
     {
       "catalogIds": [
         "curated-samsung-990-evo-plus-1tb"
       ],
-      "advantage": "M.2 2280 크기에 PCIe 4.0 ×4 또는 PCIe 5.0 ×2를 지원해 두 세대의 NVMe 슬롯에서 선택할 수 있습니다.",
-      "caution": "M.2 SATA 전용 슬롯에는 맞지 않습니다. 마더보드 문서의 NVMe 지원을 확인하세요. 광고에 나오는 최고 속도는 용량·시험 조건에 따라 달라집니다.",
-      "source": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-evo-plus-1tb-nvme-pcie-gen-4-mz-v9s1t0bw/",
+      "advantage": "1TB는 순차 최대 읽기 7,150MB/s·쓰기 6,300MB/s이며 HMB 방식입니다. 제조사 내구성 표기는 600TBW입니다.",
+      "caution": "M.2 2280 NVMe용입니다. 같은 크기의 M.2라도 SATA 전용 슬롯에서는 동작하지 않습니다.",
+      "source": "https://download.semiconductor.samsung.com/resources/data-sheet/samsung_nvme_ssd_990_evo_plus_datasheet_rev.1.0_10139908980019.pdf",
       "issue": {
         "text": "삼성은 일부 시스템과의 호환성을 개선하는 990 EVO Plus용 2B2QKXG7 펌웨어를 공개했습니다. 호환 문제가 있다면 자료를 백업한 뒤 Samsung Magician에서 설치된 버전과 해당 모델 업데이트를 확인하세요.",
         "source": "https://semiconductor.samsung.com/kr/consumer-storage/support/tools/"
-      }
+      },
+      "checkedOn": "2026-11-27"
     },
     {
       "catalogIds": [
         "curated-samsung-990-pro-2tb"
       ],
-      "advantage": "2TB 용량의 PCIe 4.0 NVMe SSD로 전용 DRAM을 탑재하며 제조사 표기는 1,200TBW입니다.",
-      "caution": "MZ-V9P2T0BW는 기본 방열판 미포함 옵션입니다. 메인보드 방열판 유무를 확인하고 사용 전 Samsung Magician에서 펌웨어 상태를 확인하세요.",
-      "source": "https://download.semiconductor.samsung.com/resources/brochure/990_PRO_Series_Brouchure_Web_Version_4.0_250523.pdf",
+      "advantage": "2TB 모델은 전용 DRAM 2GB, 제조사 순차 최대 읽기 7,450MB/s·쓰기 6,900MB/s, 1,200TBW입니다.",
+      "caution": "MZ-V9P2T0BW는 기본 방열판 미포함입니다. 보드 방열판 유무와 Samsung Magician의 펌웨어 표시를 확인하세요.",
+      "source": "https://www.samsung.com/nl/memory-storage/nvme-ssd/990-pro-2tb-nvme-pcie-gen-4-mz-v9p2t0bw/",
       "issue": {
         "text": "삼성은 990 PRO 시리즈에서 간헐적인 인식 실패와 블루스크린을 개선하는 7B2QJXD7 펌웨어를 공개했습니다. 후속 8B2QJXD7은 읽기 동작 안정성을 개선합니다. 자료를 백업한 뒤 Samsung Magician과 해당 모델의 지원 페이지에서 펌웨어를 확인하세요.",
         "source": "https://semiconductor.samsung.com/kr/consumer-storage/support/tools/"
-      }
+      },
+      "checkedOn": "2026-11-27",
+      "partNames": [
+        "Samsung 990 PRO PCIe 4.0 NVMe 2TB"
+      ]
     },
     {
       "catalogIds": [
@@ -1253,6 +1264,147 @@
       "advantage": "850W 골드 블랙 모델은 ATX 3.1, 12V-2x6, 풀모듈러를 지원합니다. 유통사는 135mm FDB 팬, ECO 모드에서 약 40% 부하까지 팬 정지, 무상 보증 10년을 안내합니다.",
       "caution": "팬이 정지하는 부하 표기는 실사용 소음 측정치와 별개입니다. 캐패시터 제조사·등급은 이 제품 자료에서 확인되지 않았습니다. 같은 이름의 브론즈 제품은 구매 옵션에서 구분하세요.",
       "source": "https://w.aoneint.com/default/community/sub4.php?com_board_basic=read_form&com_board_id=33&com_board_idx=394&com_board_page=2&com_board_search_code=&com_board_search_value1=&com_board_search_value2="
+    },
+    {
+      "catalogIds": [
+        "distributor-seorin-1000002822"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "방열판 52mm에 15mm 팬을 달아 총 높이 67mm입니다. 제조사 표기 6mm 히트파이프 6개와 AM5·LGA1851 장착을 지원합니다.",
+      "caution": "케이스 한도에 여유를 두고, 쿨러가 덮는 위치의 메모리 방열판 높이와 상단 통풍 공간을 확인하세요.",
+      "source": "https://www.thermalright.com/product/axp120-x67-black-argb/"
+    },
+    {
+      "catalogIds": [
+        "maker-thermalright-cooler-1f9a1de3220e9c87"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "방열판 52mm에 15mm 팬을 달아 총 높이 67mm입니다. 제조사 표기 6mm 히트파이프 6개와 AM5·LGA1851 장착을 지원합니다.",
+      "caution": "케이스 한도에 여유를 두고, 쿨러가 덮는 위치의 메모리 방열판 높이와 상단 통풍 공간을 확인하세요.",
+      "source": "https://www.thermalright.com/product/axp120-x67-black-argb/"
+    },
+    {
+      "catalogIds": [
+        "distributor-seorin-1000002588"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "방열판 52mm에 15mm 팬을 달아 총 높이 67mm입니다. 제조사 표기 6mm 히트파이프 6개와 AM5·LGA1851 장착을 지원합니다.",
+      "caution": "케이스 한도에 여유를 두고, 쿨러가 덮는 위치의 메모리 방열판 높이와 상단 통풍 공간을 확인하세요.",
+      "source": "https://www.thermalright.com/product/axp120-x67-white-argb/"
+    },
+    {
+      "catalogIds": [
+        "maker-thermalright-cooler-7fe7914ad0e02022"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "방열판 52mm에 15mm 팬을 달아 총 높이 67mm입니다. 제조사 표기 6mm 히트파이프 6개와 AM5·LGA1851 장착을 지원합니다.",
+      "caution": "케이스 한도에 여유를 두고, 쿨러가 덮는 위치의 메모리 방열판 높이와 상단 통풍 공간을 확인하세요.",
+      "source": "https://www.thermalright.com/product/axp120-x67-white-argb/"
+    },
+    {
+      "catalogIds": [
+        "reviewed-arctic-liquid-freezer-iii-pro-360-seorin-retailer"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "제조사 비ARGB Pro 360 사양은 라디에이터 두께 38mm와 제한 보증 6년입니다.",
+      "caution": "색상·ARGB 옵션의 품번을 먼저 확인하세요. 비ARGB 기준 라디에이터 38mm에 팬 두께가 더해져 상단 RAM과 보드 방열판 간섭을 확인해야 합니다.",
+      "source": "https://www.arctic.de/media/e3/d9/86/1741780098/Spec_Sheet_Liquid_Freezer_III_Pro_360_EN.pdf"
+    },
+    {
+      "catalogIds": [
+        "distributor-seorin-1000006831"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "전면 140mm 팬 2개와 하단 120mm 팬 2개가 기본입니다. 그래픽카드 최대 길이 375mm, 공랭 쿨러 최대 높이 180mm입니다.",
+      "caution": "제조사는 ATX 파워 길이 160mm 미만을 안내합니다. 출고 파워 본체 길이와 케이블 배선 공간을 확인하세요.",
+      "source": "https://lian-li.com/product/lancool-207/"
+    },
+    {
+      "catalogIds": [
+        "distributor-seorin-1000006830"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "전면 140mm 팬 2개와 하단 120mm 팬 2개가 기본입니다. 그래픽카드 최대 길이 375mm, 공랭 쿨러 최대 높이 180mm입니다.",
+      "caution": "제조사는 ATX 파워 길이 160mm 미만을 안내합니다. 출고 파워 본체 길이와 케이블 배선 공간을 확인하세요.",
+      "source": "https://lian-li.com/product/lancool-207/"
+    },
+    {
+      "partNames": [
+        "쿨러마스터 MWE GOLD 850 V3 ATX3.1 화이트"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "제조사 화이트 일체형 850W는 ATX 3.1, 80 PLUS Gold, 12V-2x6과 제한 보증 5년을 안내합니다.",
+      "caution": "출고품 라벨의 제조사 품번과 케이블 방식을 확인하세요. 제조사 사양에 소음 실측이나 캐패시터 제조사가 표시되지 않은 경우 평가를 확정할 수 없습니다.",
+      "source": "https://www.coolermaster.com/en-global/products/mwe-gold-v3-atx-3-1-white-edition-non-modular-series.html"
+    },
+    {
+      "partNames": [
+        "Acer Predator GM7000 M.2 NVMe 1TB"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "1TB에 전용 DRAM 1GB. PCIe 4.0 ×4, 제조사 순차 최대 읽기 7,400MB/s·쓰기 6,400MB/s.",
+      "caution": "판매처 이미지에 나온 6,700MB/s는 공식 1TB 값과 다릅니다. 제조사 문서에서 1TB 행을 확인하세요.",
+      "source": "https://www.predatorstorage.com/wp-content/uploads/2025/07/Predator-GM7000-Specifications.pdf"
+    },
+    {
+      "partNames": [
+        "Acer Predator GM9000 M.2 NVMe 1TB"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "1TB에 전용 DRAM 1GB. PCIe 5.0 ×4, 데이터시트 순차 최대 읽기 14,000MB/s·쓰기 10,500MB/s.",
+      "caution": "Gen5 최대 속도를 쓰려면 CPU·보드의 Gen5 ×4 슬롯이 필요합니다. 장착 슬롯과 보드의 방열판을 확인하세요.",
+      "source": "https://www.predatorstorage.com/u_file/fileUpload/2025-02/12/Predator%20GM9000%20Specifications.pdf"
+    },
+    {
+      "partNames": [
+        "SK hynix Gold P31 M.2 NVMe 1TB"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "M.2 2280 단면, 128단 TLC, 1TB 제조사 순차 최대 읽기 3,500MB/s·쓰기 3,200MB/s.",
+      "caution": "PCIe 3.0 ×4 제품입니다. SSD 상태와 펌웨어를 확인할 때 모델과 용량을 맞추세요.",
+      "source": "https://ssd.skhynix.com/gold_p31/"
+    },
+    {
+      "partNames": [
+        "ADATA LEGEND 960 M.2 NVMe 1TB"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "M.2 2280 PCIe 4.0 ×4 모델이며 제조사 표기 1TB 내구성은 780TBW입니다.",
+      "caution": "960 MAX와 옵션이 다릅니다. 판매처가 제공하는 기본 방열판과 메인보드 방열판 간섭을 확인하세요.",
+      "source": "https://www.adata.com/storage/downloadfile/datasheet_legend_960_pcie_gen4_x4_m2_2280_ssd.pdf"
+    },
+    {
+      "catalogIds": [
+        "reviewed-kingston-fury-beast-rgb-black-6000-cl30-32gb"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "16GB 모듈 두 개로 구성되며 모듈당 1Rx8입니다. NZXT 시험품은 단면 SK hynix A-die로 표기됐습니다.",
+      "caution": "코어 울트라 200S는 Kingston이 ASUS ROG STRIX Z890-F GAMING WIFI에 등재한 이 품번을 기준으로 확인했습니다. 다른 보드나 DIMM 4개 조합은 해당 보드의 QVL·BIOS를 확인하세요.",
+      "source": "https://www.kingston.com/en/memory/search/model/110149/asus-rog-strix-z890-f-gaming-wifi-motherboard"
+    },
+    {
+      "catalogIds": [
+        "reviewed-kingston-fury-beast-rgb-black-6000-cl30-64gb"
+      ],
+      "checkedOn": "2026-11-27",
+      "advantage": "32GB 모듈 두 개로 구성되며 모듈당 2Rx8입니다. NZXT 시험품은 양면 SK hynix A-die로 표기됐습니다.",
+      "caution": "ASUS ROG STRIX Z890-F GAMING WIFI 호환 목록에 이 품번이 있습니다. 두 킷을 섞거나 DIMM 4개를 꽂을 때 XMP 속도를 그대로 적용할 수 있다고 보장하지 않습니다.",
+      "source": "https://www.kingston.com/en/memory/search/model/110149/asus-rog-strix-z890-f-gaming-wifi-motherboard"
+    },
+    {
+      "catalogIds": [
+        "reviewed-halfpc-gmarket-4707868341"
+      ],
+      "photo": {
+        "src": "https://gdimg.gmarket.co.kr/4707868341/still/600?ver=1795771495",
+        "alt": "프리플로우 PRE DIY KIT U7KB_A 반본체 판매 대표 사진",
+        "source": "https://item.gmarket.co.kr/Item?goodscode=4707868341",
+        "sourceLabel": "G마켓 프리플로우"
+      },
+      "checkedOn": "2026-11-27",
+      "advantage": "메인보드 ASUS PRIME B860M-A-CSM과 Gold P31 1TB가 판매처 부품표에 있습니다.",
+      "caution": "케이스 모델은 실제 주문 옵션에서 확인하세요. 판매 이미지의 그래픽카드는 연출이며 판매 구성에는 외장 그래픽이 없습니다.",
+      "source": "https://item.gmarket.co.kr/Item?goodscode=4707868341"
     }
   ]
 }

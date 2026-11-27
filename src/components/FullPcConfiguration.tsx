@@ -24,7 +24,7 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
   return <div className="space-y-4 text-sm leading-6">
     <div>
       <p className="mt-1 text-white/75">{review.condition} · {review.checkedOn} KST</p>
-      <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. " : ""}부품별 5개 기준에서 확인된 충족만 1점씩 계산합니다. 각 부품을 펼치면 미충족·미확인 항목과 출처를 볼 수 있습니다.</p>
+      <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. " : ""}부품별 5개 기준으로 봅니다. 각 부품을 펼치면 확인한 사양과 충족·미충족 근거를 볼 수 있습니다.</p>
       {review.purchaseTerms ? <p className="mt-1 text-white/75">{review.purchaseTerms.os} · {review.purchaseTerms.warranty} <a className={sourceStyle} href={review.purchaseTerms.source} target="_blank" rel="noopener noreferrer">조건 출처<span className="sr-only"> (새 창)</span></a></p> : null}
       {review.configurationConflict ? <p className="mt-2 rounded-lg bg-amber-500/10 p-3 text-amber-100">{review.configurationConflict}</p> : null}
     </div>
@@ -34,31 +34,34 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
         {quality.slots.map(({ slot, points, checked, failed, criteria, facts, attention }) => {
           const editorial = getPartEditorial(review.parts[slot]);
           const board = slot === "board" && !review.configurationConflict ? getBoardPartExpansion(review.parts.board) : undefined;
-          const state = failed.length ? "절충 사양" : points >= 4 ? "검증 양호" : "근거 부족";
+          const state = failed.length ? "절충 사양" : checked === 5 && points >= 4 ? "검증 양호" : "확인 진행";
           const stateColor = failed.length ? "text-amber-100" : points >= 4 ? "text-cyan-100" : "text-white/70";
           const summary = hasAsrockRyzen9000Advisory(board, review.parts.cpu) ? asrockRyzen9000Advisory.title : board?.sharing ?? attention ?? (failed.length ? `미충족 · ${failed.map(item => item.label).join(", ")}` :
             facts.find(item => item.evidence && (item.label === "게이밍 등급" || item.label === "제조사 라인업"))?.evidence?.[0]);
           return <details key={slot} data-part-quality={slot} className="group">
             <summary className="grid min-w-0 cursor-pointer list-none grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-1 px-3 py-3 focus-visible:outline focus-visible:outline-cyan-200 sm:px-4">
               <span className="min-w-0 break-words"><span className="mr-2 font-semibold text-cyan-100">{PC_PARTS[slot]}</span>{" "}{review.parts[slot]}</span>
-              <span className={`whitespace-nowrap text-right text-xs sm:text-sm ${stateColor}`}><strong className="tabular-nums">{points}/5점</strong> · {state} <span aria-hidden="true" className="inline-block group-open:rotate-180">▾</span></span>
+              <span className={`whitespace-nowrap text-right text-xs sm:text-sm ${stateColor}`}>
+                <strong className="tabular-nums">{checked === 5 ? `${points}/5점` : checked > 0 ? `충족 ${points} · 확인 ${checked}/5` : "평가 보류"}</strong>
+                {failed.length || checked === 5 ? ` · ${state}` : ""} <span aria-hidden="true" className="inline-block group-open:rotate-180">▾</span>
+              </span>
               {summary ? <span className={`col-span-2 break-words text-xs ${stateColor}`}>{summary}</span> : null}
             </summary>
             <div className="space-y-3 border-t border-white/10 px-3 py-3 sm:px-4">
               {slot !== "cpu" && slot !== "gpu" && review.tested[slot]?.fact ? <p className="break-words text-white/75">{review.tested[slot].fact}</p> : null}
               <dl className="grid gap-2 sm:grid-cols-2">
-                {facts.filter(({ label, evidence }) => slot !== "board" || (evidence && (!board || (label !== "PCIe·레인 공유" && (label !== "전원부" || !board.power))))).map(({ label, evidence }) => (
+                {facts.flatMap(({ label, evidence }) => !evidence || (board && (label === "PCIe·레인 공유" || (label === "전원부" && board.power))) ? [] : [
                   <div key={label} className="min-w-0 rounded-lg bg-white/5 p-2.5">
                     <dt className="font-medium text-cyan-100">{label}</dt>
-                    <dd className="break-words text-white/75">{evidence ? <>{evidence[0]} <a className={sourceStyle} href={evidence[1]} target="_blank" rel="noopener noreferrer">출처<span className="sr-only"> (새 창)</span></a></> : "정확한 출고 모델 기준 확인 필요"}</dd>
+                    <dd className="break-words text-white/75">{evidence[0]} <a className={sourceStyle} href={evidence[1]} target="_blank" rel="noopener noreferrer">출처<span className="sr-only"> (새 창)</span></a></dd>
                   </div>
-                ))}
+                ])}
               </dl>
               {board ? <MotherboardExpansion profile={board} system cpu={review.parts.cpu} /> : null}
               <p className="font-medium text-white">채점 기준 {checked}/5개 확인</p>
               <ul className="space-y-1 text-xs leading-5 text-white/80">
-                {criteria.filter(({ met }) => slot !== "board" || met !== null).map(({ label, met, source }) => <li key={label}>
-                  <span className={met === true ? "text-cyan-100" : met === false ? "text-amber-100" : "text-white/65"}>{met === true ? "충족" : met === false ? "미충족" : "미확인"}</span> · {label}
+                {criteria.filter(({ met }) => met !== null).map(({ label, met, source }) => <li key={label}>
+                  <span className={met ? "text-cyan-100" : "text-amber-100"}>{met ? "충족" : "미충족"}</span> · {label}
                   {source ? <> <a className={sourceStyle} href={source} target="_blank" rel="noopener noreferrer">근거<span className="sr-only"> (새 창)</span></a></> : null}
                 </li>)}
               </ul>

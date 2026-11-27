@@ -7,40 +7,39 @@
     "brand": "서린컴퓨터",
     "kind": "retailer-reviewed-model",
     "features": [
-      "반본체 판매 구성",
-      "개별 부품 등급·가격 비교 추가 확인"
+      "외장 GPU 미포함",
+      "판매처 일시 품절 표시"
     ],
     "specifications": [
       {
-        "label": "판매 제목 기준 구성",
-        "value": "서린컴퓨터 7800X3D_RAM 32GB_Y50 스노우화이트 반본체PC"
+        "label": "판매처 기본사양 · CPU",
+        "value": "AMD Ryzen 7 7800X3D"
       },
       {
-        "label": "정확한 전체 부품 목록(BOM)",
-        "value": "추가 확인 필요"
+        "label": "판매처 기본사양 · 그래픽카드",
+        "value": "외장 GPU 미포함 (판매처 표기)"
+      },
+      {
+        "label": "판매처 기본사양 · 메모리",
+        "value": "32GB (모듈 수·품번 판매처 확인)"
+      },
+      {
+        "label": "판매처 기본사양 · 케이스",
+        "value": "HYTE Y50 스노우화이트 (판매 제목 기준)"
       }
     ],
-    "description": "실제 판매 페이지에서 현재 제목·모델 표기와 안내 상태를 확인한 PC 구성입니다. 확정한 판매 상품가만 가격표에 연결하며 부품 품질·조립 대비 이득률은 추가 검증이 필요합니다.",
+    "description": "서린컴퓨터의 Y50 스노우화이트 반본체입니다. 현재 KREAM은 일시 품절로 표시합니다.",
     "notes": [
-      "판매 제목과 페이지 식별자 기준 구성입니다. CPU·GPU·메모리·저장장치의 표기가 있어도 정확한 제조사 품번·메모리 모듈 수·GPU VRAM·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 확인한 것은 아닙니다. 같은 이름의 다른 판매번호나 과거 구성과 합치지 않았습니다.",
-      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다. 구매 후기의 부품 언급을 현재 기본 구성으로 사용하지 않았습니다.",
-      "브랜드배송 무료와 일반 표시액·최대 혜택가를 확인했습니다. 수량1 최종 합계·정확한 판매 구성·쿠폰/회원/결제 조건을 확인하지 않아 구매가를 등록하지 않았습니다. 상품 후기의 부품 언급을 현재 기본 구성으로 사용하지 않습니다.",
-      "표시된 최대 혜택가는 수량1 구매가로 검증되지 않아 가격표에 등록하지 않았습니다."
+      "판매처에 전체 출고 부품표가 확인되면 구성 평가에 반영할 수 있습니다."
     ],
     "lifecycle": "unknown",
     "domesticState": "listing-observed",
     "manufacturerPartNumber": null,
     "sources": [
       {
-        "label": "현재 PC 판매 제목·구성·상태 확인",
+        "label": "KREAM 판매 제목·일시 품절 상태",
         "url": "https://kream.co.kr/products/1109437",
-        "observedAt": "2026-11-21T08:24:04.006Z",
-        "kind": "retailer-availability"
-      },
-      {
-        "label": "반본체 혜택 표시 후속 확인",
-        "url": "https://kream.co.kr/products/1109437",
-        "observedAt": "2026-11-22T00:40:55.228Z",
+        "observedAt": "2026-11-27T12:42:00.000Z",
         "kind": "retailer-availability"
       }
     ],
@@ -53,31 +52,24 @@
   },
   {
     "id": "reviewed-halfpc-gmarket-4653763736",
-    "name": "라이젠7 9800X3D+32GB+1TB 내장그래픽 조립PC 게이밍 데스크탑 조립컴퓨터",
+    "name": "라이젠7 9800X3D+32GB+1TB 내장그래픽 조립PC 게이밍 데스크탑 조립컴퓨터 (블랙 선택)",
     "category": "halfpc",
     "subtype": "non-gpu-pc",
     "brand": "한성컴퓨터",
     "kind": "retailer-reviewed-model",
     "features": [
-      "반본체 판매 구성",
-      "선택 구성·수량1 합계 확인"
+      "판매처 부품표 확인",
+      "외장 GPU 미포함",
+      "기본 무료배송"
     ],
     "specifications": [
-      {
-        "label": "판매 제목 기준 구성",
-        "value": "라이젠7 9800X3D+32GB+1TB 내장그래픽 조립PC 게이밍 데스크탑 조립컴퓨터"
-      },
-      {
-        "label": "정확한 전체 부품 목록(BOM)",
-        "value": "추가 확인 필요"
-      },
       {
         "label": "확인한 선택 · 운영체제",
         "value": "조립 + 프리도스(운영체제 미탑재)"
       },
       {
         "label": "확인한 선택 · 메모리",
-        "value": "킹뱅크 DDR5 6000 32GB 블랙 (16GBx2)"
+        "value": "타무즈 DDR5-5600 CL46 32GB (16GB×2)"
       },
       {
         "label": "확인한 선택 · CPU쿨러",
@@ -90,29 +82,50 @@
       {
         "label": "확인한 선택 · 파워",
         "value": "쿨러마스터 MWE GOLD 850 V3 ATX3.1 블랙"
+      },
+      {
+        "label": "판매처 부품표 · CPU",
+        "value": "AMD Ryzen 7 9800X3D"
+      },
+      {
+        "label": "판매처 부품표 · 그래픽카드",
+        "value": "CPU 내장 Radeon 그래픽 · 외장 GPU 미포함"
+      },
+      {
+        "label": "판매처 부품표 · 메인보드",
+        "value": "GIGABYTE B850M GAMING X WIFI6E"
+      },
+      {
+        "label": "판매처 부품표 · SSD",
+        "value": "Acer Predator GM9000 M.2 NVMe 1TB"
       }
     ],
-    "description": "실제 판매 페이지의 수량1 합계를 확인한 반본체입니다. OS·부품 선택과 쿠폰·카드 조건을 가격 가까이에서 확인하세요. 전체 부품 품번과 개별 구매가·품질 점수는 추가 검증이 필요합니다.",
+    "description": "판매처 부품표와 선택 화면을 대조한 반본체입니다. 외장 그래픽카드는 구성에서 제외되어 있습니다.",
     "notes": [
-      "판매 제목과 페이지 식별자 기준 구성입니다. CPU·GPU·메모리·저장장치의 표기가 있어도 정확한 제조사 품번·메모리 모듈 수·GPU VRAM·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 확인한 것은 아닙니다. 같은 이름의 다른 판매번호나 과거 구성과 합치지 않았습니다.",
-      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다. 구매 후기의 부품 언급을 현재 기본 구성으로 사용하지 않았습니다.",
-      "운영체제·메모리·CPU쿨러·케이스·파워 메뉴에서 추가금 없는 유일한 기본 선택을 적용하고 수량1 상품가·합계를 확인했습니다. 선택한 OS 포함 범위와 부품명은 별도 기록합니다. 정확한 메인보드·SSD 품번·시스템 보증·부품별 구매가·품질 점수는 추가 확인 필요."
+      "기본 선택과 부품표가 모두 타무즈 DDR5-5600 CL46 32GB를 표시했습니다.",
+      "완제품 보증 범위, 메모리 IC·다이와 SSD·파워의 정확한 리비전은 판매처 확인이 필요합니다."
     ],
     "lifecycle": "unknown",
     "domesticState": "listing-observed",
     "manufacturerPartNumber": null,
     "sources": [
       {
-        "label": "현재 PC 판매 제목·구성·상태 확인",
+        "label": "G마켓 판매 페이지·선택 구성",
         "url": "https://item.gmarket.co.kr/Item?goodscode=4653763736",
-        "observedAt": "2026-11-21T08:25:52.381Z",
-        "kind": "retailer-availability"
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-listing"
       },
       {
-        "label": "반본체 선택 구성·수량1 합계 후속 확인",
-        "url": "https://item.gmarket.co.kr/Item?goodscode=4653763736",
-        "observedAt": "2026-11-22T00:38:02.043Z",
-        "kind": "retailer-listing"
+        "label": "한성컴퓨터 메인보드 부품표",
+        "url": "https://www.sparq.co.kr/hansung/custompc/custom_db/WD17-2747.jpg",
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-component-table"
+      },
+      {
+        "label": "한성컴퓨터 SSD 부품표",
+        "url": "https://www.sparq.co.kr/hansung/custompc/custom_db/WN08-1367.jpg",
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-component-table"
       }
     ],
     "listObservedAt": null,
@@ -131,24 +144,17 @@
   },
   {
     "id": "reviewed-halfpc-gmarket-4653764404",
-    "name": "라이젠7 9800X3D+32GB+1TB 내장그래픽 조립PC 게이밍 데스크탑 조립컴퓨터",
+    "name": "라이젠7 9800X3D+32GB+1TB 내장그래픽 조립PC 게이밍 데스크탑 조립컴퓨터 (화이트 선택)",
     "category": "halfpc",
     "subtype": "non-gpu-pc",
     "brand": "한성컴퓨터",
     "kind": "retailer-reviewed-model",
     "features": [
-      "반본체 판매 구성",
-      "선택 구성·수량1 합계 확인"
+      "판매처 부품표 확인",
+      "외장 GPU 미포함",
+      "기본 무료배송"
     ],
     "specifications": [
-      {
-        "label": "판매 제목 기준 구성",
-        "value": "라이젠7 9800X3D+32GB+1TB 내장그래픽 조립PC 게이밍 데스크탑 조립컴퓨터"
-      },
-      {
-        "label": "정확한 전체 부품 목록(BOM)",
-        "value": "추가 확인 필요"
-      },
       {
         "label": "확인한 선택 · 운영체제",
         "value": "조립 + 프리도스(운영체제 미탑재)"
@@ -168,30 +174,51 @@
       {
         "label": "확인한 선택 · 파워",
         "value": "쿨러마스터 MWE GOLD 850 V3 ATX3.1 화이트"
+      },
+      {
+        "label": "판매처 부품표 · CPU",
+        "value": "AMD Ryzen 7 9800X3D"
+      },
+      {
+        "label": "판매처 부품표 · 그래픽카드",
+        "value": "CPU 내장 Radeon 그래픽 · 외장 GPU 미포함"
+      },
+      {
+        "label": "판매처 부품표 · 메인보드",
+        "value": "GIGABYTE B850 AORUS ELITE WIFI7 ICE"
+      },
+      {
+        "label": "판매처 부품표 · SSD",
+        "value": "Acer Predator GM7000 M.2 NVMe 1TB"
       }
     ],
-    "description": "실제 판매 페이지의 수량1 합계를 확인한 반본체입니다. OS·부품 선택과 쿠폰·카드 조건을 가격 가까이에서 확인하세요. 전체 부품 품번과 개별 구매가·품질 점수는 추가 검증이 필요합니다.",
+    "description": "판매처 부품표와 선택 화면을 대조한 반본체입니다. 외장 그래픽카드는 구성에서 제외되어 있습니다.",
     "notes": [
-      "판매 제목과 페이지 식별자 기준 구성입니다. CPU·GPU·메모리·저장장치의 표기가 있어도 정확한 제조사 품번·메모리 모듈 수·GPU VRAM·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 확인한 것은 아닙니다. 같은 이름의 다른 판매번호나 과거 구성과 합치지 않았습니다.",
-      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다. 구매 후기의 부품 언급을 현재 기본 구성으로 사용하지 않았습니다.",
-      "과거 글의 화이트·B850·SSD DRAM 유무가 현재 판매 제목에서 확인되지 않아 승계하지 않았습니다.",
-      "추가금 없는 케이스 2종 중 다크플래쉬 DLX21 RGB MESH 화이트를 선택했고 나머지 항목은 추가금 없는 선택을 적용했습니다. 선택 조합·수량1 상품가·합계를 대조했으며 유일한 기본 케이스라고 단정하지 않습니다. 선택한 OS 포함 범위와 부품명은 별도 기록합니다. 정확한 메인보드·SSD 품번·시스템 보증·부품별 구매가·품질 점수는 추가 확인 필요."
+      "다크플래쉬 DLX21 RGB MESH 화이트를 선택한 구성입니다. 다른 케이스를 고르면 외형과 장착 공간이 바뀝니다.",
+      "판매처 SSD 이미지의 쓰기 속도는 6,700MB/s입니다. Predator의 1TB 데이터시트는 6,400MB/s를 안내합니다.",
+      "완제품 보증 범위, 메모리 IC·다이와 SSD·파워의 정확한 리비전은 판매처 확인이 필요합니다."
     ],
     "lifecycle": "unknown",
     "domesticState": "listing-observed",
     "manufacturerPartNumber": null,
     "sources": [
       {
-        "label": "현재 PC 판매 제목·구성·상태 확인",
+        "label": "G마켓 판매 페이지·선택 구성",
         "url": "https://item.gmarket.co.kr/Item?goodscode=4653764404",
-        "observedAt": "2026-11-21T08:26:14.838Z",
-        "kind": "retailer-availability"
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-listing"
       },
       {
-        "label": "반본체 선택 구성·수량1 합계 후속 확인",
-        "url": "https://item.gmarket.co.kr/Item?goodscode=4653764404",
-        "observedAt": "2026-11-22T00:39:01.317Z",
-        "kind": "retailer-listing"
+        "label": "한성컴퓨터 메인보드 부품표",
+        "url": "https://www.sparq.co.kr/hansung/custompc/custom_db/WD17-2721.jpg",
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-component-table"
+      },
+      {
+        "label": "한성컴퓨터 SSD 부품표",
+        "url": "https://www.sparq.co.kr/hansung/custompc/custom_db/WN08-1245_.jpg",
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-component-table"
       }
     ],
     "listObservedAt": null,
@@ -210,31 +237,24 @@
   },
   {
     "id": "reviewed-halfpc-gmarket-4653763522",
-    "name": "라이젠7 7800X3D+32GB+1TB 내장그래픽 조립PC 게이밍 데스크탑 조립컴퓨터",
+    "name": "라이젠7 7800X3D+32GB+1TB 내장그래픽 조립PC 게이밍 데스크탑 조립컴퓨터 (블랙 선택)",
     "category": "halfpc",
     "subtype": "non-gpu-pc",
     "brand": "한성컴퓨터",
     "kind": "retailer-reviewed-model",
     "features": [
-      "반본체 판매 구성",
-      "선택 구성·수량1 합계 확인"
+      "판매처 부품표 확인",
+      "외장 GPU 미포함",
+      "기본 무료배송"
     ],
     "specifications": [
-      {
-        "label": "판매 제목 기준 구성",
-        "value": "라이젠7 7800X3D+32GB+1TB 내장그래픽 조립PC 게이밍 데스크탑 조립컴퓨터"
-      },
-      {
-        "label": "정확한 전체 부품 목록(BOM)",
-        "value": "추가 확인 필요"
-      },
       {
         "label": "확인한 선택 · 운영체제",
         "value": "조립 + 프리도스(운영체제 미탑재)"
       },
       {
         "label": "확인한 선택 · 메모리",
-        "value": "킹뱅크 DDR5 6000 32GB 블랙 (16GBx2)"
+        "value": "타무즈 DDR5-5600 CL46 32GB (16GB×2)"
       },
       {
         "label": "확인한 선택 · CPU쿨러",
@@ -247,29 +267,51 @@
       {
         "label": "확인한 선택 · 파워",
         "value": "쿨러마스터 MWE GOLD 850 V3 ATX3.1 블랙"
+      },
+      {
+        "label": "판매처 부품표 · CPU",
+        "value": "AMD Ryzen 7 7800X3D"
+      },
+      {
+        "label": "판매처 부품표 · 그래픽카드",
+        "value": "CPU 내장 Radeon 그래픽 · 외장 GPU 미포함"
+      },
+      {
+        "label": "판매처 부품표 · 메인보드",
+        "value": "GIGABYTE B850M GAMING X WIFI6E"
+      },
+      {
+        "label": "판매처 부품표 · SSD",
+        "value": "Acer Predator GM7000 M.2 NVMe 1TB"
       }
     ],
-    "description": "실제 판매 페이지의 수량1 합계를 확인한 반본체입니다. OS·부품 선택과 쿠폰·카드 조건을 가격 가까이에서 확인하세요. 전체 부품 품번과 개별 구매가·품질 점수는 추가 검증이 필요합니다.",
+    "description": "판매처 부품표와 선택 화면을 대조한 반본체입니다. 외장 그래픽카드는 구성에서 제외되어 있습니다.",
     "notes": [
-      "판매 제목과 페이지 식별자 기준 구성입니다. CPU·GPU·메모리·저장장치의 표기가 있어도 정확한 제조사 품번·메모리 모듈 수·GPU VRAM·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 확인한 것은 아닙니다. 같은 이름의 다른 판매번호나 과거 구성과 합치지 않았습니다.",
-      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다. 구매 후기의 부품 언급을 현재 기본 구성으로 사용하지 않았습니다.",
-      "운영체제·메모리·CPU쿨러·케이스·파워 메뉴에서 추가금 없는 유일한 기본 선택을 적용하고 수량1 상품가·합계를 확인했습니다. 선택한 OS 포함 범위와 부품명은 별도 기록합니다. 정확한 메인보드·SSD 품번·시스템 보증·부품별 구매가·품질 점수는 추가 확인 필요."
+      "기본 선택과 부품표가 모두 타무즈 DDR5-5600 CL46 32GB를 표시했습니다.",
+      "판매처 SSD 이미지의 쓰기 속도는 6,700MB/s입니다. Predator의 1TB 데이터시트는 6,400MB/s를 안내합니다.",
+      "완제품 보증 범위, 메모리 IC·다이와 SSD·파워의 정확한 리비전은 판매처 확인이 필요합니다."
     ],
     "lifecycle": "unknown",
     "domesticState": "listing-observed",
     "manufacturerPartNumber": null,
     "sources": [
       {
-        "label": "현재 PC 판매 제목·구성·상태 확인",
+        "label": "G마켓 판매 페이지·선택 구성",
         "url": "https://item.gmarket.co.kr/Item?goodscode=4653763522",
-        "observedAt": "2026-11-21T08:26:39.516Z",
-        "kind": "retailer-availability"
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-listing"
       },
       {
-        "label": "반본체 선택 구성·수량1 합계 후속 확인",
-        "url": "https://item.gmarket.co.kr/Item?goodscode=4653763522",
-        "observedAt": "2026-11-22T00:39:20.440Z",
-        "kind": "retailer-listing"
+        "label": "한성컴퓨터 메인보드 부품표",
+        "url": "https://www.sparq.co.kr/hansung/custompc/custom_db/WD17-2747.jpg",
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-component-table"
+      },
+      {
+        "label": "한성컴퓨터 SSD 부품표",
+        "url": "https://www.sparq.co.kr/hansung/custompc/custom_db/WN08-1245_.jpg",
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-component-table"
       }
     ],
     "listObservedAt": null,
@@ -294,44 +336,72 @@
     "brand": "아싸컴",
     "kind": "retailer-reviewed-model",
     "features": [
-      "반본체 판매 구성",
-      "선택 구성·수량1 합계 확인"
+      "판매처 부품표 확인",
+      "외장 GPU 미포함",
+      "1년 무상 A/S 판매처 표기"
     ],
     "specifications": [
       {
-        "label": "판매 제목 기준 구성",
-        "value": "AMD 반본체_7800X3D+32GB+1TB / B850M 조립PC 게이밍컴퓨터 본체 롤 팰월드 배그 발로란트"
+        "label": "판매처 부품표 · CPU",
+        "value": "AMD Ryzen 7 7800X3D (국내 정품 표기)"
       },
       {
-        "label": "정확한 전체 부품 목록(BOM)",
-        "value": "추가 확인 필요"
+        "label": "판매처 부품표 · 그래픽카드",
+        "value": "CPU 내장 Radeon 그래픽 · 외장 GPU 미포함"
       },
       {
-        "label": "확인한 추가구성품 선택",
-        "value": "미선택 · 정확한 기본 부품·OS 포함 범위 추가 확인"
+        "label": "판매처 부품표 · 메모리",
+        "value": "CORSAIR VENGEANCE DDR5-5600 CL40 32GB (16GB×2)"
+      },
+      {
+        "label": "판매처 부품표 · SSD",
+        "value": "ADATA LEGEND 960 M.2 NVMe 1TB"
+      },
+      {
+        "label": "판매처 부품표 · 메인보드",
+        "value": "ASUS B850M MAX GAMING WIFI"
+      },
+      {
+        "label": "판매처 부품표 · 파워",
+        "value": "쿨러마스터 MWE GOLD 850 V3 블랙 (판매처 표기)"
+      },
+      {
+        "label": "판매처 부품표 · 쿨러",
+        "value": "잘만 ALPHA3 SE A36 블랙"
+      },
+      {
+        "label": "판매처 부품표 · 케이스",
+        "value": "NZXT S5 RGB DELUXE 블랙 (판매처 표기)"
+      },
+      {
+        "label": "판매처 부품표 · 운영체제",
+        "value": "프리도스 선택 안내 · 라이선스 별도 확인"
+      },
+      {
+        "label": "판매처 부품표 · 본체 보증",
+        "value": "1년 무상 A/S (판매처 표기)"
       }
     ],
-    "description": "실제 판매 페이지의 수량1 합계를 확인한 반본체입니다. OS·부품 선택과 쿠폰·카드 조건을 가격 가까이에서 확인하세요. 전체 부품 품번과 개별 구매가·품질 점수는 추가 검증이 필요합니다.",
+    "description": "아싸컴이 판매하는 7800X3D 반본체입니다. 11번가에 올라온 판매처 부품표를 기준으로 정리했습니다.",
     "notes": [
-      "판매 제목과 페이지 식별자 기준 구성입니다. CPU·GPU·메모리·저장장치의 표기가 있어도 정확한 제조사 품번·메모리 모듈 수·GPU VRAM·메인보드·SSD·파워·쿨러·케이스·OS 라이선스·국내 보증을 모두 확인한 것은 아닙니다. 같은 이름의 다른 판매번호나 과거 구성과 합치지 않았습니다.",
-      "전체 부품 목록과 같은 조건의 개별 구매가가 확인되지 않아 부품 등급·조립 대비 절약률·성능·품질 점수를 산정하지 않았습니다. 구매 후기의 부품 언급을 현재 기본 구성으로 사용하지 않았습니다.",
-      "추가구성품을 선택하지 않은 상태에서 수량1·총1개와 쿠폰 자동적용 80,150원, 적용 전 2,003,780원·합계 1,923,630원을 대조했습니다. 쿠폰보기 버튼에서는 상세 안내가 표시되지 않아 쿠폰명·대상·기간·한도·중복 조건은 확인되지 않았습니다. B850M은 정확한 보드 품번이 아니며 전체 부품 모델·OS·보증·개별 구매가 확인 전 품질 점수·절약률을 산정하지 않습니다."
+      "판매처 부품표에 조립 서비스 40,000원 포함이라고 표기했습니다. 메모리 제조사 품번 및 모듈 칩 실장면·다이, 파워의 세부 품번은 출고 전 확인하세요.",
+      "부품 수급으로 변경될 수 있다는 판매처 안내가 있습니다. 주문 당시 부품표를 보관하세요."
     ],
     "lifecycle": "unknown",
     "domesticState": "listing-observed",
     "manufacturerPartNumber": null,
     "sources": [
       {
-        "label": "현재 PC 판매 제목·구성·상태 확인",
+        "label": "11번가 판매 페이지",
         "url": "https://www.11st.co.kr/products/8847096814",
-        "observedAt": "2026-11-21T08:27:56.395Z",
-        "kind": "retailer-availability"
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-listing"
       },
       {
-        "label": "반본체 선택 구성·수량1 합계 후속 확인",
-        "url": "https://www.11st.co.kr/products/8847096814",
-        "observedAt": "2026-11-22T00:39:58.408Z",
-        "kind": "retailer-listing"
+        "label": "아싸컴 기본 부품표",
+        "url": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-NG-C1T_L_2611251730.jpg",
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-component-table"
       }
     ],
     "listObservedAt": null,
@@ -3627,6 +3697,93 @@
         "merchant": "11st",
         "seller": "서린씨앤아이",
         "pricePage": "/prices/fullpc#reviewed-fullpc-11st-8675735260-offer"
+      }
+    ]
+  },
+  {
+    "id": "reviewed-halfpc-gmarket-4707868341",
+    "name": "프리플로우 PRE DIY KIT U7KB_A · 인텔 Core Ultra 7 270K Plus 32GB 1TB 반본체",
+    "category": "halfpc",
+    "subtype": "non-gpu-pc",
+    "brand": "프리플로우",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "판매처 부품표 확인",
+      "외장 GPU 미포함",
+      "1년 출장 A/S 판매처 표기"
+    ],
+    "specifications": [
+      {
+        "label": "확인한 선택 · 메모리",
+        "value": "타무즈 DDR5-5600 32GB (16GB×2)"
+      },
+      {
+        "label": "확인한 선택 · 케이스",
+        "value": "DAVEN D7 MESH 세븐팬 블랙"
+      },
+      {
+        "label": "확인한 선택 · CPU쿨러",
+        "value": "3RSYS RC1900 ARGB 솔더링 블랙"
+      },
+      {
+        "label": "확인한 선택 · 파워",
+        "value": "쿨러마스터 MWE GOLD 750 V3 ATX3.1 블랙"
+      },
+      {
+        "label": "판매처 부품표 · CPU",
+        "value": "Intel Core Ultra 7 270K Plus"
+      },
+      {
+        "label": "판매처 부품표 · 그래픽카드",
+        "value": "Intel UHD 내장 그래픽 · 외장 GPU 미포함"
+      },
+      {
+        "label": "판매처 부품표 · 메인보드",
+        "value": "ASUS PRIME B860M-A-CSM"
+      },
+      {
+        "label": "판매처 부품표 · SSD",
+        "value": "SK hynix Gold P31 M.2 NVMe 1TB"
+      },
+      {
+        "label": "판매처 부품표 · 본체 보증",
+        "value": "전국 방문 출장 A/S 1년 (판매처 표기)"
+      }
+    ],
+    "description": "Core Ultra 7 270K Plus에 DDR5 32GB와 1TB SSD를 장착한 반본체입니다. 판매 화면에서 선택한 케이스와 정적 안내 이미지에 나온 케이스 이름이 다릅니다.",
+    "notes": [
+      "판매처 정적 부품표는 darkFlash DRX70을 표시하고, 가격 확인 시 선택 화면에는 DAVEN D7 MESH 블랙이 나왔습니다. 실제 출고 케이스는 주문서와 판매처에서 대조하세요.",
+      "기본 조립 옵션에는 1년 출장 A/S가 표시됩니다. Windows 라이선스 포함 범위는 판매처 확인이 필요합니다.",
+      "Gold P31은 PCIe 3.0 ×4 SSD입니다. SSD의 실제 속도는 설치 슬롯과 사용 환경에 따라 달라집니다."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": "PRE DIY KIT U7KB_A",
+    "sources": [
+      {
+        "label": "G마켓 프리플로우 판매 페이지·선택 구성",
+        "url": "https://item.gmarket.co.kr/Item?goodscode=4707868341",
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-listing"
+      },
+      {
+        "label": "프리플로우 기본 부품표",
+        "url": "https://ai.esmplus.com/wnpreflow/homepc/body/15TH/PERDIYKIT/PER_DIY_KIT_U7KBA.jpg",
+        "observedAt": "2026-11-27T12:42:00.000Z",
+        "kind": "retailer-component-table"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-halfpc-gmarket-4707868341-offer",
+        "merchant": "G마켓",
+        "seller": "(주)프리플로우",
+        "pricePage": "/prices/halfpc#reviewed-halfpc-gmarket-4707868341-offer"
       }
     ]
   }

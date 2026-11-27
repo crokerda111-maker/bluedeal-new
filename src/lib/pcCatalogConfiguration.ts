@@ -5,9 +5,9 @@ import type { CatalogProduct } from "./productCatalog";
 const labels: Record<string, keyof typeof PC_PARTS | "os" | "warranty"> = {
   CPU: "cpu", 프로세서: "cpu", "그래픽[VGA]": "gpu", 그래픽카드: "gpu",
   메인보드: "board", 메모리: "ram", "메모리[RAM]": "ram", RAM: "ram",
-  SSD: "storage", "NVMe SSD": "storage", 파워: "psu", 케이스: "case",
+  SSD: "storage", "NVMe SSD": "storage", 저장장치: "storage", 파워: "psu", 케이스: "case",
   쿨러: "cooler", CPU쿨러: "cooler", "프로세서 쿨러": "cooler",
-  운영체제: "os", "윈도우[OS]": "os", "조립비+AS": "warranty",
+  운영체제: "os", "윈도우[OS]": "os", "조립비+AS": "warranty", "본체 보증": "warranty",
 };
 
 const slots = { ...PC_PARTS, os: "운영체제", warranty: "본체 보증" };
@@ -16,7 +16,8 @@ const sources = ["확인한 선택", "확인한 기본 선택", "판매처 부�
 export function pcCatalogConfiguration(product: CatalogProduct) {
   const kind = product.category === "halfpc" ? "halfpc" : "fullpc";
   const titleModels: Partial<Record<keyof typeof slots, string | null>> = {
-    cpu: cpuModel(product.name), gpu: gpuModel(product.name, kind),
+    cpu: cpuModel(product.name), gpu: gpuModel(product.name, kind) ??
+      (kind === "halfpc" && /\bNON GPU PC\b/i.test(product.name) ? "외장 GPU 미포함" : null),
   };
   return Object.entries(slots).map(([key, label]) => {
     for (const source of sources) {
