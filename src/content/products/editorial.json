@@ -1429,6 +1429,44 @@
       "advantage": "PCIe 4.0 ×4 NVMe에 순차 최대 읽기 5,000MB/s·쓰기 4,400MB/s, 제조사 1,200TBW입니다.",
       "caution": "실측 시료는 전용 DRAM 없이 HMB를 사용합니다. TLC와 QLC 시료가 보고돼 낸드가 중요한 분은 구매하려는 생산분을 확인하세요.",
       "source": "https://quasarzone.com/bbs/qc_qsz/views/2158550?page=2"
+    },
+    {
+      "catalogIds": [
+        "reviewed-kioxia-exceria-g3-2tb"
+      ],
+      "advantage": "PCIe 5.0 ×4에서 2TB 정격 읽기 10,000 MB/s·쓰기 9,600 MB/s, 내구성 1,200TBW를 표기합니다.",
+      "caution": "QLC 낸드와 HMB를 사용하는 모델입니다. 대용량 파일을 연속 기록할 때는 SLC 캐시가 소진된 구간의 쓰기 실측을 보세요.",
+      "source": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-fanxiang-s880-1tb",
+        "reviewed-fanxiang-s880-2tb",
+        "reviewed-fanxiang-s880-4tb"
+      ],
+      "advantage": "PCIe 4.0 M.2 2280 규격으로 1TB·2TB·4TB를 선택할 수 있습니다.",
+      "caution": "제조사 표기가 전용 DRAM 미탑재입니다. 대용량 연속 쓰기를 자주 한다면 구매 용량과 같은 시료의 캐시 소진 후 속도를 확인하세요.",
+      "source": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-fanxiang-s500-pro-512gb"
+      ],
+      "advantage": "512GB S500PRO512G 시료는 5GB 파일 순차 읽기 시험에서 약 3,218 MB/s를 기록했습니다.",
+      "caution": "검토 시료는 전용 DRAM이 없고, 실측 결과의 범위는 해당 512GB 시료입니다. 현재 판매 옵션과 국내 보증을 확인하세요.",
+      "source": "https://ssd-tester.com/fanxiang_s500_pro_512gb.html",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "distributor-seorin-1000008276"
+      ],
+      "advantage": "M.2 2280 PCIe 3.0 SSD입니다. 제조사 자료에서 HMB와 TRIM을 지원합니다.",
+      "caution": "공식 속도·TBW의 예시 값은 2TB 기준입니다. 1TB의 속도와 내구성 수치로 적용할 수 없습니다.",
+      "source": "https://agi-gear.com/product/ai298-m-2-pcie-ssd/",
+      "checkedOn": "2026-11-27"
     }
   ]
 }

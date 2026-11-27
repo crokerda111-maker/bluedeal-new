@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "5a6ce95ffdedc1cace0917be08ee75b81c4787d6a67a388a2b444b0768d1b3b1",
+  "catalogHash": "8aa2cfc4e6fca46119767097dbefc6daba6cd4efa8e8bf4f34886b7435c990c4",
   "entries": 836,
   "products": [
     {
@@ -94087,6 +94087,14 @@
         {
           "label": "전용 DRAM",
           "value": "공개 제품 사양에서 탑재 여부 확인되지 않음"
+        },
+        {
+          "label": "캐시 방식",
+          "value": "HMB · SLC 캐싱 지원"
+        },
+        {
+          "label": "제조사 보증",
+          "value": "3년"
         }
       ],
       "facts": [
@@ -94139,9 +94147,9 @@
           "kind": "retailer-listing"
         },
         {
-          "label": "해당 모델 제조사 공식 사양",
+          "label": "AGI AI298 공식 사양",
           "url": "https://agi-gear.com/product/ai298-m-2-pcie-ssd/",
-          "observedAt": "2026-11-22T00:00:00+09:00",
+          "observedAt": "2026-11-27T13:44:09.787Z",
           "kind": "manufacturer-specifications"
         }
       ],
@@ -96305,7 +96313,19 @@
         },
         {
           "label": "전용 DRAM",
-          "value": "해당 용량의 자료에서 확인 필요"
+          "value": "미탑재 (S500PRO512G 검토 시료)"
+        },
+        {
+          "label": "시료 낸드",
+          "value": "TLC"
+        },
+        {
+          "label": "시료 정격 내구성",
+          "value": "320TBW"
+        },
+        {
+          "label": "실측 순차 읽기·쓰기",
+          "value": "3,218 / 2,528 MB/s (AS SSD, 5GB 파일)"
         }
       ],
       "description": "알리익스프레스 핫딜에서 찾은 제품으로, 제조사 자료에서 모델과 용량을 확인했습니다.",
@@ -96327,6 +96347,12 @@
           "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2002733",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "community-deal"
+        },
+        {
+          "label": "SSD-Tester S500PRO512G 사양표와 512GB 실측",
+          "url": "https://ssd-tester.com/fanxiang_s500_pro_512gb.html",
+          "observedAt": "2026-11-27T13:44:09.787Z",
+          "kind": "independent-review"
         }
       ],
       "listObservedAt": null,
@@ -96365,6 +96391,36 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "dram",
+          "value": "absent",
+          "source": {
+            "label": "SSD-Tester S500PRO512G 사양표와 512GB 실측",
+            "url": "https://ssd-tester.com/fanxiang_s500_pro_512gb.html",
+            "observedAt": "2026-11-27T13:44:09.787Z",
+            "kind": "independent-review"
+          }
+        },
+        {
+          "key": "nand",
+          "value": "TLC",
+          "source": {
+            "label": "SSD-Tester S500PRO512G 사양표와 512GB 실측",
+            "url": "https://ssd-tester.com/fanxiang_s500_pro_512gb.html",
+            "observedAt": "2026-11-27T13:44:09.787Z",
+            "kind": "independent-review"
+          }
+        },
+        {
+          "key": "sequentialRead",
+          "value": "3500",
+          "source": {
+            "label": "SSD-Tester S500PRO512G 사양표와 512GB 실측",
+            "url": "https://ssd-tester.com/fanxiang_s500_pro_512gb.html",
+            "observedAt": "2026-11-27T13:44:09.787Z",
+            "kind": "independent-review"
+          }
         }
       ],
       "referenceCode": "BD-ACCFFEE880"
@@ -96394,7 +96450,11 @@
         },
         {
           "label": "전용 DRAM",
-          "value": "해당 용량의 자료에서 확인 필요"
+          "value": "미탑재"
+        },
+        {
+          "label": "제조사 표기 장착 규격",
+          "value": "M.2 2280"
         }
       ],
       "description": "알리익스프레스 핫딜에서 찾은 제품으로, 제조사 자료에서 모델과 용량을 확인했습니다.",
@@ -96407,16 +96467,16 @@
       "manufacturerPartNumber": null,
       "sources": [
         {
-          "label": "Fanxiang S880 공식 사양과 용량 선택",
-          "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
-          "observedAt": "2026-11-22T00:00:00+09:00",
-          "kind": "manufacturer-specifications"
-        },
-        {
           "label": "알리익스프레스 과거 핫딜 원문",
           "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000304",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "community-deal"
+        },
+        {
+          "label": "Fanxiang S880 제조사 용량별 선택과 DRAM 표기",
+          "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
+          "observedAt": "2026-11-27T13:44:09.787Z",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -96455,6 +96515,16 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "dram",
+          "value": "absent",
+          "source": {
+            "label": "Fanxiang S880 제조사 용량별 선택과 DRAM 표기",
+            "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
+            "observedAt": "2026-11-27T13:44:09.787Z",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-9ACB1DD22B"
@@ -96484,7 +96554,11 @@
         },
         {
           "label": "전용 DRAM",
-          "value": "해당 용량의 자료에서 확인 필요"
+          "value": "미탑재"
+        },
+        {
+          "label": "제조사 표기 장착 규격",
+          "value": "M.2 2280"
         }
       ],
       "description": "알리익스프레스 핫딜에서 찾은 제품으로, 제조사 자료에서 모델과 용량을 확인했습니다.",
@@ -96497,16 +96571,16 @@
       "manufacturerPartNumber": null,
       "sources": [
         {
-          "label": "Fanxiang S880 공식 사양과 용량 선택",
-          "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
-          "observedAt": "2026-11-22T00:00:00+09:00",
-          "kind": "manufacturer-specifications"
-        },
-        {
           "label": "알리익스프레스 과거 핫딜 원문",
           "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000304",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "community-deal"
+        },
+        {
+          "label": "Fanxiang S880 제조사 용량별 선택과 DRAM 표기",
+          "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
+          "observedAt": "2026-11-27T13:44:09.787Z",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -96545,6 +96619,16 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "dram",
+          "value": "absent",
+          "source": {
+            "label": "Fanxiang S880 제조사 용량별 선택과 DRAM 표기",
+            "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
+            "observedAt": "2026-11-27T13:44:09.787Z",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-597A9DE699"
@@ -96574,7 +96658,11 @@
         },
         {
           "label": "전용 DRAM",
-          "value": "해당 용량의 자료에서 확인 필요"
+          "value": "미탑재"
+        },
+        {
+          "label": "제조사 표기 장착 규격",
+          "value": "M.2 2280"
         }
       ],
       "description": "알리익스프레스 핫딜에서 찾은 제품으로, 제조사 자료에서 모델과 용량을 확인했습니다.",
@@ -96587,16 +96675,16 @@
       "manufacturerPartNumber": null,
       "sources": [
         {
-          "label": "Fanxiang S880 공식 사양과 용량 선택",
-          "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
-          "observedAt": "2026-11-22T00:00:00+09:00",
-          "kind": "manufacturer-specifications"
-        },
-        {
           "label": "알리익스프레스 과거 핫딜 원문",
           "url": "https://quasarzone.com/bbs/qb_saleinfo/views/2000304",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "community-deal"
+        },
+        {
+          "label": "Fanxiang S880 제조사 용량별 선택과 DRAM 표기",
+          "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
+          "observedAt": "2026-11-27T13:44:09.787Z",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -96633,6 +96721,16 @@
             "label": "Fanxiang S880 공식 사양과 용량 선택",
             "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "dram",
+          "value": "absent",
+          "source": {
+            "label": "Fanxiang S880 제조사 용량별 선택과 DRAM 표기",
+            "url": "https://www.fanxiangssd.com/products/fanxiang-s880-pcie4-0-nvme-ssd-solid-state-drive",
+            "observedAt": "2026-11-27T13:44:09.787Z",
             "kind": "manufacturer-specifications"
           }
         }
@@ -96871,28 +96969,63 @@
         {
           "label": "전용 DRAM",
           "value": "해당 모델의 공개 근거 확인 필요"
+        },
+        {
+          "label": "낸드",
+          "value": "BiCS FLASH QLC"
+        },
+        {
+          "label": "캐시 방식",
+          "value": "HMB (호스트 메모리 버퍼)"
+        },
+        {
+          "label": "제조사 표기 순차 읽기",
+          "value": "10,000 MB/s"
+        },
+        {
+          "label": "제조사 표기 순차 쓰기",
+          "value": "9,600 MB/s"
+        },
+        {
+          "label": "제조사 표기 내구성",
+          "value": "1,200TBW"
+        },
+        {
+          "label": "제조사 보증",
+          "value": "5년 제한 보증"
+        },
+        {
+          "label": "공식 2TB 품번",
+          "value": "LVC10Z002TG8"
         }
       ],
       "description": "과거 핫딜에서 발견한 SSD입니다. 정확한 모델·용량을 공개 사양과 대조했습니다.",
       "notes": [
         "판매처별 선택 옵션·배송비·할인과 유통사 보증은 구매 전에 확인하세요.",
-        "EXCERIA PLUS G3와 별도 모델입니다."
+        "EXCERIA PLUS G3와 별도 모델입니다.",
+        "국내 판매는 수량 1 기준입니다. 제휴 판매처의 실결제 조건과 국내 보증 접수처를 주문 전에 확인하세요."
       ],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
-      "manufacturerPartNumber": null,
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": "LVC10Z002TG8",
       "sources": [
-        {
-          "label": "키오시아 한국 EXCERIA G3 공식 사양",
-          "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
-          "observedAt": "2026-11-22T00:00:00+09:00",
-          "kind": "manufacturer-specifications"
-        },
         {
           "label": "과거 핫딜 원문",
           "url": "https://quasarzone.com/bbs/qb_saleinfo/views/1994401",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "community-deal"
+        },
+        {
+          "label": "키오시아 EXCERIA G3 한국 공식 사양",
+          "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+          "observedAt": "2026-11-27T13:44:09.787Z",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "G마켓 여운스토어G EXCERIA G3 2TB 수량 1 판매 상세",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4764162825",
+          "observedAt": "2026-11-27T13:44:09.787Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -96900,7 +97033,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": [],
+      "listings": [
+        {
+          "id": "ssd-gmarket-4764162825",
+          "merchant": "G마켓",
+          "seller": "여운스토어G",
+          "pricePage": "/prices/ssd#ssd-gmarket-4764162825"
+        }
+      ],
       "facts": [
         {
           "key": "capacity",
@@ -96929,6 +97069,36 @@
             "label": "키오시아 한국 EXCERIA G3 공식 사양",
             "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nand",
+          "value": "QLC",
+          "source": {
+            "label": "키오시아 EXCERIA G3 한국 공식 사양",
+            "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+            "observedAt": "2026-11-27T13:44:09.787Z",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "sequentialRead",
+          "value": "10000",
+          "source": {
+            "label": "키오시아 EXCERIA G3 한국 공식 사양",
+            "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+            "observedAt": "2026-11-27T13:44:09.787Z",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "warrantyYears",
+          "value": "5년",
+          "source": {
+            "label": "키오시아 EXCERIA G3 한국 공식 사양",
+            "url": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+            "observedAt": "2026-11-27T13:44:09.787Z",
             "kind": "manufacturer-specifications"
           }
         }

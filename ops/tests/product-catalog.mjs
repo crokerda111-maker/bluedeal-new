@@ -7,14 +7,39 @@ import { productFacetValues } from '../../src/lib/productFilters.ts';
 
 const hooks = registerHooks({
   resolve(specifier, context, nextResolve) {
-    return nextResolve(specifier === './productFilters' ? './productFilters.ts' : specifier, context);
+    return nextResolve(['./productFilters', './productBuyingNotes'].includes(specifier) ? specifier + '.ts' : specifier, context);
   },
 });
 const { getProductBuyingNotes } = await import('../../src/lib/productBuyingNotes.ts');
+const { assessComponentQuality } = await import('../../src/lib/componentQuality.ts');
 hooks.deregister();
 
 const catalog=JSON.parse(fs.readFileSync(new URL('../../src/content/products/catalog.json',import.meta.url),'utf8'));
 const products=catalog.products;
+
+test('single-part rubrics show exactly five sourced criteria and never score unverified variants', () => {
+  for (const product of products) {
+    const evaluation = assessComponentQuality(product);
+    if (['fullpc', 'halfpc', 'bundle'].includes(product.category)) {
+      assert.equal(evaluation, undefined);
+      continue;
+    }
+    assert.equal(evaluation.criteria.length, 5, product.id);
+    assert.ok(evaluation.criteria.every(check => check.met === null || check.evidence?.length), product.id);
+    assert.ok(evaluation.points <= evaluation.checked && evaluation.max <= 5, product.id);
+    if (!evaluation.exact || evaluation.checked < 5) assert.equal(evaluation.score, null, product.id);
+  }
+});
+
+test('the SSD rubric distinguishes documented absence from a missing or conflicting DRAM result', () => {
+  const product = products.find(entry => entry.id === 'reviewed-fanxiang-s880-1tb');
+  const dram = candidate => assessComponentQuality(candidate).criteria.find(criterion => criterion.label === '전용 DRAM 탑재');
+  assert.equal(dram(product).met, false);
+  assert.equal(dram({ ...product, facts: [], sources: [] }).met, null);
+  assert.equal(dram({ ...product, facts: [...product.facts,
+    { ...product.facts.find(fact => fact.key === 'dram'), value: 'present' },
+  ] }).met, null);
+});
 
 test('every exported entry has stable unique page and management identifiers',()=>{
   assert.equal(products.length,catalog.entries);

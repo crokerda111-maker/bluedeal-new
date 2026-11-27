@@ -13,7 +13,7 @@ const specificationSourceKinds = new Set([
   "retailer-listing", "independent-review",
 ]);
 
-function isSpecificationSource(source: ProductSource) {
+export function isSpecificationSource(source: ProductSource) {
   if (!specificationSourceKinds.has(source.kind)) return false;
   try {
     const url = new URL(source.url);

@@ -23,6 +23,7 @@ import MarketplacePriceLinks from "../../../components/MarketplacePriceLinks";
 import MotherboardExpansion from "../../../components/MotherboardExpansion";
 import MotherboardMedia from "../../../components/MotherboardMedia";
 import { asrockRyzen9000Advisory, getMotherboardExpansion, getMotherboardMedia } from "../../../lib/motherboardExpansion";
+import { assessComponentQuality } from "../../../lib/componentQuality";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
@@ -61,6 +62,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const editorial = getProductEditorial(product.id);
   const buyingNotes = getProductBuyingNotes(product);
   const documentedIssue = editorial?.issue ?? buyingNotes?.issue;
+  const componentQuality = assessComponentQuality(product);
   const advantage = editorial?.advantage ?? buyingNotes?.advantage;
   const caution = editorial?.caution ?? buyingNotes?.caution;
   const fullPcPhoto = fullPc ? getFullPcPhoto(product.id) : undefined;
@@ -146,6 +148,35 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         {expansion ? <section id="motherboard-expansion" aria-labelledby="motherboard-expansion-title" className="bd-surface-md scroll-mt-24 space-y-3 p-5 sm:p-6">
           <h2 id="motherboard-expansion-title" className="text-xl font-semibold">SSD 장착·슬롯 공유</h2>
           <MotherboardExpansion profile={expansion} />
+        </section> : null}
+        {componentQuality ? <section aria-labelledby="component-quality-title" className="bd-surface-md p-5 sm:p-6">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h2 id="component-quality-title" className="text-xl font-semibold">단품 평가</h2>
+            <strong className="text-cyan-100 tabular-nums">
+              {componentQuality.score !== null ? `${componentQuality.score}/5점` : componentQuality.checked
+                ? `충족 ${componentQuality.points}개 · 확인 ${componentQuality.checked}/5` : "평가 보류"}
+            </strong>
+          </div>
+          <p className="mt-2 text-sm leading-6 text-white/75">
+            각 기준을 충족하면 1점입니다. {componentQuality.exact ? "근거가 확인된 항목에 점수를 매깁니다."
+              : "제품군의 사양입니다. 판매 모델이 확정되면 점수를 매깁니다."}
+          </p>
+          {componentQuality.exact && componentQuality.checked > 0 && componentQuality.score === null ?
+            <p className="mt-1 text-sm text-white/75">확인 결과에 따라 {componentQuality.points}~{componentQuality.max}/5점</p> : null}
+          <ul className="mt-3 divide-y divide-white/10 border-y border-white/10">
+            {componentQuality.criteria.map(criterion => <li key={criterion.label} className="py-3 text-sm">
+              <span className={criterion.met === true ? "text-cyan-100" : criterion.met === false ? "text-amber-100" : "text-white/65"}>
+                {criterion.met === true ? "충족" : criterion.met === false ? "미충족" : "근거 확인 필요"}
+              </span>{" · "}{criterion.label}
+              {criterion.evidence?.length ? <ul className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs">
+                {criterion.evidence.map(({ value, source }) => <li key={`${source.url}:${value}`}>
+                  <a className="break-words text-cyan-200 underline underline-offset-4" href={source.url} target="_blank" rel="noopener noreferrer">
+                    {value}<span className="sr-only"> · 근거 (새 창)</span>
+                  </a>
+                </li>)}
+              </ul> : null}
+            </li>)}
+          </ul>
         </section> : null}
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">특징·상세 정보</h2>{product.features.length ? <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-white/80">{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul> : <p className="mt-4 text-sm leading-7 text-white/70">추가 사양 자료를 확인하고 있습니다.</p>}
           {product.specifications.length ? <dl className="mt-5 divide-y divide-white/10 border-y border-white/10">{product.specifications.map(specification => <div key={`${specification.label}:${specification.value}`} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-4 py-3 text-sm"><dt className="text-white/60">{specification.label}</dt><dd className="break-words text-white/85">{specification.value}</dd></div>)}</dl> : null}

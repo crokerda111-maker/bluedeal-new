@@ -1,7 +1,7 @@
 {
   "category": "ssd",
-  "updatedAt": "2026-11-27T08:14:00.000Z",
-  "generatedAt": "2026-11-27T08:16:14.066Z",
+  "updatedAt": "2026-11-27T13:44:09.787Z",
+  "generatedAt": "2026-11-27T13:44:09.787Z",
   "items": [
     {
       "id": "retail-seorin-1000001188",
@@ -567,6 +567,30 @@
       "cardPrice": 979000,
       "cardNote": "G마켓 삼성카드1만원 할인. 쿠폰·옵션 적용 후30만원 이상·최대1만원·11/30까지. 카드 대상·예산·실제 결제창 적용 재확인. 다른 카드와 합산하지 않음.",
       "cardEndsOn": "2026-11-30"
+    },
+    {
+      "id": "ssd-gmarket-4764162825",
+      "name": "키오시아 EXCERIA G3 M.2 NVMe 2TB",
+      "spec": "EXCERIA G3 2TB · PCIe 5.0 ×4 · 수량 1",
+      "capacityGB": 2000,
+      "price": 557490,
+      "shippingFee": 3000,
+      "shippingNote": "기본 배송비 3,000원. 제주·도서산간은 판매처 확인.",
+      "source": "G마켓",
+      "seller": "여운스토어G",
+      "couponPrice": 552490,
+      "couponNote": "5% 중복할인 쿠폰(5,000원 차감 표시). 발급·적용 가능 여부는 주문 시 확인.",
+      "cardPrice": 502770,
+      "cardNote": "쿠폰가에 G마켓 대상 3대 카드 스마일페이 9% 결제 할인. 7만원 이상, 최대 20만원, 11월 30일까지. 대상 카드는 주문 화면 확인.",
+      "cardRequiresCoupon": true,
+      "cardEndsOn": "2026-11-30",
+      "priceNote": "수량 1 판매자 할인·G마켓 추가할인 반영 기본가. 쿠폰·카드 조건과 배송비는 별도.",
+      "officialUrl": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-g3.html",
+      "goCode": "ScDwcUcVJa45aJgD",
+      "checkedAt": "2026-11-27T13:44:09.787Z",
+      "updatedAt": "2026-11-27T13:44:09.787Z",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-27T13:44:09.787Z"
     }
   ]
 }
