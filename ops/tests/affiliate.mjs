@@ -78,6 +78,7 @@ test('official LinkPrice long links preserve issued tracking and require the exa
     ['gmarket','gmarket',source],
     ['11st','11st','https://www.11st.co.kr/products/FIXTURE001'],
     ['auction','auction','https://itempage3.auction.co.kr/DetailView.aspx?itemno=F123456789'],
+    ['auction','auction','https://m.auction.co.kr/n/showroom/160'],
     ['lotteon','lotteon','https://www.lotteon.com/p/product/FIXTURE001'],
     ['ssg','emart','https://www.ssg.com/item/itemView.ssg?itemId=123&siteNo=6004'],
   ]){
@@ -89,6 +90,14 @@ test('official LinkPrice long links preserve issued tracking and require the exa
     withMappings([{merchant,provider:'linkprice',originalUrl,affiliateUrl:directIssued(originalUrl,'ssglive')}],()=>{
       assert.equal(resolve(originalUrl,merchant).mode,'passthrough');
     });
+  }
+});
+
+test('Auction mobile outbound support is limited to official showroom pages',()=>{
+  const showroom='https://m.auction.co.kr/n/showroom/160';
+  assert.equal(normalizeOutboundUrl(showroom),showroom);
+  for(const url of [showroom+'?url=https://example.invalid','https://m.auction.co.kr/redirect','https://m.auction.co.kr.evil.invalid/n/showroom/160']){
+    assert.equal(normalizeOutboundUrl(url),null);
   }
 });
 

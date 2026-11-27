@@ -13,7 +13,7 @@ const MERCHANT_RULES: MerchantRule[] = [
   { merchant: "lotteon", hosts: [/(^|\.)lotteon\.com$/i] },
   { merchant: "icoda", hosts: [/(^|\.)icoda\.co\.kr$/i] },
   { merchant: "ssg", hosts: [/(^|\.)ssg\.com$/i] },
-  { merchant: "auction", hosts: [/^itempage3\.auction\.co\.kr$/i] },
+  { merchant: "auction", hosts: [/^itempage3\.auction\.co\.kr$/i, /^m\.auction\.co\.kr$/i] },
   { merchant: "compuzone", hosts: [/(^|\.)compuzone\.co\.kr$/i] },
   { merchant: "seorinexpress", hosts: [/(^|\.)seorinexpress\.com$/i] },
   {
@@ -116,6 +116,7 @@ export function normalizeOutboundUrl(raw: string): string | null {
 
   url.protocol = "https:";
   url.hostname = url.hostname.toLowerCase().replace(/\.$/, "");
+  if (url.hostname === "m.auction.co.kr" && (!/^\/n\/showroom\/\d+\/?$/.test(url.pathname) || url.search)) return null;
   url.hash = "";
 
   return url.toString();
