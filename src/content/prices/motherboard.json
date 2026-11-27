@@ -1,7 +1,7 @@
 {
   "category": "motherboard",
-  "updatedAt": "2026-11-27T13:49:53.732Z",
-  "generatedAt": "2026-11-27T13:49:53.732Z",
+  "updatedAt": "2026-11-27T13:54:36.131Z",
+  "generatedAt": "2026-11-27T13:54:36.131Z",
   "items": [
     {
       "id": "colorful-a520m-k-v14-gm4697504736",
@@ -508,6 +508,43 @@
       "updatedAt": "2026-11-27T13:49:53.732Z",
       "availability": "in-stock",
       "availabilityCheckedAt": "2026-11-27T13:49:53.732Z"
+    },
+    {
+      "id": "motherboard-gmarket-4596411618",
+      "seller": "포앤글로벌",
+      "name": "ASRock B850M Pro-A WiFi 에즈윈",
+      "spec": "B850M Pro-A WiFi · 에즈윈 · 수량 1",
+      "price": 216000,
+      "shippingFee": 0,
+      "couponPrice": 205200,
+      "couponNote": "5% 디지털·가전 깜짝쿠폰 발급·적용 시.",
+      "priceNote": "수량 1 기본가. ASRock AM5와 라이젠 9000 조합에 관한 구매 주의사항을 상세에서 확인.",
+      "source": "G마켓",
+      "shippingNote": "기본 배송 조건입니다. 도서산간 추가비는 판매처 확인.",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-27T13:54:36.131Z",
+      "goCode": "7Q6hn7Et9nTY6YtG",
+      "updatedAt": "2026-11-27T13:54:36.131Z",
+      "checkedAt": "2026-11-27T13:54:36.131Z"
+    },
+    {
+      "id": "motherboard-gmarket-3785146015",
+      "seller": "네모아이티",
+      "name": "GIGABYTE B650M K 제이씨현",
+      "spec": "B650M K · 제이씨현 · 수량 1",
+      "price": 149000,
+      "shippingFee": 2500,
+      "cardPrice": 135590,
+      "cardNote": "G마켓 대상 3대 카드 스마일페이 9%, 7만원 이상·최대 20만원, 11월 30일까지.",
+      "cardEndsOn": "2026-11-30",
+      "priceNote": "수량 1 기본가. 주문 전 실물 보드 리비전 확인.",
+      "source": "G마켓",
+      "shippingNote": "기본 배송 조건입니다. 도서산간 추가비는 판매처 확인.",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-27T13:54:36.131Z",
+      "goCode": "77MEKZCQ50UjPAGy",
+      "updatedAt": "2026-11-27T13:54:36.131Z",
+      "checkedAt": "2026-11-27T13:54:36.131Z"
     }
   ]
 }

@@ -1539,6 +1539,15 @@
       "caution": "제조사 주문표에서 색상·용량·타이밍이 일치하는 품번은 KD5BGUA80-60A300J입니다. 판매자가 실제 출고 라벨에 표시한 품번, 보드 QVL, 국내 보증 접수 조건을 확인하세요.",
       "source": "https://www.klevv.com/HyAdmin/upload/goodFile/KLEVV_Product%20Sheet_MEMORY_CRAS%20V%20RGB_v12_KR.pdf?2026010501=",
       "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-corsair-rm850x-atx31"
+      ],
+      "advantage": "105°C 일본산 전해 캐패시터와 기본 12V-2x6 케이블을 제공하며, 같은 CP-9020270 모델의 230V 부하 조합 평균 소음은 21.37dBA였습니다.",
+      "caution": "ATX 3.1 세대의 CP-9020270 기준입니다. 기존 RM850x 세대와 판매품번을 구분하고 국내 보증 접수처와 케이블 여유를 확인하세요.",
+      "source": "https://www.cybenetics.com/evaluations/psus/2399/cn/pdf/",
+      "checkedOn": "2026-11-27"
     }
   ]
 }

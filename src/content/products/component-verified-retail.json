@@ -58,5 +58,29 @@
       "kind": "retailer-listing"
     },
     "seller": "WD공식스토어"
+  },
+  {
+    "productId": "reviewed-asrock-b850m-pro-a-wifi",
+    "listingId": "motherboard-gmarket-4596411618",
+    "seller": "포앤글로벌",
+    "checkedAt": "2026-11-27T13:54:36.131Z",
+    "source": {
+      "label": "G마켓 포앤글로벌 판매 상세",
+      "url": "https://item.gmarket.co.kr/Item?goodscode=4596411618",
+      "observedAt": "2026-11-27T13:54:36.131Z",
+      "kind": "retailer-listing"
+    }
+  },
+  {
+    "productId": "reviewed-gigabyte-b650m-k",
+    "listingId": "motherboard-gmarket-3785146015",
+    "seller": "네모아이티",
+    "checkedAt": "2026-11-27T13:54:36.131Z",
+    "source": {
+      "label": "G마켓 네모아이티 판매 상세",
+      "url": "https://item.gmarket.co.kr/Item?goodscode=3785146015",
+      "observedAt": "2026-11-27T13:54:36.131Z",
+      "kind": "retailer-listing"
+    }
   }
 ]
