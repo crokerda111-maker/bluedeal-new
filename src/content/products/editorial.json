@@ -1557,6 +1557,33 @@
       "caution": "ARGB 단자와 CPU 소켓용 브래킷 포함 여부를 확인하세요. 실제 설치에는 팬·클립과 주변 부품의 공간도 필요합니다.",
       "source": "https://www.thermalright.com/product/assassin-x-90-se-argb/",
       "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-kioxia-exceria-pro-g2-2tb-retailer"
+      ],
+      "advantage": "2,048GB 구성은 TLC와 DRAM을 사용하며 읽기 최대 14,900MB/s를 표기합니다.",
+      "caution": "M.2 방열판과 간섭 여부를 확인하세요. 최고 순차 속도는 지속 쓰기 속도와 다릅니다.",
+      "source": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-pro-g2.html",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-kioxia-exceria-plus-g3-2tb-retailer"
+      ],
+      "advantage": "2TB 분해 시료에서 TLC 낸드와 HMB를 확인했습니다. 제품 보증은 5년 또는 1,200TBW입니다.",
+      "caution": "ComputerBase의 2TB 실측에서 SLC 캐시 소진 뒤 한동안 쓰기 속도가 300MB/s 미만으로 떨어졌습니다.",
+      "source": "https://www.computerbase.de/artikel/storage/kioxia-exceria-plus-g3-2-tb-ssd-test.86783/",
+      "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "reviewed-acer-predator-gm9000-2tb-retailer"
+      ],
+      "advantage": "2TB 구성은 2GB 전용 DRAM과 1,600TBW, 순차 읽기 최대 14,000MB/s를 표기합니다.",
+      "caution": "판매 제품의 방열판 포함 여부와 Gen5 슬롯, 방열판 공간을 확인하세요.",
+      "source": "https://www.predatorstorage.com/wp-content/uploads/2025/10/Predator-GM9000-Specifications.pdf",
+      "checkedOn": "2026-11-27"
     }
   ]
 }
