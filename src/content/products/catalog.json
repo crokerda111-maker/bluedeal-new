@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "63850461a51ce58d5fff839ed6961c8775c8db447b7cab98a2dc9f435d26032d",
-  "entries": 815,
+  "catalogHash": "2cc67ce2159050d26478e7b5548dd28407239f1287e596981da6e5a14085ddc2",
+  "entries": 832,
   "products": [
     {
       "id": "reviewed-mixed-bundle-etland-s6295842",
@@ -67052,6 +67052,94 @@
       "referenceCode": "BD-F73909B980"
     },
     {
+      "id": "reviewed-asrock-b850m-pro-a-wifi",
+      "name": "ASRock B850M Pro-A WiFi",
+      "brand": "ASRock",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD B850",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD B850"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        },
+        {
+          "label": "무선랜",
+          "value": "Wi-Fi 6E"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "wireless",
+          "value": "present",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-2680A8E5D0"
+    },
+    {
       "id": "reviewed-asrock-b860m-livemixer-wifi",
       "name": "ASRock B860M LiveMixer WiFi",
       "category": "motherboard",
@@ -67111,6 +67199,12 @@
           "url": "https://asrock.com/MB/Intel/B860M%20LiveMixer%20WiFi/index.asp",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://asrock.com/MB/Intel/B860M%20LiveMixer%20WiFi/index.asp#Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -67136,9 +67230,103 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://asrock.com/MB/Intel/B860M%20LiveMixer%20WiFi/index.asp#Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://asrock.com/MB/Intel/B860M%20LiveMixer%20WiFi/index.asp#Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-E7CFF12994"
+    },
+    {
+      "id": "reviewed-asus-prime-b860m-a-csm",
+      "name": "ASUS PRIME B860M-A-CSM",
+      "brand": "ASUS",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "Intel B860",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "LGA1851"
+        },
+        {
+          "label": "칩셋",
+          "value": "Intel B860"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.asus.com/motherboards-components/motherboards/csm/prime-b860m-a-csm/techspec/",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/csm/prime-b860m-a-csm/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/csm/prime-b860m-a-csm/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-1D5F399763"
     },
     {
       "id": "reviewed-asus-rog-crosshair-x870e-apex",
@@ -67225,9 +67413,117 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "5",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-apex/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-apex/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-23CBFED516"
+    },
+    {
+      "id": "reviewed-asus-rog-crosshair-x870e-hero",
+      "name": "ASUS ROG CROSSHAIR X870E HERO",
+      "brand": "ASUS",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD X870E",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD X870E"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "ATX"
+        },
+        {
+          "label": "무선랜",
+          "value": "Wi-Fi 7"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-hero/spec/",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "wireless",
+          "value": "present",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-hero/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "5",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-hero/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-hero/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-FD17990BD7"
     },
     {
       "id": "reviewed-asus-rog-maximus-z890-apex",
@@ -67289,6 +67585,12 @@
           "url": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/spec/",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "제조사 화이트 모델 자료",
+          "url": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -67312,6 +67614,36 @@
             "label": "메인보드 제조사 공식 사양",
             "url": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/spec/",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "6",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "boardColor",
+          "value": "white",
+          "source": {
+            "label": "제조사 화이트 모델 자료",
+            "url": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
         }
@@ -67399,6 +67731,26 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "5",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b850-e-gaming-wifi/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b850-e-gaming-wifi/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-E49ABEC579"
@@ -67470,6 +67822,12 @@
           "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/spec/",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "제조사 화이트 모델 자료",
+          "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -67493,6 +67851,36 @@
             "label": "메인보드 제조사 공식 사양",
             "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/spec/",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "4",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "boardColor",
+          "value": "white",
+          "source": {
+            "label": "제조사 화이트 모델 자료",
+            "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
         }
@@ -67584,6 +67972,26 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-22B13159CE"
@@ -67663,6 +68071,26 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b650em-e-wifi/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b650em-e-wifi/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-AC79522407"
@@ -67734,6 +68162,12 @@
           "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.asus.com/uk/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -67757,6 +68191,26 @@
             "label": "메인보드 제조사 공식 사양",
             "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/uk/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/uk/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
         }
@@ -67823,6 +68277,12 @@
           "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/techspec/",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "제조사 화이트 모델 자료",
+          "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -67846,6 +68306,36 @@
             "label": "메인보드 제조사 공식 사양",
             "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/techspec/",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "boardColor",
+          "value": "white",
+          "source": {
+            "label": "제조사 화이트 모델 자료",
+            "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
         }
@@ -67924,7 +68414,28 @@
           "pricePage": "/prices/motherboard#asus-tuf-b850m-plus-ii-gm4775621015"
         }
       ],
-      "facts": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850m-plus-ii/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850m-plus-ii/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
       "referenceCode": "BD-66B75CA478"
     },
     {
@@ -68013,6 +68524,26 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "4",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_X870-PLUS_WIFI/E24080_TUF_GAMING_X870-PLUS_WIFI_EM_WEB.pdf",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_X870-PLUS_WIFI/E24080_TUF_GAMING_X870-PLUS_WIFI_EM_WEB.pdf",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-3DA5B8A80B"
@@ -68093,6 +68624,12 @@
           "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1292012",
           "observedAt": "2026-11-21T02:58:09.954Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-x870e-plus-wifi7/techspec/",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -68122,6 +68659,26 @@
             "label": "메인보드 제조사 공식 사양",
             "url": "https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_X870E-PLUS_WIFI7/E26142_TUF_GAMING_X870E-PLUS_WIFI7_EM_WEB.pdf",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "4",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-x870e-plus-wifi7/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-x870e-plus-wifi7/techspec/",
+            "observedAt": "2026-11-27T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
         }
@@ -68185,6 +68742,12 @@
           "url": "https://www.manualslib.com/manual/4050214/Colorful-Battle-Ax-A520m-K-M-2-V14.html?page=3",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.colorful.cn/home/product?id=4ab59267-b61f-4e9e-ba6e-f7533f24d786&mid=84",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -68200,8 +68763,103 @@
           "pricePage": "/prices/motherboard#colorful-a520m-k-v14-gm4697504736"
         }
       ],
-      "facts": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "1",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.colorful.cn/home/product?id=4ab59267-b61f-4e9e-ba6e-f7533f24d786&mid=84",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.colorful.cn/home/product?id=4ab59267-b61f-4e9e-ba6e-f7533f24d786&mid=84",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
       "referenceCode": "BD-0EE8CBB6C4"
+    },
+    {
+      "id": "reviewed-gigabyte-b650m-k",
+      "name": "GIGABYTE B650M K",
+      "brand": "GIGABYTE",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD B650",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD B650"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-42B974DEA5"
     },
     {
       "id": "reviewed-gigabyte-b760m-aorus-elite-d4",
@@ -68274,7 +68932,28 @@
           "pricePage": "/prices/motherboard#gigabyte-b760m-aorus-elite-d4-gm4638920540"
         }
       ],
-      "facts": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-rev-1x/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-rev-1x/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
       "referenceCode": "BD-11F07DDD4F"
     },
     {
@@ -68350,8 +69029,267 @@
           "pricePage": "/prices/motherboard#gigabyte-b760m-aorus-d4-gen5-gm4671937228"
         }
       ],
-      "facts": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-GEN5/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-GEN5/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
       "referenceCode": "BD-0F42BA6E03"
+    },
+    {
+      "id": "reviewed-gigabyte-b760m-d2hx-lite-si-gen5",
+      "name": "GIGABYTE B760M D2HX LITE SI GEN5",
+      "brand": "GIGABYTE",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "Intel B760",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "LGA1700"
+        },
+        {
+          "label": "칩셋",
+          "value": "Intel B760"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5/sp",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-ECDB4CA690"
+    },
+    {
+      "id": "reviewed-gigabyte-b850-aorus-elite-x3d",
+      "name": "GIGABYTE B850 AORUS ELITE X3D",
+      "brand": "GIGABYTE",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD B850",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD B850"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "ATX"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-X3D/sp",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "4",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-X3D/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-X3D/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-F721480715"
+    },
+    {
+      "id": "reviewed-gigabyte-b850-aorus-elite-p-ice",
+      "name": "GIGABYTE B850 AORUS ELITE-P ICE",
+      "brand": "GIGABYTE",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD B850",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD B850"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "ATX"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.gigabyte.com/uk/Motherboard/B850-AORUS-ELITE-P-ICE/sp",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "제조사 화이트 모델 자료",
+          "url": "https://www.gigabyte.com/uk/Motherboard/B850-AORUS-ELITE-P-ICE",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "4",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/uk/Motherboard/B850-AORUS-ELITE-P-ICE/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/uk/Motherboard/B850-AORUS-ELITE-P-ICE/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "boardColor",
+          "value": "white",
+          "source": {
+            "label": "제조사 화이트 모델 자료",
+            "url": "https://www.gigabyte.com/uk/Motherboard/B850-AORUS-ELITE-P-ICE",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-F4FF1EC328"
     },
     {
       "id": "reviewed-gigabyte-b850m-aorus-elite-wifi6e",
@@ -68438,6 +69376,26 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-rev-1x/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-rev-1x/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-720D5B5154"
@@ -68503,6 +69461,12 @@
           "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "제조사 화이트 모델 자료",
+          "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -68526,6 +69490,36 @@
             "label": "메인보드 제조사 공식 사양",
             "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "boardColor",
+          "value": "white",
+          "source": {
+            "label": "제조사 화이트 모델 자료",
+            "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x",
+            "observedAt": "2026-11-27T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
         }
@@ -68604,7 +69598,28 @@
           "pricePage": "/prices/motherboard#gigabyte-b850m-force-gm4551356658"
         }
       ],
-      "facts": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B850M-FORCE-rev-10/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/B850M-FORCE-rev-10/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
       "referenceCode": "BD-3852579EB9"
     },
     {
@@ -68679,7 +69694,28 @@
           "pricePage": "/prices/motherboard#gigabyte-b850m-force-v2-gm4768647010"
         }
       ],
-      "facts": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/latam/Motherboard/B850M-FORCE-V2/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/latam/Motherboard/B850M-FORCE-V2/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
       "referenceCode": "BD-65AD07947D"
     },
     {
@@ -68742,6 +69778,12 @@
           "url": "https://www.gigabyte.com/Motherboard/X870-AORUS-ELITE-WIFI7-ICE-rev-10-11/sp",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "제조사 화이트 모델 자료",
+          "url": "https://www.gigabyte.com/Motherboard/X870-AORUS-ELITE-WIFI7-ICE-rev-10-11",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -68767,9 +69809,745 @@
             "observedAt": "2026-11-22T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "4",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/X870-AORUS-ELITE-WIFI7-ICE-rev-10-11/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.gigabyte.com/Motherboard/X870-AORUS-ELITE-WIFI7-ICE-rev-10-11/sp",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "boardColor",
+          "value": "white",
+          "source": {
+            "label": "제조사 화이트 모델 자료",
+            "url": "https://www.gigabyte.com/Motherboard/X870-AORUS-ELITE-WIFI7-ICE-rev-10-11",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
         }
       ],
       "referenceCode": "BD-8E057B5C65"
+    },
+    {
+      "id": "reviewed-msi-b850m-gaming-plus-wifi6e",
+      "name": "MSI B850M GAMING PLUS WIFI6E",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD B850",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD B850"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        },
+        {
+          "label": "무선랜",
+          "value": "Wi-Fi 6E"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/B850M-GAMING-PLUS-WIFI6E/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "제조사 화이트 모델 자료",
+          "url": "https://storage-asset.msi.com/specSheet/pl/mb/B850M%20GAMING%20PLUS%20WIFI6E.pdf",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "wireless",
+          "value": "present",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/B850M-GAMING-PLUS-WIFI6E/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/B850M-GAMING-PLUS-WIFI6E/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/B850M-GAMING-PLUS-WIFI6E/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "boardColor",
+          "value": "white",
+          "source": {
+            "label": "제조사 화이트 모델 자료",
+            "url": "https://storage-asset.msi.com/specSheet/pl/mb/B850M%20GAMING%20PLUS%20WIFI6E.pdf",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-F510E58ACD"
+    },
+    {
+      "id": "reviewed-msi-mag-b650m-mortar-wifi",
+      "name": "MSI MAG B650M MORTAR WIFI",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD B650",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD B650"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        },
+        {
+          "label": "무선랜",
+          "value": "Wi-Fi 6E"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/MAG-B650M-MORTAR-WIFI/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "wireless",
+          "value": "present",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B650M-MORTAR-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B650M-MORTAR-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B650M-MORTAR-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-2BD0D906B7"
+    },
+    {
+      "id": "reviewed-msi-mag-b850-tomahawk-max-wifi",
+      "name": "MSI MAG B850 TOMAHAWK MAX WIFI",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD B850",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD B850"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "ATX"
+        },
+        {
+          "label": "무선랜",
+          "value": "Wi-Fi 7"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/MAG-B850-TOMAHAWK-MAX-WIFI/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "wireless",
+          "value": "present",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B850-TOMAHAWK-MAX-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "4",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B850-TOMAHAWK-MAX-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B850-TOMAHAWK-MAX-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-FC89205446"
+    },
+    {
+      "id": "reviewed-msi-mag-b850m-mortar-max-wifi",
+      "name": "MSI MAG B850M MORTAR MAX WIFI",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD B850",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD B850"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        },
+        {
+          "label": "무선랜",
+          "value": "Wi-Fi 7"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/MAG-B850M-MORTAR-MAX-WIFI/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "wireless",
+          "value": "present",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B850M-MORTAR-MAX-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "4",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B850M-MORTAR-MAX-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B850M-MORTAR-MAX-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-C3BEBF7910"
+    },
+    {
+      "id": "reviewed-msi-mag-b860-tomahawk-wifi",
+      "name": "MSI MAG B860 TOMAHAWK WIFI",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "Intel B860",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "LGA1851"
+        },
+        {
+          "label": "칩셋",
+          "value": "Intel B860"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "ATX"
+        },
+        {
+          "label": "무선랜",
+          "value": "Wi-Fi 7"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/MAG-B860-TOMAHAWK-WIFI/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "wireless",
+          "value": "present",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B860-TOMAHAWK-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B860-TOMAHAWK-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B860-TOMAHAWK-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-471FBEAC6A"
+    },
+    {
+      "id": "reviewed-msi-mag-b860m-mortar-wifi",
+      "name": "MSI MAG B860M MORTAR WIFI",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "Intel B860",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "LGA1851"
+        },
+        {
+          "label": "칩셋",
+          "value": "Intel B860"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        },
+        {
+          "label": "무선랜",
+          "value": "Wi-Fi 7"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/MAG-B860M-MORTAR-WIFI/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "wireless",
+          "value": "present",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B860M-MORTAR-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B860M-MORTAR-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-B860M-MORTAR-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-2ADAB9C0E8"
+    },
+    {
+      "id": "reviewed-msi-mag-x870e-tomahawk-max-wifi",
+      "name": "MSI MAG X870E TOMAHAWK MAX WIFI",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD X870E",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD X870E"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "ATX"
+        },
+        {
+          "label": "무선랜",
+          "value": "Wi-Fi 7"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/MAG-X870E-TOMAHAWK-MAX-WIFI/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "wireless",
+          "value": "present",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-X870E-TOMAHAWK-MAX-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "4",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-X870E-TOMAHAWK-MAX-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/MAG-X870E-TOMAHAWK-MAX-WIFI/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-D7205DF581"
+    },
+    {
+      "id": "reviewed-msi-pro-b650m-p",
+      "name": "MSI PRO B650M-P",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "AMD B650",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "AM5"
+        },
+        {
+          "label": "칩셋",
+          "value": "AMD B650"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/PRO-B650M-P/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/PRO-B650M-P/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/PRO-B650M-P/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-7664DC304F"
     },
     {
       "id": "reviewed-mixed-motherboard-himart-0054257890",
@@ -68837,8 +70615,177 @@
       "reviewSummary": null,
       "reviewSources": [],
       "listings": [],
-      "facts": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "2",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/PRO-B760M-A-DDR4-II/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/PRO-B760M-A-DDR4-II/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
       "referenceCode": "BD-D5C6352B40"
+    },
+    {
+      "id": "reviewed-msi-pro-h610m-e-ddr4",
+      "name": "MSI PRO H610M-E DDR4",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "Intel H610",
+        "DDR4"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "LGA1700"
+        },
+        {
+          "label": "칩셋",
+          "value": "Intel H610"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR4"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/PRO-H610M-E-DDR4/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "1",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/PRO-H610M-E-DDR4/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/PRO-H610M-E-DDR4/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-73B75379B4"
+    },
+    {
+      "id": "reviewed-msi-pro-h810m-b",
+      "name": "MSI PRO H810M-B",
+      "brand": "MSI",
+      "category": "motherboard",
+      "subtype": "motherboard",
+      "kind": "source-reviewed-model",
+      "features": [
+        "Intel H810",
+        "DDR5"
+      ],
+      "specifications": [
+        {
+          "label": "CPU 소켓",
+          "value": "LGA1851"
+        },
+        {
+          "label": "칩셋",
+          "value": "Intel H810"
+        },
+        {
+          "label": "메모리 규격",
+          "value": "DDR5"
+        },
+        {
+          "label": "규격",
+          "value": "microATX"
+        }
+      ],
+      "description": "제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.",
+      "notes": [
+        "CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "unverified",
+      "manufacturerPartNumber": null,
+      "listObservedAt": null,
+      "sources": [
+        {
+          "label": "메인보드 제조사 확장 사양",
+          "url": "https://www.msi.com/Motherboard/PRO-H810M-B/Specification",
+          "observedAt": "2026-11-27T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
+        }
+      ],
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [],
+      "facts": [
+        {
+          "key": "nvmeSlots",
+          "value": "1",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/PRO-H810M-B/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "Intel",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://www.msi.com/Motherboard/PRO-H810M-B/Specification",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        }
+      ],
+      "referenceCode": "BD-0B99A47F1A"
     },
     {
       "id": "reviewed-nzxt-n7-b850-black",
@@ -68923,6 +70870,26 @@
             "label": "메인보드 제조사 공식 사양",
             "url": "https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs",
+            "observedAt": "2026-11-27T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
         }
@@ -69012,6 +70979,36 @@
             "label": "메인보드 제조사 공식 사양",
             "url": "https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs",
             "observedAt": "2026-11-22T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "nvmeSlots",
+          "value": "3",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "platform",
+          "value": "AMD",
+          "source": {
+            "label": "메인보드 제조사 확장 사양",
+            "url": "https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs",
+            "observedAt": "2026-11-27T00:00:00+09:00",
+            "kind": "manufacturer-specifications"
+          }
+        },
+        {
+          "key": "boardColor",
+          "value": "white",
+          "source": {
+            "label": "제조사 화이트 모델 자료",
+            "url": "https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs",
+            "observedAt": "2026-11-27T00:00:00+09:00",
             "kind": "manufacturer-specifications"
           }
         }
@@ -94782,16 +96779,16 @@
           "kind": "retailer-listing"
         },
         {
-          "label": "해당 모델 제조사 공식 사양",
-          "url": "https://www.samsung.com/sec/memory-storage/9100-pro-nvme-ssd/MZ-VAP1T0BW/",
-          "observedAt": "2026-11-22T00:00:00+09:00",
-          "kind": "manufacturer-specifications"
-        },
-        {
           "label": "11번가 실제 판매 구성·상태",
           "url": "https://www.11st.co.kr/products/8125841945",
           "observedAt": "2026-11-24T11:28:59.393Z",
           "kind": "retailer-listing"
+        },
+        {
+          "label": "해당 모델 제조사 공식 사양",
+          "url": "https://www.samsung.com/sec/memory-storage/9100-pro-nvme-ssd/MZ-VAP1T0BW/",
+          "observedAt": "2026-11-22T00:00:00+09:00",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,

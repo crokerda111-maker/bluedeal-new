@@ -20,6 +20,9 @@ import CaseOptionGallery from "../../../components/CaseOptionGallery";
 import { getProductBuyingNotes } from "../../../lib/productBuyingNotes";
 import { productMarketplaceLinks } from "../../../lib/productMarketplace";
 import MarketplacePriceLinks from "../../../components/MarketplacePriceLinks";
+import MotherboardExpansion from "../../../components/MotherboardExpansion";
+import MotherboardMedia from "../../../components/MotherboardMedia";
+import { asrockRyzen9000Advisory, getMotherboardExpansion, getMotherboardMedia } from "../../../lib/motherboardExpansion";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
@@ -42,6 +45,9 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const offers = data.items.filter(item => listingIds.has(item.id));
   const highlights = productHighlights(product, offers);
   const isSystem = product.category === "fullpc" || product.category === "halfpc";
+  const expansion = product.category === "motherboard" ? getMotherboardExpansion(product.id) : undefined;
+  const boardMedia = expansion ? getMotherboardMedia(product.id) : undefined;
+  const boardPlatform = expansion ? product.facts?.find(fact => fact.key === "platform")?.value : undefined;
   const board = product.category === "fullpc" ? buildFullPcBoard(data.items, now) : [];
   const fullPc = board.find(row => row.product.id === product.id);
   const configurationReview = fullPc?.review;
@@ -75,10 +81,12 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
     <header className={`bd-surface p-5 sm:p-7 ${photo ? "grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(17rem,0.7fr)]" : ""}`}>
       <div className="min-w-0">
       <div className="flex flex-wrap gap-2 text-xs"><span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-cyan-100">{productCategoryLabel(product.category)}</span><span className="rounded-full border border-white/15 px-3 py-1 text-white/75">{PRODUCT_KIND_LABELS[product.kind]}</span>{product.lifecycle === "listed-discontinued" ? <span className="rounded-full border border-amber-200/30 bg-amber-200/10 px-3 py-1 text-amber-100">제조사 단종 목록</span> : null}</div>
+      {boardPlatform ? <p className="mt-3 text-sm font-medium text-cyan-100">{boardPlatform === "Intel" ? "인텔" : boardPlatform} 보드{boardMedia?.white ? " · 화이트" : ""}</p> : null}
       <p className="mt-5 text-sm text-white/65">{product.brand}</p><h1 className="mt-2 break-words text-2xl font-semibold leading-relaxed tracking-tight sm:text-3xl">{product.name}</h1><p className="mt-4 max-w-3xl text-sm leading-7 text-white/75">{product.description}</p><p className="mt-3 text-xs text-white/55">상품 관리번호 {product.referenceCode}</p>
       {highlights.length ? <dl className="mt-5 grid max-w-3xl gap-2 sm:grid-cols-3">{highlights.map(({ key, label, value }) => <div key={key} className="rounded-xl border border-white/15 bg-slate-950/25 p-3" data-spec-summary={key}>
         <dt className="text-xs text-white/70">{label}</dt><dd className="mt-1 break-words font-semibold text-cyan-100">{value}</dd>
       </div>)}</dl> : null}
+      {expansion?.asrockAm5 || fullPc?.boardPurchaseHold ? <a href={expansion ? "#motherboard-expansion" : "#fullpc-configuration"} className="mt-3 inline-block rounded-lg border border-amber-200/30 bg-amber-200/5 px-3 py-2 text-sm font-medium text-amber-100 underline underline-offset-4">{asrockRyzen9000Advisory.title}</a> : null}
       <div className="mt-5 flex flex-wrap gap-3"><Link href={`/contact/write?from=products&product=${product.id}`} className="inline-flex min-h-11 items-center rounded-xl bg-cyan-200 px-4 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-100">상품 정보 수정·추가 요청</Link><Link href="/community/review" className="inline-flex min-h-11 items-center rounded-xl border border-white/20 px-4 py-3 text-sm text-white/80 hover:bg-white/10">사용기 게시판</Link></div>
       </div>
       {photo ? <div id="product-photo" className="min-w-0 scroll-mt-24">
@@ -87,6 +95,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
       </div> : null}
     </header>
 
+    {boardMedia ? <MotherboardMedia media={boardMedia} brand={product.brand} /> : null}
     {isSystem ? <section id="fullpc-configuration" className="bd-surface-md scroll-mt-24 space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-configuration-title">
       <h2 id="fullpc-configuration-title" className="text-xl font-semibold">{product.category === "fullpc" ? "완본체" : "반본체"} 기본 부품 구성</h2>
       {configurationReview && fullPc?.quality ? <FullPcConfiguration review={configurationReview} quality={fullPc.quality} /> : <PcSellerConfiguration product={product} />}
@@ -134,6 +143,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           </> : <p className="mt-4 text-sm leading-7 text-white/70">블루딜에 기록된 판매가는 아직 없습니다.</p>}
           <Link href={`/prices/${product.category}`} className="mt-4 inline-flex min-h-11 items-center text-sm text-cyan-200 underline">같은 부품의 다른 상품 비교</Link>
         </section>
+        {expansion ? <section id="motherboard-expansion" aria-labelledby="motherboard-expansion-title" className="bd-surface-md scroll-mt-24 space-y-3 p-5 sm:p-6">
+          <h2 id="motherboard-expansion-title" className="text-xl font-semibold">SSD 장착·슬롯 공유</h2>
+          <MotherboardExpansion profile={expansion} />
+        </section> : null}
         <section className="bd-surface-md p-5 sm:p-6"><h2 className="text-xl font-semibold">특징·상세 정보</h2>{product.features.length ? <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-white/80">{product.features.map(feature => <li key={feature}>{feature}</li>)}</ul> : <p className="mt-4 text-sm leading-7 text-white/70">추가 사양 자료를 확인하고 있습니다.</p>}
           {product.specifications.length ? <dl className="mt-5 divide-y divide-white/10 border-y border-white/10">{product.specifications.map(specification => <div key={`${specification.label}:${specification.value}`} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-4 py-3 text-sm"><dt className="text-white/60">{specification.label}</dt><dd className="break-words text-white/85">{specification.value}</dd></div>)}</dl> : null}
           {productNotes.length ? <div className="mt-5 rounded-xl border border-amber-200/25 bg-amber-200/5 p-4"><h3 className="text-sm font-semibold text-amber-100">옵션 확인사항</h3><ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-7 text-white/75">{productNotes.map(note => <li key={note}>{note}</li>)}</ul></div> : null}

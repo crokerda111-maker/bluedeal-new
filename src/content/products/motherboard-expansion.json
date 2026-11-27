@@ -1,0 +1,285 @@
+{
+  "checkedOn": "2026-11-27",
+  "boards": [
+    {
+      "ids": ["reviewed-asrock-b850m-pro-a-wifi"], "newModel": ["ASRock B850M Pro-A WiFi", "ASRock", "AM5", "AMD B850", "DDR5", "microATX", "Wi-Fi 6E"],
+      "aliases": ["ASRock B850M Pro-A WiFi"],
+      "source": "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Specification",
+      "slots": [["M2_1","CPU · PCIe 5.0 x4"],["M2_2","칩셋 · PCIe 4.0 x4"],["M2_3","CPU · PCIe 4.0 x4"]],
+      "sharing": "M2_3을 쓰면 보조 확장 슬롯 PCIE2가 꺼집니다. Ryzen 7000·9000의 그래픽카드용 PCIE1은 PCIe 5.0 x16입니다.",
+      "tip": "SSD 두 개는 M2_1 → M2_2 순으로 장착하면 보조 슬롯을 남길 수 있습니다. Ryzen 8000에서는 CPU 직결 슬롯의 속도가 달라집니다.",
+      "power": "제조사 표기 8+2+1페이즈 Dr.MOS.",
+      "bios": { "version": "4.60", "publishedOn": "2026-10-12", "source": "https://www.asrock.com/mb/amd/B850M%20Pro-A%20WiFi/bios.html" },
+      "asrockAm5": true
+    },
+    {
+      "ids": ["reviewed-gigabyte-b650m-k"], "newModel": ["GIGABYTE B650M K", "GIGABYTE", "AM5", "AMD B650", "DDR5", "microATX"],
+      "aliases": ["GIGABYTE B650M K", "GIGABYTE B650M K 피씨디렉트"],
+      "source": "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp", "revision": "공식 Rev. 1.0·1.1에서 아래 확장 사양 확인",
+      "slots": [["M2A_CPU","CPU · PCIe 4.0 x4/x2"],["M2B_CPU","CPU · PCIe 4.0 x4/x2"]],
+      "sharing": "Ryzen 7000·9000의 주 그래픽 슬롯은 PCIe 4.0 x16입니다. Ryzen 8000은 CPU에 따라 x8/x4입니다.",
+      "tip": "NVMe 두 자리를 모두 쓰면 기본 M.2 증설 자리가 남지 않습니다. 판매처에 기판 리비전을 확인하세요."
+    },
+    {
+      "ids": ["reviewed-gigabyte-b850-aorus-elite-x3d"], "newModel": ["GIGABYTE B850 AORUS ELITE X3D", "GIGABYTE", "AM5", "AMD B850", "DDR5", "ATX"],
+      "aliases": ["GIGABYTE B850 AORUS ELITE X3D"],
+      "source": "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-X3D/sp",
+      "slots": [["M2A_CPU","CPU · PCIe 5.0 x4/x2"],["M2B_CPU","CPU · PCIe 5.0 x4/x2"],["M2C_SB","칩셋 · PCIe 4.0 x4/x2"],["M2D_SB","칩셋 · PCIe 4.0 x4/x2"]],
+      "sharing": "M2D_SB에 SSD를 꽂으면 보조 PCIEX4가 꺼집니다. 주 그래픽 슬롯은 이 각주의 공유 대상이 아닙니다.",
+      "tip": "캡처 카드 등으로 보조 PCIEX4를 쓴다면 다른 M.2부터 채우세요. Ryzen 8000의 슬롯 배속은 CPU별로 확인하세요."
+    },
+    {
+      "ids": ["reviewed-gigabyte-b850-aorus-elite-p-ice"], "newModel": ["GIGABYTE B850 AORUS ELITE-P ICE", "GIGABYTE", "AM5", "AMD B850", "DDR5", "ATX"],
+      "source": "https://www.gigabyte.com/uk/Motherboard/B850-AORUS-ELITE-P-ICE/sp",
+      "slots": [["M2A_CPU","CPU · PCIe 5.0 x4/x2"],["M2B_CPU","CPU · PCIe 4.0 x4/x2"],["M2C_SB","칩셋 · PCIe 4.0 x4/x2"],["M2D_SB","칩셋 · PCIe 4.0 x4/x2"]],
+      "sharing": "M2D_SB를 사용하면 보조 PCIEX4가 꺼집니다.",
+      "tip": "ATX 모델입니다. 이름이 비슷한 B850M AORUS ELITE WIFI6E ICE와 장착 규격·슬롯 수가 다릅니다."
+    },
+    {
+      "ids": ["reviewed-asus-tuf-b850-plus-wifi"],
+      "aliases": ["ASUS TUF GAMING B850-PLUS WIFI 대원씨티에스", "ASUS TUF GAMING B850-PLUS WIFI"],
+      "source": "https://www.asus.com/uk/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/techspec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 4.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "M.2_3을 사용하면 보조 슬롯 PCIEX16(G4)이 꺼집니다.",
+      "tip": "Ryzen 7000·9000과 SSD 두 개를 쓴다면 M.2_1과 M.2_2를 먼저 쓰세요. Ryzen 8000은 CPU 직결 슬롯의 배속이 달라집니다."
+    },
+    {
+      "ids": ["reviewed-asus-tuf-b850m-plus-ii"],
+      "source": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850m-plus-ii/techspec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 4.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "Ryzen 8000에서는 M.2_1이 PCIe 4.0으로 동작하고 M.2_2의 배속은 CPU에 따라 x4/x2입니다.",
+      "tip": "microATX의 PLUS II 모델입니다. ATX B850-PLUS WIFI의 확장 슬롯 공유 조건을 그대로 적용하지 마세요."
+    },
+    {
+      "ids": ["reviewed-gigabyte-b850m-aorus-elite-wifi6e"],
+      "aliases": ["GIGABYTE B850M AORUS ELITE WIFI6E 피씨디렉트", "[GIGABYTE] B850M AORUS ELITE WIFI6E 제이씨현 (AMD B850/M-ATX)"],
+      "source": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-rev-1x/sp", "revision": "Rev. 1.x",
+      "slots": [["M2A_CPU","CPU · PCIe 5.0 x4/x2"],["M2B_CPU","CPU · PCIe 4.0 x4/x2"]],
+      "sharing": "Ryzen 7000·9000의 주 그래픽 슬롯은 PCIe 5.0 x16입니다. Ryzen 8000은 CPU에 따라 PCIe 4.0 x8/x4입니다.",
+      "tip": "기본 NVMe SSD가 하나라면 남는 M.2는 하나입니다. 보조 확장 슬롯은 PCIe 3.0 x4로 표기됩니다."
+    },
+    {
+      "ids": ["reviewed-gigabyte-b850m-aorus-elite-wifi6e-ice"],
+      "source": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp", "revision": "Rev. 1.x",
+      "slots": [["M2A_CPU","CPU · PCIe 5.0 x4/x2"],["M2B_CPU","CPU · PCIe 4.0 x4/x2"]],
+      "sharing": "Ryzen 7000·9000의 주 그래픽 슬롯은 PCIe 5.0 x16입니다. Ryzen 8000은 CPU에 따라 PCIe 4.0 x8/x4입니다.",
+      "tip": "M.2가 두 곳인 microATX ICE 모델입니다. ATX B850 AORUS ELITE-P ICE와 구분하세요."
+    },
+    {
+      "ids": ["reviewed-asus-rog-crosshair-x870e-hero"], "newModel": ["ASUS ROG CROSSHAIR X870E HERO", "ASUS", "AM5", "AMD X870E", "DDR5", "ATX", "Wi-Fi 7"],
+      "source": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-hero/spec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 5.0 x4"],["M.2_3","CPU · PCIe 5.0 x4"],["M.2_4","칩셋 · PCIe 4.0 x4"],["M.2_5","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "Ryzen 7000·9000에서 M.2_2 또는 M.2_3을 켜면 주 그래픽 슬롯은 x8입니다. M.2_2가 켜지면 보조 PCIEX16_2는 꺼지고, M.2_3만 켜면 보조 슬롯은 x4입니다.",
+      "tip": "주 GPU를 x16으로 쓰려면 M.2_1과 칩셋 쪽 M.2_4·M.2_5부터 고려하세요. Ryzen 8000은 M.2_2·M.2_3을 지원하지 않습니다."
+    },
+    {
+      "ids": ["reviewed-asus-rog-crosshair-x870e-apex"], "source": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-apex/spec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 5.0 x4"],["M.2_3","CPU · PCIe 5.0 x4"],["DIMM.2_1","전용 카드 · PCIe 4.0 x4"],["DIMM.2_2","전용 카드 · PCIe 4.0 x4"]],
+      "sharing": "Ryzen 7000·9000에서 M.2_2 또는 M.2_3 사용 시 주 그래픽 슬롯은 x8입니다. Ryzen 8000에서는 M.2_2와 M.2_3이 비활성입니다.",
+      "tip": "NVMe 최대 5개 중 두 자리는 ROG DIMM.2 카드에 있습니다. 박스 구성과 설치 위치를 확인하세요."
+    },
+    {
+      "ids": ["reviewed-asus-rog-maximus-z890-apex"], "source": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/spec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 4.0 x4"],["M.2_3","CPU · PCIe 5.0 x4"],["M.2_4","CPU · PCIe 5.0 x4"],["DIMM.2_1","전용 카드 · PCIe 4.0 x4"],["DIMM.2_2","전용 카드 · PCIe 4.0 x4"]],
+      "sharing": "M.2_3을 쓰면 주 그래픽 슬롯 x8·보조 x4입니다. M.2_3과 M.2_4를 같이 쓰면 주 슬롯 x8·보조 슬롯 비활성입니다.",
+      "tip": "NVMe 최대 6개 중 두 자리는 ROG DIMM.2 카드에 있습니다. 주 GPU를 x16으로 유지하려면 슬롯별 조합을 먼저 확인하세요."
+    },
+    {
+      "ids": ["reviewed-asus-rog-strix-b850-e-gaming-wifi"], "source": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b850-e-gaming-wifi/spec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 5.0 x4"],["M.2_3","CPU · PCIe 5.0 x4"],["M.2_4","칩셋 · PCIe 4.0 x4"],["M.2_5","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "Ryzen 7000·9000에서 M.2_2나 M.2_3을 쓰면 주 그래픽 슬롯이 x8입니다. 보조 PCIEX16(G4)을 사용하면 M.2_4가 꺼집니다.",
+      "tip": "SSD만 추가할 때는 M.2_1·M.2_5를 우선 고려하세요. Ryzen 8000은 M.2_2·M.2_3을 지원하지 않습니다."
+    },
+    {
+      "ids": ["reviewed-asus-rog-strix-b860-g-gaming-wifi"],
+      "aliases": ["[ASUS] ROG STRIX B860-G GAMING WIFI 코잇 (인텔B860/M-ATX)"],
+      "source": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/spec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","칩셋 · PCIe 4.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"],["M.2_4","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "M.2_1은 CPU 직결이고 나머지 세 곳은 B860 칩셋 연결입니다.",
+      "tip": "PCIe 5.0 SSD는 M.2_1에서 제 속도 규격을 쓸 수 있습니다. CPU 지원표에서 정확한 모델과 BIOS를 확인하세요."
+    },
+    {
+      "ids": ["reviewed-asus-rog-strix-x870-i-gaming-wifi"], "source": "https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/spec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "Ryzen 8000에서 M.2_1은 PCIe 4.0 x4이며 주 그래픽 슬롯 배속은 CPU에 따라 x8/x4입니다.",
+      "tip": "SATA 포트 두 개를 쓰려면 ROG FPS Card를 장착해야 합니다. 소형 케이스는 카드와 케이블 공간도 확인하세요."
+    },
+    {
+      "ids": ["reviewed-asus-tuf-b650em-e-wifi"], "source": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b650em-e-wifi/techspec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 4.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "Ryzen 8000에서는 M.2_1이 PCIe 4.0 x4, M.2_2는 CPU에 따라 PCIe 4.0 x4/x2입니다.",
+      "tip": "PCIe 5.0 SSD를 쓰면 Ryzen 7000·9000 구성에서 M.2_1을 먼저 확인하세요."
+    },
+    {
+      "ids": ["reviewed-asus-tuf-b850-pro-wifi7-w-neo"], "source": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/techspec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 4.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "M.2_3과 보조 PCIEX16(G4)을 동시에 쓰면 기본 설정에서 둘 다 PCIe 4.0 x2입니다. 한쪽만 쓰면 x4입니다.",
+      "tip": "보조 확장카드에 x4가 필요하면 M.2_1·M.2_2를 먼저 쓰고 BIOS의 공유 설정을 확인하세요."
+    },
+    {
+      "ids": ["reviewed-asus-tuf-x870-plus-wifi"], "source": "https://dlcdnets.asus.com/pub/ASUS/mb/SocketAM5/TUF_GAMING_X870-PLUS_WIFI/E24080_TUF_GAMING_X870-PLUS_WIFI_EM_WEB.pdf",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 5.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"],["M.2_4","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "공식 매뉴얼 기준 M.2_2가 동작하면 주 그래픽 슬롯이 x8입니다.",
+      "tip": "주 GPU의 x16을 유지하려면 M.2_1과 칩셋 쪽 M.2_3·M.2_4를 먼저 검토하세요."
+    },
+    {
+      "ids": ["reviewed-asus-tuf-x870e-plus-wifi7"], "source": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-x870e-plus-wifi7/techspec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 5.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"],["M.2_4","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "Ryzen 7000·9000에서 M.2_2를 x4로 쓰면 주 그래픽 슬롯이 x8입니다. Ryzen 8000은 M.2_2를 지원하지 않습니다.",
+      "tip": "주 GPU의 x16이 중요하면 M.2_1·M.2_3·M.2_4부터 확인하세요."
+    },
+    {
+      "ids": ["reviewed-asrock-b860m-livemixer-wifi"], "source": "https://asrock.com/MB/Intel/B860M%20LiveMixer%20WiFi/index.asp#Specification",
+      "slots": [["M2_1","CPU · PCIe 5.0 x4"],["M2_2","칩셋 · PCIe 4.0 x4"],["M2_3","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "CPU 직결 M2_1 한 곳, 칩셋 M2_2·M2_3 두 곳입니다.",
+      "tip": "NVMe 부팅은 지원됩니다. Windows 설치에서 SSD가 보이지 않으면 보드 매뉴얼의 Intel VMD 설정과 드라이버를 확인하세요.",
+      "power": "제조사 표기 10+1+1+1+1페이즈, VCore·GT·SA에 Dr.MOS 적용."
+    },
+    {
+      "ids": ["reviewed-colorful-battle-ax-a520m-k-m2-v14"], "source": "https://www.colorful.cn/home/product?id=4ab59267-b61f-4e9e-ba6e-f7533f24d786&mid=84",
+      "slots": [["M.2 SSD","PCIe 3.0 x4"]], "revision": "V14",
+      "sharing": "제조사 페이지에 PCIe 3.0 x4 M.2 SSD 슬롯 한 개가 표시됩니다.",
+      "tip": "추가 NVMe가 필요한 구성이라면 슬롯 한 개가 구매 결정에 중요합니다. 비슷한 A520M-K PRO와 사양을 구분하세요."
+    },
+    {
+      "ids": ["reviewed-gigabyte-b760m-aorus-elite-d4"], "source": "https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-rev-1x/sp", "revision": "Rev. 1.x",
+      "slots": [["M2A_CPU","CPU · PCIe 4.0 x4/x2"],["M2P_SB","칩셋 · PCIe 4.0 x4/x2"]],
+      "sharing": "주 그래픽 슬롯은 PCIe 4.0 x16이고 보조 PCIEX4는 PCIe 4.0 x4입니다.",
+      "tip": "M.2 두 곳은 PCIe 4.0입니다. 이름에 GEN5가 붙은 모델과 주 그래픽 슬롯 세대가 다릅니다."
+    },
+    {
+      "ids": ["reviewed-gigabyte-b760m-aorus-elite-d4-gen5"], "source": "https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-GEN5/sp",
+      "slots": [["M2A_CPU","CPU · PCIe 4.0 x4/x2"],["M2P_SB","칩셋 · PCIe 4.0 x4/x2"]],
+      "sharing": "주 그래픽 슬롯은 PCIe 5.0 x16이고 보조 PCIEX4는 PCIe 4.0 x4입니다.",
+      "tip": "GEN5 표기는 주 그래픽 슬롯에 해당합니다. 두 M.2는 PCIe 4.0을 지원합니다."
+    },
+    {
+      "ids": ["reviewed-gigabyte-b850m-force"], "source": "https://www.gigabyte.com/Motherboard/B850M-FORCE-rev-10/sp", "revision": "Rev. 1.0",
+      "slots": [["M2A_CPU","CPU · PCIe 5.0 x4/x2"],["M2B_CPU","CPU · PCIe 4.0 x4/x2"],["M2C_SB","칩셋 · PCIe 4.0 x2"]],
+      "sharing": "세 번째 M.2인 M2C_SB의 최대 배속은 x2입니다. CPU 직결 슬롯 사양은 Ryzen 세대에 따라 달라집니다.",
+      "tip": "동일한 PCIe 4.0 SSD라도 빠른 작업용 드라이브는 x4 지원 자리부터 배치하세요."
+    },
+    {
+      "ids": ["reviewed-gigabyte-b850m-force-v2"], "source": "https://www.gigabyte.com/latam/Motherboard/B850M-FORCE-V2/sp",
+      "slots": [["M2A_CPU","CPU · PCIe 5.0 x4/x2"],["M2B_CPU","CPU · PCIe 4.0 x4/x2"],["M2C_SB","칩셋 · PCIe 4.0 x2"]],
+      "sharing": "V2 공식 사양에도 세 번째 슬롯 M2C_SB는 PCIe 4.0 x2로 표기됩니다.",
+      "tip": "CPU 세대별 배속을 V2 사양에서 대조하고, BIOS와 매뉴얼도 V2 모델용을 사용하세요."
+    },
+    {
+      "ids": ["reviewed-gigabyte-x870-aorus-elite-wifi7-ice"], "source": "https://www.gigabyte.com/Motherboard/X870-AORUS-ELITE-WIFI7-ICE-rev-10-11/sp", "revision": "Rev. 1.0·1.1",
+      "slots": [["M2A_CPU","CPU · PCIe 5.0 x4/x2"],["M2B_CPU","CPU · PCIe 5.0 x4/x2"],["M2C_CPU","CPU · PCIe 5.0 x4/x2"],["M2D_SB","칩셋 · PCIe 4.0 x4/x2"]],
+      "sharing": "M2B_CPU·M2C_CPU 중 한 곳을 쓰면 주 그래픽 슬롯이 최대 x8입니다. M2D_SB를 쓰면 보조 PCIEX4가 꺼집니다.",
+      "tip": "주 GPU x16을 유지하려면 M2A_CPU와 M2D_SB를 검토하세요. 보조 PCIEX4도 필요하다면 조합을 따로 확인하세요. Ryzen 8000에서 M2B·M2C는 비활성입니다."
+    },
+    {
+      "ids": ["reviewed-mixed-motherboard-himart-0054257890"], "source": "https://www.msi.com/Motherboard/PRO-B760M-A-DDR4-II/Specification",
+      "slots": [["M.2_1","CPU · PCIe 4.0 x4"],["M.2_2","칩셋 · PCIe 4.0 x4 또는 SATA M.2"]],
+      "sharing": "M.2_2에 SATA 방식 M.2 SSD를 꽂으면 SATA8 포트가 꺼집니다.",
+      "tip": "M.2의 외형이 같아도 NVMe와 SATA 방식이 다릅니다. SATA 저장장치가 여러 개면 연결 포트를 확인하세요."
+    },
+    {
+      "ids": ["reviewed-nzxt-n7-b850-black","reviewed-nzxt-n7-b850-white"], "source": "https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs",
+      "slots": [["M2_1","CPU · PCIe 5.0 x4"],["M2_2","CPU · PCIe 4.0 x4"],["M2_3","칩셋 · PCIe 4.0 x2"]],
+      "sharing": "세 번째 M.2의 최대 배속은 x2입니다. Wi-Fi용 E-Key 소켓은 SSD 개수에 포함되지 않습니다.",
+      "tip": "고속 작업용 SSD에는 위쪽 x4 지원 자리를 우선 검토하세요."
+    },
+    {
+      "ids": ["reviewed-msi-pro-b650m-p"], "newModel": ["MSI PRO B650M-P", "MSI", "AM5", "AMD B650", "DDR5", "microATX"],
+      "aliases": ["[MSI] PRO B650M-P (AMD B650/M-ATX)"],
+      "source": "https://www.msi.com/Motherboard/PRO-B650M-P/Specification",
+      "slots": [["M.2_1","CPU · PCIe 4.0 x4"],["M.2_2","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "주 그래픽 슬롯은 Ryzen 7000·9000에서 PCIe 4.0 x16입니다. Ryzen 8700·8600·8400은 x8, 8500·8300은 x4입니다.",
+      "tip": "NVMe 슬롯 두 곳을 이미 사용한다면 추가 NVMe 장착을 따로 계획해야 합니다."
+    },
+    {
+      "ids": ["reviewed-msi-mag-b650m-mortar-wifi"], "newModel": ["MSI MAG B650M MORTAR WIFI", "MSI", "AM5", "AMD B650", "DDR5", "microATX", "Wi-Fi 6E"],
+      "aliases": ["[MSI] MAG B650M 박격포 WIFI (AMD B650/M-ATX)"],
+      "source": "https://www.msi.com/Motherboard/MAG-B650M-MORTAR-WIFI/Specification",
+      "slots": [["M.2_1","CPU · PCIe 4.0 x4"],["M.2_2","CPU · PCIe 4.0 x4"]],
+      "sharing": "Ryzen 8500·8300에서는 M.2_2가 비활성입니다. Ryzen 7000·9000의 주 그래픽 슬롯은 PCIe 4.0 x16입니다.",
+      "tip": "Ryzen 7000 구성과 8500·8300 구성의 SSD 증설 가능 개수를 구분하세요."
+    },
+    {
+      "ids": ["reviewed-msi-mag-b850m-mortar-max-wifi"], "newModel": ["MSI MAG B850M MORTAR MAX WIFI", "MSI", "AM5", "AMD B850", "DDR5", "microATX", "Wi-Fi 7"],
+      "aliases": ["[MSI] MAG B850M 박격포 맥스 WIFI7 (AMD B850/M-ATX)"],
+      "source": "https://www.msi.com/Motherboard/MAG-B850M-MORTAR-MAX-WIFI/Specification",
+      "revision": "Rev. 1·2 공통 슬롯·대역폭",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 5.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"],["M.2_4","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "Ryzen 7000·9000에서 M.2_1·M.2_2를 x4로 쓰면서 주 그래픽 슬롯 x16을 유지할 수 있습니다. Ryzen 8500·8300에서는 M.2_2가 PCIe 4.0 x2입니다.",
+      "tip": "microATX에 NVMe 네 곳을 지원합니다. PCIe 확장 슬롯은 그래픽카드용 한 곳이므로 캡처 카드나 별도 랜카드를 추가할 계획이면 확인하세요.",
+      "power": "제조사 Rev. 1·2 표기 모두 14+2+1 Duet Rail, 80A SPS."
+    },
+    {
+      "ids": ["reviewed-msi-mag-b850-tomahawk-max-wifi"], "newModel": ["MSI MAG B850 TOMAHAWK MAX WIFI", "MSI", "AM5", "AMD B850", "DDR5", "ATX", "Wi-Fi 7"],
+      "source": "https://www.msi.com/Motherboard/MAG-B850-TOMAHAWK-MAX-WIFI/Specification",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 5.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x2"],["M.2_4","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "M.2_3을 사용하면 하단 PCI_E3이 x2로 동작합니다. BIOS에서 PCI_E3을 x4로 지정하면 M.2_3이 꺼집니다.",
+      "tip": "Ryzen 7000·9000에서 SSD 두 개는 M.2_1·M.2_2에 꽂고 주 그래픽 슬롯을 x16으로 유지할 수 있습니다.",
+      "power": "제조사 표기 14+2+1 Duet Rail, 80A SPS."
+    },
+    {
+      "ids": ["reviewed-msi-mag-x870e-tomahawk-max-wifi"], "newModel": ["MSI MAG X870E TOMAHAWK MAX WIFI", "MSI", "AM5", "AMD X870E", "DDR5", "ATX", "Wi-Fi 7"],
+      "aliases": ["[MSI] MAG X870E 토마호크 맥스 WIFI (AMD X870E/ATX)"],
+      "source": "https://www.msi.com/Motherboard/MAG-X870E-TOMAHAWK-MAX-WIFI/Specification",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · 최대 PCIe 5.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"],["M.2_4","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "M.2_2와 후면 USB 40Gbps는 대역폭을 공유합니다. M.2_2 장착 시 기본적으로 각각 x2이며 BIOS에서 M.2_2를 x4로 지정하면 후면 USB 40Gbps가 꺼집니다.",
+      "tip": "USB4 독을 자주 쓰면 M.2_1이나 칩셋 쪽 M.2부터 검토하세요. Ryzen 8500·8300은 M.2_2를 지원하지 않습니다."
+    },
+    {
+      "ids": ["reviewed-gigabyte-b760m-d2hx-lite-si-gen5"], "newModel": ["GIGABYTE B760M D2HX LITE SI GEN5", "GIGABYTE", "LGA1700", "Intel B760", "DDR5", "microATX"],
+      "aliases": ["GIGABYTE B760M D2HX LITE SI GEN5 Bulk"],
+      "source": "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5/sp",
+      "slots": [["M2A_CPU","CPU · PCIe 4.0 x4/x2"],["M2P_SB","칩셋 · PCIe 4.0 x4/x2"]],
+      "sharing": "주 그래픽 슬롯은 PCIe 5.0 x16이지만 SSD용 M.2 두 곳은 PCIe 4.0입니다.",
+      "tip": "DDR5 슬롯은 두 개입니다. 완본체 벌크 제품은 보드 단품과 별도로 시스템 업체의 A/S 조건을 확인하세요."
+    },
+    {
+      "ids": ["reviewed-asus-prime-b860m-a-csm"], "newModel": ["ASUS PRIME B860M-A-CSM", "ASUS", "LGA1851", "Intel B860", "DDR5", "microATX"],
+      "aliases": ["[ASUS] PRIME B860M-A-CSM 코잇 (인텔B860/M-ATX)"],
+      "source": "https://www.asus.com/motherboards-components/motherboards/csm/prime-b860m-a-csm/techspec/",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "주 그래픽 슬롯은 PCIe 5.0 x16이며 추가 x16 규격 슬롯은 PCIe 4.0 x4입니다.",
+      "tip": "PCIe 5.0 SSD는 M.2_1을 먼저 고려하세요. CSM 모델의 CPU 지원표에서 필요한 BIOS 버전을 확인하세요."
+    },
+    {
+      "ids": ["reviewed-msi-b850m-gaming-plus-wifi6e"], "newModel": ["MSI B850M GAMING PLUS WIFI6E", "MSI", "AM5", "AMD B850", "DDR5", "microATX", "Wi-Fi 6E"],
+      "aliases": ["[MSI] B850M 게이밍 플러스 WIFI6E (AMD B850/M-ATX)"],
+      "source": "https://www.msi.com/Motherboard/B850M-GAMING-PLUS-WIFI6E/Specification",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","CPU · PCIe 4.0 x4"]],
+      "sharing": "주 그래픽 슬롯 PCI_E2는 Ryzen 7000·9000에서 PCIe 4.0 x16입니다. Ryzen 8500·8300에서 M.2_2는 PCIe 4.0 x2입니다.",
+      "tip": "PCIe 5.0 SSD 지원과 주 그래픽 슬롯의 PCIe 세대를 구분하세요. 두 번째 SSD의 방열판 높이는 매뉴얼을 확인하세요."
+    },
+    {
+      "ids": ["reviewed-msi-pro-h610m-e-ddr4"], "newModel": ["MSI PRO H610M-E DDR4", "MSI", "LGA1700", "Intel H610", "DDR4", "microATX"],
+      "aliases": ["[MSI] PRO H610M-E DDR4 (인텔H610/M-ATX)"],
+      "source": "https://www.msi.com/Motherboard/PRO-H610M-E-DDR4/Specification",
+      "slots": [["M.2 SSD","칩셋 · PCIe 3.0 x4 또는 SATA M.2"]],
+      "sharing": "NVMe와 SATA M.2를 지원하는 저장장치 슬롯이 한 개입니다.",
+      "tip": "기본 SSD가 이 슬롯을 쓰고 있으면 두 번째 M.2 자리가 없습니다. DDR4 메모리 슬롯도 두 개입니다."
+    },
+    {
+      "ids": ["reviewed-msi-mag-b860m-mortar-wifi"], "newModel": ["MSI MAG B860M MORTAR WIFI", "MSI", "LGA1851", "Intel B860", "DDR5", "microATX", "Wi-Fi 7"],
+      "aliases": ["[MSI] MAG B860M 박격포 WIFI (인텔B860/M-ATX)"],
+      "source": "https://www.msi.com/Motherboard/MAG-B860M-MORTAR-WIFI/Specification",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","칩셋 · PCIe 4.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "주 그래픽 슬롯은 CPU 직결 PCIe 5.0 x16이고 보조 슬롯은 칩셋 PCIe 4.0 x4입니다.",
+      "tip": "고속 NVMe는 M.2_1부터 검토하고, 높이가 큰 SSD 방열판은 매뉴얼의 장착 제한을 확인하세요."
+    },
+    {
+      "ids": ["reviewed-msi-mag-b860-tomahawk-wifi"], "newModel": ["MSI MAG B860 TOMAHAWK WIFI", "MSI", "LGA1851", "Intel B860", "DDR5", "ATX", "Wi-Fi 7"],
+      "aliases": ["[MSI] MAG B860 토마호크 WIFI (인텔B860/ATX)"],
+      "source": "https://www.msi.com/Motherboard/MAG-B860-TOMAHAWK-WIFI/Specification",
+      "slots": [["M.2_1","CPU · PCIe 5.0 x4"],["M.2_2","칩셋 · PCIe 4.0 x4"],["M.2_3","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "PCI_E2를 쓰면 보조 PCI_E3이 x2로 동작합니다. M.2_2에 22110 SSD를 끼우면 M.2_3은 2242·2260 길이만 장착할 수 있습니다.",
+      "tip": "M.2_3에 일반 2280 SSD를 쓴다면 M.2_2에 22110을 장착하는 조합을 피하세요."
+    },
+    {
+      "ids": ["reviewed-msi-pro-h810m-b"], "newModel": ["MSI PRO H810M-B", "MSI", "LGA1851", "Intel H810", "DDR5", "microATX"],
+      "aliases": ["[MSI] PRO H810M-B (인텔H810/M-ATX)"],
+      "source": "https://www.msi.com/Motherboard/PRO-H810M-B/Specification",
+      "slots": [["M.2_1","칩셋 · PCIe 4.0 x4"]],
+      "sharing": "그래픽카드용 PCI_E1은 PCIe 5.0 x16, SSD용 M.2는 PCIe 4.0 x4 한 곳입니다.",
+      "tip": "기본 NVMe가 들어간 완본체라면 기본 M.2 증설 자리가 없습니다. 다른 저장장치 연결과 DDR5 슬롯 두 개를 함께 확인하세요."
+    }
+  ]
+}

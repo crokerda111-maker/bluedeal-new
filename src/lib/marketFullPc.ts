@@ -12,6 +12,7 @@ import { OUTBOUND_LINKS } from "./outbound";
 import { pcCatalogConfiguration } from "./pcCatalogConfiguration";
 import type { CatalogProduct } from "./productCatalog";
 import type { ProductPhoto } from "./productEditorial";
+import { getBoardPartExpansion, hasAsrockRyzen9000Advisory } from "./motherboardExpansion";
 
 const marketplaceReviews: readonly FullPcReview[] = reviews.filter(review => !review.configuration);
 const catalogFullPcs = CATALOG_PRODUCTS.filter(product => product.category === "fullpc");
@@ -95,6 +96,7 @@ export type FullPcBoardRow = {
   total: number | null;
   checkedToday: boolean;
   unavailable: boolean;
+  boardPurchaseHold: boolean;
   comparison: string | null;
   placement?: RankedPick;
   savings?: { amount: number; percent: number };
@@ -121,6 +123,8 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
     const review = getMarketplaceFullPcReview(product.id);
     const specs = review ? [] : pcCatalogConfiguration(product);
     const cpu = review?.parts.cpu ?? specs.find(field => field.key === "cpu" && field.values.length === 1)?.values[0];
+    const boardName = review?.parts.board ?? specs.find(field => field.key === "board" && field.values.length === 1)?.values[0];
+    const boardPurchaseHold = !review?.configurationConflict && hasAsrockRyzen9000Advisory(boardName ? getBoardPartExpansion(boardName) : undefined, cpu);
     const gpu = review?.parts.gpu ?? specs.find(field => field.key === "gpu" && field.values.length === 1)?.values[0];
     const tier = fullPcTier(fullPcGpuChip(gpu ?? product.name, !review));
     const offer = verifiedOffer?.offer ?? product.listings.map(listing => prices.get(listing.id))
@@ -137,10 +141,10 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
         : verifiedOffer.hold ?? (comparison ? null : "CPU·GPU·VRAM·운영체제 확인 필요")
     );
     const savings = verifiedOffer?.savings ?? undefined;
-    const recommendation = comparison && quality?.score != null && savings && savings.amount > 0 ? savings : undefined;
+    const recommendation = !boardPurchaseHold && comparison && quality?.score != null && savings && savings.amount > 0 ? savings : undefined;
     return { product, review, offer, cpu, gpu, tier, quality,
       total: deliveredTotal(offer), checkedToday: !!offer?.checkedAt && isPcToday(offer.checkedAt, now),
-      unavailable, comparison, priceHold, savings, recommendation, merchant: verifiedOffer?.merchant };
+      unavailable, boardPurchaseHold, comparison, priceHold, savings, recommendation, merchant: verifiedOffer?.merchant };
   });
 
   for (const group of groupComparableFullPcs(rows).values()) {
@@ -152,7 +156,7 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
       row.priceComparison = { points: fullPcPricePoints(total, lowest), lowest, count: priced.length };
     }
 
-    const ranked = rankComparableFullPcs(priced.flatMap(({ row, total }) => row.quality?.score == null ? [] :
+    const ranked = rankComparableFullPcs(priced.flatMap(({ row, total }) => row.boardPurchaseHold || row.quality?.score == null ? [] :
       [{ id: row.product.id, row, score: row.quality.score / 40 * 100, total }]), lowest);
     if (ranked.length) {
       ranked.forEach(({ candidate, points }, index) => { candidate.row.placement = { rank: index + 1, mode: "score", points }; });
@@ -176,7 +180,7 @@ export function orderFullPcBoard(a: FullPcBoardRow, b: FullPcBoardRow) {
 
 export function homeFullPcCandidates(rows: readonly FullPcBoardRow[], tier: FullPcBoardRow["tier"]) {
   const candidates = rows.flatMap(row => {
-    if (row.tier !== tier || row.unavailable || !row.offer) return [];
+    if (row.tier !== tier || row.unavailable || row.boardPurchaseHold || !row.offer) return [];
     const { excluded, preferred } = fullPcBestCpu(row.cpu, row.product.name);
     return excluded ? [] : [{ row, preferred }];
   });

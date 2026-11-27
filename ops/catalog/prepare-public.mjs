@@ -60,6 +60,39 @@ for (const filename of ['component-specifications-reviewed.json', 'component-spe
     }
   }
 }
+const { checkedOn: expansionCheckedOn, boards } = JSON.parse(await fs.readFile(path.join(root, 'src/content/products/motherboard-expansion.json'), 'utf8'));
+const boardMedia = JSON.parse(await fs.readFile(path.join(root, 'src/content/products/motherboard-media.json'), 'utf8'));
+for (const { ids, source: url, slots, newModel } of boards) {
+  const source = { label: '메인보드 제조사 확장 사양', url, observedAt: `${expansionCheckedOn}T00:00:00+09:00`, kind: 'manufacturer-specifications' };
+  if (newModel) {
+    const [name, brand, socket, chipset, memory, formFactor, wifi] = newModel;
+    base.products.push({
+      id: ids[0], name, brand, category: 'motherboard', subtype: 'motherboard', kind: 'source-reviewed-model',
+      features: [chipset, memory],
+      specifications: [['CPU 소켓', socket], ['칩셋', chipset], ['메모리 규격', memory], ['규격', formFactor],
+        ...(wifi ? [['무선랜', wifi]] : [])].map(([label, value]) => ({ label, value })),
+      description: '제조사 자료에서 소켓과 메모리 규격, NVMe 슬롯 및 확장 조건을 확인한 메인보드입니다.',
+      notes: ['CPU 지원표에서 정확한 모델과 필요한 BIOS 버전을 확인하세요.'],
+      lifecycle: 'unknown', domesticState: 'unverified', manufacturerPartNumber: null, listObservedAt: null,
+      sources: [source], strengths: [], issues: [], reviewSummary: null, reviewSources: [], listings: [],
+      facts: wifi ? [{ key: 'wireless', value: 'present', source }] : [],
+    });
+  }
+  for (const id of ids) {
+    const product = base.products.find(item => item.id === id && item.category === 'motherboard');
+    if (!product || !slots.length || product.facts?.some(fact => fact.key === 'nvmeSlots')) throw new Error('INVALID_MOTHERBOARD_EXPANSION_MODEL');
+    const platform = product.specifications.find(spec => spec.label === '칩셋')?.value.match(/^(AMD|Intel)\b/)?.[1];
+    if (!platform) throw new Error(`UNVERIFIED_MOTHERBOARD_PLATFORM ${id}`);
+    product.facts = [...(product.facts ?? []), { key: 'nvmeSlots', value: String(slots.length), source }, { key: 'platform', value: platform, source }];
+    if (!product.sources.some(item => item.url === url)) product.sources.push(source);
+    const media = boardMedia[id];
+    if (media?.white) {
+      const colorSource = { ...source, label: '제조사 화이트 모델 자료', url: media.colorSource };
+      product.facts.push({ key: 'boardColor', value: 'white', source: colorSource });
+      if (!product.sources.some(item => item.url === colorSource.url)) product.sources.push(colorSource);
+    }
+  }
+}
 const retailPrices = await Promise.all(['ram','cpu','ssd','motherboard','gpu','cooler','psu','case','hdd','halfpc','fullpc','bundle'].map(key => fs.readFile(path.join(root,'src/content/prices',key+'.json'),'utf8').then(JSON.parse)));
 base.products = linkDistributorOffers(base.products, retail.links, retailPrices);
 base.products.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name, 'ko'));

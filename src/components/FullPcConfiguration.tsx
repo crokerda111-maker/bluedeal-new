@@ -2,7 +2,9 @@ import { PC_PARTS, type PcSlot } from "../lib/dailyPc";
 import { separatePcTotal, type FullPcReview } from "../lib/fullPcReview";
 import type { assessMarketplaceFullPc } from "../lib/marketplacePcQuality";
 import { getPartEditorial } from "../lib/productEditorial";
+import { asrockRyzen9000Advisory, getBoardPartExpansion, hasAsrockRyzen9000Advisory } from "../lib/motherboardExpansion";
 import { fmtWon, formatPriceTime } from "./PriceOffer";
+import MotherboardExpansion from "./MotherboardExpansion";
 
 const sourceStyle = "text-cyan-200 underline underline-offset-4";
 
@@ -31,9 +33,10 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
       <div className="divide-y divide-white/10 rounded-xl border border-white/15 bg-slate-950/25">
         {quality.slots.map(({ slot, points, checked, failed, criteria, facts, attention }) => {
           const editorial = getPartEditorial(review.parts[slot]);
+          const board = slot === "board" && !review.configurationConflict ? getBoardPartExpansion(review.parts.board) : undefined;
           const state = failed.length ? "절충 사양" : points >= 4 ? "검증 양호" : "근거 부족";
           const stateColor = failed.length ? "text-amber-100" : points >= 4 ? "text-cyan-100" : "text-white/70";
-          const summary = attention ?? (failed.length ? `미충족 · ${failed.map(item => item.label).join(", ")}` :
+          const summary = hasAsrockRyzen9000Advisory(board, review.parts.cpu) ? asrockRyzen9000Advisory.title : board?.sharing ?? attention ?? (failed.length ? `미충족 · ${failed.map(item => item.label).join(", ")}` :
             facts.find(item => item.evidence && (item.label === "게이밍 등급" || item.label === "제조사 라인업"))?.evidence?.[0]);
           return <details key={slot} data-part-quality={slot} className="group">
             <summary className="grid min-w-0 cursor-pointer list-none grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-1 px-3 py-3 focus-visible:outline focus-visible:outline-cyan-200 sm:px-4">
@@ -44,16 +47,17 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
             <div className="space-y-3 border-t border-white/10 px-3 py-3 sm:px-4">
               {slot !== "cpu" && slot !== "gpu" && review.tested[slot]?.fact ? <p className="break-words text-white/75">{review.tested[slot].fact}</p> : null}
               <dl className="grid gap-2 sm:grid-cols-2">
-                {facts.map(({ label, evidence }) => (
+                {facts.filter(({ label, evidence }) => slot !== "board" || (evidence && (!board || (label !== "PCIe·레인 공유" && (label !== "전원부" || !board.power))))).map(({ label, evidence }) => (
                   <div key={label} className="min-w-0 rounded-lg bg-white/5 p-2.5">
                     <dt className="font-medium text-cyan-100">{label}</dt>
                     <dd className="break-words text-white/75">{evidence ? <>{evidence[0]} <a className={sourceStyle} href={evidence[1]} target="_blank" rel="noopener noreferrer">출처<span className="sr-only"> (새 창)</span></a></> : "정확한 출고 모델 기준 확인 필요"}</dd>
                   </div>
                 ))}
               </dl>
+              {board ? <MotherboardExpansion profile={board} system cpu={review.parts.cpu} /> : null}
               <p className="font-medium text-white">채점 기준 {checked}/5개 확인</p>
               <ul className="space-y-1 text-xs leading-5 text-white/80">
-                {criteria.map(({ label, met, source }) => <li key={label}>
+                {criteria.filter(({ met }) => slot !== "board" || met !== null).map(({ label, met, source }) => <li key={label}>
                   <span className={met === true ? "text-cyan-100" : met === false ? "text-amber-100" : "text-white/65"}>{met === true ? "충족" : met === false ? "미충족" : "미확인"}</span> · {label}
                   {source ? <> <a className={sourceStyle} href={source} target="_blank" rel="noopener noreferrer">근거<span className="sr-only"> (새 창)</span></a></> : null}
                 </li>)}

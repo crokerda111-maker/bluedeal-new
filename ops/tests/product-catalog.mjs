@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { registerHooks } from 'node:module';
 import { searchCatalog, summarizeCatalog, catalogHref } from '../../src/lib/productCatalog.ts';
+import { productFacetValues } from '../../src/lib/productFilters.ts';
 
 const hooks = registerHooks({
   resolve(specifier, context, nextResolve) {
@@ -88,6 +89,35 @@ test('each single-part detail has usable buying notes with a source', () => {
     const notes = getProductBuyingNotes(product);
     assert.ok(notes?.advantage && notes.caution && notes.sources.length, product.id);
   }
+});
+
+test('board catalog facets use the manufacturer-verified NVMe slots and separate similarly named variants', () => {
+  const { boards } = JSON.parse(fs.readFileSync(new URL('../../src/content/products/motherboard-expansion.json',import.meta.url),'utf8'));
+  const media = JSON.parse(fs.readFileSync(new URL('../../src/content/products/motherboard-media.json',import.meta.url),'utf8'));
+  const registered = products.filter(product => product.category === 'motherboard');
+  assert.deepEqual(boards.flatMap(board => board.ids).sort(), registered.map(product => product.id).sort());
+  assert.deepEqual(Object.keys(media).sort(), registered.map(product => product.id).sort());
+  for (const board of boards) {
+    assert.equal(new Set(board.slots.map(([slot]) => slot)).size, board.slots.length);
+    for (const id of board.ids) {
+      const product = registered.find(row => row.id === id);
+      const fact = product.facts.find(row => row.key === 'nvmeSlots');
+      assert.equal(fact.value, String(board.slots.length), id);
+      assert.equal(fact.source.url, board.source, id);
+      const chipset = product.specifications.find(spec => spec.label === '칩셋').value;
+      assert.deepEqual(productFacetValues(product).platform, [chipset.split(' ')[0]], id);
+      assert.equal(new URL(media[id].gallery).protocol, 'https:', id);
+      assert.deepEqual(productFacetValues(product).boardColor, media[id].white ? ['white'] : undefined, id);
+      assert.notEqual(media[id].main, media[id].pcb, id);
+      for (const url of [media[id].main, media[id].pcb]) assert.equal(new URL(url).protocol, 'https:', id);
+      if (board.newModel) assert.deepEqual(product.listings, [], id);
+    }
+  }
+  const byId = id => boards.find(board => board.ids.includes(id));
+  assert.equal(byId('reviewed-gigabyte-b850-aorus-elite-p-ice').slots.length, 4);
+  assert.equal(byId('reviewed-gigabyte-b850m-aorus-elite-wifi6e-ice').slots.length, 2);
+  assert.equal(byId('reviewed-asrock-b850m-pro-a-wifi').asrockAm5, true);
+  assert.equal(byId('reviewed-asrock-b860m-livemixer-wifi').asrockAm5, undefined);
 });
 
 test('specification notes preserve option uncertainty and scope GPU notices to supported chips', () => {

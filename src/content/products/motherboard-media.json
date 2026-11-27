@@ -1,0 +1,220 @@
+{
+  "reviewed-asrock-b850m-pro-a-wifi": {
+    "gallery": "https://www.asrock.com/mb/AMD/B850M%20Pro-A%20WiFi/index.asp#Gallery",
+    "main": "https://www.asrock.com/mb/photo/B850M%20Pro-A%20WiFi%28S4%29.png",
+    "pcb": "https://www.asrock.com/mb/photo/B850M%20Pro-A%20WiFi%28S3%29.png"
+  },
+  "reviewed-gigabyte-b650m-k": {
+    "gallery": "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/gallery",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/8b0ad5fa557b30672b2062bd08212eac/ProductRemoveBg/34352/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/f0f556aa0507c3064a1957824a9650e0/ProductRemoveBg/34351/webp/670",
+    "photoRevision": "사진은 Rev. 1.0 기준"
+  },
+  "reviewed-gigabyte-b850-aorus-elite-x3d": {
+    "gallery": "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-X3D/gallery",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/e1f0aabd6a753f313631f1d28c6a26b1/ProductRemoveBg/48335/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/94e1775715ac3b01a2836bc90283f279/ProductRemoveBg/48334/webp/670"
+  },
+  "reviewed-gigabyte-b850-aorus-elite-p-ice": {
+    "gallery": "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-P-ICE/gallery",
+    "white": "화이트 기판·방열판",
+    "colorSource": "https://www.gigabyte.com/uk/Motherboard/B850-AORUS-ELITE-P-ICE",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/3eb5a7902186508ac0a1c57724f47e58/ProductRemoveBg/48283/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/2baa85b14609338aa2efc411b7ad5604/ProductRemoveBg/48282/webp/670"
+  },
+  "reviewed-asus-tuf-b850-plus-wifi": {
+    "gallery": "https://www.asus.com/uk/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-plus-wifi/",
+    "main": "https://dlcdnwebimgs.asus.com/files/media/f46f4804-21d2-419a-8119-c3998da9674d/V1/img/spec/spec-cooling.webp",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/4fa02c46-d242-4d73-a8e6-aebb298a1b09/w800"
+  },
+  "reviewed-asus-tuf-b850m-plus-ii": {
+    "gallery": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850m-plus-ii/",
+    "main": "https://dlcdnwebimgs.asus.com/files/media/202506/d9ec00c0-4050-43c8-8f75-450426720ba6/V1/img/spec/spec-cooling.webp",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/3772b134-6534-41e3-bd52-b66a0e44339f/w800"
+  },
+  "reviewed-gigabyte-b850m-aorus-elite-wifi6e": {
+    "gallery": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-rev-1x/gallery",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/34770a5840344abfb94e8b22e6e6632a/ProductRemoveBg/44614/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/062335eee9d86861da59668ef9d384e6/ProductRemoveBg/44613/webp/670"
+  },
+  "reviewed-gigabyte-b850m-aorus-elite-wifi6e-ice": {
+    "gallery": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/gallery",
+    "white": "화이트 기판·방열판",
+    "colorSource": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/8329cee937d36ddcb6c962ac6cb9646a/ProductRemoveBg/45494/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/a0652fbbeefda791949f7ef3dbcb00d6/ProductRemoveBg/45493/webp/670"
+  },
+  "reviewed-asus-rog-crosshair-x870e-hero": {
+    "gallery": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-hero/gallery/",
+    "main": "https://dlcdnwebimgs.asus.com/gain/0FDBB1CD-7C78-4EE3-BFF8-22A0B6A1744D/w1000/h732",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/CB19300C-299E-4EEC-B3F1-8F3BEF6ECD48/w1000/h732"
+  },
+  "reviewed-asus-rog-crosshair-x870e-apex": {
+    "gallery": "https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-apex/gallery/",
+    "main": "https://dlcdnwebimgs.asus.com/gain/622E507B-4C19-4CC7-883C-31C89472E177/w1000/h732",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/646659B5-60C1-4177-8F37-9C3FAD27EB74/w1000/h732"
+  },
+  "reviewed-asus-rog-maximus-z890-apex": {
+    "gallery": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/gallery/",
+    "white": "화이트 기판·실버 방열판",
+    "colorSource": "https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-apex/",
+    "main": "https://dlcdnwebimgs.asus.com/gain/46258DB0-E974-4E69-9008-EA744956BA2E/w1000/h732",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/111FA360-FBDC-4B61-BC00-6D55E1CBF8B3/w1000/h732"
+  },
+  "reviewed-asus-rog-strix-b850-e-gaming-wifi": {
+    "gallery": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b850-e-gaming-wifi/gallery/",
+    "main": "https://dlcdnwebimgs.asus.com/gain/E68143F9-9C20-4C1F-A5F4-9B05892BA717/w1000/h732",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/A5A5CF00-C00B-4E6F-9470-6CDB3B0BE5ED/w1000/h732"
+  },
+  "reviewed-asus-rog-strix-b860-g-gaming-wifi": {
+    "gallery": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/gallery/",
+    "white": "화이트 마감·메탈 방열판",
+    "colorSource": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b860-g-gaming-wifi/",
+    "main": "https://dlcdnwebimgs.asus.com/gain/CE227736-8D5A-409E-B6AA-0AD2F50646F3/w1000/h732",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/12610F45-0D18-4254-97F7-D237DBBE1D38/w1000/h732"
+  },
+  "reviewed-asus-rog-strix-x870-i-gaming-wifi": {
+    "gallery": "https://rog.asus.com/motherboards/rog-strix/rog-strix-x870-i-gaming-wifi/gallery/",
+    "main": "https://dlcdnwebimgs.asus.com/gain/8A14873F-339F-4F80-A442-AA43BA968CC0/w1000/h732",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/0A8FE0D3-1B07-4299-91B5-3137F89238EA/w1000/h732"
+  },
+  "reviewed-asus-tuf-b650em-e-wifi": {
+    "gallery": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b650em-e-wifi/",
+    "main": "https://dlcdnwebimgs.asus.com/gain/3f09a831-5a6e-42ef-868f-ab550ebf6944/w800/fwebp",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/0d1e5a24-3ec8-41a6-b480-659a0c48f591/w800/fwebp"
+  },
+  "reviewed-asus-tuf-b850-pro-wifi7-w-neo": {
+    "gallery": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/",
+    "white": "화이트 기판·방열판",
+    "colorSource": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b850-pro-wifi7-w-neo/",
+    "main": "https://dlcdnwebimgs.asus.com/files/media/202512/2e5ca1ab-95f2-44ce-9a3f-cec1081609e9/V1/img/spec/spec-cooling.webp",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/820e256b-e6d8-4b32-a83c-7dce87421076/w800"
+  },
+  "reviewed-asus-tuf-x870-plus-wifi": {
+    "gallery": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-x870-plus-wifi/",
+    "main": "https://dlcdnwebimgs.asus.com/files/media/074e8ea2-05b9-4f74-bee4-fa2ad2e81c21/V1/img/spec/spec-cooling.webp",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/64c122cf-1bab-4bac-aa97-591e1573dd29/w800"
+  },
+  "reviewed-asus-tuf-x870e-plus-wifi7": {
+    "gallery": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-x870e-plus-wifi7/",
+    "main": "https://dlcdnwebimgs.asus.com/files/media/e3eeb147-d819-4528-8285-0ce3735a3b14/V1/img/spec/spec-cooling.webp",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/a385eb33-672e-4848-92bb-3b2db26d5860/w800"
+  },
+  "reviewed-asrock-b860m-livemixer-wifi": {
+    "gallery": "https://asrock.com/MB/Intel/B860M%20LiveMixer%20WiFi/index.asp#Gallery",
+    "main": "https://asrock.com/mb/photo/B860M%20LiveMixer%20WiFi%28S4%29.png",
+    "pcb": "https://asrock.com/mb/photo/B860M%20LiveMixer%20WiFi%28S3%29.png"
+  },
+  "reviewed-colorful-battle-ax-a520m-k-m2-v14": {
+    "gallery": "https://www.colorful.cn/home/product?id=4ab59267-b61f-4e9e-ba6e-f7533f24d786&mid=84",
+    "main": "https://www.colorful.cn/content/upload/form/84/202311/2ac93f98-8781-41a4-b3ac-8d1a2aa535f9.JPG",
+    "pcb": "https://www.colorful.cn/content/upload/form/84/202311/e3bea418-6eb9-4e5c-9bfe-7c7c06078dc0.JPG"
+  },
+  "reviewed-gigabyte-b760m-aorus-elite-d4": {
+    "gallery": "https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-rev-1x/gallery",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/74f85abbcbc06bc0cff0e4ae1ab0c4f5/ProductRemoveBg/33374/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/b6e848a290da1b0f3ae0585ebb718c0d/ProductRemoveBg/33373/webp/670"
+  },
+  "reviewed-gigabyte-b760m-aorus-elite-d4-gen5": {
+    "gallery": "https://www.gigabyte.com/Motherboard/B760M-AORUS-ELITE-DDR4-GEN5/gallery",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/b34c0cc676bef4f8189289a3ecdf51d4/ProductRemoveBg/45251/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/502ec073e07f30f4a29043c41fbda0a9/ProductRemoveBg/45250/webp/670"
+  },
+  "reviewed-gigabyte-b850m-force": {
+    "gallery": "https://www.gigabyte.com/Motherboard/B850M-FORCE-rev-10/gallery",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/9fac9ee41a9f9a80d4bba88a02ce28a2/ProductRemoveBg/45521/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/a8f6cf9b58dd24e7854c69d8d8e2dba2/ProductRemoveBg/45520/webp/670"
+  },
+  "reviewed-gigabyte-b850m-force-v2": {
+    "gallery": "https://www.gigabyte.com/kr/Motherboard/B850M-FORCE-V2/gallery",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/2995983eda47784d46a4bc995f58525a/ProductRemoveBg/46867/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/32d4f71c39e34ff4bfdf9165b84789a2/ProductRemoveBg/46866/webp/670"
+  },
+  "reviewed-gigabyte-x870-aorus-elite-wifi7-ice": {
+    "gallery": "https://www.gigabyte.com/Motherboard/X870-AORUS-ELITE-WIFI7-ICE-rev-10-11/gallery",
+    "white": "화이트 기판·방열판",
+    "colorSource": "https://www.gigabyte.com/Motherboard/X870-AORUS-ELITE-WIFI7-ICE-rev-10-11",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/0a5d7f7ff99e5e274cd48ddd2e2b1a20/ProductRemoveBg/41337/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/841bde0cf331e58719b495a529dc9677/ProductRemoveBg/41336/webp/670"
+  },
+  "reviewed-mixed-motherboard-himart-0054257890": {
+    "gallery": "https://www.msi.com/Motherboard/PRO-B760M-A-DDR4-II/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_1685003685a8576556ac52bedf0f981c8b9a43802e.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_168500368254e0366b437dd3f784c39ace58d37292.webp"
+  },
+  "reviewed-nzxt-n7-b850-black": {
+    "gallery": "https://nzxt.com/ko-intl/products/n7-b850?Color=Black",
+    "main": "https://nzxt.com/images/width=2000,format=auto/02ab3e61545dd969988d0eb8f4f9c2b6a8b8658212e3f9a4d05f7a24fa2adee1",
+    "pcb": "https://nzxt.com/images/width=1000,format=auto/dfaa75f150cef91a5298f874b291c8a34a09cac8d9cf1567edb0c67cf43c3aaf"
+  },
+  "reviewed-nzxt-n7-b850-white": {
+    "gallery": "https://nzxt.com/ko-intl/products/n7-b850?Color=White",
+    "white": "화이트 커버·검은 기판",
+    "colorSource": "https://support.nzxt.com/hc/en-us/articles/40211041208219-N7-B850-Specs",
+    "main": "https://nzxt.com/images/width=2000,format=auto/b736a78186e7932815ea25c909ba4d95c3edff5794e5f9d323a4fb06031c136f",
+    "pcb": "https://nzxt.com/images/width=1000,format=auto/01cec3ebdc7bf393a2be8e504d080b76dd25a4e86072f17f0dc4e63c98664c3d"
+  },
+  "reviewed-msi-pro-b650m-p": {
+    "gallery": "https://www.msi.com/Motherboard/PRO-B650M-P/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_16819722951d8ee50589554550e7150a8610d53ecc.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_1681972294b8f39cac1efed16f6688086e73b49431.webp"
+  },
+  "reviewed-msi-mag-b650m-mortar-wifi": {
+    "gallery": "https://www.msi.com/Motherboard/MAG-B650M-MORTAR-WIFI/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_1664786102741d679c3dfed790b9668ae0f6b9f3ad.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_1664786100c49e0c2841d9ed21dd4f7d8bb0e667b0.webp"
+  },
+  "reviewed-msi-mag-b850m-mortar-max-wifi": {
+    "gallery": "https://www.msi.com/Motherboard/MAG-B850M-MORTAR-MAX-WIFI/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_1778479509fc0187354ea76d04c07d5e1a5bd83505.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_177847950723cead886a78a0c1329965908e752bae.webp",
+    "photoRevision": "사진은 MSI 기본 모델 갤러리 기준"
+  },
+  "reviewed-msi-mag-b850-tomahawk-max-wifi": {
+    "gallery": "https://www.msi.com/Motherboard/MAG-B850-TOMAHAWK-MAX-WIFI/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_1736159752ecbe58fc0b17cab0844af3fc70a5b3f8.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_1736159752859b0d59d04f539fee0f53b5742d9275.webp"
+  },
+  "reviewed-msi-mag-x870e-tomahawk-max-wifi": {
+    "gallery": "https://www.msi.com/Motherboard/MAG-X870E-TOMAHAWK-MAX-WIFI/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_1765331679a7c7c49548b36175e73d9740a1e170d0.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_17653316798bda94d2fab99c94cfa699e04d04a112.webp"
+  },
+  "reviewed-gigabyte-b760m-d2hx-lite-si-gen5": {
+    "gallery": "https://www.gigabyte.com/kr/Motherboard/B760M-D2HX-LITE-SI-GEN5/gallery",
+    "main": "https://static.gigabyte.com/StaticFile/Image/Global/b6076cb24438bc805384e0ec487ffc63/ProductRemoveBg/45582/webp/670",
+    "pcb": "https://static.gigabyte.com/StaticFile/Image/Global/6941ad4e9fc3043d034990afe98e0f26/ProductRemoveBg/45581/webp/670"
+  },
+  "reviewed-asus-prime-b860m-a-csm": {
+    "gallery": "https://www.asus.com/motherboards-components/motherboards/csm/prime-b860m-a-csm/",
+    "main": "https://dlcdnwebimgs.asus.com/gain/4ff12367-c65f-411a-bf15-d6ca1340febc/w800/fwebp",
+    "pcb": "https://dlcdnwebimgs.asus.com/gain/3b29e1c6-d887-4694-a247-a08b81eb5657/w800/fwebp"
+  },
+  "reviewed-msi-b850m-gaming-plus-wifi6e": {
+    "gallery": "https://www.msi.com/Motherboard/B850M-GAMING-PLUS-WIFI6E/Gallery",
+    "white": "화이트 기판·실버 방열판",
+    "colorSource": "https://storage-asset.msi.com/specSheet/pl/mb/B850M%20GAMING%20PLUS%20WIFI6E.pdf",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_1750063688e7cf02ff2b818a4b813e8248f84321a5.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_17500636853db62c1706956ebe0fc29da63d4fc840.webp"
+  },
+  "reviewed-msi-pro-h610m-e-ddr4": {
+    "gallery": "https://www.msi.com/Motherboard/PRO-H610M-E-DDR4/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_16563092383f77a0baf39ed1c0c60db412df1dfb71.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_1656309234c4838110e2517d2de90add4020e9e1ad.webp"
+  },
+  "reviewed-msi-mag-b860m-mortar-wifi": {
+    "gallery": "https://www.msi.com/Motherboard/MAG-B860M-MORTAR-WIFI/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_1736156393fa2dec0b8b4114c46fc36365f246c7b0.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_17361563958b0080eb58df8853051fa9ba28a7182e.webp"
+  },
+  "reviewed-msi-mag-b860-tomahawk-wifi": {
+    "gallery": "https://www.msi.com/Motherboard/MAG-B860-TOMAHAWK-WIFI/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_173615996979b5c90f37dae454aac33eba0b89f1d3.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_1736159969ac9423038c21a63abef894f11ff83a85.webp"
+  },
+  "reviewed-msi-pro-h810m-b": {
+    "gallery": "https://www.msi.com/Motherboard/PRO-H810M-B/Gallery",
+    "main": "https://storage-asset.msi.com/global/picture/product/product_17454811345304eb680fc3a4f2c916d65725b0d92b.webp",
+    "pcb": "https://storage-asset.msi.com/global/picture/product/product_174548113454f0d33fda2926a7e3929de644c83012.webp"
+  }
+}

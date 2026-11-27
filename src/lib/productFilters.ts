@@ -15,7 +15,7 @@ function boardSize(value: string) {
 }
 export const CATEGORY_FACETS: Record<ProductCategory, Facet[]> = {
   cpu: [{ key: "memory", label: "지원 메모리" }, { key: "socket", label: "CPU 소켓" }, { key: "graphics", label: "내장그래픽", labels: { present: "있음", absent: "없음" } }],
-  motherboard: [{ key: "socket", label: "CPU 소켓" }, memory, { key: "chipset", label: "칩셋" }, formFactor, { key: "wireless", label: "무선랜", labels: { present: "있음", absent: "없음" } }],
+  motherboard: [{ key: "platform", label: "CPU 플랫폼", labels: { AMD: "AMD", Intel: "인텔" } }, { key: "socket", label: "CPU 소켓" }, memory, { key: "nvmeSlots", label: "NVMe 슬롯 (최대)", unit: "개" }, { key: "boardColor", label: "색상", labels: { white: "화이트" } }, { key: "chipset", label: "칩셋" }, formFactor, { key: "wireless", label: "무선랜", labels: { present: "있음", absent: "없음" } }],
   ram: [memory, capacity("키트 총용량"), { key: "modules", label: "모듈 수", unit: "개" }, { key: "speed", label: "메모리 전송률", unit: "MT/s" }, { key: "latency", label: "CAS 지연", unit: "CL" }],
   gpu: [{ key: "chip", label: "GPU 칩셋" }, capacity("그래픽 메모리")],
   ssd: [capacity("SSD 용량"), { key: "interface", label: "연결 규격" }, formFactor, { key: "dram", label: "DRAM 캐시", labels: { present: "있음", absent: "없음", unknown: "미확인" } }],

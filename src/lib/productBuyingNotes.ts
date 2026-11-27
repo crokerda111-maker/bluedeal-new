@@ -57,11 +57,12 @@ export function getProductBuyingNotes(product: CatalogProduct): BuyingNotes | un
       const memory = single("memory");
       const size = single("formFactor");
       const slots = spec("메모리 슬롯");
-      if (!socket || !memory || !size || !slots) return;
+      if (!socket || !memory || !size || (!slots && !single("nvmeSlots"))) return;
       const wifi = spec("무선랜");
+      const memorySlots = slots ? ` 메모리 슬롯은 ${slots}입니다.` : "";
       const advantage = wifi
-        ? `${wifi} 무선랜을 쓸 수 있어 랜선을 연결하기 어려운 자리에 두기 편합니다. ${memory} 슬롯은 ${slots}입니다.`
-        : `${socket} CPU와 ${memory}를 쓰는 ${size} 보드입니다. 메모리 슬롯이 ${slots}이므로 현재 구성과 추후 증설 계획을 함께 비교할 수 있습니다.`;
+        ? `${wifi} 무선랜을 지원합니다. ${memory} 메모리를 사용합니다.${memorySlots}`
+        : `${socket} CPU와 ${memory}를 쓰는 ${size} 보드입니다.${memorySlots}`;
       return notes(advantage, `케이스가 ${size}를 지원하는지 확인하세요. CPU 지원 목록에서 해당 CPU의 최소 BIOS 버전을 확인하고, 메모리 증설 전에는 슬롯 수와 지원 키트도 확인하세요.`);
     }
     case "ram": {

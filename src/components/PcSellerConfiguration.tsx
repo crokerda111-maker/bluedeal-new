@@ -1,9 +1,14 @@
 import type { CatalogProduct } from "../lib/productCatalog";
 import { pcCatalogConfiguration } from "../lib/pcCatalogConfiguration";
+import { getBoardPartExpansion } from "../lib/motherboardExpansion";
 import { formatPriceTime } from "./PriceOffer";
+import MotherboardExpansion from "./MotherboardExpansion";
 
 export default function PcSellerConfiguration({ product }: { product: CatalogProduct }) {
   const fields = pcCatalogConfiguration(product);
+  const boardNames = fields.find(field => field.key === "board")?.values;
+  const cpuNames = fields.find(field => field.key === "cpu")?.values;
+  const board = boardNames?.length === 1 ? getBoardPartExpansion(boardNames[0]) : undefined;
   const evidence = product.sources.find(source => source.kind === "retailer-component-table") ??
     product.sources.find(source => source.kind === "retailer-listing");
   return <div className="text-sm leading-6">
@@ -19,6 +24,10 @@ export default function PcSellerConfiguration({ product }: { product: CatalogPro
         </dd>
       </div>)}
     </dl>
+    {board ? <details className="mt-3 rounded-xl border border-white/15 p-3">
+      <summary className="min-h-11 cursor-pointer py-2 text-cyan-100">메인보드 SSD 장착·슬롯 공유</summary>
+      <MotherboardExpansion profile={board} system cpu={cpuNames?.length === 1 ? cpuNames[0] : undefined} />
+    </details> : null}
     <p className="mt-3 text-white/75">부품 구성 점수와 절약률은 모델·보증과 동일 조건의 개별 구매 비용이 확인되면 표시합니다.</p>
     {evidence ? <p className="mt-2 text-xs text-white/75">
       <a href={evidence.url} target="_blank" rel="noopener noreferrer" className="text-cyan-200 underline underline-offset-4">{evidence.kind === "retailer-component-table" ? "판매처 부품표" : "판매 페이지"} <span className="sr-only">(새 창)</span></a> · {formatPriceTime(evidence.observedAt ?? undefined)}

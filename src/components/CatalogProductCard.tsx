@@ -8,18 +8,24 @@ import { getCaseOptions, getProductPhoto } from "../lib/productEditorial";
 import ProductPhoto from "./ProductPhoto";
 import MarketplacePriceLinks from "./MarketplacePriceLinks";
 import type { MarketPriceLink } from "../lib/productMarketplace";
+import { asrockRyzen9000Advisory, getMotherboardExpansion, getMotherboardMedia } from "../lib/motherboardExpansion";
 
 export default function CatalogProductCard({ product, offers, marketLinks = [], now }: { product: CatalogProduct; offers?: readonly PriceItem[]; marketLinks?: readonly MarketPriceLink[]; now: number }) {
   const offer = offers?.[0];
   const photo = product.category === "case" ? getProductPhoto(product.id) : undefined;
   const options = product.category === "case" ? getCaseOptions(product.id) : undefined;
   const highlights = productHighlights(product, offers);
+  const board = product.category === "motherboard" ? getMotherboardExpansion(product.id) : undefined;
+  const boardMedia = board ? getMotherboardMedia(product.id) : undefined;
+  const platform = board ? product.facts?.find(fact => fact.key === "platform")?.value : undefined;
   const observed = offer?.checkedAt || offer?.updatedAt || "";
   const observedLabel = Number.isFinite(Date.parse(observed)) ? new Date(observed).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST" : "시각 미확인";
   return <article data-product-id={product.id} className="bd-surface-md flex min-w-0 flex-col p-5">
     <div className="flex flex-wrap items-center gap-2 text-[11px]">
       <span className="rounded-md bg-cyan-300/10 px-2 py-1 text-cyan-100">{productCategoryLabel(product.category)}</span>
       <span className="text-white/60">{PRODUCT_KIND_LABELS[product.kind]}</span>
+      {platform ? <span className="rounded-md bg-cyan-300/10 px-2 py-1 text-cyan-100">{platform === "Intel" ? "인텔" : platform} 보드</span> : null}
+      {boardMedia?.white ? <span className="rounded-md bg-white/15 px-2 py-1 text-white">화이트</span> : null}
       {product.lifecycle === "listed-discontinued" ? <span className="rounded-md bg-amber-200/10 px-2 py-1 text-amber-100">제조사 단종 목록</span> : null}
     </div>
     {photo ? <Link href={`/products/${product.id}#product-photo`} aria-label={`${product.name} 사진과 상세 정보 보기`} className="mt-4 block rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300">
@@ -31,7 +37,10 @@ export default function CatalogProductCard({ product, offers, marketLinks = [], 
     {highlights.length ? <dl className="mt-3 flex flex-wrap gap-2">{highlights.map(({ key, label, value }) => <div key={key} className="rounded-lg bg-white/5 px-2.5 py-1.5 text-xs">
       <dt className="text-white/65">{label}</dt><dd className="mt-0.5 font-medium text-cyan-100">{value}</dd>
     </div>)}</dl> : null}
-    {product.features.length ? <p className="mt-3 break-words text-sm leading-6 text-white/75">{product.features.slice(0, 2).join(" · ")}</p> : null}
+    {board ? <p className="mt-3 break-words text-sm leading-6 text-white/75">{board.sharing}</p>
+      : product.features.length ? <p className="mt-3 break-words text-sm leading-6 text-white/75">{product.features.slice(0, 2).join(" · ")}</p> : null}
+    {board?.asrockAm5 ? <Link href={`/products/${product.id}#motherboard-expansion`} prefetch={false} className="mt-2 inline-flex min-h-11 items-center text-xs font-medium text-amber-100 underline underline-offset-4">{asrockRyzen9000Advisory.title}</Link> : null}
+    {boardMedia ? <Link href={`/products/${product.id}#motherboard-photos`} prefetch={false} className="inline-flex min-h-11 items-center text-xs text-cyan-200 underline underline-offset-4">대표·PCB 사진 보기</Link> : null}
     <div className="mt-auto pt-5">
       {offer ? <div className="mb-4 rounded-xl border border-cyan-300/20 bg-cyan-300/5 p-3">
         {offer.availability === "out-of-stock" ? <p className="text-xs text-amber-100">품절 상품의 이전 가격</p> : null}
