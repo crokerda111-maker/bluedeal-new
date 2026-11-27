@@ -434,60 +434,72 @@
     "brand": "퍼플랩",
     "kind": "retailer-reviewed-model",
     "features": [
-      "완본체 판매 구성",
-      "기본 선택·수량1 합계 확인"
+      "판매처 부품표 확인",
+      "기본 무료배송"
     ],
     "specifications": [
       {
-        "label": "판매 제목 기준 구성",
-        "value": "울트라5 250KF Plus RTX5060Ti 8GB+32GB+1TB 게이밍 컴퓨터 조립PC 롤 배그 영상편집 인텔 IU5KP-FX560Ti"
+        "label": "판매처 부품표 · CPU",
+        "value": "Intel Core Ultra 5 250KF Plus (국내 정품 표기)"
       },
       {
-        "label": "정확한 전체 부품 목록(BOM)",
-        "value": "추가 확인 필요"
+        "label": "판매처 부품표 · 그래픽카드",
+        "value": "ZOTAC GAMING GeForce RTX 5060 Ti Twin Edge D7 8GB"
       },
       {
-        "label": "확인한 기본 선택 · 메모리",
-        "value": "(마이크론 DDR5-5600 히트싱크 32GB(16x2))"
+        "label": "판매처 부품표 · 메인보드",
+        "value": "ASUS PRIME B860M-A-CSM"
       },
       {
-        "label": "확인한 기본 선택 · NVMe SSD",
-        "value": "(컬러풀 CN700 Pro NVMe 1TB)"
+        "label": "판매처 부품표 · 메모리",
+        "value": "Micron Crucial Pro DDR5-5600 CL46 32GB (16GB×2)"
       },
       {
-        "label": "확인한 기본 선택 · 케이스",
-        "value": "(앱코 G20 에픽 강화유리 블랙)"
+        "label": "판매처 부품표 · SSD",
+        "value": "COLORFUL CN700 Pro PCIe 4.0 NVMe 1TB"
       },
       {
-        "label": "확인한 기본 선택 · 쿨러",
-        "value": "(쿨러마스터 Hyper 620S ARGB)"
+        "label": "판매처 부품표 · 파워",
+        "value": "NZXT C650 80 PLUS Gold"
       },
       {
-        "label": "확인한 기본 선택 · 파워",
-        "value": "(NZXT C650 80PLUS GOLD)"
+        "label": "판매처 부품표 · 쿨러",
+        "value": "Cooler Master Hyper 620S ARGB"
+      },
+      {
+        "label": "판매처 부품표 · 케이스",
+        "value": "ABKO G20 EPIC"
+      },
+      {
+        "label": "판매처 부품표 · 운영체제",
+        "value": "FreeDOS · Windows 미탑재"
       }
     ],
-    "description": "실제 판매 페이지에서 현재 제목·기본 선택 조합·수량1 상품가와 합계를 대조한 PC입니다. 선택 메뉴에 나온 부품명과 독립 사양 검증을 구분하며 전체BOM·개별 구매가·품질 점수는 추가 확인이 필요합니다.",
+    "description": "판매처 부품표에서 CPU·그래픽카드·메인보드와 주요 부품을 확인한 구성입니다.",
     "notes": [
-      "판매 페이지의 제목·상태와 관측한 구성만 반영했습니다. 과거 핫딜의 모델·옵션·가격·행사를 현재 조건으로 승계하지 않았습니다. 판매처 품절·종료는 모델 전체 단종을 뜻하지 않습니다.",
-      "전체 부품 등급·실측 성능·후기 점수·조립 대비 절약률은 산정하지 않았습니다. 개별 부품 가격과 묶음 가격을 나누거나 합산한 값도 아닙니다.",
-      "메모리·SSD·케이스·쿨러·파워의 기본사양을 선택한 조합과 수량1 상품가·합계를 대조했습니다. 선택 메뉴의 부품명은 기록하되 정확한 GPU·메인보드 품번·OS·국내 보증·부품별 현재 구매가·성능/품질 점수는 추가 확인 필요."
+      "CPU에 내장그래픽이 없는 KF 모델입니다. 모니터는 외장 그래픽카드에 연결합니다. 5060 Ti는 8GB 구성입니다. RAM 품번과 완제품 보증 조건은 주문서에서 확인하세요."
     ],
     "lifecycle": "unknown",
     "domesticState": "listing-observed",
     "manufacturerPartNumber": null,
     "sources": [
       {
-        "label": "실제 판매 구성·상태 확인",
+        "label": "판매 페이지·가격 확인",
         "url": "https://item.gmarket.co.kr/Item?goodscode=4685925482",
-        "observedAt": "2026-11-21T09:39:19.207Z",
-        "kind": "retailer-availability"
+        "kind": "retailer-listing",
+        "observedAt": "2026-11-27T13:13:01.622Z"
       },
       {
-        "label": "기본 선택·수량1 합계 후속 확인",
-        "url": "https://item.gmarket.co.kr/Item?goodscode=4685925482",
-        "observedAt": "2026-11-21T10:14:54.680Z",
-        "kind": "retailer-listing"
+        "label": "퍼플랩 기본 사양표",
+        "url": "https://gi.esmplus.com/rentgroup/Market/Intel/IU5KP-FX560Ti/IU5KP-560Ti_04.jpg",
+        "kind": "retailer-component-table",
+        "observedAt": "2026-11-27T13:13:01.622Z"
+      },
+      {
+        "label": "퍼플랩 케이스·파워 안내",
+        "url": "https://gi.esmplus.com/rentgroup/Market/Intel/IU5KP-FX560Ti/IU5KP-560Ti_03.jpg",
+        "kind": "retailer-component-table",
+        "observedAt": "2026-11-27T13:13:01.622Z"
       }
     ],
     "listObservedAt": null,

@@ -33,6 +33,7 @@ function PcCard({ row, now, affiliate, home, movement }: { row: FullPcBoardRow; 
         <Link prefetch={false} href={`/products/${product.id}#fullpc-configuration`} className="hover:underline focus-visible:underline">{product.name}</Link>
       </Heading>
       {row.cpu || row.gpu ? <p className="mt-1 break-words text-sm leading-6 text-white/80">{[row.cpu, row.gpu].filter(Boolean).join(" · ")}</p> : null}
+      {product.features.includes("그래픽카드 동봉·미장착") ? <p className="mt-2 text-xs leading-5 text-amber-100">그래픽카드 동봉 · 수령 후 장착 필요</p> : null}
       {row.boardPurchaseHold ? <p className="mt-2 text-xs leading-5 text-amber-100">ASRock AM5 + 라이젠 9000 · CPU 손상 사례 근거로 구매 비추천</p> : null}
       {!half ? <dl className="mt-3 grid grid-cols-2 gap-2 text-sm">
         <div className="min-w-0 rounded-lg border border-white/10 bg-white/5 px-2 py-2 sm:px-3">

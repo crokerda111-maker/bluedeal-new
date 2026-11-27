@@ -18,7 +18,11 @@
     "alt": "서린컴퓨터 SRC0004_261120 블랙 완본체",
     "source": "https://www.11st.co.kr/products/8675735260",
     "sourceLabel": "11번가",
-    "crop": { "x": 11.5, "y": 14, "size": 78 },
+    "crop": {
+      "x": 11.5,
+      "y": 14,
+      "size": 78
+    },
     "imageSource": "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/pd/v2/7/3/5/2/6/0/MgaIu/8675735260_B.webp"
   },
   "reviewed-fullpc-11st-9450696630": {
@@ -26,7 +30,11 @@
     "alt": "파이온PC DX98D-NX580H 완본체",
     "source": "https://www.11st.co.kr/products/9450696630",
     "sourceLabel": "11번가",
-    "crop": { "x": 14.7, "y": 11.4, "size": 69 },
+    "crop": {
+      "x": 14.7,
+      "y": 11.4,
+      "size": 69
+    },
     "imageSource": "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/9450696630/B.webp?921226712"
   },
   "reviewed-fullpc-11st-9423305936": {
@@ -34,7 +42,11 @@
     "alt": "아싸컴 EV_A78D-A97T-C1T 완본체",
     "source": "https://www.11st.co.kr/products/9423305936",
     "sourceLabel": "11번가",
-    "crop": { "x": 11.7, "y": 15, "size": 78 },
+    "crop": {
+      "x": 11.7,
+      "y": 15,
+      "size": 78
+    },
     "imageSource": "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/9423305936/B.webp?74250394"
   },
   "reviewed-fullpc-gmarket-3951478263": {
@@ -42,7 +54,11 @@
     "alt": "아싸컴 EV_A98D-A97T-C1T 완본체",
     "source": "https://item.gmarket.co.kr/Item?goodscode=3951478263",
     "sourceLabel": "G마켓",
-    "crop": { "x": 12.1, "y": 14, "size": 80 },
+    "crop": {
+      "x": 12.1,
+      "y": 14,
+      "size": 80
+    },
     "imageSource": "https://gdimg.gmarket.co.kr/3951478263/still/280?ver=1795417138"
   },
   "reviewed-fullpc-gmarket-4355054602": {
@@ -64,7 +80,49 @@
     "alt": "씨넥스 CY146KF5616G1000G_261102 완본체",
     "source": "https://item.gmarket.co.kr/Item?goodscode=4864796475",
     "sourceLabel": "G마켓",
-    "crop": { "x": 20.8, "y": 20.4, "size": 56.1 },
+    "crop": {
+      "x": 20.8,
+      "y": 20.4,
+      "size": 56.1
+    },
     "imageSource": "https://gdimg.gmarket.co.kr/4864796475/still/280?ver=1795078670"
+  },
+  "reviewed-mixed-fullpc-gmarket-4685925482": {
+    "src": "https://gdimg.gmarket.co.kr/4685925482/still/600?ver=1795410031",
+    "alt": "G마켓 퍼플랩 Intel Core Ultra 5 250KF Plus (국내 정품 표기) 완본체 판매 사진",
+    "source": "https://item.gmarket.co.kr/Item?goodscode=4685925482",
+    "sourceLabel": "G마켓 퍼플랩",
+    "crop": {
+      "x": 0,
+      "y": 10,
+      "size": 74,
+      "background": "#141924",
+      "mask": "polygon(7% 79%, 9% 26%, 32% 13%, 42% 14%, 57% 21%, 58% 78%, 35% 80%, 33% 82%, 10% 81%)"
+    }
+  },
+  "reviewed-fullpc-gmarket-4366263439": {
+    "src": "https://gdimg.gmarket.co.kr/4366263439/still/600?ver=1795615490",
+    "alt": "G마켓 한성컴퓨터 AMD Ryzen 7 9800X3D 완본체 판매 사진",
+    "source": "https://item.gmarket.co.kr/Item?goodscode=4366263439",
+    "sourceLabel": "G마켓 한성컴퓨터",
+    "crop": {
+      "x": 3,
+      "y": 3,
+      "size": 94,
+      "background": "#eef2f6",
+      "mask": "polygon(20% 31%, 49% 5%, 52% 5%, 78% 15%, 84% 94%, 45% 94%, 45% 91%, 17% 94%)"
+    }
+  },
+  "reviewed-fullpc-11st-8148462758": {
+    "src": "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/pd/v2/4/6/2/7/5/8/pPFvJ/8148462758_B.webp",
+    "alt": "11번가 씨넥스PC AMD Ryzen 7 9800X3D 완본체 판매 사진",
+    "source": "https://www.11st.co.kr/products/8148462758",
+    "sourceLabel": "11번가 씨넥스PC",
+    "crop": {
+      "x": 21,
+      "y": 22,
+      "size": 55,
+      "background": "#fff"
+    }
   }
 }

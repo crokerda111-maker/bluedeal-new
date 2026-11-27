@@ -1,6 +1,6 @@
 {
   "category": "fullpc",
-  "updatedAt": "2026-11-27T12:42:00.000Z",
+  "updatedAt": "2026-11-27T13:13:01.622Z",
   "generatedAt": "2026-11-24T09:08:54.929Z",
   "items": [
     {
@@ -157,8 +157,8 @@
     {
       "id": "reviewed-mixed-fullpc-gmarket-4685925482-offer",
       "name": "울트라5 250KF Plus RTX5060Ti 8GB+32GB+1TB 게이밍 컴퓨터 조립PC 롤 배그 영상편집 인텔 IU5KP-FX560Ti",
-      "spec": "메모리: (마이크론 DDR5-5600 히트싱크 32GB(16x2)) · NVMe SSD: (컬러풀 CN700 Pro NVMe 1TB) · 케이스: (앱코 G20 에픽 강화유리 블랙) · 쿨러: (쿨러마스터 Hyper 620S ARGB) · 파워: (NZXT C650 80PLUS GOLD) · 수량1 · 정확한 전체 부품·보증 추가 확인",
-      "price": 2456380,
+      "spec": "Intel Core Ultra 5 250KF Plus (국내 정품 표기) · ZOTAC GAMING GeForce RTX 5060 Ti Twin Edge D7 8GB · ASUS PRIME B860M-A-CSM · Micron Crucial Pro DDR5-5600 CL46 32GB (16GB×2) · COLORFUL CN700 Pro PCIe 4.0 NVMe 1TB · FreeDOS · Windows 미탑재",
+      "price": 2499890,
       "low7d": null,
       "low30d": null,
       "change24hPct": null,
@@ -167,13 +167,18 @@
       "seller": "퍼플랩",
       "shippingFee": 0,
       "shippingNote": "기본 무료배송 · 제주·도서산간 추가비와 배송 가능일은 판매처 확인",
-      "priceNote": "확인 시점 선택한 기본 구성의 수량1 상품가입니다. 선택 항목·상품가·총 금액을 대조했으며 적립·리뷰 보상을 차감하지 않았습니다. 운영체제 포함 범위와 정확한 부품 품번·국내 보증은 선택 표기 및 판매처를 함께 확인하세요.",
+      "priceNote": "판매 페이지의 할인 전 일반 상품가입니다. 기본 배송은 무료입니다. CPU에 내장그래픽이 없는 KF 모델입니다. 모니터는 외장 그래픽카드에 연결합니다. 5060 Ti는 8GB 구성입니다. RAM 품번과 완제품 보증 조건은 주문서에서 확인하세요.",
       "officialUrl": null,
-      "checkedAt": "2026-11-21T10:14:54.680000Z",
-      "updatedAt": "2026-11-21T10:14:54.680000Z",
-      "availability": "unknown",
-      "cardPrice": 2446380,
-      "cardNote": "G마켓 삼성카드 최대1만원 결제 할인 안내와 화면 표시금액입니다. 대상 카드·최소 결제액·발급/사용 기간·잔여예산·중복 조건은 추가 확인 필요. 누구나 적용되는 가격으로 확정하지 않았습니다."
+      "checkedAt": "2026-11-27T13:13:01.622Z",
+      "updatedAt": "2026-11-27T13:13:01.622Z",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-27T13:13:01.622Z",
+      "couponPrice": 2294900,
+      "couponNote": "블랙프라이데이 PC 8% 쿠폰과 5% 중복 쿠폰(이 상품 적용액 5,000원) 적용 표시가입니다.",
+      "cardPrice": 2094900,
+      "cardNote": "대상 3대 카드사 × 스마일페이 9% 결제 시 표시가. 7만원 이상, 최대 20만원, 11월 30일까지의 판매처 표기입니다.",
+      "cardRequiresCoupon": true,
+      "cardEndsOn": "2026-11-30"
     },
     {
       "id": "reviewed-fullpc-gmarket-4895851667-offer",
@@ -459,7 +464,7 @@
     {
       "id": "reviewed-fullpc-11st-8148462758-offer",
       "name": "씨넥스PC 라이젠 9800X3D RTX5070Ti 32G 1TB 게이밍 완본체 CY98X3D57Ti32G1TK_261102",
-      "spec": "씨넥스PC 라이젠 9800X3D RTX5070Ti 32G 1TB 게이밍 완본체 CY98X3D57Ti32G1TK_261102 · 기본 표시 구성 · 수량1 · 정확한 전체 부품·OS/보증 추가 확인",
+      "spec": "AMD Ryzen 7 9800X3D · GIGABYTE GeForce RTX 5070 Ti WINDFORCE OC SFF D7 16GB (동봉, 미장착) · ASUS B850M MAX GAMING WIFI · ESSENCORE KLEVV DDR5-5600 CL46 32GB (16GB×2) · Kingston NV3 PCIe 4.0 NVMe 1TB · FreeDOS · Windows 미탑재",
       "price": 4500000,
       "low7d": null,
       "low30d": null,
@@ -469,13 +474,14 @@
       "seller": "씨넥스몰 · (주) 씨넥스존",
       "shippingFee": 0,
       "shippingNote": "기본 무료배송 · 제주·도서산간 추가비와 주문제작 배송 가능일은 판매처 확인",
-      "priceNote": "확인 시점 판매 화면의 쿠폰 전 표시액입니다. 정가나 평소 판매가를 독립 검증한 값은 아닙니다. 수량1 총액(자동 쿠폰 포함)과 화면의 쿠폰 금액을 대조했고, 조건부 쿠폰가를 별도로 표시했습니다. 할인율은 산정하지 않았으며 적립·리뷰 보상을 차감하지 않았습니다. 정확한 부품 모델·OS 라이선스·보증은 추가 확인이 필요합니다. 쿠폰 발급대상·사용기간·중복조건은 확인되지 않았습니다. 누구나 적용되는 최저가로 보지 마세요.",
+      "priceNote": "판매 페이지의 할인 전 일반 상품가입니다. 기본 배송은 무료입니다. GPU는 구매 구성에 포함되며 판매처는 본체에 장착하지 않고 동봉해 발송한다고 안내합니다. 케이스 수령 후 그래픽카드를 장착해야 합니다.",
       "officialUrl": null,
-      "checkedAt": "2026-11-21T09:16:25.426000Z",
-      "updatedAt": "2026-11-21T09:16:25.426000Z",
-      "availability": "unknown",
+      "checkedAt": "2026-11-27T13:13:01.622Z",
+      "updatedAt": "2026-11-27T13:13:01.622Z",
+      "availability": "in-stock",
       "couponPrice": 4320000,
-      "couponNote": "판매 화면의 수량1·총1개 합계에 쿠폰 자동적용이 표시된 조건부 금액입니다. 쿠폰명·발급대상·최소금액·한도·발급/사용 기간·잔여예산·중복 적용은 추가 확인 필요. 누구나 적용 가능한 금액으로 확정하지 않았고 쿠폰을 발급하지 않았습니다."
+      "couponNote": "판매 상세에서 확인한 11번가 4% 쿠폰 적용 표시가입니다. 계정과 기간에 따라 주문서 적용 조건이 달라질 수 있습니다.",
+      "availabilityCheckedAt": "2026-11-27T13:13:01.622Z"
     },
     {
       "id": "reviewed-fullpc-11st-8813146141-offer",
@@ -522,8 +528,8 @@
     {
       "id": "reviewed-fullpc-gmarket-4366263439-offer",
       "name": "라이젠7 9800X3D RTX5080 16GB+32GB+1TB조립PC 게이밍 데스크탑 조립컴퓨터",
-      "spec": "운영체제: 조립 + 프리도스(운영체제 미탑재) · 메모리: PNY DDR5-5600 CL46 AMD 32GB (16GBx2) · CPU쿨러: 쿨러마스터 HYPER 620S ARGB · 케이스: DAVEN D7 MESH 세븐팬 블랙 · 파워: 쿨러마스터 MWE GOLD 850 V3 ATX3.1 블랙 · 수량1 · 정확한 전체 부품·보증 추가 확인",
-      "price": 5659230,
+      "spec": "AMD Ryzen 7 9800X3D · PNY GeForce RTX 5080 EPIC-X RGB OC D7 16GB Triple Fan · GIGABYTE B850M GAMING X WIFI6E · PNY DDR5-5600 CL46 32GB (16GB×2) · Samsung 990 PRO M.2 NVMe 1TB · FreeDOS · Windows 미탑재",
+      "price": 5380320,
       "low7d": null,
       "low30d": null,
       "change24hPct": null,
@@ -532,13 +538,18 @@
       "seller": "(주)한성컴퓨터",
       "shippingFee": 0,
       "shippingNote": "기본 무료배송 · 제주·도서산간 추가비와 배송 가능일은 판매처 확인",
-      "priceNote": "확인 시점 선택한 기본 구성의 수량1 상품가입니다. 선택 항목·상품가·총 금액을 대조했으며 적립·리뷰 보상을 차감하지 않았습니다. 운영체제 포함 범위와 정확한 부품 품번·국내 보증은 선택 표기 및 판매처를 함께 확인하세요.",
+      "priceNote": "판매 페이지의 할인 전 일반 상품가입니다. 기본 배송은 무료입니다. 판매처가 첨부한 구성표의 기본 부품명입니다. 부품 옵션을 바꾸면 장착 모델과 가격이 달라집니다. 파워 세부 품번과 완제품 보증 기간은 판매처에서 확인하세요.",
       "officialUrl": null,
-      "checkedAt": "2026-11-21T10:17:36.875000Z",
-      "updatedAt": "2026-11-21T10:17:36.875000Z",
-      "availability": "unknown",
-      "cardPrice": 5649230,
-      "cardNote": "G마켓 삼성카드 최대1만원 결제 할인 안내와 화면 표시금액입니다. 대상 카드·최소 결제액·발급/사용 기간·잔여예산·중복 조건은 추가 확인 필요. 누구나 적용되는 가격으로 확정하지 않았습니다."
+      "checkedAt": "2026-11-27T13:13:01.622Z",
+      "updatedAt": "2026-11-27T13:13:01.622Z",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-27T13:13:01.622Z",
+      "couponPrice": 4944900,
+      "couponNote": "블랙프라이데이 PC 8% 쿠폰과 5% 중복 쿠폰(이 상품 적용액 5,000원) 적용 표시가입니다.",
+      "cardPrice": 4744900,
+      "cardNote": "대상 3대 카드사 × 스마일페이 9% 결제 시 표시가. 7만원 이상, 최대 20만원, 11월 30일까지의 판매처 표기입니다.",
+      "cardRequiresCoupon": true,
+      "cardEndsOn": "2026-11-30"
     },
     {
       "id": "reviewed-fullpc-gmarket-4428358112-offer",
