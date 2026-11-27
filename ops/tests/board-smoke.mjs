@@ -1014,7 +1014,7 @@ try {
     assert.ok(november.includes('id="aliexpress-black-friday-bestsellers"'));
     assert.ok(!december.includes('id="aliexpress-black-friday-bestsellers"'));
     assert.ok(!november.includes('id="aliexpress-choice-december"'));
-    if (Date.now() >= Date.parse('2026-11-28T00:00:00+09:00')) assert.ok(december.includes('id="aliexpress-choice-december"'));
+    if (Date.now() >= Date.parse('2026-11-19T00:00:00+09:00')) assert.ok(december.includes('id="aliexpress-choice-december"'));
   });
 
   await check('community policy is public and visible before posting, with a private report link', async () => {

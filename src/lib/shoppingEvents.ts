@@ -97,7 +97,7 @@ export const SHOPPING_EVENTS: readonly ShoppingEvent[] = [
     officialUrl: ALIEXPRESS_BLACK_FRIDAY_ANNOUNCEMENT,
     startsOn: "2026-12-01",
     endsOn: "2026-12-03",
-    announceOn: "2026-11-28",
+    announceOn: "2026-11-19",
   },
   {
     id: "11st-black-friday",
