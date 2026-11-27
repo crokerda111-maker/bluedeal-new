@@ -24,12 +24,14 @@ import MotherboardExpansion from "../../../components/MotherboardExpansion";
 import MotherboardMedia from "../../../components/MotherboardMedia";
 import { asrockRyzen9000Advisory, getMotherboardExpansion, getMotherboardMedia } from "../../../lib/motherboardExpansion";
 import { assessComponentQuality } from "../../../lib/componentQuality";
+import { isIndexableComponent } from "../../../lib/componentDiscovery";
 
 export function generateStaticParams() { return CATALOG_PRODUCTS.map(product => ({ id: product.id })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const product = getCatalogProduct((await params).id);
-  return product ? pageMetadata(`${product.name} 정보 | BLUEDEAL`, product.description, `/products/${product.id}`, !getMarketplaceFullPcReview(product.id))
+  return product ? pageMetadata(`${product.name} 정보 | BLUEDEAL`, product.description, `/products/${product.id}`,
+    !getMarketplaceFullPcReview(product.id) && !isIndexableComponent(product))
     : pageMetadata("등록된 상품이 없습니다 | BLUEDEAL", "상품 목록에서 다른 제품을 확인해 주세요.", undefined, true);
 }
 

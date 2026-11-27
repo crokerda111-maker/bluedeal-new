@@ -945,6 +945,12 @@ try {
     assert.ok(sitemap.includes('https://bluedeal.co.kr/products/reviewed-fullpc-gmarket-4355054602'));
     assert.ok(sitemap.includes('https://bluedeal.co.kr/community-policy'));
     assert.ok(sitemap.includes('https://bluedeal.co.kr/evaluate'));
+    const knownPart = '/products/reviewed-fanxiang-s880-1tb';
+    const productFamily = '/products/maker-fractal-case-b32459749f216e6e';
+    assert.ok(sitemap.includes(`https://bluedeal.co.kr${knownPart}</loc>`));
+    assert.ok(!sitemap.includes(`https://bluedeal.co.kr${productFamily}</loc>`));
+    assert.match(await (await fetch(app.base + knownPart)).text(), /name="robots" content="index, follow"/);
+    assert.match(await (await fetch(app.base + productFamily)).text(), /name="robots" content="noindex, nofollow"/);
     for (const excluded of ['/admin', '/contact', '/go/', '/api/']) assert.equal(sitemap.includes(excluded), false);
     for (const route of ['/admin', '/contact', '/prices/ram?capacity=48', '/evaluate?pc=2299000']) {
       const html = await (await fetch(app.base + route)).text();
@@ -958,6 +964,40 @@ try {
     assert.match(calculator, /rel="canonical" href="https:\/\/bluedeal\.co\.kr\/evaluate"/);
     assert.match(calculator, /name="robots" content="index, follow"/);
     assert.equal((await fetch(`${app.base}/community/not-a-board`)).status, 404);
+  });
+
+  await check('new public board posts enter the sitemap and render their body in the first HTML response', async () => {
+    const fixtures = [
+      { boardKey: 'it', id: 'sitemap-news-fixture', path: '/it/sitemap-news-fixture' },
+      { boardKey: 'hotdeal', id: 'sitemap-deal-fixture', path: '/community/hotdeal/sitemap-deal-fixture' },
+      { boardKey: 'hotdeal', id: 'sitemap-private-fixture', isPrivate: true, path: '/community/hotdeal/sitemap-private-fixture' },
+    ];
+    const content = '독자가 처음 받은 HTML에서 이 문장을 볼 수 있습니다.';
+    const readSitemap = async () => (await fetch(app.base + '/sitemap.xml')).text();
+    assert.ok(!(await readSitemap()).includes(fixtures[0].id));
+    const date = new Date().toISOString();
+    for (const { path, ...post } of fixtures) {
+      const key = `bd:board:${post.boardKey}:posts`;
+      const entries = kv.sorted.get(key) ?? new Map();
+      entries.set(post.id, Date.now());
+      kv.sorted.set(key, entries);
+      kv.values.set('bd:post:' + post.id, JSON.stringify({ ...post, title: 'Search fixture', content, type: post.boardKey === 'it' ? 'news' : 'general', createdAt: date }));
+    }
+    try {
+      const xml = await readSitemap();
+      for (const post of fixtures) {
+        assert.equal(xml.includes(`https://bluedeal.co.kr${post.path}</loc>`), !post.isPrivate);
+        const html = (await (await fetch(app.base + post.path)).text()).replace(/<script[\s\S]*?<\/script>/g, '');
+        assert.equal(html.includes(content), !post.isPrivate);
+      }
+      kv.values.delete('bd:post:' + fixtures[0].id);
+      assert.ok(!(await readSitemap()).includes(fixtures[0].id));
+    } finally {
+      for (const post of fixtures) {
+        kv.values.delete('bd:post:' + post.id);
+        kv.sorted.get(`bd:board:${post.boardKey}:posts`).delete(post.id);
+      }
+    }
   });
 
   await check('community policy is public and visible before posting, with a private report link', async () => {
