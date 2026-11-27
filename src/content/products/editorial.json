@@ -1548,6 +1548,15 @@
       "caution": "ATX 3.1 세대의 CP-9020270 기준입니다. 기존 RM850x 세대와 판매품번을 구분하고 국내 보증 접수처와 케이블 여유를 확인하세요.",
       "source": "https://www.cybenetics.com/evaluations/psus/2399/cn/pdf/",
       "checkedOn": "2026-11-27"
+    },
+    {
+      "catalogIds": [
+        "maker-thermalright-cooler-824911dc2772f10d"
+      ],
+      "advantage": "높이 118mm의 방열판입니다. 내부 높이 제약이 있는 케이스에서 제조사 장착 한도와 비교하기 쉽습니다.",
+      "caution": "ARGB 단자와 CPU 소켓용 브래킷 포함 여부를 확인하세요. 실제 설치에는 팬·클립과 주변 부품의 공간도 필요합니다.",
+      "source": "https://www.thermalright.com/product/assassin-x-90-se-argb/",
+      "checkedOn": "2026-11-27"
     }
   ]
 }

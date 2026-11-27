@@ -82,5 +82,17 @@
       "observedAt": "2026-11-27T13:54:36.131Z",
       "kind": "retailer-listing"
     }
+  },
+  {
+    "productId": "maker-thermalright-cooler-824911dc2772f10d",
+    "listingId": "cooler-gmarket-3759204020",
+    "seller": "영-샵",
+    "checkedAt": "2026-11-27T13:59:39.099Z",
+    "source": {
+      "label": "G마켓 영-샵 서린 유통 수량 1 판매 상세",
+      "url": "https://item.gmarket.co.kr/Item?goodscode=3759204020",
+      "observedAt": "2026-11-27T13:59:39.099Z",
+      "kind": "retailer-listing"
+    }
   }
 ]

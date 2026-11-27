@@ -1,7 +1,7 @@
 {
   "category": "cooler",
-  "updatedAt": "2026-11-22T03:17:45.534032Z",
-  "generatedAt": "2026-11-22T03:26:44.675313Z",
+  "updatedAt": "2026-11-27T13:59:39.099Z",
+  "generatedAt": "2026-11-27T13:59:39.099Z",
   "items": [
     {
       "id": "reviewed-antec-nova-120-pwm-black-1pack-controller-retailer-compuzone-1252712",
@@ -919,6 +919,24 @@
       "availability": "unknown",
       "couponPrice": 447700,
       "couponNote": "예상1만원 쿠폰할인가 표시. 최소금액·발급대상·발급/사용 기간·예산·중복조건은 추가 확인 필요."
+    },
+    {
+      "id": "cooler-gmarket-3759204020",
+      "name": "Thermalright Assassin X 90 SE ARGB 서린",
+      "spec": "Assassin X 90 SE ARGB · 서린 유통 · 수량 1",
+      "price": 34500,
+      "shippingFee": 3000,
+      "couponPrice": 32430,
+      "couponNote": "누구나 디지털·가전 6% 쿠폰 발급·적용 조건.",
+      "shippingNote": "기본 배송비 3,000원. 제주·도서산간 추가비는 판매처 확인.",
+      "seller": "영-샵",
+      "source": "G마켓",
+      "goCode": "oecLgphPXuD3O10A",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-27T13:59:39.099Z",
+      "checkedAt": "2026-11-27T13:59:39.099Z",
+      "updatedAt": "2026-11-27T13:59:39.099Z",
+      "officialUrl": "https://www.thermalright.com/product/assassin-x-90-se-argb/"
     }
   ]
 }

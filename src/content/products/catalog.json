@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "7e7871bb315d659e648971164f876372f434e421a7018953c80b0c0e64deb0db",
+  "catalogHash": "63080dcd0c707fa880c0f67ab1613a0353d487709a272fe3c48b74f9e9570bcd",
   "entries": 836,
   "products": [
     {
@@ -25178,7 +25178,7 @@
       "description": "제조사 쿨러 목록에서 확인한 모델입니다. 장착 소켓·높이·메모리 및 케이스 간섭은 상세 사양을 확인해야 합니다.",
       "notes": [],
       "lifecycle": "unknown",
-      "domesticState": "unverified",
+      "domesticState": "listing-observed",
       "manufacturerPartNumber": null,
       "sources": [
         {
@@ -25192,6 +25192,12 @@
           "url": "https://download.thermalright.com/manuals/ASSASSINX90SE.pdf",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "G마켓 영-샵 서린 유통 수량 1 판매 상세",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=3759204020",
+          "observedAt": "2026-11-27T13:59:39.099Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": "2026-11-20T12:12:06.640172+00:00",
@@ -25199,7 +25205,14 @@
       "issues": [],
       "reviewSummary": null,
       "reviewSources": [],
-      "listings": [],
+      "listings": [
+        {
+          "id": "cooler-gmarket-3759204020",
+          "merchant": "G마켓",
+          "seller": "영-샵",
+          "pricePage": "/prices/cooler#cooler-gmarket-3759204020"
+        }
+      ],
       "facts": [
         {
           "key": "socket",

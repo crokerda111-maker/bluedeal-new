@@ -372,7 +372,8 @@
       "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
       "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
       "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다.",
-      "현재 구매 총액·판매 상태가 확인되지 않아 가격표에 금액을 등록하지 않았습니다."
+      "현재 구매 총액·판매 상태가 확인되지 않아 가격표에 금액을 등록하지 않았습니다.",
+      "2026-11-27 22:54 KST에 확인한 G마켓 4097327280·3350271489는 동일 대원씨티에스 2TB 구성이 품절로 표시됐습니다."
     ],
     "lifecycle": "unknown",
     "domesticState": "listing-observed",
@@ -383,6 +384,30 @@
         "url": "https://item.gmarket.co.kr/Item?goodsCode=4783946551",
         "observedAt": "2026-11-21T06:37:50.406Z",
         "kind": "retailer-availability"
+      },
+      {
+        "label": "해당 모델 제조사 공식 사양",
+        "url": "https://it.crucial.com/content/dam/crucial/ssd-products/t500/flyers/b2c/crucial-T500-b2c-product-flyer_itIT.pdf",
+        "observedAt": "2026-11-22T00:00:00+09:00",
+        "kind": "manufacturer-specifications"
+      },
+      {
+        "label": "Crucial T500 2TB 분해 및 실측 리뷰",
+        "url": "https://www.tomshardware.com/reviews/crucial-2tb-t500-ssd-review",
+        "observedAt": "2026-11-22T00:00:00+09:00",
+        "kind": "independent-review"
+      },
+      {
+        "label": "G마켓 공식판매점l 품절 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodscode=4097327280",
+        "observedAt": "2026-11-27T13:54:36.131Z",
+        "kind": "retailer-listing"
+      },
+      {
+        "label": "G마켓 디스컴시스템 품절 확인",
+        "url": "https://item.gmarket.co.kr/Item?goodscode=3350271489",
+        "observedAt": "2026-11-27T13:54:36.131Z",
+        "kind": "retailer-listing"
       }
     ],
     "listObservedAt": null,
