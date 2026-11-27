@@ -1,5 +1,7 @@
 import { GMARKET_BLACK_FRIDAY } from "./gmarketBlackFriday";
 
+const ALIEXPRESS_BLACK_FRIDAY_ANNOUNCEMENT = "https://www.prnewswire.com/kr/news-releases/uC54CuB9ACuC775uC2A4uD504uB808uC2A4u002Cu002DuAD11uAD70uC81Cu002DuC5F4uAE30u002DuC787uB294u002Du0027uBE14uB799uD504uB77CuC774uB370uC774u0027-302944740.html";
+
 export type ShoppingEvent = {
   id: string;
   store: string;
@@ -77,6 +79,25 @@ export const SHOPPING_EVENTS: readonly ShoppingEvent[] = [
     officialUrl: "https://events.ohou.se/promotion-pages/100525",
     startsOn: "2026-11-16",
     endsOn: "2026-11-30",
+  },
+  {
+    id: "aliexpress-black-friday-bestsellers",
+    store: "알리",
+    title: "알리익스프레스 블랙프라이데이 베스트셀러",
+    description: "연말 인기 상품 기획전. 쿠폰과 결제 할인은 상품 및 결제수단별 적용 조건을 확인하세요.",
+    officialUrl: ALIEXPRESS_BLACK_FRIDAY_ANNOUNCEMENT,
+    startsOn: "2026-11-27",
+    endsOn: "2026-11-30",
+  },
+  {
+    id: "aliexpress-choice-december",
+    store: "알리",
+    title: "알리익스프레스 12월 초이스데이",
+    description: "블랙프라이데이의 마지막 해외직구 특가전입니다. 할인 적용 여부는 선택한 상품의 결제 화면에서 확인하세요.",
+    officialUrl: ALIEXPRESS_BLACK_FRIDAY_ANNOUNCEMENT,
+    startsOn: "2026-12-01",
+    endsOn: "2026-12-03",
+    announceOn: "2026-11-28",
   },
   {
     id: "11st-black-friday",
