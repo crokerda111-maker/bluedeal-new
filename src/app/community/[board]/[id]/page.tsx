@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { use, useEffect, useMemo, useState } from "react";
 import { getCommunityBoard, POST_TYPE_LABEL } from "../../../../lib/boardConfig";
@@ -14,7 +13,9 @@ import PostAffiliateNotice from "../../../../components/PostAffiliateNotice";
 import LinkifiedText from "../../../../components/LinkifiedText";
 import PostDetailError from "../../../../components/PostDetailError";
 import HotdealTerms from "../../../../components/HotdealTerms";
-import { HOTDEAL_CATEGORIES, hotdealCategory, isHotdealAuthor } from "../../../../lib/hotdeal";
+import HotdealPhoto from "../../../../components/HotdealPhoto";
+import { HOTDEAL_CATEGORIES, hotdealCategory, hotdealPrice, isHotdealAuthor } from "../../../../lib/hotdeal";
+import { dealPhoto } from "../../../../lib/hotdealImages";
 
 function ExtraRow({ label, value, linkInfo }: { label: string; value: any; linkInfo: Post["linkInfo"] }) {
   if (value === undefined || value === null || value === "") return null;
@@ -135,6 +136,8 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
     ...post.linkInfo,
     disclosures: post.linkInfo.disclosures.filter(kind => kind === "coupang" || kind === "linkprice"),
   } : post.linkInfo;
+  const photo = dealPhoto(post);
+  const summaryPrice = board.key === "hotdeal" ? hotdealPrice(post) : "";
 
   return (
     <div className="space-y-6">
@@ -161,20 +164,20 @@ function CommunityPost({ boardSlug, postId }: { boardSlug: string; postId: strin
       <section className="bd-surface-md p-6">
         <h1 className="[overflow-wrap:anywhere] text-2xl font-semibold tracking-tight">{board.key === "issue" && post.title === issuePostTitle(post.content) ? "한 줄 이슈" : post.title}</h1>
         <PostAffiliateNotice info={noticeInfo} compact={board.key === "hotdeal"} />
-        <HotdealTerms post={post} />
-        {post.hotdeal?.image && /^\/hotdeals\/11st-\d+\.webp$/.test(post.hotdeal.image) ? (
-          <figure className="mt-5 w-full max-w-lg">
-            <Image
-              src={post.hotdeal.image}
-              alt={post.title + " 상품 대표 사진"}
-              width={600}
-              height={600}
-              unoptimized
-              className="h-auto w-full rounded-xl bg-white object-contain"
-            />
-            <figcaption className="mt-2 text-xs text-white/65">상품 대표 사진 · 11번가 판매 페이지</figcaption>
+        {board.key === "hotdeal" ? (
+          <p className="mt-3 text-sm text-slate-300">
+            {summaryPrice ? (
+              <><strong className="mr-2 text-2xl font-bold tabular-nums text-cyan-200">{summaryPrice}</strong>{post.hotdeal ? "확인 당시 배송비 포함" : "제보 가격"}</>
+            ) : "가격 미기재"}
+          </p>
+        ) : null}
+        {photo ? (
+          <figure className="mt-4 w-full max-w-lg">
+            <HotdealPhoto src={photo} alt={post.title + " 상품 대표 사진"} detail />
+            <figcaption className="mt-2 text-xs text-white/65">판매처 대표 사진 · 구성과 색상은 구매 옵션을 확인하세요.</figcaption>
           </figure>
         ) : null}
+        <HotdealTerms post={post} />
         <LinkifiedText text={post.content} linkInfo={post.linkInfo} className="mt-4 whitespace-pre-wrap text-sm text-white/85" />
       </section>
 

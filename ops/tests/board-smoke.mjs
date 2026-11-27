@@ -445,6 +445,7 @@ try {
         boardKey: 'hotdeal', type: 'general', title: 'LOCAL', content: 'fake', authorName: '블루딜  ＡＩ',
       })).status, 400);
       assert.equal((await request(disclosureApp.base, "POST", route, { ...deal, image: "/hotdeals/11st-1234.webp" }, session)).status, 422);
+      assert.equal((await request(disclosureApp.base, "POST", route, { ...deal, image: "https://gdimg.gmarket.co.kr/1234/still/600" }, session)).status, 422);
       const results = await Promise.all([request(disclosureApp.base, 'POST', route, deal, session), request(disclosureApp.base, 'POST', route, deal, session)]);
       assert.deepEqual(results.map(result => result.status).sort(), [200, 201]);
       const id = results[0].data.id;
@@ -506,6 +507,7 @@ try {
       const post = disclosure.data.post;
       assert.equal(post.hotdeal.sourceReview.name, '핫딜모음');
       assert.equal(post.hotdeal.sourceReview.url, sourceUrl);
+      assert.equal(post.hotdeal.image, 'https://gdimg.gmarket.co.kr/990101966/still/600');
       assert.equal(post.hotdeal.priceEvidence, undefined);
       assert.equal(post.hotdeal.lowestIn30Days, undefined);
       assert.equal(post.linkInfo?.affiliateHrefs?.includes(post.extra.dealLink) ?? false, false);
@@ -531,14 +533,15 @@ try {
       const now = Date.now();
       const productUrl = 'https://www.coupang.com/vp/products/651655?itemId=743512&vendorItemId=876215';
       const tracker = { url: 'https://www.lowchart.com/651655-743512', checkedAt: new Date(now - 120_000).toISOString(), observedLow: 9900 };
+      const image = 'https://thumbnail.coupangcdn.com/thumbnails/remote/640x640ex/image/vendor_inventory/fixture/product.jpg';
       const draft = {
         title: 'LOCAL 쿠팡 관측 최저', category: 'pc', productUrl, option: '블랙 1개',
         price: 9900, shipping: 2500, conditions: '일반 판매가', review: '한 개 구성입니다.', issue: '규격을 확인하세요.',
         checkedAt: new Date(now - 60_000).toISOString(), validUntil: new Date(now + 3_600_000).toISOString(),
-        availability: 'in-stock', publicPrice: true, coupangTrackedLow: tracker,
+        availability: 'in-stock', publicPrice: true, coupangTrackedLow: tracker, image,
       };
       for (const changes of [
-        { publicPrice: false }, { price: 11900 },
+        { publicPrice: false }, { price: 11900 }, { image: 'https://example.invalid/unreviewed.jpg' },
         { coupangTrackedLow: { ...tracker, url: 'https://www.lowchart.com/651655-743513' } },
         { coupangTrackedLow: { ...tracker, checkedAt: new Date(now - 9_000_000).toISOString() } },
         { validUntil: new Date(now + 25_200_000).toISOString() },
@@ -548,6 +551,7 @@ try {
       const id = result.data.id;
       const detail = (await request(disclosureApp.base, 'GET', '/api/posts/' + id)).data.post;
       assert.equal(detail.hotdeal.coupangTrackedLow.url, tracker.url);
+      assert.equal(detail.hotdeal.image, image);
       assert.equal(detail.hotdeal.lowestIn30Days, undefined);
       assert.equal(detail.hotdeal.shipping, 2500);
       assert.equal((await request(disclosureApp.base, 'DELETE', '/api/posts/' + id, undefined, session)).status, 200);

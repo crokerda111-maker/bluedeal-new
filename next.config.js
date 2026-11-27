@@ -3,6 +3,14 @@ const nextConfig = {
   reactStrictMode: true,
   turbopack: { root: __dirname },
   poweredByHeader: false,
+  images: {
+    maximumRedirects: 0,
+    remotePatterns: [
+      { protocol: "https", hostname: "gdimg.gmarket.co.kr", port: "", pathname: "/*/still/*" },
+      { protocol: "https", hostname: "thumbnail.coupangcdn.com", port: "", pathname: "/thumbnails/remote/*/image/vendor_inventory/**", search: "" },
+      { protocol: "https", hostname: "thumbnail.coupangcdn.com", port: "", pathname: "/thumbnails/remote/*/image/retail/images/**", search: "" },
+    ],
+  },
   headers() {
     return [{
       source: "/:path*",

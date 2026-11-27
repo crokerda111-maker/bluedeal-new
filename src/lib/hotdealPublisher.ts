@@ -2,6 +2,7 @@ import "server-only";
 
 import { createHash } from "node:crypto";
 import { detectMerchant, normalizeOutboundUrl } from "./affiliate";
+import { reviewedDealPhoto } from "./hotdealImages";
 import { GMARKET_BLACK_FRIDAY } from "./gmarketBlackFriday";
 import { HOTDEAL_AUTHOR, HOTDEAL_CATEGORIES, HOTDEAL_MAX_PREMIUM, type CoupangTrackedLow, type HotdealSourceReview, type VerifiedHotdeal } from "./hotdeal";
 import { createOnlinePost } from "./onlinePosts";
@@ -197,16 +198,8 @@ export async function publishVerifiedHotdeal(input: Record<string, unknown>) {
   }
   const coupangTrackedLow = tracked ? reviewedCoupangTracker(input.coupangTrackedLow, new URL(originalUrl), price, checked, until) : undefined;
   const notesSource = sourceReview?.url ?? coupangTrackedLow?.url ?? sourceLink(input.notesSource);
-  let image: string | undefined;
-  if (input.image !== undefined) {
-    const url = new URL(originalUrl);
-    const productId = url.pathname.match(/^\/products\/(\d+)\/?$/)?.[1] ?? url.searchParams.get("prdNo");
-    if (merchant !== "11st" || !productId || !/^\d+$/.test(productId) ||
-        input.image !== `/hotdeals/11st-${productId}.webp`) {
-      throw new PostValidationError("판매 주소와 일치하는 검증 상품 사진을 확인해 주세요.");
-    }
-    image = input.image;
-  }
+  const image = reviewedDealPhoto(input.image, merchant, new URL(originalUrl));
+  if (image === null) throw new PostValidationError("판매 주소와 일치하는 검증 상품 사진을 확인해 주세요.");
   const hotdeal: VerifiedHotdeal = {
     checkedAt: new Date(checked).toISOString(), validUntil: new Date(until).toISOString(),
     option, price, shipping, conditions, image, sourceReview, coupangTrackedLow,

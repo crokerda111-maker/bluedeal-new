@@ -4,10 +4,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HOTDEAL_CATEGORIES, coupangDealGroup, hotdealCategory, hotdealPrice, isActiveHotdeal, isFeaturedHotdeal, isHotdealAuthor, isRecommendedHotdeal } from "../lib/hotdeal";
 import type { HotdealCategory } from "../lib/hotdeal";
+import { dealPhoto } from "../lib/hotdealImages";
 import type { Post } from "../lib/postTypes";
 import { ApiError, apiListHotdealPage } from "../lib/postsClient";
 import { formatKoreanDate } from "../lib/postStorage";
 import PostLoadError from "./PostLoadError";
+import HotdealPhoto from "./HotdealPhoto";
 
 type Tab = "all" | "popular" | "coupang-low" | "records" | HotdealCategory;
 
@@ -41,24 +43,28 @@ function DealCard({ post, now }: { post: Post; now: number }) {
   const author = deal ? post.authorName : isHotdealAuthor(post.authorName) ? "커뮤니티 회원" : post.authorName ?? "익명";
 
   return (
-    <li className="bd-surface-md flex min-w-0 flex-col gap-3 p-5">
-      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/70">
-        <span className="rounded-md bg-white/10 px-2 py-1 text-white/90">{category}</span>
-        {typeof post.extra?.store === "string" ? <span>{post.extra.store}</span> : null}
-        <span className={recommended ? "font-medium text-emerald-200" : ""}>
-          {recommended ? deal.lowestIn30Days ? "30일 관측 최저" : "최저가 근처 확인" :
-            active && deal.coupangTrackedLow ? "로우차트 관측 최저" : curated ? `${curated.name} 소개가` : ended ? "종료" : active ? "비교 근거 미확인" : deal ? "가격 재확인 필요" : "커뮤니티 제보"}
-        </span>
-      </div>
-      <h2 className="text-lg font-semibold [overflow-wrap:anywhere]">
-        <Link href={"/community/hotdeal/" + post.id} className="hover:text-cyan-200 focus-visible:underline">{post.title}</Link>
-      </h2>
-      {price ? (
-        <p className="text-sm text-white/75">
-          <strong className={recommended ? "text-lg text-cyan-200" : "text-lg text-white/80"}>{price}</strong>
-          {" "}{active ? "배송비 포함" : deal ? "이전 확인가" : "제보 가격"}
-        </p>
-      ) : null}
+    <li className="bd-surface-md flex min-w-0 flex-col gap-2 p-3 sm:gap-3 sm:p-4">
+      <Link href={"/community/hotdeal/" + post.id}
+        className="group grid min-w-0 grid-cols-[6rem_minmax(0,1fr)] items-start gap-3 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200 sm:grid-cols-1">
+        <HotdealPhoto src={dealPhoto(post)} alt="" />
+        <div className="min-w-0 space-y-1.5">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/70">
+            <span className="rounded bg-white/10 px-1.5 py-0.5 text-white/90">{category}</span>
+            {typeof post.extra?.store === "string" ? <span>{post.extra.store}</span> : null}
+            <span className={recommended ? "font-medium text-emerald-200" : ""}>
+              {recommended ? deal.lowestIn30Days ? "30일 관측 최저" : "최저가 근처 확인" :
+                active && deal.coupangTrackedLow ? "로우차트 관측 최저" : curated ? `${curated.name} 소개가` : ended ? "종료" : active ? "비교 근거 미확인" : deal ? "가격 재확인 필요" : "커뮤니티 제보"}
+            </span>
+          </div>
+          <h2 className="text-sm font-semibold leading-snug [overflow-wrap:anywhere] group-hover:text-cyan-200 sm:text-base">{post.title}</h2>
+          {price ? (
+            <p className="flex flex-wrap items-baseline gap-x-2 text-xs text-white/75">
+              <strong className={ended ? "text-lg tabular-nums text-slate-200" : "text-lg tabular-nums text-cyan-200"}>{price}</strong>
+              <span>{active ? "배송비 포함" : deal ? "이전 확인가" : "제보 가격"}</span>
+            </p>
+          ) : <p className="text-sm text-white/65">가격 미기재</p>}
+        </div>
+      </Link>
       {deal ? (
         <p className="line-clamp-2 text-sm text-white/75 [overflow-wrap:anywhere]">{deal.option} · {deal.conditions}</p>
       ) : null}
@@ -80,7 +86,9 @@ export default function HotdealBoard() {
   const [now, setNow] = useState(0);
 
   useEffect(() => {
-    if (window.location.hash === "#coupang-low") setTab("coupang-low");
+    if (window.location.hash !== "#coupang-low") return;
+    const select = window.setTimeout(() => setTab("coupang-low"), 0);
+    return () => window.clearTimeout(select);
   }, []);
 
   useEffect(() => {
