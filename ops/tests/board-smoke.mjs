@@ -1000,6 +1000,19 @@ try {
     }
   });
 
+  await check('monthly events include overlapping campaigns in both months and retain earlier dates', async () => {
+    const november = await (await fetch(app.base + '/events?month=2026-11')).text();
+    const december = await (await fetch(app.base + '/events?month=2026-12')).text();
+    for (const id of ['auction-black-friday', 'coupang-digital-black-friday', '11st-black-friday', '11st-grand-november']) {
+      assert.ok(november.includes(`id="${id}"`));
+      assert.ok(!december.includes(`id="${id}"`));
+    }
+    for (const id of ['coupang-rocket-black-friday', 'ssg-weekly-flyer']) {
+      assert.ok(november.includes(`id="${id}"`));
+      assert.ok(december.includes(`id="${id}"`));
+    }
+  });
+
   await check('community policy is public and visible before posting, with a private report link', async () => {
     const response = await fetch(`${app.base}/community-policy`);
     assert.equal(response.status, 200);
