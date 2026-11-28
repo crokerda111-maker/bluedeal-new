@@ -4,8 +4,9 @@ import marketplaceNotes from "../content/products/pcMarketplaceNotes.json";
 import { normalizeOutboundUrl } from "./affiliate";
 import { CATALOG_PRODUCTS, getCatalogProduct } from "./catalogData";
 import { isPcToday, kstDay } from "./dailyPc";
+import { dailyPartsBasket } from "./dailyPartsBasket";
 import { separatePcTotal, type FullPcReview } from "./fullPcReview";
-import { FULL_PC_TIERS, fullPcComparisonKey, fullPcGpuChip, fullPcPricePoints, fullPcTier, rankComparableFullPcs } from "./fullPcTiers";
+import { FULL_PC_TIERS, fullPcComparisonKey, fullPcGpuChip, fullPcPricePoints, fullPcTier } from "./fullPcTiers";
 import { type PriceItem } from "./mockPrices";
 import { assessMarketplaceFullPc } from "./marketplacePcQuality";
 import { OUTBOUND_LINKS } from "./outbound";
@@ -92,7 +93,7 @@ export type FullPcBoardRow = {
   gpu?: string;
   tier: keyof typeof FULL_PC_TIERS;
   quality?: ReturnType<typeof assessMarketplaceFullPc>;
-  priceComparison?: { points: number; lowest: number; count: number };
+  priceComparison?: { points: number; basket: NonNullable<ReturnType<typeof dailyPartsBasket>> };
   priceHold: string | null;
   total: number | null;
   checkedToday: boolean;
@@ -142,9 +143,18 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
         : verifiedOffer.hold ?? (comparison ? null : "CPU·GPU·VRAM·운영체제 확인 필요")
     );
     const savings = verifiedOffer?.savings ?? undefined;
+    const total = deliveredTotal(offer);
+    const basket = review && verifiedOffer && offer && !unavailable && !review.configurationConflict &&
+      offer.condition !== "refurbished" && review.checkedOn === kstDay(now) &&
+      review.priceOption && offer.spec === review.priceOption && offer.availability === "in-stock" &&
+      offer.checkedAt && isPcToday(offer.checkedAt, now) &&
+      offer.availabilityCheckedAt && isPcToday(offer.availabilityCheckedAt, now)
+      ? dailyPartsBasket(review, now) : null;
+    const priceComparison = basket && total !== null
+      ? { points: Math.min(40, fullPcPricePoints(total, basket.total)), basket } : undefined;
     const recommendation = !boardPurchaseHold && comparison && quality?.score != null && savings && savings.amount > 0 ? savings : undefined;
-    return { product, review, offer, cpu, gpu, tier, quality,
-      total: deliveredTotal(offer), checkedToday: !!offer?.checkedAt && isPcToday(offer.checkedAt, now),
+    return { product, review, offer, cpu, gpu, tier, quality, priceComparison,
+      total, checkedToday: !!offer?.checkedAt && isPcToday(offer.checkedAt, now),
       unavailable, boardPurchaseHold, comparison, priceHold, savings, recommendation, merchant: verifiedOffer?.merchant };
   });
 
@@ -152,15 +162,12 @@ export function buildFullPcBoard(items: readonly PriceItem[], now: number) {
     const priced = group.flatMap(row => row.total === null ? [] : [{ row, total: row.total }]);
     if (priced.length < 2) continue;
 
-    const lowest = Math.min(...priced.map(entry => entry.total));
-    for (const { row, total } of priced) {
-      row.priceComparison = { points: fullPcPricePoints(total, lowest), lowest, count: priced.length };
-    }
-
-    const ranked = rankComparableFullPcs(priced.flatMap(({ row, total }) => row.boardPurchaseHold || row.quality?.score == null ? [] :
-      [{ id: row.product.id, row, score: row.quality.score / 40 * 100, total }]), lowest);
-    if (ranked.length) {
-      ranked.forEach(({ candidate, points }, index) => { candidate.row.placement = { rank: index + 1, mode: "score", points }; });
+    const ranked = priced.flatMap(({ row, total }) =>
+      row.boardPurchaseHold || row.quality?.score == null || !row.priceComparison ? [] :
+        [{ row, total, points: row.quality.score * 1.5 + row.priceComparison.points }],
+    ).sort((a, b) => b.points - a.points || a.total - b.total || a.row.product.id.localeCompare(b.row.product.id));
+    if (ranked.length >= 2) {
+      ranked.forEach(({ row, points }, index) => { row.placement = { rank: index + 1, mode: "score", points }; });
     } else {
       priced.sort((a, b) => a.total - b.total || a.row.product.id.localeCompare(b.row.product.id));
       priced.forEach(({ row }, index) => { row.placement = { rank: index + 1, mode: "price" }; });

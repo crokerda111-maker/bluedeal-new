@@ -19,7 +19,7 @@ function PcCard({ row, now, affiliate, home, movement }: { row: FullPcBoardRow; 
   const photo = home ? getFullPcPhoto(product.id) : undefined;
   const half = product.category === "halfpc";
   const combo = pcMarketGroup(row);
-  const pending = priceHold ?? (priceComparison ? null : "같은 CPU·GPU·운영체제의 당일 비교 상품 확인 중");
+  const pending = priceHold ?? (priceComparison ? null : "동일 부품 당일 개별가 확인 필요");
   const priceLabel = total !== null ? fmtWon(total) : offer ? fmtWon(offer.price) : null;
 
   return <li data-fullpc-product={product.id} data-pc-combination={combo.key} className={home
@@ -37,16 +37,15 @@ function PcCard({ row, now, affiliate, home, movement }: { row: FullPcBoardRow; 
       {row.boardPurchaseHold ? <p className="mt-2 text-xs leading-5 text-amber-100">ASRock AM5 + 라이젠 9000 · CPU 손상 사례 근거로 구매 비추천</p> : null}
       {!half ? <dl className="mt-3 grid grid-cols-2 gap-2 text-sm">
         <div className="min-w-0 rounded-lg border border-white/10 bg-white/5 px-2 py-2 sm:px-3">
-          <dt className="text-xs text-white/75">부품 확인 점수</dt>
+          <dt className="text-xs text-white/75">부품 점수</dt>
           <dd data-fullpc-parts-score className="mt-1 font-semibold tabular-nums text-cyan-100">
-            {quality?.score != null ? `${quality.score}/40점` : quality ? `충족 ${quality.confirmed}개` : "확인 중"}
+            {quality?.displayScore != null ? `${quality.displayScore}/40점` : "—"}
           </dd>
-          {quality && quality.score === null ? <dd className="mt-1 text-xs text-white/70">{quality.checked}/40개 기준 확인</dd> : null}
         </div>
         <div className="min-w-0 rounded-lg border border-white/10 bg-white/5 px-2 py-2 sm:px-3">
           <dt className="text-xs text-white/75">가격 점수</dt>
           <dd data-fullpc-price-score className="mt-1 font-semibold tabular-nums text-cyan-100">
-            {priceComparison ? `${priceComparison.points.toFixed(1)}/40점` : "비교 대기"}
+            {priceComparison ? `${priceComparison.points.toFixed(1)}/40점` : "—"}
           </dd>
         </div>
       </dl> : null}

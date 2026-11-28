@@ -44,7 +44,9 @@
     {
       "slot": "cpu",
       "names": [
-        "AMD Ryzen 7 7800X3D (국내 정품 표기)"
+        "AMD Ryzen 7 7800X3D (국내 정품 표기)",
+        "AMD Ryzen 7 7800X3D",
+        "AMD Ryzen 7 7800X3D (멀티팩 정품 표기)"
       ],
       "facts": {
         "게이밍 등급": [

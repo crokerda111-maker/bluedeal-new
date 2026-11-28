@@ -2,7 +2,7 @@ import data from "../content/products/fullPcPartEvidence.json";
 import { PC_PARTS, type PcSlot } from "./dailyPc";
 import type { FullPcReview } from "./fullPcReview";
 
-const checks = {
+export const marketplacePartChecks = {
   cpu: ["게임용 CPU 코어 6개 이상 (인텔은 P코어)", "게임용 CPU 코어 8개 이상 (인텔은 P코어)", "독립 게임 실측 상위권", "화면 출력용 내장 그래픽", "판매 옵션의 CPU 단품 보증 확인"],
   gpu: ["정확한 제조사·카드 모델 명시", "VRAM 12GB 이상", "독립 다중 게임 실측의 4K 평균 60fps 이상", "기본 파워가 카드 제조사 권장 출력 충족", "동일 카드의 부하 소음 35dBA 이하 실측"],
   board: ["메모리 슬롯 4개 이상", "NVMe M.2 3개 이상", "2.5GbE 이상 유선랜", "그래픽 슬롯 대역폭 희생 없이 NVMe 2개 이상 사용", "장시간 CPU 부하에서 전원부 온도 85°C 이하 실측"],
@@ -14,12 +14,12 @@ const checks = {
 } as const satisfies Record<PcSlot, readonly string[]>;
 
 const officeChecks: Partial<Record<PcSlot, readonly string[]>> = {
-  board: ["메모리 슬롯 2개 이상", "NVMe M.2 1개 이상", "1GbE 이상 유선랜", checks.board[3], checks.board[4]],
-  ram: ["총 16GB 이상", "메모리 모듈 2개 이상", "DDR4-3200 또는 DDR5 제품 표기", checks.ram[3], checks.ram[4]],
-  storage: ["SSD 500GB 이상", ...checks.storage.slice(1)],
-  psu: ["사무용 내장그래픽 기준 정격 300W 이상", checks.psu[1], "80 PLUS 기본 등급 이상", ...checks.psu.slice(3)],
-  cooler: ["CPU 소켓 지원", "CPU 제조사 기본 쿨러 또는 상위 부품", ...checks.cooler.slice(2)],
-  case: ["기본 팬 1개 이상", ...checks.case.slice(1)],
+  board: ["메모리 슬롯 2개 이상", "NVMe M.2 1개 이상", "1GbE 이상 유선랜", marketplacePartChecks.board[3], marketplacePartChecks.board[4]],
+  ram: ["총 16GB 이상", "메모리 모듈 2개 이상", "DDR4-3200 또는 DDR5 제품 표기", marketplacePartChecks.ram[3], marketplacePartChecks.ram[4]],
+  storage: ["SSD 500GB 이상", ...marketplacePartChecks.storage.slice(1)],
+  psu: ["사무용 내장그래픽 기준 정격 300W 이상", marketplacePartChecks.psu[1], "80 PLUS 기본 등급 이상", ...marketplacePartChecks.psu.slice(3)],
+  cooler: ["CPU 소켓 지원", "CPU 제조사 기본 쿨러 또는 상위 부품", ...marketplacePartChecks.cooler.slice(2)],
+  case: ["기본 팬 1개 이상", ...marketplacePartChecks.case.slice(1)],
 };
 
 const factLabels: Record<PcSlot, readonly string[]> = {
@@ -33,15 +33,16 @@ const factLabels: Record<PcSlot, readonly string[]> = {
   case: ["흡기·팬", "장착 한도", "조립·이슈"],
 };
 
-type Evidence = {
+export type MarketplacePartProfile = {
   slot: PcSlot;
   names: string[];
   facts: Record<string, readonly [text: string, source: string]>;
   verified?: Record<string, readonly [met: boolean, source: string]>;
   attention?: string;
 };
-const evidence = new Map<PcSlot, Map<string, Evidence>>();
-for (const profile of data.parts as unknown as readonly Evidence[]) {
+export const marketplacePartProfiles = data.parts as unknown as readonly MarketplacePartProfile[];
+const evidence = new Map<PcSlot, Map<string, MarketplacePartProfile>>();
+for (const profile of marketplacePartProfiles) {
   let models = evidence.get(profile.slot);
   if (!models) { models = new Map(); evidence.set(profile.slot, models); }
   for (const model of profile.names) models.set(model, profile);
@@ -67,7 +68,7 @@ function previouslyVerified(review: FullPcReview, slot: PcSlot, index: number) {
 export function assessMarketplaceFullPc(review: FullPcReview) {
   const slots = (Object.keys(PC_PARTS) as PcSlot[]).map(slot => {
     const profile = evidence.get(slot)?.get(review.parts[slot]);
-    const labels = (review.integratedOffice && officeChecks[slot]) || checks[slot];
+    const labels = (review.integratedOffice && officeChecks[slot]) || marketplacePartChecks[slot];
     const criteria = labels.map((label, index) => {
       const verified = profile?.verified?.[index];
       const partEvidence = verified ? { met: verified[0], source: verified[1] } : previouslyVerified(review, slot, index);
@@ -83,5 +84,6 @@ export function assessMarketplaceFullPc(review: FullPcReview) {
   });
   const confirmed = slots.reduce((total, slot) => total + slot.points, 0);
   const checked = slots.reduce((total, slot) => total + slot.checked, 0);
-  return { confirmed, checked, score: checked === 40 && !review.configurationConflict ? confirmed : null, slots, checkedOn: data.checkedOn };
+  const displayScore = checked > 0 && !review.configurationConflict ? confirmed : null;
+  return { confirmed, checked, displayScore, score: checked === 40 && !review.configurationConflict ? confirmed : null, slots, checkedOn: data.checkedOn };
 }

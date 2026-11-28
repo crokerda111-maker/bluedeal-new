@@ -54,9 +54,6 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const board = product.category === "fullpc" ? buildFullPcBoard(data.items, now) : [];
   const fullPc = board.find(row => row.product.id === product.id);
   const configurationReview = fullPc?.review;
-  const peers = fullPc?.priceComparison ? board.filter(row =>
-    row.product.id !== product.id && row.priceComparison && row.comparison === fullPc.comparison
-  ).sort((a, b) => (a.total ?? Infinity) - (b.total ?? Infinity)) : [];
   const savings = fullPc?.savings;
   const marketplaceNote = marketplaceNotes[product.id as keyof typeof marketplaceNotes];
   const purchaseNote = marketplaceNote && "kind" in marketplaceNote;
@@ -103,7 +100,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
     {isSystem ? <section id="fullpc-configuration" className="bd-surface-md scroll-mt-24 space-y-4 p-5 sm:p-6" aria-labelledby="fullpc-configuration-title">
       <h2 id="fullpc-configuration-title" className="text-xl font-semibold">{product.category === "fullpc" ? "완본체" : "반본체"} 기본 부품 구성</h2>
       {configurationReview && fullPc?.quality ? <FullPcConfiguration review={configurationReview} quality={fullPc.quality} /> : <PcSellerConfiguration product={product} />}
-      {fullPc ? <FullPcPriceAssessment row={fullPc} peers={peers} /> : null}
+      {fullPc ? <FullPcPriceAssessment row={fullPc} /> : null}
       {marketplaceNote ? <div className="rounded-xl border border-amber-200/25 bg-amber-200/5 p-4 text-sm leading-6">
         <h3 className="font-semibold text-amber-100">{purchaseNote ? "판매 조건에서 확인할 점" : "구매 후기에서 확인할 점"}</h3>
         <p className="mt-1 text-white/80">{marketplaceNote.note}</p>

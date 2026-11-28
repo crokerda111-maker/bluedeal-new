@@ -98,6 +98,22 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <nav id="home-primary-links" aria-label="주요 메뉴" className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        {PRIMARY_ROUTES.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            prefetch={false}
+            className="group bd-surface-md flex min-w-0 flex-col p-3 transition hover:-translate-y-0.5 hover:border-cyan-200/25 hover:bg-white/10 sm:p-6"
+          >
+            <span aria-hidden="true" className="text-[11px] font-semibold tracking-[0.2em] text-cyan-200/70">{item.eyebrow}</span>
+            <span className="mt-1 font-semibold tracking-tight group-hover:text-cyan-100 sm:mt-3 sm:text-xl">{item.title}</span>
+            <span className="mt-3 hidden text-sm leading-6 text-white/75 sm:block">{item.desc}</span>
+            <span aria-hidden="true" className="mt-auto pt-1 text-xs font-medium text-white/85 sm:pt-5 sm:text-sm">{item.action} →</span>
+          </Link>
+        ))}
+      </nav>
+
       <MarketplaceFullPcPicks items={data.items} now={now} home />
 
       <MonthlyEvents now={now} />
@@ -118,22 +134,6 @@ export default async function HomePage() {
           action="커뮤니티 전체"
         />}
       />
-
-      <nav id="home-primary-links" aria-label="주요 메뉴" className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-        {PRIMARY_ROUTES.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            prefetch={false}
-            className="group bd-surface-md flex min-w-0 flex-col p-3 transition hover:-translate-y-0.5 hover:border-cyan-200/25 hover:bg-white/10 sm:p-6"
-          >
-            <span aria-hidden="true" className="text-[11px] font-semibold tracking-[0.2em] text-cyan-200/70">{item.eyebrow}</span>
-            <span className="mt-1 font-semibold tracking-tight group-hover:text-cyan-100 sm:mt-3 sm:text-xl">{item.title}</span>
-            <span className="mt-3 hidden text-sm leading-6 text-white/75 sm:block">{item.desc}</span>
-            <span aria-hidden="true" className="mt-auto pt-1 text-xs font-medium text-white/85 sm:pt-5 sm:text-sm">{item.action} →</span>
-          </Link>
-        ))}
-      </nav>
     </div>
   );
 }

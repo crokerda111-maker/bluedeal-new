@@ -25,7 +25,7 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
   return <div className="space-y-4 text-sm leading-6">
     <div>
       <p className="mt-1 text-white/75">{review.condition} · {review.checkedOn} KST</p>
-      <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. " : ""}부품별 5개 기준으로 봅니다. 자세히를 누르면 확인한 사양과 채점 근거를 볼 수 있습니다.</p>
+      <p className="mt-1 text-white/70">{review.integratedOffice ? "사무용 내장그래픽 구성 기준입니다. " : ""}부품별 점수에는 근거가 확인된 항목만 반영합니다. 자세히에서 사양과 근거를 볼 수 있습니다.</p>
       {review.purchaseTerms ? <p className="mt-1 text-white/75">{review.purchaseTerms.os} · {review.purchaseTerms.warranty} <a className={sourceStyle} href={review.purchaseTerms.source} target="_blank" rel="noopener noreferrer">조건 출처<span className="sr-only"> (새 창)</span></a></p> : null}
       {review.configurationConflict ? <p className="mt-2 rounded-lg bg-amber-500/10 p-3 text-amber-100">{review.configurationConflict}</p> : null}
     </div>
@@ -35,7 +35,6 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
         {quality.slots.map(({ slot, points, checked, failed, criteria, facts, attention }) => {
           const editorial = getPartEditorial(review.parts[slot]);
           const board = slot === "board" && !review.configurationConflict ? getBoardPartExpansion(review.parts.board) : undefined;
-          const state = failed.length ? "절충 사양" : checked === 5 && points >= 4 ? "검증 양호" : "확인 진행";
           const stateColor = failed.length ? "text-amber-100" : points >= 4 ? "text-cyan-100" : "text-white/70";
           const summary = hasAsrockRyzen9000Advisory(board, review.parts.cpu) ? asrockRyzen9000Advisory.title : board?.sharing ?? attention ?? (failed.length ? `미충족 · ${failed.map(item => item.label).join(", ")}` :
             facts.find(item => item.evidence && (item.label === "게이밍 등급" || item.label === "제조사 라인업"))?.evidence?.[0]);
@@ -43,8 +42,7 @@ export default function FullPcConfiguration({ review, quality }: { review: FullP
             <div className="grid min-w-0 gap-x-3 gap-y-1 sm:grid-cols-[minmax(0,1fr)_auto]">
               <span className="min-w-0 break-words"><span className="mr-2 font-semibold text-cyan-100">{PC_PARTS[slot]}</span>{" "}{review.parts[slot]}</span>
               <span className={`text-xs sm:text-right sm:text-sm ${stateColor}`}>
-                <strong className="tabular-nums">{checked === 5 ? `${points}/5점` : checked > 0 ? `충족 ${points} · 확인 ${checked}/5` : "평가 보류"}</strong>
-                {failed.length || checked === 5 ? ` · ${state}` : ""}
+                <strong className="tabular-nums">{checked > 0 && !review.configurationConflict ? `${points}/5점` : "—"}</strong>
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-x-1">
