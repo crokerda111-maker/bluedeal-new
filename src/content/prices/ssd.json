@@ -1,7 +1,7 @@
 {
   "category": "ssd",
-  "updatedAt": "2026-11-28T04:18:06.912Z",
-  "generatedAt": "2026-11-28T04:18:06.912Z",
+  "updatedAt": "2026-11-28T12:20:18.000Z",
+  "generatedAt": "2026-11-28T12:20:18.000Z",
   "items": [
     {
       "id": "retail-seorin-1000001188",
@@ -689,6 +689,30 @@
       "couponPrice": 373450,
       "couponNote": "추가 즉시할인쿠폰 11,550원 적용 표시가입니다. 계정별 쿠폰 보유·중복 여부는 결제 화면에서 확인하세요. 별도 11월 쿠폰과 적립은 합산하지 않았습니다.",
       "goCode": "1df0sfdqc-VR4wOW"
+    },
+    {
+      "name": "삼성전자 990 EVO Plus 1TB (MZ-V9S1T0BW)",
+      "low7d": null,
+      "low30d": null,
+      "change24hPct": null,
+      "officialUrl": "https://www.samsung.com/sec/support/model/MZ-V9S1T0BW/",
+      "checkedAt": "2026-11-28T12:20:18.000Z",
+      "updatedAt": "2026-11-28T12:20:18.000Z",
+      "capacityGB": 1000,
+      "ssdDram": "absent",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-28T12:20:18.000Z",
+      "id": "retail-11st-9387431846",
+      "spec": "MZ-V9S1T0BW · 국내 공식인증 표기 · 1TB 단품 수량 1",
+      "price": 348980,
+      "source": "11번가",
+      "seller": "하나아이엔티몰",
+      "shippingFee": 0,
+      "shippingNote": "기본 무료배송 · 추가 배송 조건은 판매처 확인",
+      "priceNote": "수량 1 할인 전 판매가입니다. 삼성 고객센터가 A/S 연락처로 표시됩니다.",
+      "couponPrice": 348800,
+      "couponNote": "상품 선택 후 표시되는 즉시할인가입니다. 별도 장바구니 쿠폰, 카드 및 적립은 합산하지 않았습니다.",
+      "goCode": "97oJhCPFWs3BImOv"
     }
   ]
 }

@@ -63,6 +63,12 @@
         "url": "https://www.samsung.com/sec/support/model/MZ-V9S1T0BW/",
         "observedAt": "2026-11-28T04:18:06.912Z",
         "kind": "manufacturer-specifications"
+      },
+      {
+        "label": "11번가 · 하나아이엔티몰 판매 상세",
+        "url": "https://www.11st.co.kr/products/9387431846",
+        "observedAt": "2026-11-28T12:20:18.000Z",
+        "kind": "retailer-listing"
       }
     ],
     "listObservedAt": null,
@@ -88,6 +94,12 @@
         "merchant": "11번가",
         "seller": "현대홈쇼핑",
         "pricePage": "/prices/ssd#retail-11st-9613337419"
+      },
+      {
+        "id": "retail-11st-9387431846",
+        "merchant": "11번가",
+        "seller": "하나아이엔티몰",
+        "pricePage": "/prices/ssd#retail-11st-9387431846"
       }
     ]
   },
