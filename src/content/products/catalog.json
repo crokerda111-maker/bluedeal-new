@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "37c36b3921d621b3e8ce86f29509a431c8e907f5de6eaea9d5f79ee7cffe8941",
+  "catalogHash": "99098e9f5045fb4383c2ec0a1ad3385ece63ca620d44cf21fcf3eb0576115acc",
   "entries": 844,
   "products": [
     {
@@ -57747,6 +57747,12 @@
           "url": "https://www.gigabyte.com/Motherboard/B850M-GAMING-X-WIFI6E-rev-10/sp",
           "observedAt": "2026-11-28T06:20:00.535Z",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "G마켓 · 동일 기본 구성 판매가와 배송",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=3450068866",
+          "observedAt": "2026-11-28T14:24:47.000Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -57760,6 +57766,12 @@
           "merchant": "11번가",
           "seller": "포유컴퓨터",
           "pricePage": "/prices/fullpc#reviewed-fullpc-11st-6748498698-offer"
+        },
+        {
+          "id": "reviewed-fullpc-gmarket-3450068866-offer",
+          "merchant": "G마켓",
+          "seller": "포유컴퓨터1등",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-3450068866-offer"
         }
       ],
       "referenceCode": "BD-BA41A5B3AB"
@@ -57934,6 +57946,12 @@
           "url": "https://asrock.com/MB/AMD/B850M-X%20R2.0/index.us.asp",
           "observedAt": "2026-11-28T06:20:00.535Z",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "11번가 · 동일 기본 구성 판매가와 배송",
+          "url": "https://www.11st.co.kr/products/9514848406",
+          "observedAt": "2026-11-28T14:24:47.000Z",
+          "kind": "retailer-listing"
         }
       ],
       "listObservedAt": null,
@@ -57947,6 +57965,12 @@
           "merchant": "G마켓",
           "seller": "포유컴퓨터1등",
           "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4812019939-offer"
+        },
+        {
+          "id": "reviewed-fullpc-11st-9514848406-offer",
+          "merchant": "11번가",
+          "seller": "포유컴퓨터",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-11st-9514848406-offer"
         }
       ],
       "referenceCode": "BD-C096F64B24"

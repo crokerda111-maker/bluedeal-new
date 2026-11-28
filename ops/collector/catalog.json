@@ -2118,6 +2118,18 @@
       "category": "ssd",
       "seller": "하나아이엔티몰",
       "sourceUrl": "https://www.11st.co.kr/products/9387431846"
+    },
+    {
+      "id": "reviewed-fullpc-11st-9514848406-offer",
+      "category": "fullpc",
+      "seller": "포유컴퓨터",
+      "sourceUrl": "https://www.11st.co.kr/products/9514848406"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-3450068866-offer",
+      "category": "fullpc",
+      "seller": "포유컴퓨터1등",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=3450068866"
     }
   ]
 }
