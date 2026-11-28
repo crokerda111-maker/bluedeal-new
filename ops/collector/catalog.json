@@ -2088,6 +2088,30 @@
       "category": "ssd",
       "seller": "현대홈쇼핑",
       "sourceUrl": "https://www.11st.co.kr/products/9613337419"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4812019939-offer",
+      "category": "fullpc",
+      "seller": "포유컴퓨터1등",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4812019939"
+    },
+    {
+      "id": "reviewed-fullpc-11st-6748498698-offer",
+      "category": "fullpc",
+      "seller": "포유컴퓨터",
+      "sourceUrl": "https://www.11st.co.kr/products/6748498698"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4827700467-offer",
+      "category": "fullpc",
+      "seller": "(주)서린씨앤아이",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4827700467"
+    },
+    {
+      "id": "reviewed-fullpc-11st-9551096949-offer",
+      "category": "fullpc",
+      "seller": "서린씨앤아이",
+      "sourceUrl": "https://www.11st.co.kr/products/9551096949"
     }
   ]
 }

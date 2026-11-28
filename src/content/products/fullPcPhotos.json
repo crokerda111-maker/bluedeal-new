@@ -152,5 +152,26 @@
     "source": "https://item.gmarket.co.kr/Item?goodscode=4886060915",
     "sourceLabel": "G마켓",
     "imageSource": "https://gdimg.gmarket.co.kr/4886060915/still/600?ver=1795653577"
+  },
+  "reviewed-fullpc-gmarket-4812019939": {
+    "src": "https://gdimg.gmarket.co.kr/4812019939/still/600",
+    "alt": "포유컴 9521 완본체 판매 사진",
+    "source": "https://item.gmarket.co.kr/Item?goodsCode=4812019939",
+    "sourceLabel": "G마켓",
+    "imageSource": "https://gdimg.gmarket.co.kr/4812019939/still/600"
+  },
+  "reviewed-fullpc-11st-6748498698": {
+    "src": "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/pd/v2/4/9/8/6/9/8/SDcuU/6748498698_B.webp",
+    "alt": "포유컴 6746 완본체 판매 사진",
+    "source": "https://www.11st.co.kr/products/6748498698",
+    "sourceLabel": "11번가",
+    "imageSource": "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/pd/v2/4/9/8/6/9/8/SDcuU/6748498698_B.webp"
+  },
+  "reviewed-fullpc-gmarket-4827700467": {
+    "src": "https://gdimg.gmarket.co.kr/4827700467/still/600",
+    "alt": "서린컴퓨터 SRC0043 완본체 판매 사진",
+    "source": "https://item.gmarket.co.kr/Item?goodsCode=4827700467",
+    "sourceLabel": "G마켓",
+    "imageSource": "https://gdimg.gmarket.co.kr/4827700467/still/600"
   }
 }

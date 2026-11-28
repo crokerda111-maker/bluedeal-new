@@ -2223,5 +2223,256 @@
       "source": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T_LW_11161030.jpg"
     },
     "comparisonStatus": "동일 부품 개별 구매 총액 확인 필요"
+  },
+  {
+    "productId": "reviewed-fullpc-gmarket-4812019939",
+    "condition": "포유컴 9521 · 기본 구성",
+    "checkedOn": "2026-11-28",
+    "sellerUrl": "https://item.gmarket.co.kr/Item?goodsCode=4812019939",
+    "partsUrl": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/9521.jpg",
+    "gpuSource": "https://nation.sapphiretech.com/en/consumer/pulse-radeon-rx-9070-xt-16g-gddr6",
+    "parts": {
+      "cpu": "AMD Ryzen 7 7800X3D",
+      "gpu": "SAPPHIRE PULSE Radeon RX 9070 XT D6 16GB",
+      "storage": "컴이지 KINGDOM New PM M.2 NVMe 1TB",
+      "psu": "CORSAIR CX750 80 PLUS Bronze",
+      "cooler": "3RSYS Socoool RC1400 Quiet 쌍철봉",
+      "board": "ASRock B850M-X R2.0",
+      "ram": "지티엠코리아 DDR5-4800 32GB (16GB × 2)",
+      "case": "ZALMAN i8 빅사이즈 터보 블랙"
+    },
+    "quantities": {
+      "ram": 2
+    },
+    "tested": {
+      "board": {
+        "results": [
+          false,
+          false,
+          true
+        ],
+        "fact": "6+1+1 페이즈이며 DDR5 슬롯 2개, SSD용 M.2 슬롯 2개, 2.5GbE입니다.",
+        "url": "https://asrock.com/MB/AMD/B850M-X%20R2.0/index.us.asp"
+      },
+      "ram": {
+        "results": [
+          true,
+          true,
+          false
+        ],
+        "fact": "지티엠코리아 DDR5-4800 32GB (16GB × 2)",
+        "url": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/9521.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          null
+        ],
+        "fact": "컴이지 KINGDOM New PM M.2 NVMe 1TB",
+        "url": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/9521.jpg"
+      },
+      "psu": {
+        "results": [
+          true,
+          null,
+          false
+        ],
+        "fact": "750W Bronze 표기. SAPPHIRE 권장 정격 750W와 같으며 GPU에는 8핀 전원 단자 두 개가 필요합니다.",
+        "url": "https://nation.sapphiretech.com/en/consumer/pulse-radeon-rx-9070-xt-16g-gddr6"
+      },
+      "cooler": {
+        "results": [
+          null,
+          null
+        ],
+        "fact": "3RSYS Socoool RC1400 Quiet 쌍철봉",
+        "url": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/9521.jpg"
+      },
+      "case": {
+        "results": [
+          null,
+          null
+        ],
+        "fact": "ZALMAN i8 빅사이즈 터보 블랙",
+        "url": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/9521.jpg"
+      }
+    },
+    "notes": [
+      "보드의 DDR5 슬롯 두 개가 기본 16GB 두 장으로 모두 찹니다. 메모리 용량을 늘릴 때에는 기존 모듈 교체를 고려하세요.",
+      "판매 사양표 기준 Windows 라이선스가 포함되지 않습니다. G마켓 판매번호의 본체 보증 기간은 주문 전에 확인하세요."
+    ],
+    "priceOption": "9521 기본 사양 · 지티엠코리아 DDR5-4800 32GB (16GB × 2) · Windows 미포함",
+    "comparisonStatus": "동일 부품 개별 구매 총액 확인 필요"
+  },
+  {
+    "productId": "reviewed-fullpc-11st-6748498698",
+    "condition": "포유컴 6746 · 기본 구성",
+    "checkedOn": "2026-11-28",
+    "sellerUrl": "https://www.11st.co.kr/products/6748498698",
+    "partsUrl": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/6746.jpg",
+    "gpuSource": "https://nation.sapphiretech.com/en/consumer/pulse-radeon-rx-9070-xt-16g-gddr6",
+    "parts": {
+      "cpu": "AMD Ryzen 7 7800X3D",
+      "gpu": "SAPPHIRE PULSE Radeon RX 9070 XT D6 16GB",
+      "storage": "컴이지 KINGDOM New PM M.2 NVMe 1TB",
+      "psu": "CORSAIR CX750 80 PLUS Bronze",
+      "cooler": "3RSYS Socoool RC1400 Quiet 쌍철봉",
+      "board": "GIGABYTE B850M GAMING X (Wi-Fi 6E 표기)",
+      "ram": "PATRIOT DDR5-6000 CL30 32GB (16GB × 2, EVO)",
+      "case": "NZXT S5 RGB DELUXE"
+    },
+    "quantities": {
+      "ram": 2
+    },
+    "tested": {
+      "board": {
+        "results": [
+          true,
+          null,
+          true
+        ],
+        "fact": "판매표는 B850M GAMING X와 Wi-Fi 6E를 표기하며 출고 리비전은 표시하지 않습니다.",
+        "url": "https://www.gigabyte.com/Motherboard/B850M-GAMING-X-WIFI6E-rev-10/sp"
+      },
+      "ram": {
+        "results": [
+          true,
+          true,
+          true
+        ],
+        "fact": "PATRIOT DDR5-6000 CL30 32GB (16GB × 2, EVO)",
+        "url": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/6746.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          null
+        ],
+        "fact": "컴이지 KINGDOM New PM M.2 NVMe 1TB",
+        "url": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/6746.jpg"
+      },
+      "psu": {
+        "results": [
+          true,
+          null,
+          false
+        ],
+        "fact": "750W Bronze 표기. SAPPHIRE 권장 정격 750W와 같으며 GPU에는 8핀 전원 단자 두 개가 필요합니다.",
+        "url": "https://nation.sapphiretech.com/en/consumer/pulse-radeon-rx-9070-xt-16g-gddr6"
+      },
+      "cooler": {
+        "results": [
+          null,
+          null
+        ],
+        "fact": "3RSYS Socoool RC1400 Quiet 쌍철봉",
+        "url": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/6746.jpg"
+      },
+      "case": {
+        "results": [
+          null,
+          null
+        ],
+        "fact": "NZXT S5 RGB DELUXE",
+        "url": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/6746.jpg"
+      }
+    },
+    "notes": [
+      "DDR5-6000 CL30 16GB 두 장이 기본입니다. 실제 6000 속도 동작은 BIOS 프로필과 안정성에 따라 달라집니다.",
+      "SSD는 컴이지 KINGDOM New PM 1TB이며 판매 사양표에 DRAM 또는 낸드 유형이 기재되지 않습니다."
+    ],
+    "priceOption": "6746 기본 사양 · PATRIOT DDR5-6000 CL30 32GB (16GB × 2, EVO) · Windows 미포함",
+    "purchaseTerms": {
+      "os": "Windows 미포함",
+      "warranty": "판매처 무상 1년 · 유상 4년",
+      "source": "https://www.11st.co.kr/products/6748498698"
+    },
+    "comparisonStatus": "동일 부품 개별 구매 총액 확인 필요"
+  },
+  {
+    "productId": "reviewed-fullpc-gmarket-4827700467",
+    "condition": "서린컴퓨터 SRC0043 · 기본 구성",
+    "checkedOn": "2026-11-28",
+    "sellerUrl": "https://item.gmarket.co.kr/Item?goodsCode=4827700467",
+    "partsUrl": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0043_261120_components_m.jpg",
+    "gpuSource": "https://www.gigabyte.com/Graphics-Card/GV-R9070XTGAMING-OC-16GD/sp",
+    "parts": {
+      "cpu": "AMD Ryzen 7 7800X3D (멀티팩 정품 표기)",
+      "gpu": "GIGABYTE Radeon RX 9070 XT GAMING OC D6 16GB",
+      "board": "GIGABYTE B650M K 피씨디렉트",
+      "ram": "Apacer DDR5-5600 CL46 32GB (16GB × 2)",
+      "storage": "AGI AI818 M.2 NVMe 서린 1TB",
+      "psu": "NEWZEN SKULL 850XM 풀모듈러 ATX 3.1 80 PLUS Gold 블랙",
+      "cooler": "Thermalright Peerless Assassin 120 SE ARGB 서린",
+      "case": "LIAN LI LANCOOL 207 블랙"
+    },
+    "quantities": {
+      "ram": 2
+    },
+    "tested": {
+      "board": {
+        "results": [
+          true,
+          false,
+          true
+        ],
+        "fact": "DDR5 슬롯 4개, SSD용 M.2 슬롯 2개, 2.5GbE입니다.",
+        "url": "https://www.gigabyte.com/Motherboard/B650M-K-rev-10/sp"
+      },
+      "ram": {
+        "results": [
+          true,
+          true,
+          false
+        ],
+        "fact": "Apacer DDR5-5600 CL46 32GB (16GB × 2)",
+        "url": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0043_261120_components_m.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          null
+        ],
+        "fact": "AGI AI818 M.2 NVMe 서린 1TB",
+        "url": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0043_261120_components_m.jpg"
+      },
+      "psu": {
+        "results": [
+          true,
+          true,
+          true
+        ],
+        "fact": "850W Gold·ATX 3.1 풀모듈러 표기. 제조사 권장 850W와 같으며 GPU 8핀 전원 단자 3개 연결이 필요합니다.",
+        "url": "https://www.gigabyte.com/Graphics-Card/GV-R9070XTGAMING-OC-16GD/sp"
+      },
+      "cooler": {
+        "results": [
+          null,
+          null
+        ],
+        "fact": "Thermalright Peerless Assassin 120 SE ARGB 서린",
+        "url": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0043_261120_components_m.jpg"
+      },
+      "case": {
+        "results": [
+          null,
+          null
+        ],
+        "fact": "LIAN LI LANCOOL 207 블랙",
+        "url": "https://seorincni.hgodo.com/Shop/ShopCOM/SRCSPEC/SRC0043_261120_components_m.jpg"
+      }
+    },
+    "notes": [
+      "G마켓과 11번가가 같은 SRC0043_261120 부품표를 안내합니다. 두 판매처를 한 구성에 비교합니다.",
+      "Free DOS 기본. 부품 교체가 필요하면 발송 전 구매자에게 확인한다고 판매처가 안내합니다.",
+      "그래픽카드 권장 850W와 파워 표기 정격이 같습니다. 출고 시 GPU 전원 케이블 연결을 확인하세요."
+    ],
+    "priceOption": "SRC0043_261120 기본 사양 · Apacer DDR5-5600 CL46 32GB (16GB × 2) · Windows 미포함",
+    "purchaseTerms": {
+      "os": "Windows 미포함",
+      "warranty": "구매 후 1년 정상 사용 중 하드웨어 고장 무상 A/S",
+      "source": "https://seorincni.hgodo.com/SRC/Detail/common_after-service_m.jpg"
+    },
+    "comparisonStatus": "동일 부품 개별 구매 총액 확인 필요"
   }
 ]
