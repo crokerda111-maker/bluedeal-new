@@ -1,7 +1,7 @@
 {
   "category": "ssd",
-  "updatedAt": "2026-11-27T13:44:09.787Z",
-  "generatedAt": "2026-11-27T13:44:09.787Z",
+  "updatedAt": "2026-11-28T01:10:34.502Z",
+  "generatedAt": "2026-11-28T01:10:34.502Z",
   "items": [
     {
       "id": "retail-seorin-1000001188",
@@ -591,6 +591,58 @@
       "updatedAt": "2026-11-27T13:44:09.787Z",
       "availability": "in-stock",
       "availabilityCheckedAt": "2026-11-27T13:44:09.787Z"
+    },
+    {
+      "id": "retail-gmarket-4374455422",
+      "name": "키오시아 EXCERIA with Heatsink 2TB",
+      "spec": "LSC11K2T04G8 · 2,048GB · 히트싱크·고정 나사 · 1개",
+      "price": 557250,
+      "low7d": null,
+      "low30d": null,
+      "change24hPct": null,
+      "goCode": "6T3bDWdtGLPMAyty",
+      "source": "G마켓",
+      "seller": "KIOXIA공식총판대리점",
+      "shippingFee": 0,
+      "shippingNote": "표준 국내 무료배송. 배송지에 따른 추가비는 주문 전 확인.",
+      "priceNote": "해당 판매 페이지의 할인 전 표시가. 등록된 할인은 쿠폰가·카드가로 구분합니다.",
+      "officialUrl": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-heatsink.html",
+      "checkedAt": "2026-11-28T01:10:34.502Z",
+      "updatedAt": "2026-11-28T01:10:34.502Z",
+      "capacityGB": 2048,
+      "ssdDram": "present",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-28T01:10:34.502Z",
+      "couponPrice": 532250,
+      "couponNote": "8% 디지털가전 쿠폰은 1만 원 이상에서 최대 20,000원. 5% 중복쿠폰은 50만 원 이상에서 최대 5,000원. 두 쿠폰 적용 표시가입니다.",
+      "couponEndsOn": "2026-12-04",
+      "cardPrice": 495000,
+      "cardRequiresCoupon": true,
+      "cardNote": "대상 삼성카드로 스마일페이에서 결제할 때 판매 페이지에 표시된 금액입니다. 7%, 최대 70,000원. 결제 전에 적용 여부를 확인하세요."
+    },
+    {
+      "id": "retail-11st-7769997577",
+      "name": "키오시아 EXCERIA with Heatsink 2TB",
+      "spec": "LSC11K2T04G8 · 2,048GB · 히트싱크·고정 나사 · 1개",
+      "price": 589000,
+      "low7d": null,
+      "low30d": null,
+      "change24hPct": null,
+      "goCode": "zb4b5pCPcsS_80vR",
+      "source": "11번가",
+      "seller": "KIOXIA공식총판대리점",
+      "shippingFee": 0,
+      "shippingNote": "기본 무료배송. 제주 3,000원, 도서산간 4,000원 추가 표시.",
+      "priceNote": "해당 판매 페이지의 할인 전 표시가. 등록된 할인은 쿠폰가·카드가로 구분합니다.",
+      "officialUrl": "https://kr.kioxia.com/ko-kr/personal/ssd/exceria-heatsink.html",
+      "checkedAt": "2026-11-28T01:10:34.502Z",
+      "updatedAt": "2026-11-28T01:10:34.502Z",
+      "capacityGB": 2048,
+      "ssdDram": "present",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-28T01:10:34.502Z",
+      "couponPrice": 538000,
+      "couponNote": "추가 즉시할인쿠폰 51,000원 자동 적용 표시가입니다. 별도 장바구니 할인과 적립은 차감하지 않았습니다."
     }
   ]
 }

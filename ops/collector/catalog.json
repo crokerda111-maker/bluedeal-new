@@ -2058,6 +2058,18 @@
       "category": "fullpc",
       "seller": "포유컴퓨터",
       "sourceUrl": "https://www.11st.co.kr/products/9514856123"
+    },
+    {
+      "id": "retail-gmarket-4374455422",
+      "category": "ssd",
+      "seller": "KIOXIA공식총판대리점",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodsCode=4374455422"
+    },
+    {
+      "id": "retail-11st-7769997577",
+      "category": "ssd",
+      "seller": "KIOXIA공식총판대리점",
+      "sourceUrl": "https://www.11st.co.kr/products/7769997577"
     }
   ]
 }

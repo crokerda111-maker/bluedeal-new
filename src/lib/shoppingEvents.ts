@@ -2,6 +2,13 @@ import { GMARKET_BLACK_FRIDAY } from "./gmarketBlackFriday";
 
 const ALIEXPRESS_BLACK_FRIDAY_ANNOUNCEMENT = "https://www.prnewswire.com/kr/news-releases/uC54CuB9ACuC775uC2A4uD504uB808uC2A4u002Cu002DuAD11uAD70uC81Cu002DuC5F4uAE30u002DuC787uB294u002Du0027uBE14uB799uD504uB77CuC774uB370uC774u0027-302944740.html";
 
+const ALIEXPRESS_LOTTE_VISA_OFFER = {
+  summary: "대상 롯데 Visa 개인 신용카드로 해외배송 상품을 미화 100달러 이상 결제하면 30달러 즉시할인",
+  conditions: "11월 19일~12월 3일 선착순, 알리 ID당 이 기간 1회. 통화를 USD로 설정하고 대상 카드로 직접 결제해야 합니다. K-VENUE와 간편결제는 제외되며 다른 쿠폰·할인과 중복되지 않습니다.",
+  sourceLabel: "롯데카드 공식 조건",
+  sourceUrl: "https://www.lottecard.co.kr/app/LPBNFDA_V300.lc?bigTabGubun=2&evnBultSeq=11379&evnCtgSeq=9999",
+} as const;
+
 export type ShoppingEvent = {
   id: string;
   store: string;
@@ -12,6 +19,7 @@ export type ShoppingEvent = {
   endsOn: string;
   path?: string;
   announceOn?: string;
+  paymentOffer?: { summary: string; conditions: string; sourceLabel: string; sourceUrl: string };
 };
 
 export const SHOPPING_EVENTS: readonly ShoppingEvent[] = [
@@ -86,6 +94,7 @@ export const SHOPPING_EVENTS: readonly ShoppingEvent[] = [
     title: "알리익스프레스 블랙프라이데이 베스트셀러",
     description: "연말 인기 상품 기획전. 쿠폰과 결제 할인은 상품 및 결제수단별 적용 조건을 확인하세요.",
     officialUrl: ALIEXPRESS_BLACK_FRIDAY_ANNOUNCEMENT,
+    paymentOffer: ALIEXPRESS_LOTTE_VISA_OFFER,
     startsOn: "2026-11-27",
     endsOn: "2026-11-30",
   },
@@ -95,6 +104,7 @@ export const SHOPPING_EVENTS: readonly ShoppingEvent[] = [
     title: "알리익스프레스 12월 초이스데이",
     description: "블랙프라이데이의 마지막 해외직구 특가전입니다. 할인 적용 여부는 선택한 상품의 결제 화면에서 확인하세요.",
     officialUrl: ALIEXPRESS_BLACK_FRIDAY_ANNOUNCEMENT,
+    paymentOffer: ALIEXPRESS_LOTTE_VISA_OFFER,
     startsOn: "2026-12-01",
     endsOn: "2026-12-03",
     announceOn: "2026-11-19",
