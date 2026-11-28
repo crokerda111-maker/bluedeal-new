@@ -83,7 +83,7 @@
   {
     "productId": "reviewed-fullpc-11st-9423305936",
     "condition": "아싸컴 EV_A78D-A97T-C1T · 11번가 수량 1 기본 구성",
-    "checkedOn": "2026-11-24",
+    "checkedOn": "2026-11-28",
     "sellerUrl": "https://www.11st.co.kr/products/9423305936",
     "partsUrl": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T-S_11171110.jpg",
     "gpuSource": "https://www.asrock.com/Graphics-Card/AMD/Radeon%20RX%209070%20XT%20Challenger%2016GB/index.asp",
@@ -2137,5 +2137,91 @@
     ],
     "priceOption": "8250 · 지티엠코리아 DDR5-4800 16GB · MSI PRO B650M-B · 컴이지 KINGDOM New PM M.2 NVMe 1TB · 마이크로닉스 WIZMAX 850W 80PLUS Gold ATX 3.1 · FreeDOS (Windows 미포함)",
     "comparisonStatus": "무상 보증 기간·동일 부품 개별 구매 비용 확인 필요"
+  },
+  {
+    "productId": "reviewed-fullpc-gmarket-4886060915",
+    "condition": "아싸컴 G마켓 4886060915 · 화이트 기본 구성",
+    "checkedOn": "2026-11-28",
+    "sellerUrl": "https://item.gmarket.co.kr/Item?goodscode=4886060915",
+    "partsUrl": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T_LW_11161030.jpg",
+    "gpuSource": "https://www.asus.com/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g-white/techspec/",
+    "parts": {
+      "cpu": "AMD Ryzen 7 7800X3D (국내 정품 표기)",
+      "gpu": "ASUS PRIME Radeon RX 9070 XT White OC 16GB",
+      "board": "GIGABYTE B850M AORUS ELITE WIFI6E ICE",
+      "ram": "CORSAIR VENGEANCE DDR5-5600 CL40 32GB (16GB × 2)",
+      "storage": "ADATA LEGEND 960 PCIe 4.0 NVMe 1TB",
+      "psu": "Cooler Master MWE Gold 850 V3 (화이트)",
+      "cooler": "3RSYS RC1500 ARGB 쌍철봉 LITE",
+      "case": "ZALMAN P30 AIR BTF WHITE"
+    },
+    "quantities": {
+      "ram": 2
+    },
+    "tested": {
+      "board": {
+        "results": [
+          true,
+          false,
+          true
+        ],
+        "fact": "DDR5 슬롯 4개, M.2 슬롯 2개, 2.5GbE.",
+        "url": "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp"
+      },
+      "ram": {
+        "results": [
+          true,
+          true,
+          false
+        ],
+        "fact": "DDR5-5600 CL40 16GB 두 장.",
+        "url": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T_LW_11161030.jpg"
+      },
+      "storage": {
+        "results": [
+          true,
+          true
+        ],
+        "fact": "공식 문서의 1TB 모델. 순차 읽기 7,400MB/s, 쓰기 6,000MB/s.",
+        "url": "https://webapi3.adata.com/storage/downloadfile/datasheet_legend_960_pcie_gen4_x4_m2_2280_ssd_20250630.pdf"
+      },
+      "psu": {
+        "results": [
+          true,
+          true,
+          true
+        ],
+        "fact": "판매 부품표는 850W Gold 화이트를 표기합니다. 그래픽카드 제조사의 권장 파워 출력은 750W입니다.",
+        "url": "https://www.asus.com/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g-white/techspec/"
+      },
+      "cooler": {
+        "results": [
+          null,
+          null
+        ],
+        "fact": "판매 부품표에 3RSYS RC1500 ARGB 쌍철봉 LITE가 표시됩니다.",
+        "url": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T_LW_11161030.jpg"
+      },
+      "case": {
+        "results": [
+          true,
+          null
+        ],
+        "fact": "제조사 기본 140mm ARGB 팬 전면 두 개·후면 한 개.",
+        "url": "https://www.zalman.com/KO/Product/ProductDetail.do?pageIndex=1&pageSize=10&pageUnit=12&productSeq=1533&searchCategory1=5&searchCategory2=60&searchCategory3=-99&searchKey=&searchWord="
+      }
+    },
+    "notes": [
+      "화이트 케이스·메인보드·그래픽카드·파워 구성입니다. 기본 메모리는 CORSAIR VENGEANCE 16GB 두 장입니다.",
+      "기본 GPU는 PCIe 8핀 세 개가 필요합니다. 해당 파워의 출고 케이블과 연결 방식을 주문 전 확인하세요.",
+      "대표 사진은 연출 이미지입니다. 기본 부품표에서 공랭 쿨러와 실제 출고 구성을 확인하세요."
+    ],
+    "priceOption": "화이트 · CORSAIR DDR5-5600 CL40 32GB (16GB × 2) · B850M AORUS ELITE WIFI6E ICE · ADATA LEGEND 960 1TB · Windows 별도",
+    "purchaseTerms": {
+      "os": "Windows 미포함",
+      "warranty": "판매처 1년 무상 A/S",
+      "source": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T_LW_11161030.jpg"
+    },
+    "comparisonStatus": "동일 부품 개별 구매 총액 확인 필요"
   }
 ]

@@ -1226,6 +1226,164 @@
           "https://www.zalman.com/KO/Board/NewsDetail.do?seq=711"
         ]
       }
+    },
+    {
+      "slot": "gpu",
+      "names": [
+        "ASUS PRIME Radeon RX 9070 XT White OC 16GB"
+      ],
+      "facts": {
+        "칩 성능급": [
+          "Radeon RX 9070 XT · GDDR6 16GB.",
+          "https://www.asus.com/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g-white/techspec/"
+        ],
+        "제조사 라인업": [
+          "ASUS PRIME 화이트 OC 모델. 제조사 규격상 2.5슬롯.",
+          "https://www.asus.com/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g-white/techspec/"
+        ],
+        "냉각·전원": [
+          "카드 보조전원 8핀 세 개, 권장 파워 750W.",
+          "https://www.asus.com/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g-white/techspec/"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.asus.com/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g-white/techspec/"
+        ],
+        "1": [
+          true,
+          "https://www.asus.com/motherboards-components/graphics-cards/prime/prime-rx9070xt-o16g-white/techspec/"
+        ]
+      }
+    },
+    {
+      "slot": "board",
+      "names": [
+        "GIGABYTE B850M AORUS ELITE WIFI6E ICE"
+      ],
+      "facts": {
+        "PCIe·레인 공유": [
+          "Ryzen 7000 기준 그래픽 슬롯 PCIe 5.0 ×16, CPU 직결 M.2 두 개(PCIe 5.0 ×4 및 4.0 ×4).",
+          "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp"
+        ],
+        "1": [
+          false,
+          "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp"
+        ],
+        "2": [
+          true,
+          "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp"
+        ],
+        "3": [
+          true,
+          "https://www.gigabyte.com/Motherboard/B850M-AORUS-ELITE-WIFI6E-ICE-rev-1x/sp"
+        ]
+      }
+    },
+    {
+      "slot": "storage",
+      "names": [
+        "ADATA LEGEND 960 PCIe 4.0 NVMe 1TB"
+      ],
+      "facts": {
+        "DRAM·낸드": [
+          "1TB 모델에 별도 DRAM 캐시가 있습니다. 제조사의 용량별 문서에는 3D NAND로 표기됩니다.",
+          "https://webapi3.adata.com/storage/downloadfile/datasheet_legend_960_pcie_gen4_x4_m2_2280_ssd_20250630.pdf"
+        ],
+        "순차 읽기·쓰기": [
+          "1TB 제조사 순차 읽기 7,400MB/s, 쓰기 6,000MB/s.",
+          "https://webapi3.adata.com/storage/downloadfile/datasheet_legend_960_pcie_gen4_x4_m2_2280_ssd_20250630.pdf"
+        ],
+        "내구성·보증": [
+          "1TB 780TBW와 제조사 5년 제한 보증. 완본체 일괄 A/S는 판매처 조건을 적용합니다.",
+          "https://webapi3.adata.com/storage/downloadfile/datasheet_legend_960_pcie_gen4_x4_m2_2280_ssd_20250630.pdf"
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://webapi3.adata.com/storage/downloadfile/datasheet_legend_960_pcie_gen4_x4_m2_2280_ssd_20250630.pdf"
+        ],
+        "2": [
+          true,
+          "https://webapi3.adata.com/storage/downloadfile/datasheet_legend_960_pcie_gen4_x4_m2_2280_ssd_20250630.pdf"
+        ],
+        "3": [
+          true,
+          "https://webapi3.adata.com/storage/downloadfile/datasheet_legend_960_pcie_gen4_x4_m2_2280_ssd_20250630.pdf"
+        ],
+        "4": [
+          true,
+          "https://webapi3.adata.com/storage/downloadfile/datasheet_legend_960_pcie_gen4_x4_m2_2280_ssd_20250630.pdf"
+        ]
+      }
+    },
+    {
+      "slot": "psu",
+      "names": [
+        "Cooler Master MWE Gold 850 V3 (화이트)"
+      ],
+      "facts": {
+        "모듈러": [
+          "850W 화이트 버전 제조사 사양은 비모듈러이고 PCIe 6+2핀 커넥터 네 개를 명시합니다.",
+          "https://www.coolermaster.com/en-global/products/mwe-gold-v3-atx-3-1-white-edition-non-modular-series.html"
+        ],
+        "보증·이슈": [
+          "그래픽카드에 필요한 8핀 세 개의 연결 방식과 실제 출고 케이블을 확인하세요.",
+          "https://www.coolermaster.com/en-global/products/mwe-gold-v3-atx-3-1-white-edition-non-modular-series.html"
+        ]
+      },
+      "verified": {
+        "1": [
+          true,
+          "https://www.coolermaster.com/en-global/products/mwe-gold-v3-atx-3-1-white-edition-non-modular-series.html"
+        ],
+        "2": [
+          true,
+          "https://www.coolermaster.com/en-global/products/mwe-gold-v3-atx-3-1-white-edition-non-modular-series.html"
+        ],
+        "3": [
+          false,
+          "https://www.coolermaster.com/en-global/products/mwe-gold-v3-atx-3-1-white-edition-non-modular-series.html"
+        ]
+      }
+    },
+    {
+      "slot": "case",
+      "names": [
+        "ZALMAN P30 AIR BTF WHITE"
+      ],
+      "facts": {
+        "흡기·팬": [
+          "기본 140mm ARGB 팬 전면 두 개, 후면 한 개.",
+          "https://www.zalman.com/KO/Product/ProductDetail.do?pageIndex=1&pageSize=10&pageUnit=12&productSeq=1533&searchCategory1=5&searchCategory2=60&searchCategory3=-99&searchKey=&searchWord="
+        ],
+        "장착 한도": [
+          "그래픽카드 길이 최대 392mm, CPU 쿨러 높이 최대 181mm.",
+          "https://www.zalman.com/KO/Product/ProductDetail.do?pageIndex=1&pageSize=10&pageUnit=12&productSeq=1533&searchCategory1=5&searchCategory2=60&searchCategory3=-99&searchKey=&searchWord="
+        ]
+      },
+      "verified": {
+        "0": [
+          true,
+          "https://www.zalman.com/KO/Product/ProductDetail.do?pageIndex=1&pageSize=10&pageUnit=12&productSeq=1533&searchCategory1=5&searchCategory2=60&searchCategory3=-99&searchKey=&searchWord="
+        ],
+        "2": [
+          true,
+          "https://www.zalman.com/KO/Product/ProductDetail.do?pageIndex=1&pageSize=10&pageUnit=12&productSeq=1533&searchCategory1=5&searchCategory2=60&searchCategory3=-99&searchKey=&searchWord="
+        ],
+        "3": [
+          true,
+          "https://www.zalman.com/KO/Product/ProductDetail.do?pageIndex=1&pageSize=10&pageUnit=12&productSeq=1533&searchCategory1=5&searchCategory2=60&searchCategory3=-99&searchKey=&searchWord="
+        ]
+      }
     }
   ]
 }

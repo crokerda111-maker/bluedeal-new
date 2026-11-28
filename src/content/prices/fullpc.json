@@ -1,7 +1,7 @@
 {
   "category": "fullpc",
-  "updatedAt": "2026-11-28T00:55:07.090Z",
-  "generatedAt": "2026-11-28T00:55:07.090Z",
+  "updatedAt": "2026-11-28T02:20:52.454Z",
+  "generatedAt": "2026-11-28T02:20:52.454Z",
   "items": [
     {
       "id": "reviewed-fullpc-11st-8097951804-offer",
@@ -332,12 +332,12 @@
       "shippingNote": "기본 무료배송 · 제주·도서산간 추가비와 주문제작 배송 가능일은 판매처 확인",
       "priceNote": "수량 1 기준 쿠폰 전 3,348,710원, 기본 무료배송. 판매자가 1년 무상 A/S를 안내하며 Windows는 별도 옵션입니다.",
       "officialUrl": null,
-      "checkedAt": "2026-11-23T15:05:19.257Z",
-      "updatedAt": "2026-11-23T15:05:19.257Z",
+      "checkedAt": "2026-11-28T02:20:52.454Z",
+      "updatedAt": "2026-11-28T02:20:52.454Z",
       "availability": "in-stock",
-      "couponPrice": 3214770,
-      "couponNote": "11번가 판매 화면에 133,940원 쿠폰이 자동 적용되어 수량 1 합계가 3,214,770원으로 표시됐습니다. 발급 대상, 종료일, 다른 쿠폰과의 중복 여부는 판매처 확인이 필요합니다.",
-      "availabilityCheckedAt": "2026-11-23T15:05:19.257Z"
+      "couponPrice": 2946870,
+      "couponNote": "수량 1 구매 요약에서 401,840원 쿠폰 자동 적용을 확인했습니다. 별도 노출된 11월 2만 원 쿠폰과 적립은 합산하지 않았습니다. 계정별 적용 여부와 종료일은 결제 전에 확인하세요.",
+      "availabilityCheckedAt": "2026-11-28T02:20:52.454Z"
     },
     {
       "id": "reviewed-mixed-fullpc-gmarket-4432429738-offer",
@@ -796,6 +796,33 @@
       "availabilityCheckedAt": "2026-11-28T00:55:07.090Z",
       "couponPrice": 2489920,
       "couponNote": "기본 즉시할인쿠폰 100원과 추가 즉시할인쿠폰 339,530원 적용 표시가. 별도 장바구니 쿠폰·적립은 합산하지 않았습니다."
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4886060915-offer",
+      "name": "아싸컴 7800X3D · RX 9070 XT · 32GB · 1TB 화이트 완본체",
+      "spec": "화이트 · CORSAIR DDR5-5600 CL40 32GB (16GB × 2) · B850M AORUS ELITE WIFI6E ICE · ADATA LEGEND 960 1TB · Windows 별도",
+      "price": 3206410,
+      "low7d": null,
+      "low30d": null,
+      "change24hPct": null,
+      "goCode": "00vSewVi6WsXBJE1",
+      "source": "G마켓",
+      "seller": "전체판매1위_아싸컴",
+      "shippingFee": 0,
+      "shippingNote": "기본 일반택배 무료배송 · 제주·도서산간 추가비는 배송지 입력 후 확인",
+      "priceNote": "수량 1 기본 구성 기준. 판매처 부품표에 조립비 40,000원 포함 및 1년 무상 A/S 표기. 운영체제는 추가 옵션입니다.",
+      "officialUrl": null,
+      "checkedAt": "2026-11-28T02:20:52.454Z",
+      "updatedAt": "2026-11-28T02:20:52.454Z",
+      "availability": "in-stock",
+      "availabilityCheckedAt": "2026-11-28T02:20:52.454Z",
+      "couponPrice": 2944900,
+      "couponNote": "블랙프라이데이 PC 8% 쿠폰 256,510원과 5% 중복 쿠폰 5,000원 적용 표시가. PC 쿠폰은 10만 원 이상 최대 80만 원, 중복 쿠폰은 50만 원 이상 최대 5,000원. 쿠폰 발급 및 적용 여부는 결제 전 확인하세요.",
+      "couponEndsOn": "2026-11-30",
+      "cardPrice": 2744900,
+      "cardNote": "쿠폰가에서 대상 3대 카드사 × 스마일페이 9% 할인 적용 표시가. 7만 원 이상, 최대 20만 원, 11월 30일까지이며 일일 할인한도가 적용됩니다. 적립은 별도입니다.",
+      "cardRequiresCoupon": true,
+      "cardEndsOn": "2026-11-30"
     }
   ]
 }

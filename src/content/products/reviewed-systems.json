@@ -4204,5 +4204,92 @@
         "pricePage": "/prices/fullpc#reviewed-fullpc-11st-9514856123-offer"
       }
     ]
+  },
+  {
+    "id": "reviewed-fullpc-gmarket-4886060915",
+    "name": "아싸컴 7800X3D · RX 9070 XT · 32GB · 1TB 화이트 완본체",
+    "category": "fullpc",
+    "subtype": "assembled-pc",
+    "brand": "아싸컴",
+    "kind": "retailer-reviewed-model",
+    "features": [
+      "화이트 · GIGABYTE B850M AORUS ELITE WIFI6E ICE",
+      "CORSAIR VENGEANCE DDR5-5600 CL40 32GB (16GB × 2)",
+      "판매처 1년 무상 A/S"
+    ],
+    "specifications": [
+      {
+        "label": "판매처 기본사양 · CPU",
+        "value": "AMD Ryzen 7 7800X3D (국내 정품 표기)"
+      },
+      {
+        "label": "판매처 기본사양 · 그래픽카드",
+        "value": "ASUS PRIME Radeon RX 9070 XT White OC 16GB"
+      },
+      {
+        "label": "판매처 기본사양 · 메인보드",
+        "value": "GIGABYTE B850M AORUS ELITE WIFI6E ICE"
+      },
+      {
+        "label": "판매처 기본사양 · 메모리",
+        "value": "CORSAIR VENGEANCE DDR5-5600 CL40 32GB (16GB × 2)"
+      },
+      {
+        "label": "판매처 기본사양 · 저장장치",
+        "value": "ADATA LEGEND 960 PCIe 4.0 NVMe 1TB"
+      },
+      {
+        "label": "판매처 기본사양 · 파워",
+        "value": "Cooler Master MWE Gold 850 V3 (화이트)"
+      },
+      {
+        "label": "판매처 기본사양 · CPU 쿨러",
+        "value": "3RSYS RC1500 ARGB 쌍철봉 LITE"
+      },
+      {
+        "label": "판매처 기본사양 · 케이스",
+        "value": "ZALMAN P30 AIR BTF WHITE"
+      },
+      {
+        "label": "운영체제",
+        "value": "Windows 별도 선택"
+      }
+    ],
+    "description": "아싸컴 G마켓 판매번호 4886060915의 화이트 기본 구성입니다. B850M Wi-Fi 6E 메인보드와 전용 DRAM을 탑재한 ADATA LEGEND 960 1TB가 들어갑니다.",
+    "notes": [
+      "화이트 케이스·메인보드·그래픽카드·파워 구성입니다. 기본 메모리는 CORSAIR VENGEANCE 16GB 두 장입니다.",
+      "기본 GPU는 PCIe 8핀 세 개가 필요합니다. 해당 파워의 출고 케이블과 연결 방식을 주문 전 확인하세요.",
+      "대표 사진은 연출 이미지입니다. 기본 부품표에서 공랭 쿨러와 실제 출고 구성을 확인하세요."
+    ],
+    "lifecycle": "unknown",
+    "domesticState": "listing-observed",
+    "manufacturerPartNumber": null,
+    "sources": [
+      {
+        "label": "G마켓 · 판매가·쿠폰·배송",
+        "url": "https://item.gmarket.co.kr/Item?goodscode=4886060915",
+        "observedAt": "2026-11-28T02:20:52.454Z",
+        "kind": "retailer-listing"
+      },
+      {
+        "label": "아싸컴 · 화이트 기본 사양표",
+        "url": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T_LW_11161030.jpg",
+        "observedAt": "2026-11-28T02:20:52.454Z",
+        "kind": "retailer-listing"
+      }
+    ],
+    "listObservedAt": null,
+    "strengths": [],
+    "issues": [],
+    "reviewSummary": null,
+    "reviewSources": [],
+    "listings": [
+      {
+        "id": "reviewed-fullpc-gmarket-4886060915-offer",
+        "merchant": "G마켓",
+        "seller": "전체판매1위_아싸컴",
+        "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4886060915-offer"
+      }
+    ]
   }
 ]
