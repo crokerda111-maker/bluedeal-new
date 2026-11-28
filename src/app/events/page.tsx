@@ -90,12 +90,20 @@ export default async function EventsPage({ searchParams }: { searchParams: Promi
                   <p className="text-xs font-semibold text-amber-200">{shoppingEventDates(event)} · {status}</p>
                   <h3 className="mt-1 font-semibold text-white">{event.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-300">{event.description}</p>
-                  {event.paymentOffer ? (
-                    <div className="mt-3 border-t border-white/10 pt-3 text-sm leading-6 text-slate-300">
-                      <p className="font-medium text-white">{event.paymentOffer.summary}</p>
-                      <p>{event.paymentOffer.conditions} 결제 전 적용 여부를 확인하세요.</p>
-                      <a href={event.paymentOffer.sourceUrl} className="inline-flex min-h-8 items-center text-cyan-200 underline underline-offset-4">{event.paymentOffer.sourceLabel}</a>
-                    </div>
+                  {event.payment ? (
+                    <details className="mt-3 border-t border-white/10 pt-2 text-sm leading-6 text-slate-300">
+                      <summary className="cursor-pointer py-1 font-medium text-white">카드 즉시할인 {event.payment.offers.length}종 · {event.payment.period}</summary>
+                      <ul className="divide-y divide-white/10">
+                        {event.payment.offers.map(offer => (
+                          <li key={offer.sourceUrl} className="py-2">
+                            <p className="font-medium text-white">{offer.summary}</p>
+                            <p>{offer.conditions}</p>
+                            <a href={offer.sourceUrl} className="inline-flex min-h-8 items-center text-cyan-200 underline underline-offset-4">{offer.sourceLabel}</a>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="text-xs leading-5">{event.payment.checkedOn} 확인 · 결제 전에 할인 적용 여부를 확인하세요.</p>
+                    </details>
                   ) : null}
                   {affiliate ? <p id={disclosure} className="mt-2 text-xs leading-5 text-slate-200">이 링크를 통해 구매하면 블루딜이 수수료를 받을 수 있습니다.</p> : null}
                   {event.path ? (
