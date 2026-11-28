@@ -2046,6 +2046,18 @@
       "category": "fullpc",
       "seller": "PERFLAB",
       "sourceUrl": "https://www.11st.co.kr/products/8097951804"
+    },
+    {
+      "id": "reviewed-fullpc-gmarket-4886060771-offer",
+      "category": "fullpc",
+      "seller": "전체판매1위_아싸컴",
+      "sourceUrl": "https://item.gmarket.co.kr/Item?goodscode=4886060771"
+    },
+    {
+      "id": "reviewed-fullpc-11st-9514856123-offer",
+      "category": "fullpc",
+      "seller": "포유컴퓨터",
+      "sourceUrl": "https://www.11st.co.kr/products/9514856123"
     }
   ]
 }

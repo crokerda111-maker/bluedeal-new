@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "e526302bdfc33f2950c36c5e114adae1c824d024546d7e735c75d7ff1cd29d31",
-  "entries": 837,
+  "catalogHash": "4e074eccb2bf3712f0eadb203ae5c5953391eeb7dd0f881aa0e9358f494b11d2",
+  "entries": 839,
   "products": [
     {
       "id": "reviewed-mixed-bundle-etland-s6295842",
@@ -56711,6 +56711,94 @@
       "referenceCode": "BD-1F0309D6CF"
     },
     {
+      "id": "reviewed-fullpc-gmarket-4886060771",
+      "name": "아싸컴 EV_A78D-A97T-C1T 7800X3D · RX 9070 XT · 32GB · 1TB 완본체",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "아싸컴",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "DDR5-5600 32GB (16GB × 2)",
+        "850W Gold 파워",
+        "무상 A/S 1년 판매처 표기"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 기본사양 · CPU",
+          "value": "AMD Ryzen 7 7800X3D (국내 정품 표기)"
+        },
+        {
+          "label": "판매처 기본사양 · 그래픽카드",
+          "value": "ASRock Radeon RX 9070 XT Challenger D6 16GB"
+        },
+        {
+          "label": "판매처 기본사양 · 메인보드",
+          "value": "GIGABYTE B650M K"
+        },
+        {
+          "label": "판매처 기본사양 · 메모리",
+          "value": "옵티머스 DDR5-5600 32GB (16GB × 2)"
+        },
+        {
+          "label": "판매처 기본사양 · 저장장치",
+          "value": "TAMMUZ M830 PRO M.2 NVMe 1TB"
+        },
+        {
+          "label": "판매처 기본사양 · 파워",
+          "value": "Cooler Master MWE Gold 850 V3 (블랙)"
+        },
+        {
+          "label": "판매처 기본사양 · CPU 쿨러",
+          "value": "ZALMAN CNPS12X BP 힐제로 ARGB (블랙)"
+        },
+        {
+          "label": "판매처 기본사양 · 케이스",
+          "value": "DAVEN D7 Mesh 세븐팬 (블랙)"
+        },
+        {
+          "label": "보증",
+          "value": "조립PC 1년 무상 A/S (판매처 표기)"
+        }
+      ],
+      "description": "아싸컴의 EV_A78D-A97T-C1T 완본체입니다. 판매자가 명시한 CPU, 그래픽카드와 기본 부품표 기준입니다.",
+      "notes": [
+        "기본 부품표에 16GB 모듈 두 장이 명시돼 있습니다.",
+        "GPU는 판매 상세에 ASRock Challenger D6 16GB로 명시됩니다. 같은 칩이라도 카드 모델과 권장 파워 조건을 기준으로 비교했습니다.",
+        "Windows 포함 여부는 구매 옵션에서 확인하세요."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": "EV_A78D-A97T-C1T",
+      "sources": [
+        {
+          "label": "G마켓 · 판매가·쿠폰·배송",
+          "url": "https://item.gmarket.co.kr/Item?goodscode=4886060771",
+          "observedAt": "2026-11-28T00:55:07.090Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "아싸컴 · 판매 부품표",
+          "url": "https://ai.esmplus.com/assacom1/ASC/Product/Spec/251101/EV_A78D-A97T-C1T_L_2611251625.jpg",
+          "observedAt": "2026-11-28T00:55:07.090Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-fullpc-gmarket-4886060771-offer",
+          "merchant": "G마켓",
+          "seller": "전체판매1위_아싸컴",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-gmarket-4886060771-offer"
+        }
+      ],
+      "referenceCode": "BD-EA51D86161"
+    },
+    {
       "id": "reviewed-mixed-fullpc-assacom-6517",
       "name": "아싸컴 PBA_9800X3D+9070XT 기본 구성",
       "category": "fullpc",
@@ -57231,6 +57319,10 @@
         {
           "label": "판매처 부품표 · 케이스",
           "value": "darkFlash DK900 Air MESH RGB 세븐팬"
+        },
+        {
+          "label": "운영체제",
+          "value": "FreeDOS (Windows 미포함)"
         }
       ],
       "description": "G마켓과 11번가 퍼플랩의 기본 사양표에서 같은 부품 구성을 확인한 게이밍 완본체입니다. 판매처별 가격과 혜택은 아래에서 확인할 수 있습니다.",
@@ -57245,19 +57337,19 @@
         {
           "label": "G마켓 · 퍼플랩 기본 구성 주문 화면",
           "url": "https://item.gmarket.co.kr/Item?goodscode=4338417409",
-          "observedAt": "2026-11-27T14:31:17.772Z",
+          "observedAt": "2026-11-28T00:55:07.090Z",
           "kind": "retailer-listing"
         },
         {
           "label": "11번가 · 퍼플랩 기본 구성 주문 화면",
           "url": "https://www.11st.co.kr/products/8097951804",
-          "observedAt": "2026-11-27T14:31:17.772Z",
+          "observedAt": "2026-11-28T00:55:07.090Z",
           "kind": "retailer-listing"
         },
         {
           "label": "퍼플랩 기본 부품표 · 두 판매처 공통",
           "url": "https://gi.esmplus.com/systemrise/PERFLAB/Market/AMD/AX78-R97XT/AX78-R97XT_04.jpg",
-          "observedAt": "2026-11-27T14:31:17.772Z",
+          "observedAt": "2026-11-28T00:55:07.090Z",
           "kind": "retailer-component-table"
         },
         {
@@ -57366,6 +57458,95 @@
         }
       ],
       "referenceCode": "BD-6288C34B76"
+    },
+    {
+      "id": "reviewed-fullpc-11st-9514856123",
+      "name": "포유컴 8250 7800X3D · RX 9070 XT · 16GB · 1TB 완본체",
+      "category": "fullpc",
+      "subtype": "assembled-pc",
+      "brand": "포유컴퓨터",
+      "kind": "retailer-reviewed-model",
+      "features": [
+        "DDR5-4800 총 16GB",
+        "SAPPHIRE PULSE RX 9070 XT 16GB",
+        "FreeDOS · Windows 미포함"
+      ],
+      "specifications": [
+        {
+          "label": "판매처 기본사양 · CPU",
+          "value": "AMD Ryzen 7 7800X3D"
+        },
+        {
+          "label": "판매처 기본사양 · 그래픽카드",
+          "value": "SAPPHIRE PULSE Radeon RX 9070 XT D6 16GB"
+        },
+        {
+          "label": "판매처 기본사양 · 메인보드",
+          "value": "MSI PRO B650M-B"
+        },
+        {
+          "label": "판매처 기본사양 · 메모리",
+          "value": "지티엠코리아 DDR5-4800 16GB"
+        },
+        {
+          "label": "판매처 기본사양 · 저장장치",
+          "value": "컴이지 KINGDOM New PM M.2 NVMe 1TB"
+        },
+        {
+          "label": "판매처 기본사양 · 파워",
+          "value": "마이크로닉스 WIZMAX 850W 80PLUS Gold ATX 3.1"
+        },
+        {
+          "label": "판매처 기본사양 · CPU 쿨러",
+          "value": "3RSYS Socoool RC1400 Quiet 쌍철봉"
+        },
+        {
+          "label": "판매처 기본사양 · 케이스",
+          "value": "ZALMAN i8 백사십 터보"
+        },
+        {
+          "label": "운영체제",
+          "value": "FreeDOS (Windows 미포함)"
+        }
+      ],
+      "description": "포유컴퓨터의 8250 완본체입니다. 판매자가 명시한 CPU, 그래픽카드와 기본 부품표 기준입니다.",
+      "notes": [
+        "메모리는 총 16GB로 판매처 부품표에 표시됩니다. 모듈 수는 명시되지 않아 채점에 반영하지 않았습니다.",
+        "MSI PRO B650M-B는 공식 사양 기준 DDR5 슬롯 2개와 M.2 슬롯 1개입니다.",
+        "대표 사진은 판매자 연출 이미지입니다. 실제 GPU는 판매 부품표의 사파이어 PULSE를 확인하세요.",
+        "기본 보증 기간과 비용은 결제 전 판매처 확인이 필요합니다."
+      ],
+      "lifecycle": "unknown",
+      "domesticState": "listing-observed",
+      "manufacturerPartNumber": "8250",
+      "sources": [
+        {
+          "label": "11번가 · 판매가·쿠폰·배송",
+          "url": "https://www.11st.co.kr/products/9514856123",
+          "observedAt": "2026-11-28T00:55:07.090Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "포유컴퓨터 · 판매 부품표",
+          "url": "https://ai.esmplus.com/foryoucom1/MARKET/OPEN/MAIN/SPEC/8250.jpg",
+          "observedAt": "2026-11-28T00:55:07.090Z",
+          "kind": "retailer-listing"
+        }
+      ],
+      "listObservedAt": null,
+      "strengths": [],
+      "issues": [],
+      "reviewSummary": null,
+      "reviewSources": [],
+      "listings": [
+        {
+          "id": "reviewed-fullpc-11st-9514856123-offer",
+          "merchant": "11번가",
+          "seller": "포유컴퓨터",
+          "pricePage": "/prices/fullpc#reviewed-fullpc-11st-9514856123-offer"
+        }
+      ],
+      "referenceCode": "BD-34CE57A235"
     },
     {
       "id": "reviewed-fullpc-gmarket-4653892370",

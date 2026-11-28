@@ -62,9 +62,21 @@
     "note": "판매 페이지의 SRC0004_261120 2TB 구성과 1년 하드웨어 무상 A/S 안내를 확인했습니다. 후기에는 전면 USB 접촉 문제 보고와 팬 소음 교체 사례가 각각 있으나 동일 원인이 반복됐다고 확인되지는 않았습니다. 출고 후 앞쪽 USB와 팬 작동을 확인하세요."
   },
   "reviewed-fullpc-gmarket-4338417409": {
-    "reviewedOn": "2026-11-27",
+    "reviewedOn": "2026-11-28",
     "kind": "purchase",
     "source": "https://item.gmarket.co.kr/Item?goodscode=4338417409",
-    "note": "11월 27일 G마켓과 11번가에 연결된 판매자 부품표가 일치했습니다. 이전 관측의 GIGABYTE B650M K와 달리 이번 기본 사양의 메인보드는 MSI PRO B650M-P입니다. 기존 관측가는 현재 구성 가격과 분리했습니다."
+    "note": "G마켓과 11번가 판매자 부품표가 일치합니다. KLEVV DDR5 24GB 단일 모듈과 MSI PRO B650M-P 구성이며 Windows는 미설치입니다. 기본 750W Bronze 파워는 해당 GIGABYTE 그래픽카드의 권장 850W보다 낮습니다. 파워 교체 비용까지 포함해 비교하세요."
+  },
+  "reviewed-fullpc-gmarket-4886060771": {
+    "reviewedOn": "2026-11-28",
+    "kind": "purchase",
+    "source": "https://item.gmarket.co.kr/Item?goodscode=4886060771",
+    "note": "기본 부품표에 16GB 모듈 두 장이 명시돼 있습니다. Windows 포함 여부는 구매 옵션에서 확인하세요."
+  },
+  "reviewed-fullpc-11st-9514856123": {
+    "reviewedOn": "2026-11-28",
+    "kind": "purchase",
+    "source": "https://www.11st.co.kr/products/9514856123",
+    "note": "메모리는 총 16GB로 판매처 부품표에 표시됩니다. 모듈 수는 명시되지 않아 채점에 반영하지 않았습니다. 기본 보증 기간과 비용은 결제 전 판매처 확인이 필요합니다."
   }
 }
