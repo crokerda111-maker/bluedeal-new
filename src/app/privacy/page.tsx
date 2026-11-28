@@ -18,6 +18,11 @@ export default function PrivacyPage() {
       <p>내 계정에서 탈퇴하면 회원 정보와 작성자 연결을 삭제하고 로그인 세션을 무효화합니다. 탈퇴 전에 게시한 글과 글에 표시된 닉네임은 게시판에 남습니다. 기존 로그인 세션을 무효화하는 기록은 최대 7일 뒤 파기합니다. 진행 중인 글쓰기 제재의 재가입 우회를 막는 내부 식별값과 제재 종료일은 제재 기간 동안 보관한 뒤 파기합니다.</p>
     </section>
     <section>
+      <h2 className="font-semibold text-white">사이트 방문 통계</h2>
+      <p>블루딜은 사이트 개선을 위해 Vercel Web Analytics로 공개 페이지의 방문 수, 조회 수, 유입 경로와 기기 종류 등 집계 통계를 확인합니다. 이 웹 분석은 쿠키를 사용하지 않습니다. 계정, 로그인, 관리, 문의 및 글쓰기 화면은 집계에서 제외하고 방문 페이지 주소에서 검색어나 기타 주소 매개변수는 제거합니다.</p>
+      <p className="mt-2"><a href="https://vercel.com/docs/analytics/privacy-policy" className="text-cyan-200 underline underline-offset-4">Vercel 웹 분석의 데이터 처리 안내</a></p>
+    </section>
+    <section>
       <h2 className="font-semibold text-white">문의와 개인정보 관련 요청</h2>
       <p>문의에 적은 내용과 이메일은 내용 확인과 회신에 사용합니다. 개인정보가 포함된 문의는 비공개로 접수해 주세요.</p>
       <p className="mt-2">개인정보 보호 업무와 고충 처리는 블루딜 운영팀이 담당합니다. 열람·정정·삭제·처리정지를 요청하거나 개인정보 관련 문의를 남기려면 <Link href="/contact/write?vis=private" prefetch={false} className="text-cyan-200 underline underline-offset-4">운영팀 비공개 문의</Link>를 이용해 주세요.</p>

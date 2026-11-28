@@ -1,6 +1,7 @@
 import "./globals.css";
 import SiteHeader from "./_components/SiteHeader";
 import SiteFooter from "./_components/SiteFooter";
+import { SiteAnalytics } from "./_components/SiteAnalytics";
 import { MemberSession } from "../components/MemberSession";
 import { memberLoginEnabled } from "../lib/memberWrite";
 import { pageMetadata, SITE_DESCRIPTION, SITE_URL } from "../lib/site";
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SiteFooter />
           </MemberSession>
         </div>
+        <SiteAnalytics />
       </body>
     </html>
   );

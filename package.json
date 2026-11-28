@@ -24,6 +24,7 @@
     "test:ops": "python -m unittest discover -s ops/tests -p test_*.py"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
     "cheerio": "1.2.0",
     "next": "16.4.6",
     "openid-client": "6.9.1",
