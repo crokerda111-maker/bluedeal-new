@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogHash": "f8904f7b0f879643c5a647ec8560cc0648de4b75332df20c5b843ad00084f6b3",
+  "catalogHash": "4a9c30881f6780c0a44cd1c3ceb70caef2e6a44466250203c9207573ebbc3706",
   "entries": 841,
   "products": [
     {
@@ -93952,14 +93952,14 @@
       ],
       "description": "실제 판매 페이지에서 모델·용량·판매 상태와 가격 조건을 확인한 SSD입니다. 종료된 행사·품절·관부가세 미확인 금액은 현재 구매가로 등록하지 않았습니다. 공식 자료를 연결한 항목도 독립 성능·품질·후기 평가는 별도로 검토해야 합니다.",
       "notes": [
-        "등록 사양의 정확한 제조사 품번·리비전은 추가 대조가 필요합니다.",
+        "G마켓과 11번가의 판매 상세에서 MZ-V9S1T0BW 1TB를 대조했습니다. 판매자별 배송과 쿠폰 조건은 아래 판매 정보에서 확인하세요.",
         "같은 제품군이라도 용량·방열판·정품/해외직구·국내 유통과 보증 조건이 다르면 별도 확인이 필요합니다.",
         "DRAM·HMB·NAND·최대 성능은 제조사 자료와 판매명 표기를 구분합니다. HMB 지원만으로 DRAM 유무나 품질을 추정하지 않았습니다.",
         "적립·경유·구매 후 보상은 현재 상품가나 카드 할인으로 합산하지 않았습니다."
       ],
       "lifecycle": "unknown",
       "domesticState": "listing-observed",
-      "manufacturerPartNumber": null,
+      "manufacturerPartNumber": "MZ-V9S1T0BW",
       "sources": [
         {
           "label": "기존 등록 제조사 자료",
@@ -93978,6 +93978,24 @@
           "url": "https://download.semiconductor.samsung.com/resources/data-sheet/samsung_nvme_ssd_990_evo_plus_datasheet_rev.1.0_10139908982624.pdf",
           "observedAt": "2026-11-22T00:00:00+09:00",
           "kind": "manufacturer-specifications"
+        },
+        {
+          "label": "G마켓 · TROY-CLUB 판매 상세",
+          "url": "https://item.gmarket.co.kr/Item?goodsCode=4683818847",
+          "observedAt": "2026-11-28T04:18:06.912Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "11번가 · 현대홈쇼핑 판매 상세",
+          "url": "https://www.11st.co.kr/products/9613337419",
+          "observedAt": "2026-11-28T04:18:06.912Z",
+          "kind": "retailer-listing"
+        },
+        {
+          "label": "삼성전자 한국 · 동일 품번 보증 안내",
+          "url": "https://www.samsung.com/sec/support/model/MZ-V9S1T0BW/",
+          "observedAt": "2026-11-28T04:18:06.912Z",
+          "kind": "manufacturer-specifications"
         }
       ],
       "listObservedAt": null,
@@ -93991,6 +94009,18 @@
           "merchant": "G마켓",
           "seller": "삼성전자SSD공식총판",
           "pricePage": "/prices/ssd#samsung-990-evo-plus-1tb"
+        },
+        {
+          "id": "retail-gmarket-4683818847",
+          "merchant": "G마켓",
+          "seller": "TROY-CLUB",
+          "pricePage": "/prices/ssd#retail-gmarket-4683818847"
+        },
+        {
+          "id": "retail-11st-9613337419",
+          "merchant": "11번가",
+          "seller": "현대홈쇼핑",
+          "pricePage": "/prices/ssd#retail-11st-9613337419"
         }
       ],
       "facts": [
